@@ -17,6 +17,7 @@ global dropbox = "~/Cox working group Dropbox/"
 cd "$dropbox"
 use "SAMPA/DATA monitoring/Data/SAMPA/All_crf13_Abdomen_Uss.dta", clear
 
+cd $sampamwanza
 
 * Labels
 label define cohort 1 "DIVIDS" 2 "SAM" 3" CICADA" 4 "NUSTART" 5 "ST-ATT" 6 "CLHNS"
@@ -38,7 +39,9 @@ sum cohort sampa_id orgid sex dob age agree uss_sample personnel13 timestamp13 r
 table (agree) cohort, nototals
 
 table (radio) (cohort), ///
-	statistic(frequency) statistic(percent)totals(radio) ///
+	statistic(frequency) ///
+	statistic(percent) ///
+	totals(radio) ///
 	statistic(mean age) ///
 	statistic(sd age) ///
 	nformat(%9.0fc frequency) ///
@@ -46,7 +49,38 @@ table (radio) (cohort), ///
 	sformat("%s%%" percent) ///   
 	sformat("(%s)" sd) ///
 	style(table-1)
-	
+
+collect dims
+collect levelsof radio_exam
+collect label list radio_exam
+collect label list result
+
+collect label levels result frequency "Freq." ///
+	mean ("Mean Age(yrs)") ///
+	sd ("SD Age") ///
+	percent ("Percent") ///
+	, modify
+
+collect preview
+
+collect style putdocx, layout(autofitcontents) ///
+         title("Table 1: Descriptive Statistics of Participants with Ultrasound by Cohort") ///
+		 note ("Fix labels for frequency, percenage mean age sd age")
+		 
+collect export samparadio1.docx, as(docx) replace
+
+
+table (cohort), ///
+	statistic(mean age) ///
+	statistic(sd age) ///
+	nformat(%9.0fc frequency) ///
+	nformat(%6.2f  mean sd) ///
+	sformat("%s%%" percent) ///   
+	sformat("(%s)" sd) ///
+	style(table-1) 
+
+
+*collect export MyTable1.docx, as(docx) replace
 	
 table cohort, stat(mean age) stat(sd age) stat(count agree) stat(count radio) stat(percent agree radio) stat (prop agree radio)
 
