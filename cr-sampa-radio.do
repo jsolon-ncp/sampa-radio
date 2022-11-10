@@ -31,6 +31,44 @@ missings report
 * sum 
 
 sum cohort sampa_id orgid sex dob age agree uss_sample personnel13 timestamp13 radio_exam date_exam_uss time_exam_uss
+
+
+* table
+
+table (agree) cohort, nototals
+
+table (radio) (cohort), ///
+	statistic(frequency) statistic(percent)totals(radio) ///
+	statistic(mean age) ///
+	statistic(sd age) ///
+	nformat(%9.0fc frequency) ///
+	nformat(%6.2f  mean sd) ///
+	sformat("%s%%" percent) ///   
+	sformat("(%s)" sd) ///
+	style(table-1)
+	
+	
+table cohort, stat(mean age) stat(sd age) stat(count agree) stat(count radio) stat(percent agree radio) stat (prop agree radio)
+
+table agree (cohort), statistic(count cohort) 
+table radio (cohort), statistic(count cohort) 
+collect recode result count = frequency
+collect label levels var agree radio cohort "N", modify
+collect layout (agree radio) (cohort#result)
+
+webuse nhanes2, clear
+table (var) (hlthstat), statistic(count hlthstat) nototals
+
+
+table female hlthstat, statistic(frequency) statistic(percent, across(hlthstat)) nototals append
+table region hlthstat, statistic(frequency) statistic(percent, across(hlthstat)) nototals append
+collect recode result count = frequency
+collect label levels var hlthstat "N", modify
+collect layout (var female region) (hlthstat#result)
+noi collect preview
+
+
+ nformat(#9.0g)
 * 1, DIVIDS | 2, SAM Lusaka | 3, CICADA | 4, NUSTART Lusaka | 5, St-ATT | 6, CLHNS
 
 
