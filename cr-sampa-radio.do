@@ -24,19 +24,10 @@ label define cohort 1 "DIVIDS" 2 "SAM" 3" CICADA" 4 "NUSTART" 5 "ST-ATT" 6 "CLHN
 label values cohort cohort
 label var radio "Abdominal Ultrasound Performed"
 
-
 * Missings
 missings report
 
-
-* sum 
-
-sum cohort sampa_id orgid sex dob age agree uss_sample personnel13 timestamp13 radio_exam date_exam_uss time_exam_uss
-
-
 * table
-
-table (agree) cohort, nototals
 
 table (radio) (cohort), ///
 	statistic(frequency) ///
@@ -69,6 +60,8 @@ collect style putdocx, layout(autofitcontents) ///
 		 
 collect export samparadio1.docx, as(docx) replace
 
+
+collect export samparadio1.html, as(html) replace
 
 table (cohort), ///
 	statistic(mean age) ///
