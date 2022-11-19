@@ -8,7 +8,7 @@ Diabetes in SAMPA is defined as **plasma glucose ≥ 11.1 mmol/L at 2 hours** in
 
 <<dd_do: quietly>>
 cd $sampamwanza
-use adverse.dta, clear
+use 02-data-temp/sampa-all.dta, clear
 /*
 tab cohort glu120_cat, col row chi
 
@@ -48,9 +48,20 @@ sum glu120_cat
 
 *Hypertension* 
 
+From SOP 10:
 Hypertension in adults = systolic blood pressure ≥140 mmHg and/or diastolic blood pressure ≥90 mmHg on two occasions with the participant at rest.   
 Hypertension in children = two measurements of systolic or diastolic blood pressure greater than the 95th percentile for age, sex and height (SOP 10 which is from Table 1, Sinaiko, Hypertension in children. NEJM 1996; 335: 1968).  
 
+Interpretation of blood pressure results and possible actions needed
+If found with an average systolic blood pressure ≥ 200mmHg and/or diastolic blood pressure ≥ 120mmHg, this shall be classified as very severe hypertension and should be discussed with the senior clinician in the team for further management or referral. 
+
+For children we will use age, height and sex-specific cut-offs.[1] Hypertension in children and adolescents is defined as systolic BP (SBP) and/or diastolic BP (DBP), that is, on repeated measurement >95th percentile. BP between the 90th and 95th percentile in childhood had been designated "high normal." Below is part of the table from this publication [1] with 90th and 95th percentiles for children of ages expected in SAMPA. Cut-offs vary with height as well so those below represent the 25th percentile for height, selected since many SAMPA children are stunted. 
+
+<<dd_do: quietly>>
+
+tab sys_cat dias_cat, mis
+
+<</dd_do>>
 
 
 
