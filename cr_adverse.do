@@ -1,5 +1,5 @@
 *Stata version 17
-*Adverse Events*
+*CRF3 and 4*
 
 clear
 set more off
@@ -17,9 +17,30 @@ global gmydrive = "~/Google Drive/My Drive/"
 global sampamwanza = "$github/sampa-mwanza/"
 global dropbox = "~/Cox working group Dropbox/"
 
+/*Datasets
+All_CRF14_Computed_tomography_CT_scans.dta
+All_Crf10_Referral.dta
+All_Crf11a_Urine_And_Feces_Collection.dta
+All_Crf11b_Urine_And_Feces_Results.dta
+All_Crf12_Diet.dta
+All_Crf2_demography_and_ses.dta
+All_Crf3_Clinical_History_And_Exam.dta
+All_Crf4a_Blood_Sampling_And_Processing.dta
+All_Crf4b_Repeat_Ogtt.dta
+All_Crf5_More_Blood_Test_Results.dta
+All_Crf6_Anthropometry.dta
+All_Crf7_Body_Composition.dta
+All_crf13_Abdomen_Uss.dta
+All_crf1_eligibility_consent.dta
+*/
+
 cd "$dropbox"
 use "SAMPA/DATA monitoring/Data/SAMPA/All_Crf4a_Blood_Sampling_And_Processing.dta", clear
-merge 1:1 sampa_id using "SAMPA/DATA monitoring/Data/SAMPA/All_Crf4b_Repeat_Ogtt.dta" 
+merge 1:1 cohort sampa_id using "SAMPA/DATA monitoring/Data/SAMPA/All_Crf4b_Repeat_Ogtt.dta" 
+rename _merge merge1
+merge 1:1 cohort sampa_id using "SAMPA/DATA monitoring/Data/SAMPA/All_Crf3_Clinical_History_And_Exam.dta" 
+rename _merge merge2
+merge 1:1 cohort sampa_id using "SAMPA/DATA monitoring/Data/SAMPA/All_Crf3_Clinical_History_And_Exam.dta" 
 cd $sampamwanza
 
 * code missings
