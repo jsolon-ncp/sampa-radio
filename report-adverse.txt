@@ -1,0 +1,61 @@
+**Adverse Events**  
+*Stata version 17, filename report-adverse.txt  
+
+**SOP 17 Definitions**  
+*Diabetes*   
+
+Diabetes in SAMPA is defined as **plasma glucose ≥ 11.1 mmol/L at 2 hours** in a standard oral glucose tolerance test (OGTT). All participants identified as having diabetes will be re-tested to confirm this and will also be tested for the presence of urinary ketones. Those found to have diabetes on re-testing will be referred to local clinical services together with their SAMPA OGTT results.
+
+<<dd_do: quietly>>
+cd $sampamwanza
+use adverse.dta, clear
+/*
+tab cohort glu120_cat, col row chi
+
+stripplot hba1c, over(cohort) tufte cumul xline(6.5) msize(small)
+stripplot mmol_glu120, over(cohort) tufte cumul xline(11.1) msize(small)
+stripplot hba1c mmol_glu120, tufte cumul xline(11.1) msize(small)
+stripplot hba1c mmol_glu120, tufte cumul xline(11.1) msize(small)
+
+scatter mmol_glu120, xline(0) mlabel(cohort)
+
+scatter mmol_glu0 hba1c, mlabel(cohort) xline(6.5) yline(11.2)
+scatter mmol_glu120 mmol_glu0, mlabel(cohort) xline(11.2) yline(11.2)
+*/
+
+sum agree
+<</dd_do>>
+
+* <<dd_display:%9.0g r(N)>> agreed to participate in the study
+
+<<dd_do: quietly>>
+sum mmol_glu0
+<</dd_do>>
+
+* <<dd_display: %9.0g r(N)>> had blood at timepoint zero 
+
+<<dd_do: quietly>>
+sum mmol_glu120
+<</dd_do>>
+
+* <<dd_display: %9.0g r(N)>> had blood at timepoint 120
+
+<<dd_do: quietly>>
+count if glu120_cat==1
+<</dd_do>>
+
+* <<dd_display: %9.0g r(N)>> 
+<<dd_do: quietly>>
+sum glu120_cat
+<</dd_do>>
+(<<dd_display: %9.2g r(mean)*100>>%) had a plasma glucose ≥ 11.1 mmol/L at 2hrs.  
+
+
+*Hypertension* 
+
+Hypertension in adults = systolic blood pressure ≥140 mmHg and/or diastolic blood pressure ≥90 mmHg on two occasions with the participant at rest.   
+Hypertension in children = two measurements of systolic or diastolic blood pressure greater than the 95th percentile for age, sex and height (SOP 10 which is from Table 1, Sinaiko, Hypertension in children. NEJM 1996; 335: 1968).  
+
+
+
+

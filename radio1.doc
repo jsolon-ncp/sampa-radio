@@ -1,0 +1,168 @@
+{\rtf1\ansi\deff0 {\fonttbl{\f0\fnil Garamond;}}
+{\info {\author .}{\company .}{\title .}}
+\deflang1033\plain\fs20
+{\footer\pard\qc\plain\f0\fs20\chpgn\par}
+{
+{
+{\b\qc\line Tabulation of pan_size_normal when cohort is DIVIDS }{\par}
+\trowd\trgaph108\trleft-108\clbrdrt\brdrw10\brdrs \clbrdrb\brdrw25\brdrs\cellx1600\clbrdrt\brdrw10\brdrs \clbrdrb\brdrw25\brdrs\cellx2800\clbrdrt\brdrw10\brdrs \clbrdrb\brdrw25\brdrs\cellx4000\clbrdrt\brdrw10\brdrs \clbrdrb\brdrw25\brdrs\cellx5200
+\ql {Pancreatic Size}\cell
+\qr {Freq.}\cell
+\qr {Percent}\cell
+\qr {Cum.}\cell
+\row
+\trowd\trgaph108\trleft-108\cellx1600\cellx2800\cellx4000\cellx5200
+\ql {Normal}\cell
+\qr {39}\cell
+\qr {81.25}\cell
+\qr {81.25}\cell
+\row
+\ql {Abnormal}\cell
+\qr {9}\cell
+\qr {18.75}\cell
+\qr {100.00}\cell
+\row
+\trowd\trgaph108\trleft-108\clbrdrt\brdrw10\brdrs\cellx1600\clbrdrt\brdrw10\brdrs\cellx2800\clbrdrt\brdrw10\brdrs\cellx4000\clbrdrt\brdrw10\brdrs\cellx5200 
+\ql {Total}\cell
+\qr {48}\cell
+\qr {100.00}\cell
+\qr {}\cell
+\row
+}
+{\trowd\trgaph108\trleft-108
+\clbrdrt\brdrw15\brdrs\cellx5200\cell
+\row}
+
+{
+{\b\qc\line Tabulation of pan_size_normal when cohort is SAM }{\par}
+\trowd\trgaph108\trleft-108\clbrdrt\brdrw10\brdrs \clbrdrb\brdrw25\brdrs\cellx1600\clbrdrt\brdrw10\brdrs \clbrdrb\brdrw25\brdrs\cellx2800\clbrdrt\brdrw10\brdrs \clbrdrb\brdrw25\brdrs\cellx4000\clbrdrt\brdrw10\brdrs \clbrdrb\brdrw25\brdrs\cellx5200
+\ql {Pancreatic Size}\cell
+\qr {Freq.}\cell
+\qr {Percent}\cell
+\qr {Cum.}\cell
+\row
+\trowd\trgaph108\trleft-108\cellx1600\cellx2800\cellx4000\cellx5200
+\ql {Normal}\cell
+\qr {39}\cell
+\qr {81.25}\cell
+\qr {81.25}\cell
+\row
+\ql {Abnormal}\cell
+\qr {9}\cell
+\qr {18.75}\cell
+\qr {100.00}\cell
+\row
+\trowd\trgaph108\trleft-108\clbrdrt\brdrw10\brdrs\cellx1600\clbrdrt\brdrw10\brdrs\cellx2800\clbrdrt\brdrw10\brdrs\cellx4000\clbrdrt\brdrw10\brdrs\cellx5200 
+\ql {Total}\cell
+\qr {48}\cell
+\qr {100.00}\cell
+\qr {}\cell
+\row
+}
+{\trowd\trgaph108\trleft-108
+\clbrdrt\brdrw15\brdrs\cellx5200\cell
+\row}
+
+{
+{\b\qc\line Tabulation of pan_size_normal when cohort is CICADA }{\par}
+\trowd\trgaph108\trleft-108\clbrdrt\brdrw10\brdrs \clbrdrb\brdrw25\brdrs\cellx1200\clbrdrt\brdrw10\brdrs \clbrdrb\brdrw25\brdrs\cellx2100\clbrdrt\brdrw10\brdrs \clbrdrb\brdrw25\brdrs\cellx3000\clbrdrt\brdrw10\brdrs \clbrdrb\brdrw25\brdrs\cellx3900
+\ql {Pancreatic Size}\cell
+\qr {Freq.}\cell
+\qr {Percent}\cell
+\qr {Cum.}\cell
+\row
+\trowd\trgaph108\trleft-108\cellx1200\cellx2100\cellx3000\cellx3900
+\ql {Normal}\cell
+\qr {10}\cell
+\qr {100.00}\cell
+\qr {100.00}\cell
+\row
+\trowd\trgaph108\trleft-108\clbrdrt\brdrw10\brdrs\cellx1200\clbrdrt\brdrw10\brdrs\cellx2100\clbrdrt\brdrw10\brdrs\cellx3000\clbrdrt\brdrw10\brdrs\cellx3900 
+\ql {Total}\cell
+\qr {10}\cell
+\qr {100.00}\cell
+\qr {}\cell
+\row
+}
+{\trowd\trgaph108\trleft-108
+\clbrdrt\brdrw15\brdrs\cellx3900\cell
+\row}
+
+{
+{\b\qc\line Tabulation of pan_size_normal when cohort is NUSTART }{\par}
+\trowd\trgaph108\trleft-108\clbrdrt\brdrw10\brdrs \clbrdrb\brdrw25\brdrs\cellx1200\clbrdrt\brdrw10\brdrs \clbrdrb\brdrw25\brdrs\cellx2100\clbrdrt\brdrw10\brdrs \clbrdrb\brdrw25\brdrs\cellx3000\clbrdrt\brdrw10\brdrs \clbrdrb\brdrw25\brdrs\cellx3900
+\ql {Pancreatic Size}\cell
+\qr {Freq.}\cell
+\qr {Percent}\cell
+\qr {Cum.}\cell
+\row
+\trowd\trgaph108\trleft-108\cellx1200\cellx2100\cellx3000\cellx3900
+\ql {Normal}\cell
+\qr {10}\cell
+\qr {100.00}\cell
+\qr {100.00}\cell
+\row
+\trowd\trgaph108\trleft-108\clbrdrt\brdrw10\brdrs\cellx1200\clbrdrt\brdrw10\brdrs\cellx2100\clbrdrt\brdrw10\brdrs\cellx3000\clbrdrt\brdrw10\brdrs\cellx3900 
+\ql {Total}\cell
+\qr {10}\cell
+\qr {100.00}\cell
+\qr {}\cell
+\row
+}
+{\trowd\trgaph108\trleft-108
+\clbrdrt\brdrw15\brdrs\cellx3900\cell
+\row}
+
+{
+{\b\qc\line Tabulation of pan_size_normal when cohort is ST-ATT }{\par}
+\trowd\trgaph108\trleft-108\clbrdrt\brdrw10\brdrs \clbrdrb\brdrw25\brdrs\cellx1200\clbrdrt\brdrw10\brdrs \clbrdrb\brdrw25\brdrs\cellx2100\clbrdrt\brdrw10\brdrs \clbrdrb\brdrw25\brdrs\cellx3000\clbrdrt\brdrw10\brdrs \clbrdrb\brdrw25\brdrs\cellx3900
+\ql {Pancreatic Size}\cell
+\qr {Freq.}\cell
+\qr {Percent}\cell
+\qr {Cum.}\cell
+\row
+\trowd\trgaph108\trleft-108\cellx1200\cellx2100\cellx3000\cellx3900
+\ql {Normal}\cell
+\qr {10}\cell
+\qr {100.00}\cell
+\qr {100.00}\cell
+\row
+\trowd\trgaph108\trleft-108\clbrdrt\brdrw10\brdrs\cellx1200\clbrdrt\brdrw10\brdrs\cellx2100\clbrdrt\brdrw10\brdrs\cellx3000\clbrdrt\brdrw10\brdrs\cellx3900 
+\ql {Total}\cell
+\qr {10}\cell
+\qr {100.00}\cell
+\qr {}\cell
+\row
+}
+{\trowd\trgaph108\trleft-108
+\clbrdrt\brdrw15\brdrs\cellx3900\cell
+\row}
+
+{
+{\b\qc\line Tabulation of pan_size_normal when cohort is CLHNS }{\par}
+\trowd\trgaph108\trleft-108\clbrdrt\brdrw10\brdrs \clbrdrb\brdrw25\brdrs\cellx1200\clbrdrt\brdrw10\brdrs \clbrdrb\brdrw25\brdrs\cellx2100\clbrdrt\brdrw10\brdrs \clbrdrb\brdrw25\brdrs\cellx3000\clbrdrt\brdrw10\brdrs \clbrdrb\brdrw25\brdrs\cellx3900
+\ql {Pancreatic Size}\cell
+\qr {Freq.}\cell
+\qr {Percent}\cell
+\qr {Cum.}\cell
+\row
+\trowd\trgaph108\trleft-108\cellx1200\cellx2100\cellx3000\cellx3900
+\ql {Normal}\cell
+\qr {42}\cell
+\qr {100.00}\cell
+\qr {100.00}\cell
+\row
+\trowd\trgaph108\trleft-108\clbrdrt\brdrw10\brdrs\cellx1200\clbrdrt\brdrw10\brdrs\cellx2100\clbrdrt\brdrw10\brdrs\cellx3000\clbrdrt\brdrw10\brdrs\cellx3900 
+\ql {Total}\cell
+\qr {42}\cell
+\qr {100.00}\cell
+\qr {}\cell
+\row
+}
+{\trowd\trgaph108\trleft-108
+\clbrdrt\brdrw15\brdrs\cellx3900\cell
+\row}
+
+
+\writepositionforappend
+}}

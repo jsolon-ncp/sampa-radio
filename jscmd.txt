@@ -1,0 +1,23 @@
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD26863.000000"
+pwd
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD26863.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD26863.000000"
+tab ogttr_confirm
+sum rhba1c
+tab rhba1c
+tab ogttr_time30
+sum rglu0
+sum rglu120
+sum rglu120_missing
+tab rglu120
+scatter rglu120 mmol_rglu120
+tab rglu120
+sum rglu120
+sum mmol_rglu120
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD26863.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD26863.000000"
+tab high_hba1c_1
+tab high_glu120_1
+bysort glu120_cat: sum mmol_glu120
+pwd
+dyndoc report-adverse.txt, replace
