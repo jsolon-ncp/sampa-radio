@@ -41,14 +41,9 @@ sum mmol_glu120
 * <<dd_display: %9.0g r(N)>> had blood at timepoint 120
 
 <<dd_do: quietly>>
-count if glu120_cat==1
-<</dd_do>>
-
-* <<dd_display: %9.0g r(N)>> 
-<<dd_do: quietly>>
 sum glu120_cat
 <</dd_do>>
-(<<dd_display: %9.2g r(mean)*100>>%) had a plasma glucose ≥ 11.1 mmol/L at 2hrs.  
+* <<dd_display: %9.0g r(sum)>> of <<dd_display: %9.0g r(N)>> (<<dd_display: %9.2g r(mean)*100>>%) had a plasma glucose ≥ 11.1 mmol/L at 2hrs.  
 
 
 *Hypertension* 

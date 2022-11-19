@@ -31,10 +31,7 @@
 /Users/juansolon/Documents/GitHub/sampa-mwanza
 
 . 
-end of do-file
-
-. do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD26863.000000"
-
+. * code missings
 . replace hba1c=. if hba1c<0
 (9 real changes made, 9 to missing)
 
@@ -54,401 +51,6 @@ file adverse.dta saved
 
 . 
 end of do-file
-
-. pwd
-/Users/juansolon/Documents/GitHub/sampa-mwanza
-
-. do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD26863.000000"
-
-. sum ogttr_time0
-
-    Variable |        Obs        Mean    Std. dev.       Min        Max
--------------+---------------------------------------------------------
- ogttr_time0 |          0
-
-. 
-end of do-file
-
-. do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD26863.000000"
-
-. tab ogttr_time0
-
-[4.13] Time |
-          0 |      Freq.     Percent        Cum.
-------------+-----------------------------------
-   06:33:00 |          1        1.47        1.47
-   06:35:00 |          1        1.47        2.94
-   06:38:00 |          1        1.47        4.41
-   06:54:00 |          1        1.47        5.88
-   06:55:00 |          1        1.47        7.35
-   06:56:00 |          1        1.47        8.82
-   06:58:00 |          1        1.47       10.29
-   06:59:00 |          1        1.47       11.76
-   07:00:00 |          2        2.94       14.71
-   07:02:00 |          2        2.94       17.65
-   07:03:00 |          2        2.94       20.59
-   07:04:00 |          1        1.47       22.06
-   07:08:00 |          1        1.47       23.53
-   07:09:00 |          1        1.47       25.00
-   07:10:00 |          2        2.94       27.94
-   07:12:00 |          1        1.47       29.41
-   07:19:00 |          1        1.47       30.88
-   07:20:00 |          1        1.47       32.35
-   07:21:00 |          1        1.47       33.82
-   07:28:00 |          1        1.47       35.29
-   07:33:00 |          1        1.47       36.76
-   07:38:00 |          1        1.47       38.24
-   07:41:00 |          1        1.47       39.71
-   07:45:00 |          1        1.47       41.18
-   07:50:00 |          1        1.47       42.65
-   07:53:00 |          2        2.94       45.59
-   08:00:00 |          1        1.47       47.06
-   08:01:00 |          1        1.47       48.53
-   08:05:00 |          2        2.94       51.47
-   08:10:00 |          2        2.94       54.41
-   08:12:00 |          1        1.47       55.88
-   08:15:00 |          1        1.47       57.35
-   08:18:00 |          1        1.47       58.82
-   08:20:00 |          2        2.94       61.76
-   08:21:00 |          1        1.47       63.24
-   08:32:00 |          1        1.47       64.71
-   08:35:00 |          1        1.47       66.18
-   08:44:00 |          1        1.47       67.65
-   08:50:00 |          2        2.94       70.59
-   09:00:00 |          2        2.94       73.53
-   09:03:00 |          1        1.47       75.00
-   09:10:00 |          1        1.47       76.47
-   09:19:00 |          1        1.47       77.94
-   09:20:00 |          4        5.88       83.82
-   09:22:00 |          1        1.47       85.29
-   09:25:00 |          3        4.41       89.71
-   09:26:00 |          1        1.47       91.18
-   09:30:00 |          1        1.47       92.65
-   09:35:00 |          1        1.47       94.12
-   09:36:00 |          1        1.47       95.59
-   09:40:00 |          1        1.47       97.06
-   09:43:00 |          1        1.47       98.53
-   12:50:00 |          1        1.47      100.00
-------------+-----------------------------------
-      Total |         68      100.00
-
-. 
-end of do-file
-
-. tab ogttr_confirm
-
-   Does the |
-participant |
-    need to |
-     repeat |
-      OGTT? |      Freq.     Percent        Cum.
-------------+-----------------------------------
-       -103 |          1        0.29        0.29
-          0 |        271       78.32       78.61
-          1 |         74       21.39      100.00
-------------+-----------------------------------
-      Total |        346      100.00
-
-. sum rhba1c
-
-    Variable |        Obs        Mean    Std. dev.       Min        Max
--------------+---------------------------------------------------------
-      rhba1c |          0
-
-. tab rhba1c
-no observations
-
-. tab ogttr_time30
-no observations
-
-. sum rglu0
-
-    Variable |        Obs        Mean    Std. dev.       Min        Max
--------------+---------------------------------------------------------
-       rglu0 |         68    83.75132    51.92637        4.8        198
-
-. sum rglu120
-
-    Variable |        Obs        Mean    Std. dev.       Min        Max
--------------+---------------------------------------------------------
-     rglu120 |         68    137.8819    95.47585        4.5        369
-
-. sum rglu120_missing
-
-    Variable |        Obs        Mean    Std. dev.       Min        Max
--------------+---------------------------------------------------------
-rglu120_mi~g |         66           0           0          0          0
-
-. tab rglu120
-
-Repeat OGTT |
-result_Time |
-        120 |      Freq.     Percent        Cum.
-------------+-----------------------------------
-        4.5 |          1        1.47        1.47
-          5 |          1        1.47        2.94
-        5.1 |          1        1.47        4.41
-        5.2 |          1        1.47        5.88
-        5.7 |          1        1.47        7.35
-        5.8 |          1        1.47        8.82
-        6.4 |          1        1.47       10.29
-        6.6 |          1        1.47       11.76
-        6.7 |          1        1.47       13.24
-        7.1 |          1        1.47       14.71
-        7.3 |          1        1.47       16.18
-        7.8 |          1        1.47       17.65
-        7.9 |          1        1.47       19.12
-          8 |          1        1.47       20.59
-          9 |          1        1.47       22.06
-       10.9 |          1        1.47       23.53
-       12.8 |          1        1.47       25.00
-       13.1 |          1        1.47       26.47
-       19.9 |          1        1.47       27.94
-         69 |          1        1.47       29.41
-         98 |          1        1.47       30.88
-        109 |          1        1.47       32.35
-        112 |          1        1.47       33.82
-        118 |          1        1.47       35.29
-        125 |          1        1.47       36.76
-        138 |          1        1.47       38.24
-        139 |          1        1.47       39.71
-        140 |          1        1.47       41.18
-        145 |          2        2.94       44.12
-     145.17 |          1        1.47       45.59
-        147 |          1        1.47       47.06
-        152 |          1        1.47       48.53
-        154 |          1        1.47       50.00
-        155 |          1        1.47       51.47
-        163 |          2        2.94       54.41
-        165 |          1        1.47       55.88
-        166 |          1        1.47       57.35
-        167 |          1        1.47       58.82
-        168 |          1        1.47       60.29
-        179 |          1        1.47       61.76
-        185 |          3        4.41       66.18
-        186 |          2        2.94       69.12
-        187 |          1        1.47       70.59
-        188 |          1        1.47       72.06
-        190 |          1        1.47       73.53
-        195 |          3        4.41       77.94
-        203 |          1        1.47       79.41
-        207 |          1        1.47       80.88
-        218 |          1        1.47       82.35
-        219 |          1        1.47       83.82
-        234 |          1        1.47       85.29
-        245 |          3        4.41       89.71
-        260 |          1        1.47       91.18
-        269 |          1        1.47       92.65
-        283 |          1        1.47       94.12
-        292 |          1        1.47       95.59
-        293 |          1        1.47       97.06
-        300 |          1        1.47       98.53
-        369 |          1        1.47      100.00
-------------+-----------------------------------
-      Total |         68      100.00
-
-. scatter rglu120 mmol_rglu120
-
-. tab rglu120
-
-Repeat OGTT |
-result_Time |
-        120 |      Freq.     Percent        Cum.
-------------+-----------------------------------
-        4.5 |          1        1.47        1.47
-          5 |          1        1.47        2.94
-        5.1 |          1        1.47        4.41
-        5.2 |          1        1.47        5.88
-        5.7 |          1        1.47        7.35
-        5.8 |          1        1.47        8.82
-        6.4 |          1        1.47       10.29
-        6.6 |          1        1.47       11.76
-        6.7 |          1        1.47       13.24
-        7.1 |          1        1.47       14.71
-        7.3 |          1        1.47       16.18
-        7.8 |          1        1.47       17.65
-        7.9 |          1        1.47       19.12
-          8 |          1        1.47       20.59
-          9 |          1        1.47       22.06
-       10.9 |          1        1.47       23.53
-       12.8 |          1        1.47       25.00
-       13.1 |          1        1.47       26.47
-       19.9 |          1        1.47       27.94
-         69 |          1        1.47       29.41
-         98 |          1        1.47       30.88
-        109 |          1        1.47       32.35
-        112 |          1        1.47       33.82
-        118 |          1        1.47       35.29
-        125 |          1        1.47       36.76
-        138 |          1        1.47       38.24
-        139 |          1        1.47       39.71
-        140 |          1        1.47       41.18
-        145 |          2        2.94       44.12
-     145.17 |          1        1.47       45.59
-        147 |          1        1.47       47.06
-        152 |          1        1.47       48.53
-        154 |          1        1.47       50.00
-        155 |          1        1.47       51.47
-        163 |          2        2.94       54.41
-        165 |          1        1.47       55.88
-        166 |          1        1.47       57.35
-        167 |          1        1.47       58.82
-        168 |          1        1.47       60.29
-        179 |          1        1.47       61.76
-        185 |          3        4.41       66.18
-        186 |          2        2.94       69.12
-        187 |          1        1.47       70.59
-        188 |          1        1.47       72.06
-        190 |          1        1.47       73.53
-        195 |          3        4.41       77.94
-        203 |          1        1.47       79.41
-        207 |          1        1.47       80.88
-        218 |          1        1.47       82.35
-        219 |          1        1.47       83.82
-        234 |          1        1.47       85.29
-        245 |          3        4.41       89.71
-        260 |          1        1.47       91.18
-        269 |          1        1.47       92.65
-        283 |          1        1.47       94.12
-        292 |          1        1.47       95.59
-        293 |          1        1.47       97.06
-        300 |          1        1.47       98.53
-        369 |          1        1.47      100.00
-------------+-----------------------------------
-      Total |         68      100.00
-
-. sum rglu120
-
-    Variable |        Obs        Mean    Std. dev.       Min        Max
--------------+---------------------------------------------------------
-     rglu120 |         68    137.8819    95.47585        4.5        369
-
-. sum mmol_rglu120
-
-    Variable |        Obs        Mean    Std. dev.       Min        Max
--------------+---------------------------------------------------------
-mmol_rglu120 |        657    1.015358    3.198002          0       20.5
-
-. do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD26863.000000"
-
-. tab ogttr_time0
-
-[4.13] Time |
-          0 |      Freq.     Percent        Cum.
-------------+-----------------------------------
-   06:33:00 |          1        1.47        1.47
-   06:35:00 |          1        1.47        2.94
-   06:38:00 |          1        1.47        4.41
-   06:54:00 |          1        1.47        5.88
-   06:55:00 |          1        1.47        7.35
-   06:56:00 |          1        1.47        8.82
-   06:58:00 |          1        1.47       10.29
-   06:59:00 |          1        1.47       11.76
-   07:00:00 |          2        2.94       14.71
-   07:02:00 |          2        2.94       17.65
-   07:03:00 |          2        2.94       20.59
-   07:04:00 |          1        1.47       22.06
-   07:08:00 |          1        1.47       23.53
-   07:09:00 |          1        1.47       25.00
-   07:10:00 |          2        2.94       27.94
-   07:12:00 |          1        1.47       29.41
-   07:19:00 |          1        1.47       30.88
-   07:20:00 |          1        1.47       32.35
-   07:21:00 |          1        1.47       33.82
-   07:28:00 |          1        1.47       35.29
-   07:33:00 |          1        1.47       36.76
-   07:38:00 |          1        1.47       38.24
-   07:41:00 |          1        1.47       39.71
-   07:45:00 |          1        1.47       41.18
-   07:50:00 |          1        1.47       42.65
-   07:53:00 |          2        2.94       45.59
-   08:00:00 |          1        1.47       47.06
-   08:01:00 |          1        1.47       48.53
-   08:05:00 |          2        2.94       51.47
-   08:10:00 |          2        2.94       54.41
-   08:12:00 |          1        1.47       55.88
-   08:15:00 |          1        1.47       57.35
-   08:18:00 |          1        1.47       58.82
-   08:20:00 |          2        2.94       61.76
-   08:21:00 |          1        1.47       63.24
-   08:32:00 |          1        1.47       64.71
-   08:35:00 |          1        1.47       66.18
-   08:44:00 |          1        1.47       67.65
-   08:50:00 |          2        2.94       70.59
-   09:00:00 |          2        2.94       73.53
-   09:03:00 |          1        1.47       75.00
-   09:10:00 |          1        1.47       76.47
-   09:19:00 |          1        1.47       77.94
-   09:20:00 |          4        5.88       83.82
-   09:22:00 |          1        1.47       85.29
-   09:25:00 |          3        4.41       89.71
-   09:26:00 |          1        1.47       91.18
-   09:30:00 |          1        1.47       92.65
-   09:35:00 |          1        1.47       94.12
-   09:36:00 |          1        1.47       95.59
-   09:40:00 |          1        1.47       97.06
-   09:43:00 |          1        1.47       98.53
-   12:50:00 |          1        1.47      100.00
-------------+-----------------------------------
-      Total |         68      100.00
-
-. 
-end of do-file
-
-. do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD26863.000000"
-
-. sum ogttr_time0
-
-    Variable |        Obs        Mean    Std. dev.       Min        Max
--------------+---------------------------------------------------------
- ogttr_time0 |          0
-
-. 
-end of do-file
-
-. tab high_hba1c_1
-
- hba1c>6.5% |      Freq.     Percent        Cum.
-------------+-----------------------------------
-          0 |      1,008       83.58       83.58
-          1 |        198       16.42      100.00
-------------+-----------------------------------
-      Total |      1,206      100.00
-
-. tab high_glu120_1
-
-glucose 120 |
-  minutes > |
-11.1 mmol/L |      Freq.     Percent        Cum.
-------------+-----------------------------------
-          0 |      1,112       92.21       92.21
-          1 |         94        7.79      100.00
-------------+-----------------------------------
-      Total |      1,206      100.00
-
-. bysort glu120_cat: sum mmol_glu120
-
------------------------------------------------------------------------------------------------
--> glu120_cat = 0
-
-    Variable |        Obs        Mean    Std. dev.       Min        Max
--------------+---------------------------------------------------------
- mmol_glu120 |      1,082    6.575591    1.590452       2.28      11.06
-
------------------------------------------------------------------------------------------------
--> glu120_cat = 1
-
-    Variable |        Obs        Mean    Std. dev.       Min        Max
--------------+---------------------------------------------------------
- mmol_glu120 |         92     17.3713    5.837968       11.1      39.46
-
------------------------------------------------------------------------------------------------
--> glu120_cat = .
-
-    Variable |        Obs        Mean    Std. dev.       Min        Max
--------------+---------------------------------------------------------
- mmol_glu120 |          0
-
 
 . pwd
 /Users/juansolon/Documents/GitHub/sampa-mwanza
@@ -473,10 +75,8 @@ Diabetes in SAMPA is defined as **plasma glucose ≥ 11.1 mmol/L at 2 hours** in
 
 
 *        92 
-(      7.8%) had a plasma glucose ≥ 11.1 mmol/L.   
+(      7.8%) had a plasma glucose ≥ 11.1 mmol/L at 2hrs.  
 
-sum ogttr_time0
-sum mmol_rglu120
 
 *Hypertension* 
 
@@ -487,4 +87,517 @@ Hypertension in children = two measurements of systolic or diastolic blood press
 
 
 successfully converted "/Users/juansolon/Documents/GitHub/sampa-mwanza/report-adverse.html"
+
+. di 92/1174
+.07836457
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD02039.000000"
+
+. sum glu120_cat
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+  glu120_cat |      1,174    .0783646    .2688589          0          1
+
+. 
+end of do-file
+
+. ret list
+
+scalars:
+                  r(N) =  1174
+              r(sum_w) =  1174
+               r(mean) =  .0783645655877342
+                r(Var) =  .0722851321107659
+                 r(sd) =  .2688589446359669
+                r(min) =  0
+                r(max) =  1
+                r(sum) =  92
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD02039.000000"
+
+. count if glu120_cat==1
+  92
+
+. 
+end of do-file
+
+. dyndoc report-adverse.txt, replace
+**Adverse Events**  
+*Stata version 17, filename report-adverse.txt  
+
+**SOP 17 Definitions**  
+*Diabetes*   
+
+Diabetes in SAMPA is defined as **plasma glucose ≥ 11.1 mmol/L at 2 hours** in a standard oral glucose tolerance test (OGTT). All participants identified as having diabetes will be re-tested to confirm this and will also be tested for the presence of urinary ketones. Those found to have diabetes on re-testing will be referred to local clinical services together with their SAMPA OGTT results.
+
+
+*      1250 agreed to participate in the study
+
+
+*      1183 had blood at timepoint zero 
+
+
+*      1174 had blood at timepoint 120
+
+
+*        92 
+* *        92 of      1174 (      7.8%) had a plasma glucose ≥ 11.1 mmol/L at 2hrs.  
+
+
+*Hypertension* 
+
+Hypertension in adults = systolic blood pressure ≥140 mmHg and/or diastolic blood pressure ≥90 mmHg on two occasions with the participant at rest.   
+Hypertension in children = two measurements of systolic or diastolic blood pressure greater than the 95th percentile for age, sex and height (SOP 10 which is from Table 1, Sinaiko, Hypertension in children. NEJM 1996; 335: 1968).  
+
+
+
+
+successfully converted "/Users/juansolon/Documents/GitHub/sampa-mwanza/report-adverse.html"
+
+. dyndoc report-adverse.txt, replace
+**Adverse Events**  
+*Stata version 17, filename report-adverse.txt  
+
+**SOP 17 Definitions**  
+*Diabetes*   
+
+Diabetes in SAMPA is defined as **plasma glucose ≥ 11.1 mmol/L at 2 hours** in a standard oral glucose tolerance test (OGTT). All participants identified as having diabetes will be re-tested to confirm this and will also be tested for the presence of urinary ketones. Those found to have diabetes on re-testing will be referred to local clinical services together with their SAMPA OGTT results.
+
+
+*      1250 agreed to participate in the study
+
+
+*      1183 had blood at timepoint zero 
+
+
+*      1174 had blood at timepoint 120
+
+*        92 of      1174 (      7.8%) had a plasma glucose ≥ 11.1 mmol/L at 2hrs.  
+
+
+*Hypertension* 
+
+Hypertension in adults = systolic blood pressure ≥140 mmHg and/or diastolic blood pressure ≥90 mmHg on two occasions with the participant at rest.   
+Hypertension in children = two measurements of systolic or diastolic blood pressure greater than the 95th percentile for age, sex and height (SOP 10 which is from Table 1, Sinaiko, Hypertension in children. NEJM 1996; 335: 1968).  
+
+
+
+
+successfully converted "/Users/juansolon/Documents/GitHub/sampa-mwanza/report-adverse.html"
+
+. d
+
+Contains data from adverse.dta
+ Observations:         1,250                  
+    Variables:           202                  19 Nov 2022 03:25
+-------------------------------------------------------------------------------------------------------------------------------------
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+-------------------------------------------------------------------------------------------------------------------------------------
+record_id       str6    %9s                   
+redcap_data_a~p str10   %10s                  
+cohort          byte    %8.0g                 
+sampa_id        long    %12.0g                
+orgid           str18   %18s                  
+sex             byte    %8.0g                 
+dob             str10   %10s                  
+age             byte    %8.0g                 
+agree           byte    %8.0g                 
+personnel4      str7    %9s                   REDCap ID of Data Entry Personnel
+timestamp4      str19   %19s                  Date of Data Entry
+clinic_date_o~t str10   %10s                  Date of First OGTT Test
+sample_gp       byte    %81.0g     sample_gp
+                                              Which group does the person belong to?
+standard_ogtt   byte    %16.0g     standard_ogtt
+                                              For adult participants agreeing to do Standard OGTT but are not in the indepth s
+fasting         byte    %31.0g     fasting    What has the participant eaten or drunk in the last 8 hours OR since dinner last
+ogtt_unit       byte    %8.0g      ogtt_unit
+                                              Unit of measurement
+ogtt_time0      str8    %9s                   Time 0 minutes
+time0_w         str20   %20s                  Sample ID of Time 0: Onsite Serum
+time0_x         str21   %21s                  Sample ID of Time 0: Aliquot X (Serum)
+time0_y         str21   %21s                  Sample ID of Time 0: Aliquot Y (Serum)
+time0_z         byte    %8.0g                 Sample ID of Time 0: Aliquot Z (Serum)
+time0_a         str21   %21s                  Sample ID of Time 0: Aliquot A (EDTA)
+time0_b         str21   %21s                  Sample ID of Time 0: Aliquot B (EDTA)
+time0_c         str21   %21s                  Sample ID of Time 0: Aliquot C (EDTA)
+time0_e         str20   %20s                  Sample ID of Time 0: Aliquot E (Cooled EDTA)
+time0_f         str20   %20s                  Sample ID of Time 0: Aliquot F (Cooled EDTA)
+time0_g         str20   %20s                  Sample ID of Time 0: Aliquot G (Cooled EDTA)
+time0_h         str20   %20s                  Sample ID of Time 0: Aliquot H (Aprotinin)
+time0_j         str20   %20s                  Sample ID of Time 0: Aliquot J (Aprotinin)
+time0_k         str20   %20s                  Sample ID of Time 0: Aliquot K (Aprotinin)
+ogtt_sample_s~m byte    %8.0g      ogtt_sample_serum
+                                              Fasting serum
+ogtt_sample_~a0 byte    %8.0g      ogtt_sample_edta0
+                                              Fasting EDTA
+ogtt_sample_~o0 byte    %8.0g      ogtt_sample_apro0
+                                              Fasting aprotinin
+ogtt_sa~a0_cold byte    %8.0g      ogtt_sample_edta0_cold
+                                              Fasting cooled EDTA
+ogtt_comment~e0 strL    %9s                   Explain any missing samples or problems in sample collection
+hba1c           float   %9.0g                 Hba1c result [%] from baseline sample In OGTT
+glu0            float   %9.0g                 OGTT result_Time0
+mmol_glu0       float   %9.0g                 Timepoint 0 Glucose in mmol/L
+out_glu0        byte    %8.0g                 glucose 0 minutes > 24.6
+glu0_missing    byte    %24.0g     glu0_missing
+                                              Any problems with OGTT Results?
+glu0_mis_spec~y str10   %10s                  Others, specify
+cpeptide0       float   %9.0g                 C_Peptide_Time0
+cpeptide0_pmol  float   %9.0g                 Timepoint 0 C-peptide in pmol/L unit
+insulin0        float   %9.0g                 Insulin_Time0
+insulin0_pmol   float   %9.0g                 Timepoint 0 Insulin in pmol/L unit
+ogtt_time15     str5    %9s                   Time 15 minutes
+time15_z        byte    %8.0g                 Sample ID of Time 15: Onsite EDTA
+time15_a        str21   %21s                  Sample ID of Time 15: Aliquot A (EDTA)
+time15_b        str21   %21s                  Sample ID of Time 15: Aliquot B (EDTA)
+time15_c        str21   %21s                  Sample ID of Time 15: Aliquot C (EDTA)
+ogtt_sample_~15 byte    %8.0g      ogtt_sample_edta15
+                                              15 min EDTA
+ogtt_comment~15 strL    %9s                   Explain any missing samples or problems in sample collection
+glu15           float   %9.0g                 OGTT result_Time15
+mmol_glu15      float   %9.0g                 Timepoint 15 Glucose in mmol/L
+out_glu15       byte    %8.0g                 glucose 15 minutes > 24.6
+glu15_missing   byte    %24.0g     glu15_missing
+                                              Any problems with OGTT Results?
+glu15_mis_spe~y strL    %9s                   Others, specify
+cpeptide15      byte    %8.0g                 C_Peptide_Time15
+insulin15       float   %9.0g                 Insulin_Time15
+ogtt_time30     str5    %9s                   Time 30 minutes
+time30_z        byte    %8.0g                 Sample ID of Time 30: Onsite EDTA
+time30_a        str21   %21s                  Sample ID of Time 30: Aliquot A (EDTA)
+time30_b        str21   %21s                  Sample ID of Time 30: Aliquot B (EDTA)
+time30_c        str21   %21s                  Sample ID of Time 30: Aliquot C (EDTA)
+time30_e        str20   %20s                  Sample ID of Time 30: Aliquot E (Cooled EDTA)
+time30_f        str20   %20s                  Sample ID of Time 30: Aliquot F (Cooled EDTA)
+time30_g        str20   %20s                  Sample ID of Time 30: Aliquot G (Cooled EDTA)
+time30_h        str20   %20s                  Sample ID of Time 30: Aliquot H (Aprotinin)
+time30_j        str20   %20s                  Sample ID of Time 30: Aliquot J (Aprotinin)
+time30_k        str20   %20s                  Sample ID of Time 30: Aliquot K (Aprotinin)
+ogtt_sample~a30 byte    %8.0g      ogtt_sample_edta30
+                                              30 min EDTA
+ogtt_sample~o30 byte    %8.0g      ogtt_sample_apro30
+                                              30 min aprotinin
+ogtt_sa~30_cold byte    %8.0g      ogtt_sample_edta30_cold
+                                              30 min cooled EDTA
+ogtt_comment~30 strL    %9s                   Explain any missing samples or problems in sample collection
+glu30           float   %9.0g                 OGTT result_Time30
+mmol_glu30      float   %9.0g                 Timepoint 30 Glucose in mmol/L
+out_glu30       byte    %8.0g                 glucose 30 minutes > 24.6
+glu30_missing   byte    %24.0g     glu30_missing
+                                              Any problems with OGTT Results?
+glu30_mis_spe~y strL    %9s                   Others, specify
+cpeptide30      byte    %8.0g                 C_Peptide_Time30
+insulin30       byte    %8.0g                 Insulin_Time30
+ogtt_time45     str5    %9s                   Time 45 minutes
+time45_z        byte    %8.0g                 Sample ID of Time 45: Onsite EDTA
+time45_a        str24   %24s                  Sample ID of Time 45: Aliquot A (EDTA)
+time45_b        str24   %24s                  Sample ID of Time 45: Aliquot B (EDTA)
+time45_c        str38   %38s                  Sample ID of Time 45: Aliquot C (EDTA)
+ogtt_sample_~45 byte    %8.0g      ogtt_sample_edta45
+                                              45 min EDTA
+ogtt_comment~45 strL    %9s                   Explain any missing samples or problems in sample collection
+glu45           float   %9.0g                 OGTT result_Time45
+mmol_glu45      float   %9.0g                 Timepoint 45 Glucose in mmol/L
+out_glu45       byte    %8.0g                 glucose 45 minutes > 24.6
+glu45_missing   byte    %24.0g     glu45_missing
+                                              Any problems with OGTT Results?
+glu45_mis_spe~y strL    %9s                   Others, specify
+cpeptide45      byte    %8.0g                 C_Peptide_Time45
+insulin45       byte    %8.0g                 Insulin_Time45
+ogtt_time60     str5    %9s                   Time 60 minutes
+time60_z        byte    %8.0g                 Sample ID of Time 60: Onsite EDTA
+time60_a        str21   %21s                  Sample ID of Time 60: Aliquot A (EDTA)
+time60_b        str21   %21s                  Sample ID of Time 60: Aliquot B (EDTA)
+time60_c        str21   %21s                  Sample ID of Time 60: Aliquot C (EDTA)
+time60_e        str20   %20s                  Sample ID of Time 60: Aliquot E (Cooled EDTA)
+time60_f        str20   %20s                  Sample ID of Time 60: Aliquot F (Cooled EDTA)
+time60_g        str20   %20s                  Sample ID of Time 60: Aliquot G (Cooled EDTA)
+time60_h        str20   %20s                  Sample ID of Time 60: Aliquot H (Aprotinin)
+time60_j        str20   %20s                  Sample ID of Time 60: Aliquot J (Aprotinin)
+time60_k        str20   %20s                  Sample ID of Time 60: Aliquot K (Aprotinin)
+ogtt_sample~a60 byte    %8.0g      ogtt_sample_edta60
+                                              60 min EDTA
+ogtt_sample~o60 byte    %8.0g      ogtt_sample_apro60
+                                              60 min aprotinin
+ogtt_sa~60_cold byte    %8.0g      ogtt_sample_edta60_cold
+                                              60 min cooled EDTA
+ogtt_comment~60 strL    %9s                   Explain any missing samples or problems in sample collection
+glu60           float   %9.0g                 OGTT result_Time60
+mmol_glu60      float   %9.0g                 Timepoint 60 Glucose in mmol/L
+out_glu60       byte    %8.0g                 glucose 60 minutes > 24.6
+glu60_missing   byte    %24.0g     glu60_missing
+                                              Any problems with OGTT Results?
+glu60_mis_spe~y strL    %9s                   Others, specify
+cpeptide60      float   %9.0g                 C_Peptide_Time60
+cpeptide60_pmol float   %9.0g                 Timepoint 60 C-peptide in pmol/L unit
+insulin60       float   %9.0g                 Insulin_Time60
+insulin60_pmol  float   %9.0g                 Timepoint 60 Insulin in pmol/L unit
+ogtt_time90     str5    %9s                   Time 90 minutes
+time90_z        byte    %8.0g                 Sample ID of Time 90: Onsite EDTA
+time90_a        str21   %21s                  Sample ID of Time 90: Aliquot A (EDTA)
+time90_b        str21   %21s                  Sample ID of Time 90: Aliquot B (EDTA)
+time90_c        str21   %21s                  Sample ID of Time 90: Aliquot C (EDTA)
+time90_e        str20   %20s                  Sample ID of Time 90: Aliquot E (Cooled EDTA)
+time90_f        str20   %20s                  Sample ID of Time 90: Aliquot F (Cooled EDTA)
+time90_g        str20   %20s                  Sample ID of Time 90: Aliquot G (Cooled EDTA)
+time90_h        str20   %20s                  Sample ID of Time 90: Aliquot H (Aprotinin)
+time90_j        str20   %20s                  Sample ID of Time 90: Aliquot J (Aprotinin)
+time90_k        str20   %20s                  Sample ID of Time 90: Aliquot K (Aprotinin)
+ogtt_sample~a90 byte    %8.0g      ogtt_sample_edta90
+                                              90 min EDTA
+ogtt_sample~o90 byte    %8.0g      ogtt_sample_apro90
+                                              90 min aprotinin
+ogtt_sa~90_cold byte    %8.0g      ogtt_sample_edta90_cold
+                                              90 min cooled EDTA
+ogtt_comment~90 str64   %64s                  Explain any missing samples or problems in sample collection
+glu90           float   %9.0g                 OGTT result_Time90
+mmol_glu90      float   %9.0g                 Timepoint 90 Glucose in mmol/L
+out_glu90       byte    %8.0g                 glucose 90 minutes > 24.6
+glu90_missing   byte    %24.0g     glu90_missing
+                                              Any problems with OGTT Results?
+glu90_mis_spe~y str45   %45s                  Others, specify
+cpeptide90      byte    %8.0g                 C_Peptide_Time90
+insulin90       byte    %8.0g                 Insulin_Time90
+ogtt_time120    str5    %9s                   Time 120 minutes
+time120_z       byte    %8.0g                 Sample ID of Time 120: Onsite EDTA
+time120_a       str21   %21s                  Sample ID of Time 120: Aliquot A (EDTA)
+time120_b       str21   %21s                  Sample ID of Time 120: Aliquot B (EDTA)
+time120_c       str21   %21s                  Sample ID of Time 120: Aliquot C (EDTA)
+time120_e       str20   %20s                  Sample ID of Time 120: Aliquot E (Cooled EDTA)
+time120_f       str20   %20s                  Sample ID of Time 120: Aliquot F (Cooled EDTA)
+time120_g       str20   %20s                  Sample ID of Time 120: Aliquot G (Cooled EDTA)
+time120_h       str20   %20s                  Sample ID of Time 120: Aliquot H (Aprotinin)
+time120_j       str20   %20s                  Sample ID of Time 120: Aliquot J (Aprotinin)
+time120_k       str20   %20s                  Sample ID of Time 120: Aliquot K (Aprotinin)
+ogtt_sampl~a120 byte    %8.0g      ogtt_sample_edta120
+                                              120 min EDTA
+ogtt_sampl~o120 byte    %8.0g      ogtt_sample_apro120
+                                              120 min aprotinin
+ogtt_sa~20_cold byte    %8.0g      ogtt_sample_edta120_cold
+                                              120 min cooled EDTA
+ogtt_commen~120 strL    %9s                   Explain any missing samples or problems in sample collection
+glu120          float   %9.0g                 OGTT result_Time120
+mmol_glu120     float   %9.0g                 Timepoint 120 Glucose in mmol/L
+out_glu120      byte    %8.0g                 glucose 120 minutes > 24.6
+glu120_missing  byte    %24.0g     glu120_missing
+                                              Any problems with OGTT Results?
+glu120_mis_sp~y strL    %9s                   Others, specify
+cpeptide120     float   %9.0g                 C_Peptide_Time120
+cpeptide120_p~l float   %9.0g                 Timepoint 120 C-peptide in pmol/L unit
+insulin120      float   %9.0g                 Insulin_Time120
+insulin120_pmol float   %9.0g                 Timepoint 120 Insulin in pmol/L unit
+high_hba1c_1    byte    %8.0g                 hba1c>6.5%
+high_glu120_1   byte    %8.0g                 glucose 120 minutes > 11.1 mmol/L
+repeat_test_n~d byte    %36.0g     repeat_test_needed
+                                              Does this participant in their first clinic visit have high HbA1c or glucose lev
+repeat_date     str10   %10s                  Date of second OGTT appointment booked
+personnel41     str7    %9s                   REDCap ID of Data Entry Personnel
+timestamp41     str19   %19s                  Date of Data Entry
+ogttr_confirm   byte    %8.0g                 Does the participant need to repeat OGTT?
+rogtt_unit      byte    %8.0g                 
+ogttr_time0     str8    %9s                   [4.13] Time 0
+ogttr_time0_1   str18   %18s                  Sample ID of Time 0: Onsite EDTA
+ogttr_sample_~a byte    %8.0g      ogttr_sample_edta
+                                              [4.14] Fasting EDTA
+ogttr_commen~e0 str4    %9s                   [4.15] Explain any missing samples or problems in sample collection
+rglu0           float   %9.0g                 Repeat OGTT result_Time0
+rglu0_missing   byte    %24.0g     rglu0_missing
+                                              Any problems?
+rglu0_mis_spe~y byte    %8.0g                 Others, specify
+rhba1c          byte    %8.0g                 Repeat HbA1c result
+ogttr_time30    byte    %8.0g                 [4.13] Time 30
+ogttr_time30_1  byte    %8.0g                 Sample ID of Time 30: Onsite EDTA
+ogttr_sample~30 byte    %8.0g      ogttr_sample_edta30
+                                              [4.14] 30 min EDTA
+ogttr_commen~30 byte    %8.0g                 [4.15] Explain any missing samples or problems in sample collection
+rglu30          byte    %8.0g                 Repeat OGTT result_Time30
+rglu30_missing  byte    %24.0g     rglu30_missing
+                                              Any problems?
+rglu30_mis_sp~y byte    %8.0g                 Others, specify
+ogttr_time120   str8    %9s                   [4.13] Time 120
+ogttr_time120_1 str18   %18s                  Sample ID of Time 120: Onsite EDTA
+ogttr_sampl~120 byte    %8.0g      ogttr_sample_edta120
+                                              [4.14] 120 min EDTA
+ogttr_comme~120 str4    %9s                   [4.15] Explain any missing samples or problems in sample collection
+rglu120         float   %9.0g                 Repeat OGTT result_Time120
+rglu120_missing byte    %24.0g     rglu120_missing
+                                              Any problems?
+rglu120_mis_s~y byte    %8.0g                 Others, specify
+mmol_rglu120    float   %9.0g                 Timepoint 120 Repeat OGTT glucose in mmol
+high_glu120_2   byte    %8.0g                 glucose 120 minutes > 11.1
+dia_referral    byte    %8.0g      dia_referral
+                                              [5.13] Does this person need to be referred to the site physician because their
+glu_comment     strL    %9s                   [5.14] Comments on any problems
+_merge          byte    %23.0g     _merge     Matching result from merge
+hba1c_cat       float   %9.0g                 
+glu120_cat      float   %9.0g                 
+-------------------------------------------------------------------------------------------------------------------------------------
+Sorted by: sampa_id
+
+. tab glu120_cat high_glu120_2
+
+           | glucose 120 minutes >
+           |         11.1
+glu120_cat |         0          1 |     Total
+-----------+----------------------+----------
+         0 |     1,005          1 |     1,006 
+         1 |        73         17 |        90 
+-----------+----------------------+----------
+     Total |     1,078         18 |     1,096 
+
+. tab glu120_cat high_glu120_2, mis
+
+           |    glucose 120 minutes > 11.1
+glu120_cat |         0          1          . |     Total
+-----------+---------------------------------+----------
+         0 |     1,005          1         76 |     1,082 
+         1 |        73         17          2 |        92 
+         . |        29          0         47 |        76 
+-----------+---------------------------------+----------
+     Total |     1,107         18        125 |     1,250 
+
+. bysort high_glu120_2: sum mmol_glu120
+
+-------------------------------------------------------------------------------------
+-> high_glu120_2 = 0
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+ mmol_glu120 |      1,078    7.351401    3.521992       2.28      39.46
+
+-------------------------------------------------------------------------------------
+-> high_glu120_2 = 1
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+ mmol_glu120 |         18    15.77778    4.372273      10.44      26.39
+
+-------------------------------------------------------------------------------------
+-> high_glu120_2 = .
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+ mmol_glu120 |         78    6.463333    3.014318        3.1      23.78
+
+
+. br high_glu120_2 high_glu120_1 mmol_glu120 glu120_cat
+
+. tab glu120_cat high_glu120_2, mis
+
+           |    glucose 120 minutes > 11.1
+glu120_cat |         0          1          . |     Total
+-----------+---------------------------------+----------
+         0 |     1,005          1         76 |     1,082 
+         1 |        73         17          2 |        92 
+         . |        29          0         47 |        76 
+-----------+---------------------------------+----------
+     Total |     1,107         18        125 |     1,250 
+
+. br cohort sampa_id high_glu120_2 high_glu120_1 mmol_glu120 glu120_cat if  glu120_ca
+> t==1 & high_glu120_2==0
+
+. tab glu120_cat if  mmol_glu120==.
+no observations
+
+. list glu120_cat if  mmol_glu120==.
+
+      +----------+
+      | glu120~t |
+      |----------|
+  11. |        . |
+  14. |        . |
+ 123. |        . |
+ 167. |        . |
+ 234. |        . |
+      |----------|
+ 277. |        . |
+ 369. |        . |
+ 485. |        . |
+ 497. |        . |
+ 510. |        . |
+      |----------|
+ 574. |        . |
+ 603. |        . |
+ 649. |        . |
+ 753. |        . |
+ 780. |        . |
+      |----------|
+ 799. |        . |
+ 814. |        . |
+ 875. |        . |
+ 888. |        . |
+ 900. |        . |
+      |----------|
+ 909. |        . |
+ 952. |        . |
+1024. |        . |
+1027. |        . |
+1038. |        . |
+      |----------|
+1054. |        . |
+1072. |        . |
+1100. |        . |
+1107. |        . |
+1128. |        . |
+      |----------|
+1130. |        . |
+1131. |        . |
+1133. |        . |
+1134. |        . |
+1136. |        . |
+      |----------|
+1140. |        . |
+1141. |        . |
+1144. |        . |
+1151. |        . |
+1152. |        . |
+      |----------|
+1154. |        . |
+1156. |        . |
+1157. |        . |
+1159. |        . |
+1164. |        . |
+      |----------|
+1165. |        . |
+1168. |        . |
+1172. |        . |
+1176. |        . |
+1178. |        . |
+      |----------|
+1179. |        . |
+1181. |        . |
+1182. |        . |
+1183. |        . |
+1189. |        . |
+      |----------|
+1194. |        . |
+1195. |        . |
+1201. |        . |
+1205. |        . |
+1210. |        . |
+      |----------|
+1213. |        . |
+1215. |        . |
+1220. |        . |
+1221. |        . |
+1225. |        . |
+      |----------|
+1227. |        . |
+1228. |        . |
+1229. |        . |
+1235. |        . |
+1236. |        . |
+      |----------|
+1238. |        . |
+1243. |        . |
+1244. |        . |
+1246. |        . |
+1247. |        . |
+      |----------|
+1249. |        . |
+      +----------+
+
+. br glu120_cat mmol_glu120 if  mmol_glu120==.
 

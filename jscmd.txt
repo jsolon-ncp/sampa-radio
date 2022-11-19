@@ -1,23 +1,18 @@
-do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD26863.000000"
-pwd
-do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD26863.000000"
-do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD26863.000000"
-tab ogttr_confirm
-sum rhba1c
-tab rhba1c
-tab ogttr_time30
-sum rglu0
-sum rglu120
-sum rglu120_missing
-tab rglu120
-scatter rglu120 mmol_rglu120
-tab rglu120
-sum rglu120
-sum mmol_rglu120
-do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD26863.000000"
-do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD26863.000000"
-tab high_hba1c_1
-tab high_glu120_1
-bysort glu120_cat: sum mmol_glu120
 pwd
 dyndoc report-adverse.txt, replace
+di 92/1174
+do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD02039.000000"
+ret list
+do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD02039.000000"
+dyndoc report-adverse.txt, replace
+dyndoc report-adverse.txt, replace
+d
+tab glu120_cat high_glu120_2
+tab glu120_cat high_glu120_2, mis
+bysort high_glu120_2: sum mmol_glu120
+br high_glu120_2 high_glu120_1 mmol_glu120 glu120_cat
+tab glu120_cat high_glu120_2, mis
+br cohort sampa_id high_glu120_2 high_glu120_1 mmol_glu120 glu120_cat if  glu120_cat==1 & high_glu120_2==0
+tab glu120_cat if  mmol_glu120==.
+list glu120_cat if  mmol_glu120==.
+br glu120_cat mmol_glu120 if  mmol_glu120==.
