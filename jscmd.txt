@@ -1,10 +1,14 @@
-do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD02039.000000"
-do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD02039.000000"
-table cohort, statistic(mean age)
-do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD02039.000000"
-table cohort, statistic(mean age)
-tab sys_cat
-table cohort, statistic(freq sys_cat)
-table cohort, statistic(N sys_cat)
-table cohort, statistic(n sys_cat)
-table cohort, statistic(n sys_cat) stat(percent sys_cat)
+do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD74185.000000"
+tab incohort
+d dob
+table sex age cohort
+table (sex) cohort, statistics(mean age) stat(sd age)
+do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD74185.000000"
+do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD74185.000000"
+do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD74185.000000"
+do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD74185.000000"
+do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD74185.000000"
+do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD74185.000000"
+do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD74185.000000"
+do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD74185.000000"
+tab consent_basic cohort
