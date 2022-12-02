@@ -21,3 +21,6 @@ tab high_glu120_1
 bysort glu120_cat: sum mmol_glu120
 pwd
 dyndoc report-adverse.txt, replace
+kappsi 0.8, diff(0.2) p1(0.1) p2(0.1) round
+net install kappsi
+net search kappsi

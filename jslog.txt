@@ -488,3 +488,16 @@ Hypertension in children = two measurements of systolic or diastolic blood press
 
 successfully converted "/Users/juansolon/Documents/GitHub/sampa-mwanza/report-adverse.html"
 
+. kappsi 0.8, diff(0.2) p1(0.1) p2(0.1) round
+command kappsi is unrecognized
+r(199);
+
+. net install kappsi
+file http://fmwww.bc.edu/RePEc/bocode/t/kappsi.pkg not found
+could not load kappsi.pkg from http://fmwww.bc.edu/RePEc/bocode/t/
+r(601);
+
+. net search kappsi
+(contacting http://www.stata.com)
+no matches
+
