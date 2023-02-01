@@ -1,14 +1,15 @@
 **Adverse Events**  
 *Stata version 17, filename report-adverse.txt  
 
-**SOP 17 Definitions**  
-*Diabetes*   
+**DIABETES**   
 
-Diabetes in SAMPA is defined as **plasma glucose ≥ 11.1 mmol/L at 2 hours** in a standard oral glucose tolerance test (OGTT). All participants identified as having diabetes will be re-tested to confirm this and will also be tested for the presence of urinary ketones. Those found to have diabetes on re-testing will be referred to local clinical services together with their SAMPA OGTT results.
+*Diabetes in SAMPA is defined as **plasma glucose ≥ 11.1 mmol/L at 2 hours** in a standard oral glucose tolerance test (OGTT). All participants identified as having diabetes will be re-tested to confirm this and will also be tested for the presence of urinary ketones. Those found to have diabetes on re-testing will be referred to local clinical services together with their SAMPA OGTT results.*
 
 <<dd_do: quietly>>
-cd $sampamwanza
-use adverse.dta, clear
+cd $sampamwanza/02-data-temp
+
+use sampa-all.dta, clear
+*egen glu120_cat = cut(mmol_glu120), at(0 11.1 99) icodes
 /*
 tab cohort glu120_cat, col row chi
 
@@ -41,20 +42,108 @@ sum mmol_glu120
 * <<dd_display: %9.0g r(N)>> had blood at timepoint 120
 
 <<dd_do: quietly>>
-count if glu120_cat==1
-<</dd_do>>
-
-* <<dd_display: %9.0g r(N)>> 
-<<dd_do: quietly>>
 sum glu120_cat
 <</dd_do>>
-(<<dd_display: %9.2g r(mean)*100>>%) had a plasma glucose ≥ 11.1 mmol/L at 2hrs.  
+* <<dd_display: %9.0g r(sum)>> of <<dd_display: %9.0g r(N)>> (<<dd_display: %9.2g r(mean)*100>>%) had a plasma glucose ≥ 11.1 mmol/L at 2hrs. As per protocol, these should have repeat OGTTs to confirm diabetes.
+
+<<dd_do: quietly>>
+sum rglu120_cat
+<</dd_do>>
+
+* <<dd_display: %9.0g r(N)>> participants had repeat OGTTs. However not all needed to repeat OGTTs.
+
+<<dd_do: quietly>>
+count if glu120_cat==1 & rglu120_cat !=.
+<</dd_do>>
+
+* Only <<dd_display: %9.0g r(N)>> with repeat OGTTs had an elevated OGTT timepoint 120 at baseline 
+
+	- Of the <<dd_display: %9.0g r(N)>>,
+<<dd_do: quietly>>
+sum rglu120_cat if rglu120_cat==1 & glu120_cat ==1
+<</dd_do>>
+<<dd_display: %9.0g r(N)>> had an elevated plasma glucose.
+
+<<dd_do: quietly>>
+count if glu120_cat==0 & rglu120_cat !=.
+<</dd_do>>
+
+* <<dd_display: %9.0g r(N)>> of those who had repeat OGTTs did not have an elevated OGTT timepoint 120 at baseline.  
+
+**Protocol Deviation**  : Repeat OGTTs were performed when not indicated based on the initial OGTT. 
+
+*Urine Ketones*
+
+<<dd_do: quietly>>
+count if u_ketone !=. 
+<</dd_do>>
+
+* <<dd_display: %9.0g r(N)>> urine samples were tested for ketones.  
+
+<<dd_do: quietly>>
+count if u_ketone !=. & u_ketone >0
+<</dd_do>>
+
+* <<dd_display: %9.0g r(N)>> urine samples had ketones
+
+<<dd_do: quietly>>
+sum glu120_cat if u_ketone !=. & u_ketone >0 
+<</dd_do>>
+
+* <<dd_display: %9.0g r(N)>> participants with ketones had an initial OGTT test and <<dd_display: %9.0g r(sum)>> had elevated glucose levels.  
+
+<<dd_do: quietly>>
+sum hba1c_cat if u_ketone !=. & u_ketone >0 
+<</dd_do>>
+
+* <<dd_display: %9.0g r(N)>> participants with ketones had an hba1c test and <<dd_display: %9.0g r(sum)>> had elevated Hba1c levels.  
 
 
-*Hypertension* 
+**HYPERTENSION IN ADULTS** 
 
-Hypertension in adults = systolic blood pressure ≥140 mmHg and/or diastolic blood pressure ≥90 mmHg on two occasions with the participant at rest.   
-Hypertension in children = two measurements of systolic or diastolic blood pressure greater than the 95th percentile for age, sex and height (SOP 10 which is from Table 1, Sinaiko, Hypertension in children. NEJM 1996; 335: 1968).  
+*From SOP 10:  
+Hypertension in adults = systolic blood pressure ≥140 mmHg and/or diastolic blood pressure ≥90 mmHg on two occasions with the participant at rest.  We have 3 measurements for blood pressure.  In REDCap, there is a variable which is an average of the 3 measurements (*systolic* and *diastolic*).  If found with an average systolic blood pressure ≥ 200mmHg and/or diastolic blood pressure ≥ 120mmHg, this shall be classified as very severe hypertension and should be discussed with the senior clinician in the team for further management or referral.*
+
+<<dd_do: quietly>>
+sum htn if cohort > 2
+<</dd_do>>
+
+* <<dd_display: %9.0g r(sum)>> of <<dd_display: r(N)>> (<<dd_display:%9.2g r(mean)*100>>%) were hypertensive.  
+
+<<dd_do: quietly>>
+sum htn_severe if cohort > 2
+<</dd_do>>
+
+* <<dd_display: %9.0g r(sum)>> of <<dd_display: r(N)>> (<<dd_display: %9.2g r(mean)*100>>%) had severe hypertension.  
+
+**Protocol**  : Participants with severe hyperetension should be referred to senior clinician. **VERIFY** 
+
+
+**HYPERTENSION IN CHILDREN**
+
+*FROM SOP 10:  
+Hypertension in children = two measurements of systolic or diastolic blood pressure greater than the 95th percentile for age, sex and height (SOP 10 which is from Table 1, Sinaiko, Hypertension in children. NEJM 1996; 335: 1968).  For children we will use age, height and sex-specific cut-offs.[1] Hypertension in children and adolescents is defined as systolic BP (SBP) and/or diastolic BP (DBP), that is, on repeated measurement >95th percentile. BP between the 90th and 95th percentile in childhood had been designated "high normal." Below is part of the table from this publication [1] with 90th and 95th percentiles for children of ages expected in SAMPA. Cut-offs vary with height as well so those below represent the 25th percentile for height, selected since many SAMPA children are stunted.*
+
+*TO DO*
+ 
+**PREGNANCY**
+
+**HIV**
+
+
+**Other blood results**
+total_cho
+ldl_cho
+hdl_cho
+trig
+lipid_unit
+hgb
+rbc
+wbc
+platelet
+lipase
+crp
+
 
 
 

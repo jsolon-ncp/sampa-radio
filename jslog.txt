@@ -14,12 +14,31 @@
 . global dropbox = "~/Cox working group Dropbox/"
 
 . 
+. /*Datasets
+> All_CRF14_Computed_tomography_CT_scans.dta
+> All_Crf10_Referral.dta
+> All_Crf11a_Urine_And_Feces_Collection.dta
+> All_Crf11b_Urine_And_Feces_Results.dta
+> All_Crf12_Diet.dta
+> All_Crf2_demography_and_ses.dta
+> All_Crf3_Clinical_History_And_Exam.dta
+> All_Crf4a_Blood_Sampling_And_Processing.dta
+> All_Crf4b_Repeat_Ogtt.dta
+> All_Crf5_More_Blood_Test_Results.dta
+> All_Crf6_Anthropometry.dta
+> All_Crf7_Body_Composition.dta
+> All_crf13_Abdomen_Uss.dta
+> All_CRF14_Computed_tomography_CT_scans.dta
+> */
+. 
 . cd "$dropbox"
 /Users/juansolon/Cox working group Dropbox
 
-. use "SAMPA/DATA monitoring/Data/SAMPA/All_Crf4a_Blood_Sampling_And_Processing.dta", clear
+. 
+. use "SAMPA/DATA monitoring/Data/SAMPA/All_crf1_eligibility_consent.dta", clear
 
-. merge 1:1 sampa_id using "SAMPA/DATA monitoring/Data/SAMPA/All_Crf4b_Repeat_Ogtt.dta" 
+. 
+. merge 1:1 cohort sampa_id using "SAMPA/DATA monitoring/Data/SAMPA/All_Crf2_demography_and_ses.dta" 
 
     Result                      Number of obs
     -----------------------------------------
@@ -27,466 +46,1197 @@
     Matched                             1,250  (_merge==3)
     -----------------------------------------
 
+.         rename _merge merge1
+
+. merge 1:1 cohort sampa_id using "SAMPA/DATA monitoring/Data/SAMPA/All_Crf4a_Blood_Sampling_And_Processing.dta"
+>  
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                             0
+    Matched                             1,250  (_merge==3)
+    -----------------------------------------
+
+.         rename _merge merge
+
+. merge 1:1 cohort sampa_id using "SAMPA/DATA monitoring/Data/SAMPA/All_Crf3_Clinical_History_And_Exam.dta" 
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                             0
+    Matched                             1,250  (_merge==3)
+    -----------------------------------------
+
+.         rename _merge merge3
+
+. merge 1:1 cohort sampa_id using "SAMPA/DATA monitoring/Data/SAMPA/All_Crf4b_Repeat_Ogtt.dta" 
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                             0
+    Matched                             1,250  (_merge==3)
+    -----------------------------------------
+
+.         rename _merge merge4
+
+. merge 1:1 cohort sampa_id using "SAMPA/DATA monitoring/Data/SAMPA/All_Crf5_More_Blood_Test_Results.dta" 
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                             0
+    Matched                             1,250  (_merge==3)
+    -----------------------------------------
+
+.         rename _merge merge5
+
+. merge 1:1 cohort sampa_id using "SAMPA/DATA monitoring/Data/SAMPA/All_Crf6_Anthropometry.dta" 
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                             0
+    Matched                             1,250  (_merge==3)
+    -----------------------------------------
+
+.         rename _merge merge6
+
+. merge 1:1 cohort sampa_id using "SAMPA/DATA monitoring/Data/SAMPA/All_Crf7_Body_Composition.dta" 
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                             0
+    Matched                             1,250  (_merge==3)
+    -----------------------------------------
+
+.         rename _merge merge7
+
+. merge 1:1 cohort sampa_id using "SAMPA/DATA monitoring/Data/SAMPA/All_Crf10_Referral.dta" 
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                             0
+    Matched                             1,250  (_merge==3)
+    -----------------------------------------
+
+.         rename _merge merge8
+
+. merge 1:1 cohort sampa_id using "SAMPA/DATA monitoring/Data/SAMPA/All_Crf11a_Urine_And_Feces_Collection.dta" 
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                             0
+    Matched                             1,250  (_merge==3)
+    -----------------------------------------
+
+.         rename _merge merge9
+
+. merge 1:1 cohort sampa_id using "SAMPA/DATA monitoring/Data/SAMPA/All_Crf11b_Urine_And_Feces_Results.dta" 
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                             0
+    Matched                             1,250  (_merge==3)
+    -----------------------------------------
+
+.         rename _merge merge10
+
+. *merge 1:1 cohort sampa_id using "SAMPA/DATA monitoring/Data/SAMPA/All_Crf12_Diet.dta" 
+.         *rename _merge merge12
+. merge 1:1 cohort sampa_id using "SAMPA/DATA monitoring/Data/SAMPA/All_crf13_Abdomen_Uss.dta"
+(variable record_id was str6, now strL to accommodate using data's values)
+(variable redcap_data_access_group was str10, now strL to accommodate using data's values)
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                             0
+    Matched                             1,250  (_merge==3)
+    -----------------------------------------
+
+.         rename _merge merge11
+
+.         
+. tempfile 1 2 3
+
+. 
+. save `1'
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_74185.000001 saved as .dta format
+
+. 
+. *CT Scan CRF has string cohort id
+. use "SAMPA/DATA monitoring/Data/SAMPA/All_CRF14_Computed_tomography_CT_scans.dta", clear
+
+. levelsof cohort
+`" FCTMRISP",,"received_453793433303595.jpeg",",",",",,,,,,,0"' `" FCTMRISP",,"received_453793433303595.jpeg","S
+> AMPA_50269",",",",,,,,,,2"' `" FCTMRISP",,"received_453793433303595.jpeg","SAMPA_50366",",",",,,,,,,2"' `" FCT
+> MRISP",,"received_453793433303595.jpeg","SAMPA_50645",",",",,,,,,,2"' `" FCTMRISP",,"received_453793433303595.
+> jpeg","SAMPA_50651",",",",,,,,,,2"' `" FCTMRISP",,"received_453793433303595.jpeg","SAMPA_50707",",",",,,,,,,2"
+> ' `" FCTMRISP",,"received_453793433303595.jpeg","SAMPA_50858.exe",",",",,,,,,,2"' `" FPCR"' `"1"' `"2"' `"3"' 
+> `"4"' `"5"' `"6"'
+
+. drop if cohort ==""
+(14 observations deleted)
+
+. drop if cohort!="1" & cohort!="2" & cohort!="3" & cohort!="4" & cohort!="5" & cohort!="6"
+(13 observations deleted)
+
+. levelsof cohort
+`"1"' `"2"' `"3"' `"4"' `"5"' `"6"'
+
+. destring cohort, replace
+cohort: all characters numeric; replaced as byte
+
+. destring sampa_id, replace
+sampa_id: all characters numeric; replaced as long
+
+. 
+. save `2'
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_74185.000002 saved as .dta format
+
+. 
+. use `1'
+
+. 
+. merge 1:1 cohort sampa_id using `2'
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                             0
+    Matched                             1,250  (_merge==3)
+    -----------------------------------------
+
+.         rename _merge merge12
+
+. 
+. save `3'
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_74185.000003 saved as .dta format
+
+. 
+. 
 . cd $sampamwanza
 /Users/juansolon/Documents/GitHub/sampa-mwanza
 
+. cd 02-data-temp
+/Users/juansolon/Documents/GitHub/sampa-mwanza/02-data-temp
+
+. compress
+  variable rec_diab_drug_m9 was float now byte
+  variable diag_drug_m9 was float now int
+  variable med_type_m9 was float now byte
+  variable other_symptoms_m99 was float now int
+  variable med_exam_m99 was float now int
+  variable bmi_cat_child was float now byte
+  variable bmi_cat was float now byte
+  variable refer_possible_diag_m99 was float now byte
+  variable refer_diag_m99 was float now int
+  variable record_id was strL now str6
+  variable redcap_data_access_group was strL now str10
+  ogtt_comment_time0 is strL now coalesced
+  ogtt_comment_time15 is strL now coalesced
+  ogtt_comment_time30 is strL now coalesced
+  ogtt_comment_time45 is strL now coalesced
+  ogtt_comment_time60 is strL now coalesced
+  ogtt_comment_time120 is strL now coalesced
+  diag1_spec is strL now coalesced
+  glu_comment is strL now coalesced
+  anthro_prob is strL now coalesced
+  refer_posdiag_o is strL now coalesced
+  pan_others is strL now coalesced
+  pan_con is strL now coalesced
+  pan_oth_abn_specify is strL now coalesced
+  image_non_why is strL now coalesced
+  ct_pan_oth_abn_spec is strL now coalesced
+  (505,103 bytes saved)
+
+. save sampa-all.dta, replace
+file sampa-all.dta saved
+
 . 
-end of do-file
+. *** label Cohort 
+. 
+. label define cohort 1 "DIVIDS" 2 "SAM" 3" CICADA" 4 "NUSTART" 5 "ST-ATT" 6 "CLHNS"
 
-. do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD26863.000000"
+. label values cohort cohort
 
+. 
+. * recode missing in quant vars
+. 
 . replace hba1c=. if hba1c<0
 (9 real changes made, 9 to missing)
 
 . replace mmol_glu120 =. if mmol_glu120<0
 (6 real changes made, 6 to missing)
 
+. 
+. **** Generate catvars from continuous vars
+. 
 . * code hba1c_cat glu120_cat
 . egen hba1c_cat = cut(hba1c), at(0 6.5 99) icodes
 (82 missing values generated)
 
+.         la var hba1c_cat "Hba1c Levels"
+
+.         la def hba1c_cat        0 "Not Elevated" ///
+>                                                 1 "Elevated Hba1c"
+
+.         la val hba1c_cat hba1c_cat
+
+.         
 . egen glu120_cat = cut(mmol_glu120), at(0 11.1 99) icodes
 (76 missing values generated)
 
-. 
-. save adverse.dta, replace
-file adverse.dta saved
+.         label var glu120_cat "Glucose at 2 hours OGTT"
+
+.         la def glu120_cat               0 "Not Elevated OGTT (120m)" ///
+>                                                         1 "Elevated OGTT (120m)"
+
+.         la val glu120_cat glu120_cat
 
 . 
-end of do-file
+. /*
+> table ogttr_sample_edta ogttr_sample_edta120 ogttr_confirm
+> ogttr_confirm ogttr_time0 ogttr_time0_1 ogttr_sample_edta ogttr_comments_time0 ogttr_time30 ogttr_time30_1 ogt
+> tr_sample_edta30 ogttr_comments_time30 ogttr_time120 ogttr_time120_1 ogttr_sample_edta120 ogttr_comments_time1
+> 20
+> */
+. * repeat ogtt
+. 
+. replace mmol_rglu120 =. if rglu120 ==.
+(589 real changes made, 589 to missing)
 
-. pwd
-/Users/juansolon/Documents/GitHub/sampa-mwanza
+. egen rglu120_cat = cut(mmol_rglu120), at(0 11.1 99) icodes
+(1,182 missing values generated)
 
-. do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD26863.000000"
+.         label var rglu120_cat "Glucose at 2 hours RepeatOGTT"
 
-. sum ogttr_time0
+.         la def rglu120_cat              0 "Not Elevated repeat OGTT (120m)" ///
+>                                                         1 "Elevatedrepeat OGTT (120m)"
+
+.         la val rglu120_cat rglu120_cat
+
+. /*      
+> table glu120_cat rglu120_cat cohort
+> table glu120_cat rglu120_cat
+> */
+.         
+. * Hypertension variables for adults
+. sum sys* dias*
 
     Variable |        Obs        Mean    Std. dev.       Min        Max
 -------------+---------------------------------------------------------
- ogttr_time0 |          0
-
-. 
-end of do-file
-
-. do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD26863.000000"
-
-. tab ogttr_time0
-
-[4.13] Time |
-          0 |      Freq.     Percent        Cum.
-------------+-----------------------------------
-   06:33:00 |          1        1.47        1.47
-   06:35:00 |          1        1.47        2.94
-   06:38:00 |          1        1.47        4.41
-   06:54:00 |          1        1.47        5.88
-   06:55:00 |          1        1.47        7.35
-   06:56:00 |          1        1.47        8.82
-   06:58:00 |          1        1.47       10.29
-   06:59:00 |          1        1.47       11.76
-   07:00:00 |          2        2.94       14.71
-   07:02:00 |          2        2.94       17.65
-   07:03:00 |          2        2.94       20.59
-   07:04:00 |          1        1.47       22.06
-   07:08:00 |          1        1.47       23.53
-   07:09:00 |          1        1.47       25.00
-   07:10:00 |          2        2.94       27.94
-   07:12:00 |          1        1.47       29.41
-   07:19:00 |          1        1.47       30.88
-   07:20:00 |          1        1.47       32.35
-   07:21:00 |          1        1.47       33.82
-   07:28:00 |          1        1.47       35.29
-   07:33:00 |          1        1.47       36.76
-   07:38:00 |          1        1.47       38.24
-   07:41:00 |          1        1.47       39.71
-   07:45:00 |          1        1.47       41.18
-   07:50:00 |          1        1.47       42.65
-   07:53:00 |          2        2.94       45.59
-   08:00:00 |          1        1.47       47.06
-   08:01:00 |          1        1.47       48.53
-   08:05:00 |          2        2.94       51.47
-   08:10:00 |          2        2.94       54.41
-   08:12:00 |          1        1.47       55.88
-   08:15:00 |          1        1.47       57.35
-   08:18:00 |          1        1.47       58.82
-   08:20:00 |          2        2.94       61.76
-   08:21:00 |          1        1.47       63.24
-   08:32:00 |          1        1.47       64.71
-   08:35:00 |          1        1.47       66.18
-   08:44:00 |          1        1.47       67.65
-   08:50:00 |          2        2.94       70.59
-   09:00:00 |          2        2.94       73.53
-   09:03:00 |          1        1.47       75.00
-   09:10:00 |          1        1.47       76.47
-   09:19:00 |          1        1.47       77.94
-   09:20:00 |          4        5.88       83.82
-   09:22:00 |          1        1.47       85.29
-   09:25:00 |          3        4.41       89.71
-   09:26:00 |          1        1.47       91.18
-   09:30:00 |          1        1.47       92.65
-   09:35:00 |          1        1.47       94.12
-   09:36:00 |          1        1.47       95.59
-   09:40:00 |          1        1.47       97.06
-   09:43:00 |          1        1.47       98.53
-   12:50:00 |          1        1.47      100.00
-------------+-----------------------------------
-      Total |         68      100.00
-
-. 
-end of do-file
-
-. tab ogttr_confirm
-
-   Does the |
-participant |
-    need to |
-     repeat |
-      OGTT? |      Freq.     Percent        Cum.
-------------+-----------------------------------
-       -103 |          1        0.29        0.29
-          0 |        271       78.32       78.61
-          1 |         74       21.39      100.00
-------------+-----------------------------------
-      Total |        346      100.00
-
-. sum rhba1c
-
-    Variable |        Obs        Mean    Std. dev.       Min        Max
+   systolic1 |      1,190    118.2664    20.84236         71        208
+   systolic2 |      1,190    116.0429    19.68278         70        199
+   systolic3 |      1,190    115.2328    19.15974         68        198
+    systolic |      1,190    115.6378    19.23118         69      197.5
+  diastolic1 |      1,190    76.75882    13.40154         31        150
 -------------+---------------------------------------------------------
-      rhba1c |          0
+  diastolic2 |      1,190    75.86218    12.46861         38        141
+  diastolic3 |      1,190     75.1958    12.35116         39        145
+   diastolic |      1,190    75.52899    12.21927         39        143
 
-. tab rhba1c
+. egen sys_cat = cut(systolic), at(0,140,999) icodes
+(60 missing values generated)
+
+. egen dias_cat = cut(diastolic), at(0,90,999) icodes 
+(60 missing values generated)
+
+. tab sys_cat dias_cat, mis row
+
++----------------+
+| Key            |
+|----------------|
+|   frequency    |
+| row percentage |
++----------------+
+
+           |             dias_cat
+   sys_cat |         0          1          . |     Total
+-----------+---------------------------------+----------
+         0 |     1,007         50          0 |     1,057 
+           |     95.27       4.73       0.00 |    100.00 
+-----------+---------------------------------+----------
+         1 |        36         97          0 |       133 
+           |     27.07      72.93       0.00 |    100.00 
+-----------+---------------------------------+----------
+         . |         0          0         60 |        60 
+           |      0.00       0.00     100.00 |    100.00 
+-----------+---------------------------------+----------
+     Total |     1,043        147         60 |     1,250 
+           |     83.44      11.76       4.80 |    100.00 
+
+. gen htn = 0
+
+. replace htn = 1 if sys_cat ==1 | dias_cat ==1
+(183 real changes made)
+
+. la var htn "Hypertension"
+
+. la def htn      0 "No Hypertension" ///
+>                         1 "Hypertension"
+
+. la val htn htn
+
+. 
+. * Severe Hypertension for Adults
+. egen sys_severe = cut(systolic), at(0,200,999) icodes
+(60 missing values generated)
+
+. egen dia_severe = cut(diastolic), at(0,120,999) icodes
+(60 missing values generated)
+
+. 
+. gen htn_severe = 0
+
+. replace htn_severe = 1 if sys_severe ==1 | dia_severe ==1
+(3 real changes made)
+
+. la var htn_severe "Severe Hypertension"
+
+. la def htn_severe       0 "No Severe Hypertension" ///
+>                                         1 "Severe Hypertension"
+
+. la val htn_severe htn_severe
+
+. 
+. tab htn_severe
+
+   Severe Hypertension |      Freq.     Percent        Cum.
+-----------------------+-----------------------------------
+No Severe Hypertension |      1,247       99.76       99.76
+   Severe Hypertension |          3        0.24      100.00
+-----------------------+-----------------------------------
+                 Total |      1,250      100.00
+
+. 
+. * Hypertension variables for children
+. * this needs a look up table
+. 
+. save, replace
+file sampa-all.dta saved
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD74185.000000"
+
+. tab1 diab-cancer4
+
+-> tabulation of diab  
+
+ [3.7] Does the person |
+      have diabetes as |
+diagnosed by a doctor? |      Freq.     Percent        Cum.
+-----------------------+-----------------------------------
+                  -102 |          1        0.09        0.09
+                    No |      1,106       94.37       94.45
+    Yes, uncomplicated |         57        4.86       99.32
+Yes with complications |          8        0.68      100.00
+-----------------------+-----------------------------------
+                 Total |      1,172      100.00
+
+-> tabulation of diab_other  
+
+              Specify any complications |      Freq.     Percent        Cum.
+----------------------------------------+-----------------------------------
+Blurring of vision, Peripheral Neurop.. |          1       12.50       12.50
+               Hearing Impairment, Left |          1       12.50       25.00
+                    Lower limb numbness |          1       12.50       37.50
+                             Neuropathy |          1       12.50       50.00
+                  Peripheral Neuropathy |          1       12.50       62.50
+                  Peripheral neuropathy |          2       25.00       87.50
+              blurring vision, numbness |          1       12.50      100.00
+----------------------------------------+-----------------------------------
+                                  Total |          8      100.00
+
+-> tabulation of diag_drug_m1  
+
+       None |
+ medication |
+bottles the |
+     person |
+    brought |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,226       98.08       98.08
+          1 |         24        1.92      100.00
+------------+-----------------------------------
+      Total |      1,250      100.00
+
+-> tabulation of diag_drug_m2  
+
+    Insulin |
+ medication |
+bottles the |
+     person |
+    brought |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,247       99.76       99.76
+          1 |          3        0.24      100.00
+------------+-----------------------------------
+      Total |      1,250      100.00
+
+-> tabulation of diag_drug_m3  
+
+  Metformin |
+ medication |
+bottles the |
+     person |
+    brought |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,220       97.60       97.60
+          1 |         30        2.40      100.00
+------------+-----------------------------------
+      Total |      1,250      100.00
+
+-> tabulation of diag_drug_m4  
+
+  Herbal or |
+over-the-co |
+      unter |
+  medicines |
+ medication |
+bottles the |
+     person |
+    brought |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,244       99.52       99.52
+          1 |          6        0.48      100.00
+------------+-----------------------------------
+      Total |      1,250      100.00
+
+-> tabulation of diag_drug_m5  
+
+     Others |
+  medicines |
+ medication |
+bottles the |
+     person |
+    brought |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,243       99.44       99.44
+          1 |          7        0.56      100.00
+------------+-----------------------------------
+      Total |      1,250      100.00
+
+-> tabulation of diag_drug_m9  
+
+   Describe |
+       data |
+missingness |      Freq.     Percent        Cum.
+------------+-----------------------------------
+        102 |          1      100.00      100.00
+------------+-----------------------------------
+      Total |          1      100.00
+
+-> tabulation of diag_drug_others  
+
+        Specify other drugs |      Freq.     Percent        Cum.
+----------------------------+-----------------------------------
+                  Glicazide |          1       25.00       25.00
+Gliclazide 60mg 1tablet TID |          1       25.00       50.00
+      discontinue metformin |          1       25.00       75.00
+              glibenclamide |          1       25.00      100.00
+----------------------------+-----------------------------------
+                      Total |          4      100.00
+
+-> tabulation of diag_yn  
+
+ [3.9] Does |
+ the person |
+   have any |
+other known |
+ diseases / |
+ conditions |
+(pre-SAMPA) |
+       , i. |      Freq.     Percent        Cum.
+------------+-----------------------------------
+       -102 |          1        0.09        0.09
+ Don't know |          4        0.34        0.43
+         No |        893       76.26       76.69
+        Yes |        273       23.31      100.00
+------------+-----------------------------------
+      Total |      1,171      100.00
+
+-> tabulation of diag_1  
+
+   [3.10] First diagnosis, i.e. the |
+ main complaint; see SOP 3 for more |
+                            details |      Freq.     Percent        Cum.
+------------------------------------+-----------------------------------
+        Peripheral vascular disease |          1        0.37        0.37
+                        Stroke, TIA |          1        0.37        0.74
+                       Lung disease |        127       46.69       47.43
+          Connective tissue disease |         16        5.88       53.31
+                       Peptic ulcer |         17        6.25       59.56
+                             Cancer |          1        0.37       59.93
+                       hypertension |         68       25.00       84.93
+                    Others, specify |         40       14.71       99.63
+                               None |          1        0.37      100.00
+------------------------------------+-----------------------------------
+                              Total |        272      100.00
+
+-> tabulation of diag1_spec  
+
+                        Others, specify |      Freq.     Percent        Cum.
+----------------------------------------+-----------------------------------
+Abdominal hernia diagnosed from ultra.. |          1        2.44        2.44
+                        Acute Gastritis |          1        2.44        4.88
+                                Allergy |          1        2.44        7.32
+                                 Asthma |          1        2.44        9.76
+Bleeding from nose on and off since c.. |          1        2.44       12.20
+                            Breast Cyst |          2        4.88       17.07
+Breathlessness and palpitation due to.. |          1        2.44       19.51
+                       Bronchial Asthma |          1        2.44       21.95
+         COVID Infection with Pneumonia |          1        2.44       24.39
+Congenital deformity- not being able .. |          1        2.44       26.83
+               Congenital heart disease |          1        2.44       29.27
+                           Constipation |          1        2.44       31.71
+      Diagnosed with typhoid last week. |          1        2.44       34.15
+                               Epilepsy |          1        2.44       36.59
+Extreme malnutrition with menstruatio.. |          1        2.44       39.02
+        Gastroesophageal Reflux Disease |          1        2.44       41.46
+                                   Gout |          1        2.44       43.90
+Had cervical lymph node tuberculosis,.. |          1        2.44       46.34
+                            Hypokalemia |          1        2.44       48.78
+                     Left Knee Swelling |          1        2.44       51.22
+                                Leprosy |          1        2.44       53.66
+Neuro surgery was done at 6 months of.. |          1        2.44       56.10
+                       Non toxic goitre |          1        2.44       58.54
+                                    PTB |          2        4.88       63.41
+              Palpitation upon exertion |          1        2.44       65.85
+                    Polyps in the nose. |          1        2.44       68.29
+                           Pulmonary TB |          1        2.44       70.73
+Received treatment for tuberculosis 6.. |          1        2.44       73.17
+                         Sinus- allergy |          1        2.44       75.61
+                       Skin Candidiasis |          1        2.44       78.05
+                           Skin problem |          1        2.44       80.49
+                         Tb and Anaemia |          1        2.44       82.93
+ Thyroid dysfunction or tumor suspected |          1        2.44       85.37
+                Urinary Tract Infection |          1        2.44       87.80
+          Urinary Tract Infection (UTI) |          1        2.44       90.24
+                Urinary tract infection |          1        2.44       92.68
+                           Urolithiasis |          1        2.44       95.12
+             Vertebrae disc dislocation |          1        2.44       97.56
+                       Worm infestation |          1        2.44      100.00
+----------------------------------------+-----------------------------------
+                                  Total |         41      100.00
+
+-> tabulation of diag_2  
+
+            [3.11] Second diagnosis |      Freq.     Percent        Cum.
+------------------------------------+-----------------------------------
+Myocardial infarction, heart attack |          1        0.37        0.37
+                      Heart failure |          1        0.37        0.74
+                        Stroke, TIA |          4        1.48        2.22
+                       Lung disease |          8        2.96        5.19
+          Connective tissue disease |          1        0.37        5.56
+                       Peptic ulcer |          6        2.22        7.78
+                       hypertension |          6        2.22       10.00
+                    Others, specify |         11        4.07       14.07
+                               None |        232       85.93      100.00
+------------------------------------+-----------------------------------
+                              Total |        270      100.00
+
+-> tabulation of diag2_spec  
+
+        Others, specify |      Freq.     Percent        Cum.
+------------------------+-----------------------------------
+                 Anemia |          1        9.09        9.09
+             Gallstones |          1        9.09       18.18
+      Heart Enlargement |          1        9.09       27.27
+            Hypokalemia |          1        9.09       36.36
+      Parkinson disease |          1        9.09       45.45
+   Prostate Enlargement |          1        9.09       54.55
+              Psoriasis |          1        9.09       63.64
+ Pulmonary tuberculosis |          1        9.09       72.73
+Rheumatic Heart Disease |          1        9.09       81.82
+     Soft Tissue Injury |          1        9.09       90.91
+       Worm infestation |          1        9.09      100.00
+------------------------+-----------------------------------
+                  Total |         11      100.00
+
+-> tabulation of diag_3  
+
+             [3.12] Third diagnosis |      Freq.     Percent        Cum.
+------------------------------------+-----------------------------------
+Myocardial infarction, heart attack |          1        0.37        0.37
+             Chronic kidney disease |          1        0.37        0.74
+                       hypertension |          2        0.74        1.47
+                    Others, specify |          1        0.37        1.84
+                               None |        267       98.16      100.00
+------------------------------------+-----------------------------------
+                              Total |        272      100.00
+
+-> tabulation of diag3_spec  
+
+     Others, |
+     specify |      Freq.     Percent        Cum.
+-------------+-----------------------------------
+Cardiomegaly |          1      100.00      100.00
+-------------+-----------------------------------
+       Total |          1      100.00
+
+-> tabulation of diag_4  
+
+            [3.13] Fourth diagnosis |      Freq.     Percent        Cum.
+------------------------------------+-----------------------------------
+                       Peptic ulcer |          1        0.37        0.37
+                               None |        271       99.63      100.00
+------------------------------------+-----------------------------------
+                              Total |        272      100.00
+
+-> tabulation of diag4_spec  
 no observations
 
-. tab ogttr_time30
+-> tabulation of lung_dis1  
+
+Lung Disease |      Freq.     Percent        Cum.
+-------------+-----------------------------------
+      Asthma |          7        5.51        5.51
+Tuberculosis |        120       94.49      100.00
+-------------+-----------------------------------
+       Total |        127      100.00
+
+-> tabulation of contissue_dis1  
+
+ Connective Tissue |
+           Disease |      Freq.     Percent        Cum.
+-------------------+-----------------------------------
+      fibromyalgia |          9       60.00       60.00
+            others |          6       40.00      100.00
+-------------------+-----------------------------------
+             Total |         15      100.00
+
+-> tabulation of contissue_dis1_spec  
+
+      Others, specify |      Freq.     Percent        Cum.
+----------------------+-----------------------------------
+              Allergy |          1       16.67       16.67
+            Knee pain |          1       16.67       33.33
+          Knock-knees |          1       16.67       50.00
+              Scabies |          2       33.33       83.33
+White patches on skin |          1       16.67      100.00
+----------------------+-----------------------------------
+                Total |          6      100.00
+
+-> tabulation of peptic_ulcer1  
+
+                          Peptic Ulcer |      Freq.     Percent        Cum.
+---------------------------------------+-----------------------------------
+history of treatment for ulcer disease |         14       82.35       82.35
+          ulcer confirmed by endoscopy |          3       17.65      100.00
+---------------------------------------+-----------------------------------
+                                 Total |         17      100.00
+
+-> tabulation of liver_dis1  
 no observations
 
-. sum rglu0
+-> tabulation of kidney_dis1  
+no observations
 
-    Variable |        Obs        Mean    Std. dev.       Min        Max
--------------+---------------------------------------------------------
-       rglu0 |         68    83.75132    51.92637        4.8        198
+-> tabulation of cancer1  
 
-. sum rglu120
+      Cancer |      Freq.     Percent        Cum.
+-------------+-----------------------------------
+  metastatic |          1      100.00      100.00
+-------------+-----------------------------------
+       Total |          1      100.00
 
-    Variable |        Obs        Mean    Std. dev.       Min        Max
--------------+---------------------------------------------------------
-     rglu120 |         68    137.8819    95.47585        4.5        369
+-> tabulation of lung_dis2  
 
-. sum rglu120_missing
+Lung Disease |      Freq.     Percent        Cum.
+-------------+-----------------------------------
+        COPD |          3       37.50       37.50
+      Asthma |          1       12.50       50.00
+Tuberculosis |          4       50.00      100.00
+-------------+-----------------------------------
+       Total |          8      100.00
 
-    Variable |        Obs        Mean    Std. dev.       Min        Max
--------------+---------------------------------------------------------
-rglu120_mi~g |         66           0           0          0          0
+-> tabulation of contissue_dis2  
 
-. tab rglu120
+ Connective Tissue |
+           Disease |      Freq.     Percent        Cum.
+-------------------+-----------------------------------
+      fibromyalgia |          1      100.00      100.00
+-------------------+-----------------------------------
+             Total |          1      100.00
 
-Repeat OGTT |
-result_Time |
-        120 |      Freq.     Percent        Cum.
-------------+-----------------------------------
-        4.5 |          1        1.47        1.47
-          5 |          1        1.47        2.94
-        5.1 |          1        1.47        4.41
-        5.2 |          1        1.47        5.88
-        5.7 |          1        1.47        7.35
-        5.8 |          1        1.47        8.82
-        6.4 |          1        1.47       10.29
-        6.6 |          1        1.47       11.76
-        6.7 |          1        1.47       13.24
-        7.1 |          1        1.47       14.71
-        7.3 |          1        1.47       16.18
-        7.8 |          1        1.47       17.65
-        7.9 |          1        1.47       19.12
-          8 |          1        1.47       20.59
-          9 |          1        1.47       22.06
-       10.9 |          1        1.47       23.53
-       12.8 |          1        1.47       25.00
-       13.1 |          1        1.47       26.47
-       19.9 |          1        1.47       27.94
-         69 |          1        1.47       29.41
-         98 |          1        1.47       30.88
-        109 |          1        1.47       32.35
-        112 |          1        1.47       33.82
-        118 |          1        1.47       35.29
-        125 |          1        1.47       36.76
-        138 |          1        1.47       38.24
-        139 |          1        1.47       39.71
-        140 |          1        1.47       41.18
-        145 |          2        2.94       44.12
-     145.17 |          1        1.47       45.59
-        147 |          1        1.47       47.06
-        152 |          1        1.47       48.53
-        154 |          1        1.47       50.00
-        155 |          1        1.47       51.47
-        163 |          2        2.94       54.41
-        165 |          1        1.47       55.88
-        166 |          1        1.47       57.35
-        167 |          1        1.47       58.82
-        168 |          1        1.47       60.29
-        179 |          1        1.47       61.76
-        185 |          3        4.41       66.18
-        186 |          2        2.94       69.12
-        187 |          1        1.47       70.59
-        188 |          1        1.47       72.06
-        190 |          1        1.47       73.53
-        195 |          3        4.41       77.94
-        203 |          1        1.47       79.41
-        207 |          1        1.47       80.88
-        218 |          1        1.47       82.35
-        219 |          1        1.47       83.82
-        234 |          1        1.47       85.29
-        245 |          3        4.41       89.71
-        260 |          1        1.47       91.18
-        269 |          1        1.47       92.65
-        283 |          1        1.47       94.12
-        292 |          1        1.47       95.59
-        293 |          1        1.47       97.06
-        300 |          1        1.47       98.53
-        369 |          1        1.47      100.00
-------------+-----------------------------------
-      Total |         68      100.00
+-> tabulation of contissue_dis2_spec  
+no observations
 
-. scatter rglu120 mmol_rglu120
+-> tabulation of peptic_ulcer2  
 
-. tab rglu120
+                          Peptic Ulcer |      Freq.     Percent        Cum.
+---------------------------------------+-----------------------------------
+history of treatment for ulcer disease |          6      100.00      100.00
+---------------------------------------+-----------------------------------
+                                 Total |          6      100.00
 
-Repeat OGTT |
-result_Time |
-        120 |      Freq.     Percent        Cum.
-------------+-----------------------------------
-        4.5 |          1        1.47        1.47
-          5 |          1        1.47        2.94
-        5.1 |          1        1.47        4.41
-        5.2 |          1        1.47        5.88
-        5.7 |          1        1.47        7.35
-        5.8 |          1        1.47        8.82
-        6.4 |          1        1.47       10.29
-        6.6 |          1        1.47       11.76
-        6.7 |          1        1.47       13.24
-        7.1 |          1        1.47       14.71
-        7.3 |          1        1.47       16.18
-        7.8 |          1        1.47       17.65
-        7.9 |          1        1.47       19.12
-          8 |          1        1.47       20.59
-          9 |          1        1.47       22.06
-       10.9 |          1        1.47       23.53
-       12.8 |          1        1.47       25.00
-       13.1 |          1        1.47       26.47
-       19.9 |          1        1.47       27.94
-         69 |          1        1.47       29.41
-         98 |          1        1.47       30.88
-        109 |          1        1.47       32.35
-        112 |          1        1.47       33.82
-        118 |          1        1.47       35.29
-        125 |          1        1.47       36.76
-        138 |          1        1.47       38.24
-        139 |          1        1.47       39.71
-        140 |          1        1.47       41.18
-        145 |          2        2.94       44.12
-     145.17 |          1        1.47       45.59
-        147 |          1        1.47       47.06
-        152 |          1        1.47       48.53
-        154 |          1        1.47       50.00
-        155 |          1        1.47       51.47
-        163 |          2        2.94       54.41
-        165 |          1        1.47       55.88
-        166 |          1        1.47       57.35
-        167 |          1        1.47       58.82
-        168 |          1        1.47       60.29
-        179 |          1        1.47       61.76
-        185 |          3        4.41       66.18
-        186 |          2        2.94       69.12
-        187 |          1        1.47       70.59
-        188 |          1        1.47       72.06
-        190 |          1        1.47       73.53
-        195 |          3        4.41       77.94
-        203 |          1        1.47       79.41
-        207 |          1        1.47       80.88
-        218 |          1        1.47       82.35
-        219 |          1        1.47       83.82
-        234 |          1        1.47       85.29
-        245 |          3        4.41       89.71
-        260 |          1        1.47       91.18
-        269 |          1        1.47       92.65
-        283 |          1        1.47       94.12
-        292 |          1        1.47       95.59
-        293 |          1        1.47       97.06
-        300 |          1        1.47       98.53
-        369 |          1        1.47      100.00
-------------+-----------------------------------
-      Total |         68      100.00
+-> tabulation of liver_dis2  
+no observations
 
-. sum rglu120
+-> tabulation of kidney_dis2  
+no observations
 
-    Variable |        Obs        Mean    Std. dev.       Min        Max
--------------+---------------------------------------------------------
-     rglu120 |         68    137.8819    95.47585        4.5        369
+-> tabulation of cancer2  
+no observations
 
-. sum mmol_rglu120
+-> tabulation of lung_dis3  
+no observations
 
-    Variable |        Obs        Mean    Std. dev.       Min        Max
--------------+---------------------------------------------------------
-mmol_rglu120 |        657    1.015358    3.198002          0       20.5
+-> tabulation of contissue_dis3  
+no observations
 
-. do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD26863.000000"
+-> tabulation of contissue_dis3_spec  
+no observations
 
-. tab ogttr_time0
+-> tabulation of peptic_ulcer3  
+no observations
 
-[4.13] Time |
-          0 |      Freq.     Percent        Cum.
-------------+-----------------------------------
-   06:33:00 |          1        1.47        1.47
-   06:35:00 |          1        1.47        2.94
-   06:38:00 |          1        1.47        4.41
-   06:54:00 |          1        1.47        5.88
-   06:55:00 |          1        1.47        7.35
-   06:56:00 |          1        1.47        8.82
-   06:58:00 |          1        1.47       10.29
-   06:59:00 |          1        1.47       11.76
-   07:00:00 |          2        2.94       14.71
-   07:02:00 |          2        2.94       17.65
-   07:03:00 |          2        2.94       20.59
-   07:04:00 |          1        1.47       22.06
-   07:08:00 |          1        1.47       23.53
-   07:09:00 |          1        1.47       25.00
-   07:10:00 |          2        2.94       27.94
-   07:12:00 |          1        1.47       29.41
-   07:19:00 |          1        1.47       30.88
-   07:20:00 |          1        1.47       32.35
-   07:21:00 |          1        1.47       33.82
-   07:28:00 |          1        1.47       35.29
-   07:33:00 |          1        1.47       36.76
-   07:38:00 |          1        1.47       38.24
-   07:41:00 |          1        1.47       39.71
-   07:45:00 |          1        1.47       41.18
-   07:50:00 |          1        1.47       42.65
-   07:53:00 |          2        2.94       45.59
-   08:00:00 |          1        1.47       47.06
-   08:01:00 |          1        1.47       48.53
-   08:05:00 |          2        2.94       51.47
-   08:10:00 |          2        2.94       54.41
-   08:12:00 |          1        1.47       55.88
-   08:15:00 |          1        1.47       57.35
-   08:18:00 |          1        1.47       58.82
-   08:20:00 |          2        2.94       61.76
-   08:21:00 |          1        1.47       63.24
-   08:32:00 |          1        1.47       64.71
-   08:35:00 |          1        1.47       66.18
-   08:44:00 |          1        1.47       67.65
-   08:50:00 |          2        2.94       70.59
-   09:00:00 |          2        2.94       73.53
-   09:03:00 |          1        1.47       75.00
-   09:10:00 |          1        1.47       76.47
-   09:19:00 |          1        1.47       77.94
-   09:20:00 |          4        5.88       83.82
-   09:22:00 |          1        1.47       85.29
-   09:25:00 |          3        4.41       89.71
-   09:26:00 |          1        1.47       91.18
-   09:30:00 |          1        1.47       92.65
-   09:35:00 |          1        1.47       94.12
-   09:36:00 |          1        1.47       95.59
-   09:40:00 |          1        1.47       97.06
-   09:43:00 |          1        1.47       98.53
-   12:50:00 |          1        1.47      100.00
-------------+-----------------------------------
-      Total |         68      100.00
+-> tabulation of liver_dis3  
+no observations
+
+-> tabulation of kidney_dis3  
+
+     Chronic Kidney |
+            Disease |      Freq.     Percent        Cum.
+--------------------+-----------------------------------
+yes but no dialysis |          1      100.00      100.00
+--------------------+-----------------------------------
+              Total |          1      100.00
+
+-> tabulation of cancer3  
+no observations
+
+-> tabulation of lung_dis4  
+no observations
+
+-> tabulation of contissue_dis4  
+no observations
+
+-> tabulation of contissue_dis4_spec  
+no observations
+
+-> tabulation of peptic_ulcer4  
+
+                          Peptic Ulcer |      Freq.     Percent        Cum.
+---------------------------------------+-----------------------------------
+history of treatment for ulcer disease |          1      100.00      100.00
+---------------------------------------+-----------------------------------
+                                 Total |          1      100.00
+
+-> tabulation of liver_dis4  
+no observations
+
+-> tabulation of kidney_dis4  
+no observations
+
+-> tabulation of cancer4  
+no observations
 
 . 
 end of do-file
 
-. do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD26863.000000"
+. tab incohort
+variable incohort not found
+r(111);
 
-. sum ogttr_time0
+. d dob
 
-    Variable |        Obs        Mean    Std. dev.       Min        Max
--------------+---------------------------------------------------------
- ogttr_time0 |          0
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+----------------------------------------------------------------------------------------------------------------
+dob             str10   %10s                  
+
+. table sex age cohort
+
+-----------------------------------------------------------------------
+            |                           cohort                         
+            |  DIVIDS   SAM   CICADA   NUSTART   ST-ATT   CLHNS   Total
+------------+----------------------------------------------------------
+sex         |                                                          
+  1         |                                                          
+    age     |                                                          
+      10    |       3     1                                           4
+      11    |      11                                                11
+      12    |       7     4                                          11
+      13    |      28     8                                          36
+      14    |      58     1                                          59
+      15    |      41                                                41
+      16    |       1                                                 1
+      18    |                                1                        1
+      20    |                                3                        3
+      22    |                                         2               2
+      24    |                                         2               2
+      25    |                                         2               2
+      26    |                                         3               3
+      27    |                                         4               4
+      28    |                                         4               4
+      29    |                      1         1        1               3
+      30    |                      2                  2               4
+      31    |                                         2               2
+      32    |                                         1               1
+      33    |                      5                  2               7
+      34    |                      5         1        5              11
+      35    |                      1                  3               4
+      36    |                      4         1        2               7
+      37    |                                1        4               5
+      38    |                      3         2               29      34
+      39    |                      2                  2      69      73
+      40    |                      5         2        2       1      10
+      41    |                      3         1        1               5
+      42    |                      4                  2               6
+      43    |                      6         1        2               9
+      44    |                      6         2        4              12
+      45    |                      5         6        2              13
+      46    |                      5         2        4              11
+      47    |                      4         3        2               9
+      48    |                      5         2        5              12
+      49    |                     11         1        3              15
+      50    |                      5         3        6              14
+      51    |                      2         1        1               4
+      52    |                      6         4        5              15
+      53    |                      6         2        3              11
+      54    |                     16         1        3              20
+      55    |                      4         1        2               7
+      56    |                      8                  2              10
+      57    |                      5         1        4              10
+      58    |                      6         1        2               9
+      59    |                      6         2        2              10
+      60    |                      8         2        5              15
+      61    |                      7                  2               9
+      62    |                      7                  3              10
+      63    |                      3         1        2               6
+      64    |                      6         1        3              10
+      65    |                      2                  3               5
+      66    |                      1         1        2               4
+      67    |                      4                  3               7
+      68    |                      1                                  1
+      69    |                      2                  4               6
+      70    |                      2                  6               8
+      71    |                      1                  5               6
+      72    |                      1                  2               3
+      73    |                      1                  2               3
+      75    |                      1                  2               3
+      76    |                      1                                  1
+      77    |                                         1               1
+      78    |                      1                                  1
+      80    |                      1                                  1
+      81    |                      1                                  1
+      Total |     149    14      192        51      143      99     648
+  2         |                                                          
+    age     |                                                          
+      9     |             2                                           2
+      10    |       1     1                                           2
+      11    |       8     1                                           9
+      12    |      14     3                                          17
+      13    |      31     1                                          32
+      14    |      47     1                                          48
+      15    |      43                                                43
+      18    |                                1                        1
+      19    |                                2                        2
+      20    |                                4                        4
+      21    |                                1                        1
+      22    |                                1        1               2
+      23    |                                         3               3
+      24    |                                1        2               3
+      25    |                                1        2               3
+      26    |                      1                  4               5
+      27    |                                1        3               4
+      28    |                      1         1                        2
+      29    |                      1         3        2               6
+      30    |                      4         1                        5
+      31    |                      1         1        1               3
+      32    |                      1         3                        4
+      33    |                      3         2        1               6
+      34    |                      3         1        1               5
+      35    |                      2         4        2               8
+      36    |                      4         6        1              11
+      37    |                      8         4        3              15
+      38    |                      5         5        1      15      26
+      39    |                      1         3        1      45      50
+      40    |                      5         6        1              12
+      41    |                      4         5        1              10
+      42    |                      3         6        2              11
+      43    |                     12         3        2              17
+      44    |                     10         4                       14
+      45    |                      9         6        1              16
+      46    |                      6        12                       18
+      47    |                      7         4        3              14
+      48    |                     12         1                       13
+      49    |                      8                  2              10
+      50    |                     15         1                       16
+      51    |                      2                  2               4
+      52    |                      8         2                       10
+      53    |                      6         3        1              10
+      54    |                      6                  3               9
+      55    |                      2         3        1               6
+      56    |                      2         1                        3
+      57    |                      6         2        2              10
+      58    |                      7         2        1              10
+      59    |                      6                  1               7
+      60    |                      3         2                        5
+      61    |                      2         1                        3
+      62    |                      4         1                        5
+      63    |                      5                  1               6
+      64    |                      2                  1               3
+      65    |                      5                                  5
+      66    |                      3                  1               4
+      67    |                      3                  6               9
+      68    |                      4                  1               5
+      69    |                      1                                  1
+      70    |                      1                  1               2
+      71    |                      1                  2               3
+      72    |                      1                                  1
+      73    |                      1         1                        2
+      75    |                      1                  2               3
+      77    |                      1                  1               2
+      78    |                      1                                  1
+      Total |     144     9      210       112       67      60     602
+  Total     |                                                          
+    age     |                                                          
+      9     |             2                                           2
+      10    |       4     2                                           6
+      11    |      19     1                                          20
+      12    |      21     7                                          28
+      13    |      59     9                                          68
+      14    |     105     2                                         107
+      15    |      84                                                84
+      16    |       1                                                 1
+      18    |                                2                        2
+      19    |                                2                        2
+      20    |                                7                        7
+      21    |                                1                        1
+      22    |                                1        3               4
+      23    |                                         3               3
+      24    |                                1        4               5
+      25    |                                1        4               5
+      26    |                      1                  7               8
+      27    |                                1        7               8
+      28    |                      1         1        4               6
+      29    |                      2         4        3               9
+      30    |                      6         1        2               9
+      31    |                      1         1        3               5
+      32    |                      1         3        1               5
+      33    |                      8         2        3              13
+      34    |                      8         2        6              16
+      35    |                      3         4        5              12
+      36    |                      8         7        3              18
+      37    |                      8         5        7              20
+      38    |                      8         7        1      44      60
+      39    |                      3         3        3     114     123
+      40    |                     10         8        3       1      22
+      41    |                      7         6        2              15
+      42    |                      7         6        4              17
+      43    |                     18         4        4              26
+      44    |                     16         6        4              26
+      45    |                     14        12        3              29
+      46    |                     11        14        4              29
+      47    |                     11         7        5              23
+      48    |                     17         3        5              25
+      49    |                     19         1        5              25
+      50    |                     20         4        6              30
+      51    |                      4         1        3               8
+      52    |                     14         6        5              25
+      53    |                     12         5        4              21
+      54    |                     22         1        6              29
+      55    |                      6         4        3              13
+      56    |                     10         1        2              13
+      57    |                     11         3        6              20
+      58    |                     13         3        3              19
+      59    |                     12         2        3              17
+      60    |                     11         4        5              20
+      61    |                      9         1        2              12
+      62    |                     11         1        3              15
+      63    |                      8         1        3              12
+      64    |                      8         1        4              13
+      65    |                      7                  3              10
+      66    |                      4         1        3               8
+      67    |                      7                  9              16
+      68    |                      5                  1               6
+      69    |                      3                  4               7
+      70    |                      3                  7              10
+      71    |                      2                  7               9
+      72    |                      2                  2               4
+      73    |                      2         1        2               5
+      75    |                      2                  4               6
+      76    |                      1                                  1
+      77    |                      1                  2               3
+      78    |                      2                                  2
+      80    |                      1                                  1
+      81    |                      1                                  1
+      Total |     293    23      402       163      210     159   1,250
+-----------------------------------------------------------------------
+
+. table (sex) cohort, statistics(mean age) stat(sd age)
+option statistics() not allowed
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD74185.000000"
+
+. table sex cohort, statistic(mean age)
+
+-------------------------------------------------------------------------------------
+        |                                    cohort                                  
+        |    DIVIDS        SAM     CICADA    NUSTART     ST-ATT      CLHNS      Total
+--------+----------------------------------------------------------------------------
+sex     |                                                                            
+  1     |   13.7047   12.57143   52.40104   46.27451    49.8042   38.71717   39.49691
+  2     |  13.69444   11.33333   49.70476     40.875   45.73134      38.75   37.34053
+  Total |  13.69966   12.08696   50.99254   42.56442   48.50476   38.72956    38.4584
+-------------------------------------------------------------------------------------
 
 . 
 end of do-file
 
-. tab high_hba1c_1
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD74185.000000"
 
- hba1c>6.5% |      Freq.     Percent        Cum.
-------------+-----------------------------------
-          0 |      1,008       83.58       83.58
-          1 |        198       16.42      100.00
-------------+-----------------------------------
-      Total |      1,206      100.00
+. table sex if cohort>4, statistic(mean age)
 
-. tab high_glu120_1
+-------------------
+        |      Mean
+--------+----------
+sex     |          
+  1     |   45.2686
+  2     |  42.43307
+  Total |  44.29268
+-------------------
 
-glucose 120 |
-  minutes > |
-11.1 mmol/L |      Freq.     Percent        Cum.
-------------+-----------------------------------
-          0 |      1,112       92.21       92.21
-          1 |         94        7.79      100.00
-------------+-----------------------------------
-      Total |      1,206      100.00
+. 
+end of do-file
 
-. bysort glu120_cat: sum mmol_glu120
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD74185.000000"
 
------------------------------------------------------------------------------------------------
--> glu120_cat = 0
+. table sex if cohort>3, statistic(mean age)
 
-    Variable |        Obs        Mean    Std. dev.       Min        Max
--------------+---------------------------------------------------------
- mmol_glu120 |      1,082    6.575591    1.590452       2.28      11.06
+-------------------
+        |      Mean
+--------+----------
+sex     |          
+  1     |  45.44369
+  2     |  41.70293
+  Total |  43.76316
+-------------------
 
------------------------------------------------------------------------------------------------
--> glu120_cat = 1
+. 
+end of do-file
 
-    Variable |        Obs        Mean    Std. dev.       Min        Max
--------------+---------------------------------------------------------
- mmol_glu120 |         92     17.3713    5.837968       11.1      39.46
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD74185.000000"
 
------------------------------------------------------------------------------------------------
--> glu120_cat = .
+. table sex cohort if cohort>3, statistic(mean age)
 
-    Variable |        Obs        Mean    Std. dev.       Min        Max
--------------+---------------------------------------------------------
- mmol_glu120 |          0
+----------------------------------------------------
+        |                    cohort                 
+        |   NUSTART     ST-ATT      CLHNS      Total
+--------+-------------------------------------------
+sex     |                                           
+  1     |  46.27451    49.8042   38.71717   45.44369
+  2     |    40.875   45.73134      38.75   41.70293
+  Total |  42.56442   48.50476   38.72956   43.76316
+----------------------------------------------------
 
+. 
+end of do-file
 
-. pwd
-/Users/juansolon/Documents/GitHub/sampa-mwanza
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD74185.000000"
 
-. dyndoc report-adverse.txt, replace
-**Adverse Events**  
-*Stata version 17, filename report-adverse.txt  
+. table sex cohort if cohort>4, statistic(mean age)
 
-**SOP 17 Definitions**  
-*Diabetes*   
+-----------------------------------------
+        |              cohort            
+        |    ST-ATT      CLHNS      Total
+--------+--------------------------------
+sex     |                                
+  1     |   49.8042   38.71717    45.2686
+  2     |  45.73134      38.75   42.43307
+  Total |  48.50476   38.72956   44.29268
+-----------------------------------------
 
-Diabetes in SAMPA is defined as **plasma glucose ≥ 11.1 mmol/L at 2 hours** in a standard oral glucose tolerance test (OGTT). All participants identified as having diabetes will be re-tested to confirm this and will also be tested for the presence of urinary ketones. Those found to have diabetes on re-testing will be referred to local clinical services together with their SAMPA OGTT results.
+. 
+end of do-file
 
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD74185.000000"
 
-*      1250 agreed to participate in the study
+. table sex cohort if cohort>4, statistic(mean age) stat(freq)
 
+-----------------------------------------------
+              |              cohort            
+              |    ST-ATT      CLHNS      Total
+--------------+--------------------------------
+sex           |                                
+  1           |                                
+    Mean      |   49.8042   38.71717    45.2686
+    Frequency |       143         99        242
+  2           |                                
+    Mean      |  45.73134      38.75   42.43307
+    Frequency |        67         60        127
+  Total       |                                
+    Mean      |  48.50476   38.72956   44.29268
+    Frequency |       210        159        369
+-----------------------------------------------
 
-*      1183 had blood at timepoint zero 
+. 
+end of do-file
 
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD74185.000000"
 
-*      1174 had blood at timepoint 120
+. table glu120_cat cohort if cohort>4, statistic(mean age) stat(freq)
 
+------------------------------------------------------------
+                           |              cohort            
+                           |    ST-ATT      CLHNS      Total
+---------------------------+--------------------------------
+Glucose at 2 hours OGTT    |                                
+  Not Elevated OGTT (120m) |                                
+    Mean                   |   45.3871   38.68571   41.83333
+    Frequency              |       124        140        264
+  Elevated OGTT (120m)     |                                
+    Mean                   |  55.87037   39.05263   51.49315
+    Frequency              |        54         19         73
+  Total                    |                                
+    Mean                   |  48.56742   38.72956   43.92582
+    Frequency              |       178        159        337
+------------------------------------------------------------
 
-*        92 
-(      7.8%) had a plasma glucose ≥ 11.1 mmol/L.   
+. 
+end of do-file
 
-sum ogttr_time0
-sum mmol_rglu120
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD74185.000000"
 
-*Hypertension* 
+. table glu120_cat cohort if cohort>4, statistic(mean age) stat(freq) missing
 
-Hypertension in adults = systolic blood pressure ≥140 mmHg and/or diastolic blood pressure ≥90 mmHg on two occasions with the participant at rest.   
-Hypertension in children = two measurements of systolic or diastolic blood pressure greater than the 95th percentile for age, sex and height (SOP 10 which is from Table 1, Sinaiko, Hypertension in children. NEJM 1996; 335: 1968).  
+------------------------------------------------------------
+                           |              cohort            
+                           |    ST-ATT      CLHNS      Total
+---------------------------+--------------------------------
+Glucose at 2 hours OGTT    |                                
+  Not Elevated OGTT (120m) |                                
+    Mean                   |   45.3871   38.68571   41.83333
+    Frequency              |       124        140        264
+  Elevated OGTT (120m)     |                                
+    Mean                   |  55.87037   39.05263   51.49315
+    Frequency              |        54         19         73
+  .                        |                                
+    Mean                   |  48.15625              48.15625
+    Frequency              |        32                    32
+  Total                    |                                
+    Mean                   |  48.50476   38.72956   44.29268
+    Frequency              |       210        159        369
+------------------------------------------------------------
 
+. 
+end of do-file
 
+. tab consent_basic cohort
 
-
-successfully converted "/Users/juansolon/Documents/GitHub/sampa-mwanza/report-adverse.html"
+  [1.10] Participants |
+      must consent to |
+  either the standard |
+    (7 time point) or |                              cohort
+               basic  |    DIVIDS        SAM     CICADA    NUSTART     ST-ATT      CLHNS |     Total
+----------------------+------------------------------------------------------------------+----------
+Consents to standard  |         0          0        401        161        208        159 |       929 
+Consents to basic OGT |       293         23          0          2          0          0 |       318 
+Does not consent to e |         0          0          1          0          1          0 |         2 
+----------------------+------------------------------------------------------------------+----------
+                Total |       293         23        402        163        209        159 |     1,249 
 
 . kappsi 0.8, diff(0.2) p1(0.1) p2(0.1) round
 command kappsi is unrecognized
