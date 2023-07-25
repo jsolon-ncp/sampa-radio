@@ -327,3 +327,169 @@ drwxr-xr-x  8 juansolon  staff      256 Jul 25 13:03 sampa notes/
 -rw-r--r--  1 juansolon  staff      118 Jul 25 13:03 statt-sampa.md
 -rwxr-xr-x  1 juansolon  staff   559027 Jul 25 13:03 statt-site.key*
 
+. pwd
+/Users/juansolon/Documents/GitHub/sampa-analysis
+
+. ls
+
+total 17896
+drwxr-xr-x   3 juansolon  staff       96 Jul 25 13:03 01-data-delivered/
+drwxr-xr-x   8 juansolon  staff      256 Jul 25 13:03 02-data-temp/
+drwxr-xr-x   4 juansolon  staff      128 Jul 25 13:03 03-tables/
+drwxr-xr-x  11 juansolon  staff      352 Jul 25 13:43 04-do/
+drwxr-xr-x   2 juansolon  staff       64 Jul 25 13:45 05-figures/
+drwxr-xr-x   4 juansolon  staff      128 Jul 25 13:47 06-results/
+-rw-r--r--   1 juansolon  staff       77 Jul 25 13:03 README.md
+-rw-r--r--   1 juansolon  staff  2453320 Jul 25 13:03 adverse.dta
+-rw-r--r--   1 juansolon  staff      241 Jul 25 13:48 jscmd.txt
+-rw-r--r--   1 juansolon  staff    13571 Jul 25 13:48 jslog.txt
+drwxr-xr-x   6 juansolon  staff      192 Jul 25 13:03 references/
+drwxr-xr-x   8 juansolon  staff      256 Jul 25 13:03 sampa notes/
+-rw-r--r--   1 juansolon  staff  5680710 Jul 25 13:03 sampa-all.dta
+-rw-r--r--   1 juansolon  staff   354069 Jul 25 13:03 sampa_data_dictionary_pa
+> rt1.csv
+-rw-r--r--@  1 juansolon  staff     5359 Jul 25 13:03 samparadio1-b.pdf
+-rw-r--r--   1 juansolon  staff     8794 Jul 25 13:03 samparadio1.docx
+-rw-r--r--   1 juansolon  staff    34932 Jul 25 13:03 samparadio1.html
+-rw-r--r--@  1 juansolon  staff     2820 Jul 25 13:03 samparadio1.pdf
+-rw-r--r--   1 juansolon  staff     8601 Jul 25 13:03 samparadio2.docx
+-rw-r--r--   1 juansolon  staff     4192 Jul 25 13:03 samparadio2.pdf
+-rw-r--r--   1 juansolon  staff      118 Jul 25 13:03 statt-sampa.md
+-rwxr-xr-x@  1 juansolon  staff   559027 Jul 25 13:03 statt-site.key*
+
+. do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+
+. dtable age i.sex i.agree , by(cohort)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                                                   Study cohort                                               
+                                                       DIVIDS       SAM Lusaka        CICADA     NUSTART Lusaka      St-ATT          CLHNS          Total     
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+N                                                     342 (11.9%)      98 (3.4%)     978 (34.0%)    302 (10.5%)     685 (23.8%)    474 (16.5%)  2,879 (100.0%)
+Age (years)                                        14.292 (1.257) 12.990 (1.615) 48.165 (11.186) 44.278 (9.734) 49.470 (16.752) 39.431 (0.560) 41.404 (16.334)
+[2.2] Participant's sex                                                                                                                                       
+  Male                                                169 (49.4%)     49 (50.0%)     407 (41.6%)    105 (34.8%)     492 (71.8%)    304 (64.1%)   1,526 (53.0%)
+  Female                                              173 (50.6%)     49 (50.0%)     571 (58.4%)    197 (65.2%)     193 (28.2%)    170 (35.9%)   1,353 (47.0%)
+Did the participant agree to join the SAMPA study?                                                                                                            
+  No, they do not agree                                  0 (0.0%)       0 (0.0%)        1 (0.1%)       0 (0.0%)     167 (24.4%)    122 (28.0%)     290 (10.2%)
+  Yes, they agree                                    342 (100.0%)    98 (100.0%)     977 (99.9%)   302 (100.0%)     275 (40.1%)    308 (70.8%)   2,302 (81.1%)
+  Unable to contact participant                          0 (0.0%)       0 (0.0%)        0 (0.0%)       0 (0.0%)     195 (28.5%)       5 (1.1%)      200 (7.0%)
+  4                                                      0 (0.0%)       0 (0.0%)        0 (0.0%)       0 (0.0%)       48 (7.0%)       0 (0.0%)       48 (1.7%)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. tab sex agree if cohort > 4
+
+     [2.2] | Did the participant agree to join the SAMPA
+Participan |                   study?
+   t's sex | No, they   Yes, they  Unable to          4 |     Total
+-----------+--------------------------------------------+----------
+      Male |       195        387        150         38 |       770 
+    Female |        94        196         50         10 |       350 
+-----------+--------------------------------------------+----------
+     Total |       289        583        200         48 |     1,120 
+
+. label list agree
+agree:
+           0 No, they do not agree
+           1 Yes, they agree
+           2 Unable to contact participant
+           3 Undecided
+
+. pwd
+/Users/juansolon/Documents/GitHub/sampa-analysis
+
+. ls
+
+total 17904
+drwxr-xr-x   3 juansolon  staff       96 Jul 25 13:03 01-data-delivered/
+drwxr-xr-x   8 juansolon  staff      256 Jul 25 13:03 02-data-temp/
+drwxr-xr-x   4 juansolon  staff      128 Jul 25 13:03 03-tables/
+drwxr-xr-x  13 juansolon  staff      416 Jul 25 13:49 04-do/
+drwxr-xr-x   2 juansolon  staff       64 Jul 25 13:45 05-figures/
+drwxr-xr-x   4 juansolon  staff      128 Jul 25 13:47 06-results/
+-rw-r--r--   1 juansolon  staff       77 Jul 25 13:03 README.md
+-rw-r--r--   1 juansolon  staff  2453320 Jul 25 13:03 adverse.dta
+-rw-r--r--   1 juansolon  staff      363 Jul 25 13:58 jscmd.txt
+-rw-r--r--   1 juansolon  staff    18371 Jul 25 13:58 jslog.txt
+drwxr-xr-x   6 juansolon  staff      192 Jul 25 13:03 references/
+drwxr-xr-x   8 juansolon  staff      256 Jul 25 13:03 sampa notes/
+-rw-r--r--   1 juansolon  staff  5680710 Jul 25 13:03 sampa-all.dta
+-rw-r--r--   1 juansolon  staff   354069 Jul 25 13:03 sampa_data_dictionary_part1.csv
+-rw-r--r--@  1 juansolon  staff     5359 Jul 25 13:03 samparadio1-b.pdf
+-rw-r--r--   1 juansolon  staff     8794 Jul 25 13:03 samparadio1.docx
+-rw-r--r--   1 juansolon  staff    34932 Jul 25 13:03 samparadio1.html
+-rw-r--r--@  1 juansolon  staff     2820 Jul 25 13:03 samparadio1.pdf
+-rw-r--r--   1 juansolon  staff     8601 Jul 25 13:03 samparadio2.docx
+-rw-r--r--   1 juansolon  staff     4192 Jul 25 13:03 samparadio2.pdf
+-rw-r--r--   1 juansolon  staff      118 Jul 25 13:03 statt-sampa.md
+-rwxr-xr-x@  1 juansolon  staff   559027 Jul 25 13:03 statt-site.key*
+
+. do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+
+. cd 03-tables
+/Users/juansolon/Documents/GitHub/sampa-analysis/03-tables
+
+. 
+end of do-file
+
+. do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+
+. dtable age i.sex i.agree , by(cohort) ///
+> title("Consent, by cohort") ///
+> export(agree)
+
+Consent, by cohort
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                                                   Study cohort                                               
+                                                       DIVIDS       SAM Lusaka        CICADA     NUSTART Lusaka      St-ATT          CLHNS          Total     
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+N                                                     342 (11.9%)      98 (3.4%)     978 (34.0%)    302 (10.5%)     685 (23.8%)    474 (16.5%)  2,879 (100.0%)
+Age (years)                                        14.292 (1.257) 12.990 (1.615) 48.165 (11.186) 44.278 (9.734) 49.470 (16.752) 39.431 (0.560) 41.404 (16.334)
+[2.2] Participant's sex                                                                                                                                       
+  Male                                                169 (49.4%)     49 (50.0%)     407 (41.6%)    105 (34.8%)     492 (71.8%)    304 (64.1%)   1,526 (53.0%)
+  Female                                              173 (50.6%)     49 (50.0%)     571 (58.4%)    197 (65.2%)     193 (28.2%)    170 (35.9%)   1,353 (47.0%)
+Did the participant agree to join the SAMPA study?                                                                                                            
+  No, they do not agree                                  0 (0.0%)       0 (0.0%)        1 (0.1%)       0 (0.0%)     167 (24.4%)    122 (28.0%)     290 (10.2%)
+  Yes, they agree                                    342 (100.0%)    98 (100.0%)     977 (99.9%)   302 (100.0%)     275 (40.1%)    308 (70.8%)   2,302 (81.1%)
+  Unable to contact participant                          0 (0.0%)       0 (0.0%)        0 (0.0%)       0 (0.0%)     195 (28.5%)       5 (1.1%)      200 (7.0%)
+  4                                                      0 (0.0%)       0 (0.0%)        0 (0.0%)       0 (0.0%)       48 (7.0%)       0 (0.0%)       48 (1.7%)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+option as() required; could not determine filetype from filename
+r(198);
+
+end of do-file
+
+r(198);
+
+. help dtable
+
+. do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+
+. dtable age i.sex i.agree , by(cohort) ///
+> title("Consent, by cohort") ///
+> export(agree.pdf ,as(pdf))
+
+Consent, by cohort
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                                                   Study cohort                                               
+                                                       DIVIDS       SAM Lusaka        CICADA     NUSTART Lusaka      St-ATT          CLHNS          Total     
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+N                                                     342 (11.9%)      98 (3.4%)     978 (34.0%)    302 (10.5%)     685 (23.8%)    474 (16.5%)  2,879 (100.0%)
+Age (years)                                        14.292 (1.257) 12.990 (1.615) 48.165 (11.186) 44.278 (9.734) 49.470 (16.752) 39.431 (0.560) 41.404 (16.334)
+[2.2] Participant's sex                                                                                                                                       
+  Male                                                169 (49.4%)     49 (50.0%)     407 (41.6%)    105 (34.8%)     492 (71.8%)    304 (64.1%)   1,526 (53.0%)
+  Female                                              173 (50.6%)     49 (50.0%)     571 (58.4%)    197 (65.2%)     193 (28.2%)    170 (35.9%)   1,353 (47.0%)
+Did the participant agree to join the SAMPA study?                                                                                                            
+  No, they do not agree                                  0 (0.0%)       0 (0.0%)        1 (0.1%)       0 (0.0%)     167 (24.4%)    122 (28.0%)     290 (10.2%)
+  Yes, they agree                                    342 (100.0%)    98 (100.0%)     977 (99.9%)   302 (100.0%)     275 (40.1%)    308 (70.8%)   2,302 (81.1%)
+  Unable to contact participant                          0 (0.0%)       0 (0.0%)        0 (0.0%)       0 (0.0%)     195 (28.5%)       5 (1.1%)      200 (7.0%)
+  4                                                      0 (0.0%)       0 (0.0%)        0 (0.0%)       0 (0.0%)       48 (7.0%)       0 (0.0%)       48 (1.7%)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+(collection DTable exported to file agree.pdf)
+
+. 
+end of do-file
+

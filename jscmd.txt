@@ -8,3 +8,14 @@ do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
 ls
 pwd
 ls
+pwd
+ls
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+tab sex agree if cohort > 4
+label list agree
+pwd
+ls
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+help dtable
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
