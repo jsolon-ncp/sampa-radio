@@ -94,9 +94,15 @@ collect layout (cohort) (agree#result[column1 column2])
 
 dtable age i.sex i.agree , by(cohort)
 
-dtable age i.sex i.agree , by(cohort) ///
+cd 03-tables
+dtable age i.sex i.agree i.preg_test i.preg_result , by(cohort) ///
 title("Consent, by cohort") ///
-export(agree.pdf ,as(pdf))
+export(agree.pdf ,as(pdf) replace)
+
+dtable age i.sex i.agree i.preg_test i.preg_result , by(cohort) ///
+title("Consent, by cohort") ///
+export(agree.html ,as(html) replace)
+
 
 
 preg_test
