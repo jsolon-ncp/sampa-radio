@@ -25,3 +25,177 @@ do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
 d preg*
 do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
 do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+graph use "/Users/juansolon/Downloads/recruitment over time.gph"
+graph use "/Users/juansolon/Downloads/recruitment over time.gph"
+help wordcb
+table cohort agree
+table agree cohort, statistic(frequency sex)
+table agree cohort, statistic(freq sex)
+table agree cohort, statistic(freq)
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+collect dims
+collect label list agree
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+help predefined styles
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+label list preg_test
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+label list preg_res
+label list preg_result
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+collect dims
+collect label list result
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+help datasignature
+help dyndoc
+help markdown
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD43926.000000"
+scatter age ct_pan_cc_head
+sum ct_pan_cc_head, detail
+scatter age ct_pan_cc_head if ct_pan_cc_head !=.
+scatter age ct_pan_cc_head if ct_pan_cc_head < 100
+scatter age ct_pan_cc_head if ct_pan_cc_head < 100, colorvar(cohort)
+scatter age ct_pan_cc_head if ct_pan_cc_head < 100 if cohort==6, colorvar(cohort)
+scatter age ct_pan_cc_head if ct_pan_cc_head < 100 & cohort==6, colorvar(cohort)
+scatter age ct_pan_cc_head if ct_pan_cc_head < 100 & cohort==5, colorvar(cohort)
+scatter age ct_pan_cc_head if ct_pan_cc_head < 100, colorvar(cohort)
+net search ridgeplot
+joyplot ct_pan_cc_head < 100, over(cohort)
+joy_plot ct_pan_cc_head < 100, over(cohort)
+joy_plot ct_pan_cc_head < 100, over(cohort)
+help joyplot
+help joyplot
+joyplot ct_pan_cc_head < 100, over(cohort)
+joyplot ct_pan_cc_head if ct_pan_cc_head < 100, over(cohort)
+joyplot ct_pan_cc_head if ct_pan_cc_head < 100, by(cohort)
+ssc install palettes, replace
+ssc install colrspace, replace
+joyplot ct_pan_cc_head if ct_pan_cc_head < 100, by(cohort)
+ado update, update
+joyplot ct_pan_cc_head if ct_pan_cc_head < 100, by(cohort)
+pwd
+help missings
+help missingsplot
+help missingplot
+missingplot age
+missingplot 
+help missings
+sum ct_pan_shape
+tab ct_pan_shape
+tab ct_pan_shape cohort, chi
+label list
+labelbook
+sum ct_pan_head_trans
+sktest ct_pan_head_trans
+sum ct_pan_head_trans if  ct_pan_head_trans >=0
+sktest ct_pan_head_trans if  ct_pan_head_trans >=0
+qnorm ct_pan_head_trans if  ct_pan_head_trans >=0
+regress ct_pan_head_trans cohort
+regress ct_pan_head_trans ct_pan_head_ap cohort
+regress ct_pan_head_trans ct_pan_head_ap
+regress ct_pan_head_trans age
+describe ct_pan_head_trans
+stem ct_pan_head_trans
+help stem
+stem ct_pan_head_trans, round(3)
+stem ct_pan_head_trans, round(0.1)
+stem ct_pan_head_trans, round(0.01)
+regress ct_pan_head_trans age
+scatter ct_pan_head_trans age
+scatter ct_pan_head_trans age if ct_pan_head_trans > 0
+scatter ct_pan_head_trans age if ct_pan_head_trans > 0
+scatter ct_pan_head_trans age if ct_pan_head_trans > 0 & ct_pan_head_tras < 5
+scatter ct_pan_head_trans age if ct_pan_head_trans > 0 & ct_pan_head_trans < 5
+scatter ct_pan_head_trans age if ct_pan_head_trans > 0 & ct_pan_head_trans < 10
+scatter ct_pan_head_trans age if ct_pan_head_trans > 0 & ct_pan_head_trans < 5
+scatter ct_pan_head_trans age if ct_pan_head_trans > 0 & ct_pan_head_trans < 5 || lfitci ct_pan_head_trans age
+scatter ct_pan_head_trans age if ct_pan_head_trans > 0 & ct_pan_head_trans < 5 || lfitci ct_pan_head_trans age if ct_pan_head_trans > 0 & ct_pan_head_trans < 5 
+help datasignature
+sum ct_pan_head_ap ct_pan_head_trans, by(sex)
+ttest ct_pan_head_ap ct_pan_head_trans, over(sex)
+dotplot ct_pan_head_ap ct_pan_head_trans, over(sex)
+dotplot ct_pan_head_ap, over(sex)
+dotplot ct_pan_head_ap if ct_pan_head_ap > 0, over(sex)
+dotplot ct_pan_head_ap if ct_pan_head_ap > 0, over(sex) center median
+dotplot  ct_pan_head_trans if  ct_pan_head_trans > 0, over(sex) center median
+striplot ct_pan_head_ap, over(sex)
+net search stripplot
+help stripplot
+stripplot ct_pan_head_ap, over(sex)
+stripplot ct_pan_head_ap if ct_pan_head_ap>0, over(sex)
+stripplot ct_pan_head_ap if ct_pan_head_ap>0, over(sex) cumul
+stripplot ct_pan_head_ap if ct_pan_head_ap>0, over(sex) cumul stack
+stripplot ct_pan_head_ap if ct_pan_head_ap>0, over(sex) cumul freq
+stripplot ct_pan_head_ap if ct_pan_head_ap>0, over(sex) cumul
+stripplot ct_pan_head_ap ct_pan_head_trans if ct_pan_head_ap>0, over(sex) cumul
+stripplot ct_pan_head_trans if ct_pan_head_trans>0, over(sex) cumul
+help joyplot
+joyplot ct_pan_head_trans if ct_pan_head_trans>0, over(sex) 
+joyplot ct_pan_head_trans if ct_pan_head_trans>0, by(sex) 
+joyplot ct_pan_head_trans if ct_pan_head_trans>0, by(cohort) 
+joyplot ct_pan_head_trans if ct_pan_head_trans>0 & cohort>2, by(cohort) 
+which joyplot
+joyplot ct_pan_head_trans if ct_pan_head_trans>0, by(cont_site) 
+joyplot ct_pan_head_trans if ct_pan_head_trans>0, by(languages) 
+joyplot ct_pan_head_trans if ct_pan_head_trans>0, by(education) 
+joyplot ct_pan_head_trans if ct_pan_head_trans>0, by(education) droplow
+joyplot ct_pan_head_trans if ct_pan_head_trans>0, by(employ)
+joyplot ct_pan_head_trans if ct_pan_head_trans>0, by(employ) droplow
+tab employ
+label list employ
+joyplot ct_pan_head_trans if ct_pan_head_trans>0, by(employ_father) droplow
+help joyplot
+d cohort
+joyplot ct_pan_head_trans sex if ct_pan_head_trans>0
+joyplot ct_pan_head_trans sex if ct_pan_head_trans>0, by(cohort)
+joyplot ct_pan_head_trans if ct_pan_head_trans>0, by(cohort)
+joyplot ct_pan_head_trans sex if ct_pan_head_trans>0, by(cohort) 
+label list cohort
+joyplot ct_pan_head_trans sex if ct_pan_head_trans>0 & if cohort>2, by(cohort) 
+joyplot ct_pan_head_trans sex if ct_pan_head_trans>0 & cohort>2, by(cohort) 
+joyplot ct_pan_head_trans if ct_pan_head_trans>0 & cohort>2, by(cohort) 
+help ridgeline
+ridgeline_plot  ct_pan_head_trans, over(sex)
+ridgeline_plot ct_pan_head_trans, over(sex)
+ridgeline_plot ct_pan_head_trans ct_pan_head_ap, over(sex)
+ridgeline_plot ct_pan_head_trans ct_pan_head_ap if ct_pan_head_trans > 0  , over(sex)
+ridgeline_plot ct_pan_head_trans ct_pan_head_ap if ct_pan_head_trans > 0 &  ct_pan_head_trans < 6 , over(sex)
+ridgeline_plot ct_pan_head_trans ct_pan_head_ap if ct_pan_head_trans > 0 &  ct_pan_head_trans < 6 , over(cohort)
+ridgeline_plot ct_pan_head_trans age if ct_pan_head_trans > 0 &  ct_pan_head_trans < 6 , over(cohort)
+ridgeline_plot ct_pan_head_trans age if ct_pan_head_trans > 0 &  ct_pan_head_trans < 6 , over(cohort)
+ridgeline_plot bmi age , over(cohort)
+ridgeline_plot bmi age , over(cohort) normalize
+joyplot bmi age , over(cohort) normalize
+joyplot bmi age , by(cohort) normalize
+joyplot bmi age , by(cohort) 
+joyplot bmi age if cohort>2 , by(cohort) 
+tab bmi cohort
+bysort cohort : sum bmi
+table cohort sex, statistic(mean bmi)
+table cohort sex, statistic(mean bmi) statistic(median bmi)
+table cohort sex, statistic(mean bmi) statistic(median bmi) statistic(median ht)
+table cohort sex, statistic(mean bmi) statistic(median bmi) statistic(median height)
+table cohort sex, statistic(mean bmi) statistic(median bmi) statistic(median height) statistic (mean age)
+exit, clear

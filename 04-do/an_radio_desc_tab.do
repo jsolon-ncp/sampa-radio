@@ -15,7 +15,6 @@ capture log close
 cd "$dropbox/DATA monitoring/Data/SAMPA"
 
 
-
 clear
 clear frames
 set more off
@@ -51,7 +50,7 @@ local crf11b "All_Crf11b_Urine_And_Feces_Results.dta"
 local crf12 "All_Crf12_Diet.dta"
 local crf13 "All_crf13_Abdomen_Uss.dta"
 local crf14 "All_CRF14_Computed_tomography_CT_scans.dta"
-local crfivgtt"All_ivgtt.dta"
+local crfivgtt "All_ivgtt.dta"
 
 /* Merge Datasets */
 use `crf0'
@@ -69,6 +68,7 @@ use `crf0'
 		
 cd $github
 cd sampa-analysis
+cd 03-tables
 
 /*The statistic fvfrequency provides the frequency for
 each level of a categorical variable, and fvpercent reports the percentage of observations in each
@@ -93,9 +93,41 @@ collect layout (cohort) (agree#result[column1 column2])
 
 dtable age i.sex i.agree , by(cohort)
 
-dtable age i.sex i.agree , by(cohort) ///
+cd 03-tables
+
+dtable age i.sex i.agree i.preg_test i.preg_result , by(cohort) ///
 title("Consent, by cohort") ///
-export(agree)
+export(agree.pdf ,as(pdf) replace)
+
+dtable age i.sex i.agree i.preg_test i.preg_result , by(cohort) ///
+title("Consent, by cohort") ///
+export(agree.html ,as(html) replace)
+
+dtable age ///
+	2.sex 4.preg_test 2.preg_result if agree ==1, by(cohort) ///
+	title("Participants, by cohort") ///
+	sample(, place(seplabels)) ///
+	nformat("%9.1f" mean sd percent rawpercent fvpercent fvrawpercent) ///
+	sformat("N=%s" frequency) ///
+	export(agree.pdf ,as(pdf) replace)
+
+/* Fix layout and row labels */
+collect style header sex preg_test preg_result, level(hide)
+collect label levels var sex "Sex: Female", modify
+collect label levels var preg_test "Agreed to Pregnancy Test", modify
+collect label levels var preg_result "Pregnancy Test Positive", modify
+collect preview 
+
+* Add tests for continuous vars */
+dtable age ///
+	2.sex 4.preg_test 2.preg_result if agree ==1, by(cohort) ///
+	title("Participants, by cohort") ///
+	sample(, place(seplabels)) ///
+	nformat("%9.1f" mean sd percent rawpercent fvpercent fvrawpercent) ///
+	sformat("N=%s" frequency) ///
+	continuous(age, statistic(regress))
+	export(agree.pdf ,as(pdf) replace)
+
 
 
 preg_test
@@ -118,6 +150,7 @@ collect label levels var agree "Agreed to Participate", modify
 collect label levels var uss_sample "Ultrasound subsample", modify
 collect label levels var uss_problem "Problem with Ultrasound", modify
 
+collect label levels var agree "Agreed to Participate", modify
 	
 collect preview
 
