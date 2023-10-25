@@ -13,14 +13,14 @@ set more off
 capture log close _all
 capture cmdlog close
 
-capture log using "/Users/juansolon/Documents/GitHub/nsip/NSIP_FF/06-Stata/jslog.txt", replace text
-capture cmdlog using "/Users/juansolon/Documents/GitHub/nsip/NSIP_FF/06-Stata/jscmd.txt", replace
+capture log using "/Users/juansolon/Documents/GitHub/sampa-radio-cleaning-analysis/jslog.txt", replace text
+capture cmdlog using "/Users/juansolon/Documents/GitHub/sampa-radio-cleaning-analysis/jscmd.txt", replace
 
 * Set up directory global macros
 global github = "~/Documents/GitHub"
 global gshared = "~/Google Drive/Shared drives/"
 global gmydrive = "~/Google Drive/My Drive/"
-global sampamwanza = "$github/sampa-mwanza/"
+global samparadio = "$github/sampa-radio-cleaning-analysis/"
 global dropbox = "~/Cox working group Dropbox/TB Nutrition working group"
 
 cd "$dropbox"
@@ -89,7 +89,6 @@ foreach var of varlist head_tr head_ap body_tr tail_tr {
 
 /* Frames - we use frames to store datasets in memory and link them */
 
-
 frame rename default fr_crf13
 frame create fr_crf1
 frame change fr_crf1
@@ -115,9 +114,18 @@ frlink 1:1 sampa_id, frame(fr_crf1)
 
 frget consent - uss, from(fr_crf1)
 
+frlink 1:1 sampa_id, frame(fr_crf13)
+
+
+frget radio_exam date_exam_uss time_exam_uss, from(fr_crf13)
+
 recode agree (0 2 4 . =5), gen(agree_binary)
 
 /* Tabulates recruitment into ct and radio samples */
+
+cd "$samparadio"
+cd 03-tables
+
 
 collect create radio1
 
