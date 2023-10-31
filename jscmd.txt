@@ -1,5 +1,85 @@
-frames
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+collect clear
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
 do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
 pwd
 do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
-pwd
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+d ct*
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+collect layout
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+collect layout
+collect dims
+collect levelsof ct_sample
+collect label list ct_sample
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+collect preview
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+help collect style
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD50055.000000"
+dtable i.ct_sample cohort
+dtable i.ct_sample (cohort ever_mal)
+dtable i.ct_sample, by(cohort)
+help dtable
+collect dims
+collect layout i.ct_sample[1]
+collect layout i.ct_sample[1] cohort
+dtable 1.ct_sample, by(cohort)
+dtable 1.ct_sample 1.uss_smaple, by(cohort ever_mal)
+dtable 1.ct_sample 1.uss_sample, by(cohort ever_mal)
+dtable 1.ct_sample 1.uss_sample, by(cohort)
+collect style level ct_sample, level(hide)
+collect style header ct_sample, level(hide)
+collect preview
+collect style header uss_sample, level(hide)
+collect preview
