@@ -40,65 +40,30 @@ global sampav1 = "~/Cox working group Dropbox/TB Nutrition working group/SAMPA/D
 cd "$sampadata"
 cd "$dropbox"
 
-use `"${sampadata}/All_CRF14_Computed_tomography_CT_scans.dta"', clear
+use `"${sampadata}/All_crf13_Abdomen_Uss.dta"', clear
 
 * Missings demo 
-missings tag  orgid cohort sex dob age, gen(mis_ct_demo)
+missings tag cohort - age, gen(mis_demo)
 
-* Missings ct capture
-missings report ct_scan - ct_time if ct_scan==1
-missings tag ct_scan - ct_time, gen(mis_ct_meta)
+* Missings USS capture
 
-* Missings ct sig (3 variables)
+missings tag uss_sample - time_exam_uss, gen(mis_meta)
 
-egen mis_ct_sig = rowmiss(sig_ct sig_ct_upload)
+* Missings USS qual
 
-tab mis_ct_sig ct_scan, mis
+missings tag pan_size_qual, gen(mis_qual)
 
-* CT Image Quality
-tab ct_image_qual ct_scan, mis col row
-tab ct_problem_why
+* Missings USS quantitative (four variables)
+missings tag pan_head_trans pan_head_ap pan_body_trans pan_tail_trans, gen(mis_quant)
 
-* Missings ct qual
-missings tag ct_pan_size_qual, gen(mis__ct_qual)
+* Missings USS radio (3 variables)
+missings tag name_radio sig_radio sig_uss_upload, gen(mis_name)
 
-* Missing quantitative variables
-missings tag ct_pan_head_trans ct_pan_head_ap ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan_cc_body ct_pan_cc_head, gen(mis_ct_quant)
+* Missings USS sig (3 variables)
+missings tag sig_radio sig_uss_upload, gen(mis_name)
 
-* Data for pancreatic volume 
-
-missings tag ct_pan_vol if ct_scan==1, gen(mis_ct_vol)
-
-*This replace the missing pancreativ voluem for stata 
-gen ct_pan_vol2=ct_pan_vol
-replace ct_pan_vol2= r2_pan_vol if r2_pan_vol!=.
-replace ct_pan_vol2= r3_pan_vol if r3_pan_vol!=.
-
-
-missings tag ct_pan_vol2 if ct_scan==1, gen(mis_ct_vol2)
-
-dtable i.mis_ct_vol, by(ct_image_qual)
-
-dtable mis_ct_qual, statistic(mean ct_pan_vol)
-
-br ct_pan_head_trans ct_pan_head_ap ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan_cc_body ct_pan_cc_head if mis_quant == 1
-* Missings ct quantitative (four variables)
-/*
-ct_pan_head_trans ct_pan_head_ap ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan_cc_body ct_pan_cc_head
-
-gen ct_pan_vol=((ct_pan_tail_trans+ct_pan_body_trans)/2)*ct_pan_body_tail*ct_pan_cc_body+((ct_pan_head_ap/2)^2)*3.14*ct_pan_cc_head
-cap label variable ct_pan_vol "Pancreas Volume by meas; Cohort Radiologist"
-
-ct_pan_tail_trans
-ct_pan_body_trans)/2)*
-ct_pan_body_tail*
-ct_pan_cc_body+((
-ct_pan_head_ap/2)^2)*3.14*
-ct_pan_cc_head
-
-cap label variable ct_pan_vol "Pancreas Volume by meas; Cohort Radiologist"
-*/
-
+egen mis_sig = rowmiss(sig_radio sig_uss_upload)
+tab mis_name name_radio
 
 * Create variable for combine ct data
 * At least 1 quant measure
