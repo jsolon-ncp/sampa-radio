@@ -36,20 +36,20 @@ set seed 314159265
 bysort patient : gen x = runiformint(0, 1) if _n == 1 
 by patient: replace x = x[1]
 
+collect clear
 ** Multiway table of continuous and categorical variables. 
 
-* This creates a collection and names it c1. Stata saves to a default collection called "default"
-collect clear
-collect create c1, replace
+table (var) x, statistic(geomean bp_after) statistic(geosd bp_after)
 
+collect get: ameans bp_after, name(c_ameans) tags(ci)
 
+collect dir
 * Generate summaries and frequencies with supercolumn (agegrp) and column (x)
 table (var)(agegrp x) , ///
-	statistic(mean bp_before bp_after) ///
-	statistic(sd bp_before bp_after) ///
-	statistic(p50 bp_before bp_after) ///
-	statistic(p25 bp_before bp_after) ///
-	statistic(p75 bp_before bp_after) ///
+	statistic(p50 bp_after) ///
+	statistic(p25 bp_after) ///
+	statistic(p75 bp_after) ///
+	statistic(geomean bp_after) ///
 	statistic(fvfrequency sex) ///
 	statistic(percent i.sex, across(x)) ///
 		nototals ///
@@ -59,13 +59,13 @@ table (var)(agegrp x) , ///
 
 ** MOVE THE NUMBERS TO THE CORRECT COLUMNS USING COLLECT RECODE  
 * recodes fvfrequency and percent in the collection to columns 1 and 2
-collect recode result fvfrequency = column1
+/*collect recode result fvfrequency = column1
 collect recode result percent = column2
 		
 * recodes mean and sd in the collection to columns 1 and 2
 collect recode result mean = column1
 collect recode result sd = column2
-
+*/
 * recodes median to column 1 and p25 to column 2
 collect recode result p50 = column1
 collect recode result p25 = column2
@@ -77,23 +77,24 @@ collect recode result p75 = column3
 
 * Format median
 
-collect style cell result[column1]#var[bp_before bp_after], nformat("%4.1f")
+collect style cell result[column1]#var[bp_after], nformat("%4.1f")
 
 * Add IQR formatting to p25 and p75 separately:
-collect style cell result[column2]#var[bp_before bp_after], nformat("%4.1f") sformat("(%s -")
-collect style cell result[column3]#var[bp_before bp_after], nformat("%4.1f") sformat("%s)")
+collect style cell result[column2]#var[bp_after], nformat("%4.1f") sformat("(%s -")
+collect style cell result[column3]#var[bp_after], nformat("%4.1f") sformat("%s)")
 
 * Put % after percent:
 collect style cell result[column2]#var[sex], nformat("%4.1f") sformat("%s%%")
 
 * Create composite result : this is for medians and probably CIs
-collect composite define column4 = column2 column3
+collect composite define column4 = column2 column3, replace
 
 collect label list result, all
 
 *** LAYOUT AND STYLE TABLE 
 * Table 1 Layout Super column - column 
-collect layout (var) (agegrp#x#result[column1 column2])
+collect layout (var) (agegrp#x#result[column1 column4]) /* this now calls column4 which you defined earlier*/
+
 
 * format factor variables (categorical) column 1
 collect style cell var[sex]#result[column1], nformat(%6.0fc)
@@ -102,10 +103,10 @@ collect style cell var[sex]#result[column1], nformat(%6.0fc)
 collect style cell var[sex]#result[column2], nformat(%6.1f) sformat("(%s%%)")
 
 * format continuous variables column 1
-collect style cell var[bp_before bp_after]#result[column1 column2], nformat(%6.1f)
+collect style cell var[bp_after]#result[column1 column2], nformat(%6.1f)
 
 * format continuous variables column 2
-. collect style cell var[bp_before bp_after]#result[column2], sformat("(%s)")
+. collect style cell var[bp_after]#result[column2], sformat("(%s)")
 
 
 collect preview

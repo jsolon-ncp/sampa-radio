@@ -32,10 +32,14 @@ https://www.statalist.org/forums/forum/general-stata-discussion/general/1690975-
 */
 
 *. Create dataset and a new binary variable x
+
+
 sysuse bpwide, clear
 set seed 314159265 
 bysort patient : gen x = runiformint(0, 1) if _n == 1 
 by patient: replace x = x[1]
+
+
 
 ** Multiway table of continuous and categorical variables.  This creates a collection and names it c1.  Not essential.
 collect clear
@@ -58,10 +62,6 @@ collect recode result mean = column1
 collect recode result sd = column2
 
 
-// Put % after percent:
-collect style cell result[colUMN2]#var[SEX], nformat("%4.1f") sformat("%s%%")
-
-
 * recodes fvfrequency and percent in the collection to columns 1 and 2
 collect recode result fvfrequency = column1
 collect recode result percent = column2
@@ -71,17 +71,29 @@ collect label list result, all
 * Table 1 Layout Super column - column 
 collect layout (var) (agegrp#x#result[column1 column2])
 
+* Header - hide stuff
+collect style header result, level(hide) /* this removes column 1 and column2 header names*/
+collect style header x, title(hide) /* this removes the column variable name or label by hiding it */
+
+* Header - change text in headers
+collect label dim agegrp "Patient Age Group", modify
+collect label levels x 0 "NPM" 1 "PM", modify
+
+* Rows - change text in rows
+collect label levels var 0.sex "Male" 1.sex "Female", modify /* This changes the level of sex to male and female*/
+collect label levels var bp_before "BP Before" bp_after "BP After", modify 
+
 * format factor variables (categorical) column 1
-collect style cell var[sex]#result[column1], nformat(%6.0fc)
+collect style cell var[0.sex 1.sex]#result[column1], nformat(%5.0f) /*Formats factor number */ 
 
 * format factor variables (categorical) column 2
-collect style cell var[sex]#result[column2], nformat(%6.1f) sformat("(%s%%)")
+collect style cell var[0.sex 1.sex]#result[column2], nformat(%5.0f) sformat("(%s%%)") /* Adds (%) to percent */
 
 * format continuous variables column 1
-collect style cell var[bp_before bp_after]#result[column1 column2], nformat(%6.1f)
+collect style cell var[bp_before bp_after]#result[column1 column2], nformat(%5.1f) /* Formats continuous variable to format one decimal*/
 
-* format continuous variables column 2
-. collect style cell var[bp_before bp_after]#result[column2], sformat("(%s)")
+* format continuous variables column 2 
+. collect style cell var[bp_before bp_after]#result[column2], sformat("(%s)") /* Adds parenthesis after SD*/
 
 
 collect preview
@@ -125,7 +137,7 @@ putdocx begin /* Start of Word Input*/
 	collect style putdocx, layout(autofitcontents) ///  use layout(autofitcontents) to retain original width of table */
 	title("Table 1: Charateristics by Cohort and Nutritional STatus")
 	putdocx collect /*exports our table to the document*/
-	putdocx save impe_tab1.docx, replace
+	putdocx save template_tab1.docx, replace
 
 
 cd "$dropboxradio" /* change to your pwd or any desired folder */
