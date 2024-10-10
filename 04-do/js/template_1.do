@@ -12,9 +12,9 @@ Notes
 - Rows as variables being reported across columns
 6.  Coding notes
 -  Percentages must compare columns and requires using "i." before the categorical variable in the code and "across()"
-- every summary state is placed as a separate line for ease of revision.
+- every summary statistic is placed as a separate line for ease of revision.
 - Indent the stats and Indent the formats for clarity
-- statistics that requie Formatting median and IQR followes statalist suggestion (see sources)
+- the IQR, and confidence intervals have to be combined into one column see statalist suggestion (see sources)
 7. Exclusions
 - statistical tests
 - median
