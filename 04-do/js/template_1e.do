@@ -1,48 +1,82 @@
-/* template_1e.do
-
-Notes
-1. Needs at least Stata version 17 
-2. Uses the table and the collect commands.
-3. Uses putdocx.
-4. Input : Wide dataset
-5. Output : Table 1 in .docx  with:
-- continuous variable summary mean SD 
-- categorical variable frequencies and percentages across groups
-- Supercolumn and columns (eg cohort and nutritional status)
-- Rows as variables being reported across columns
-6.  Coding notes
--  Percentages must compare columns and requires using "i." before the categorical variable in the code and "across()"
-- every summary statistic is placed as a separate line for ease of revision.
-- Indent the stats and Indent the formats for clarity
-- the IQR, and confidence intervals have to be combined into one column see statalist suggestion (see sources)
-7.  Adds median ci
-7. Exclusions
-- statistical tests
-- footnotes
-- p values CIs of stat test significance testing
-
-Sources
-
-*Stata Blog by Chuck Huber the Classit Table 1 for Stata 17
-https://blog.stata.com/2021/06/24/customizable-tables-in-stata-17-part-3-the-classic-table-1/
-
-* Statalist - code for formatting iqr using collect.
-https://www.statalist.org/forums/forum/general-stata-discussion/general/1690975-formatted-iqr-using-collect
+/* template_1e.do /*Table 1 using table collect */
+Juan Solon
+2024 Oct 13
 
 */
+
+/*Notes
+	1. This creates a table 1 with a supercolumn, column, and rows of variables with N, mean, median, geometric mean, counts and percentages.
+	2. The latest copy of this template will be found in github.
+	3. Input : This template use nhanes2l
+	4. Output : Table 1 in .docx  /* needs further resizing of columns manually in word*/ - if coded column width will need putdocx
+	5. Output : Table 1 in html /* this is for ease of viewing*/
+	6. Output : Tale 1 in xlsx
+	7.  Coding notes
+	- Percentages must compare columns and requires using "i." before the categorical variable in the code and "across()"
+	- every summary statistic is placed as a separate line for ease of revision.
+	- Use indents in code for clarity 
+	- the IQR, and confidence intervals have to be combined into one column see statalist suggestion (see sources)
+*/	
+
+/*Pending 
+	1. Geometric means CIs 	- geometric means and CIs are part of the stats of table command, but geometric mean CIs must be collected using ameans
+	2. statistical tests and p values
+*/
+	
+/* How to use
+	1. Save as whatever.do in wherever/you/want, then revise accordingly.
+	2. Create your global macros to define path of your dataset and where you want to save the output.
+	3. This template uses local macros which the user has to revise.  Since this is a local macro, you need to run the macros and the table generation in one run.
+	4. You need to revise the macros
+	- your dataset
+	- your supercolumn, column
+	- all your variables as continuous reporting means, continuous reporting medians,  continuous reporting GM
+	- categorical variables
+	- indicator variables
+	- number and string formats
+	- others
+	5.  Check the gen N = 1 .   used in frequencies/group. Assumes that all that  in the dataset are included in the analysis.  If not, revise accordingly.
+	6. THERE IS NO NEED TO MODIFY ANYTHING BEYOND LINE 116 which creates local notes3 text
+	7.  If you do modify, and you want to see what the table revision looks like, use collect preview
+*/	
+
+/* Sources
+
+
+	*Stata Blog by Chuck Huber
+
+	the Classic Table 1 for Stata 17
+	https://blog.stata.com/2021/06/24/customizable-tables-in-stata-17-part-3-the-classic-table-1/
+
+	* Statalist 
+	code for formatting iqr using collect.
+	https://www.statalist.org/forums/forum/general-stata-discussion/general/1690975-formatted-iqr-using-collect
+
+	* German Rodriguez
+	https://grodri.github.io/stata/tables
+	
+*/
+
+
+** Global macros
+global datapath = "your datapath"
+global savetables = "your path to save tables"
 
 ** Use dataset /*path to your analysis dataset*/
 local dataset "nhanes2l"
 
-*. Create dataset and a new binary variable x
+*. Use dataset /* revise as use*/
 
+* cd "$datapath"
 webuse `dataset', clear
+
+* cd "$savetables"
 
 * CREATE A COUNT VARIABLE - modify accordingly - this should count the analysis dataset for the table ; used in frequency stats
 
 gen N=1
 
-* RELABEL CONTINUOUS VARIABLES FOR TABLE
+* RELABEL CONTINUOUS VARIABLES FOR TABLE /* Revise as you would want to appear in table*/
 
 label variable age "Age in years;  Mean(SD)"
 label variable bmi "BMI ; Mean(SD)"
@@ -89,11 +123,7 @@ local nfrmt_iqr "%5.0f"
 local sfrmt_p25 "(%s -"
 local sfrmt_p75 "%s)"
 
-* Table Text
-
-local age : var label age
-local bmi : var label bmi
-local hgb : var label hgb
+* Table Text /* Revise */ - comment out local notes4 for publication;
 
 local title "Table 1. Participant Characteristics"
 
@@ -221,6 +251,8 @@ collect style header `hiderows', title(hide)
 	
 * Export
 	collect export preview.html, as(html) replace
+	collect export preview.docx, as(docx) replace
+	collect export preview.xlsx, as(xlsx) replace
 	
 	
 	
