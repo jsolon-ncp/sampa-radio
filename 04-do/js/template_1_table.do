@@ -1,52 +1,43 @@
-/* template_2-dtable.do /*Table 1 using dtable */
+/* template_1e.do
 Juan Solon
 2024 Oct 13
 
-*/
-
-/*Notes
-	1. This creates a table 1 with column, and rows of variables with N, mean, median, geometric mean, counts and percentages.
+Notes
+	1. This creates a table 1 with a supercolumn, column, and rows of variables with N, mean, median, geometric mean, counts and percentages.
 	2. The latest copy of this template will be found in github.
 	3. Input : This template use nhanes2l
 	4. Output : Table 1 in .docx  /* needs further resizing of columns manually in word*/ - if coded column width will need putdocx
 	5. Output : Table 1 in html /* this is for ease of viewing*/
-	6. Output : Tale 1 in xlsx
-	7.  Coding notes
+	6.  Coding notes
 	- Percentages must compare columns and requires using "i." before the categorical variable in the code and "across()"
 	- every summary statistic is placed as a separate line for ease of revision.
 	- Use indents in code for clarity 
 	- the IQR, and confidence intervals have to be combined into one column see statalist suggestion (see sources)
-*/	
+	
 
-/*Pending 
+Pending 
 	1. Geometric means CIs 	- geometric means and CIs are part of the stats of table command, but geometric mean CIs must be collected using ameans
 	2. statistical tests and p values
-*/
+
 	
-/* How to use
+How to use
 	1. Save as whatever.do in wherever/you/want, then revise accordingly.
-	2. Create your global macros to define path of your dataset and where you want to save the output.
-	3. This template uses local macros which the user has to revise.  Since this is a local macro, you need to run the macros and the table generation in one run.
-	4. You need to revise the macros
+	2. This template uses local macros which the user has to revise.  Since this is a local macro, you need to run the macros and the table generation in one run.
+	3. You need to revise the macros
 	- your dataset
 	- your supercolumn, column
 	- all your variables as continuous reporting means, continuous reporting medians,  continuous reporting GM
 	- categorical variables
 	- indicator variables
-	- number and string formats
-	- others
-	5.  Check the gen N = 1 .   used in frequencies/group. Assumes that all that  in the dataset are included in the analysis.  If not, revise accordingly.
-	6. THERE IS NO NEED TO MODIFY ANYTHING BEYOND LINE 116 which creates local notes3 text
-	7.  If you do modify, and you want to see what the table revision looks like, use collect preview
-*/	
-
-/* Sources
-
-https://www.stata.com/new-in-stata/create-export-descriptive-statistic-tables/
+	4.  Check the gen N = 1 .   used in frequencies/group. Assumes that all that  in the dataset are included in the analysis.  If not, revise accordingly.
+	5. Check desired number formats and string formats /*note that revising strings can cause problems if not done properly*/
+	6. THERE IS NO NEED TO MODIFY ANYTHIGN BEYOND LINE 116 which creates local notes3 text
+	
+Sources
 
 	*Stata Blog by Chuck Huber
 
-	the Classic Table 1 for Stata 17
+	the Classit Table 1 for Stata 17
 	https://blog.stata.com/2021/06/24/customizable-tables-in-stata-17-part-3-the-classic-table-1/
 
 	* Statalist 
@@ -55,72 +46,29 @@ https://www.stata.com/new-in-stata/create-export-descriptive-statistic-tables/
 
 	* German Rodriguez
 	https://grodri.github.io/stata/tables
-	
+
 */
-
-
-** Global macros
-global datapath = "your datapath"
-global savetables = "your path to save tables"
 
 ** Use dataset /*path to your analysis dataset*/
 local dataset "nhanes2l"
 
 *. Use dataset /* revise as use*/
 
-* cd "$datapath"
 webuse `dataset', clear
-
-* cd "$savetables"
 
 * CREATE A COUNT VARIABLE - modify accordingly - this should count the analysis dataset for the table ; used in frequency stats
 
+gen N=1
 
 * RELABEL CONTINUOUS VARIABLES FOR TABLE /* Revise as you would want to appear in table*/
 
 label variable age "Age in years;  Mean(SD)"
 label variable bmi "BMI ; Mean(SD)"
 label variable hgb "Haemoglobin (g/dL)  ; Median(p25 - p75)"
-label variable zinc "Serum Zinc (mcg/dL)  ; Geometric Mean (SD)"
+label variable zinc "Serum Zinc (mcg/dL)  ; Geometric Mean (CI)"
 
 * CREATE LOCAL MACROS FOR VARIABLES IN TABLE - USE COMPLETE VARIABLE NAME)
 	local scol "region"
-	local col "diabetes"
-	local contn "age bmi"
-	local contmed "hgb"
-	local contgm "zinc"
-	local cat "hlthstat"
-	local ind "sex"
-	
-* CREATE NOTS
-
-local notes1 "Variable distributions are reported as n(%) unless otherwise specified"
-local notes2 " Age and BMI are Mean(SD).  Haemoglobin' is Median(IQR)"
-local notes3 "stat tests"
-local notes4 "Created by "`c(username)'" on "`c(current_date)'" at "`c(current_time)'"  based on  "`c(filename)'""
-
-* GENERATE TABLE STATS 
-
-dtable (), by(diabetes, tests nototals) ///
-	define(meansd = mean sd, delimiter(" ± ")) ///
-	define(myiqr = p25 p75, delimiter("-")) ///
-	continuous(`contn', statistics( meansd) test(regress)) ///
-	continuous(`contmed', statistics( median myiqr) test(kwallis)) ///
-	factor(`cat', statistics( fvpercent) test(pearson)) ///
-	nformat(%5.0f p25 p75 median) sformat("(%s)" myiqr) ///
-    nformat(%6.1f mean sd) sformat("%s" sd) ///
-	title("Table 1. X") ///
-	note(`notes1') ///
-		note(`notes2') ///
-			note(`notes3') ///
-				note(`notes4') ///
-	export (dtable2.html, as(html) replace)  
-
-	
-	
-/* 
-* CREATE LOCAL MACROS FOR VARIABLES IN TABLE - USE COMPLETE VARIABLE NAME)
-
 	local col "diabetes"
 	local contn "age bmi"
 	local contmed "hgb"
@@ -162,8 +110,27 @@ local sfrmt_p75 "%s)"
 * Table Text /* Revise */ - comment out local notes4 for publication;
 
 local title "Table 1. Participant Characteristics"
-*/
 
+local notes1 "Variable distributions are reported as n(%) unless otherwise specified"
+local notes2 " Age and BMI are Mean(SD).  Haemoglobin' is Median(IQR)"
+local notes3 "stat tests"
+local notes4 "Created by "`c(username)'" on "`c(current_date)'" at "`c(current_time)'"  based on  "`c(filename)'""
+
+* GENERATE TABLE STATS 
+
+	table (var)(`scol' `col') , ///
+		stat(count N) ///
+		stat(mean `contn') ///
+		stat(sd `contn') ///
+		stat(p50 `contmed') ///
+		stat(p25 `contmed') ///
+		stat(p75 `contmed') ///
+		stat(fvfrequency `ind' `cat') ///
+		stat(percent i.`ind'  i.`cat', across(`col')) ///
+			nototals ///
+			nformat(%5.0f percent) ///
+			nformat(%5.1f mean p25 p50 p75) ///
+			nformat(%5.2f sd) 
 
 *REFORMAT RESULTS TO DESIRED COLUMNS
 
@@ -268,8 +235,8 @@ collect style header `hiderows', title(hide)
 	
 * Export
 	collect export preview.html, as(html) replace
-	collect export preview.docx, as(docx) replace
-	collect export preview.xlsx, as(xlsx) replace
+	collect export preview.docx, as(.docx) replace
+	collect export preview.xlsx, as(.xlsx) replace
 	
 	
 	

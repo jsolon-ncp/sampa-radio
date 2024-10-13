@@ -75,7 +75,6 @@ webuse `dataset', clear
 
 * CREATE A COUNT VARIABLE - modify accordingly - this should count the analysis dataset for the table ; used in frequency stats
 
-gen N=1
 
 * RELABEL CONTINUOUS VARIABLES FOR TABLE /* Revise as you would want to appear in table*/
 
@@ -84,6 +83,42 @@ label variable bmi "BMI ; Mean(SD)"
 label variable hgb "Haemoglobin (g/dL)  ; Median(p25 - p75)"
 label variable zinc "Serum Zinc (mcg/dL)  ; Geometric Mean (SD)"
 
+* CREATE LOCAL MACROS FOR VARIABLES IN TABLE - USE COMPLETE VARIABLE NAME)
+	local scol "region"
+	local col "diabetes"
+	local contn "age bmi"
+	local contmed "hgb"
+	local contgm "zinc"
+	local cat "hlthstat"
+	local ind "sex"
+	
+* CREATE NOTS
+
+local notes1 "Variable distributions are reported as n(%) unless otherwise specified"
+local notes2 " Age and BMI are Mean(SD).  Haemoglobin' is Median(IQR)"
+local notes3 "stat tests"
+local notes4 "Created by "`c(username)'" on "`c(current_date)'" at "`c(current_time)'"  based on  "`c(filename)'""
+
+* GENERATE TABLE STATS 
+
+dtable (), by(diabetes, tests nototals) ///
+	define(meansd = mean sd, delimiter(" ± ")) ///
+	define(myiqr = p25 p75, delimiter("-")) ///
+	continuous(`contn', statistics( meansd) test(regress)) ///
+	continuous(`contmed', statistics( median myiqr) test(kwallis)) ///
+	factor(`cat', statistics( fvpercent) test(pearson)) ///
+	nformat(%5.0f p25 p75 median) sformat("(%s)" myiqr) ///
+    nformat(%6.1f mean sd) sformat("%s" sd) ///
+	title("Table 1. X") ///
+	note(`notes1') ///
+		note(`notes2') ///
+			note(`notes3') ///
+				note(`notes4') ///
+	export (dtable2.html, as(html) replace)  
+
+	
+	
+/* 
 * CREATE LOCAL MACROS FOR VARIABLES IN TABLE - USE COMPLETE VARIABLE NAME)
 
 	local col "diabetes"
@@ -127,39 +162,9 @@ local sfrmt_p75 "%s)"
 * Table Text /* Revise */ - comment out local notes4 for publication;
 
 local title "Table 1. Participant Characteristics"
-
-local notes1 "Variable distributions are reported as n(%) unless otherwise specified"
-local notes2 " Age and BMI are Mean(SD).  Haemoglobin' is Median(IQR)"
-local notes3 "stat tests"
-local notes4 "Created by "`c(username)'" on "`c(current_date)'" at "`c(current_time)'"  based on  "`c(filename)'""
-
-* GENERATE TABLE STATS 
-
-dtable (), by(`col', tests nototals) ///
-	continuous(`contn', statistics( mean sd) test(regress)) ///
-	continuous(`contmed', statistics( median p25 p75) test(kwallis)) ///
-	continuous(`contgm', statistics( geomean geosd) test(kwallis)) /// 
-	factor(`cat', statistics( fvpercent) test(pearson)) ///
-	define(intq=p25 p75, delimiter("-")) ///
-	title("Table 2. Univariate") ///
-	export (dtable2.html, as(html) replace)  
-	-sformat("(%s)" iqr)-.
-	
-	
-	 dtable, by(heartatk, tests) svy
-        define(meansd = mean sd, delimiter(" ± "))
-        define(myiqr = p25 p75, delimiter("-"))
-        continuous(age, stat(meansd) test(none))
-        continuous(bmi, stat(meansd))
-        continuous(bpsystol tcresult, stat(median myiqr))
-note: using test regress across levels of heartatk for bmi, bpsystol, and tcresult.
+*/
 
 
-
-
-	
-	
-	export (tab1.xlsx, as(xlsx) replace) ///
 *REFORMAT RESULTS TO DESIRED COLUMNS
 
 	* recodes mean and sd in the collection to columns 1 and 2
