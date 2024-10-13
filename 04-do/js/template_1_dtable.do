@@ -1,4 +1,4 @@
-/* template_1e.do /*Table 1 using table collect */
+/* template_1-dtable.do /*Table 1 using dtable */
 Juan Solon
 2024 Oct 13
 
@@ -81,7 +81,7 @@ gen N=1
 label variable age "Age in years;  Mean(SD)"
 label variable bmi "BMI ; Mean(SD)"
 label variable hgb "Haemoglobin (g/dL)  ; Median(p25 - p75)"
-label variable zinc "Serum Zinc (mcg/dL)  ; Geometric Mean (CI)"
+label variable zinc "Serum Zinc (mcg/dL)  ; Geometric Mean (SD)"
 
 * CREATE LOCAL MACROS FOR VARIABLES IN TABLE - USE COMPLETE VARIABLE NAME)
 	local scol "region"
@@ -133,6 +133,58 @@ local notes3 "stat tests"
 local notes4 "Created by "`c(username)'" on "`c(current_date)'" at "`c(current_time)'"  based on  "`c(filename)'""
 
 * GENERATE TABLE STATS 
+
+dtable () if race==1, by(`col', nototals) ///
+	continuous(`contn', statistics( mean sd) test(regress)) ///
+	continuous(`contmed', statistics( median p25 p75) test(kwallis)) ///
+	continuous(`contgm', statistics( geomean geosd) test(kwallis)) /// 
+	factor(`cat', statistics( fvpercent) test(pearson)) ///
+	define(intq=p25 p75, delimiter("-")) ///
+	title("Table 1") ///
+	export (tab1.xlsx, as(xlsx) replace)  
+	
+dtable () if race==2, by(`col', nototals) ///
+	continuous(`contn', statistics( mean sd) test(regress)) ///
+	continuous(`contmed', statistics( median p25 p75) test(kwallis)) ///
+	continuous(`contgm', statistics( geomean geosd) test(kwallis)) /// 
+	factor(`cat', statistics( fvpercent) test(pearson)) ///
+	define(intq=p25 p75, delimiter("-")) ///
+	novarlabel ///
+	title("Table 1") ///
+	export (tab1.xlsx, as(xlsx) cell(D1) modify)  
+	
+
+dtable () if race==3, by(`col', nototals) ///
+	continuous(`contn', statistics( mean sd) test(regress)) ///
+	continuous(`contmed', statistics( median p25 p75) test(kwallis)) ///
+	continuous(`contgm', statistics( geomean geosd) test(kwallis)) /// 
+	factor(`cat', statistics( fvpercent) test(pearson)) ///
+	define(intq=p25 p75, delimiter("-")) ///
+	novarlabel ///
+	title("Table 1") ///
+	export (tab1.xlsx, as(xlsx) cell(G1) modify)  	
+	
+	
+	
+	
+	
+	continuous(age, statistics( mean min max) test(kwallis)
+	factor("`cat'" "`ind'")
+
+	
+dtable, by(male, tests testnotes nototal) sample(, statistic(frequency proportion)) 
+> continuous(age, statistics( mean min max) test(kwallis)) 
+> continuous(ltime rtime, statistics(mean skewness kurtosis) test(poisson)) 
+> factor(needle, statistics(fvfrequency fvproportion)) 
+> factor(jail inject, statistics(fvfrequency) test(fisher))
+note: using test kwallis across levels of male for age.
+note: using test poisson across levels of male for ltime and rtime.
+note: using test pearson across levels of male for needle.
+note: using test fisher across levels of male for jail and inject.	
+
+
+dtable () by(diabetes) continuous(age)
+
 
 	table (var)(`scol' `col') , ///
 		stat(count N) ///
