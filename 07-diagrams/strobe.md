@@ -1,3 +1,10 @@
+**CONSORT using flowchart in Stata**
+
+[flowchart_example2.do](https://github.com/IsaacDodd/flowchart/blob/master/flowchart_example2.do)  
+
+https://github.com/IsaacDodd/flowchart/blob/master/flowchart_example2.do
+
+
 **Participant Diagram**
 *All Cohorts*
 ```mermaid
