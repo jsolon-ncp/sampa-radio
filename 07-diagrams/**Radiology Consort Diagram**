@@ -1,6 +1,6 @@
 **Radiology Consort Diagram**
 
-digraph a_nice_graph
+digraph sampa_radio_consort
 {
     node [fontname="Helvetica", shape="box", width=4, fillcolor="none", style="filled"]
     
