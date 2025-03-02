@@ -114,11 +114,33 @@ cd 05-figures
 * local variables to plots
 	tempfile 1 2 3 4
 	local scatter1 "pan_head_trans ct_pan_head_trans bmi"
-	local scatter2 "pan_head_ap ct_pan_head_ap"]
+	local scatter2 "pan_head_ap ct_pan_head_ap"
 	local lfitci1 "pan_head_trans bmi"
 	local lfitci2 "ct_pan_head_trans bmi"
+	
+	local title "Pancreatic Head and BMI"
+	local subtitle "Ultrasound and BMI"
+	
+	local ciplot "rarea"
+	local fintensity ("inten50")
 
+	scatter `scatter1', msym(oh oh) msize(small) ///
+		 || lfitci `lfitci1', ciplot(`ciplot') ///
+		 || lfitci `lfitci2',  ciplot(`ciplot') fintensity(`fintensity')  ///
+		 legend(label(1 "Ultrasound")) legend(label(2 "CT Scan")) ///
+		 legend(label(4 "Ultrasound Fitted values")) ///
+		 legend(label(5 "CT Scan Fitted values")) ///
+		 title(`title', span) ///
+		 subtitle(`subtitle', span) 
+		
+				  
 
+	
+scatter `scatter1', msym(oh oh) msize(small) ///
+		legend(on) legend(label(1 "Ultrasound")) legend(label(2 "CT Scan")) ///
+		 || lfitci `lfitci1', legend(label(4 "Ultrasound Fitted values")) ///
+		 || lfitci `lfitci2', legend(label(5 "CT Scan Fitted values"))
+				  
 
 
 
