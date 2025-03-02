@@ -127,7 +127,7 @@ stat(fvfrequency 1.assay_f) ///
 	
 cd 03-tables
 
-collect export table_cohort_samples.html, as(html)
+collect export table_cohort_samples.html, as(html) replace
 	
 upsetplot  recruited assay_fe assay_lip radio2 ct2 , ///
 													varlabels ///
