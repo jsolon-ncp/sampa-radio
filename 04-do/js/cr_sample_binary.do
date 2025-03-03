@@ -20,13 +20,15 @@ gen assay_lipase = 1 if lipase !=. & lipase >0
 	replace assay_lip = 0 if lipase ==.
 	la var assay_lip "Lipase"
 
+/*
 gen assay_amylase = 1 if amylase !=. & amylase >0
-	replace assay_amylase = 0 if amylase ==.
+	*replace assay_amylase = 0 if amylase ==.
 	la var assay_amylase "Amylase"
 	
-gen assay_trypsinogen = 0
-	replace assay_trypsinogen = 1 if assay_tryp ==.
+gen assay_trypsinogen = 1 if trypsinogen !=. & trypsinogen >0
+	*replace assay_trypsinogen = 0 if trypsinogen ==.
 	la var assay_trypsinogen "Trypsinogen"
+*/
 
 **# Create new variables for imaging presence; Do not replace combined
 
