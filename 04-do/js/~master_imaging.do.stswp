@@ -1,0 +1,48 @@
+/* master_imaging.do
+Juan Solon
+March 3 2025
+Purpose
+This serves as the master do file for the Sampa Imaging Elastase Paper
+
+Reusable with
+	1.  Access to Dropbox
+	2.  Define globals and paths
+	3.  A working directory with 
+	01-data
+	02-data-temp
+	03-tables
+	04-do
+	05-figures
+	log 
+*/
+
+**# Create Study Dataset for Analysis
+
+
+cr_read.do 						// Read from Dropbox the Combined Dataset
+
+cr_flag_elastase.do 			// Flags the elastase samples that should not be analyzed based on ELISA standards ; n = 90
+
+cr_sample_binary.do				// Generates or recodes ultrasound ct scan and elisa assays as binary with or without samples
+								// Include here the same for presence or absence of functional enzyme assays 
+
+cr_categorical_outcomes.do 		// Recodes fecal_elastase to with or without EPI and levels of EPI
+								// Include here any recoding of other functional enzymes
+
+cr_categorical_dependent.do    	// Include here any derived variables for imaging that are categorical
+
+cr_continuous_dependent.do 		// Derived variables for imaging that are continuous 
+
+an__bivariate_assays.do // bivariate anaysis - of all lab assays by mn 
+
+tab_assays.do // tabulate levels of EPI by cohort; by mn
+
+an_bivariate_dimensions.do // bivaraite analysis of all relevant  by mn
+
+tab_dimensions.do // bivaraite analysis of all image sizes by mn
+
+an_regression_assays.do // 
+
+an_regression_dimensions.do //
+ 
+tab_image_findings.do // 
