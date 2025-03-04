@@ -65,6 +65,10 @@ gen assay_lip = 1 if lipase !=. & lipase >0
 	replace assay_lip = 0 if lipase ==.
 	la var assay_lip "Lipase"
 
+gen assay_tryp = 0
+replace assay_tryp = 1 if assay_tryp ==.
+la var assay_tryp "Trypsinogen"
+
 clonevar radio2 = radio_exam
 	replace radio2 = 0 if radio_exam==.
 	la var radio2 "Ultrasound"
@@ -77,7 +81,7 @@ egen epi_binary = cut(fecal_elastase), at(0,200,601) icodes
 	la var epi_binary "EPI"
 	recode epi_binary 0 = 1 1 = 0
 	
-	label drop epi_binary
+
 	label define epi_binary 0 "Without EPI" 1 "With EPI"
 	label values epi_binary epi_binary
 	
@@ -85,47 +89,38 @@ egen epi_binary = cut(fecal_elastase), at(0,200,601) icodes
 egen epi_ordinal = cut(fecal_elastase), at(0,100,200, 601) icodes
 	la var epi_ordinal "EPI Levels"
 	recode epi_ordinal 0 = 3 1 = 2 2 = 1 
-	label drop epi_ordinal
+
 	label define epi_ordinal 1 "Without EPI" 2 "Mild-Moderate EPI" 3 "Severe EPI"
 	label values epi_ordinal epi_ordinal
 
 
+tempfile 1 2 	
+cd ./02-data-temp 
 
+save `1'
+upsetplot  recruited assay_fe assay_lip assay_tryp radio2 ct2 , ///
+													varlabels ///
+													title ("Functional Assays and Imaging Subsets") ///
+													savedata(`2', replace)
+cd ../05-figures
+gr export upsetplot1.png, as(png) replace
 
-	
-* Paper Subsets
+cd ../02-data-temp
 
-/* 110 excluded no stool . Of these, 110 participants (4.7%, including x PM and y NPM) were excluded from the present analysis as they did not undergo radiological scans nor contribute stool samples.
+local toptitle "t1title(Assays and Imaging)"
+use `2', clear
+. graph hbar (asis) _setfreq, over(_set, sort(1)) blabel(bar) ysc(off) `toptitle'
 
-Of these, 110 participants (4.7%, including x PM and y NPM) were excluded from the present analysis as they did not undergo radiological scans nor contribute stool samples. Participant exposures were categorized as previous malnourished (PM) or not previous malnourished (NPM) (Table 1).
+cd ../05-figures
+gr export sample_images_freq.png, as(png) replace
 
-tab feces_collect radio2, mis
+use `1', clear
 
-       Feces |      Ultrasound
-  collected? |        No        Yes |     Total
--------------+----------------------+----------
-         Yes |       430      1,602 |     2,032 
-           . |        83        182 |       265 
--------------+----------------------+----------
-       Total |       513      1,784 |     2,297 
-
-
-
-*/
-
-
-table (cohort), /// 
-stat(fvfrequency 1.assay_f) ///
- stat(fvfrequency 1.assay_l) ///
-  stat(fvfrequency 1.radio2) ///
-   stat(fvfrequency 1.ct2) 
-   
-	
 upsetplot  recruited assay_fe assay_lip radio2 ct2 , ///
 													varlabels ///
 													title ("Functional Assays and Imaging Subsets") ///
 													gsort(_freq ) select(9 10 12)
-
+cd ..
 local toptitle "t1title(Assays and Imaging)"
 local paperopts matrixopts(mc(gs8 ..))
 tempfile x 1 2
@@ -163,6 +158,12 @@ upsetplot  recruited radio2 ct2 , varlabels title("Imaging Subsets")
 
 
 /*
+
+PV = [(APtail+APbody)/2×Lbody&tail×CCbody]+[(APhead/2)2×3.14×CChead]
+
+
+
+
 tab radio_exam radio2, mis
 tab ct_scan ct2, mis
 tab fe_elisa

@@ -53,11 +53,22 @@ do ./04-do/js/cr_categorical_outcomes.do
 										// Recodes fecal_elastase to with or without EPI and levels of EPI
 										// Include here any recoding of other functional enzymes once that data is in and cut-offs are known
 
-cr_categorical_dependent.do    	// Include here any derived variables for imaging that are categorical
+cd "$ghsamparadio"
+do ./04-do/js/cr_categorical_dependent.do
 
-cr_continuous_dependent.do 		// Derived variables for imaging that are continuous 
+										// Include here any derived variables for imaging that are categorical
+
+cd "$ghsamparadio"
+do ./04-do/js/cr_continuous_dependent.do 		// Derived variables for imaging that are continuous ; include transformations / weights
+
+
+an_samples_mn.do 						//  What is the proportion of samples per MN and cohort
+
+
+an_images_mn.do 
 
 an__bivariate_assays.do // bivariate anaysis - of all lab assays by mn 
+
 
 tab_assays.do // tabulate levels of EPI by cohort; by mn
 

@@ -12,13 +12,13 @@ version 18.5
 
 ** Install this 
 
-net install upsetplot.pkg
+* net install upsetplot.pkg
 
 *CLEAR
 clear all
 set more off
 
-* GLOBALS
+* CHANGES THIS FOR YOUR DIRECTORY -  IMPORTANT
 global dropboxsampa "~/Cox working group Dropbox/TB Nutrition working group/Sampa"
 global samparadio "~/Cox working group Dropbox/TB Nutrition working group/Sampa/DATA Analysis/Radiology"
 * global sampadata "~/Cox working group Dropbox/TB Nutrition working group/Sampa/DATA Management/04-data-delivered-v2/ALL/STATA"
@@ -28,18 +28,15 @@ global ghsamparadio = "~/Documents/GitHub/sampa-radio"
 * LOCAL FOR DO FILE
 local dofilename "gr_upsetplot.do"
 
-cd $ghstata
 * WORKING DIRECTORY
 
 cd "$ghsamparadio"
-*cd "$dropboxsampa"
-*cd "$sampadata"
 
 * LOG
 
 capture log close _all
 capture cmdlog close
-capture log using "./log/jslog.txt", replace text
+capture log using "./log/log.txt", replace text
 
 ** TEMPS
 
@@ -128,3 +125,6 @@ cd ../05-figures
 gr export sample_images_freq.png, as(png) replace
 
 use `1', clear
+
+
+
