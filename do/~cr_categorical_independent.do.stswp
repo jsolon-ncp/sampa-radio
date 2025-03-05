@@ -10,11 +10,11 @@ Reusable with
 	1.  Access to Dropbox
 	2.  Define globals and paths
 	3.  A working directory with 
-	01-data
-	02-data-temp
-	03-tables
-	04-do
-	05-figures
+	data
+	data-temp
+	tables
+	do
+	figures
 	log 
 	
 */
@@ -22,7 +22,7 @@ Reusable with
 * Any radiology variables
 
 
-* Cohort subcategorizations
+* Cohort subcategorizations these are for creating graphs 
 
 generate child_adult = 1 if cohort ==1 | cohort ==2
 	replace child_adult = 2 if cohort ==3 | cohort ==4 | cohort ==5 | cohort ==6

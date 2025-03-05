@@ -10,11 +10,11 @@ Reusable with
 	1.  Access to Dropbox
 	2.  Define globals and paths
 	3.  A working directory with 
-	01-data
-	02-data-temp
-	03-tables
-	04-do
-	05-figures
+	data
+	data-temp
+	tables
+	do
+	figures
 	log 
 	
 */
@@ -22,7 +22,7 @@ Reusable with
 * Any radiology variables
 
 
-* Cohort subcategorizations
+* Cohort subcategorizations these are for creating graphs 
 
 generate child_adult = 1 if cohort ==1 | cohort ==2
 	replace child_adult = 2 if cohort ==3 | cohort ==4 | cohort ==5 | cohort ==6
@@ -42,3 +42,7 @@ replace fec_cohort = 6 if cohort == 4
 
 la var fec_cohort "Cohort"
 label define fec_cohort 1 "DIVIDS" 2 "St-ATT" 3 "CLHNS" 4 "SAM" 5 "CICADA" 6 "NUSTART"
+label values fec_cohort fec_cohort
+
+label define ever_mal 0 "NPM" 1 "PM", modify
+label values ever_mal ever_mal
