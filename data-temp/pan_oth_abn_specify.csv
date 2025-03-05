@@ -1,0 +1,208 @@
+cohort,sampa_id,pan_oth_abnormal,pan_oth_abn_specify
+DIVIDS,10039,"Yes, specify",2.8 mm calculus seen at mid-pole of left kidney.
+DIVIDS,10228,"Yes, specify",Enlarged spleen (13 cm)
+DIVIDS,10381,"Yes, specify",No abnormality seen. Just wanted to address the confusion with the IDs at the radiology clinic. The correct ID is 10381 but the scans have 10351 written on them. These scans belong to the ID 10381.
+DIVIDS,10486,"Yes, specify",The liver is enlarged in size- suggestive of hepatomegaly.
+DIVIDS,10521,"Yes, specify",Splenomegaly (12.9 cm)
+DIVIDS,10603,"Yes, specify",A few calculus (at least 6) seen in gall bladder lumen. Largest stone- 7.9mm. Gall bladder thickness- 2.5mm.
+DIVIDS,10758,"Yes, specify",Hepatomegaly (16.2 cm)
+Grade II fatty liver
+DIVIDS,11092,"Yes, specify",Cholelithiasis with gall bladder polyps with acute cholecystitis.
+DIVIDS,11135,"Yes, specify",There is an echogenic focus measuring 2.6 mm seen in distal body region of posterior wall- s/o polyp.
+DIVIDS,11225,"Yes, specify",Mild splenomegaly
+DIVIDS,11237,"Yes, specify",Multiple conglomerate necrotic periportal lymph nodes encasing the portal vein- likely tuberculosis etiology.
+DIVIDS,11243,"Yes, specify","Cholelithiasis (9.5mm, 5.2mm with mildly edematous wall-3.8mm) sign of acute calculus cholecystitis."
+DIVIDS,11395,"Yes, specify",Enlarged Spleen (12.9 cm)
+DIVIDS,11587,"Yes, specify",An immobile echogenic (2 mm) focus is seen in the anterior wall of the body region- s/o polyp.
+DIVIDS,11648,"Yes, specify",Liver is enlarged in size (17cm) and shows moderately increased parenchymal echogenicity- suggestive of grade-2 fatty liver.
+DIVIDS,11693,"Yes, specify",Worm infestation was seen in small bowel loops.
+DIVIDS,11895,"Yes, specify","Hepatomegaly with calcified granuloma in liver. 
+(Also, wanted to address a mistake with the ID. The DICOM files have 13013 written on them but the correct ID is 11895. The scans attached here belong to ID 11895 with incorrect ID written on their top.)"
+DIVIDS,13033,"Yes, specify",The liver is enlarged in size- 16.5 cm. Suggestive of hepatomegaly.
+DIVIDS,13046,"Yes, specify",Liver is enlarged in size (16 cm)- suggestive of hepatomegaly.
+DIVIDS,13079,"Yes, specify",1. Increased periportal echogenicity of liver.
+2. An anechoic lesion  arising from the spleen and extending to splenic hilum.
+3. Mesentric lymphadenopathy.
+DIVIDS,13085,"Yes, specify",Liver is enlarged (16cm) and shows mildly increased parenchymal echo texture- s/o grade- I fatty infiltration.
+CICADA,30001,"Yes, specify",Hepatic steatosis
+CICADA,30008,"Yes, specify",Hepatic steatosis
+CICADA,30011,"Yes, specify",Hepatic steatosis
+CICADA,30012,"Yes, specify",Hepatic steatosis
+CICADA,30015,"Yes, specify",Hepatic steatosis
+CICADA,30017,"Yes, specify",Hepatic steatosis
+CICADA,30021,"Yes, specify",Hepatic steatosis
+CICADA,30032,"Yes, specify","Liver, kidney are echogenic"
+CICADA,30037,"Yes, specify",Hepatic steatosis
+CICADA,30040,"Yes, specify",Hepatic steatosis grade 3 * recommend Liver Function Tests and Review
+CICADA,30043,"Yes, specify",Hepatic steatosis
+CICADA,30044,"Yes, specify",atrophic kidneys
+CICADA,30046,"Yes, specify",Hepatic steatosis
+CICADA,30048,"Yes, specify",Hepatic steatosis
+CICADA,30052,"Yes, specify",hepatic steatosis
+CICADA,30053,"Yes, specify","Bulky spleen,
+Right kidney parapelvic cyst(1.6cm)"
+CICADA,30054,"Yes, specify",Hepatic steatosis
+CICADA,30057,"Yes, specify",Hepatic steatosis
+CICADA,30058,"Yes, specify",Hepatic steatosis
+CICADA,30060,"Yes, specify",Hepatic steatosis
+CICADA,30061,"Yes, specify",Hepatic steatosis
+CICADA,30071,"Yes, specify",Hepatic steatosis
+CICADA,30072,"Yes, specify",Hepatic steatosis
+CICADA,30076,"Yes, specify",Hepatic Steatosis
+CICADA,30077,"Yes, specify",Hepatic steatosis
+CICADA,30081,"Yes, specify",Hepatic Steatosis
+CICADA,30082,"Yes, specify",Hepatic steatosis
+CICADA,30084,"Yes, specify",Hepatic steatosis
+CICADA,30087,"Yes, specify",Hepatic steatosis
+CICADA,30088,"Yes, specify",Hepatic steatosis
+CICADA,30091,"Yes, specify",Hepatic steatosis
+CICADA,30092,"Yes, specify",Hepatic steatosis
+CICADA,30093,"Yes, specify",Hepatic steatosis
+CICADA,30096,"Yes, specify",Hepatic steatosis
+CICADA,30097,"Yes, specify",Hepatic steatosis
+
+Symptomatic-abdominal pain will require further workup
+CICADA,30099,"Yes, specify",Hepatic steatosis
+CICADA,30102,"Yes, specify",Hepatic steatosis
+CICADA,30108,"Yes, specify",Hepatic steatosis
+CICADA,30111,"Yes, specify",Hepatic steatosis
+CICADA,30117,"Yes, specify",Hepatic steatosis
+CICADA,30121,"Yes, specify",Gallstone
+CICADA,30123,"Yes, specify",Hepatic steatosis
+CICADA,30125,"Yes, specify",Hepatic steatosis
+CICADA,30127,"Yes, specify",Hepatic steatosis
+CICADA,30128,"Yes, specify",Hepatic haemangioma
+CICADA,30133,"Yes, specify",Hepatic steatosis
+CICADA,30135,"Yes, specify",Hepatic steatosis
+CICADA,30136,"Yes, specify","Hepatic steatosis,
+Gallstone"
+CICADA,30139,"Yes, specify",Right kidney not clear visualised
+CICADA,30140,"Yes, specify",Hepatic steatosis
+CICADA,30141,"Yes, specify",Hepatic steatosis
+CICADA,30144,"Yes, specify",Bilateral kidneys not clearly visualised due bowel gas
+CICADA,30145,"Yes, specify",Hepatic steatosis
+CICADA,30147,"Yes, specify",Hepatic steatosis
+CICADA,30148,"Yes, specify",Hepatic steatosis
+CICADA,30154,"Yes, specify",Hepatic steatosis
+CICADA,30158,"Yes, specify","Hepatic steatosis, Gallstones"
+CICADA,30160,"Yes, specify",Hepatic steatosis and Portal Hypertension
+CICADA,30161,"Yes, specify",Hepatic steatosis
+CICADA,30165,"Yes, specify",Hepatic steatosis
+CICADA,30166,"Yes, specify",Hepatic steatosis
+CICADA,30167,"Yes, specify",Hepatic steatosis
+CICADA,30168,"Yes, specify",Hepatic steatosis
+CICADA,30175,"Yes, specify",Right kidney not clearly delineated
+CICADA,30176,"Yes, specify",Hepatic steatosis
+CICADA,30178,"Yes, specify",Hepatic steatosis
+CICADA,30185,"Yes, specify",Hepatic steatosis
+CICADA,30186,"Yes, specify",Hepatic steatosis
+CICADA,30190,"Yes, specify",Hepatic steatosis
+CICADA,30195,"Yes, specify",Hepatic steatosis
+CICADA,30196,"Yes, specify",Hepatic steatosis
+CICADA,30201,"Yes, specify",Hepatic steatosis
+CICADA,30204,"Yes, specify",Hepatic steatosis
+CICADA,30207,"Yes, specify",Hepatic steatosis
+CICADA,30209,"Yes, specify",Hepatic steatosis
+CICADA,30211,"Yes, specify",Hepatic steatosis
+CICADA,30214,"Yes, specify",Hepatic steatosis
+CICADA,30216,"Yes, specify",Hepatic steatosis
+CICADA,30221,"Yes, specify","Hepatic haemangioma,Gallstone"
+CICADA,30223,"Yes, specify",Hepatic steatosis grade 3
+CICADA,30225,"Yes, specify",Hepatic steatosis with early portal hypertension
+CICADA,30230,"Yes, specify",Hepatic steatosis
+CICADA,30231,"Yes, specify",Hepatic steatosis
+CICADA,30245,"Yes, specify",Hepatic steatosis
+CICADA,30249,"Yes, specify",Hepatic steatosis
+CICADA,30265,"Yes, specify",Hepatic steatosis
+CICADA,30266,"Yes, specify","Hepatic steatosis, Gallstones"
+CICADA,30282,"Yes, specify",Hepatic steatosis
+CICADA,30284,"Yes, specify",Hepatic steatosis
+CICADA,30289,"Yes, specify",Hepatic steatosis
+CICADA,30291,"Yes, specify",Hepatic steatosis
+CICADA,30301,"Yes, specify",Hepatic steatosis
+CICADA,30304,"Yes, specify",Hepatic steatosis
+CICADA,30319,"Yes, specify",Hepatic steatosis
+CICADA,30320,"Yes, specify",Hepatic steatosis
+CICADA,30323,"Yes, specify",Hepatic steatosis
+CICADA,30334,"Yes, specify",Hepatic steatosis
+CICADA,30336,"Yes, specify",Hepatic haemangioma
+CICADA,30365,"Yes, specify",Hepatic steatosis
+CICADA,30376,"Yes, specify",Hepatic steatosis
+CICADA,30378,"Yes, specify",Hepatic steatosis
+CICADA,30408,"Yes, specify",Hepatic steatosis
+CICADA,30423,"Yes, specify",Hepatic steatosis
+CICADA,30429,"Yes, specify",Hepatic steatosis
+CICADA,30437,"Yes, specify",Hepatic steatosis
+CICADA,30444,"Yes, specify",Hepatic steatosis
+CICADA,30454,"Yes, specify",Hepatic haemangiomas
+CICADA,30461,"Yes, specify",Gallstone splenomegaly
+CICADA,30462,"Yes, specify",Gallstone
+CICADA,30467,"Yes, specify",Hepatic steatosis
+CICADA,30468,"Yes, specify",Hepatic steatosis
+CICADA,30470,"Yes, specify",Ovarian Mass Right
+CICADA,30472,"Yes, specify",Hepatic steatosis
+CICADA,30498,"Yes, specify",Hepatic steatosis
+CICADA,30509,"Yes, specify",Gallstone
+CICADA,30514,"Yes, specify",Hepatic steatosis
+CICADA,30521,"Yes, specify",Bulky spleen
+CICADA,30531,"Yes, specify",Hepatic steatosis
+CICADA,30552,"Yes, specify",Hepatic steatosis
+CICADA,30564,"Yes, specify",Hepatic steatosis
+CICADA,30570,"Yes, specify",Hepatic steatosis
+CICADA,30584,"Yes, specify",Hepatic haemangioma
+CICADA,30629,"Yes, specify",Hepatic steatosis
+CICADA,30695,"Yes, specify",Hepatic cysts
+CICADA,30727,"Yes, specify",Hepatic steatosis
+CICADA,30733,"Yes, specify",Hepatic steatosis
+CICADA,30749,"Yes, specify",Hepatic steatosis
+CICADA,30759,"Yes, specify",Hepatic steatosis
+CICADA,30766,"Yes, specify",Hepatic steatosis
+CICADA,30779,"Yes, specify",Hepatic steatosis
+CICADA,30781,"Yes, specify",Hepatic steatosis
+CICADA,30795,"Yes, specify",Hepatic steatosis
+CICADA,30800,"Yes, specify",Left sided Liver - Variant Situs Inversus
+CICADA,30803,"Yes, specify",Hepatic steatosis
+CICADA,30808,"Yes, specify",Hepatic steatosis
+CICADA,30813,"Yes, specify",Hepatic steatosis
+CICADA,30819,"Yes, specify",Hepatic steatosis
+CICADA,30838,"Yes, specify",Hepatic steatosis
+CICADA,30839,"Yes, specify",Hepatic steatosis
+CICADA,30848,"Yes, specify",Hepatic steatosis
+CICADA,30851,"Yes, specify",Hepatic steatosis
+CICADA,30852,"Yes, specify",Hepatic steatosis
+CICADA,30859,"Yes, specify",Hepatic steatosis
+CICADA,30873,"Yes, specify",Hepatic steatosis
+CICADA,30875,"Yes, specify",Hepatic steatosis
+CICADA,30879,"Yes, specify",Hepatic steatosis
+CICADA,30883,"Yes, specify",Liver masses _ indeterminate will require CT
+CICADA,30891,"Yes, specify",Hepatic steatosis
+CICADA,30894,"Yes, specify",Hepatic haemangiomas benign
+CICADA,30909,"Yes, specify",Hepatic steatosis
+CICADA,30920,"Yes, specify",Hepatic steatosis
+CICADA,30929,"Yes, specify",Hepatic steatosis
+CICADA,30935,"Yes, specify",Hepatic haemangioma
+CICADA,30936,"Yes, specify",Right kidney hydronephrosis - recommend urologist review
+CICADA,30973,"Yes, specify",Hepatic steatosis
+NUSTART,40002,"Yes, specify",multiple hyperechoic circumscribed solid lesion in the left lobe suggestive of a hepatic hemangiomas.
+NUSTART,40017,"Yes, specify",Right ovarian simple cyst. 
+Left adnexal cyst measuring 7 cm x 6.8 x 6.9 cm with a lace like pattern consistent with benign hemorrhagic cyst. 
+Multi-fibroid uterus.
+NUSTART,40025,"Yes, specify",Multiple circumscribed hyperechoic liver lesions.  Review in hepatic clinic.
+NUSTART,40034,"Yes, specify",Hepatomegaly with diffuse fatty infiltration.
+NUSTART,40041,"Yes, specify",Reduced kidney  sizes with increased echogenicity suggestive of chronic kidney disease. 
+Right kidney length  measures 7.55 cm.
+NUSTART,40048,"Yes, specify","Left adnexal cyst with echogenic fluid and large calcification within it , most likely representing abenign dermoid cyst. for gynae review."
+NUSTART,40053,"Yes, specify",Complex left adnexal lesion. For gynae review.
+NUSTART,40074,"Yes, specify",enlarged fatty liver
+NUSTART,40114,"Yes, specify",multi-fibroid uterus
+NUSTART,40165,"Yes, specify",hyperechoic liver lesion in the right side of the liver
+NUSTART,40188,"Yes, specify",Liver Lesion?- Haemangioma
+NUSTART,40190,"Yes, specify",Fatty Enlarged Liver
+NUSTART,40193,"Yes, specify",Lt Lower Quadrant soft tissue lesion? Haematoma
+NUSTART,40201,"Yes, specify",Fatty Liver
+NUSTART,40278,"Yes, specify",fatty liver
+NUSTART,40282,"Yes, specify",uterine fibroid
+STATT,50260,"Yes, specify",hepatic steatosis
+STATT,50269,"Yes, specify",Incidental Note: Multilocular cystic mass within the abdomen. Please correlate with CECT of the whole abdomen.
+STATT,50658,"Yes, specify",Incidental Finding: Gallbladder Lithiases.
+STATT,50844,"Yes, specify","Hepatic steatosis, gallstones"

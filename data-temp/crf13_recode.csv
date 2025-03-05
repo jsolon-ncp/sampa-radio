@@ -1,0 +1,77 @@
+main variable,label,Choices,variable,specify,recode,comment,Final Decision,hepato | liver,megaly,Spleen,Cholelithiasis / gallstone,megaly,fatty liver / steatosis,kidney,gallbladder,not visualized,not seen,hyperechoic,mass
+pan_shape_problem,"[13.10] For abnormal shape, specify the problem","1, Imbalance in size of head compared to tail | 2, Other shape abnormality, specify {pan_shape_prob_specify}",pan_shape_prob_specify,"Atrophic body,tail",,,,,,,,,,,,,,,
+,,,,Bulky Neck,,,,,,,,,,,,,,,
+,,,,Imbalance head cf. body,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+pan_contour_problem,"Other contour problem, specify","1, Irregular border | 2, Lobulated | 3, Other contour problem, specify {pan_contour_prob_specify}",pan_contour_prob_specify,Margins not clear,,,,,,,,,,,,,,,
+,,,,,,,,hepato | liver,megaly,Spleen,Cholelithiasis / gallstone,megaly,fatty liver / steatosis,kidney,gallbladder,not visualized,not seen,hyperechoic,mass
+pan_oth_abnormal,[13.22] Any other abnormalities detected?,"0, No | 1, Yes, specify {pan_oth_abn_specify}",pan_oth_abn_specify,"Cholelithiasis (9.5mm, 5.2mm with mildly edematous wall-3.8mm) sign of acute calculus cholecystitis.",,,,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Mild splenomegaly,,,,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Liver is enlarged in size (16 cm)- suggestive of hepatomegaly.,,,,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Enlarged Spleen (12.9 cm),,,,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,No abnormality seen. Just wanted to address the confusion with the IDs at the radiology clinic. The correct ID is 10381 but the scans have 10351 written on them. These scans belong to the ID 10381.,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,An immobile echogenic (2 mm) focus is seen in the anterior wall of the body region- s/o polyp.,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Multiple conglomerate necrotic periportal lymph nodes encasing the portal vein- likely tuberculosis etiology.,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Splenomegaly (12.9 cm),,,,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Hepatomegaly (15.6) with mildly increased parenchymal echogenicity- sign of grade-I fatty liver,,,,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,The liver is enlarged in size- suggestive of hepatomegaly.,,,,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"1. Increased periportal echogenicity of liver.
+2. An anechoic lesion arising from the spleen and extending to splenic hilum.
+3. Mesentric lymphadenopathy.",,,,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Hepatomegaly with calcified granuloma in liver. 
+(Also, wanted to address a mistake with the ID. The DICOM files have 13013 written on them but the correct ID is 11895. The scans attached here belong to ID 11895 with incorrect ID written on their top.)",,,,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Liver is mildly enlarged in size (15.7 cm), sign of hepatomegaly.",,,,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,There is an echogenic focus measuring 2.6 mm seen in distal body region of posterior wall- s/o polyp.,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Liver is enlarged in size (17cm) and shows moderately increased parenchymal echogenicity- suggestive of grade-2 fatty liver.,,,,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Cholelithiasis with gall bladder polyps with acute cholecystitis.,,,,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE
+,,,,2.8 mm calculus seen at mid-pole of left kidney.,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Worm infestation was seen in small bowel loops.,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Liver is enlarged in size (16cm)- suggestive of hepatomegaly.,,,,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Enlarged spleen (13 cm),,,,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Hepatomegaly (16.2 cm)
+Grade II fatty liver",,,,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,multiple hyperechoic circumscribed solid lesion in the left lobe suggestive of a hepatic hemangiomas.,,,,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+,,,,"Left adnexal cyst with echogenic fluid and large calcification within it , most likely representing abenign dermoid cyst. for gynae review.",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,enlarged fatty liver,,,,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,multi-fibroid uterus,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Right ovarian simple cyst. 
+Left adnexal cyst measuring 7 cm x 6.8 x 6.9 cm with a lace like pattern consistent with benign hemorrhagic cyst. 
+Multi-fibroid uterus.",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Multiple circumscribed hyperechoic liver lesions. Review in hepatic clinic.,,,,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+,,,,hyperechoic liver lesion in the right side of the liver,,,,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+,,,,Hepatomegaly with diffuse fatty infiltration.,,,,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Reduced kidney sizes with increased echogenicity suggestive of chronic kidney disease. 
+Right kidney length measures 7.55 cm.",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Complex left adnexal lesion. For gynae review.,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Hepatic steatosis,,,,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Hepatic steatosis
+
+Symptomatic-abdominal pain will require further workup",,,,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Gallstone,,,,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE
+,,,,Hepatic haemangioma,,,,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Hepatic steatosis,
+Gallstone",,,,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE
+,,,,Right kidney not clear visualised,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE
+,,,,Bilateral kidneys not clearly visualised due bowel gas,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE
+,,,,"Hepatic steatosis, Gallstones",,,,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE
+,,,,Hepatic steatosis and Portal Hypertension,,,,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Right kidney not clearly delineated,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Hepatic haemangioma,Gallstone",,,,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE
+,,,,Hepatic steatosis grade 3,,,,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Hepatic steatosis with early portal hypertension,,,,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Hepatic steatosis, Gallstones",,,,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE
+,,,,"Liver, kidney are echogenic",,,,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Hepatic steatosis grade 3 * recommend Liver Function Tests and Review,,,,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,atrophic kidneys,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Hepatic steatosis,,,,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Hepatic haemangiomas,,,,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Bulky spleen,
+Right kidney parapelvic cyst(1.6cm)",,,,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Gallstone,,,,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE
+,,,,Incidental Note: Multilocular cystic mass within the abdomen. Please correlate with CECT of the whole abdomen.,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,Incidental Finding: Gallbladder Lithiases.,,,,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE
+,,,,"Hepatic steatosis, gallstones",,,,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+image_not_optimal,[13.24] Indicate why the ultrasound scan not optimal,"1, Bowel gas | 2, Obese participant | 3, Participant uncooperative, e.g. could not stay still | 4, Others, specify {image_non_why}",image_non_why,Gaseous shadows interfering with the evaluation of the retro-peritoneum below the level of the pancreas.,,,,,,,,,,,,,,,
+,,,,No peri-pancreatic clear fat planes,,,,,,,,,,,,,,,

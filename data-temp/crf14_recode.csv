@@ -1,0 +1,180 @@
+main variable,label,Choices,variable,specify,recode,comment,Final Decision,hepato | liver,megaly,hepatic cyst,Spleen,Cholelithiasis / gallstone,megaly,fatty liver / steatosis,kidney,gallbladder,not visualized,not seen,hyperechoic,mass,gynecologic,pancreatic,neprolithiasis,athero/areteriosclerosis
+ct_pan_shape_problem,"[14.110] For abnormal shape, specify the problem","1, Imbalance in size of head compared to tail | 2, Other shape abnormality, specify {ct_pan_shape_prob_spec}",ct_pan_shape_prob_spec,"Very thin body 
+Absent tail
+",,,,,,,,,,,,,,,,,,,,
+,,,,,,,,hepato | liver,megaly,hepatic cyst,Spleen,Cholelithiasis / gallstone,megaly,fatty liver / steatosis,kidney,gallbladder,not visualized,not seen,hyperechoic,mass,gynecologic,pancreatic,neprolithiasis,athero/areteriosclerosis
+"ct_pan_oth_abnormal
+",[14.122] Any other abnormalities detected?,"0, No | 1, Yes, specify {ct_pan_oth_abn_spec}","ct_pan_oth_abn_spec
+",Left Ovarian cyst.,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
+,,,,bulky uterus with endometrial free fluid.,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
+,,,,Head of pancreas lesion ? pseudocyst. Biliary sludge and gall bladder calculus.,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE
+,,,,"left hydrocele
+right lower lobe nodular opacities",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,multi-fibroid uterus,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
+,,,,Liver lesion segment 6 of measuring 3.6 x1.7 cm.,,,,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"mild bilateral hydroureteronephrosis, endometrial free fluid and multi-fibroid uterus",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
+,,,,atrophic right kidney with mild right hydronephrosis,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Non-specific calcifications, liver and spleen.
+Simple hepatic cyst.
+Unremarkable plain study of the gallbladder and pancreas.",,,,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE
+,,,,Degenerative osseous changes,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Cholecystolithiasis with no evidence of cholecystitis.
+Non-obstructing nephrolithiasis, bilateral.",,,,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+,,,,"Small pancreatic cyst
+Small splenomegaly
+Non-obstructing nephrolithiasis, left kidney
+Right renal cyst",,,,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE
+,,,,"Atherosclerosis
+Degenerative osseous changes",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,"Hepatic cyst
+Atherosclerosis
+Degenerative osseous changes",,,,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,"Atherosclerotic aorta
+Degenerative osseous changes",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,"Pulmonary nodule, left lower lobe",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Fatty degeneration at pancreatic parenchyma,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE
+,,,,"Atherosclerosis
+Degenerative osseous changes
+Consider cystic lesion in the lower abdomen.",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,"Normal Pancreas with fatty degeneration, consistent with age.
+Atherosclerotic aorta.
+Lumbar Spondylosis with Disc Disease.",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE
+,,,,"Normal size liver with fatty infiltration.
+Aorto-cavalnodule with calcification, possibly a calcified lymph node.
+Atherosclerotic aorta.
+Thoraco-lumbar spine osseous degenerative changes.",,,,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,"Hepatic hypotenuse nodule, maybe a cyst.",,,,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"RIGHT RENAL PARENCHYMAL TINY CALCIFICATION
+
+BILATERAL LOWER LUNG FIBROSIS",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Non-obstructing nephrolithiasis, right",,,,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+,,,,Atherosclerotic aorta.,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,"Tiny Calyceal Lithiasis, Left.",,,,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Non-obstructing nephrolithiasis, right.",,,,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+,,,,Atherosclerosis,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,Consider partial dorsal pancreatic agenesis.,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE
+,,,,"1) Massive ascitis. However given findings of scalloping of liver margins and mesenteric caking, the possibility of pseudomyxoma peritonei/peritoneal carcinomatosis is not ruled out. Contrast enhanced CT correlation is suggested.
+2) Non-specific hepatic calcifications.
+3) Splenomegaly with multiple cystic foci.",,,,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE
+,,,,Atherosclerotic aorta,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,"Fatty infiltration of the liver.
+Cholelithiasis",,,,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Tiny Calyceal lithiases,,,,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Right Renal Cortical Cyst.
+Atherosclerotic Aorta and Common Iliac arteries.
+Thoraco-Lumbar Spine osseous degenerative changes.",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,Atherosclerotic Aorta and Splenic Artery,,,,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,"Bilateral Renal cortical cysts.
+Atherosclerotic Aorta, coronary, celiac, and iliac arteries.
+Lumbar Spondylosis.",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,"Atherosclerotic Aorta.
+Lumbar Spondylosis",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,"Atherosclerotic Aorta.
+Lumbar Spondylosis.",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,"Renal Cortical Cyst, Left.
+Atherosclerotic Aorta.
+Lumbar Spondylosis.",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,"Suspicious thickening of the gastric walls, cannot rule out gastritis.
+Degenerative osseous changes
+Minimal pleural effusion, left",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Pulmonary nodule, right lower lobe",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Left renal nodule, most likely a cortical cyst.
+Atherosclerotic aorta and common iliac arteries.
+Thoraco-lumbar spine osseous degenerative changes.",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,"Poorly Delineated Pancreas.
+Atherosclerotic Aorta.
+Thoraco-lumbar spondylosis.",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE
+,,,,"Left Renal nodule, most likely cortical cyst.
+Atherosclerotic aorta and common iliac arteries.
+Thoraco-lumbar spine osseous degenerative changes.",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,Mild hepatomegaly with fatty infiltration.,,,,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Cholelithiaes.
+Right renal nodule maybe a small cortical cyst.
+Atherosclerotic aorta and common iliac arteries.
+Thoraco-lumbar spine osseous degenerative changes.",,,,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,"Cholecystolithiasis
+Atherosclerosis
+Degenerative osseous changes",,,,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,"Hepatic calcifications, segment VI & VIII
+Left renal cyst
+Atherosclerosis
+Degenerative osseous changes",,,,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,"Minimal pleural effusion and pleural calcifications, right",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Non-specific hepatic calcification
+Degenerative osseous changes",,,,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Atherosclerosis
+Degenerative osseous changes
+Pulmonary inflammatory process middle lobe and left lower lobe",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,"FATTY INFLITRATION OF THE LIVER
+SMALL RIGHT KIDNEY WITH MODERATE PERLVOCALIECTASIA",,,,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Cholecystolithiasis.
+Thoraco-lumbar spondylosis.",,,,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Hepatic calcification, left lobe and lobulated nodule with calcification, segment IV
+Hypodense nodule, segment III",,,,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Fatty liver infiltration.
+Atherosclerotic Aorta and iliac arteries.",,,,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,"RIGHT RENAL CORTICAL CYST
+ATHEROSCLEROTIC RIGHT COMMON ILIAC ARTERY",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,"Nephrolithiases, Cholecystolithiases",,,,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+,,,,"Atherosclerotic Iliac Bifurcation.
+Lumbar Spondylosis.",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,"Cholecystolithiasis
+Atherosclerosis
+Degenerative osseous changes
+Pulmonary nodule, left lower lobe.",,,,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,"Small paraplegic cyst, right.
+Small right iliac mesenteric lymph nodes.",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Pleural thickening and suspicious mass lesion in the right lower lobe. A dedicated study, chest X-ray or contrast enhanced CT correlation may be suggested.",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE
+,,,,Atherosclerotic aorta.,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,"Non obstructing nephrolithiasis, left",,,,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+,,,,Atherosclerotic aorta,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,"Anterior wedging deformity, L1 vertebral body",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Atherosclerotic Aorta.
+Lumbar Spondylosis.",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,"COMPRESSION DEFORMITY, T12",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Atherosclerotic aorta
+Degenerative osseous changes",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,Bilateral Renal cysts,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Simple hepatic cyst
+Cholecystolithiasis with no evidence of cholecystitis
+Non-obstructing nephrolithiasis left
+Atherosclerosis",,,,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+,,,,"Left renal cyst
+Atherosclerosis
+Degenerative osseous changes
+Pulmonary nodules, fibrosis and emphysematous changes, lungs",,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,Atherosclerosis,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+,,,,Right lower nodular and linear densities may be inflammatory. A dedicated chest study is suggested.,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Cholecystolithiasis with no evidence of cholecystitis
+Degenerative osseous changes",,,,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Bilateral medullary nephrocalcinosis left nephrolithiasis,,,,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+,,,,Bilateral medullary nephrocalcinosis left nephrolithiasis,,,,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+,,,,Cholecystolithiasis,,,,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Non - visualized Left Kidney,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Non-specific hepatic calcification seg IV of the liver,,,,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Degenerative osseous changes,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Cholecystolithiasis
+Degenerative osseous changes",,,,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Diffuse fatty liver changes
+Non-specific punctate calcification, spleen",,,,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Cholecystolithiasis,,,,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Diffuse fatty liver changes.
+Simple hepatic cyst",,,,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Multiple simple hepatic cysts,,,,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Cholecystolithiasis,,,,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,cholecystolithiasis with no evidence of cholecystitis,,,,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Cholecystolithiasis with no evidence of cholecystitis,,,,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Fatty liver changes,,,,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,"Punctate non-specific hepatic calcification
+Consider inflammatory process, right lung",,,,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,diverticulosis in the partially visualized descending colon,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,left: non-obstructing nephrolithiasis,,,,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+,,,,Non-obstructing nephrolithiasis left,,,,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+,,,,"Simple hepatic cyst - consider medullary nephrocalcinosis, right non-obstructing nephrolithiasis, left subsegmental atelectasis vs non specific fibrosis, left lung. consider inflammatory process in both lungs",,,,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+,,,,"- cholecystolithiasis with no evidence of cholecystitis 
+- hepatic cyst segment VII",,,,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,Cholecystolithiasis,,,,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+,,,,,,,,,,,,,,,,,,,,,,,,
+"ct_problem
+",[14.124] Indicate why the CT scan not optimal,"1, Bowel gas | 2, Obese participant | 3, Participant uncooperative, e.g. could not stay still | 4, Others, specify {ct_problem_why}",ct_problem_why,"Thin patient
+poorly delineated pancreas",,,,,,,,,,,,,,,,,,,,
