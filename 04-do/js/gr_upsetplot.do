@@ -98,9 +98,12 @@ tempfile 1 2
 cd ./02-data-temp 
 
 save `1'
-upsetplot  recruited assay_fe assay_lip assay_tryp radio2 ct2 , ///
+local filter `if flag_fecal_elastase!=1'
+upsetplot  recruited assay_fe assay_lip radio2 ct2 if flag_fecal_elastase !=1 , ///
 													varlabels ///
-													title ("Functional Assays and Imaging Subsets") ///
+													title ("Functional Assays and Imaging Subsets (n=2297)")
+													
+													
 													savedata(`2', replace)
 cd ../05-figures
 gr export upsetplot1.png, as(png) replace
