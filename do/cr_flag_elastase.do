@@ -20,7 +20,7 @@ save `1'
 frame create plate
 frame change plate
 
-cd 02-data-temp
+cd data-temp
 
 import excel using "Plate 1 results.xlsx" ,cellrange(A2) first   
 
