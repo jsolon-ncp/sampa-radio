@@ -18,7 +18,7 @@ tempfile 1 2
 cd ./data-temp 
 
 save `1'
-local filter `if flag_fecal_elastase!=1'
+local filter "if flag_fecal_elastase!=1"
 
 local N = "`_N'"
 upsetplot  recruited assay_fe radio2 ct2 if flag_fecal_elastase !=1 , ///

@@ -1,0 +1,151 @@
+@article{Portrait2011Undernutrition,
+  author = {Portrait, F. and Teeuwiszen, E. and Deeg, D.},
+  title = {Early life undernutrition and chronic diseases at older ages: the effects of the Dutch famine on cardiovascular diseases and diabetes},
+  journal = {Social Science \& Medicine},
+  year = {2011},
+  volume = {73},
+  number = {5},
+  pages = {711-718},
+  month = sep,
+}
+
+@article{Ferdous2023MalnutritionPancreas,
+  author = {Ferdous, F. and Filteau, S. and Schwartz, N. B. and Gumede-Moyo, S. and Cox, S. E.},
+  title = {Association of postnatal severe acute malnutrition with pancreatic exocrine and endocrine function in children and adults: a systematic review},
+  journal = {British Journal of Nutrition},
+  year = {2023},
+  volume = {129},
+  number = {4},
+  pages = {576-609},
+  month = feb,
+}
+
+@book{Trowell1954Kwashiorkor,
+  author = {Trowell, H. C. and Davies, J. N. P. and Dean, R. F. A.},
+  title = {Kwashiorkor},
+  year = {1954},
+  publisher = {Arnold},
+  address = {London},
+  pages = {123, 125, 146, 148},
+}
+
+@book{Waterlow1992ProteinEnergy,
+  author = {Waterlow, J. C.},
+  title = {Protein energy malnutrition},
+  year = {1992},
+  publisher = {Arnold},
+  address = {London},
+  pages = {65-66},
+}
+
+@article{Luth2001FecalElastase,
+  author = {Lüth, S. and Teyssen, S. and Forssmann, K. and Kölbel, C. and Krummenauer, F. and Singer, M. V.},
+  title = {Fecal elastase-1 determination:? gold standard? Of indirect pancreatic function tests?},
+  journal = {Scandinavian journal of gastroenterology},
+  year = {2001},
+  volume = {36},
+  number = {10},
+  pages = {1092-1099},
+  month = jan,
+}
+
+@article{Piciucchi2015PancreaticInsufficiency,
+  author = {Piciucchi, M. and Capurso, G. and Archibugi, L. and Delle Fave, M. M. and Capasso, M. and Delle Fave, G.},
+  title = {Exocrine pancreatic insufficiency in diabetic patients: prevalence, mechanisms, and treatment},
+  journal = {International Journal of Endocrinology},
+  year = {2015},
+  volume = {2015},
+  number = {1},
+  pages = {595649},
+}
+
+@article{Carroccio1999PancreaticFunctionHIV,
+  author = {Carroccio, M. and Soresi, E. and Farinella, D. and di Martino, A. and Guarino, A. and Notarbartolo, G. and Montalto, A. and di Prima, L. and di Grigoli, C.},
+  title = {Exocrine Pancreatic Function and Fat Malabsorption in Human Immunodeficiency Virus-Infected Patients},
+  journal = {Scandinavian Journal of Gastroenterology},
+  year = {1999},
+  volume = {34},
+  pages = {729-734},
+}
+
+@article{Bartels2016PancreaticInsufficiencyMalnutrition,
+  author = {Bartels, R. H. and Meyer, S. L. and Stehmann, T. A. and Bourdon, C. and Bandsma, R. H. and Voskuijl, W. P.},
+  title = {Both exocrine pancreatic insufficiency and signs of pancreatic inflammation are prevalent in children with complicated severe acute malnutrition: an observational study},
+  journal = {The Journal of Pediatrics},
+  year = {2016},
+  volume = {174},
+  pages = {165-170},
+  month = jul,
+}
+
+@article{Grey2021MalnutritionCardiometabolic,
+  author = {Grey, K. and Gonzales, G. B. and Abera, M. and Lelijveld, N. and Thompson, D. and Berhane, M. and Abdissa, A. and Girma, T. and Kerac, M.},
+  title = {Severe malnutrition or famine exposure in childhood and cardiometabolic non-communicable disease later in life: a systematic review},
+  journal = {BMJ Global Health},
+  year = {2021},
+  volume = {6},
+  number = {3},
+  pages = {e003161},
+  month = mar,
+}
+
+@article{Almeida2018PancreaticCT,
+  author = {Almeida, R. R. and Lo, G. C. and Patino, M. and Bizzo, B. and Canellas, R. and Sahani, D. V.},
+  title = {Advances in pancreatic CT imaging},
+  journal = {American Journal of Roentgenology},
+  year = {2018},
+  volume = {211},
+  number = {1},
+  pages = {52-66},
+  month = jul,
+}
+
+@article{Nordaas2022ChronicPancreatitis,
+  author = {Nordaas, I. K. and Tjora, E. and Dimcevski, G. and Haldorsen, I. S. and Olesen, S. S. and Drewes, A. M. and Zviniene, K. and Barauskas, G. and Bayram, B. K. and Nørregaard, P. and Borch, A.},
+  title = {Structural imaging findings are related to clinical complications in chronic pancreatitis},
+  journal = {United European Gastroenterology Journal},
+  year = {2022},
+  volume = {10},
+  number = {4},
+  pages = {385-395},
+  month = may,
+}
+
+@article{Paliwal2014TropicalPancreatitis,
+  author = {Paliwal, S. and Bhaskar, S. and Chandak, G. R.},
+  title = {Genetic and phenotypic heterogeneity in tropical calcific pancreatitis},
+  journal = {World J Gastroenterol},
+  year = {2014},
+  volume = {20},
+  number = {46},
+  pages = {17314-17323},
+  month = dec,
+}
+
+@article{ModocUnderReview,
+  author = {Modoc, Ahmed et al.},
+  title = {Associations of prior wasting malnutrition with later indicators of glucose tolerance across four countries in Africa and Asia: the SAMPA study},
+  note = {Under peer review.},
+}
+
+@article{Ahmed2022SAMPAProtocol,
+  author = {Ahmed, S. and PrayGod, G. and Lee, N. R. and Kelly, P. and Trilok-Kumar, G. and Chisenga, M. and Kweka, B. and Faurholt-Jepsen, D. and Krogh-Madsen, R. and Shaw, J. A. and Paglinawan-Modoc, D. M.},
+  title = {Long-term health after Severe Acute Malnutrition in children and adults-the role of the Pancreas (SAMPA): Protocol},
+  journal = {F1000Research},
+  year = {2022},
+  volume = {11},
+}
+
+@article{DjuricStefanovic2012CTVolumetryPancreas,
+  author = {Djuric-Stefanovic, A. and Masulovic, D. and Kostic, J. and Randjic, K. and Saranovic, D.},
+  title = {CT volumetry of normal pancreas: correlation with the pancreatic diameters measurable by the cross-sectional imaging, and relationship with the gender, age, and body constitution},
+  journal = {Surgical and radiologic anatomy},
+  year = {2012},
+  volume = {34},
+  pages = {811-817},
+  month = nov,
+}
+
+@article{Harris2009REDCap1,
+  author = {Harris, P. A. and Taylor, R. and Thielke, R. and Payne, J. and Gonzalez, N. and Conde, J. G.},
+  title = {Research electronic data capture (REDCap) – A metadata-driven methodology and workflow process

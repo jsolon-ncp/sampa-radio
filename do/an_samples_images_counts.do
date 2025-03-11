@@ -1,6 +1,6 @@
 /*
 Sampa
-an__samples_mn.do 
+an_samples_images_counts.do 
 Juan Solon 
 March 2025
 bivariate anaysis - of all lab assays by mn 
@@ -12,33 +12,28 @@ assay_trypsinogen
 ever_mal
 */
 
-collect clear
-
 local filter "if flag_fecal_elastase !=1"
 
-local N = `_N'
-
-table ever_mal 
-
 collect clear
-collect : count if cohort!= .
-collect : count if ever_mal==0
-collect : count if ever_mal==1
-collect : count if radio2==0
-collect : count if radio2==1
+	collect : count if cohort!= .
+	collect : count if ever_mal==0
+	collect : count if ever_mal==1
+	collect : count if radio2==0
+	collect : count if radio2==1
 
-collect : count if ct2==0
-collect : count if ct2==1
-collect : count if assay_fecal_elastase==0
-collect : count if assay_fecal_elastase==1
-collect : count if flag_fecal_elastase==1
+	collect : count if ct2==0
+	collect : count if ct2==1
+	collect : count if assay_fecal_elastase==0
+	collect : count if assay_fecal_elastase==1
+	collect : count if flag_fecal_elastase==1
 
 tempvar fe1
 gen `fe1' = 0
 replace `fe1' = 1 if assay_fecal_elastase==1 & flag_fecal_elastase ==.
-collect : count if `fe1' ==1 
-collect : count if `fe1' ==1 & radio2==1
-collect : count if `fe1' ==1 & radio2==1 & ct2==1
+
+	collect : count if `fe1' ==1 
+	collect : count if `fe1' ==1 & radio2==1
+	collect : count if `fe1' ==1 & radio2==1 & ct2==1
 
 *collect : count if assay_lipase==1
 
@@ -58,5 +53,11 @@ collect label levels cmdset 12 "FE-1 and USS"
 collect label levels cmdset 13 "FE-1 and USS and CT"
 
 collect layout (cmdset)(result)
+
+collect clear
+
+table () (ever_mal) `filter', stat(frequency) ///
+stat(fvfrequency 1.assay_f 1.radio2 1.ct2)
+
 
 
