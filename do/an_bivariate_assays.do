@@ -14,17 +14,26 @@ ever_mal
 
 collect clear
 
-local filter "if flag_fecal_elastase!=1"
-table (var) (ever_mal) `filter', ///
+
+table (var) (ever_mal) , ///
 stat(frequency) ///
 stat(fvfrequency 1.assay_fecal_elastase 1.epi_binary 2.epi_ordinal 3.epi_ordinal) ///
 stat(fvpercent 1.epi_binary 2.epi_ordinal 3.epi_ordinal) 
 
-regress epi_binary ever_mal
-ologit epi_ordinal ever_mal
+regress epi_binary ever_mal 
+logistic epi_binary ever_mal 
+ologit epi_ordinal ever_mal 
 
-local filter "if flag_fecal_elastase!=1"
-table (var) (cohort) `filter', ///
+
+logistic epi_binary ever_mal 
+logistic epi_binary ever_mal cohort 
+
+ologit epi_ordinal ever_mal 
+ologit epi_ordinal ever_mal cohort 
+
+
+
+table (var) (cohort) , ///
 stat(frequency) ///
 stat(fvfrequency 1.assay_fecal_elastase 1.epi_binary 2.epi_ordinal 3.epi_ordinal) ///
 stat(fvpercent 1.epi_binary 2.epi_ordinal 3.epi_ordinal) 

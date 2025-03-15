@@ -24,13 +24,26 @@ Reusable with
 
 * Cohort subcategorizations these are for creating graphs 
 
-generate child_adult = 1 if cohort ==1 | cohort ==2
-	replace child_adult = 2 if cohort ==3 | cohort ==4 | cohort ==5 | cohort ==6
-	la var child_adult "Cohort Population"
+generate subcoh_child_adult = 1 if cohort ==1 | cohort ==2
+	replace subcoh_child_adult = 2 if cohort ==3 | cohort ==4 | cohort ==5 | cohort ==6
+	la var subcoh_child_adult "Cohort Population"
 
-generate exposuretime = 1 if cohort ==1 | cohort ==2 | cohort ==3
-	replace exposuretime = 2 if cohort ==4 | cohort ==5 | cohort ==6
+generate subcoh_geography =1 if cohort == 2 | cohort == 3 | cohort ==4
+replace subcoh_geography =2 if cohort == 1 | cohort == 5 | cohort ==6
+la var subcoh_geography "Cohort Geography"
 
+label define subcoh_child_adult 1 "Child" 2 "Adult"
+label values subcoh_child_adult subcoh_child_adult
+
+
+label define subcoh_geography 1 "Africa" 2 "Asia"
+label values subcoh_geography subcoh_geography
+
+
+generate exposuretime = 1 if cohort ==1 | cohort ==2 | cohort ==6
+	replace exposuretime = 2 if cohort ==4 | cohort ==5 | cohort ==3
+label define exposuretime 1 "Exposure in Childhood" 2 "Exposure as Adults"
+label values exposuretime exposuretime
 	la var exposuretime "Exposure Time"
 	
 gen fec_cohort = 1 if cohort ==1

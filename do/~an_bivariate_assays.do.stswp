@@ -14,26 +14,46 @@ ever_mal
 
 collect clear
 
-local filter "if flag_fecal_elastase!=1"
-table (var) (ever_mal)  `filter', ///
+
+table (var) (ever_mal) , ///
 stat(frequency) ///
 stat(fvfrequency 1.assay_fecal_elastase 1.epi_binary 2.epi_ordinal 3.epi_ordinal) ///
 stat(fvpercent 1.epi_binary 2.epi_ordinal 3.epi_ordinal) 
 
-regress epi_binary ever_mal `filter'
-logistic epi_binary ever_mal `filter'
-ologit epi_ordinal ever_mal `filter'
+table (var) (subcoh_geography) , ///
+stat(frequency) ///
+stat(fvfrequency 1.assay_fecal_elastase 1.epi_binary 2.epi_ordinal 3.epi_ordinal) ///
+stat(fvpercent 1.epi_binary 2.epi_ordinal 3.epi_ordinal) 
 
-local filter "if flag_fecal_elastase!=1"
-logistic epi_binary ever_mal `filter'
-logistic epi_binary ever_mal cohort `filter'
+table (var) (ever_mal) , ///
+stat(frequency) ///
+stat(fvfrequency 1.assay_fecal_elastase 1.epi_binary 2.epi_ordinal 3.epi_ordinal) ///
+stat(fvpercent 1.epi_binary 2.epi_ordinal 3.epi_ordinal) 
 
-ologit epi_ordinal ever_mal `filter'
-ologit epi_ordinal ever_mal cohort `filter'
+/*
+We used logistic regression to model EPI, including child/adult, exposure in childhood (the two child cohorts plus CLHNS), age, sex, HIV infection, and African/Asian residence. In the final model, African residence (OR 5.1, 95%CI 3.9,6.8; P<0.001), HIV infection (OR 0.71, 95%CI 0.55, 0.91; P=0.007), and childhood PM exposure (OR 1.49, 95%CI 1.06, 2.12; P=0.02) were associated with EPI. 
+*/
 
 
-local filter "if flag_fecal_elastase!=1"
-table (var) (cohort) `filter', ///
+logistic epi_binary ever_mal 
+logistic epi_binary ever_mal age
+
+subcoh_geography exposuretime age sex hiv 
+
+regress epi_binary ever_mal 
+logistic epi_binary ever_mal 
+ologit epi_ordinal ever_mal 
+
+
+logistic epi_binary ever_mal 
+logistic epi_binary ever_mal cohort 
+
+ologit epi_ordinal ever_mal 
+ologit epi_ordinal ever_mal cohort 
+
+
+
+table (var) (cohort) , ///
 stat(frequency) ///
 stat(fvfrequency 1.assay_fecal_elastase 1.epi_binary 2.epi_ordinal 3.epi_ordinal) ///
 stat(fvpercent 1.epi_binary 2.epi_ordinal 3.epi_ordinal) 
