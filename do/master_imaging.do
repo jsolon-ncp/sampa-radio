@@ -68,7 +68,7 @@ do ./do/cr_continuous_independent.do 		// Derived variables for imaging that are
 
 ************  This is the analysis dataset 
 
-an_samples_mn.do 						//  What is the proportion of samples per MN and cohort
+an_samples_images_counts.do 						//  What is the proportion of samples per MN and cohort
 
 an_images_mn.do 						//. What is the proportion of samples with CT and USS per MN and cohort
 
