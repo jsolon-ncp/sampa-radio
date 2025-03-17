@@ -96,42 +96,45 @@ egen epi_ordinal = cut(fecal_elastase), at(0,100,200, 601) icodes
 **#  TABLE CONFIGURATION 
 
 local title "Samples and Images per Cohort"
-local cat "1.assay_f 1.assay_l 1.radio2 1.ct2"
+local cat "1.assay_f 1.assay_l 1.assay_tryp 1.radio2 1.ct2"
 local notes1 "Pending Lipase and Trypsinogen"
-local notes2 ""
-local notes3 
-local notes4 "Remove in final : Created with "`dofilename'" on "`c(current_date)'" at "`c(current_time)'"  based on  "`c(filename)'"" 
+local notes2 "Trypsinogen part of do file "
+local notes3 ""
+local notes4 "Remove  Created with "`dofilename'" on "`c(current_date)'" at "`c(current_time)'"  based on  "`c(filename)'"" 
 
 **# TABLE CODE
 
-   
 table (cohort), /// 
-stat(fvfrequency 1.assay_f 1.assay_l 1.radio2 1.ct2) 
+stat(fvfrequency `cat') 
      
-	collect title "`title'"
 	
-	collect label levels var 1.assay_fe "Elastase", modify
-	collect label levels var 1.assay_lip "Lipase" 1.radio2 "USS" 1.ct2 "CT Scan"
-	collect style header, level(label)
-	collect style column, width(equal)
-	
-	**# TABLE LAYOUT
+**# TABLE LAYOUT
+
+* Revise Column Text	
+collect label levels var 1.assay_fe "Elastase" 1.assay_lip "Lipase" 1.assay_tryp "Trypsinogen" 1.radio2 "USS" 1.ct2 "CT Scan"
+collect style header, level(label)
 
     collect style row stack, nobinder nospacer // * Stack levels of each variable , places/removes space between variables ; 
 
     collect style cell border_block, border(right, pattern(nil)) // Remove vertical line after variables
 	
-*** TABLE SPACES / WIDTH
+* TABLE SPACES / WIDTH
 collect style cell, margin(all, width(10)) // Define space b/w text and cell margins ;  default space in points is 1.5 between text and cell margin 
 
-collect style column, width(asis) // Revise column width (equal or asis)
+collect style column, width(equal) // Revise column width (equal or asis)
     
-*** TABLE TEXT
+* TABLE TEXT
+* Add text
+	collect title `title'
+	collect notes `notes1'
+	collect notes `notes2'
+	collect notes `notes3'
+	collect notes `notes4'
 
 * Table title styles
 collect style title, font(, bold)
 
-	
+cd "$ghsamparadio"	
 cd 03-tables
 
 collect export table_cohort_samples.html, as(html) replace
