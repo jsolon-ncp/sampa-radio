@@ -22,6 +22,64 @@ stat(fvpercent 1.epi_binary 2.epi_ordinal 3.epi_ordinal)
 
 // ... existing code ...
 
+
+cc epi_binary ever_mal, exact 
+
+
+logit epi_binary ever_mal, or 
+logit epi_binary subcoh_geography, or 
+
+cc epi_binary subcoh_geography, exact
+
+
+contrast ever_mal
+
+logit epi_binary i.ever_mal i.sex age bmi i.cohort, or
+
+margins
+
+margins ever_mal
+margins sex
+
+margins cohort
+
+marginsplot
+
+logit epi_binary i.ever_mal i.sex age c.bmi##i.cohort, or
+margins cohort c.bmi##i.cohort
+marginsplot
+
+logit epi_binary ever_mal sex2 age bmi i.cohort, or
+
+logit epi_binary bmi i.cohort, or 
+
+*generating Hosmer-Lemeshow goodness of fit test
+
+estat gof, group(10)
+
+* margins
+
+margins cohort 
+*classification statistics
+
+estat classification, all
+
+
+
+logit epi_binary ever_mal sex age cohort, or
+
+predict p 
+
+*to generate predicted group memberships
+
+generate prgp = .
+replace prgp=0 if(p<.50) 
+replace prgp=1 if(p>=.50)
+
+br prgp p assay_fecal_elastase fecal_elastase
+
+
+
 * Clear any existing estimates
 eststo clear
 
