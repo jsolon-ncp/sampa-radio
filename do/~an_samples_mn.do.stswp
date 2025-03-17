@@ -14,10 +14,6 @@ ever_mal
 
 collect clear
 
-local filter "if flag_fecal_elastase !=1"
-
-local N = `_N'
-
 table ever_mal 
 
 collect clear
