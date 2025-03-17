@@ -20,6 +20,10 @@ sets <- list(
   FE_1 = which(df$assay_fecal_elastase == 1)
 )
 
+# Define display labels
+labels <- c("Ultrasound", "CT Scan", "FE-1")
+names(labels) <- c("Ultrasound", "CT_Scan", "FE_1")
+
 # Print statistics
 cat("\nParticipant Statistics:\n")
 cat("=======================\n")
@@ -39,7 +43,7 @@ plot(fit,
      quantities = TRUE,
      fills = c("#86C5D8", "#F9C48D", "#F9A48D"),
      alpha = 0.7,
-     labels = list(font = 2),
+     labels = labels,
      edges = list(lwd = 1),
      main = "")
 
@@ -49,7 +53,7 @@ plot(fit,
      quantities = TRUE,
      fills = c("#86C5D8", "#F9C48D", "#F9A48D"),
      alpha = 0.7,
-     labels = list(font = 2),
+     labels = labels,
      edges = list(lwd = 1),
      main = "")
 dev.off()

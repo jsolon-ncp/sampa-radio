@@ -12,12 +12,16 @@ library(eulerr)     # For Venn diagrams
 # Read data
 df <- read_dta("./data-temp/sampa_consort.dta")
 
-# Create sets
+# Create sets (using safe names)
 sets <- list(
   Ultrasound = which(df$radio2 == 1),
   CT_Scan = which(df$ct2 == 1),
   FE_1 = which(df$assay_fecal_elastase == 1)
 )
+
+# Define display labels
+labels <- c("Ultrasound", "CT Scan", "FE-1")
+names(labels) <- c("Ultrasound", "CT_Scan", "FE_1")
 
 # Print statistics
 cat("\nParticipant Statistics:\n")
@@ -38,7 +42,7 @@ plot(fit,
      quantities = TRUE,
      fills = c("#86C5D8", "#F9C48D", "#F9A48D"),
      alpha = 0.7,
-     labels = list(font = 2),
+     labels = labels,
      edges = list(lwd = 1),
      main = "Study Participant Distribution")
 
@@ -48,7 +52,7 @@ plot(fit,
      quantities = TRUE,
      fills = c("#86C5D8", "#F9C48D", "#F9A48D"),
      alpha = 0.7,
-     labels = list(font = 2),
+     labels = labels,
      edges = list(lwd = 1),
      main = "Study Participant Distribution")
 dev.off()
