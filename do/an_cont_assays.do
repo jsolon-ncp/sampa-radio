@@ -1,153 +1,119 @@
 /*
 an_cont_assays.do 
-
+Analysis of fecal elastase levels
 */
 
-table () (ever_mal) , ///
-stat(frequency) /// 
-stat(mean fecal_elastase) ///
-stat(p25 fecal_elastase) ///
-stat(p50 fecal_elastase) ///
-stat(p75 fecal_elastase) ///
-stat(iqr fecal_elastase)
+log using ./log/an_cont.txt, replace
 
-table () (child) , ///
-stat(frequency) /// 
-stat(mean fecal_elastase) ///
-stat(p25 fecal_elastase) ///
-stat(p50 fecal_elastase) ///
-stat(p75 fecal_elastase) ///
-stat(iqr fecal_elastase)
+* 1. Descriptive Statistics
+* ------------------------
+* Basic statistics for key variables
+table () (ever_mal), ///
+    stat(frequency) /// 
+    stat(mean fecal_elastase) ///
+    stat(p25 fecal_elastase) ///
+    stat(p50 fecal_elastase) ///
+    stat(p75 fecal_elastase) ///
+    stat(iqr fecal_elastase)
 
-table () (africa) , ///
-stat(frequency) /// 
-stat(mean fecal_elastase) ///
-stat(p25 fecal_elastase) ///
-stat(p50 fecal_elastase) ///
-stat(p75 fecal_elastase) ///
-stat(iqr fecal_elastase)
+table () (bmi_cat), ///
+    stat(frequency) /// 
+    stat(mean fecal_elastase) ///
+    stat(p25 fecal_elastase) ///
+    stat(p50 fecal_elastase) ///
+    stat(p75 fecal_elastase) ///
+    stat(iqr fecal_elastase)
 
+* 2. Basic Model
+* -------------
+* Model 1: Basic model with main effects only
+tobit fecal_elastase i.ever_mal i.bmi_cat i.africa i.child i.exposure i.hiv2, ul(600)
+estimates store m1
+estimates title: "Basic Model"
 
-* All FE-1
+* 3. Model with BMI-Malnutrition Interaction
+* ----------------------------------------
+* Model 2: Adding BMI-malnutrition interaction
+tobit fecal_elastase i.ever_mal##i.bmi_cat i.africa i.child i.exposure i.hiv2, ul(600)
+estimates store m2
+estimates title: "Model with BMI-Malnutrition Interaction"
 
-tobit fecal_elastase i.ever_mal, ul(600)
-tobit fecal_elastase i.ever_mal i.cohort, ul(600)
+* Compare models
+lrtest m1 m2
 
+* 4. Marginal Effects Analysis
+* --------------------------
+* Calculate marginal effects for the interaction model
+margins, dydx(*) atmeans
 
-tobit fecal_elastase i.ever_mal i.cohort i.bmi_cat , ul(600)
-
-tobit fecal_elastase i.ever_mal i.cohor##i.bmi_cat , ul(600)
-
-** dxtics
-// Store your current model
-estimates store full
-
-// Run a model without interactions with cohort and MN
-tobit fecal_elastase i.ever_mal i.cohort i.bmi_cat, ul(600)
-estimates store reduced
-
-// Compare models
-lrtest full reduced
-
-margins, dydx(ever_mal) atmeans
-margins, dydx(bmi_cat) at(ever_mal=1) atmeans
-
+* Create margins plots for BMI-malnutrition interaction
 margins ever_mal#bmi_cat, atmeans
-marginsplot
 
-gr export./figures/fe_mod1a,png,as(png) replace
+marginsplot, title("Marginal Effects of Malnutrition by BMI Category") ///
+    ytitle("Marginal Effect on Fecal Elastase") ///
+    xtitle("Previous Malnutrition") ///
+    note("Interaction between Malnutrition and BMI", size(small)) ///
+	graphregion(margin(vsmall)) ///
+        plotregion(margin(vlarge)) ///
+        xlabel(,labsize(medsmall))	
+	
+gr export ./figures/fe_mal_bmi_interaction.png, as(png) replace
 
-// MODEL 2 focuss on cohort charactersitics
-tobit fecal_elastase i.ever_mal i.africa i.exposure i.hiv, ul(600)
+* 5. Predicted Values
+* ------------------
+* Calculate predicted values for each combination
+margins ever_mal#bmi_cat, atmeans
+marginsplot, by(bmi_cat) ///
+    title("Predicted Fecal Elastase by Malnutrition Status") ///
+    subtitle("Stratified by BMI Category") ///
+    ytitle("Predicted Fecal Elastase") ///
+    xtitle("Malnutrition Status") ///
+    note("PM = Previous Malnutrition", size(small))
+gr export ./figures/fe_predicted_by_bmi.png, as(png) replace
 
-// Predicted values for malnutrition status
-margins ever_mal, atmeans, 
+* 6. Additional Interactions
+* ------------------------
+* Only after confirming BMI-malnutrition interaction, we can explore other interactions
+* Model 3: Adding region-malnutrition interaction
+tobit fecal_elastase i.ever_mal##i.bmi_cat i.ever_mal##i.africa i.child i.exposure i.hiv2, ul(600)
+estimates store m3
+estimates title: "Model with BMI and Region Interactions"
 
-// Predicted values for exposure timing
-margins exposure, atmeans, 
+* Compare with previous model
+lrtest m2 m3
 
-// Interactive of Africa and ever_mal
+* Calculate and plot region-malnutrition interaction
 margins ever_mal#africa, atmeans
-marginsplot
-gr export ./figures/fe_mod2a.png, as(png) replace
+marginsplot, title("Marginal Effects of Malnutrition by Region") ///
+    ytitle("Marginal Effect on Fecal Elastase") ///
+    xtitle("Region") ///
+    note("Interaction between Malnutrition and Region", size(small))
+gr export ./figures/fe_mal_region_interaction.png, as(png) replace
 
-// Interactive effect of malnutrition and exposure timing
-margins ever_mal#exposure, atmeans
-marginsplot
+* 7. Final Model Diagnostics
+* -------------------------
+* Create combined graph of all interactions
+margins ever_mal#bmi_cat, atmeans saving(m1, replace)
+margins ever_mal#africa, atmeans saving(m2, replace)
 
-gr export ./figures/fe_mod2b.png, as(png) replace
+graph combine "m1" "m2", ///
+    title("Combined Effects of BMI and Region", size(medium)) ///
+    subtitle("Interactions with Malnutrition", size(small)) ///
+    rows(2) cols(1) ///
+    ycommon ///
+    note("Top: BMI Interaction" "Bottom: Region Interaction", size(vsmall))
 
-// Predicted values for HIV status
-margins hiv, atmeans
+gr export ./figures/fe_combined_interactions.png, as(png) replace
 
-// Interactive effect of malnutrition and HIV
-margins ever_mal#hiv, atmeans
+// Clean up temporary files
+erase m1.gph
+erase m2.gph
 
-marginsplot
-
-gr export ./figures/fe_mod2c.png, as(png) replace
-
-marginsplot, recast(scatter)
-
-marginsplot, noci recast(scatter) || plot(.)
-
-margins ever_mal, saving(m1)
-
-
-
-
-
-tobit fecal_elastase ever_mal i.africa i.exposure 
-
-tobit fecal_elastase i.africa##i.exposure ever_mal i.cohort i.hiv
-
-tobit fecal_elastase i.ever_mal i.cohort i.bmi_cat i.africa , ul(600)
-
-tobit fecal_elastase i.ever_mal i.bmi_cat i.africa , ul(600)
-
-tobit fecal_elastase i.ever_mal i.bmi_cat i.africa##i.child , ul(600)
-
-tobit fecal_elastase i.ever_mal i.bmi_cat i.africa i.child i.cohort i.exposure , ul(600)
-
-tobit fecal_elastase i.ever_mal i.bmi_cat i.africa##i.child i.exposure , ul(600)
-
-tobit fecal_elastase i.ever_mal i.cohort i.bmi_cat#i.ever_mal , ul(600)
-
-tobit fecal_elastase i.ever_mal i.cohort i.bmi_cat#i.ever_mal , ul(600)
-
-tobit fecal_elastase i.ever_mal i.cohort i.ever_mal#i.cohort, ul(600)
-
-
-tobit fecal_elastase i.bmi_cat i.ever_mal i.cohort, ul(600)
-
-tobit fecal_elastase i.bmi_cat i.ever_mal i.cohort i.child, ul(600)
-tobit fecal_elastase i.bmi_cat i.ever_mal i.cohort i.africa, ul(600)
-
-tobit fecal_elastase i.africa, ul(600)
-
-tobit fecal_elastase i.child##i.africa i.cohort, ul(600)
-
-tobit fecal_elastase ever_mal i.child##i.africa i.cohort, ul(600)
-
-
-tobit fecal_elastase i.bmi_cat i.ever_mal i.cohort i.cohort#i.ever_mal, ul(600)
-
-tobit fecal_elastase i.bmi_cat i.cohort##i.ever_mal, ul(600)
-
-tobit fecal_elastase i.bmi_cat##i.ever_mal i.cohort, ul(600)
-
-
-
-margins, dydx(age) predict(ystar(0,.))
-tobit fecal_elastase i.ever_mal if subset2==1, ul(600)
-
-
-ranksum fecal_elastase,by(ever_mal)
-kwallis fecal_elastase,by(ever_mal)
-
-tobit fecal_elastase ever_mal cohort age sex child_adult fec_cohort `filter', ul(600)
-
-* FE-1 of EPI
-
-tobit fecal_elastase ever_mal cohort age sex child_adult fec_cohort `filter', ul(200)
+marginsplot, title("Marginal Effects of Malnutrition by Region") ///
+>     ytitle("Marginal Effect on Fecal Elastase") ///
+>     xtitle("Region") ///
+>     note("Asia vs Reference", size(small)) ///
+>         graphregion(margin(vsmall)) ///
+>         plotregion(margin(vlarge)) ///
+>         xlabel(,labsize(medsmall)) 
 

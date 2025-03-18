@@ -1,0 +1,327 @@
+{smcl}
+{txt}{sf}{ul off}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/juansolon/Documents/GitHub/sampa-radio/log/an_cont.txt
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}19 Mar 2025, 03:07:55
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+{txt}
+{com}. * 1. Descriptive Statistics
+. * ------------------------
+. * Basic statistics for key variables
+. table () (ever_mal), ///
+>     stat(frequency) /// 
+>     stat(mean fecal_elastase) ///
+>     stat(p25 fecal_elastase) ///
+>     stat(p50 fecal_elastase) ///
+>     stat(p75 fecal_elastase) ///
+>     stat(iqr fecal_elastase)
+{res}
+{smcl}
+{reset}{...}
+{hline 19}{c -}{c TT}{c -}{c -}{hline 9}{c -}{c -}{c -}{hline 9}{c -}{c -}{c -}{hline 9}
+{space 19} {c |}  {space 2}Ever experience malnutrition?{space 2}
+{space 19} {c |}  {space 6}NPM   {space 7}PM   {space 4}Total
+{hline 19}{c -}{c +}{c -}{c -}{hline 9}{c -}{c -}{c -}{hline 9}{c -}{c -}{c -}{hline 9}
+Frequency{space 10} {c |}  {space 4}{result:1,181}   {space 4}{result:1,097}   {space 4}{result:2,278}
+Mean{space 15} {c |}  {space 1}{result:332.6861}   {space 1}{result:360.9896}   {space 1}{result:345.2358}
+25th percentile{space 4} {c |}  {space 2}{result:132.437}   {space 1}{result:146.2165}   {space 2}{result:140.296}
+50th percentile{space 4} {c |}  {space 2}{result:313.704}   {space 2}{result:374.824}   {space 2}{result:341.183}
+75th percentile{space 4} {c |}  {space 1}{result:587.6312}   {space 6}{result:600}   {space 6}{result:600}
+Interquartile range {c |}  {space 1}{result:455.1942}   {space 1}{result:453.7835}   {space 2}{result:459.704}
+{hline 19}{c -}{c BT}{c -}{c -}{hline 9}{c -}{c -}{c -}{hline 9}{c -}{c -}{c -}{hline 9}
+
+{com}. 
+. table () (bmi_cat), ///
+>     stat(frequency) /// 
+>     stat(mean fecal_elastase) ///
+>     stat(p25 fecal_elastase) ///
+>     stat(p50 fecal_elastase) ///
+>     stat(p75 fecal_elastase) ///
+>     stat(iqr fecal_elastase)
+{res}
+{smcl}
+{reset}{...}
+{hline 19}{c -}{c TT}{c -}{c -}{hline 11}{c -}{c -}{c -}{hline 13}{c -}{c -}{c -}{hline 10}{c -}{c -}{c -}{hline 8}{c -}{c -}{c -}{hline 8}
+{space 19} {c |}  {space 11}BMI classification of children and adult{space 11}
+{space 19} {c |}  Underweight   Normal Weight   Overweight   {space 3}Obese   {space 3}Total
+{hline 19}{c -}{c +}{c -}{c -}{hline 11}{c -}{c -}{c -}{hline 13}{c -}{c -}{c -}{hline 10}{c -}{c -}{c -}{hline 8}{c -}{c -}{c -}{hline 8}
+Frequency{space 10} {c |}  {space 8}{result:493}   {space 8}{result:1,192}   {space 7}{result:392}   {space 5}{result:194}   {space 3}{result:2,271}
+Mean{space 15} {c |}  {space 3}{result:353.6853}   {space 5}{result:327.6411}   {space 2}{result:363.5746}   {result:389.6134}   {result:345.2358}
+25th percentile{space 4} {c |}  {space 4}{result:145.721}   {space 6}{result:121.446}   {space 3}{result:165.132}   {space 1}{result:204.032}   {space 1}{result:140.296}
+50th percentile{space 4} {c |}  {space 4}{result:357.286}   {space 6}{result:301.578}   {space 2}{result:369.7907}   {result:445.2305}   {space 1}{result:341.183}
+75th percentile{space 4} {c |}  {space 8}{result:600}   {space 6}{result:586.526}   {space 7}{result:600}   {space 5}{result:600}   {space 5}{result:600}
+Interquartile range {c |}  {space 4}{result:454.279}   {space 7}{result:465.08}   {space 3}{result:434.868}   {space 1}{result:395.968}   {space 1}{result:459.704}
+{hline 19}{c -}{c BT}{c -}{c -}{hline 11}{c -}{c -}{c -}{hline 13}{c -}{c -}{c -}{hline 10}{c -}{c -}{c -}{hline 8}{c -}{c -}{c -}{hline 8}
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+{txt}
+{com}. * 2. Basic Model
+. * -------------
+. * Model 1: Basic model with main effects only
+. tobit fecal_elastase i.ever_mal i.bmi_cat i.africa i.child i.exposure i.hiv2, ul(600)
+{res}{txt}
+Refining starting values:
+
+Grid node 0:{space 2}Log likelihood = {res:-9843.7774}
+
+Fitting full model:
+{res}
+{txt}Iteration 0:{space 2}Log likelihood = {res:-9843.7774}  
+Iteration 1:{space 2}Log likelihood = {res:-9739.8659}  
+Iteration 2:{space 2}Log likelihood = {res:-9734.8617}  
+Iteration 3:{space 2}Log likelihood = {res:-9734.8352}  
+Iteration 4:{space 2}Log likelihood = {res:-9734.8352}  
+{res}
+{txt}{col 1}Tobit regression{col 53}{lalign 17:Number of obs}{col 70} = {res}{ralign 6:1,802}
+{txt}{col 53}{ralign 17:Uncensored}{col 70} = {res}{ralign 6:1,342}
+{txt}{col 1}Limits: Lower = {ralign 4:{txt:-inf}}{col 53}{ralign 17:Left-censored}{col 70} = {res}{ralign 6:0}
+{txt}{col 1}        Upper = {ralign 4:{res:600}}{col 53}{ralign 17:   Right-censored}{col 70} = {res}{ralign 6:460}
+
+{txt}{col 53}{lalign 17:LR chi2({res:8})}{col 70} = {res}{ralign 6:322.00}
+{txt}{col 53}{lalign 17:Prob > chi2}{col 70} = {res}{ralign 6:0.0000}
+{txt}{col 1}{lalign 14:Log likelihood}{col 15} = {res}{ralign 10:-9734.8352}{txt}{col 53}{lalign 17:Pseudo R2}{col 70} = {res}{ralign 6:0.0163}
+
+{txt}{hline 22}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}       fecal_elastase{col 23}{c |} Coefficient{col 35}  Std. err.{col 47}      t{col 55}   P>|t|{col 63}     [95% con{col 76}f. interval]
+{hline 22}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 13}ever_mal {c |}
+{space 18}PM  {c |}{col 23}{res}{space 2} 41.61613{col 35}{space 2} 14.48215{col 46}{space 1}    2.87{col 55}{space 3}0.004{col 63}{space 4} 13.21248{col 76}{space 3} 70.01978
+{txt}{space 21} {c |}
+{space 14}bmi_cat {c |}
+{space 7}Normal Weight  {c |}{col 23}{res}{space 2} 2.092399{col 35}{space 2} 17.92108{col 46}{space 1}    0.12{col 55}{space 3}0.907{col 63}{space 4}-33.05598{col 76}{space 3} 37.24077
+{txt}{space 10}Overweight  {c |}{col 23}{res}{space 2}   30.246{col 35}{space 2} 23.24841{col 46}{space 1}    1.30{col 55}{space 3}0.193{col 63}{space 4}-15.35082{col 76}{space 3} 75.84281
+{txt}{space 15}Obese  {c |}{col 23}{res}{space 2} 75.45591{col 35}{space 2}  27.7536{col 46}{space 1}    2.72{col 55}{space 3}0.007{col 63}{space 4} 21.02314{col 76}{space 3} 129.8887
+{txt}{space 21} {c |}
+{space 15}africa {c |}
+{space 16}Asia  {c |}{col 23}{res}{space 2} 235.7783{col 35}{space 2} 19.23939{col 46}{space 1}   12.25{col 55}{space 3}0.000{col 63}{space 4} 198.0443{col 76}{space 3} 273.5123
+{txt}{space 21} {c |}
+{space 16}child {c |}
+{space 15}Adult  {c |}{col 23}{res}{space 2} 16.35228{col 35}{space 2} 28.58696{col 46}{space 1}    0.57{col 55}{space 3}0.567{col 63}{space 4}-39.71496{col 76}{space 3} 72.41952
+{txt}{space 21} {c |}
+{space 9}exposuretime {c |}
+{space 2}Exposure as Adults  {c |}{col 23}{res}{space 2}-23.61594{col 35}{space 2} 23.58824{col 46}{space 1}   -1.00{col 55}{space 3}0.317{col 63}{space 4}-69.87925{col 76}{space 3} 22.64737
+{txt}{space 15}1.hiv2 {c |}{col 23}{res}{space 2} 35.54418{col 35}{space 2} 16.64722{col 46}{space 1}    2.14{col 55}{space 3}0.033{col 63}{space 4} 2.894205{col 76}{space 3} 68.19415
+{txt}{space 16}_cons {c |}{col 23}{res}{space 2} 256.5173{col 35}{space 2} 27.34468{col 46}{space 1}    9.38{col 55}{space 3}0.000{col 63}{space 4} 202.8865{col 76}{space 3} 310.1481
+{txt}{hline 22}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 1}var(e.fecal_elastase){c |}{col 23}{res}{space 2} 62690.33{col 35}{space 2}  2572.14{col 63}{space 4} 57843.27{col 76}{space 3} 67943.57
+{txt}{hline 22}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. estimates store m1
+{txt}
+{com}. estimates title: "Basic Model"
+{txt}
+{com}. 
+. * 3. Model with BMI-Malnutrition Interaction
+. * ----------------------------------------
+. * Model 2: Adding BMI-malnutrition interaction
+. tobit fecal_elastase i.ever_mal##i.bmi_cat i.africa i.child i.exposure i.hiv2, ul(600)
+{res}{txt}
+Refining starting values:
+
+Grid node 0:{space 2}Log likelihood = {res:-9840.0183}
+
+Fitting full model:
+{res}
+{txt}Iteration 0:{space 2}Log likelihood = {res:-9840.0183}  
+Iteration 1:{space 2}Log likelihood = {res:-9735.9086}  
+Iteration 2:{space 2}Log likelihood = {res:-9730.8649}  
+Iteration 3:{space 2}Log likelihood = {res:-9730.8378}  
+Iteration 4:{space 2}Log likelihood = {res:-9730.8378}  
+{res}
+{txt}{col 1}Tobit regression{col 53}{lalign 17:Number of obs}{col 70} = {res}{ralign 6:1,802}
+{txt}{col 53}{ralign 17:Uncensored}{col 70} = {res}{ralign 6:1,342}
+{txt}{col 1}Limits: Lower = {ralign 4:{txt:-inf}}{col 53}{ralign 17:Left-censored}{col 70} = {res}{ralign 6:0}
+{txt}{col 1}        Upper = {ralign 4:{res:600}}{col 53}{ralign 17:   Right-censored}{col 70} = {res}{ralign 6:460}
+
+{txt}{col 53}{lalign 17:LR chi2({res:11})}{col 70} = {res}{ralign 6:329.99}
+{txt}{col 53}{lalign 17:Prob > chi2}{col 70} = {res}{ralign 6:0.0000}
+{txt}{col 1}{lalign 14:Log likelihood}{col 15} = {res}{ralign 10:-9730.8378}{txt}{col 53}{lalign 17:Pseudo R2}{col 70} = {res}{ralign 6:0.0167}
+
+{txt}{hline 22}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}       fecal_elastase{col 23}{c |} Coefficient{col 35}  Std. err.{col 47}      t{col 55}   P>|t|{col 63}     [95% con{col 76}f. interval]
+{hline 22}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 13}ever_mal {c |}
+{space 18}PM  {c |}{col 23}{res}{space 2} 77.01913{col 35}{space 2} 40.55823{col 46}{space 1}    1.90{col 55}{space 3}0.058{col 63}{space 4}  -2.5273{col 76}{space 3} 156.5656
+{txt}{space 21} {c |}
+{space 14}bmi_cat {c |}
+{space 7}Normal Weight  {c |}{col 23}{res}{space 2} 25.66155{col 35}{space 2} 39.62099{col 46}{space 1}    0.65{col 55}{space 3}0.517{col 63}{space 4}-52.04668{col 76}{space 3} 103.3698
+{txt}{space 10}Overweight  {c |}{col 23}{res}{space 2} 72.87361{col 35}{space 2} 41.73423{col 46}{space 1}    1.75{col 55}{space 3}0.081{col 63}{space 4}-8.979298{col 76}{space 3} 154.7265
+{txt}{space 15}Obese  {c |}{col 23}{res}{space 2} 119.4963{col 35}{space 2}  44.3051{col 46}{space 1}    2.70{col 55}{space 3}0.007{col 63}{space 4} 32.60114{col 76}{space 3} 206.3914
+{txt}{space 21} {c |}
+{space 5}ever_mal#bmi_cat {c |}
+{space 4}PM#Normal Weight  {c |}{col 23}{res}{space 2}-19.32412{col 35}{space 2} 44.18039{col 46}{space 1}   -0.44{col 55}{space 3}0.662{col 63}{space 4}-105.9746{col 76}{space 3}  67.3264
+{txt}{space 7}PM#Overweight  {c |}{col 23}{res}{space 2}-97.85007{col 35}{space 2} 53.95017{col 46}{space 1}   -1.81{col 55}{space 3}0.070{col 63}{space 4} -203.662{col 76}{space 3} 7.961824
+{txt}{space 12}PM#Obese  {c |}{col 23}{res}{space 2}-139.7205{col 35}{space 2} 70.82106{col 46}{space 1}   -1.97{col 55}{space 3}0.049{col 63}{space 4}-278.6211{col 76}{space 3}-.8198564
+{txt}{space 21} {c |}
+{space 15}africa {c |}
+{space 16}Asia  {c |}{col 23}{res}{space 2} 236.6905{col 35}{space 2} 19.20443{col 46}{space 1}   12.32{col 55}{space 3}0.000{col 63}{space 4}  199.025{col 76}{space 3} 274.3559
+{txt}{space 21} {c |}
+{space 16}child {c |}
+{space 15}Adult  {c |}{col 23}{res}{space 2} 16.45628{col 35}{space 2} 28.71254{col 46}{space 1}    0.57{col 55}{space 3}0.567{col 63}{space 4}-39.85732{col 76}{space 3} 72.76988
+{txt}{space 21} {c |}
+{space 9}exposuretime {c |}
+{space 2}Exposure as Adults  {c |}{col 23}{res}{space 2}-27.10801{col 35}{space 2} 23.58331{col 46}{space 1}   -1.15{col 55}{space 3}0.251{col 63}{space 4} -73.3617{col 76}{space 3} 19.14569
+{txt}{space 15}1.hiv2 {c |}{col 23}{res}{space 2} 36.21045{col 35}{space 2} 16.62211{col 46}{space 1}    2.18{col 55}{space 3}0.030{col 63}{space 4} 3.609692{col 76}{space 3} 68.81121
+{txt}{space 16}_cons {c |}{col 23}{res}{space 2} 228.0529{col 35}{space 2} 40.38749{col 46}{space 1}    5.65{col 55}{space 3}0.000{col 63}{space 4} 148.8413{col 76}{space 3} 307.2645
+{txt}{hline 22}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 1}var(e.fecal_elastase){c |}{col 23}{res}{space 2}  62399.8{col 35}{space 2} 2559.788{col 63}{space 4} 57575.97{col 76}{space 3} 67627.78
+{txt}{hline 22}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. estimates store m2
+{txt}
+{com}. estimates title: "Model with BMI-Malnutrition Interaction"
+{txt}
+{com}. 
+. * Compare models
+. lrtest m1 m2
+
+{txt}Likelihood-ratio test
+Assumption: {res}{stata est replay m1:m1}{txt} nested within {res}{stata est replay m2:m2}
+
+{txt}{ralign 11:LR chi2({res:3})} = {res}{ralign 6:7.99}
+{txt}{ralign 11:Prob > chi2} = {res}{ralign 6:0.0461}
+{txt}
+{com}. 
+. * 4. Marginal Effects Analysis
+. * --------------------------
+. * Calculate marginal effects for the interaction model
+. margins, dydx(*) atmeans
+{res}
+{txt}{col 1}Conditional marginal effects{col 58}{lalign 13:Number of obs}{col 71} = {res}{ralign 5:1,802}
+{txt}{col 1}Model VCE: {res:OIM}
+
+{txt}{p2colset 1 13 13 2}{...}
+{p2col:Expression:}{res:Linear prediction, predict()}{p_end}
+{p2col:dy/dx wrt:}{res:1.ever_mal 2.bmi_cat 3.bmi_cat 4.bmi_cat 2.africa 2.child 2.exposuretime 1.hiv2}{p_end}
+{p2colreset}{...}
+{lalign 4:At: }{space 0}{lalign 14:0.ever_mal} = {res:{ralign 8:.5566038}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 14:1.ever_mal} = {res:{ralign 8:.4433962}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 14:1.bmi_cat} = {res:{ralign 8:.1870144}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 14:2.bmi_cat} = {res:{ralign 8:.5288568}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 14:3.bmi_cat} = {res:{ralign 8:.1875694}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 14:4.bmi_cat} = {res:{ralign 8:.0965594}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 14:1.africa} = {res:{ralign 8:.63596}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 14:2.africa} = {res:{ralign 8:.36404}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 14:1.child} = {res:{ralign 8:.1115427}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 14:2.child} = {res:{ralign 8:.8884573}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 14:1.exposuretime} = {res:{ralign 8:.27303}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 14:2.exposuretime} = {res:{ralign 8:.72697}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 14:0.hiv2} = {res:{ralign 8:.6104329}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 14:1.hiv2} = {res:{ralign 8:.3895671}} {txt:(mean)}
+
+{res}{txt}{hline 20}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 21}{c |}{col 33} Delta-method
+{col 21}{c |}      dy/dx{col 33}   std. err.{col 45}      t{col 53}   P>|t|{col 61}     [95% con{col 74}f. interval]
+{hline 20}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 11}ever_mal {c |}
+{space 16}PM  {c |}{col 21}{res}{space 2} 34.95444{col 33}{space 2} 15.05757{col 44}{space 1}    2.32{col 53}{space 3}0.020{col 61}{space 4} 5.422195{col 74}{space 3} 64.48669
+{txt}{space 19} {c |}
+{space 12}bmi_cat {c |}
+{space 5}Normal Weight  {c |}{col 21}{res}{space 2} 17.09331{col 33}{space 2} 23.94468{col 44}{space 1}    0.71{col 53}{space 3}0.475{col 61}{space 4}-29.86913{col 74}{space 3} 64.05575
+{txt}{space 8}Overweight  {c |}{col 21}{res}{space 2} 29.48726{col 33}{space 2} 28.63409{col 44}{space 1}    1.03{col 53}{space 3}0.303{col 61}{space 4}-26.67247{col 74}{space 3} 85.64699
+{txt}{space 13}Obese  {c |}{col 21}{res}{space 2} 57.54474{col 33}{space 2} 35.78915{col 44}{space 1}    1.61{col 53}{space 3}0.108{col 61}{space 4}-12.64815{col 74}{space 3} 127.7376
+{txt}{space 19} {c |}
+{space 13}africa {c |}
+{space 14}Asia  {c |}{col 21}{res}{space 2} 236.6905{col 33}{space 2} 19.20443{col 44}{space 1}   12.32{col 53}{space 3}0.000{col 61}{space 4}  199.025{col 74}{space 3} 274.3559
+{txt}{space 19} {c |}
+{space 14}child {c |}
+{space 13}Adult  {c |}{col 21}{res}{space 2} 16.45628{col 33}{space 2} 28.71254{col 44}{space 1}    0.57{col 53}{space 3}0.567{col 61}{space 4}-39.85732{col 74}{space 3} 72.76988
+{txt}{space 19} {c |}
+{space 7}exposuretime {c |}
+Exposure as Adults  {c |}{col 21}{res}{space 2}-27.10801{col 33}{space 2} 23.58331{col 44}{space 1}   -1.15{col 53}{space 3}0.251{col 61}{space 4} -73.3617{col 74}{space 3} 19.14569
+{txt}{space 13}1.hiv2 {c |}{col 21}{res}{space 2} 36.21045{col 33}{space 2} 16.62211{col 44}{space 1}    2.18{col 53}{space 3}0.030{col 61}{space 4} 3.609692{col 74}{space 3} 68.81121
+{txt}{hline 20}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 0 85}Note: dy/dx for factor levels is the discrete change from the base level.{txt}{p_end}
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+{txt}
+{com}. * Create margins plots for BMI-malnutrition interaction
+. margins ever_mal#bmi_cat, atmeans
+{res}
+{txt}{col 1}Adjusted predictions{col 58}{lalign 13:Number of obs}{col 71} = {res}{ralign 5:1,802}
+{txt}{col 1}Model VCE: {res:OIM}
+
+{txt}{p2colset 1 13 13 2}{...}
+{p2col:Expression:}{res:Linear prediction, predict()}{p_end}
+{p2colreset}{...}
+{lalign 4:At: }{space 0}{lalign 14:1.africa} = {res:{ralign 8:.63596}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 14:2.africa} = {res:{ralign 8:.36404}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 14:1.child} = {res:{ralign 8:.1115427}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 14:2.child} = {res:{ralign 8:.8884573}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 14:1.exposuretime} = {res:{ralign 8:.27303}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 14:2.exposuretime} = {res:{ralign 8:.72697}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 14:0.hiv2} = {res:{ralign 8:.6104329}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 14:1.hiv2} = {res:{ralign 8:.3895671}} {txt:(mean)}
+
+{res}{txt}{hline 19}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 20}{c |}{col 32} Delta-method
+{col 20}{c |}     Margin{col 32}   std. err.{col 44}      t{col 52}   P>|t|{col 60}     [95% con{col 73}f. interval]
+{hline 19}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 2}ever_mal#bmi_cat {c |}
+{space 2}NPM#Underweight  {c |}{col 20}{res}{space 2} 323.2381{col 32}{space 2} 37.90205{col 43}{space 1}    8.53{col 52}{space 3}0.000{col 60}{space 4} 248.9012{col 73}{space 3}  397.575
+{txt}NPM#Normal Weight  {c |}{col 20}{res}{space 2} 348.8997{col 32}{space 2}  11.3091{col 43}{space 1}   30.85{col 52}{space 3}0.000{col 60}{space 4} 326.7192{col 73}{space 3} 371.0801
+{txt}{space 3}NPM#Overweight  {c |}{col 20}{res}{space 2} 396.1117{col 32}{space 2} 16.38208{col 43}{space 1}   24.18{col 52}{space 3}0.000{col 60}{space 4} 363.9817{col 73}{space 3} 428.2417
+{txt}{space 8}NPM#Obese  {c |}{col 20}{res}{space 2} 442.7344{col 32}{space 2} 21.85208{col 43}{space 1}   20.26{col 52}{space 3}0.000{col 60}{space 4} 399.8761{col 73}{space 3} 485.5926
+{txt}{space 3}PM#Underweight  {c |}{col 20}{res}{space 2} 400.2572{col 32}{space 2} 15.87749{col 43}{space 1}   25.21{col 52}{space 3}0.000{col 60}{space 4} 369.1169{col 73}{space 3} 431.3976
+{txt}{space 1}PM#Normal Weight  {c |}{col 20}{res}{space 2} 406.5947{col 32}{space 2} 13.14998{col 43}{space 1}   30.92{col 52}{space 3}0.000{col 60}{space 4} 380.8037{col 73}{space 3} 432.3856
+{txt}{space 4}PM#Overweight  {c |}{col 20}{res}{space 2} 375.2808{col 32}{space 2} 31.76502{col 43}{space 1}   11.81{col 52}{space 3}0.000{col 60}{space 4} 312.9804{col 73}{space 3} 437.5812
+{txt}{space 9}PM#Obese  {c |}{col 20}{res}{space 2}  380.033{col 32}{space 2} 54.13633{col 43}{space 1}    7.02{col 52}{space 3}0.000{col 60}{space 4}  273.856{col 73}{space 3} 486.2101
+{txt}{hline 19}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. marginsplot, title("Marginal Effects of Malnutrition by BMI Category") ///
+>     ytitle("Marginal Effect on Fecal Elastase") ///
+>     xtitle("Previous Malnutrition") ///
+>     note("Interaction between Malnutrition and BMI", size(small)) ///
+>         graphregion(margin(vsmall)) ///
+> >         plotregion(margin(vlarge)) ///
+> >         xlabel(,labsize(medsmall))
+{res}
+{text}{p 0 0 2}Variables that uniquely identify margins: {bf:ever_mal bmi_cat}{p_end}
+{res}{err}option {bf:>} not allowed
+{txt}{search r(198), local:r(198);}
+
+end of do-file
+
+{search r(198), local:r(198);}
+
+{com}. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+{txt}
+{com}. marginsplot, title("Marginal Effects of Malnutrition by BMI Category") ///
+>     ytitle("Marginal Effect on Fecal Elastase") ///
+>     xtitle("Previous Malnutrition") ///
+>     note("Interaction between Malnutrition and BMI", size(small)) ///
+>         graphregion(margin(vsmall)) ///
+>         plotregion(margin(vlarge)) ///
+>         xlabel(,labsize(medsmall))
+{res}
+{text}{p 0 0 2}Variables that uniquely identify margins: {bf:ever_mal bmi_cat}{p_end}
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+{txt}
+{com}. gr export ./figures/fe_mal_bmi_interaction.png, as(png) replace
+{txt}{p 0 4 2}
+file {bf}
+/Users/juansolon/Documents/GitHub/sampa-radio/figures/fe_mal_bmi_interaction.png{rm}
+saved as
+PNG
+format
+{p_end}
+
+{com}. 
+{txt}end of do-file
+
+{com}. 
