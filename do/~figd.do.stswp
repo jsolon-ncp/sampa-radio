@@ -17,37 +17,6 @@ local uss "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans"
 											
 local graphlist "" // Clear the graphlist
 
-tempfile graphlist
-
-foreach var of varlist `uss' {
-    local grtitle : variable label `var'
-    gr box `var', over(ever_mal) over(cohort) ///
-        ytitle("") ///
-        title("`grtitle'", size(medium)) ///
-        ylabel(0(1)5, angle(0) format(%2.0f)) ///
-        xsize(10) ysize(8) ///
-        name(g_`var', replace)
-    
-    local graphlist "`graphlist' g_`var'"
-}
-
-gr combine `graphlist', rows(2) cols(2) ///
-    ycommon ///
-    l1title("Diameter (cm)", size(medium))
-    
-gr save "./figures/figd", replace
-gr export "./figures/figd.png", as(png) width(2400) replace
-
-
-____ v2
-
-
-local uss "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans"
-											
-local graphlist "" // Clear the graphlist
-
-tempfile graphlist
-
 foreach var of varlist `uss' {
     local grtitle : variable label `var'
     gr box `var', ///
@@ -57,6 +26,7 @@ foreach var of varlist `uss' {
         title("`grtitle'", size(medium)) ///
         ylabel(0(1)5, angle(0) format(%2.0f)) ///
         xsize(10) ysize(8) ///
+        msize(tiny) ///
         name(g_`var', replace)
     
     local graphlist "`graphlist' g_`var'"
@@ -65,5 +35,8 @@ foreach var of varlist `uss' {
 gr combine `graphlist', rows(2) cols(2) ///
     ycommon ///
     l1title("Diameter (cm)", size(medium))
+    
 gr save "./figures/figd", replace
 gr export "./figures/figd.png", as(png) width(2400) replace
+
+
