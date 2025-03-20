@@ -50,26 +50,18 @@ local fig2text "Not shown are lipase, amylase and trypsinogen assays in particip
 *** FIGURE C FE1
 
 local fig3 "./figures/figc.png"
-local fig3head "Figure 3 Faecal elastase by PM or NPM in each cohort."
+local fig3head "Figure 3 Faecal elastase distribution by cohort and malnutrition status."
 
-local fig3text "Values were truncated at 600 µg/g. NPM, not previously malnourished; PM, previously malnourished. A value of <200 µg/g is regarded as evidence of exocrine pancreatic insufficiency."
+local fig3text "a) axial anterior-posterior and transverse head diameters, b) coronal cranio-caudal head diameter, c) coronal cranio-caudal body diameters, d) axial anterior-posterior body and tail diameters, body, and d) length of body and tail."
 
 *** FIGURE D USS CT
-
-local fig4 "./figures/uss_ct_corr.png"
-local fig4head "Figure 4 Ultrasound Measurement by PM or NPM in each cohort."
-
-local fig4text "a) axial anterior-posterior and transverse head diameters, b) coronal cranio-caudal head diameter, c) coronal cranio-caudal body diameters, d) axial anterior-posterior body and tail diameters, body, and d) length of body and tail."
-
-*** FIGURE E USS CT
 
 local fig4 "./figures/uss_ct_corr.png"
 local fig4head "Figure 4 Ultrasound and CT Scan Correlation."
 
 local fig4text "a) axial anterior-posterior and transverse head diameters, b) coronal cranio-caudal head diameter, c) coronal cranio-caudal body diameters, d) axial anterior-posterior body and tail diameters, body, and d) length of body and tail."
 
-
-*** FIGURE F CONSORT
+*** FIGURE E CONSORT
 
 local fig5 "./figures/consort.png"
 local fig5head "Supplementary Figure 1 Consort Diagram."

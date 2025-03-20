@@ -15,32 +15,24 @@ set scheme stsj
 
 local uss "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans"
 
-local
-d `uss'
-
-gr box pan_body_trans, over(ever_mal) over(cohort) title
-
-*--- v4 works
-
 tempfile graphlist
 local graphlist "" // Clear the graphlist
-local i = 1
-forvalues u = 0/3 {
-    local grtitle : label cohort `i'
-    gr box fecal_elastase if cohort == `i', over(ever_mal) title("`grtitle'")
 
-    tempfile temp_graph_`i'
-    gr save "`temp_graph_`i''.gph", replace
-
-    display "`temp_graph_`i''.gph"
-
-    local graphlist "`graphlist' `temp_graph_`i''.gph"
-
-    local i = `i' + 1
+foreach var of varlist `uss' {
+    local grtitle : variable label `var'
+    gr box `var', over(ever_mal) over(cohort) ///
+        ytitle("") ///
+        title("`grtitle'", size(medium)) ///
+        ylabel(0(1)5, angle(0) format(%2.0f)) ///
+        xsize(10) ysize(8) ///
+        name(g_`var', replace)
+    
+    local graphlist "`graphlist' g_`var'"
 }
 
-display "`graphlist'"
-
-gr combine `graphlist', rows(2) cols(3)
-gr save "./figures/combined_cohorts", replace
-gr export ./figures/figc.png, as(png) replace
+gr combine `graphlist', rows(2) cols(2) ///
+    ycommon ///
+    l1title("Diameter (cm)", size(medium))
+    
+gr save "./figures/uss_ct_corr", replace
+gr export "./figures/uss_ct_corr.png", as(png) width(2400) replace

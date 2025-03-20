@@ -1159,3 +1159,377 @@ end of do-file
 . 
 end of do-file
 
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. gr box pan_body_trans, over(ever_mal) over(cohort) title
+option title not allowed
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. gr box pan_body_trans, over(ever_mal) over(cohort) 
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. label variable pan_head_ap "Head, AP (cm)"
+
+. label variable pan_head_trans  "Head, Transverse (cm)" 
+
+. label variable pan_body_trans  "Body, Transverse (cm)"
+
+. label variable pan_tail_trans  "Tail, Transverse (cm)"
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. gr box pan_body_trans, over(ever_mal) over(cohort) 
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. gr box pan_body_trans, over(ever_mal) over(cohort) title("Body, Transverse")
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. gr box pan_body_trans, over(ever_mal) over(cohort) ///
+>  title("Body, Transverse") ///
+>  ytitle("Diameter (cm)")
+
+. 
+end of do-file
+
+. missings report pan_tail_trans by(cohort)
+factor-variable and time-series operators not allowed
+r(101);
+
+. missings report pan_tail_trans, by(cohort)
+
+Checking missings in pan_tail_trans:
+1077 observations with missing values
+
+-------------------------
+                |      #
+----------------+--------
+ pan_tail_trans |   1077
+-------------------------
+
+. help missings 
+
+. missings report pan_tail_trans if cohort==3
+
+Checking missings in pan_tail_trans:
+959 observations with missing values
+
+------------------------
+                |     #
+----------------+-------
+ pan_tail_trans |   959
+------------------------
+
+. missings report pan_head_ap if cohort==3
+
+Checking missings in pan_head_ap:
+629 observations with missing values
+
+---------------------
+             |     #
+-------------+-------
+ pan_head_ap |   629
+---------------------
+
+. missings report pan_head_trans if cohort==3
+
+Checking missings in pan_head_trans:
+582 observations with missing values
+
+------------------------
+                |     #
+----------------+-------
+ pan_head_trans |   582
+------------------------
+
+. missings report pan_body_trans if cohort==3
+
+Checking missings in pan_body_trans:
+569 observations with missing values
+
+------------------------
+                |     #
+----------------+-------
+ pan_body_trans |   569
+------------------------
+
+. scatter ct_pan_vol pan_tail_trans
+
+. scatter ct_pan_vol pan_head_trans
+
+. scatter ct_pan_vol pan_body_trans
+
+. scatter ct_pan_vol pan_head_ap
+
+. scatter ct_pan_vol pan_body_trans
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. label variable pan_head_ap "Head, AP (cm)"
+
+. label variable pan_head_trans  "Head, Transverse (cm)" 
+
+. label variable pan_body_trans  "Body, Transverse (cm)"
+
+. label variable pan_tail_trans  "Tail, Transverse (cm)"
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. foreach var of varlist "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans" {
+  2. local grtitle : label `var' 
+  3. gr box `var', over(ever_mal) over(cohort) ///
+>  title("`grtitle'") ///
+>  ytitle("Diameter (cm)")
+  4. }
+"pan_head_ap pan_head_trans pan_tail_trans pan_body_trans invalid name
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. foreach var of varlist "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans" {
+  2. gr box `var', over(ever_mal) over(cohort) ///
+>  ytitle("Diameter (cm)")
+  3. }
+"pan_head_ap pan_head_trans pan_tail_trans pan_body_trans invalid name
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. foreach var of varlist pan_head_ap pan_head_trans pan_tail_trans pan_body_trans {
+  2. gr box `var', over(ever_mal) over(cohort) ///
+>  ytitle("Diameter (cm)")
+  3. }
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. foreach var of varlist pan_head_ap pan_head_trans pan_tail_trans pan_body_trans {
+  2.         local grtitle : label `var'  
+  3.         gr box `var', over(ever_mal) over(cohort) ///
+>         ytitle("Diameter (cm)") ///
+>         title("`grtitle'")
+  4.         }       
+invalid syntax
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. local uss "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans"
+
+. 
+. tempfile graphlist
+
+. local graphlist "" // Clear the graphlist
+
+. 
+. foreach var of varlist `uss' {
+  2.     local grtitle : variable label `var'
+  3.     gr box `var', over(ever_mal) over(cohort) ///
+>         ytitle("Diameter (cm)") ///
+>         title("`grtitle'") ///
+>         name(g_`var', replace)
+  4.     
+.     local graphlist "`graphlist' g_`var'"
+  5. }
+
+. 
+. gr combine `graphlist', rows(2) cols(2)
+
+. gr save "./figures/figd", replace
+(file ./figures/figd not found)
+file ./figures/figd saved as .gph format
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. gr export "./figures/figd.png", as(png) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/figd.png saved as PNG format
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. 
+. 
+. set scheme stsj
+
+. 
+. local uss "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans"
+
+. 
+. tempfile graphlist
+
+. local graphlist "" // Clear the graphlist
+
+. 
+. foreach var of varlist `uss' {
+  2.     local grtitle : variable label `var'
+  3.     gr box `var', over(ever_mal) over(cohort) ///
+>         ytitle("") ///
+>         title("`grtitle'", size(medium)) ///
+>         ylabel(0(1)5, angle(0) format(%2.0f)) ///
+>         xlabel(, angle(45) labsize(small)) ///
+>         name(g_`var', replace)
+  4.     
+.     local graphlist "`graphlist' g_`var'"
+  5. }
+xlabels(, angle(45) labsize(small)) not allowed, xaxis1 does not exist
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. set scheme stsj
+
+. 
+. local uss "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans"
+
+. 
+. tempfile graphlist
+
+. local graphlist "" // Clear the graphlist
+
+. 
+. foreach var of varlist `uss' {
+  2.     local grtitle : variable label `var'
+  3.     gr box `var', over(ever_mal) over(cohort) ///
+>         ytitle("") ///
+>         title("`grtitle'", size(medium)) ///
+>         ylabel(0(1)5, angle(0) format(%2.0f)) ///
+>         xsize(10) ysize(8) ///
+>         name(g_`var', replace)
+  4.     
+.     local graphlist "`graphlist' g_`var'"
+  5. }
+
+. 
+. gr combine `graphlist', rows(2) cols(2) ///
+>     ycommon ///
+>     l1title("Diameter (cm)", size(medium))
+
+.     
+. gr save "./figures/uss_ct_corr", replace
+(file ./figures/uss_ct_corr not found)
+file ./figures/uss_ct_corr saved as .gph format
+
+. gr export "./figures/uss_ct_corr.png", as(png) width(2400) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/uss_ct_corr.png saved as PNG format
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. local uss "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans"
+
+.                                                                                         
+. local graphlist "" // Clear the graphlist
+
+. 
+. tempfile graphlist
+
+. 
+. foreach var of varlist `uss' {
+  2.     local grtitle : variable label `var'
+  3.     gr box `var', ///
+>         over(ever_mal, relabel(1 "NPM" 2 "PM") label(labsize(vsmall))) ///
+>         over(cohort, label(labsize(vsmall))) ///
+>         ytitle("") ///
+>         title("`grtitle'", size(medium)) ///
+>         ylabel(0(1)5, angle(0) format(%2.0f)) ///
+>         xsize(10) ysize(8) ///
+>         name(g_`var', replace)
+  4.     
+.     local graphlist "`graphlist' g_`var'"
+  5. }
+
+. 
+. gr combine `graphlist', rows(2) cols(2) ///
+>     ycommon ///
+>     l1title("Diameter (cm)", size(medium))
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000001 is not a memory graph
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. local uss "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans"
+
+.                                                                                         
+. local graphlist "" // Clear the graphlist
+
+. 
+. tempfile graphlist
+
+. 
+. foreach var of varlist `uss' {
+  2.     local grtitle : variable label `var'
+  3.     gr box `var', ///
+>         over(ever_mal, relabel(1 "NPM" 2 "PM") label(labsize(vsmall))) ///
+>         over(cohort, label(labsize(vsmall))) ///
+>         ytitle("") ///
+>         title("`grtitle'", size(medium)) ///
+>         ylabel(0(1)5, angle(0) format(%2.0f)) ///
+>         xsize(10) ysize(8) ///
+>         name(g_`var', replace)
+  4.     
+.     local graphlist "`graphlist' g_`var'"
+  5. }
+
+. 
+. gr combine `graphlist', rows(2) cols(2) ///
+>     ycommon ///
+>     l1title("Diameter (cm)", size(medium))
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000001 is not a memory graph
+r(198);
+
+end of do-file
+
+r(198);
+
