@@ -3,53 +3,99 @@ Sampa
 
 Recreates graphs in version 12 of paper into 1 theme
 
-Install these schemes
+Install these schemes in case we change
+Default scheme is stcolor for Stata graphs
 
 net install schemepack, from("https://raw.githubusercontent.com/asjadnaqvi/stata-schemepack/main/installation/") replace
+
+See this for color schemes : https://github.com/asjadnaqvi/stata-schemepack/blob/main/README.md
+
 
 Install user packages
 net install blandaltman.pkg
 net install upsetplot.pkg
 
+Figure 1 CT upper abdomen scan slices showing dimensions measured.
+Figure 2. Diagram showing overlap between participants with faecal elastase, ultrasound and CT scans.
+Figure 3. Faecal elastase distribution by cohort and malnutrition status.
+Figure 4. USS and CT measurements correlations
+
+
 */
 
 capture log close
-log using ./log/figures.log 
+log using ./log/figures.log , replace
 
-putdocx begin
+putdocx clear
 
+//# ******************** FIGURES ********************
+
+local filename "./figures/docfigures" // path and file name of file to be saved
+local title "Figures"  // Header for the File
+
+*** FIGURE A CT IMAGE
+
+local fig1 "./figures/ct_meas.png"
+local fig1head "Figure 1 CT upper abdomen scan slices showing dimensions measured."
+
+local fig1text "a) axial anterior-posterior and transverse head diameters, b) coronal cranio-caudal head diameter, c) coronal cranio-caudal body diameters, d) axial anterior-posterior body and tail diameters, body, and d) length of body and tail."
+
+*** FIGURE B VENN
+
+local fig2 "./figures/venn_diagram_5.png"
+local fig2head "Figure 2 Diagram showing overlap between participants with faecal elastase, ultrasound and CT scans."
+
+local fig2text "Not shown are lipase, amylase and trypsinogen assays in participants.  Lipase measured only in DIVIDS."
+
+*** FIGURE C FE1
+
+local fig3 "./figures/figc.png"
+local fig3head "Figure 3 Faecal elastase distribution by cohort and malnutrition status."
+
+local fig3text "a) axial anterior-posterior and transverse head diameters, b) coronal cranio-caudal head diameter, c) coronal cranio-caudal body diameters, d) axial anterior-posterior body and tail diameters, body, and d) length of body and tail."
+
+*** FIGURE D USS CT
+
+local fig4 "./figures/uss_ct_corr.png"
+local fig4head "Figure 4 Ultrasound and CT Scan Correlation."
+
+local fig4text "a) axial anterior-posterior and transverse head diameters, b) coronal cranio-caudal head diameter, c) coronal cranio-caudal body diameters, d) axial anterior-posterior body and tail diameters, body, and d) length of body and tail."
+
+*** FIGURE E CONSORT
+
+local fig5 "./figures/consort.png"
+local fig5head "Supplementary Figure 1 Consort Diagram."
+
+local fig5text "a) axial anterior-posterior and transverse head diameters, b) coronal cranio-caudal head diameter, c) coronal cranio-caudal body diameters, d) axial anterior-posterior body and tail diameters, body, and d) length of body and tail."
+
+*** FIGURE F QC
+
+local fig6 "./figures/qc_intra.png"
+local fig6head "Figure 1 CT upper abdomen scan slices showing dimensions measured."
+
+local fig6text "a) axial anterior-posterior and transverse head diameters, b) coronal cranio-caudal head diameter, c) coronal cranio-caudal body diameters, d) axial anterior-posterior body and tail diameters, body, and d) length of body and tail."
+
+*** FIGURE G
+
+
+//# ******************** CODE  ********************
+
+
+putdocx begin, font(Arial, 11) pagenum(decimal) footer(npage)
 putdocx paragraph, style(Title)
-putdocx text ("Figures")
-
+putdocx text ("`title'")
+putdocx save `filename', replace
 
 * Figure  1 CT Diagram 
+putdocx begin, font(Arial,11)
 putdocx paragraph, style(Heading1)
-putdocx text ("Figure 1")
-putdocx image --- ct
-fig_ct_upperab_slice_meas
+putdocx image `fig1'
+putdocx paragraph
+putdocx text ("`fig1head'")
+putdocx text ("`fig1text'"), font(Arial,11)
+
+putdocx save `filename', append
 
 
+//# ******************** FIGURES ********************
 
-* Figure 2 Venn Diagram 
-
-putdocx image --- venn
-
-
-* Figure 3 Consort
-
-putdocx image --- consort
-
-
-* Figure 4 Faecal Elastase distribution by cohort and MN Status
-
-
-
-* Figure 5 USS and CT Correlations
-
-* Supplement Figure Bland Altman Agreement for Intra-Reader
-
-* Supplement Figure  Bland Altman Agreement for Inter-Reader
-
-* Supplement Figure 1
-
-* Supplement Figure 1

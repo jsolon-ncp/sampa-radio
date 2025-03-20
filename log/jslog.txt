@@ -498,66 +498,664 @@ end of do-file
 . 
 end of do-file
 
-. d amyl
-variable amyl not found
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. set scheme tab2
+
+. gr bar fecal_elastase, over(ever_mal)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. gr box fecal_elastase, over(ever_mal) over(cohort)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. set scheme stmono
+scheme stmono not found
 r(111);
 
-. d lip*
+end of do-file
+
+r(111);
+
+. schemes dir
+command schemes is unrecognized
+r(199);
+
+. help set scheme
+
+. query graphics
+------------------------------------------------------------------------------------------------------------------------------------
+    Graphics settings
+      set graphics         on
+      set scheme           tab2
+      set printcolor       asis       may be automatic, asis, gs1, gs2, gs3
+      set copycolor        asis       may be automatic, asis, gs1, gs2, gs3
+      set maxbezierpath    0          bezier path elements
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. set scheme stcolor 
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. gr box fecal_elastase, over(ever_mal) over(cohort)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. set scheme sj
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. gr box fecal_elastase, over(ever_mal) over(cohort)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. set scheme stsj
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. gr box fecal_elastase, over(ever_mal) over(cohort)
+
+. 
+end of do-file
+
+. graph query
+
+Styles used in graph options are
+
+    addedlinestyle      clockposstyle                           linepatternstyle    pstyle              tickstyle
+    alignmentstyle      colorstyle          gridstyle           linewidthstyle                           
+    anglestyle          compassdirstyle                                             ringposstyle        zyx2style
+    areastyle           connectstyle        hrulestyle          marginstyle                             zyx2rulestyle
+    arrowstyle                                                  markerstyle         sizetypestyle       zyx2typestyle
+    arrowdirstyle       fpcolstyle          justificationstyle  markerlabelstyle    sunflowertypestyle
+                        fpcolnamestyle                          markersizestyle     symbolstyle
+    bystyle             fpgraphstyle        legendstyle                              
+                        functionstyle       linestyle           orientationstyle    textboxstyle
+    clegendstyle        functiontypestyle   linealignmentstyle                      textsizestyle
+
+    To find out more about a style, type -graph query <stylename>-; for instance, -graph query alignmentstyle-.  (You may omit the
+    "style" on the end.)
+
+. query graph
+------------------------------------------------------------------------------------------------------------------------------------
+    Graphics settings
+      set graphics         on
+      set scheme           stsj
+      set printcolor       asis       may be automatic, asis, gs1, gs2, gs3
+      set copycolor        asis       may be automatic, asis, gs1, gs2, gs3
+      set maxbezierpath    0          bezier path elements
+
+. tab cohort
+
+     Cohort |      Freq.     Percent        Cum.
+------------+-----------------------------------
+     DIVIDS |        322       14.14       14.14
+        SAM |        108        4.74       18.88
+     CICADA |        976       42.84       61.72
+    NUSTART |        289       12.69       74.41
+      STATT |        275       12.07       86.48
+      CLHNS |        308       13.52      100.00
+------------+-----------------------------------
+      Total |      2,278      100.00
+
+. d cohort
 
 Variable      Storage   Display    Value
     name         type    format    label      Variable label
 ------------------------------------------------------------------------------------------------------------------------------------
-lipid_unit      byte    %8.0g      lipid_unit
-                                              Unit of Measurement
-lipase          byte    %8.0g                 Lipase
-lipase_prob     byte    %24.0g     lipase_prob
-                                              Any problems?
-lipase_prob_s~c byte    %8.0g                 Others, specify
+cohort          byte    %8.0g      cohort     Cohort
 
-. ranksum lipase, by(ever_mal)
+. label value list cohort
+variable list not found
+r(111);
 
-Two-sample Wilcoxon rank-sum (Mann–Whitney) test
+. label list cohort
+cohort:
+           1 DIVIDS
+           2 SAM
+           3 CICADA
+           4 NUSTART
+           5 STATT
+           6 CLHNS
 
-    ever_mal |      Obs    Rank sum    Expected
--------------+---------------------------------
-         NPM |       58        9773        9367
-          PM |      264       42230       42636
--------------+---------------------------------
-    Combined |      322       52003       52003
-
-Unadjusted variance   412148.00
-Adjustment for ties    -1317.18
-                     ----------
-Adjusted variance     410830.82
-
-H0: lipase(ever_mal==NPM) = lipase(ever_mal==PM)
-         z =  0.633
-Prob > |z| = 0.5265
-
-Note: Exact p-value is not computed by default for sample sizes > 200.
-      Use option exact to compute it.
-
-. scatter lipase bmi
-
-. dotpot lipase, over(cohort)
-command dotpot is unrecognized
-r(199);
-
-. dotplot lipase, over(cohort)
-
-. dotplot lipase, by(cohort)
-option by() not allowed
-r(198);
-
-. dotplot lipase, over(cohort)
-
-. scatter lipase age
-
-. scatter lipase pan_head_ap
-
-. scatter lipase pan_head_trans
+. pwd
+/Users/juansolon/Documents/GitHub/sampa-radio
 
 . do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
 
 . 
-. capture log close
+. local c "1"
+
+. 
+. gr box fecal_elastase if cohort ==`c', over(ever_mal)
+
+. gr save ./figures/ `c'
+. invalid name
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. local c "1"
+
+. 
+. gr box fecal_elastase if cohort ==`c', over(ever_mal) title(`c')
+
+. gr save ./figures/ `c'
+. invalid name
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. 
+. forvalues c = 1/6 {
+  2.     // Get the label of the value stored in local c
+.     local lbl_cohort : label cohort `c'
+  3. 
+.     // Generate the box plot with the correct title
+.     gr box fecal_elastase if cohort == `c', over(ever_mal) title("`lbl_cohort'")
+  4. }
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. forvalues c = 1/6 {
+  2.     // Get the label of the value stored in local c
+.     local grtitle : label cohort `c'
+  3. 
+.     // Generate the box plot with the correct title
+.     gr box fecal_elastase if cohort == `c', over(ever_mal) title("`grtitle'")
+  4. 
+unexpected end of file
+r(612);
+
+end of do-file
+
+r(612);
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. 
+. forvalues c = 1/6 {
+  2.     // Get the label of the value stored in local c
+.     local grtitle : label cohort `c'
+  3. 
+.     // Generate the box plot with the correct title
+.     gr box fecal_elastase if cohort == `c', over(ever_mal) title("`grtitle'")
+  4. }
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. 
+. local i = 1 // Initialize a counter for graph positions
+
+. forvalues c = 1/6 {
+  2.     // Get the label of the value stored in local c
+.     local grtitle : label cohort `c'
+  3. 
+.     // Generate the box plot with the correct title
+.     gr box fecal_elastase if cohort == `c', over(ever_mal) title("`grtitle'")
+  4. 
+.     // Save the graph to a temporary file
+.     tempfile temp_graph_`i'
+  5.     gr save "`temp_graph_`i''", replace
+  6. 
+.     // Append the temporary graph file name to the graphlist
+.     local graphlist "`graphlist' `temp_graph_`i''"
+  7. 
+.     local i = `i' + 1 // Increment the counter
+  8. }
+(file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000001 not found)
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000001 saved as .gph format
+(file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002 not found)
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002 saved as .gph format
+(file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000003 not found)
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000003 saved as .gph format
+(file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004 not found)
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004 saved as .gph format
+(file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000005 not found)
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000005 saved as .gph format
+(file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006 not found)
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006 saved as .gph format
+
+. 
+. // Combine the graphs
+. gr combine `graphlist' , rows(2) cols(3) // Adjust rows and columns as needed
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000001 is not a memory graph
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. 
+. tempfile graphlist
+
+. 
+. local i = 1
+
+. forvalues c = 1/6 {
+  2.     local grtitle : label cohort `c'
+  3.     gr box fecal_elastase if cohort == `c', over(ever_mal) title("`grtitle'")
+  4. 
+.     tempfile temp_graph_`i'
+  5.     gr save "`temp_graph_`i''.gph", replace // Added .gph extension
+  6. 
+.     display "`temp_graph_`i''.gph" // Check the file names
+  7. 
+.     local graphlist "`graphlist' `temp_graph_`i''.gph"
+  8. 
+.     local i = `i' + 1
+  9. }
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002.gph
+(file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000003.gph not found)
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000003.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000003.gph
+(file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004.gph not found)
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004.gph
+(file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000005.gph not found)
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000005.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000005.gph
+(file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006.gph not found)
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006.gph
+(file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000007.gph not found)
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000007.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000007.gph
+
+. 
+. display "`graphlist'" // Check the graphlist content
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000001 /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002.gp
+> h /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000003.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.0
+> 00004.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000005.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S
+> _77831.000006.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000007.gph
+
+. 
+. gr combine `graphlist', rows(2) cols(3)
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000001 is not a memory graph
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. tempfile graphlist
+
+. 
+. local i = 1
+
+. forvalues c = 0/5 { // start c at 0, and increment to 5.
+  2.     local grtitle : label cohort `i'
+  3.     gr box fecal_elastase if cohort == `i', over(ever_mal) title("`grtitle'")
+  4. 
+.     tempfile temp_graph_`i'
+  5.     gr save "`temp_graph_`i''.gph", replace
+  6. 
+.     display "`temp_graph_`i''.gph"
+  7. 
+.     local graphlist "`graphlist' `temp_graph_`i''.gph"
+  8. 
+.     local i = `i' + 1
+  9. }
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002.gph
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000003.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000003.gph
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004.gph
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000005.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000005.gph
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006.gph
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000007.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000007.gph
+
+. 
+. display "`graphlist'"
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000001 /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002.gp
+> h /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000003.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.0
+> 00004.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000005.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S
+> _77831.000006.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000007.gph
+
+. 
+. gr combine `graphlist', rows(2) cols(3)
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000001 is not a memory graph
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. 
+. tempfile graphlist
+
+. local graphlist "" // Clear the graphlist
+
+. local i = 1
+
+. forvalues c = 0/5 {
+  2.     local grtitle : label cohort `i'
+  3.     gr box fecal_elastase if cohort == `i', over(ever_mal) title("`grtitle'")
+  4. 
+.     tempfile temp_graph_`i'
+  5.     gr save "`temp_graph_`i''.gph", replace
+  6. 
+.     display "`temp_graph_`i''.gph"
+  7. 
+.     local graphlist "`graphlist' `temp_graph_`i''.gph"
+  8. 
+.     local i = `i' + 1
+  9. }
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002.gph
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000003.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000003.gph
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004.gph
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000005.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000005.gph
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006.gph
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000007.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000007.gph
+
+. 
+. display "`graphlist'"
+ /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.0000
+> 03.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77
+> 831.000005.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq
+> /T//S_77831.000007.gph
+
+. 
+. gr combine `graphlist', rows(2) cols(3)
+
+. gr save "./figures/combined_cohorts", replace
+(file ./figures/combined_cohorts not found)
+file ./figures/combined_cohorts saved as .gph format
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. gr export ./figures/figc.png, as(png), replace
+invalid 'replace' 
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. gr export ./figures/figc.png, as(png) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/figc.png saved as PNG format
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. 
+. tempfile graphlist
+
+. local graphlist ""
+
+. local i = 1
+
+. 
+. local cohort_order "2 4 3 1 6 5" // Define the desired order
+
+. 
+. foreach c of local cohort_order {
+  2.     local grtitle : label cohort `c'
+  3.     gr box fecal_elastase if cohort == `c', over(ever_mal) title("`grtitle'")
+  4. 
+.     tempfile temp_graph_`i'
+  5.     gr save "`temp_graph_`i''.gph", replace
+  6. 
+.     display "`temp_graph_`i''.gph"
+  7. 
+.     local graphlist "`graphlist' `temp_graph_`i''.gph"
+  8. 
+.     local i = `i' + 1
+  9. }
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002.gph
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000003.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000003.gph
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004.gph
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000005.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000005.gph
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006.gph
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000007.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000007.gph
+
+. 
+. display "`graphlist'"
+ /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.0000
+> 03.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77
+> 831.000005.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq
+> /T//S_77831.000007.gph
+
+. 
+. gr combine `graphlist', rows(2) cols(3)
+
+. gr save "./figures/rearranged_cohorts", replace
+(file ./figures/rearranged_cohorts not found)
+file ./figures/rearranged_cohorts saved as .gph format
+
+. gr export ./figures/figc.png, as(png) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/figc.png saved as PNG format
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. table (cohort)(ever_mal), statistic(p50 bmi)
+
+----------------------------------------------
+          |    Ever experience malnutrition?  
+          |        NPM          PM       Total
+----------+-----------------------------------
+Cohort    |                                   
+  DIVIDS  |   15.80519    16.65415    16.52128
+  SAM     |   17.13926    16.04976    16.61598
+  CICADA  |   23.78912    19.28991    22.11643
+  NUSTART |   24.49827    19.44582    20.66748
+  STATT   |   22.33705    17.76748    20.17637
+  CLHNS   |   27.53525    24.01217    26.63289
+  Total   |     23.749    18.79287    21.17615
+----------------------------------------------
+
+. 
+end of do-file
+
+. d hba*
+
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+------------------------------------------------------------------------------------------------------------------------------------
+hba1c           float   %9.0g                 Hba1c result [%] from baseline sample In OGTT
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. table (cohort)(ever_mal), statistic(p50 bmi hba1c)
+
+--------------------------------------------------------------------------------------
+                                                  |    Ever experience malnutrition?  
+                                                  |        NPM          PM       Total
+--------------------------------------------------+-----------------------------------
+Cohort                                            |                                   
+  DIVIDS                                          |                                   
+    Body mass index                               |   15.80519    16.65415    16.52128
+    Hba1c result [%] from baseline sample In OGTT |        5.3         5.3         5.3
+  SAM                                             |                                   
+    Body mass index                               |   17.13926    16.04976    16.61598
+    Hba1c result [%] from baseline sample In OGTT |        5.3         5.2         5.2
+  CICADA                                          |                                   
+    Body mass index                               |   23.78912    19.28991    22.11643
+    Hba1c result [%] from baseline sample In OGTT |        5.6         5.8         5.7
+  NUSTART                                         |                                   
+    Body mass index                               |   24.49827    19.44582    20.66748
+    Hba1c result [%] from baseline sample In OGTT |        5.4         5.2         5.3
+  STATT                                           |                                   
+    Body mass index                               |   22.33705    17.76748    20.17637
+    Hba1c result [%] from baseline sample In OGTT |          5         4.8         4.9
+  CLHNS                                           |                                   
+    Body mass index                               |   27.53525    24.01217    26.63289
+    Hba1c result [%] from baseline sample In OGTT |        5.6         5.6         5.6
+  Total                                           |                                   
+    Body mass index                               |     23.749    18.79287    21.17615
+    Hba1c result [%] from baseline sample In OGTT |        5.5         5.4         5.4
+--------------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. scatter fecal_elastase bmi
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. tempfile graphlist
+
+. local graphlist ""
+
+. local i = 1
+
+. 
+. local cohort_order "2 4 3 1 6 5" // Define the desired order
+
+. 
+. foreach c of local cohort_order {
+  2.     local grtitle : label cohort `c'
+  3.     
+.         gr box fecal_elastase if cohort == `c', over(ever_mal) title("`grtitle'") ///
+>         ytitle("Faecal Elastase (mcg/g)")
+  4. 
+.     tempfile temp_graph_`i'
+  5.     gr save "`temp_graph_`i''.gph", replace
+  6. 
+.     display "`temp_graph_`i''.gph"
+  7. 
+.     local graphlist "`graphlist' `temp_graph_`i''.gph"
+  8. 
+.     local i = `i' + 1
+  9. }
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002.gph
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000003.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000003.gph
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004.gph
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000005.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000005.gph
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006.gph
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000007.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000007.gph
+
+. 
+. display "`graphlist'"
+ /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.0000
+> 03.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77
+> 831.000005.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq
+> /T//S_77831.000007.gph
+
+. 
+. gr combine `graphlist', rows(2) cols(3)
+
+. 
+. gr save "./figures/rearranged_cohorts", replace
+file ./figures/rearranged_cohorts saved as .gph format
+
+. 
+. gr export ./figures/figc.png, as(png) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/figc.png saved as PNG format
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. gr box pan_body_trans, over(ever_mal) over(cohort)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. local uss "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans"
+
+. 
+. d `uss'
+
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+------------------------------------------------------------------------------------------------------------------------------------
+pan_head_ap     float   %9.0g                 Pancreas head size measured in anterior/posterior dimension
+pan_head_trans  float   %9.0g                 Pancreas head size measured in transverse dimension
+pan_tail_trans  float   %9.0g                 Pancreas tail size measure in anterior/posterior dimension
+pan_body_trans  float   %9.0g                 Pancreas body size measures in anterior/posterior dimension; maximum diameter
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. label variable pan_head_ap "Head, AP (mm)"
+
+. label variable pan_head_trans  "Head, Transverse (mm)" 
+
+. label variable pan_body_trans  "Body, Transverse (mm)"
+
+. label variable pan_tail_trans  "Tail, Transverse (mm)"
+
+. 
+end of do-file
+

@@ -23,8 +23,12 @@ version 18.5
 clear all
 set more off
 
+local pwd "~/Documents/GitHub/sampa-radio"
+cd `pwd'
+local suffix: display %tdCCYY-NN-DD =daily("`c(current_date)'", "DMY")
+*use "my_file.`suffix'.dta", clear
 capture log close
-log using ./log/master.log 
+log using ./log/master`suffix'.log 
 
 * GLOBALS (or locals)
 * global sampadata "~/Cox working group Dropbox/TB Nutrition working group/Sampa/DATA Management/04-data-delivered-v2/ALL/STATA"
