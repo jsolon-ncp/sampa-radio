@@ -1618,3 +1618,101 @@ file /Users/juansolon/Documents/GitHub/sampa-radio/figures/figd.png saved as PNG
 . 
 end of do-file
 
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. local uss "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans"
+
+.                                                                                         
+. local graphlist "" // Clear the graphlist
+
+. 
+. foreach var of varlist `uss' {
+  2.     local grtitle : variable label `var'
+  3.     gr box `var', ///
+>         over(ever_mal, relabel(1 "NPM" 2 "PM") label(labsize(vsmall))) ///
+>         over(cohort, label(labsize(vsmall))) ///
+>         ytitle("") ///
+>         title("`grtitle'", size(medium)) ///
+>         ylabel(0(1)5, angle(0) format(%2.0f)) ///
+>         xsize(10) ysize(8) ///
+>         msize(tiny) ///
+>         name(g_`var', replace)
+  4.     
+.     local graphlist "`graphlist' g_`var'"
+  5. }
+option msize() not allowed
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. local uss "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans"
+
+.                                                                                         
+. local graphlist "" // Clear the graphlist
+
+. 
+. foreach var of varlist `uss' {
+  2.     local grtitle : variable label `var'
+  3.     gr box `var', ///
+>         over(ever_mal, relabel(1 "NPM" 2 "PM") label(labsize(vsmall))) ///
+>         over(cohort, label(labsize(vsmall))) ///
+>         ytitle("") ///
+>         title("`grtitle'", size(medium)) ///
+>         ylabel(0(1)5, angle(0) format(%2.0f)) ///
+>         xsize(10) ysize(8) ///
+>         marker(msize(tiny)) ///
+>         name(g_`var', replace)
+  4.     
+.     local graphlist "`graphlist' g_`var'"
+  5. }
+invalid marker number, msize(tiny)
+r(198);
+
+end of do-file
+
+r(198);
+
+. help gr box
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. local uss "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans"
+
+.                                                                                         
+. local graphlist "" // Clear the graphlist
+
+. 
+. foreach var of varlist `uss' {
+  2.     local grtitle : variable label `var'
+  3.     gr box `var', ///
+>         over(ever_mal, relabel(1 "NPM" 2 "PM") label(labsize(vsmall))) ///
+>         over(cohort, label(labsize(vsmall))) ///
+>         ytitle("") ///
+>         title("`grtitle'", size(medium)) ///
+>         ylabel(0(1)5, angle(0) format(%2.0f)) ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(tiny)) ///
+>         name(g_`var', replace)
+  4.     
+.     local graphlist "`graphlist' g_`var'"
+  5. }
+
+. 
+. gr combine `graphlist', rows(2) cols(2) ///
+>     ycommon ///
+>     l1title("Diameter (cm)", size(medium))
+
+.     
+. gr save "./figures/figd", replace
+file ./figures/figd saved as .gph format
+
+. gr export "./figures/figd.png", as(png) width(2400) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/figd.png saved as PNG format
+
+. 
+end of do-file
+

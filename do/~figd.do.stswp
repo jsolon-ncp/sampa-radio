@@ -26,7 +26,7 @@ foreach var of varlist `uss' {
         title("`grtitle'", size(medium)) ///
         ylabel(0(1)5, angle(0) format(%2.0f)) ///
         xsize(10) ysize(8) ///
-        msize(tiny) ///
+        marker(1, msize(tiny)) ///
         name(g_`var', replace)
     
     local graphlist "`graphlist' g_`var'"
