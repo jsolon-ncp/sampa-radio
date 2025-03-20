@@ -1,0 +1,19 @@
+------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/juansolon/Documents/GitHub/sampa-radio/log/figures.log
+  log type:  text
+ opened on:  20 Mar 2025, 13:26:23
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. putdocx begin, font(Arial, size(11))
+invalid font size specified in option font()
+r(198);
+
+end of do-file
+
+r(198);
+

@@ -1,0 +1,563 @@
+
+. 
+. local dataset "All_combined_sampa_data.dta"
+
+. 
+. * CHANGE DIRECTORY TO DROPBOX
+. 
+. cd "$sampadata"
+/Users/juansolon/Cox working group Dropbox/TB Nutrition working group/SAMPA/DATA monitoring/Data/SAMPA
+
+. 
+. use "All_combined_sampa_data.dta", clear
+
+. 
+. cd "$ghsamparadio"
+/Users/juansolon/Documents/GitHub/sampa-radio
+
+. 
+. 
+. 
+. 
+end of do-file
+
+. 
+. 
+.  cd `pwd'
+/Users/juansolon/Documents/GitHub/sampa-radio
+
+. 
+. do ./do/cr_flag_elastase.do             // Flags the elastase samples that should not be analyzed based on ELISA standards ; n = 9
+> 0
+
+. /*
+> cr_flag_elastase.do                     
+> Flags the elastase samples that should not be analyzed based on ELISA standards ; n = 90
+> J Solon
+> March 3 2025
+> 
+> Once this flag is made, this has to be added to the analysis dataset
+> */
+. 
+. 
+. tempfile 1 2 3
+
+. 
+. frame rename default sampa
+
+. sort sampa_id
+
+. 
+. save `1'
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000001 saved as .dta format
+
+. 
+. ***  IMPORT ZAMBIA ELISA DATA (PLATE DROPPED)
+. 
+. frame create plate
+
+. frame change plate
+
+. 
+. cd data-temp
+/Users/juansolon/Documents/GitHub/sampa-radio/data-temp
+
+. 
+. import excel using "Plate 1 results.xlsx" ,cellrange(A2) first   
+(6 vars, 90 obs)
+
+. 
+. cd ../
+/Users/juansolon/Documents/GitHub/sampa-radio
+
+. 
+. gen flag_fecal_elastase = 1
+
+. 
+. rename SampaID sampa_id
+
+. 
+. keep sampa_id flag_fecal_elastase
+
+. 
+. sort sampa_id
+
+. 
+. save `2'
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002 saved as .dta format
+
+. 
+. frame change sampa
+
+. 
+. merge 1:1 sampa_id using `2', keep(match master)
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                         2,188
+        from master                     2,188  (_merge==1)
+        from using                          0  (_merge==2)
+
+    Matched                                90  (_merge==3)
+    -----------------------------------------
+
+. 
+. 
+end of do-file
+
+. 
+. 
+.  cd `pwd'
+/Users/juansolon/Documents/GitHub/sampa-radio
+
+.  
+. do ./do/cr_sample_binary.do             // Generates or recodes ultrasound ct scan and elisa assays as binary with or without samp
+> les
+
+. /* 
+> cr_sample_binary.do                             // Generates or recodes ultrasound ct scan and elisa assays as binary with or with
+> out samples
+>                                                                 // Include here the same for presence or absence of functional enz
+> yme assays 
+>                                                                 
+> Juan Solon
+> March 3 2025
+> 
+> */
+. 
+. **# Generate recruitment and sample variables
+. 
+. gen recruited = 1
+
+.         la var recruited "Recruited"
+
+. 
+. gen assay_fecal_elastase = 1 if fecal_elastase !=. & fecal_elastase >0
+(476 missing values generated)
+
+.         replace assay_fe = 0 if fecal_elastase==. 
+(476 real changes made)
+
+.         la var assay_fe "Fecal Elastase"
+
+. 
+. gen assay_lipase = 1 if lipase !=. & lipase >0
+(1,956 missing values generated)
+
+.         replace assay_lip = 0 if lipase ==.
+(1,956 real changes made)
+
+.         la var assay_lip "Lipase"
+
+. 
+. /*
+> gen assay_amylase = 1 if amylase !=. & amylase >0
+>         *replace assay_amylase = 0 if amylase ==.
+>         la var assay_amylase "Amylase"
+>         
+> gen assay_trypsinogen = 1 if trypsinogen !=. & trypsinogen >0
+>         *replace assay_trypsinogen = 0 if trypsinogen ==.
+>         la var assay_trypsinogen "Trypsinogen"
+> */
+. 
+. **# Create new variables for imaging presence; Do not replace combined
+. 
+. 
+. clonevar radio2 = radio_exam
+(513 missing values generated)
+
+.         replace radio2 = 0 if radio_exam==.
+(513 real changes made)
+
+.         la var radio2 "Ultrasound"
+
+. 
+. clonevar ct2 = ct_scan
+(1,627 missing values generated)
+
+.         replace ct2 = 0 if ct_scan==.
+(1,627 real changes made)
+
+.         la var ct2 "CT Scan"
+
+. 
+. egen radio_mis_dims = rowmiss(pan_head_ap pan_head_trans pan_body_trans pan_tail_trans)
+
+. 
+. 
+. egen radio_mis_all = rowmiss(pan_size_qual pan_head_trans pan_head_ap pan_body_trans pan_tail_trans pan_shape pan_shape_problem pa
+> n_shape_prob_specify pan_contour pan_contour_problem pan_contour_prob_specify pan_parenchyma pan_paren_inflam pan_paren_fibrosis p
+> an_paren_steatosis pan_duct pan_duct_stones pan_duct_mass pan_calci pan_calci_place pan_cyst_yes pan_oth_abnormal pan_oth_abn_spec
+> ify)
+
+. 
+. clonevar radio3 = radio2
+
+. replace radio3 = 0 if radio_mis_dims ==4
+(142 real changes made)
+
+. la var radio3 "USS Scans Visualized"
+
+. 
+.         
+. gen subset = 0
+
+. replace subset = 1 if radio3==1 | assay_fecal_elastase ==1
+(2,124 real changes made)
+
+. la var subset "Analysis Subset (With Fe-1 or USS)"
+
+. 
+. gen subset2 = 0
+
+. replace subset2 = 1 if radio3==1 | assay_fecal_elastase ==1 | ct2==1
+(2,162 real changes made)
+
+. la var subset2 "Analysis Subset 2 (With Fe-1 or USS or CT Scan)"
+
+. 
+. 
+end of do-file
+
+.                                                                                 // Include here the same for presence or absence o
+> f functional enzyme assays 
+.                                                                                 // Revise once amylase and trypsinogen 
+. 
+. 
+.  cd `pwd'
+/Users/juansolon/Documents/GitHub/sampa-radio
+
+. do ./do/cr_categorical_outcomes.do
+
+. /*
+> cr_categorical_outcomes.do              
+> Sampa
+> Imaging Elastase Paper
+> 
+> Recodes fecal_elastase to with or without EPI and levels of EPI
+> Include here any recoding of other functional enzymes
+> 
+> Reusable with
+>         1.  Access to Dropbox
+>         2.  Define globals and paths
+>         3.  A working directory with 
+>         01-data
+>         02-data-temp
+>         03-tables
+>         04-do
+>         05-figures
+>         log 
+> */
+. 
+. egen epi_binary = cut(fecal_elastase), at(0,200,601) icodes
+(476 missing values generated)
+
+.         la var epi_binary "EPI"
+
+.         recode epi_binary 0 = 1 1 = 0
+(1,802 changes made to epi_binary)
+
+.         
+. 
+.         label define epi_binary 0 "Without EPI" 1 "With EPI"
+
+.         label values epi_binary epi_binary
+
+.         
+. 
+. egen epi_ordinal = cut(fecal_elastase), at(0,100,200, 601) icodes
+(476 missing values generated)
+
+.         la var epi_ordinal "EPI Levels"
+
+.         recode epi_ordinal 0 = 3 1 = 2 2 = 1 
+(1,802 changes made to epi_ordinal)
+
+. 
+.         label define epi_ordinal 1 "Without EPI" 2 "Mild-Moderate EPI" 3 "Severe EPI"
+
+.         label values epi_ordinal epi_ordinal
+
+. 
+end of do-file
+
+. 
+.                                                                                 // Recodes fecal_elastase to with or without EPI a
+> nd levels of EPI
+.                                                                                 // Include here any recoding of other functional e
+> nzymes once that data is in and cut-offs are known
+. 
+.  cd `pwd'
+/Users/juansolon/Documents/GitHub/sampa-radio
+
+. do ./do/cr_categorical_independent.do
+
+. /*
+> SAMPA
+> cr_categorical_independent.do
+> March 3 2025
+> J Solon
+> 
+> Creates categorical variables for indedpendent variables
+> 
+> Reusable with
+>         1.  Access to Dropbox
+>         2.  Define globals and paths
+>         3.  A working directory with 
+>         data
+>         data-temp
+>         tables
+>         do
+>         figures
+>         log 
+>         
+> */
+. 
+. * Any radiology variables
+. 
+. 
+. * Cohort subcategorizations these are for creating graphs 
+. 
+. generate child = 1 if cohort ==1 | cohort ==2
+(1,848 missing values generated)
+
+.         replace child = 2 if cohort ==3 | cohort ==4 | cohort ==5 | cohort ==6
+(1,848 real changes made)
+
+.         la var child "Adult or Child Population"
+
+. 
+.         label define child 1 "Child" 2 "Adult"
+
+.     label values child child
+
+. 
+.         
+. generate africa =1 if cohort == 2 | cohort == 3 | cohort ==4
+(905 missing values generated)
+
+.         replace africa =2 if cohort == 1 | cohort == 5 | cohort ==6
+(905 real changes made)
+
+.         la var africa "Africa or Asia"
+
+. 
+.         label define africa 1 "Africa" 2 "Asia"
+
+.         label values africa africa
+
+. 
+. 
+. generate exposuretime = 1 if cohort ==1 | cohort ==2 | cohort ==6
+(1,540 missing values generated)
+
+.         replace exposuretime = 2 if cohort ==4 | cohort ==5 | cohort ==3
+(1,540 real changes made)
+
+.         
+.         label define exposuretime 1 "Exposure in Childhood" 2 "Exposure as Adults"
+
+.         label values exposuretime exposuretime
+
+.         
+.         la var exposuretime "Exposure Time"
+
+.         
+. gen fec_cohort = 1 if cohort ==1
+(1,956 missing values generated)
+
+.         replace fec_cohort = 2 if cohort == 5
+(275 real changes made)
+
+.         replace fec_cohort = 3 if cohort ==6
+(308 real changes made)
+
+.         replace fec_cohort = 4 if cohort == 2
+(108 real changes made)
+
+.         replace fec_cohort = 5 if cohort ==3
+(976 real changes made)
+
+.         replace fec_cohort = 6 if cohort == 4
+(289 real changes made)
+
+. 
+.         la var fec_cohort "Cohort"
+
+.         label define fec_cohort 1 "DIVIDS" 2 "St-ATT" 3 "CLHNS" 4 "SAM" 5 "CICADA" 6 "NUSTART"
+
+.         label values fec_cohort fec_cohort
+
+. 
+. label define ever_mal 0 "NPM" 1 "PM", modify
+
+. label values ever_mal ever_mal
+
+. 
+end of do-file
+
+. 
+.                                                                                 // Include here any derived variables for imaging 
+> that are categorical
+. 
+.  cd `pwd'
+/Users/juansolon/Documents/GitHub/sampa-radio
+
+. do ./do/cr_continuous_independent.do            // Derived variables for imaging that are continuous ; include transformations / w
+> eights
+
+. /*
+> SAMPA
+> cr_continuous_independent.do
+> March 3 2025
+> J Solon
+> 
+> Creates continuous variables for Radiology
+> 
+> Creates pancreatic volumes based on the formula vy Li.
+> 
+> Reusable with
+>         1.  Access to Dropbox
+>         2.  Define globals and paths
+>         3.  A working directory with 
+>         01-data
+>         02-data-temp
+>         03-tables
+>         04-do
+>         05-figures
+>         log 
+>         
+>         
+> */
+. 
+. * Pancreatic Volume (CT)
+. 
+. cap drop ct_pan_vol
+
+.         gen ct_pan_vol=((ct_pan_tail_trans+ct_pan_body_trans)/2)*ct_pan_body_tail*ct_pan_cc_body+((ct_pan_head_ap/2)^2)*3.14*ct_pa
+> n_cc_head
+(2,036 missing values generated)
+
+.         cap label variable ct_pan_vol "Calculated Pancreatic Volume; Study"
+
+. 
+.         
+. 
+. foreach var of varlist ct_pan_head_trans ct_pan_head_ap ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan_cc_body ct_pan
+> _cc_head {
+  2.         gen adj_wt_`var' = `var'/weight
+  3. }
+(1,954 missing values generated)
+(1,951 missing values generated)
+(1,952 missing values generated)
+(1,953 missing values generated)
+(2,027 missing values generated)
+(2,031 missing values generated)
+(2,033 missing values generated)
+
+. 
+. 
+. foreach var of varlist ct_pan_head_trans ct_pan_head_ap ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan_cc_body ct_pan
+> _cc_head {
+  2.         gen adj_sqrt_`var' = sqrt(`var')
+  3. }               
+(1,954 missing values generated)
+(1,951 missing values generated)
+(1,952 missing values generated)
+(1,953 missing values generated)
+(2,027 missing values generated)
+(2,031 missing values generated)
+(2,033 missing values generated)
+
+.         
+. * Derived USS Variables 
+. 
+. foreach var of varlist pan_head_ap pan_head_trans pan_body_trans pan_tail_trans {
+  2.         gen adj_wt_`var' = `var'/weight
+  3. }
+(729 missing values generated)
+(882 missing values generated)
+(673 missing values generated)
+(1,082 missing values generated)
+
+. 
+. 
+. foreach var of varlist pan_head_ap pan_head_trans pan_body_trans pan_tail_trans {
+  2.         gen adj_sqrt_`var' = sqrt(`var')
+  3. }               
+(724 missing values generated)
+(877 missing values generated)
+(668 missing values generated)
+(1,077 missing values generated)
+
+.         
+. 
+. 
+end of do-file
+
+. 
+end of do-file
+
+. d amyl
+variable amyl not found
+r(111);
+
+. d lip*
+
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+------------------------------------------------------------------------------------------------------------------------------------
+lipid_unit      byte    %8.0g      lipid_unit
+                                              Unit of Measurement
+lipase          byte    %8.0g                 Lipase
+lipase_prob     byte    %24.0g     lipase_prob
+                                              Any problems?
+lipase_prob_s~c byte    %8.0g                 Others, specify
+
+. ranksum lipase, by(ever_mal)
+
+Two-sample Wilcoxon rank-sum (Mann–Whitney) test
+
+    ever_mal |      Obs    Rank sum    Expected
+-------------+---------------------------------
+         NPM |       58        9773        9367
+          PM |      264       42230       42636
+-------------+---------------------------------
+    Combined |      322       52003       52003
+
+Unadjusted variance   412148.00
+Adjustment for ties    -1317.18
+                     ----------
+Adjusted variance     410830.82
+
+H0: lipase(ever_mal==NPM) = lipase(ever_mal==PM)
+         z =  0.633
+Prob > |z| = 0.5265
+
+Note: Exact p-value is not computed by default for sample sizes > 200.
+      Use option exact to compute it.
+
+. scatter lipase bmi
+
+. dotpot lipase, over(cohort)
+command dotpot is unrecognized
+r(199);
+
+. dotplot lipase, over(cohort)
+
+. dotplot lipase, by(cohort)
+option by() not allowed
+r(198);
+
+. dotplot lipase, over(cohort)
+
+. scatter lipase age
+
+. scatter lipase pan_head_ap
+
+. scatter lipase pan_head_trans
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. 
+. capture log close

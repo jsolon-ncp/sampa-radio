@@ -421,6 +421,7 @@ marginsplot, recast(scatter) ///
     ciopts(lcolor(blue red)) ///
     legend(order(1 "NPM (○)" 2 "PM (■)") rows(1) position(6) size(small))
 gr save ./figures/hiv_mal_interaction, replace
+gr export ./figures//hiv_mal_interaction.png, as(png) replace
 
 * 2. Calculate contrasts between PM and NPM within each HIV status
 margins r.ever_mal@hiv2, atmeans
@@ -437,6 +438,8 @@ marginsplot, recast(scatter) ///
     ciopts(lcolor(blue))
 gr save ./figures/hiv_mal_contrasts, replace
 
+gr export ./figures/hiv_mal_contrasts.png, as(png) replace
+
 * 3. Calculate contrasts between HIV positive and negative within each malnutrition status
 margins r.hiv2@ever_mal, atmeans
 marginsplot, recast(scatter) ///
@@ -451,6 +454,7 @@ marginsplot, recast(scatter) ///
     plot1opts(msymbol(circle) mcolor(blue)) ///
     ciopts(lcolor(blue))
 gr save ./figures/hiv_mal_contrasts2, replace
+gr export ./figures/hiv_mal_contrasts2, as(png) replace
 
 * 4. Combine all visualizations
 graph combine "./figures/hiv_mal_interaction.gph" "./figures/hiv_mal_contrasts.gph" "./figures/hiv_mal_contrasts2.gph", ///
