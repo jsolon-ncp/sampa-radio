@@ -19,16 +19,18 @@ Reusable with
 **# Create Study Dataset for Analysis
 version 18.5
 
-*CLEAR
-clear all
-set more off
-
 local pwd "~/Documents/GitHub/sampa-radio"
 cd `pwd'
 local suffix: display %tdCCYY-NN-DD =daily("`c(current_date)'", "DMY")
 *use "my_file.`suffix'.dta", clear
 capture log close
-log using ./log/master`suffix'.log 
+log using ./log/master`suffix'.log,  replace
+
+*CLEAR
+clear all
+set more off
+
+display "`c(current_time)' `c(current_date)'"
 
 * GLOBALS (or locals)
 * global sampadata "~/Cox working group Dropbox/TB Nutrition working group/Sampa/DATA Management/04-data-delivered-v2/ALL/STATA"
@@ -51,8 +53,12 @@ do ./do/cr_read.do 					// Read from Dropbox the Combined Dataset
 
 do ./do/cr_flag_elastase.do 		// Flags the elastase samples that should not be analyzed based on ELISA standards ; n = 90
 
+ cd `pwd'
+
+do ./do/cr_trypsin.do 
 
  cd `pwd'
+
  
 do ./do/cr_sample_binary.do		// Generates or recodes ultrasound ct scan and elisa assays as binary with or without samples
 										// Include here the same for presence or absence of functional enzyme assays 
@@ -73,7 +79,17 @@ do ./do/cr_categorical_independent.do
  cd `pwd'
 do ./do/cr_continuous_independent.do 		// Derived variables for imaging that are continuous ; include transformations / weights
 
-describe 
+ cd `pwd'
+do ./do/cr_keep.do 
+
+notes drop _dta 
+note: Created for Imaging Paper on `c(current_date)' at `c(current_time)' by `c(username)'
+note: Trypsin data inserted from temporary dropbox data 
+note: Selected variables kept for this paper in cr_keep.do 
+describe, simple
+notes 
+
+save ./data-temp/subset_imaging.dta, replace
 
 ************  This is the analysis dataset 
 

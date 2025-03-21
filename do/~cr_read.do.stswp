@@ -53,6 +53,4 @@ use "All_combined_sampa_data.dta", clear
 cd "$ghsamparadio"
 
 
- /Users/juansolon/Cox working group Dropbox/TB Nutrition working group/SAMPA/DATA mon
-> itoring/Data/Copenhagen lab/data/cohort_temporary_trypsinogen.dta
 

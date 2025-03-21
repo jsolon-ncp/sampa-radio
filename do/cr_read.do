@@ -50,6 +50,7 @@ cd "$sampadata"
 
 use "All_combined_sampa_data.dta", clear
 
+frame rename default sampa
 cd "$ghsamparadio"
 
 
