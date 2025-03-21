@@ -73,6 +73,8 @@ do ./do/cr_categorical_independent.do
  cd `pwd'
 do ./do/cr_continuous_independent.do 		// Derived variables for imaging that are continuous ; include transformations / weights
 
+describe 
+
 ************  This is the analysis dataset 
 
 do ./do/an_samples_images_counts.do 						//  What is the proportion of samples per MN and cohort

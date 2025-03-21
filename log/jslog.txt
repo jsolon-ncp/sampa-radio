@@ -27,8 +27,8 @@ end of do-file
 /Users/juansolon/Documents/GitHub/sampa-radio
 
 . 
-. do ./do/cr_flag_elastase.do             // Flags the elastase samples that should not be analyzed based on ELISA standards ; n = 9
-> 0
+. do ./do/cr_flag_elastase.do             // Flags the elastase samples that should not be analyzed bas
+> ed on ELISA standards ; n = 90
 
 . /*
 > cr_flag_elastase.do                     
@@ -111,14 +111,14 @@ end of do-file
 /Users/juansolon/Documents/GitHub/sampa-radio
 
 .  
-. do ./do/cr_sample_binary.do             // Generates or recodes ultrasound ct scan and elisa assays as binary with or without samp
-> les
+. do ./do/cr_sample_binary.do             // Generates or recodes ultrasound ct scan and elisa assays a
+> s binary with or without samples
 
 . /* 
-> cr_sample_binary.do                             // Generates or recodes ultrasound ct scan and elisa assays as binary with or with
-> out samples
->                                                                 // Include here the same for presence or absence of functional enz
-> yme assays 
+> cr_sample_binary.do                             // Generates or recodes ultrasound ct scan and elisa 
+> assays as binary with or without samples
+>                                                                 // Include here the same for presence
+>  or absence of functional enzyme assays 
 >                                                                 
 > Juan Solon
 > March 3 2025
@@ -185,10 +185,10 @@ end of do-file
 
 . 
 . 
-. egen radio_mis_all = rowmiss(pan_size_qual pan_head_trans pan_head_ap pan_body_trans pan_tail_trans pan_shape pan_shape_problem pa
-> n_shape_prob_specify pan_contour pan_contour_problem pan_contour_prob_specify pan_parenchyma pan_paren_inflam pan_paren_fibrosis p
-> an_paren_steatosis pan_duct pan_duct_stones pan_duct_mass pan_calci pan_calci_place pan_cyst_yes pan_oth_abnormal pan_oth_abn_spec
-> ify)
+. egen radio_mis_all = rowmiss(pan_size_qual pan_head_trans pan_head_ap pan_body_trans pan_tail_trans p
+> an_shape pan_shape_problem pan_shape_prob_specify pan_contour pan_contour_problem pan_contour_prob_sp
+> ecify pan_parenchyma pan_paren_inflam pan_paren_fibrosis pan_paren_steatosis pan_duct pan_duct_stones
+>  pan_duct_mass pan_calci pan_calci_place pan_cyst_yes pan_oth_abnormal pan_oth_abn_specify)
 
 . 
 . clonevar radio3 = radio2
@@ -219,9 +219,10 @@ end of do-file
 . 
 end of do-file
 
-.                                                                                 // Include here the same for presence or absence o
-> f functional enzyme assays 
-.                                                                                 // Revise once amylase and trypsinogen 
+.                                                                                 // Include here the s
+> ame for presence or absence of functional enzyme assays 
+.                                                                                 // Revise once amylas
+> e and trypsinogen 
 . 
 . 
 .  cd `pwd'
@@ -282,10 +283,10 @@ end of do-file
 end of do-file
 
 . 
-.                                                                                 // Recodes fecal_elastase to with or without EPI a
-> nd levels of EPI
-.                                                                                 // Include here any recoding of other functional e
-> nzymes once that data is in and cut-offs are known
+.                                                                                 // Recodes fecal_elas
+> tase to with or without EPI and levels of EPI
+.                                                                                 // Include here any r
+> ecoding of other functional enzymes once that data is in and cut-offs are known
 . 
 .  cd `pwd'
 /Users/juansolon/Documents/GitHub/sampa-radio
@@ -314,6 +315,16 @@ end of do-file
 > */
 . 
 . * Any radiology variables
+. 
+. label variable pan_head_ap "Head, AP (cm)"
+
+. label variable pan_head_trans  "Head, Transverse (cm)" 
+
+. label variable pan_body_trans  "Body, Transverse (cm)"
+
+. label variable pan_tail_trans  "Tail, Transverse (cm)"
+
+. 
 . 
 . 
 . * Cohort subcategorizations these are for creating graphs 
@@ -397,14 +408,14 @@ end of do-file
 end of do-file
 
 . 
-.                                                                                 // Include here any derived variables for imaging 
-> that are categorical
+.                                                                                 // Include here any d
+> erived variables for imaging that are categorical
 . 
 .  cd `pwd'
 /Users/juansolon/Documents/GitHub/sampa-radio
 
-. do ./do/cr_continuous_independent.do            // Derived variables for imaging that are continuous ; include transformations / w
-> eights
+. do ./do/cr_continuous_independent.do            // Derived variables for imaging that are continuous 
+> ; include transformations / weights
 
 . /*
 > SAMPA
@@ -434,8 +445,8 @@ end of do-file
 . 
 . cap drop ct_pan_vol
 
-.         gen ct_pan_vol=((ct_pan_tail_trans+ct_pan_body_trans)/2)*ct_pan_body_tail*ct_pan_cc_body+((ct_pan_head_ap/2)^2)*3.14*ct_pa
-> n_cc_head
+.         gen ct_pan_vol=((ct_pan_tail_trans+ct_pan_body_trans)/2)*ct_pan_body_tail*ct_pan_cc_body+((ct
+> _pan_head_ap/2)^2)*3.14*ct_pan_cc_head
 (2,036 missing values generated)
 
 .         cap label variable ct_pan_vol "Calculated Pancreatic Volume; Study"
@@ -443,8 +454,8 @@ end of do-file
 . 
 .         
 . 
-. foreach var of varlist ct_pan_head_trans ct_pan_head_ap ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan_cc_body ct_pan
-> _cc_head {
+. foreach var of varlist ct_pan_head_trans ct_pan_head_ap ct_pan_body_trans ct_pan_tail_trans ct_pan_bo
+> dy_tail ct_pan_cc_body ct_pan_cc_head {
   2.         gen adj_wt_`var' = `var'/weight
   3. }
 (1,954 missing values generated)
@@ -457,8 +468,8 @@ end of do-file
 
 . 
 . 
-. foreach var of varlist ct_pan_head_trans ct_pan_head_ap ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan_cc_body ct_pan
-> _cc_head {
+. foreach var of varlist ct_pan_head_trans ct_pan_head_ap ct_pan_body_trans ct_pan_tail_trans ct_pan_bo
+> dy_tail ct_pan_cc_body ct_pan_cc_head {
   2.         gen adj_sqrt_`var' = sqrt(`var')
   3. }               
 (1,954 missing values generated)
@@ -498,1221 +509,1243 @@ end of do-file
 . 
 end of do-file
 
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+. d
 
-. set scheme tab2
-
-. gr bar fecal_elastase, over(ever_mal)
-
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. gr box fecal_elastase, over(ever_mal) over(cohort)
-
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. set scheme stmono
-scheme stmono not found
-r(111);
-
-end of do-file
-
-r(111);
-
-. schemes dir
-command schemes is unrecognized
-r(199);
-
-. help set scheme
-
-. query graphics
-------------------------------------------------------------------------------------------------------------------------------------
-    Graphics settings
-      set graphics         on
-      set scheme           tab2
-      set printcolor       asis       may be automatic, asis, gs1, gs2, gs3
-      set copycolor        asis       may be automatic, asis, gs1, gs2, gs3
-      set maxbezierpath    0          bezier path elements
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. set scheme stcolor 
-
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. gr box fecal_elastase, over(ever_mal) over(cohort)
-
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. set scheme sj
-
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. gr box fecal_elastase, over(ever_mal) over(cohort)
-
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. set scheme stsj
-
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. gr box fecal_elastase, over(ever_mal) over(cohort)
-
-. 
-end of do-file
-
-. graph query
-
-Styles used in graph options are
-
-    addedlinestyle      clockposstyle                           linepatternstyle    pstyle              tickstyle
-    alignmentstyle      colorstyle          gridstyle           linewidthstyle                           
-    anglestyle          compassdirstyle                                             ringposstyle        zyx2style
-    areastyle           connectstyle        hrulestyle          marginstyle                             zyx2rulestyle
-    arrowstyle                                                  markerstyle         sizetypestyle       zyx2typestyle
-    arrowdirstyle       fpcolstyle          justificationstyle  markerlabelstyle    sunflowertypestyle
-                        fpcolnamestyle                          markersizestyle     symbolstyle
-    bystyle             fpgraphstyle        legendstyle                              
-                        functionstyle       linestyle           orientationstyle    textboxstyle
-    clegendstyle        functiontypestyle   linealignmentstyle                      textsizestyle
-
-    To find out more about a style, type -graph query <stylename>-; for instance, -graph query alignmentstyle-.  (You may omit the
-    "style" on the end.)
-
-. query graph
-------------------------------------------------------------------------------------------------------------------------------------
-    Graphics settings
-      set graphics         on
-      set scheme           stsj
-      set printcolor       asis       may be automatic, asis, gs1, gs2, gs3
-      set copycolor        asis       may be automatic, asis, gs1, gs2, gs3
-      set maxbezierpath    0          bezier path elements
-
-. tab cohort
-
-     Cohort |      Freq.     Percent        Cum.
-------------+-----------------------------------
-     DIVIDS |        322       14.14       14.14
-        SAM |        108        4.74       18.88
-     CICADA |        976       42.84       61.72
-    NUSTART |        289       12.69       74.41
-      STATT |        275       12.07       86.48
-      CLHNS |        308       13.52      100.00
-------------+-----------------------------------
-      Total |      2,278      100.00
-
-. d cohort
-
+Contains data from /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000001
+ Observations:         2,278                  
+    Variables:           895                  21 Mar 2025 10:06
+                                              (_dta has notes)
+-------------------------------------------------------------------------------------------------------
 Variable      Storage   Display    Value
     name         type    format    label      Variable label
-------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+record_id       str7    %9s                   Database ID
 cohort          byte    %8.0g      cohort     Cohort
-
-. label value list cohort
-variable list not found
-r(111);
-
-. label list cohort
-cohort:
-           1 DIVIDS
-           2 SAM
-           3 CICADA
-           4 NUSTART
-           5 STATT
-           6 CLHNS
-
-. pwd
-/Users/juansolon/Documents/GitHub/sampa-radio
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. 
-. local c "1"
-
-. 
-. gr box fecal_elastase if cohort ==`c', over(ever_mal)
-
-. gr save ./figures/ `c'
-. invalid name
-r(198);
-
-end of do-file
-
-r(198);
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. local c "1"
-
-. 
-. gr box fecal_elastase if cohort ==`c', over(ever_mal) title(`c')
-
-. gr save ./figures/ `c'
-. invalid name
-r(198);
-
-end of do-file
-
-r(198);
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. 
-. forvalues c = 1/6 {
-  2.     // Get the label of the value stored in local c
-.     local lbl_cohort : label cohort `c'
-  3. 
-.     // Generate the box plot with the correct title
-.     gr box fecal_elastase if cohort == `c', over(ever_mal) title("`lbl_cohort'")
-  4. }
-
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. forvalues c = 1/6 {
-  2.     // Get the label of the value stored in local c
-.     local grtitle : label cohort `c'
-  3. 
-.     // Generate the box plot with the correct title
-.     gr box fecal_elastase if cohort == `c', over(ever_mal) title("`grtitle'")
-  4. 
-unexpected end of file
-r(612);
-
-end of do-file
-
-r(612);
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. 
-. forvalues c = 1/6 {
-  2.     // Get the label of the value stored in local c
-.     local grtitle : label cohort `c'
-  3. 
-.     // Generate the box plot with the correct title
-.     gr box fecal_elastase if cohort == `c', over(ever_mal) title("`grtitle'")
-  4. }
-
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. 
-. local i = 1 // Initialize a counter for graph positions
-
-. forvalues c = 1/6 {
-  2.     // Get the label of the value stored in local c
-.     local grtitle : label cohort `c'
-  3. 
-.     // Generate the box plot with the correct title
-.     gr box fecal_elastase if cohort == `c', over(ever_mal) title("`grtitle'")
-  4. 
-.     // Save the graph to a temporary file
-.     tempfile temp_graph_`i'
-  5.     gr save "`temp_graph_`i''", replace
-  6. 
-.     // Append the temporary graph file name to the graphlist
-.     local graphlist "`graphlist' `temp_graph_`i''"
-  7. 
-.     local i = `i' + 1 // Increment the counter
-  8. }
-(file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000001 not found)
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000001 saved as .gph format
-(file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002 not found)
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002 saved as .gph format
-(file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000003 not found)
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000003 saved as .gph format
-(file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004 not found)
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004 saved as .gph format
-(file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000005 not found)
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000005 saved as .gph format
-(file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006 not found)
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006 saved as .gph format
-
-. 
-. // Combine the graphs
-. gr combine `graphlist' , rows(2) cols(3) // Adjust rows and columns as needed
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000001 is not a memory graph
-r(198);
-
-end of do-file
-
-r(198);
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. 
-. tempfile graphlist
-
-. 
-. local i = 1
-
-. forvalues c = 1/6 {
-  2.     local grtitle : label cohort `c'
-  3.     gr box fecal_elastase if cohort == `c', over(ever_mal) title("`grtitle'")
-  4. 
-.     tempfile temp_graph_`i'
-  5.     gr save "`temp_graph_`i''.gph", replace // Added .gph extension
-  6. 
-.     display "`temp_graph_`i''.gph" // Check the file names
-  7. 
-.     local graphlist "`graphlist' `temp_graph_`i''.gph"
-  8. 
-.     local i = `i' + 1
-  9. }
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002.gph saved
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002.gph
-(file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000003.gph not found)
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000003.gph saved
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000003.gph
-(file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004.gph not found)
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004.gph saved
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004.gph
-(file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000005.gph not found)
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000005.gph saved
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000005.gph
-(file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006.gph not found)
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006.gph saved
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006.gph
-(file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000007.gph not found)
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000007.gph saved
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000007.gph
-
-. 
-. display "`graphlist'" // Check the graphlist content
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000001 /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002.gp
-> h /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000003.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.0
-> 00004.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000005.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S
-> _77831.000006.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000007.gph
-
-. 
-. gr combine `graphlist', rows(2) cols(3)
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000001 is not a memory graph
-r(198);
-
-end of do-file
-
-r(198);
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. tempfile graphlist
-
-. 
-. local i = 1
-
-. forvalues c = 0/5 { // start c at 0, and increment to 5.
-  2.     local grtitle : label cohort `i'
-  3.     gr box fecal_elastase if cohort == `i', over(ever_mal) title("`grtitle'")
-  4. 
-.     tempfile temp_graph_`i'
-  5.     gr save "`temp_graph_`i''.gph", replace
-  6. 
-.     display "`temp_graph_`i''.gph"
-  7. 
-.     local graphlist "`graphlist' `temp_graph_`i''.gph"
-  8. 
-.     local i = `i' + 1
-  9. }
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002.gph saved
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002.gph
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000003.gph saved
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000003.gph
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004.gph saved
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004.gph
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000005.gph saved
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000005.gph
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006.gph saved
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006.gph
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000007.gph saved
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000007.gph
-
-. 
-. display "`graphlist'"
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000001 /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002.gp
-> h /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000003.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.0
-> 00004.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000005.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S
-> _77831.000006.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000007.gph
-
-. 
-. gr combine `graphlist', rows(2) cols(3)
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000001 is not a memory graph
-r(198);
-
-end of do-file
-
-r(198);
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. 
-. tempfile graphlist
-
-. local graphlist "" // Clear the graphlist
-
-. local i = 1
-
-. forvalues c = 0/5 {
-  2.     local grtitle : label cohort `i'
-  3.     gr box fecal_elastase if cohort == `i', over(ever_mal) title("`grtitle'")
-  4. 
-.     tempfile temp_graph_`i'
-  5.     gr save "`temp_graph_`i''.gph", replace
-  6. 
-.     display "`temp_graph_`i''.gph"
-  7. 
-.     local graphlist "`graphlist' `temp_graph_`i''.gph"
-  8. 
-.     local i = `i' + 1
-  9. }
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002.gph saved
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002.gph
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000003.gph saved
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000003.gph
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004.gph saved
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004.gph
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000005.gph saved
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000005.gph
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006.gph saved
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006.gph
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000007.gph saved
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000007.gph
-
-. 
-. display "`graphlist'"
- /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.0000
-> 03.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77
-> 831.000005.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq
-> /T//S_77831.000007.gph
-
-. 
-. gr combine `graphlist', rows(2) cols(3)
-
-. gr save "./figures/combined_cohorts", replace
-(file ./figures/combined_cohorts not found)
-file ./figures/combined_cohorts saved as .gph format
-
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. gr export ./figures/figc.png, as(png), replace
-invalid 'replace' 
-r(198);
-
-end of do-file
-
-r(198);
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. gr export ./figures/figc.png, as(png) replace
-file /Users/juansolon/Documents/GitHub/sampa-radio/figures/figc.png saved as PNG format
-
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. 
-. tempfile graphlist
-
-. local graphlist ""
-
-. local i = 1
-
-. 
-. local cohort_order "2 4 3 1 6 5" // Define the desired order
-
-. 
-. foreach c of local cohort_order {
-  2.     local grtitle : label cohort `c'
-  3.     gr box fecal_elastase if cohort == `c', over(ever_mal) title("`grtitle'")
-  4. 
-.     tempfile temp_graph_`i'
-  5.     gr save "`temp_graph_`i''.gph", replace
-  6. 
-.     display "`temp_graph_`i''.gph"
-  7. 
-.     local graphlist "`graphlist' `temp_graph_`i''.gph"
-  8. 
-.     local i = `i' + 1
-  9. }
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002.gph saved
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002.gph
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000003.gph saved
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000003.gph
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004.gph saved
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004.gph
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000005.gph saved
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000005.gph
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006.gph saved
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006.gph
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000007.gph saved
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000007.gph
-
-. 
-. display "`graphlist'"
- /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.0000
-> 03.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77
-> 831.000005.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq
-> /T//S_77831.000007.gph
-
-. 
-. gr combine `graphlist', rows(2) cols(3)
-
-. gr save "./figures/rearranged_cohorts", replace
-(file ./figures/rearranged_cohorts not found)
-file ./figures/rearranged_cohorts saved as .gph format
-
-. gr export ./figures/figc.png, as(png) replace
-file /Users/juansolon/Documents/GitHub/sampa-radio/figures/figc.png saved as PNG format
-
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. table (cohort)(ever_mal), statistic(p50 bmi)
-
-----------------------------------------------
-          |    Ever experience malnutrition?  
-          |        NPM          PM       Total
-----------+-----------------------------------
-Cohort    |                                   
-  DIVIDS  |   15.80519    16.65415    16.52128
-  SAM     |   17.13926    16.04976    16.61598
-  CICADA  |   23.78912    19.28991    22.11643
-  NUSTART |   24.49827    19.44582    20.66748
-  STATT   |   22.33705    17.76748    20.17637
-  CLHNS   |   27.53525    24.01217    26.63289
-  Total   |     23.749    18.79287    21.17615
-----------------------------------------------
-
-. 
-end of do-file
-
-. d hba*
-
-Variable      Storage   Display    Value
-    name         type    format    label      Variable label
-------------------------------------------------------------------------------------------------------------------------------------
+sampa_id        long    %12.0g                SAMPA ID
+orgid           str18   %18s                  ID from original study
+sex             byte    %8.0g      sex        Sex
+dob             str10   %10s                  Date of Birth
+age             float   %9.0g                 Age
+control         byte    %8.0g      control    Is the participant part of Nustart controls?
+cont_age        byte    %8.0g      cont_age   > 18 years old?
+cont_site       byte    %23.0g     cont_site
+                                              recruitment site
+cont_mald       byte    %8.0g      cont_mald
+                                              Have you ever been diagnosed by a doctor as being
+                                                malnourished?
+cont_hiv_test   byte    %40.0g     cont_hiv_test
+                                              HIV status of NUSTART controls
+cont_art        byte    %27.0g     cont_art   Is the control on ART?
+cont_art_yrs    byte    %8.0g                 If on ART, how many years have they been on ART?
+explain         byte    %8.0g      explain___1
+                                              Study Consent Status
+insulin_dep     byte    %8.0g      insulin_dep
+                                              Do you routinely use insulin to control your diabetes?
+consent_basic   byte    %39.0g     consent_basic
+                                              OGTT Consent Options: Standard (7 Time Point) or Basic (3
+                                                Time Point)
+assent          byte    %8.0g      assent     Has the child given assent after parental consent?
+preg_test       byte    %48.0g     preg_test
+                                              Willingness to have a pregnancy test
+preg_result     byte    %57.0g     preg_result
+                                              Pregnancy test results
+indepth_sample  byte    %8.0g      indepth_sample
+                                              Are they in the indepth subsample?
+indepth_exp     byte    %8.0g      indepth_exp
+                                              Indepth Subsample Consent Status
+ct_sample       byte    %8.0g      ct_sample
+                                              Are they in the CT scan subsample?
+ct              byte    %25.0g     ct         CT Scan Subsample Consent Status
+ivgtt_sample    byte    %8.0g                 Are they in the ivgtt subsample?
+ivgtt           byte    %8.0g                 IVGTT Subsample Consent Status
+uss_sample      byte    %32.0g     uss_sample
+                                              Are they in the Ultrasound subsample?
+uss             byte    %28.0g     uss        Ultrasound Subsample Consent Status
+ever_mal        double  %9.0g      ever_mal   Ever experience malnutrition?
+degree_mal      float   %20.0g     degree_mal
+                                              Degree of malnutrition
+clinic_date_d~o str10   %10s                  Date of clinic visit
+marital         byte    %27.0g     marital    Marital status
+education       byte    %59.0g     education
+                                              Highest level of education reached by adult participant
+edu_father      byte    %59.0g     edu_father
+                                              Education of child participant's father
+edu_mother      byte    %59.0g     edu_mother
+                                              Education of child participant's mother
+edu_child       byte    %17.0g     edu_child
+                                              Are you going to a government school or a fee-paying
+                                                school?
+employ          byte    %42.0g     employ     Current occupation of adult participant?
+employ_father   byte    %42.0g     employ_father
+                                              Current occupation of child participant's father
+employ_mother   byte    %42.0g     employ_mother
+                                              Current occupation of child participant's mother
+num_reside      byte    %8.0g                 How many people, including you, regularly sleep at this
+                                                house?
+re_dwelltype    float   %25.0g     re_dwelltype
+                                              What is the type of dwelling unit of the household?
+re_dwelltype_o  str12   %12s                  Others, specify
+re_tenurhws     float   %46.0g     re_tenurhws
+                                              What is the tenure status of the dwelling unit you are
+                                                occupying?
+re_tenurhws_o   str24   %24s                  Others, specify
+re_house        float   %64.0g     re_house   What is the main material used for the household's
+                                                dwelling unit?
+re_house_o      float   %9.0g                 Others, specify
+rooms           byte    %8.0g                 How many rooms in your household are used for sleeping?
+re_cook         float   %37.0g     re_cook    Where do you usually cook?
+re_cook_o       str68   %68s                  Others, specify
+re_fuel         float   %29.0g     re_fuel    What type of fuel does your household mainly use for
+                                                cooking?
+re_fuel_o       str27   %27s                  Others, specify
+re_electric     float   %45.0g     re_electric
+                                              Do you have electricity in your house?
+re_electric_o   str17   %17s                  Others, specify
+re_water        float   %31.0g     re_water   What is the main source of water for household use (not
+                                                for drinking)?
+re_water_o      str22   %22s                  Others, specify
+re_toilet       float   %37.0g     re_toilet
+                                              What kind of toilet facility does the household usually
+                                                use?
+re_toilet_o     str62   %62s                  Others, specify
+vcd             byte    %8.0g      vcd        VCD/DVD Player/ DVD Player
+tv              byte    %8.0g      tv         Television
+ref             byte    %8.0g      ref        Refrigerator
+wmachine        byte    %8.0g      wmachine   Washing machine / dryer
+computer        byte    %8.0g      computer   Computer / Laptop / Game device
+stove           byte    %8.0g      stove      Electric or gas cooking Stove / Range /Microwave oven
+radio           byte    %8.0g      radio      Radio / radio cassette/ CD player
+phone           byte    %8.0g      phone      Landline Telephone
+cellphone       byte    %8.0g      cellphone
+                                              Cellular phone
+efan            byte    %8.0g      efan       Electric Fan
+ac              byte    %8.0g      ac         Air conditioner/ Air cooler
+sewing          byte    %8.0g      sewing     Sewing Machine
+cow             byte    %8.0g      cow        Carabao/ Cattle / Cow
+pig             byte    %8.0g      pig        Swine / Pig / Ram
+goat            byte    %8.0g      goat       Goat / Sheep
+poultry_own     byte    %8.0g      poultry_own
+                                              Chicken / duck / poultry
+bike            byte    %8.0g      bike       Bicycle / Trisikad / Pedicab
+motorcycle      byte    %8.0g      motorcycle
+                                              Motorcycle
+car             byte    %8.0g      car        Car/Jeep/van/truck
+boat            byte    %8.0g      boat       Motorized boat / banca
+tractor         byte    %8.0g      tractor    Tractor
+table           byte    %8.0g      table      Table
+chair           byte    %8.0g      chair      Chair
+solar           float   %9.0g      solar      Solar energy
+ses_tercile1    byte    %8.0g      ses_tercile
+                                              SES Terciles
+ses_tercile2    byte    %8.0g      ses_tercile
+                                              SES Terciles
+ses_tercile3    byte    %8.0g      ses_tercile
+                                              SES Terciles
+ses_tercile4    byte    %8.0g      ses_tercile
+                                              SES Terciles
+ses_tercile5    byte    %8.0g      ses_tercile
+                                              SES Terciles
+comp1           float   %9.0g                 Scores for component 1
+ses_tercile6    byte    %8.0g      ses_tercile
+                                              SES Terciles
+ses_tercile     float   %9.0g                 
+clinic_date_h~y str10   %10s                  Date of Clinic Visit [Participant was seen by the Doctor]
+pregnant        byte    %51.0g     pregnant   Is the person pregnant?
+preg_result1    byte    %57.0g     preg_result1
+                                              Pregnancy Test Results
+suspect_hiv     byte    %9.0g      suspect_hiv
+                                              Clinician suspects HIV infection on the person?
+hiv             byte    %10.0g     hiv        Is the person HIV-infected? This should already be known
+                                                for all adults but may
+art             byte    %10.0g     art        For HIV-infected participants, are they currently taking
+                                                ART?
+art_yrs         str17   %17s                  If on ART, how many years have they been on ART?
+re_art_type     float   %22.0g     re_art_type
+                                              Major type of ART regimen
+re_art_type_o   str45   %45s                  Others, specify
+diab            byte    %22.0g     diab       Does the person have diabetes as diagnosed by a doctor?
+re_diab_other   str41   %41s                  Specify any complications
+diag_drug0      byte    %8.0g                 None medication bottles the person brought
+diag_drug1      byte    %8.0g                 Insulin medication bottles the person brought
+diag_drug2      byte    %8.0g                 Metformin medication bottles the person brought
+diag_drug3      byte    %8.0g                 Herbal or over-the-counter medicines medication bottles
+                                                the person brought
+diag_drug4      byte    %8.0g                 Others medicines medication bottles the person brought
+diag_drug9      float   %9.0g                 Explain the missing data
+re_diag_drug_~s str27   %27s                  Specify other drugs
+re_diag_yn      float   %9.0g                 Does the person have any other known diseases /
+                                                conditions (pre-SAMPA)?
+re_diag_1       float   %9.0g                 First diagnosis, i.e. the main complaint
+re_diag1_spec   str141  %141s                 Others, specify
+re_diag_2       float   %9.0g                 Second diagnosis
+re_diag2_spec   str52   %52s                  Others, specify
+re_diag_3       float   %9.0g                 Third diagnosis
+re_diag3_spec   str25   %25s                  Others, specify
+diag_4          byte    %35.0g     diag_4     Fourth diagnosis
+diag4_spec      byte    %8.0g                 Others, specify
+re_lung_dis1    float   %9.0g                 Lung Disease
+re_contissue_~1 float   %9.0g                 Connective Tissue Disease
+re_contissue_~c str45   %45s                  Others, specify
+peptic_ulcer1   byte    %38.0g     peptic_ulcer1
+                                              Peptic Ulcer
+liver_dis1      byte    %28.0g     liver_dis1
+                                              Liver Disease
+kidney_dis1     byte    %19.0g     kidney_dis1
+                                              Chronic Kidney Disease
+cancer1         byte    %12.0g     cancer1    Cancer
+lung_dis2       byte    %12.0g     lung_dis2
+                                              Lung Disease
+re_lung_dis2    float   %9.0g                 Lung Disease
+contissue_dis2  byte    %18.0g     contissue_dis2
+                                              Connective Tissue Disease
+contissu~2_spec byte    %8.0g                 Others, specify
+peptic_ulcer2   byte    %38.0g     peptic_ulcer1
+                                              Peptic Ulcer
+liver_dis2      byte    %28.0g     liver_dis2
+                                              Liver Disease
+kidney_dis2     byte    %19.0g     kidney_dis2
+                                              Chronic Kidney Disease
+cancer2         byte    %12.0g     cancer2    Cancer
+lung_dis3       byte    %12.0g     lung_dis2
+                                              Lung Disease
+contissue_dis3  byte    %18.0g     contissue_dis3
+                                              Connective Tissue Disease
+contissu~3_spec byte    %8.0g                 Others, specify
+peptic_ulcer3   byte    %38.0g     peptic_ulcer3
+                                              Peptic Ulcer
+liver_dis3      byte    %28.0g     liver_dis3
+                                              Liver Disease
+kidney_dis3     byte    %19.0g     kidney_dis3
+                                              Chronic Kidney Disease
+cancer3         byte    %12.0g     cancer3    Cancer
+lung_dis4       byte    %12.0g     lung_dis4
+                                              Lung Disease
+contissue_dis4  byte    %18.0g     contissue_dis4
+                                              Connective Tissue Disease
+contissu~4_spec byte    %8.0g                 Others, specify
+peptic_ulcer4   byte    %38.0g     peptic_ulcer4
+                                              Peptic Ulcer
+liver_dis4      byte    %28.0g     liver_dis4
+                                              Liver Disease
+kidney_dis4     byte    %19.0g     kidney_dis4
+                                              Chronic Kidney Disease
+cancer4         byte    %12.0g     cancer4    Cancer
+hosp_freq       byte    %20.0g     hosp_freq
+                                              How many times have they been admitted overnight in the
+                                                last three years?
+hosp_diag       byte    %24.0g     hosp_diag
+                                              What were they in hospital for the most recent time they
+                                                were there?
+hosp_diag_oth~s str21   %21s                  Specify other
+med             byte    %10.0g     med        Are they currently (within past 4 weeks) on any
+                                                medication?
+med_type1       byte    %8.0g                 What type of medications do they take? - Tuberculosis
+                                                medication
+med_type2       byte    %8.0g                 What type of medications do they take? - Medications for
+                                                other infections
+med_type3       byte    %8.0g                 What type of medications do they take? - Statins
+med_type4       byte    %8.0g                 What type of medications do they take? - Blood pressure
+                                                medication
+med_type5       byte    %8.0g                 What type of medications do they take? - Others
+med_type9       float   %9.0g                 Explain the missing data
+re_med_type_o~s str59   %59s                  Others, specify
+thirst          byte    %8.0g      thirst     Recent morbidity and medical exam - Thirst
+polyuria        byte    %8.0g      polyuria   Recent morbidity and medical exam - Polyuria
+fatigue         byte    %8.0g      fatigue    Recent morbidity and medical exam - Fatigue
+polydipsia      byte    %8.0g      polydipsia
+                                              Recent morbidity and medical exam - Polydipsia
+blurred_vision  byte    %8.0g      blurred_vision
+                                              Recent morbidity and medical exam - Blurred vision
+numbness        byte    %8.0g      numbness   Numbness or tingling in extremities
+other_symptoms1 byte    %8.0g                 Has the person in the past week had any of the following
+                                                other symptoms? - Extre
+other_symptoms2 byte    %8.0g                 Has the person in the past week had any of the following
+                                                other symptoms? - Short
+other_symptoms3 byte    %8.0g                 Has the person in the past week had any of the following
+                                                other symptoms? - Skin
+other_symptoms4 byte    %8.0g                 Has the person in the past week had any of the following
+                                                other symptoms? - Cough
+other_symptoms5 byte    %8.0g                 Has the person in the past week had any of the following
+                                                other symptoms? - Chest
+other_symptoms6 byte    %8.0g                 Has the person in the past week had any of the following
+                                                other symptoms? - Irreg
+other_symptoms7 byte    %8.0g                 Has the person in the past week had any of the following
+                                                other symptoms? - Fever
+other_symptoms8 byte    %8.0g                 Has the person in the past week had any of the following
+                                                other symptoms? - Pain
+other_symptoms9 byte    %8.0g                 Has the person in the past week had any of the following
+                                                other symptoms? - Abdom
+other_sympto~10 byte    %8.0g                 Has the person in the past week had any of the following
+                                                other symptoms? - Nause
+other_sympto~11 byte    %8.0g                 Has the person in the past week had any of the following
+                                                other symptoms? - Vomit
+other_sympto~12 byte    %8.0g                 Has the person in the past week had any of the following
+                                                other symptoms? - Diarr
+other_sympto~13 byte    %8.0g                 Has the person in the past week had any of the following
+                                                other symptoms? - Heada
+other_sympto~14 byte    %8.0g                 Has the person in the past week had any of the following
+                                                other symptoms? - Visua
+other_sympto~15 byte    %8.0g                 Has the person in the past week had any of the following
+                                                other symptoms? - Painf
+other_sympto~16 byte    %8.0g                 Has the person in the past week had any of the following
+                                                other symptoms? - Swoll
+other_sympto~17 byte    %8.0g                 Has the person in the past week had any of the following
+                                                other symptoms? - Other
+other_sympto~18 byte    %8.0g                 Has the person in the past week had any of the following
+                                                other symptoms? - None
+other_sympto~99 float   %9.0g                 Explain the missing data
+re_symptoms_o~s str53   %53s                  Others, specify
+med_exam1       byte    %8.0g                 Identified medical exam problems - head, eye, ear, nose,
+                                                throat
+med_exam2       byte    %8.0g                 Identified medical exam problems - Identified medical
+                                                exam problems - skin and h
+med_exam3       byte    %8.0g                 Identified medical exam problems - cardiac
+med_exam4       byte    %8.0g                 Identified medical exam problems - chest
+med_exam5       byte    %8.0g                 Identified medical exam problems - abdomen
+med_exam6       byte    %8.0g                 Identified medical exam problems - neurological
+med_exam7       byte    %8.0g                 Identified medical exam problems - extremities
+med_exam8       byte    %8.0g                 Identified medical exam problems - Absconded
+med_exam99      float   %9.0g                 Explain the missing data
+clin_summary    byte    %73.0g     clin_summary
+                                              This refers to the overall current health of the
+                                                participant as determined from
+exam_by         str30   %30s                  Examined By
+sig_exam        str29   %29s                  Signature
+sig_exam_upload str41   %41s                  Upload MD signature
+metformin       float   %9.0g                 
+insulin         float   %9.0g                 
+flag_metformi~n float   %9.0g                 
+clinic_date_o~t str10   %10s                  Date of First OGTT Test
+sample_gp       byte    %81.0g     sample_gp
+                                              Which group does the person belong to?
+standard_ogtt   byte    %16.0g     standard_ogtt
+                                              For adult participants agreeing to do Standard OGTT but
+                                                are not in the indepth s
+fasting         byte    %31.0g     fasting    What has the participant eaten or drunk in the last 8
+                                                hours OR since dinner last
+ogtt_unit       byte    %8.0g      ogtt_unit
+                                              Unit of measurement
+ogtt_time0      str8    %9s                   Time 0 minutes
+time0_w         str20   %20s                  Sample ID of Time 0: Onsite Serum
+time0_x         str20   %20s                  Sample ID of Time 0: Aliquot X (Serum)
+time0_y         str20   %20s                  Sample ID of Time 0: Aliquot Y (Serum)
+time0_z         byte    %8.0g                 Sample ID of Time 0: Aliquot Z (Serum)
+time0_a         str20   %20s                  Sample ID of Time 0: Aliquot A (EDTA)
+time0_b         str20   %20s                  Sample ID of Time 0: Aliquot B (EDTA)
+time0_c         str20   %20s                  Sample ID of Time 0: Aliquot C (EDTA)
+time0_e         str20   %20s                  Sample ID of Time 0: Aliquot E (Cooled EDTA)
+time0_f         str20   %20s                  Sample ID of Time 0: Aliquot F (Cooled EDTA)
+time0_g         str20   %20s                  Sample ID of Time 0: Aliquot G (Cooled EDTA)
+time0_h         str20   %20s                  Sample ID of Time 0: Aliquot H (Aprotinin)
+time0_j         str20   %20s                  Sample ID of Time 0: Aliquot J (Aprotinin)
+time0_k         str20   %20s                  Sample ID of Time 0: Aliquot K (Aprotinin)
+ogtt_sample_s~m byte    %8.0g      ogtt_sample_serum
+                                              Fasting serum
+ogtt_sample_~a0 byte    %8.0g      ogtt_sample_edta0
+                                              Fasting EDTA
+ogtt_sample_~o0 byte    %8.0g      ogtt_sample_apro0
+                                              Fasting aprotinin
+ogtt_sa~a0_cold byte    %8.0g      ogtt_sample_edta0_cold
+                                              Fasting cooled EDTA
+ogtt_comment~e0 strL    %9s                   Explain any missing samples or problems in sample
+                                                collection
 hba1c           float   %9.0g                 Hba1c result [%] from baseline sample In OGTT
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. table (cohort)(ever_mal), statistic(p50 bmi hba1c)
-
---------------------------------------------------------------------------------------
-                                                  |    Ever experience malnutrition?  
-                                                  |        NPM          PM       Total
---------------------------------------------------+-----------------------------------
-Cohort                                            |                                   
-  DIVIDS                                          |                                   
-    Body mass index                               |   15.80519    16.65415    16.52128
-    Hba1c result [%] from baseline sample In OGTT |        5.3         5.3         5.3
-  SAM                                             |                                   
-    Body mass index                               |   17.13926    16.04976    16.61598
-    Hba1c result [%] from baseline sample In OGTT |        5.3         5.2         5.2
-  CICADA                                          |                                   
-    Body mass index                               |   23.78912    19.28991    22.11643
-    Hba1c result [%] from baseline sample In OGTT |        5.6         5.8         5.7
-  NUSTART                                         |                                   
-    Body mass index                               |   24.49827    19.44582    20.66748
-    Hba1c result [%] from baseline sample In OGTT |        5.4         5.2         5.3
-  STATT                                           |                                   
-    Body mass index                               |   22.33705    17.76748    20.17637
-    Hba1c result [%] from baseline sample In OGTT |          5         4.8         4.9
-  CLHNS                                           |                                   
-    Body mass index                               |   27.53525    24.01217    26.63289
-    Hba1c result [%] from baseline sample In OGTT |        5.6         5.6         5.6
-  Total                                           |                                   
-    Body mass index                               |     23.749    18.79287    21.17615
-    Hba1c result [%] from baseline sample In OGTT |        5.5         5.4         5.4
---------------------------------------------------------------------------------------
-
-. 
-end of do-file
-
-. scatter fecal_elastase bmi
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. tempfile graphlist
-
-. local graphlist ""
-
-. local i = 1
-
-. 
-. local cohort_order "2 4 3 1 6 5" // Define the desired order
-
-. 
-. foreach c of local cohort_order {
-  2.     local grtitle : label cohort `c'
-  3.     
-.         gr box fecal_elastase if cohort == `c', over(ever_mal) title("`grtitle'") ///
->         ytitle("Faecal Elastase (mcg/g)")
-  4. 
-.     tempfile temp_graph_`i'
-  5.     gr save "`temp_graph_`i''.gph", replace
-  6. 
-.     display "`temp_graph_`i''.gph"
-  7. 
-.     local graphlist "`graphlist' `temp_graph_`i''.gph"
-  8. 
-.     local i = `i' + 1
-  9. }
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002.gph saved
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002.gph
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000003.gph saved
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000003.gph
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004.gph saved
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004.gph
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000005.gph saved
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000005.gph
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006.gph saved
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006.gph
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000007.gph saved
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000007.gph
-
-. 
-. display "`graphlist'"
- /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.0000
-> 03.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000004.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77
-> 831.000005.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000006.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq
-> /T//S_77831.000007.gph
-
-. 
-. gr combine `graphlist', rows(2) cols(3)
-
-. 
-. gr save "./figures/rearranged_cohorts", replace
-file ./figures/rearranged_cohorts saved as .gph format
-
-. 
-. gr export ./figures/figc.png, as(png) replace
-file /Users/juansolon/Documents/GitHub/sampa-radio/figures/figc.png saved as PNG format
-
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. gr box pan_body_trans, over(ever_mal) over(cohort)
-
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. local uss "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans"
-
-. 
-. d `uss'
-
-Variable      Storage   Display    Value
-    name         type    format    label      Variable label
-------------------------------------------------------------------------------------------------------------------------------------
-pan_head_ap     float   %9.0g                 Pancreas head size measured in anterior/posterior dimension
-pan_head_trans  float   %9.0g                 Pancreas head size measured in transverse dimension
-pan_tail_trans  float   %9.0g                 Pancreas tail size measure in anterior/posterior dimension
-pan_body_trans  float   %9.0g                 Pancreas body size measures in anterior/posterior dimension; maximum diameter
-
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. label variable pan_head_ap "Head, AP (mm)"
-
-. label variable pan_head_trans  "Head, Transverse (mm)" 
-
-. label variable pan_body_trans  "Body, Transverse (mm)"
-
-. label variable pan_tail_trans  "Tail, Transverse (mm)"
-
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. gr box pan_body_trans, over(ever_mal) over(cohort) title
-option title not allowed
-r(198);
-
-end of do-file
-
-r(198);
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. gr box pan_body_trans, over(ever_mal) over(cohort) 
-
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. label variable pan_head_ap "Head, AP (cm)"
-
-. label variable pan_head_trans  "Head, Transverse (cm)" 
-
-. label variable pan_body_trans  "Body, Transverse (cm)"
-
-. label variable pan_tail_trans  "Tail, Transverse (cm)"
-
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. gr box pan_body_trans, over(ever_mal) over(cohort) 
-
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. gr box pan_body_trans, over(ever_mal) over(cohort) title("Body, Transverse")
-
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. gr box pan_body_trans, over(ever_mal) over(cohort) ///
->  title("Body, Transverse") ///
->  ytitle("Diameter (cm)")
-
-. 
-end of do-file
-
-. missings report pan_tail_trans by(cohort)
-factor-variable and time-series operators not allowed
-r(101);
-
-. missings report pan_tail_trans, by(cohort)
-
-Checking missings in pan_tail_trans:
-1077 observations with missing values
-
--------------------------
-                |      #
-----------------+--------
- pan_tail_trans |   1077
--------------------------
-
-. help missings 
-
-. missings report pan_tail_trans if cohort==3
-
-Checking missings in pan_tail_trans:
-959 observations with missing values
-
-------------------------
-                |     #
-----------------+-------
- pan_tail_trans |   959
-------------------------
-
-. missings report pan_head_ap if cohort==3
-
-Checking missings in pan_head_ap:
-629 observations with missing values
-
----------------------
-             |     #
--------------+-------
- pan_head_ap |   629
----------------------
-
-. missings report pan_head_trans if cohort==3
-
-Checking missings in pan_head_trans:
-582 observations with missing values
-
-------------------------
-                |     #
-----------------+-------
- pan_head_trans |   582
-------------------------
-
-. missings report pan_body_trans if cohort==3
-
-Checking missings in pan_body_trans:
-569 observations with missing values
-
-------------------------
-                |     #
-----------------+-------
- pan_body_trans |   569
-------------------------
-
-. scatter ct_pan_vol pan_tail_trans
-
-. scatter ct_pan_vol pan_head_trans
-
-. scatter ct_pan_vol pan_body_trans
-
-. scatter ct_pan_vol pan_head_ap
-
-. scatter ct_pan_vol pan_body_trans
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. label variable pan_head_ap "Head, AP (cm)"
-
-. label variable pan_head_trans  "Head, Transverse (cm)" 
-
-. label variable pan_body_trans  "Body, Transverse (cm)"
-
-. label variable pan_tail_trans  "Tail, Transverse (cm)"
-
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. foreach var of varlist "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans" {
-  2. local grtitle : label `var' 
-  3. gr box `var', over(ever_mal) over(cohort) ///
->  title("`grtitle'") ///
->  ytitle("Diameter (cm)")
-  4. }
-"pan_head_ap pan_head_trans pan_tail_trans pan_body_trans invalid name
-r(198);
-
-end of do-file
-
-r(198);
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. foreach var of varlist "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans" {
-  2. gr box `var', over(ever_mal) over(cohort) ///
->  ytitle("Diameter (cm)")
-  3. }
-"pan_head_ap pan_head_trans pan_tail_trans pan_body_trans invalid name
-r(198);
-
-end of do-file
-
-r(198);
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. foreach var of varlist pan_head_ap pan_head_trans pan_tail_trans pan_body_trans {
-  2. gr box `var', over(ever_mal) over(cohort) ///
->  ytitle("Diameter (cm)")
-  3. }
-
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. foreach var of varlist pan_head_ap pan_head_trans pan_tail_trans pan_body_trans {
-  2.         local grtitle : label `var'  
-  3.         gr box `var', over(ever_mal) over(cohort) ///
->         ytitle("Diameter (cm)") ///
->         title("`grtitle'")
-  4.         }       
-invalid syntax
-r(198);
-
-end of do-file
-
-r(198);
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. local uss "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans"
-
-. 
-. tempfile graphlist
-
-. local graphlist "" // Clear the graphlist
-
-. 
-. foreach var of varlist `uss' {
-  2.     local grtitle : variable label `var'
-  3.     gr box `var', over(ever_mal) over(cohort) ///
->         ytitle("Diameter (cm)") ///
->         title("`grtitle'") ///
->         name(g_`var', replace)
-  4.     
-.     local graphlist "`graphlist' g_`var'"
-  5. }
-
-. 
-. gr combine `graphlist', rows(2) cols(2)
-
-. gr save "./figures/figd", replace
-(file ./figures/figd not found)
-file ./figures/figd saved as .gph format
-
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. gr export "./figures/figd.png", as(png) replace
-file /Users/juansolon/Documents/GitHub/sampa-radio/figures/figd.png saved as PNG format
-
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. 
-. 
-. set scheme stsj
-
-. 
-. local uss "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans"
-
-. 
-. tempfile graphlist
-
-. local graphlist "" // Clear the graphlist
-
-. 
-. foreach var of varlist `uss' {
-  2.     local grtitle : variable label `var'
-  3.     gr box `var', over(ever_mal) over(cohort) ///
->         ytitle("") ///
->         title("`grtitle'", size(medium)) ///
->         ylabel(0(1)5, angle(0) format(%2.0f)) ///
->         xlabel(, angle(45) labsize(small)) ///
->         name(g_`var', replace)
-  4.     
-.     local graphlist "`graphlist' g_`var'"
-  5. }
-xlabels(, angle(45) labsize(small)) not allowed, xaxis1 does not exist
-r(198);
-
-end of do-file
-
-r(198);
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. set scheme stsj
-
-. 
-. local uss "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans"
-
-. 
-. tempfile graphlist
-
-. local graphlist "" // Clear the graphlist
-
-. 
-. foreach var of varlist `uss' {
-  2.     local grtitle : variable label `var'
-  3.     gr box `var', over(ever_mal) over(cohort) ///
->         ytitle("") ///
->         title("`grtitle'", size(medium)) ///
->         ylabel(0(1)5, angle(0) format(%2.0f)) ///
->         xsize(10) ysize(8) ///
->         name(g_`var', replace)
-  4.     
-.     local graphlist "`graphlist' g_`var'"
-  5. }
-
-. 
-. gr combine `graphlist', rows(2) cols(2) ///
->     ycommon ///
->     l1title("Diameter (cm)", size(medium))
-
-.     
-. gr save "./figures/uss_ct_corr", replace
-(file ./figures/uss_ct_corr not found)
-file ./figures/uss_ct_corr saved as .gph format
-
-. gr export "./figures/uss_ct_corr.png", as(png) width(2400) replace
-file /Users/juansolon/Documents/GitHub/sampa-radio/figures/uss_ct_corr.png saved as PNG format
-
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. local uss "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans"
-
-.                                                                                         
-. local graphlist "" // Clear the graphlist
-
-. 
-. tempfile graphlist
-
-. 
-. foreach var of varlist `uss' {
-  2.     local grtitle : variable label `var'
-  3.     gr box `var', ///
->         over(ever_mal, relabel(1 "NPM" 2 "PM") label(labsize(vsmall))) ///
->         over(cohort, label(labsize(vsmall))) ///
->         ytitle("") ///
->         title("`grtitle'", size(medium)) ///
->         ylabel(0(1)5, angle(0) format(%2.0f)) ///
->         xsize(10) ysize(8) ///
->         name(g_`var', replace)
-  4.     
-.     local graphlist "`graphlist' g_`var'"
-  5. }
-
-. 
-. gr combine `graphlist', rows(2) cols(2) ///
->     ycommon ///
->     l1title("Diameter (cm)", size(medium))
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000001 is not a memory graph
-r(198);
-
-end of do-file
-
-r(198);
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. local uss "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans"
-
-.                                                                                         
-. local graphlist "" // Clear the graphlist
-
-. 
-. tempfile graphlist
-
-. 
-. foreach var of varlist `uss' {
-  2.     local grtitle : variable label `var'
-  3.     gr box `var', ///
->         over(ever_mal, relabel(1 "NPM" 2 "PM") label(labsize(vsmall))) ///
->         over(cohort, label(labsize(vsmall))) ///
->         ytitle("") ///
->         title("`grtitle'", size(medium)) ///
->         ylabel(0(1)5, angle(0) format(%2.0f)) ///
->         xsize(10) ysize(8) ///
->         name(g_`var', replace)
-  4.     
-.     local graphlist "`graphlist' g_`var'"
-  5. }
-
-. 
-. gr combine `graphlist', rows(2) cols(2) ///
->     ycommon ///
->     l1title("Diameter (cm)", size(medium))
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000001 is not a memory graph
-r(198);
-
-end of do-file
-
-r(198);
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. ____ v2
-command ____ is unrecognized
-r(199);
-
-end of do-file
-
-r(199);
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. 
-. 
-. local uss "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans"
-
-.                                                                                         
-. local graphlist "" // Clear the graphlist
-
-. 
-. tempfile graphlist
-
-. 
-. foreach var of varlist `uss' {
-  2.     local grtitle : variable label `var'
-  3.     gr box `var', ///
->         over(ever_mal, relabel(1 "NPM" 2 "PM") label(labsize(vsmall))) ///
->         over(cohort, label(labsize(vsmall))) ///
->         ytitle("") ///
->         title("`grtitle'", size(medium)) ///
->         ylabel(0(1)5, angle(0) format(%2.0f)) ///
->         xsize(10) ysize(8) ///
->         name(g_`var', replace)
-  4.     
-.     local graphlist "`graphlist' g_`var'"
-  5. }
-
-. 
-. gr combine `graphlist', rows(2) cols(2) ///
->     ycommon ///
->     l1title("Diameter (cm)", size(medium))
-/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000001 is not a memory graph
-r(198);
-
-end of do-file
-
-r(198);
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. local uss "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans"
-
-.                                                                                         
-. local graphlist "" // Clear the graphlist
-
-. 
-. foreach var of varlist `uss' {
-  2.     local grtitle : variable label `var'
-  3.     gr box `var', ///
->         over(ever_mal, relabel(1 "NPM" 2 "PM") label(labsize(vsmall))) ///
->         over(cohort, label(labsize(vsmall))) ///
->         ytitle("") ///
->         title("`grtitle'", size(medium)) ///
->         ylabel(0(1)5, angle(0) format(%2.0f)) ///
->         xsize(10) ysize(8) ///
->         name(g_`var', replace)
-  4.     
-.     local graphlist "`graphlist' g_`var'"
-  5. }
-
-. 
-. gr combine `graphlist', rows(2) cols(2) ///
->     ycommon ///
->     l1title("Diameter (cm)", size(medium))
-
-.     
-. gr save "./figures/figd", replace
-file ./figures/figd saved as .gph format
-
-. gr export "./figures/figd.png", as(png) width(2400) replace
-file /Users/juansolon/Documents/GitHub/sampa-radio/figures/figd.png saved as PNG format
-
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. local uss "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans"
-
-.                                                                                         
-. local graphlist "" // Clear the graphlist
-
-. 
-. foreach var of varlist `uss' {
-  2.     local grtitle : variable label `var'
-  3.     gr box `var', ///
->         over(ever_mal, relabel(1 "NPM" 2 "PM") label(labsize(vsmall))) ///
->         over(cohort, label(labsize(vsmall))) ///
->         ytitle("") ///
->         title("`grtitle'", size(medium)) ///
->         ylabel(0(1)5, angle(0) format(%2.0f)) ///
->         xsize(10) ysize(8) ///
->         msize(tiny) ///
->         name(g_`var', replace)
-  4.     
-.     local graphlist "`graphlist' g_`var'"
-  5. }
-option msize() not allowed
-r(198);
-
-end of do-file
-
-r(198);
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. local uss "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans"
-
-.                                                                                         
-. local graphlist "" // Clear the graphlist
-
-. 
-. foreach var of varlist `uss' {
-  2.     local grtitle : variable label `var'
-  3.     gr box `var', ///
->         over(ever_mal, relabel(1 "NPM" 2 "PM") label(labsize(vsmall))) ///
->         over(cohort, label(labsize(vsmall))) ///
->         ytitle("") ///
->         title("`grtitle'", size(medium)) ///
->         ylabel(0(1)5, angle(0) format(%2.0f)) ///
->         xsize(10) ysize(8) ///
->         marker(msize(tiny)) ///
->         name(g_`var', replace)
-  4.     
-.     local graphlist "`graphlist' g_`var'"
-  5. }
-invalid marker number, msize(tiny)
-r(198);
-
-end of do-file
-
-r(198);
-
-. help gr box
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
-
-. local uss "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans"
-
-.                                                                                         
-. local graphlist "" // Clear the graphlist
-
-. 
-. foreach var of varlist `uss' {
-  2.     local grtitle : variable label `var'
-  3.     gr box `var', ///
->         over(ever_mal, relabel(1 "NPM" 2 "PM") label(labsize(vsmall))) ///
->         over(cohort, label(labsize(vsmall))) ///
->         ytitle("") ///
->         title("`grtitle'", size(medium)) ///
->         ylabel(0(1)5, angle(0) format(%2.0f)) ///
->         xsize(10) ysize(8) ///
->         marker(1, msize(tiny)) ///
->         name(g_`var', replace)
-  4.     
-.     local graphlist "`graphlist' g_`var'"
-  5. }
-
-. 
-. gr combine `graphlist', rows(2) cols(2) ///
->     ycommon ///
->     l1title("Diameter (cm)", size(medium))
-
-.     
-. gr save "./figures/figd", replace
-file ./figures/figd saved as .gph format
-
-. gr export "./figures/figd.png", as(png) width(2400) replace
-file /Users/juansolon/Documents/GitHub/sampa-radio/figures/figd.png saved as PNG format
-
-. 
-end of do-file
+glu0            float   %9.0g                 OGTT result_Time0
+mmol_glu0       float   %9.0g                 Timepoint 0 Glucose in mmol/L
+out_glu0        byte    %8.0g                 glucose 0 minutes > 24.6
+glu0_missing    byte    %24.0g     glu0_missing
+                                              Any problems with OGTT Results?
+glu0_mis_spec~y str10   %10s                  Others, specify
+cpeptide0       float   %9.0g                 C_Peptide_Time0
+mul_cpeptide0   float   %9.0g                 Timepoint 0 C-peptide in mu/L unit
+ngml_cpeptide0  float   %9.0g                 Timepoint 0 C-peptide in ng/ml unit
+pmol_cpeptide0  double  %9.0g                 Timepoint 0 C-peptide in pmol/L unit
+insulin0        float   %9.0g                 Insulin_Time0
+insulin0_mul    float   %9.0g                 Timepoint 0 Insulin in mU/L
+insulin0_pmol   float   %9.0g                 Timepoint 0 Insulin in pmol/L unit
+ogtt_time15     str5    %9s                   Time 15 minutes
+time15_z        byte    %8.0g                 Sample ID of Time 15: Onsite EDTA
+time15_a        str20   %20s                  Sample ID of Time 15: Aliquot A (EDTA)
+time15_b        str20   %20s                  Sample ID of Time 15: Aliquot B (EDTA)
+time15_c        str20   %20s                  Sample ID of Time 15: Aliquot C (EDTA)
+ogtt_sample_~15 byte    %8.0g      ogtt_sample_edta15
+                                              15 min EDTA
+ogtt_comment~15 strL    %9s                   Explain any missing samples or problems in sample
+                                                collection
+glu15           float   %9.0g                 OGTT result_Time15
+mmol_glu15      float   %9.0g                 Timepoint 15 Glucose in mmol/L
+out_glu15       byte    %8.0g                 glucose 15 minutes > 24.6
+glu15_missing   byte    %24.0g     glu15_missing
+                                              Any problems with OGTT Results?
+glu15_mis_spe~y strL    %9s                   Others, specify
+cpeptide15      byte    %8.0g                 C_Peptide_Time15
+mul_cpeptide15  float   %9.0g                 Timepoint 15 C-peptide in mu/L unit
+ngml_cpeptide15 float   %9.0g                 Timepoint 15 C-peptide in ng/ml unit
+pmol_cpeptide15 double  %10.0g                Timepoint 15 C-peptide in pmol/L unit
+insulin15       float   %9.0g                 Insulin_Time15
+insulin15_mul   float   %9.0g                 Timepoint 15 Insulin in mU/L
+ogtt_time30     str5    %9s                   Time 30 minutes
+time30_z        byte    %8.0g                 Sample ID of Time 30: Onsite EDTA
+time30_a        str20   %20s                  Sample ID of Time 30: Aliquot A (EDTA)
+time30_b        str20   %20s                  Sample ID of Time 30: Aliquot B (EDTA)
+time30_c        str38   %38s                  Sample ID of Time 30: Aliquot C (EDTA)
+time30_e        str20   %20s                  Sample ID of Time 30: Aliquot E (Cooled EDTA)
+time30_f        str20   %20s                  Sample ID of Time 30: Aliquot F (Cooled EDTA)
+time30_g        str20   %20s                  Sample ID of Time 30: Aliquot G (Cooled EDTA)
+time30_h        str20   %20s                  Sample ID of Time 30: Aliquot H (Aprotinin)
+time30_j        str20   %20s                  Sample ID of Time 30: Aliquot J (Aprotinin)
+time30_k        str20   %20s                  Sample ID of Time 30: Aliquot K (Aprotinin)
+ogtt_sample~a30 byte    %8.0g      ogtt_sample_edta30
+                                              30 min EDTA
+ogtt_sample~o30 byte    %8.0g      ogtt_sample_apro30
+                                              30 min aprotinin
+ogtt_sa~30_cold byte    %8.0g      ogtt_sample_edta30_cold
+                                              30 min cooled EDTA
+ogtt_comment~30 strL    %9s                   Explain any missing samples or problems in sample
+                                                collection
+glu30           float   %9.0g                 OGTT result_Time30
+mmol_glu30      float   %9.0g                 Timepoint 30 Glucose in mmol/L
+out_glu30       byte    %8.0g                 glucose 30 minutes > 24.6
+glu30_missing   byte    %24.0g     glu30_missing
+                                              Any problems with OGTT Results?
+glu30_mis_spe~y strL    %9s                   Others, specify
+cpeptide30      byte    %8.0g                 C_Peptide_Time30
+mul_cpeptide30  float   %9.0g                 Timepoint 30 C-peptide in mu/L unit
+ngml_cpeptide30 float   %9.0g                 Timepoint 30 C-peptide in ng/ml unit
+pmol_cpeptide30 double  %10.0g                Timepoint 30 C-peptide in pmol/L unit
+insulin30       byte    %8.0g                 Insulin_Time30
+insulin30_mul   float   %9.0g                 Timepoint 30 Insulin in mU/L
+ogtt_time45     str5    %9s                   Time 45 minutes
+time45_z        byte    %8.0g                 Sample ID of Time 45: Onsite EDTA
+time45_a        str20   %20s                  Sample ID of Time 45: Aliquot A (EDTA)
+time45_b        str20   %20s                  Sample ID of Time 45: Aliquot B (EDTA)
+time45_c        str38   %38s                  Sample ID of Time 45: Aliquot C (EDTA)
+ogtt_sample_~45 byte    %8.0g      ogtt_sample_edta45
+                                              45 min EDTA
+ogtt_comment~45 strL    %9s                   Explain any missing samples or problems in sample
+                                                collection
+glu45           float   %9.0g                 OGTT result_Time45
+mmol_glu45      float   %9.0g                 Timepoint 45 Glucose in mmol/L
+out_glu45       byte    %8.0g                 glucose 45 minutes > 24.6
+glu45_missing   byte    %24.0g     glu45_missing
+                                              Any problems with OGTT Results?
+glu45_mis_spe~y strL    %9s                   Others, specify
+cpeptide45      byte    %8.0g                 C_Peptide_Time45
+mul_cpeptide45  float   %9.0g                 Timepoint 45 C-peptide in mu/L unit
+ngml_cpeptide45 float   %9.0g                 Timepoint 45 C-peptide in ng/ml unit
+pmol_cpeptide45 double  %10.0g                Timepoint 45 C-peptide in pmol/L unit
+insulin45       byte    %8.0g                 Insulin_Time45
+insulin45_mul   float   %9.0g                 Timepoint 45 Insulin in mU/L
+ogtt_time60     str5    %9s                   Time 60 minutes
+time60_z        byte    %8.0g                 Sample ID of Time 60: Onsite EDTA
+time60_a        str20   %20s                  Sample ID of Time 60: Aliquot A (EDTA)
+time60_b        str20   %20s                  Sample ID of Time 60: Aliquot B (EDTA)
+time60_c        str20   %20s                  Sample ID of Time 60: Aliquot C (EDTA)
+time60_e        str20   %20s                  Sample ID of Time 60: Aliquot E (Cooled EDTA)
+time60_f        str20   %20s                  Sample ID of Time 60: Aliquot F (Cooled EDTA)
+time60_g        str20   %20s                  Sample ID of Time 60: Aliquot G (Cooled EDTA)
+time60_h        str20   %20s                  Sample ID of Time 60: Aliquot H (Aprotinin)
+time60_j        str20   %20s                  Sample ID of Time 60: Aliquot J (Aprotinin)
+time60_k        str20   %20s                  Sample ID of Time 60: Aliquot K (Aprotinin)
+ogtt_sample~a60 byte    %8.0g      ogtt_sample_edta60
+                                              60 min EDTA
+ogtt_sample~o60 byte    %8.0g      ogtt_sample_apro60
+                                              60 min aprotinin
+ogtt_sa~60_cold byte    %8.0g      ogtt_sample_edta60_cold
+                                              60 min cooled EDTA
+ogtt_comment~60 strL    %9s                   Explain any missing samples or problems in sample
+                                                collection
+glu60           float   %9.0g                 OGTT result_Time60
+mmol_glu60      float   %9.0g                 Timepoint 60 Glucose in mmol/L
+out_glu60       byte    %8.0g                 glucose 60 minutes > 24.6
+glu60_missing   byte    %24.0g     glu60_missing
+                                              Any problems with OGTT Results?
+glu60_mis_spe~y strL    %9s                   Others, specify
+cpeptide60      float   %9.0g                 C_Peptide_Time60
+mul_cpeptide60  float   %9.0g                 Timepoint 60 C-peptide in mu/L unit
+ngml_cpeptide60 float   %9.0g                 Timepoint 60 C-peptide in ng/ml unit
+pmol_cpeptide60 double  %9.0g                 Timepoint 60 C-peptide in pmol/L unit
+insulin60       float   %9.0g                 Insulin_Time60
+insulin60_mul   float   %9.0g                 Timepoint 60 Insulin in mU/L
+insulin60_pmol  float   %9.0g                 Timepoint 60 Insulin in pmol/L unit
+ogtt_time90     str5    %9s                   Time 90 minutes
+time90_z        byte    %8.0g                 Sample ID of Time 90: Onsite EDTA
+time90_a        str20   %20s                  Sample ID of Time 90: Aliquot A (EDTA)
+time90_b        str20   %20s                  Sample ID of Time 90: Aliquot B (EDTA)
+time90_c        str20   %20s                  Sample ID of Time 90: Aliquot C (EDTA)
+time90_e        str20   %20s                  Sample ID of Time 90: Aliquot E (Cooled EDTA)
+time90_f        str20   %20s                  Sample ID of Time 90: Aliquot F (Cooled EDTA)
+time90_g        str20   %20s                  Sample ID of Time 90: Aliquot G (Cooled EDTA)
+time90_h        str20   %20s                  Sample ID of Time 90: Aliquot H (Aprotinin)
+time90_j        str20   %20s                  Sample ID of Time 90: Aliquot J (Aprotinin)
+time90_k        str20   %20s                  Sample ID of Time 90: Aliquot K (Aprotinin)
+ogtt_sample~a90 byte    %8.0g      ogtt_sample_edta90
+                                              90 min EDTA
+ogtt_sample~o90 byte    %8.0g      ogtt_sample_apro90
+                                              90 min aprotinin
+ogtt_sa~90_cold byte    %8.0g      ogtt_sample_edta90_cold
+                                              90 min cooled EDTA
+ogtt_comment~90 str64   %64s                  Explain any missing samples or problems in sample
+                                                collection
+glu90           float   %9.0g                 OGTT result_Time90
+mmol_glu90      float   %9.0g                 Timepoint 90 Glucose in mmol/L
+out_glu90       byte    %8.0g                 glucose 90 minutes > 24.6
+glu90_missing   byte    %24.0g     glu90_missing
+                                              Any problems with OGTT Results?
+glu90_mis_spe~y str45   %45s                  Others, specify
+cpeptide90      byte    %8.0g                 C_Peptide_Time90
+mul_cpeptide90  float   %9.0g                 Timepoint 90 C-peptide in mu/L unit
+ngml_cpeptide90 float   %9.0g                 Timepoint 90 C-peptide in ng/ml unit
+pmol_cpeptide90 double  %10.0g                Timepoint 90 C-peptide in pmol/L unit
+insulin90       byte    %8.0g                 Insulin_Time90
+insulin90_mul   float   %9.0g                 Timepoint 90 Insulin in mU/L
+ogtt_time120    str5    %9s                   Time 120 minutes
+time120_z       byte    %8.0g                 Sample ID of Time 120: Onsite EDTA
+time120_a       str20   %20s                  Sample ID of Time 120: Aliquot A (EDTA)
+time120_b       str20   %20s                  Sample ID of Time 120: Aliquot B (EDTA)
+time120_c       str20   %20s                  Sample ID of Time 120: Aliquot C (EDTA)
+time120_e       str20   %20s                  Sample ID of Time 120: Aliquot E (Cooled EDTA)
+time120_f       str20   %20s                  Sample ID of Time 120: Aliquot F (Cooled EDTA)
+time120_g       str20   %20s                  Sample ID of Time 120: Aliquot G (Cooled EDTA)
+time120_h       str20   %20s                  Sample ID of Time 120: Aliquot H (Aprotinin)
+time120_j       str20   %20s                  Sample ID of Time 120: Aliquot J (Aprotinin)
+time120_k       str20   %20s                  Sample ID of Time 120: Aliquot K (Aprotinin)
+ogtt_sampl~a120 byte    %8.0g      ogtt_sample_edta120
+                                              120 min EDTA
+ogtt_sampl~o120 byte    %8.0g      ogtt_sample_apro120
+                                              120 min aprotinin
+ogtt_sa~20_cold byte    %8.0g      ogtt_sample_edta120_cold
+                                              120 min cooled EDTA
+ogtt_commen~120 strL    %9s                   Explain any missing samples or problems in sample
+                                                collection
+glu120          float   %9.0g                 OGTT result_Time120
+mmol_glu120     float   %9.0g                 Timepoint 120 Glucose in mmol/L
+out_glu120      byte    %8.0g                 glucose 120 minutes > 24.6
+glu120_missing  byte    %24.0g     glu120_missing
+                                              Any problems with OGTT Results?
+glu120_mis_sp~y strL    %9s                   Others, specify
+cpeptide120     float   %9.0g                 C_Peptide_Time120
+mul_cpeptide120 float   %9.0g                 Timepoint 120 C-peptide in mu/L unit
+ngml_cpepti~120 float   %9.0g                 Timepoint 120 C-peptide in ng/ml unit
+pmol_cpepti~120 double  %9.0g                 Timepoint 120 C-peptide in pmol/L unit
+insulin120      float   %9.0g                 Insulin_Time120
+insulin120_mul  float   %9.0g                 Timepoint 120 Insulin in mU/L
+insulin120_pmol float   %9.0g                 Timepoint 120 Insulin in pmol/L unit
+high_hba1c_1    byte    %8.0g                 hba1c>6.5%
+high_glu120_1   byte    %8.0g                 glucose 120 minutes > 11.1 mmol/L
+repeat_test_n~d byte    %36.0g     repeat_test_needed
+                                              Does this participant in their first clinic visit have
+                                                high HbA1c or glucose lev
+repeat_date     str10   %10s                  Date of second OGTT appointment booked
+thawed          float   %9.0g      thawed     With Diabetes before STATT cohort recruitment
+pmh_diab        float   %9.0g      pmh_diab   
+homair          float   %9.0g                 Homa IR calculated using fasting cpeptide and glucose
+homair_cpep1    float   %9.0g                 
+homabeta        float   %9.0g                 Homabeta calculated using fasting insulin and glucose
+homabeta_cpep   float   %9.0g                 Homabeta calculated using fasting cpeptide and glucose
+flag_fasting_~5 float   %9.0g                 Flag participants with fasting glucose <= 3.5 mmol/L
+gluc_mean_mmol  float   %9.0g                 
+gluc_mean_mgdl  float   %9.0g                 Mean glucose during OGTT in mg/dl
+insulin_mean_~l float   %9.0g                 Mean insulin level during OGTT in mU/L
+Matsuda_index   float   %9.0g                 Matsuda index in (mU/L, mg/dL)
+glu0_mgdl       float   %9.0g                 glu0 in mg/dL
+glu60_mgdl      float   %9.0g                 glu60 in mg/dL
+insulinogenic~x float   %9.0g                 
+flag_positive~I float   %9.0g                 Flag participants with positive IGI due to negative
+                                                change in both insulin and g
+glu30_mgdl      float   %9.0g                 glu30 in mg/dL
+ogttr_confirm   byte    %8.0g                 Does the participant need to repeat OGTT?
+rogtt_unit      byte    %8.0g      rogtt_unit
+                                              Repeat OGTT: Unit of measurement
+ogttr_time0     str8    %9s                   Repeat OGTT: Time 0
+ogttr_time0_1   str18   %18s                  Repeat OGTT: Sample ID of Time 0: Onsite EDTA
+ogttr_sample_~a byte    %8.0g      ogttr_sample_edta
+                                              Repeat OGTT: Fasting EDTA
+ogttr_commen~e0 str4    %9s                   Explain any missing samples or problems in sample
+                                                collection
+rglu0           float   %9.0g                 Repeat OGTT:  Glucose Time0
+rglu0_missing   byte    %24.0g     rglu0_missing
+                                              Any problems?
+rglu0_mis_spe~y byte    %8.0g                 Others, specify
+rhba1c          byte    %8.0g                 Repeat OGTT: HbA1c result
+ogttr_time30    byte    %8.0g                 Time 30
+ogttr_time30_1  byte    %8.0g                 Sample ID of Time 30: Onsite EDTA
+ogttr_sample~30 byte    %8.0g      ogttr_sample_edta30
+                                              30 min EDTA
+ogttr_commen~30 byte    %8.0g                 Explain any missing samples or problems in sample
+                                                collection
+rglu30          byte    %8.0g                 Repeat OGTT:  Glucose Time30
+rglu30_missing  byte    %24.0g     rglu30_missing
+                                              Any problems?
+rglu30_mis_sp~y byte    %8.0g                 Others, specify
+ogttr_time120   str8    %9s                   Time 120
+ogttr_time120_1 str18   %18s                  Sample ID of Time 120: Onsite EDTA
+ogttr_sampl~120 byte    %8.0g      ogttr_sample_edta120
+                                              120 min EDTA
+ogttr_comme~120 str4    %9s                   Explain any missing samples or problems in sample
+                                                collection
+rglu120         float   %9.0g                 Repeat OGTT:  Glucose Time120
+rglu120_missing byte    %24.0g     rglu120_missing
+                                              Any problems?
+rglu120_mis_s~y byte    %8.0g                 Others, specify
+mmol_rglu120    float   %9.0g                 Timepoint 120 Repeat OGTT glucose in mmol
+high_glu120_2   byte    %8.0g                 glucose 120 minutes > 11.1
+dia_referral    byte    %8.0g      dia_referral
+                                              Does this person need to be referred to the site
+                                                physician because their first a
+glu_comment     strL    %9s                   Comments on any problems
+total_cho       float   %9.0g                 Total Cholesterol
+total_cho_prob  byte    %24.0g     total_cho_prob
+                                              Any problems?
+total_cho_pro~c str6    %9s                   Others, specify
+ldl_cho         float   %9.0g                 LDL Cholesterol
+ldl_cho_prob    byte    %24.0g     ldl_cho_prob
+                                              Any problems?
+ldl_cho_prob_~c str6    %9s                   Others, specify
+hdl_cho         float   %9.0g                 HDL Cholesterol
+hdl_cho_prob    byte    %24.0g     hdl_cho_prob
+                                              Any problems?
+hdl_cho_prob_~c str6    %9s                   Others, specify
+trig            str7    %9s                   Triglycerides
+trig_prob       byte    %24.0g     trig_prob
+                                              Any problems?
+trig_prob_spec  str6    %9s                   Others, specify
+lipid_unit      byte    %8.0g      lipid_unit
+                                              Unit of Measurement
+hgb             str5    %9s                   Hemoglobin [g/dl]
+hgb_prob        byte    %24.0g     hgb_prob   Any problems?
+hgb_prob_spec   byte    %8.0g                 Others, specify
+rbc             float   %9.0g                 Red Blood Cells (million/mm3)
+rbc_prob        byte    %24.0g     rbc_prob   Any problems?
+rbc_prob_spec   byte    %8.0g                 Others, specify
+wbc             float   %9.0g                 White Blood Cells (thousand/mm3)
+wbc_prob        byte    %24.0g     wbc_prob   Any problems?
+wbc_prob_spec   byte    %8.0g                 Others, specify
+platelet        int     %8.0g                 Platelets (thousand/mm3)
+platelet_prob   byte    %24.0g     platelet_prob
+                                              Any problems?
+platelet_prob~c byte    %8.0g                 Others, specify
+lipase          byte    %8.0g                 Lipase
+lipase_prob     byte    %24.0g     lipase_prob
+                                              Any problems?
+lipase_prob_s~c byte    %8.0g                 Others, specify
+crp             float   %9.0g                 CRP
+crp_prob        byte    %24.0g     crp_prob   Any problems?
+crp_prob_spec   byte    %8.0g                 Others, specify
+mgl_crp         double  %10.0g                CRP (mg/L)
+mgl_cystatin    double  %10.0g                Cystatin C (mg/L)
+ul_amylp        double  %10.0g                Amylase (U/L)
+clinic_date_a~o str10   %10s                  Date of clinic visit
+systolic1       int     %8.0g                 What is the result of systolic blood pressure in mmHg?
+systolic2       int     %8.0g                 What is the result of systolic blood pressure in mmHg?
+systolic3       int     %8.0g                 What is the result of systolic blood pressure in mmHg?
+systolic        float   %9.0g                 Average systolic
+diastolic1      int     %8.0g                 What is the result of diastolic blood pressure in mmHg?
+diastolic2      int     %8.0g                 What is the result of diastolic blood pressure in mmHg?
+diastolic3      int     %8.0g                 What is the result of diastolic blood pressure in mmHg?
+diastolic       float   %9.0g                 Average diastolic
+weight1         float   %9.0g                 Weight (kg to nearest 0.1 kg)
+weight2         float   %9.0g                 Weight (kg to nearest 0.1 kg)
+weight3         float   %9.0g                 Weight (kg to nearest 0.1 kg)
+weight          float   %9.0g                 Average weight (kg)
+height1         float   %9.0g                 Unadjusted Standing height (cm to nearest 0.1 cm)
+height2         float   %9.0g                 Unadjusted Standing height (cm to nearest 0.1 cm)
+height3         float   %9.0g                 Unadjusted Standing height (cm to nearest 0.1 cm)
+sit_ht1         float   %9.0g                 Sitting height (cm to nearest 0.1 cm)
+sit_ht2         float   %9.0g                 Sitting height (cm to nearest 0.1 cm)
+sit_ht3         float   %9.0g                 Sitting height (cm to nearest 0.1 cm)
+sit_box         float   %9.0g                 Height of the box used in the sitting height measurement
+                                                (Measure to the nearest
+tibia1          float   %9.0g                 Length of tibia (cm to nearest 0.1 cm)
+tibia2          float   %9.0g                 Length of tibia (cm to nearest 0.1 cm)
+tibia3          float   %9.0g                 Length of tibia (cm to nearest 0.1 cm)
+tibia           float   %9.0g                 Average legth of tibia (cm)
+grip_dominant~d byte    %12.0g     grip_dominanthand
+                                              What is the participants dominant hand?
+grip_measure~r1 float   %9.0g                 What is the gripstrength of right hand?
+grip_measure~r2 float   %9.0g                 What is the gripstrength of right hand?
+grip_measure~r3 float   %9.0g                 What is the gripstrength of right hand?
+min_grip_meas~r float   %9.0g                 Minimum gripstrength of right hand
+grip_unit_r     byte    %8.0g      grip_unit_r
+                                              Unit of Measurement
+grip_measure~l1 float   %9.0g                 What is gripstrength of the left hand?
+grip_measure~l2 float   %9.0g                 What is gripstrength of the left hand?
+grip_measure~l3 float   %9.0g                 What is gripstrength of the left hand?
+min_grip_meas~l float   %9.0g                 Minimum gripstrength of left hand
+max_grip_meas~l float   %9.0g                 Maximum gripstrength of left hand
+max_grip_meas~r float   %9.0g                 Maximum gripstrength of right hand
+max_grip        float   %9.0g                 Maximum grip strength
+grip_unit_l     byte    %8.0g      grip_unit_l
+                                              Unit of Measurement
+muac1           float   %9.0g                 Mid-upper arm circumference (cm to nearest 0.1 cm)
+muac2           float   %9.0g                 Mid-upper arm circumference (cm to nearest 0.1 cm)
+muac3           float   %9.0g                 Mid-upper arm circumference (cm to nearest 0.1 cm)
+muac            float   %9.0g                 Average mid-upper arm circumference (cm)
+waist1          float   %9.0g                 Waist circumference (cm to nearest 0.1 cm)
+waist2          float   %9.0g                 Waist circumference (cm to nearest 0.1 cm)
+waist3          float   %9.0g                 Waist circumference (cm to nearest 0.1 cm)
+waist           float   %9.0g                 Average waist circumference
+hip1            float   %9.0g                 Hip circumference (cm to nearest 0.1 cm)
+hip2            float   %9.0g                 Hip circumference (cm to nearest 0.1 cm)
+hip3            float   %9.0g                 Hip circumference (cm to nearest 0.1 cm)
+hip             float   %9.0g                 Average hip circumference (cm)
+triceps1        float   %9.0g                 Triceps skinfold (mm to nearest mm)
+triceps2        float   %9.0g                 Triceps skinfold (mm to nearest mm)
+triceps3        float   %9.0g                 Triceps skinfold (mm to nearest mm)
+triceps         float   %9.0g                 Average triceps skinfold (mm)
+subscap1        float   %9.0g                 Subscapular skinfold (mm to nearest mm)
+subscap2        float   %9.0g                 Subscapular skinfold (mm to nearest mm)
+subscap3        float   %9.0g                 Subscapular skinfold (mm to nearest mm)
+subscap         float   %9.0g                 Average subscapular skinfold (mm)
+anthro_prob     strL    %9s                   Comment on any problems with anthropometry
+menstruate      byte    %10.0g     menstruate
+                                              Has she started menstruating yet?
+menst_month     str9    %9s                   If yes, how many months since she started? If unsure, an
+                                                approximate answer is o
+tanner          byte    %10.0g     tanner     Tanner stage Mark 1, 2, 3, 4, or 5 if known
+tanner_method   byte    %53.0g     tanner_method
+                                              Method used to determine Tanner stage
+adj_height1     float   %9.0g                 Adjusted Standing Height (cm)
+adj_height2     float   %9.0g                 Adjusted Standing Height (cm)
+adj_height3     float   %9.0g                 Adjusted Standing Height (cm)
+height          float   %9.0g                 Average height (cm)
+adj_sit_ht1     float   %9.0g                 Adjusted Sitting Height (cm)
+adj_sit_ht2     float   %9.0g                 Adjusted Sitting Height (cm)
+adj_sit_ht3     float   %9.0g                 Adjusted Sitting Height (cm)
+sit_ht1_adj     float   %9.0g                 Adjusted sitting height1
+sit_ht2_adj     float   %9.0g                 Adjusted sitting height2
+sit_ht3_adj     float   %9.0g                 Adjusted sitting height3
+sit_ht          float   %9.0g                 Average adjusted sitting height
+bmi             float   %9.0g                 Body mass index
+haz             float   %9.0g                 Z values for children's height
+bmiz            float   %9.0g                 Z values for children's bmi
+bmi_cat_child   float   %16.0g     bmi_cat_child
+                                              BMI classification of children based on WHO reference
+bmi_cat         float   %13.0g     bmi_cat    BMI classification of children and adult
+clinic_date_b~y str10   %10s                  Date of clinic visit
+bia             byte    %12.0g     bia        Was bioelectrical impedance done?
+fm_kg           float   %9.0g                 BIA fat mass in kg to nearest 0.1 kg
+fm_per          float   %9.0g                 BIA fat mass percent to 0.1 %
+ffm_kg          float   %9.0g                 Adjusted Fat Free Mass value (weight-fm_kg)
+ffm_per         float   %9.0g                 Adjusted Fat Free Mass Percent value
+                                                (ffm_kg_calc/weight*100)
+fmi             float   %9.0g                 Fat mass index
+ffmi            float   %9.0g                 Fat free mass index
+impedance       float   %8.0g                 Total body impedance if the machine provides it; leave
+                                                blank if not
+bia_prob        byte    %12.0g     bia_prob   Were there any problems with the BIA?
+bia_comment     strL    %9s                   If there were problems, briefly describe
+adp             byte    %12.0g     adp        Was air displacement plethysmography (BodPod) done?
+adpfm_kg        float   %9.0g                 ADP fat mass in kg to nearest 0.1 kg
+adpffm_kg       float   %9.0g                 ADP fat-free mass in kg to nearest 0.1 kg
+adpfm_per       float   %9.0g                 ADP fat mass percent to 0.1 %
+adpffm_per      float   %9.0g                 ADP fat-free mass percent to 0.1%
+adp_prob        byte    %12.0g     adp_prob   Were there any problems with the BodPod, e.g. child could
+                                                not keep still enough?
+adp_comment     str70   %70s                  If there were problems, briefly describe
+redcap_data_a~p str10   %10s                  Redcap data access group
+personnel10     str7    %9s                   REDCap ID of Data Entry Personnel
+timestamp10     str19   %19s                  Date of Data Entry
+clinic_date_r~l str10   %10s                  Date of Clinic Visit [Participant was seen by the Doctor]
+refer_reason    byte    %64.0g     refer_reason
+                                              There are several routes by which some participant may
+                                                need to be assessed for r
+radiol_refer    byte    %17.0g     radiol_refer
+                                              What specialist does the radiologist or site clinician
+                                                think the participant sho
+radiol_refer_~s str24   %24s                  Others, specify
+elastase_level  byte    %8.0g      elastase_level
+                                              Was the fecal elastase in the low (100-200 ug/g) or very
+                                                low category (<100 ug/g
+fecal_fat       byte    %8.0g      fecal_fat
+                                              Did the lab technician report seeing fat in the feces?
+elastase_refer  byte    %8.0g      elastase_refer
+                                              Did the participant report any of the following in either
+                                                CRF 3 or in the teleph
+refer           byte    %14.0g     refer      Has the patient been referred for evaluation by another
+                                                physician or specialist?
+refer_possibl~1 byte    %8.0g                 Final diagnoses after work-up in a referral health
+                                                facility - Diabetes
+refer_possibl~2 byte    %8.0g                 Final diagnoses after work-up in a referral health
+                                                facility - Kidney disease
+refer_possibl~3 byte    %8.0g                 Final diagnoses after work-up in a referral health
+                                                facility - Heart disease
+refer_possibl~4 byte    %8.0g                 Final diagnoses after work-up in a referral health
+                                                facility - HIV known or possi
+refer_possibl~5 byte    %8.0g                 Final diagnoses after work-up in a referral health
+                                                facility - Unknown/No diagnos
+refer_possibl~6 byte    %8.0g                 Final diagnoses after work-up in a referral health
+                                                facility - Others
+refer_possibl~7 byte    %8.0g                 Final diagnoses after work-up in a referral health
+                                                facility - Gastrointestinal d
+refer_possibl~8 byte    %8.0g                 Final diagnoses after work-up in a referral health
+                                                facility - Liver Disease
+refer_possib~m9 byte    %8.0g                 Final diagnoses after work-up in a referral health
+                                                facility - Cancer
+refer_possib~10 byte    %8.0g                 Final diagnoses after work-up in a referral health
+                                                facility - Pancreatic insuffi
+refer_possib~99 float   %9.0g                 Explain the missing data
+refer_posdiag_o strL    %9s                   Other reason for referral, specify
+refer_mri       byte    %8.0g      refer_mri
+                                              Was the person referred after MRI scans were reviewed?
+refer_uss       byte    %8.0g      refer_uss
+                                              Was the person referred after Ultrasound scans were
+                                                reviewed?
+refer_diag_m1   byte    %8.0g                 Final diagnoses after work-up in a referral health
+                                                facility - Diabetes
+refer_diag_m2   byte    %8.0g                 Final diagnoses after work-up in a referral health
+                                                facility - Kidney disease
+refer_diag_m3   byte    %8.0g                 Final diagnoses after work-up in a referral health
+                                                facility - Heart disease
+refer_diag_m4   byte    %8.0g                 Final diagnoses after work-up in a referral health
+                                                facility - HIV known or possi
+refer_diag_m5   byte    %8.0g                 Final diagnoses after work-up in a referral health
+                                                facility - Unknown/No diagnos
+refer_diag_m6   byte    %8.0g                 Final diagnoses after work-up in a referral health
+                                                facility - Others
+refer_diag_m7   byte    %8.0g                 Final diagnoses after work-up in a referral health
+                                                facility - Gastrointestinal d
+refer_diag_m8   byte    %8.0g                 Final diagnoses after work-up in a referral health
+                                                facility - Liver Disease
+refer_diag_m9   byte    %8.0g                 Final diagnoses after work-up in a referral health
+                                                facility - Cancer
+refer_diag_m10  byte    %8.0g                 Final diagnoses after work-up in a referral health
+                                                facility - Pancreatic insuffi
+refer_diag_m99  float   %9.0g                 Explain the missing data
+refer_diag_ot~s str52   %52s                  Other diagnosis from referral, specify
+refer_place1    str35   %35s                  What clinic or hospital gave this final
+                                                diagnosis?[Diabetes]
+refer_place2    str18   %18s                  What clinic or hospital gave this final diagnosis?[Kidney
+                                                Disease]
+refer_place3    str31   %31s                  What clinic or hospital gave this final diagnosis?[Heart
+                                                Disease]
+refer_place4    byte    %8.0g                 What clinic or hospital gave this final diagnosis?[HIV
+                                                known or possible]
+refer_place7    byte    %8.0g                 What clinic or hospital gave this final
+                                                diagnosis?[Gastrointestinal Disease]
+refer_place8    str33   %33s                  What clinic or hospital gave this final diagnosis?[Liver
+                                                Disease]
+refer_place9    str44   %44s                  What clinic or hospital gave this final
+                                                diagnosis?[Cancer]
+refer_place10   byte    %8.0g                 What clinic or hospital gave this final
+                                                diagnosis?[Pancreatic insufficiency]
+refer_place5    str61   %61s                  What clinic or hospital gave this final
+                                                diagnosis?[Unknown/No Diagnosis]
+refer_place6    str35   %35s                  What clinic or hospital gave this final
+                                                diagnosis?[Others]
+clinic_date_u~s str10   %10s                  Date of clinic visit
+urine           byte    %8.0g      urine      Did the participant provide a urine sample during the
+                                                clinic visit?
+urine_collect~t str10   %10s                  Date of urine collection by participant
+urine_time      str5    %9s                   At about what time was the urine sample collected? Use
+                                                24-hour clock
+urine_ali_q     str18   %18s                  Urine Aliquot Q
+urine_ali_r     str18   %18s                  Urine Aliquot R
+u_collect       byte    %12.0g     u_collect
+                                              Urine collected?
+u_leucs         byte    %8.0g      u_leucs    Leucocytes
+u_gluc          byte    %8.0g      u_gluc     Urine glucose
+u_ketone        byte    %8.0g      u_ketone   Urine ketones
+u_prot          byte    %8.0g      u_prot     Urine protein
+u_nitrite       byte    %8.0g      u_nitrite
+                                              Urine nitrite
+u_blood         byte    %8.0g      u_blood    Urine blood
+urine_problem   str77   %77s                  Indicate any problem with urine collection or dipstick
+                                                analysis, e.g. if woman w
+feces           byte    %29.0g     feces      Did the participant provide a fecal sample during the
+                                                clinic visit?
+feces_collect~t str10   %10s                  Date of fecal collection by participant
+feces_time      str8    %9s                   At about what time was the fecal sample collected? Use
+                                                24-hour clock
+feces_ali_s     str18   %18s                  Feces Aliquot S
+feces_ali_t     str18   %18s                  Feces Aliquot T
+feces_ali_u     str19   %19s                  Feces Aliquot U
+feces_temp      byte    %8.0g      feces_temp
+                                              Was the sample brought from home kept on ice or otherwise
+                                                kept cool in transit?
+feces_date      str10   %10s                  Date arranged for fecal sample if none provided at the
+                                                main clinic visit
+feces_mode      byte    %24.0g     feces_mode
+                                              On this date of next feces collection, will the
+                                                participant bring it to the clin
+feces_collect   byte    %12.0g     feces_collect
+                                              Feces collected?
+fecal_elastase  float   %9.0g                 Fecal Elastase
+fecal_mpo       float   %9.0g                 Fecal Myeloperoxidase
+feces_problem   str68   %68s                  Indicate any problem with fecal collection
+clinic_date_d~t str10   %10s                  Date of clinic visit
+re_citrus       byte    %42.0g     citrus     RECODE: Citrus fruits, e.g. orange, lemon, lime, sweet
+                                                lime, kalamansi
+re_berries      byte    %42.0g     berries    RECODE: Berries, e.g. strawberries, blackberries, jamun,
+                                                litchi, wild fruit
+re_bananas      byte    %42.0g     bananas    RECODE: Bananas, i.e. fresh bananas, not fried which go
+                                                under fried foods
+re_apples       byte    %42.0g     apples     RECODE: Apples, pears, grapes
+re_pineapples   byte    %42.0g     pineapples
+                                              RECODE: Pineapples
+re_mango        byte    %42.0g     mango      RECODE: Mangoes, papaya, sapota, guava
+re_melon        byte    %42.0g     melon      RECODE: Melons, any type including watermelons
+re_dry_fruit    byte    %42.0g     dry_fruit
+                                              RECODE: Dried fruits, e.g. raisins, dates
+re_tomato       byte    %42.0g     tomato     RECODE: Tomatoes (including tomato sauce but not ketchup
+                                                or tomato juice)
+re_pepper       byte    %42.0g     pepper     RECODE: Peppers
+re_orange_veg   byte    %42.0g     orange_veg
+                                              RECODE: Yellow-orange vegetables, e.g. carrots, orange
+                                                sweet potato, pumpkin, ye
+re_green_leafy  byte    %42.0g     green_leafy
+                                              RECODE: Cooked or raw green leafy vegetables, e.g.
+                                                spinach, chard, kale, malungg
+re_cruciferous  byte    %42.0g     cruciferous
+                                              RECODE: Cruciferous vegetables, e.g. cauliflower, brocoli
+re_gourd        byte    %42.0g     gourd      RECODE: Cucumbers, gourd, zucchini (not the orange-yellow
+                                                ones which are separat
+legumes         byte    %42.0g     legumes    Any dried beans or peas, e.g. lentils, chickpeas, white
+                                                beans, soya nuggets, dal
+nuts_seeds      byte    %42.0g     nuts_seeds
+                                              Nuts, e.g. peanuts, almonds, walnuts, cashew nuts, seeds
+red_meat        byte    %42.0g     red_meat   Red meat, e.g. beef, goat, pork, lamb, bush meat; include
+                                                boiled, roasted or in
+poultry         byte    %42.0g     poultry    Chicken or other poultry; include boiled, roasted or in
+                                                stews etc but not deep-f
+processed_meat  byte    %42.0g     processed_meat
+                                              Processed meat, e.g. sausages, ham, salami, bacon,
+                                                hotdogs, canned meats, canned
+organ_meat      byte    %42.0g     organ_meat
+                                              Organ meats, e.g. kidney, liver, intestines, lungs,
+                                                offals
+fish            byte    %42.0g     fish       Fish - any white or pinkish fi sh; include boiled,roasted
+                                                or in stews etc but no
+seafood         byte    %42.0g     seafood    Seafood, e.g. shellfish, shrimps, squid, oysters
+eggs            byte    %42.0g     eggs       Eggs - whole eggs cooked in any way
+milk            byte    %42.0g     milk       Milk or buttermilk on their own
+milk_tea        byte    %42.0g     milk_tea   Milk in tea or coff ee
+yogurt          byte    %42.0g     yogurt     Yogurt, unsweetened
+yogurt_sweet    byte    %42.0g     yogurt_sweet
+                                              Yogurt, sweetened
+yogurt_drink    byte    %42.0g     yogurt_drink
+                                              Sweetened yogurt drinks, e.g. Yakult, lassi
+cheese          byte    %42.0g     cheese     Cheese, any type (eg home- made paneer)
+icecream        byte    %42.0g     icecream   Ice cream (made with cream or milk)
+dairy_oth       byte    %42.0g     dairy_oth
+                                              Other dairy
+fruit_juice     byte    %42.0g     fruit_juice
+                                              Fresh fruit juice – sweetened or unsweetened
+soda            byte    %42.0g     soda       Sodas or other sugar-sweetened beverages such as Indian
+                                                sherbet
+alcohol         byte    %42.0g     alcohol    Alcohol – wine, beer, local beers, spirits
+fries           byte    %42.0g     fries      Fries, chips (i.e. French fries), fried bananas
+fried_meat      byte    %42.0g     fried_meat
+                                              Deep-fried red meat, chicken or fish; include both fried
+                                                in batter and without b
+crisps          byte    %42.0g     crisps     Crisps, potato chips
+crackers        byte    %42.0g     crackers   Crackers, savoury biscuits
+samosas         byte    %42.0g     samosas    Samosas
+pizza_burger    byte    %42.0g     pizza_burger
+                                              Pizza, burgers
+savoury_oth     byte    %42.0g     savoury_oth
+                                              Other savoury snacks (Pakora, bread pakora, namakpara,
+                                                mathri, rusk, fan etc.)in
+cake            byte    %42.0g     cake       Cakes or pastries such as turnovers
+cookies         byte    %42.0g     cookies    Cookies, sweet biscuits
+pudding         byte    %42.0g     pudding    Puddings, e.g. milk puddings, fruit puddings, local ice
+                                                creams made mainly with
+candy           byte    %42.0g     candy      Chocolate or candy, Indian sweets: Moti choor Laddoo,
+                                                besan laddoo, Burfi, Jaleb
+street_food     byte    %42.0g     street_food
+                                              About how often each week do you eat snacks bought from
+                                                street vendors or small
+fast_food       byte    %42.0g     fast_food
+                                              About how often each week do you eat food bought from
+                                                fast food restaurants, e.g
+alcohol_amt     byte    %42.0g     alcohol_amt
+                                              For people who said they drink alcohol at least once a
+                                                week (Q 12.33), how many
+re_legumes      byte    %8.0g                 
+radio_exam      byte    %12.0g     radio_exam
+                                              Was a radiological examination performed?
+date_exam_uss   str10   %10s                  Date of Examination
+time_exam_uss   str5    %9s                   Time of Examination
+pan_size_qual   byte    %29.0g     pan_size_qual
+                                              Qualitative indicator of pancreas size
+pan_head_trans  float   %9.0g                 Head, Transverse (cm)
+pan_head_ap     float   %9.0g                 Head, AP (cm)
+pan_body_trans  float   %9.0g                 Body, Transverse (cm)
+pan_tail_trans  float   %9.0g                 Tail, Transverse (cm)
+pan_shape       byte    %29.0g     pan_shape
+                                              Pancreas shape
+pan_shape_pro~m byte    %42.0g     pan_shape_problem
+                                              For abnormal shape, specify the problem
+pan_shape_pro~y str23   %23s                  Other shape abnormality, specify
+pan_contour     byte    %29.0g     pan_contour
+                                              Pancreas contour
+pan_contour_p~m byte    %30.0g     pan_contour_problem
+                                              For abnormal contour, specify the problem
+pan_contour_p~y str17   %17s                  Other contour problem, specify
+pan_parenchyma  byte    %29.0g     pan_parenchyma
+                                              Pancreatic Parenchyma
+pan_paren_inf~m byte    %8.0g      pan_paren_inflam
+                                              Pancreas shows signs of inflammation of edema
+pan_paren_fib~s byte    %8.0g      pan_paren_fibrosis
+                                              Pancreas shows signs of fibrosis
+pan_paren_ste~s byte    %8.0g      pan_paren_steatosis
+                                              Pancreas shows signs of steatosis
+pan_duct        byte    %29.0g     pan_duct   Pancreas Duct
+pan_duct_stones byte    %8.0g      pan_duct_stones
+                                              Stones detected in the duct
+pan_duct_mass   byte    %8.0g      pan_duct_mass
+                                              Mass detected in the duct
+pan_calci       byte    %29.0g     pan_calci
+                                              Calcifications
+pan_calci_place byte    %14.0g     pan_calci_place
+                                              If calcification is present, indicate where it is
+pan_cyst_yes    strL    %9s                   If yes specify
+pan_oth_abnor~l byte    %12.0g     pan_oth_abnormal
+                                              Any other abnormalities detected?
+pan_oth_abn_s~y strL    %9s                   Specify other abnormalities detected
+image_qual_uss  byte    %11.0g     image_qual_uss
+                                              Was the ultrasound scan optimal for obtaining the
+                                                required information?
+image_not_opt~l byte    %25.0g     image_not_optimal
+                                              Indicate why the ultrasound scan not optimal
+image_non_why   strL    %9s                   If non-optimal specify why
+name_radio      str44   %44s                  Name of Radiologist
+sig_radio       str29   %29s                  Signature
+sig_uss_upload  str51   %51s                  Upload radiologist signature
+file_uss        str29   %29s                  Upload DICOM fi le
+file_uss2       str25   %25s                  Upload DICOM fi le
+file_uss3       str25   %25s                  Upload DICOM fi le
+file_uss4       str25   %25s                  Upload DICOM fi le
+file_uss5       str25   %25s                  Upload DICOM fi le
+file_uss6       str25   %25s                  Upload DICOM fi le
+file_uss7       str25   %25s                  Upload DICOM fi le
+file_uss8       str25   %25s                  Upload DICOM fi le
+file_uss9       str25   %25s                  Upload DICOM fi le
+file_uss10      str25   %25s                  Upload DICOM fi le
+hepatomegaly    float   %9.0g                 
+splenomegaly    float   %9.0g                 
+cholelithiasis  float   %9.0g                 
+steatosis       float   %9.0g                 
+mass            float   %9.0g                 
+gynecologic     float   %9.0g                 
+atherosclerosis float   %9.0g                 
+nephrolithiasis float   %9.0g                 
+pancreatic      float   %9.0g                 
+ct_scan         byte    %12.0g     ct_scan    Was a CT scan performed?
+ct_date         str10   %10s                  Date of Examination
+ct_time         str8    %9s                   Time of Examination
+ct_pan_size_q~l byte    %29.0g     ct_pan_size_qual
+                                              Qualitative indicator of pancreas size
+ct_pan_head_t~s float   %9.0g                 Pancreas head size measured in transverse dimension
+ct_pan_head_ap  float   %9.0g                 Pancreas head size measured in anterior/posterior
+                                                dimension
+ct_pan_body_t~s float   %9.0g                 Pancreas body size measures in anterior/posterior
+                                                dimension; maximum diameter
+ct_pan_tail_t~s float   %9.0g                 Pancreas tail size measure in anterior/posterior
+                                                dimension
+ct_pan_body_t~l float   %9.0g                 Length of Pancreas body and tail size measured in
+                                                anterior/posterior dimension
+ct_pan_cc_body  float   %9.0g                 Diameter of Pancreas body measured in Cranial-Caudal
+ct_pan_cc_head  float   %9.0g                 Diameter of Pancreas head measured in Cranial-Caudal
+ct_pan_shape    byte    %29.0g     ct_pan_shape
+                                              Pancreas shape
+ct_pan_shape_~m byte    %42.0g     ct_pan_shape_problem
+                                              For abnormal shape, specify the problem
+ct_pan_shape_~c str27   %27s                  Other shape abnormality, specify
+ct_pan_contour  byte    %29.0g     ct_pan_contour
+                                              Pancreas contour
+ct_pan_contou~m byte    %30.0g     ct_pan_contour_problem
+                                              For abnormal contour, specify the problem
+ct_pan_contou~c byte    %8.0g                 Other contour problem, specify
+ct_pan_parenc~a byte    %29.0g     ct_pan_parenchyma
+                                              Pancreatic Parenchyma
+ct_pan_paren_~m byte    %8.0g      ct_pan_paren_inflam
+                                              Pancreas shows signs of inflammation of edema
+ct_pan_pa~rosis byte    %8.0g      ct_pan_paren_fibrosis
+                                              Pancreas shows signs of fibrosis
+ct_pan_pa~tosis byte    %8.0g      ct_pan_paren_steatosis
+                                              Pancreas shows signs of steatosis
+ct_pan_duct     byte    %29.0g     ct_pan_duct
+                                              Pancreas Duct
+ct_pan_duct_s~s byte    %8.0g      ct_pan_duct_stones
+                                              Stones detected in the duct
+ct_pan_duct_m~s byte    %8.0g      ct_pan_duct_mass
+                                              Mass detected in the duct
+ct_pan_calci    byte    %29.0g     ct_pan_calci
+                                              Calcifications
+ct_pan_calci_~e byte    %12.0g     ct_pan_calci_place
+                                              If calcification is present, indicate where it is
+ct_pan_oth_ab~l byte    %12.0g     ct_pan_oth_abnormal
+                                              Any other abnormalities detected?
+ct_pan_oth_ab~c strL    %9s                   Specify other abnormalities detected
+ct_image_qual   byte    %11.0g     ct_image_qual
+                                              Was the CT scan optimal for obtaining the required
+                                                information?
+ct_problem      byte    %25.0g     ct_problem
+                                              Indicate why the CT scan not optimal
+ct_problem_why  str26   %26s                  If non-optimal specify why
+name_ct         str46   %46s                  Name of Radiologist
+sig_ct          str29   %29s                  Signature
+sig_ct_upload   str49   %49s                  Upload radiologist signature
+file_ct         str40   %40s                  Uploaded ctscan image
+file_ct2        str34   %34s                  Uploaded ctscan image
+file_ct3        str56   %56s                  Uploaded ctscan image
+file_ct4        str38   %38s                  Uploaded ctscan image
+file_ct5        str50   %50s                  Uploaded ctscan image
+file_ct6        str41   %41s                  Uploaded ctscan image
+file_ct7        str48   %48s                  Uploaded ctscan image
+file_ct8        byte    %8.0g                 Uploaded ctscan image
+file_ct9        byte    %8.0g                 Uploaded ctscan image
+file_ct10       byte    %8.0g                 Uploaded ctscan image
+r2_pan_head_t~s float   %9.0g                 Pancreas head size measured in transverse dimension
+r2_pan_head_ap  float   %9.0g                 Pancreas head size measured in anterior/posterior
+                                                dimension
+r2_pan_body_t~s float   %9.0g                 Pancreas body size measures in anterior/posterior
+                                                dimension; maximum diameter
+r2_pan_tail_t~s float   %9.0g                 Pancreas tail size measure in anterior/posterior
+                                                dimension
+r2_pan_body_t~l float   %9.0g                 Length of Pancreas body and tail size measured in
+                                                anterior/posterior dimension
+r2_pan_cc_body  float   %9.0g                 Diameter of Pancreas body measured in Cranial-Caudal
+r2_pan_cc_head  float   %9.0g                 Diameter of Pancreas head measured in Cranial-Caudal
+r2_remarks      strL    %9s                   
+r2_pan_head_t~a float   %9.0g                 Intra measurement: Pancreas head size measured in
+                                                transverse dimension
+r2_pan_head_a~a float   %9.0g                 Intra measurement: Pancreas head size measured in
+                                                anterior/posterior dimension
+r2_pan_body_t.. float   %9.0g                 Intra measurement: Pancreas body size measures in
+                                                anterior/posterior dimension;
+r2_pan_tail_t~a float   %9.0g                 Intra measurement: Pancreas tail size measure in
+                                                anterior/posterior dimension
+r2_pan~il_intra float   %9.0g                 Intra measurement: Length of Pancreas body and tail size
+                                                measured in anterior/po
+r2_pan_cc_bod~a float   %9.0g                 Intra measurement: Diameter of Pancreas body measured in
+                                                Cranial-Caudal
+r2_pan_cc_hea~a float   %9.0g                 Intra measurement: Diameter of Pancreas head measured in
+                                                Cranial-Caudal
+r2_remarks_in~a str30   %30s                  
+r3_pan_head_t~s float   %9.0g                 Pancreas head size measured in transverse dimension
+r3_pan_head_ap  float   %9.0g                 Pancreas head size measured in anterior/posterior
+                                                dimension
+r3_pan_body_t~s float   %9.0g                 Pancreas body size measures in anterior/posterior
+                                                dimension; maximum diameter
+r3_pan_tail_t~s float   %9.0g                 Pancreas tail size measure in anterior/posterior
+                                                dimension
+r3_pan_body_t~l float   %9.0g                 Length of Pancreas body and tail size measured in
+                                                anterior/posterior dimension
+r3_pan_cc_body  float   %9.0g                 Diameter of Pancreas body measured in Cranial-Caudal
+r3_pan_cc_head  float   %9.0g                 Diameter of Pancreas head measured in Cranial-Caudal
+r3_remarks      str103  %103s                 
+r3_pan_head_t~a float   %9.0g                 Intra measurement: Pancreas head size measured in
+                                                transverse dimension
+r3_pan_head_a~a float   %9.0g                 Intra measurement: Pancreas head size measured in
+                                                anterior/posterior dimension
+r3_pan_body_t.. float   %9.0g                 Intra measurement: Pancreas body size measures in
+                                                anterior/posterior dimension;
+r3_pan_tail_t~a float   %9.0g                 Intra measurement: Pancreas tail size measure in
+                                                anterior/posterior dimension
+r3_pan~il_intra float   %9.0g                 Intra measurement: Length of Pancreas body and tail size
+                                                measured in anterior/po
+r3_pan_cc_bod~a float   %9.0g                 Intra measurement: Diameter of Pancreas body measured in
+                                                Cranial-Caudal
+r3_pan_cc_hea~a float   %9.0g                 Intra measurement: Diameter of Pancreas head measured in
+                                                Cranial-Caudal
+r3_remarks_in~a byte    %8.0g                 
+r2_pan_vol      float   %9.0g                 Pancreas Volume by meas; Radiologist 2
+r3_pan_vol      float   %9.0g                 Pancreas Volume by meas; Radiologist 3
+r2_pan_vol_in~a float   %9.0g                 Intra Pancreas Volume by meas; Radiologist 2
+r3_pan_vol_in~a float   %9.0g                 Intra Pancreas Volume by meas; Radiologist 3
+ivgtt_time_ne10 str8    %9s                   Time -10 minutes
+ivgtt_time_ne1  str8    %9s                   Time -1 minutes
+ivgtt_time_2    str8    %9s                   Time 2 minutes
+ivgtt_time_4    str8    %9s                   Time 4 minutes
+ivgtt_time_6    str8    %9s                   Time 6 minutes
+ivgtt_time_8    str8    %9s                   Time 8 minutes
+ivgtt_time_10   str8    %9s                   Time 10 minutes
+ivgtt_ne10      float   %9.0g                 IVGTT Result -10 minutes
+ivgtt_ne1       float   %9.0g                 IVGTT Result -1 minutes
+ivgtt_2         float   %9.0g                 IVGTT Result 2 minutes
+ivgtt_4         float   %9.0g                 IVGTT Result 4 minutes
+ivgtt_6         float   %9.0g                 IVGTT Result 6 minutes
+ivgtt_8         float   %9.0g                 IVGTT Result 8 minutes
+ivgtt_10        float   %9.0g                 IVGTT Result 10 minutes
+ivtime_ne10_l   str8    %9s                   Sample ID of Time -10: Aliquot L (EDTA)
+ivtime_ne10_m   str8    %9s                   Sample ID of Time -10: Aliquot M (EDTA)
+ivtime_ne10_n   str8    %9s                   Sample ID of Time -10: Aliquot N (EDTA)
+ivtime_ne10_p   str8    %9s                   Sample ID of Time -10: Aliquot P (EDTA)
+ivtime_ne1_l    str8    %9s                   Sample ID of Time -1: Aliquot L (EDTA)
+ivtime_ne1_m    str8    %9s                   Sample ID of Time -1: Aliquot M (EDTA)
+ivtime_ne1_n    str8    %9s                   Sample ID of Time -1: Aliquot N (EDTA)
+ivtime_ne1_p    str8    %9s                   Sample ID of Time -1: Aliquot P (EDTA)
+ivtime_2_l      str8    %9s                   Sample ID of Time 2: Aliquot L (EDTA)
+ivtime_2_m      str8    %9s                   Sample ID of Time 2: Aliquot M (EDTA)
+ivtime_2_n      str8    %9s                   Sample ID of Time 2: Aliquot N (EDTA)
+ivtime_2_p      str8    %9s                   Sample ID of Time 2: Aliquot P (EDTA)
+ivtime_4_l      str8    %9s                   Sample ID of Time 4: Aliquot L (EDTA)
+ivtime_4_m      str8    %9s                   Sample ID of Time 4: Aliquot M (EDTA)
+ivtime_4_n      str8    %9s                   Sample ID of Time 4: Aliquot N (EDTA)
+ivtime_4_p      str8    %9s                   Sample ID of Time 4: Aliquot P (EDTA)
+ivtime_6_l      str8    %9s                   Sample ID of Time 6: Aliquot L (EDTA)
+ivtime_6_m      str8    %9s                   Sample ID of Time 6: Aliquot M (EDTA)
+ivtime_6_n      str8    %9s                   Sample ID of Time 6: Aliquot N (EDTA)
+ivtime_6_p      str8    %9s                   Sample ID of Time 6: Aliquot P (EDTA)
+ivtime_8_l      str8    %9s                   Sample ID of Time 8: Aliquot L (EDTA)
+ivtime_8_m      str8    %9s                   Sample ID of Time 8: Aliquot M (EDTA)
+ivtime_8_n      str8    %9s                   Sample ID of Time 8: Aliquot N (EDTA)
+ivtime_8_p      str8    %9s                   Sample ID of Time 8: Aliquot P (EDTA)
+ivtime_10_l     str8    %9s                   Sample ID of Time 10: Aliquot L (EDTA)
+ivtime_10_m     str8    %9s                   Sample ID of Time 10: Aliquot M (EDTA)
+ivtime_10_n     str8    %9s                   Sample ID of Time 10: Aliquot N (EDTA)
+ivtime_10_p     str8    %9s                   Sample ID of Time 10: Aliquot P (EDTA)
+temp_orgid      int     %10.0g                
+flag_fecal_el~e float   %9.0g                 
+_merge          byte    %23.0g     _merge     Matching result from merge
+recruited       float   %9.0g                 Recruited
+assay_fecal_e~e float   %9.0g                 Fecal Elastase
+assay_lipase    float   %9.0g                 Lipase
+radio2          byte    %12.0g     radio_exam
+                                              Ultrasound
+ct2             byte    %12.0g     ct_scan    CT Scan
+radio_mis_dims  float   %9.0g                 
+radio_mis_all   float   %9.0g                 
+radio3          byte    %12.0g     radio_exam
+                                              USS Scans Visualized
+subset          float   %9.0g                 Analysis Subset (With Fe-1 or USS)
+subset2         float   %9.0g                 Analysis Subset 2 (With Fe-1 or USS or CT Scan)
+epi_binary      float   %11.0g     epi_binary
+                                              EPI
+epi_ordinal     float   %17.0g     epi_ordinal
+                                              EPI Levels
+child           float   %9.0g      child      Adult or Child Population
+africa          float   %9.0g      africa     Africa or Asia
+exposuretime    float   %21.0g     exposuretime
+                                              Exposure Time
+fec_cohort      float   %9.0g      fec_cohort
+                                              Cohort
+ct_pan_vol      float   %9.0g                 Calculated Pancreatic Volume; Study
+adj_wt_ct_pan.. float   %9.0g                 
+adj_wt_ct_pan~p float   %9.0g                 
+adj_wt_ct_pan.. float   %9.0g                 
+adj_wt_ct_pan.. float   %9.0g                 
+adj_wt_ct_pan~l float   %9.0g                 
+adj_wt_ct_pan~y float   %9.0g                 
+adj_wt_ct_pan~d float   %9.0g                 
+adj_sqrt_ct_p.. float   %9.0g                 
+adj_sqrt_ct_p~p float   %9.0g                 
+adj_sqrt_ct_p.. float   %9.0g                 
+adj_sqrt_ct_p.. float   %9.0g                 
+adj_sqrt_ct_p~l float   %9.0g                 
+adj_sqrt_ct_p~y float   %9.0g                 
+adj_sqrt_ct_p~d float   %9.0g                 
+adj_wt_pan_he~p float   %9.0g                 
+adj_wt_pan_he~s float   %9.0g                 
+adj_wt_pan_bo~s float   %9.0g                 
+adj_wt_pan_ta~s float   %9.0g                 
+adj_sqrt_pan_~p float   %9.0g                 
+adj_sqrt_pan_.. float   %9.0g                 
+adj_sqrt_pan_b~ float   %9.0g                 
+adj_sqrt_pan_t~ float   %9.0g                 
+-------------------------------------------------------------------------------------------------------
+Sorted by: sampa_id
+     Note: Dataset has changed since last saved.
 

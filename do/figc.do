@@ -61,7 +61,7 @@ gr save "./figures/combined_cohorts", replace
 gr export ./figures/figc.png, as(png) replace
 
 
-**** v5 reorders
+**** v5 reorders the cohort for Africa on top
 
 tempfile graphlist
 local graphlist ""
@@ -88,7 +88,9 @@ foreach c of local cohort_order {
 display "`graphlist'"
 
 gr combine `graphlist', rows(2) cols(3)
+
 gr save "./figures/rearranged_cohorts", replace
+
 gr export ./figures/figc.png, as(png) replace
 
 
