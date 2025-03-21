@@ -70,7 +70,7 @@ local fig5head "Ultrasound Measurement by PM or NPM in each cohort."
 local fig5text "Pancreatic measurements by Ultrasound."
 
 
-
+scatter fecal_elastase pan_head_ap
 
 
 

@@ -39,7 +39,8 @@ use https://raw.githubusercontent.com/asjadnaqvi/stata-schemepack/main/data/sche
 // you either type:
 * set scheme white_tableau 
 * set scheme black_tableau 
-* set scheme gg_tableau
+*set scheme gg_tableau
+set scheme tab2
 
 // or permanently set the theme
 * set scheme white_tableau, perm
@@ -48,12 +49,10 @@ use https://raw.githubusercontent.com/asjadnaqvi/stata-schemepack/main/data/sche
 * twoway (scatter var2 date if group==1), scheme(white_tableau)
 
 
-use https://raw.githubusercontent.com/asjadnaqvi/stata-schemepack/main/data/scheme_test.dta, clear
-
 // Feel free to try these on your own datasets and please report errors if any
 
 
-set scheme white_tableau
+* set scheme white_tableau
 
 
 *****************************************

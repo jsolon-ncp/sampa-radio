@@ -2994,3 +2994,148 @@ file /Users/juansolon/Documents/GitHub/sampa-radio/figures/fige.png saved as PNG
 . 
 end of do-file
 
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. scatter fecal_elastase ct_pan_vol
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. scatter fecal_elastase pan_head_ap
+
+. 
+end of do-file
+
+. use "/Users/juansolon/Cox working group Dropbox/TB Nutrition working group/SAMPA/DATA monitoring/Data
+> /Copenhagen lab/data/cohort_temporary_trypsinogen.dta", clear
+
+. d
+
+Contains data from /Users/juansolon/Cox working group Dropbox/TB Nutrition working group/SAMPA/DATA mon
+> itoring/Data/Copenhagen lab/data/cohort_temporary_trypsinogen.dta
+ Observations:           319                  
+    Variables:             2                  18 Mar 2025 23:15
+-------------------------------------------------------------------------------------------------------
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+-------------------------------------------------------------------------------------------------------
+sampa_id        long    %10.0g                Sampa ID
+ngml_trysinogen double  %10.0g                Trypsinogen (ng/ml)
+-------------------------------------------------------------------------------------------------------
+Sorted by: 
+
+. br
+
+. hist trypsinogen
+variable trypsinogen not found
+r(111);
+
+. hist ng
+(bin=17, start=3.6, width=258.78824)
+
+. sum ngml
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+ngml_trysi~n |        319    43.23505    246.1449        3.6       4403
+
+. qnorm ngml
+
+. sum ngml, detail
+
+                     Trypsinogen (ng/ml)
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%          8.6            3.6
+ 5%         10.2            4.7
+10%         12.7            8.2       Obs                 319
+25%         17.6            8.6       Sum of wgt.         319
+
+50%         24.9                      Mean           43.23505
+                        Largest       Std. dev.      246.1449
+75%         34.1          179.6
+90%         47.1          188.7       Variance        60587.3
+95%         60.2          299.2       Skewness       17.50571
+99%        179.6           4403       Kurtosis       310.4788
+
+. d 
+
+Contains data from /Users/juansolon/Cox working group Dropbox/TB Nutrition working group/SAMPA/DATA mon
+> itoring/Data/Copenhagen lab/data/cohort_temporary_trypsinogen.dta
+ Observations:           319                  
+    Variables:             2                  18 Mar 2025 23:15
+-------------------------------------------------------------------------------------------------------
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+-------------------------------------------------------------------------------------------------------
+sampa_id        long    %10.0g                Sampa ID
+ngml_trysinogen double  %10.0g                Trypsinogen (ng/ml)
+-------------------------------------------------------------------------------------------------------
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+. list sampa_id if ngml>200
+
+     +----------+
+     | sampa_id |
+     |----------|
+ 99. |    40143 |
+129. |    40271 |
+     +----------+
+
+. list sampa_id ngml if ngml>60
+
+     +---------------------+
+     | sampa_id   ngml_t~n |
+     |---------------------|
+  1. |    30412       60.4 |
+ 53. |    30973      129.8 |
+ 77. |    40074       64.7 |
+ 81. |    40080       66.8 |
+ 88. |    40094      125.6 |
+     |---------------------|
+ 93. |    40110       62.3 |
+ 99. |    40143       4403 |
+110. |    40218       72.9 |
+112. |    40221       74.1 |
+120. |    40248       60.2 |
+     |---------------------|
+128. |    40270      188.7 |
+129. |    40271      299.2 |
+132. |    40297      179.6 |
+192. |    50598      105.1 |
+198. |    50635       82.1 |
+     |---------------------|
+208. |    50737       64.4 |
+     +---------------------+
+
+. sort ngml
+
+. list sampa_id ngml if ngml>60
+
+     +---------------------+
+     | sampa_id   ngml_t~n |
+     |---------------------|
+304. |    40248       60.2 |
+305. |    30412       60.4 |
+306. |    40110       62.3 |
+307. |    50737       64.4 |
+308. |    40074       64.7 |
+     |---------------------|
+309. |    40080       66.8 |
+310. |    40218       72.9 |
+311. |    40221       74.1 |
+312. |    50635       82.1 |
+313. |    50598      105.1 |
+     |---------------------|
+314. |    40094      125.6 |
+315. |    30973      129.8 |
+316. |    40297      179.6 |
+317. |    40270      188.7 |
+318. |    40271      299.2 |
+     |---------------------|
+319. |    40143       4403 |
+     +---------------------+
+

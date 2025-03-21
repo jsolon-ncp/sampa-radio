@@ -21,10 +21,10 @@ Reusable with
 
 * Any radiology variables
 
-label variable pan_head_ap "Head, AP (cm)"
-label variable pan_head_trans  "Head, Transverse (cm)" 
-label variable pan_body_trans  "Body, Transverse (cm)"
-label variable pan_tail_trans  "Tail, Transverse (cm)"
+label variable pan_head_ap "Head, AP"
+label variable pan_head_trans  "Head, Transverse" 
+label variable pan_body_trans  "Body, Transverse"
+label variable pan_tail_trans  "Tail, Transverse"
 
 
 
