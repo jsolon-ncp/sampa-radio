@@ -1,13 +1,10 @@
 /* figd.do 
 Sampa
 2025 March 21
-*** FIGURE D USS CT
+*** FIGURE E USS CT Correlation
 
 
-local fig4 "./figures/figd.png"
-local fig4head "Figure 4 Ultrasound Measurement by PM or NPM in each cohort."
-
-local fig4text "a) axial anterior-posterior and transverse head diameters, b) coronal cranio-caudal head diameter, c) coronal cranio-caudal body diameters, d) axial anterior-posterior body and tail diameters, body, and d) length of body and tail."
+A, pancreatic head transverse diameter (Spearman's ρ=0.22; P<0.001); B, pancreatic head antero-posterior (AP) diameter (Spearman's ρ=0.25; P<0.001); C, pancreatic body transverse diameter (Spearman's ρ=0.31; P<0.001); D, pancreatic tail transverse diameter (Spearman's ρ=0.10; P=0.10). All measurements are shown in cm.  Where correlations are statistically significant (panels A-C) a linear regression line is shown with 95% confidence limits. In panel A one CT measurement of 5.9cm is not shown for clarity.
 
 
 https://github.com/asjadnaqvi/stata-schemepack/blob/main/README.md
@@ -16,66 +13,62 @@ https://github.com/asjadnaqvi/stata-schemepack/blob/main/README.md
 /* Scheme stsj v1 */
 set scheme stsj
 
-local uss "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans"
-											
-local graphlist "" // Clear the graphlist
+* Head AP
+spearman pan_head_ap ct_pan_head_ap if ct_pan_head_ap <= 4
+local rho = string(r(rho), "%4.2f")
+local p = string(r(p), "%4.3f")
 
-foreach var of varlist `uss' {
-    local grtitle : variable label `var'
-    gr box `var', ///
-        over(ever_mal, relabel(1 "NPM" 2 "PM") label(labsize(vsmall))) ///
-        over(cohort, label(labsize(vsmall))) ///
-        ytitle("") ///
-        title("`grtitle'", size(medium)) ///
-        ylabel(0(1)5, angle(0) format(%2.0f)) ///
-        xsize(10) ysize(8) ///
-        marker(1, msize(vsmall)) ///
-        box(1, color(blue) lwidth(thin)) /// NPM - blue
-        box(2, color(red) lwidth(thin)) /// PM - red
-        medline(lwidth(thin)) ///
-        name(g_`var', replace)
-    
-    local graphlist "`graphlist' g_`var'"
-}
+twoway (scatter pan_head_ap ct_pan_head_ap if ct_pan_head_ap <= 4, msize(tiny)) ///
+       (lfitci pan_head_ap ct_pan_head_ap if ct_pan_head_ap <= 4), ///
+       ytitle("") xtitle("") title("Head, AP") ///
+       ylabel(0(1)4) xlabel(0(1)4) yscale(range(0 4)) ///
+       text(2.5 0.5 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+       legend(off) name(g1, replace)
 
-gr combine `graphlist', rows(2) cols(2) ///
-    ycommon ///
-    l1title("Diameter (cm)", size(medium))
-    
-gr save "./figures/figd", replace
-gr export "./figures/figd.png", as(png) width(2400) replace
+* Head Transverse
+spearman pan_head_trans ct_pan_head_trans if ct_pan_head_trans <= 4
+local rho = string(r(rho), "%4.2f")
+local p = string(r(p), "%4.3f")
 
+twoway (scatter pan_head_trans ct_pan_head_trans if ct_pan_head_trans <= 4, msize(tiny)) ///
+       (lfitci pan_head_trans ct_pan_head_trans if ct_pan_head_trans <= 4), ///
+       ytitle("") xtitle("") title("Head, Transverse") ///
+       ylabel(0(1)4) xlabel(0(1)4) yscale(range(0 4)) ///
+       text(2.5 0.5 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+       legend(off) name(g2, replace)
 
-/* Scheme tab2 */
-set scheme tab2
+* Body Transverse
+spearman pan_body_trans ct_pan_body_trans if ct_pan_body_trans <= 4
+local rho = string(r(rho), "%4.2f")
+local p = string(r(p), "%4.3f")
 
-local uss "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans"
-											
-local graphlist "" // Clear the graphlist
+twoway (scatter pan_body_trans ct_pan_body_trans if ct_pan_body_trans <= 4, msize(tiny)) ///
+       (lfitci pan_body_trans ct_pan_body_trans if ct_pan_body_trans <= 4), ///
+       ytitle("") xtitle("") title("Body, Transverse") ///
+       ylabel(0(1)4) xlabel(0(1)4) yscale(range(0 4)) ///
+       text(2.5 0.5 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+       legend(off) name(g3, replace)
 
-foreach var of varlist `uss' {
-    local grtitle : variable label `var'
-    gr box `var', ///
-        over(ever_mal, relabel(1 "NPM" 2 "PM") label(labsize(vsmall))) ///
-        over(cohort, label(labsize(vsmall))) ///
-        ytitle("") ///
-        title("`grtitle'", size(medium)) ///
-        ylabel(0(1)5, angle(0) format(%2.0f)) ///
-        xsize(10) ysize(8) ///
-        marker(1, msize(vsmall)) ///
-        box(1, color(blue) lwidth(thin)) /// NPM - blue
-        box(2, color(red) lwidth(thin)) /// PM - red
-        medline(lwidth(thin)) ///
-        name(g_`var', replace)
-    
-    local graphlist "`graphlist' g_`var'"
-}
+* Tail Transverse
+spearman pan_tail_trans ct_pan_tail_trans if ct_pan_tail_trans <= 4
+local rho = string(r(rho), "%4.2f")
+local p = string(r(p), "%4.3f")
 
-gr combine `graphlist', rows(2) cols(2) ///
-    ycommon ///
-    l1title("Diameter (cm)", size(medium))
-    
-gr save "./figures/figd", replace
-gr export "./figures/figd.png", as(png) width(2400) replace
+twoway (scatter pan_tail_trans ct_pan_tail_trans if ct_pan_tail_trans <= 4, msize(tiny)) ///
+       (lfitci pan_tail_trans ct_pan_tail_trans if ct_pan_tail_trans <= 4), ///
+       ytitle("") xtitle("") title("Tail, Transverse") ///
+       ylabel(0(1)4) xlabel(0(1)4) yscale(range(0 4)) ///
+       text(2.5 0.5 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+       legend(off) name(g4, replace)
+
+gr combine g1 g2 g3 g4, ///
+    rows(2) cols(2) ///
+    ycommon xcommon ///
+    l1title("Ultrasound (cm)") ///
+    b1title("CT Scan (cm)")
+
+gr save "./figures/fige", replace
+gr export "./figures/fige.png", as(png) width(2400) replace
+
 
 

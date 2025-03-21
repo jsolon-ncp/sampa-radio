@@ -52,16 +52,29 @@ local fig2text "Not shown are lipase, amylase and trypsinogen assays in particip
 local fig3 "./figures/figc.png"
 local fig3head "Figure 3 Faecal elastase distribution by cohort and malnutrition status."
 
-local fig3text "a) axial anterior-posterior and transverse head diameters, b) coronal cranio-caudal head diameter, c) coronal cranio-caudal body diameters, d) axial anterior-posterior body and tail diameters, body, and d) length of body and tail."
+local fig3text "Values were truncated at 600 µg/g. NPM, not previously malnourished; PM, previously malnourished. A value of <200 µg/g is regarded as evidence of exocrine pancreatic insufficiency.  Median levels are higher in Asian cohorts than African cohorts. "
 
 *** FIGURE D USS CT
 
-local fig4 "./figures/uss_ct_corr.png"
-local fig4head "Figure 4 Ultrasound and CT Scan Correlation."
+local fig4 "./figures/figd.png"
+local fig4head "Figure 4 USS and CT measurements correlations"
 
-local fig4text "a) axial anterior-posterior and transverse head diameters, b) coronal cranio-caudal head diameter, c) coronal cranio-caudal body diameters, d) axial anterior-posterior body and tail diameters, body, and d) length of body and tail."
+local fig4text "AP = Antero-posterior; All values above 4 cm removed for clarity. Spearman's correlation coefficient and p values shown. Correlation is significant for all four dimensions except the transverse measurement of the tail which is the most difficult to visualize"
 
-*** FIGURE E CONSORT
+
+*** FIGURE E USS by PM or NPM by cohort
+
+local fig5 "./figures/fige.png"
+local fig5head "Ultrasound Measurement by PM or NPM in each cohort."
+
+local fig5text "Pancreatic measurements by Ultrasound."
+
+
+
+
+
+
+*** FIGURE F CONSORT
 
 local fig5 "./figures/consort.png"
 local fig5head "Supplementary Figure 1 Consort Diagram."

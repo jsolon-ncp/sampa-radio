@@ -1749,3 +1749,1248 @@ adj_sqrt_pan_t~ float   %9.0g
 Sorted by: sampa_id
      Note: Dataset has changed since last saved.
 
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. set scheme stsj
+
+. 
+. local uss "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans"
+
+.                                                                                         
+. local graphlist "" // Clear the graphlist
+
+. 
+. foreach var of varlist `uss' {
+  2.     local grtitle : variable label `var'
+  3.     gr box `var', ///
+>         over(ever_mal, relabel(1 "NPM" 2 "PM") label(labsize(vsmall))) ///
+>         over(cohort, label(labsize(vsmall))) ///
+>         ytitle("") ///
+>         title("`grtitle'", size(medium)) ///
+>         ylabel(0(1)5, angle(0) format(%2.0f)) ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>         name(g_`var', replace)
+  4.     
+.     local graphlist "`graphlist' g_`var'"
+  5. }
+
+. 
+. gr combine `graphlist', rows(2) cols(2) ///
+>     ycommon ///
+>     l1title("Diameter (cm)", size(medium))
+
+.     
+. gr save "./figures/figd", replace
+file ./figures/figd saved as .gph format
+
+. gr export "./figures/figd.png", as(png) width(2400) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/figd.png saved as PNG format
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. gr box fecal_elastase, over(ever_mal, relabel(1 "NPM" 2 "PM") label(labsize(vsmall)) box(1, color(blu
+> e)) box(2, color(red)))
+option box() not allowed
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. set scheme stsj
+
+. 
+. local uss "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans"
+
+.                                                                                         
+. local graphlist "" // Clear the graphlist
+
+. 
+. foreach var of varlist `uss' {
+  2.     local grtitle : variable label `var'
+  3.     gr box `var', ///
+>         over(ever_mal, relabel(1 "NPM" 2 "PM") label(labsize(vsmall))) ///
+>         over(cohort, label(labsize(vsmall))) ///
+>         ytitle("") ///
+>         title("`grtitle'", size(medium)) ///
+>         ylabel(0(1)5, angle(0) format(%2.0f)) ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>         name(g_`var', replace)
+  4.     
+.     local graphlist "`graphlist' g_`var'"
+  5. }
+
+. 
+. gr combine `graphlist', rows(2) cols(2) ///
+>     ycommon ///
+>     l1title("Diameter (cm)", size(medium))
+
+.     
+. gr save "./figures/figd", replace
+file ./figures/figd saved as .gph format
+
+. gr export "./figures/figd.png", as(png) width(2400) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/figd.png saved as PNG format
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. 
+. label variable pan_head_ap "Head, AP"
+
+. label variable pan_head_trans  "Head, Transverse" 
+
+. label variable pan_body_trans  "Body, Transverse"
+
+. label variable pan_tail_trans  "Tail, Transverse"
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. local graphlist "" // Clear the graphlist
+
+. 
+. foreach var of varlist `uss' {
+  2.     local grtitle : variable label `var'
+  3.     gr box `var', ///
+>         over(ever_mal, relabel(1 "NPM" 2 "PM") label(labsize(vsmall))) ///
+>         over(cohort, label(labsize(vsmall))) ///
+>         ytitle("") ///
+>         title("`grtitle'", size(medium)) ///
+>         ylabel(0(1)5, angle(0) format(%2.0f)) ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>         name(g_`var', replace)
+  4.     
+.     local graphlist "`graphlist' g_`var'"
+  5. }
+varlist required
+r(100);
+
+end of do-file
+
+r(100);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. local uss "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans"
+
+.                                                                                         
+. local graphlist "" // Clear the graphlist
+
+. 
+. foreach var of varlist `uss' {
+  2.     local grtitle : variable label `var'
+  3.     gr box `var', ///
+>         over(ever_mal, relabel(1 "NPM" 2 "PM") label(labsize(vsmall))) ///
+>         over(cohort, label(labsize(vsmall))) ///
+>         ytitle("") ///
+>         title("`grtitle'", size(medium)) ///
+>         ylabel(0(1)5, angle(0) format(%2.0f)) ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>         name(g_`var', replace)
+  4.     
+.     local graphlist "`graphlist' g_`var'"
+  5. }
+
+. 
+. gr combine `graphlist', rows(2) cols(2) ///
+>     ycommon ///
+>     l1title("Diameter (cm)", size(medium))
+
+.     
+. gr save "./figures/figd", replace
+file ./figures/figd saved as .gph format
+
+. gr export "./figures/figd.png", as(png) width(2400) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/figd.png saved as PNG format
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. set scheme stsj
+
+. 
+. local uss "pan_head_ap pan_head_trans pan_tail_trans pan_body_trans"
+
+.                                                                                         
+. local graphlist "" // Clear the graphlist
+
+. 
+. foreach var of varlist `uss' {
+  2.     local grtitle : variable label `var'
+  3.     gr box `var', ///
+>         over(ever_mal, relabel(1 "NPM" 2 "PM") label(labsize(vsmall))) ///
+>         over(cohort, label(labsize(vsmall))) ///
+>         ytitle("") ///
+>         title("`grtitle'", size(medium)) ///
+>         ylabel(0(1)5, angle(0) format(%2.0f)) ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>         name(g_`var', replace)
+  4.     
+.     local graphlist "`graphlist' g_`var'"
+  5. }
+
+. 
+. gr combine `graphlist', rows(2) cols(2) ///
+>     ycommon ///
+>     l1title("Diameter (cm)", size(medium))
+
+.     
+. gr save "./figures/fige", replace
+(file ./figures/fige not found)
+file ./figures/fige saved as .gph format
+
+. gr export "./figures/fige.png", as(png) width(2400) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/fige.png saved as PNG format
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. scatter pan_head_pan ct_pan_head_ap
+variable pan_head_pan not found
+r(111);
+
+end of do-file
+
+r(111);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. scatter pan_head_ap ct_pan_head_ap
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. scatter pan_head_ap ct_pan_head_ap
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. blandaltman pan_head_ap ct_pan_head_ap
+option plot() required
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. blandaltman pan_head_ap ct_pan_head_ap, plot(difference)
+ 
+A: pan_head_ap           Head, AP
+B: ct_pan_head_ap        Pancreas head size measured in anterior/posterior dimension
+ 
+DIFFERENCES...
+Calculation              N        Mean         SD       Interval(s)
+A-B                    286   -.5277273    .606714
+ 
+. regress difference mean
+
+      Source |       SS           df       MS      Number of obs   =       286
+-------------+----------------------------------   F(1, 284)       =      0.37
+       Model |  .136146338         1  .136146338   Prob > F        =    0.5440
+    Residual |  104.772878       284  .368918585   R-squared       =    0.0013
+-------------+----------------------------------   Adj R-squared   =   -0.0022
+       Total |  104.909024       285   .36810184   Root MSE        =    .60739
+
+------------------------------------------------------------------------------
+    __000002 | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+    __000003 |   .0537868   .0885396     0.61   0.544    -.1204904    .2280639
+       _cons |  -.6481165   .2014037    -3.22   0.001     -1.04455   -.2516831
+------------------------------------------------------------------------------
+              -> regression-based bias:      -.6481165 +  .0537868 × Mean(A,B)
+ 
+. regress adj_abs_resid mean
+
+      Source |       SS           df       MS      Number of obs   =       286
+-------------+----------------------------------   F(1, 284)       =      0.57
+       Model |  .133535868         1  .133535868   Prob > F        =    0.4490
+    Residual |  65.9887835       284  .232354871   R-squared       =    0.0020
+-------------+----------------------------------   Adj R-squared   =   -0.0015
+       Total |  66.1223193       285  .232008138   Root MSE        =    .48203
+
+------------------------------------------------------------------------------
+    __00000C | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+    __000003 |   .0532686   .0702665     0.76   0.449    -.0850406    .1915778
+       _cons |   .4674959   .1598373     2.92   0.004     .1528798    .7821119
+------------------------------------------------------------------------------
+              -> regression-based SD:         .4674959 +  .0532686 × Mean(A,B)
+              -> regression-based 95% LLOA:  -1.564392 + -.0506178 × Mean(A,B)
+              -> regression-based 95% ULOA:   .2681586 +  .1581913 × Mean(A,B)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. blandaltman pan_head_trans ct_pan_head_trans, plot(difference)
+ 
+A: pan_head_trans        Head, Transverse
+B: ct_pan_head_trans     Pancreas head size measured in transverse dimension
+ 
+DIFFERENCES...
+Calculation              N        Mean         SD       Interval(s)
+A-B                    223   -.7305381   .6123847
+ 
+. regress difference mean
+
+      Source |       SS           df       MS      Number of obs   =       223
+-------------+----------------------------------   F(1, 221)       =      1.72
+       Model |  .641204181         1  .641204181   Prob > F        =    0.1917
+    Residual |  82.6121351       221  .373810566   R-squared       =    0.0077
+-------------+----------------------------------   Adj R-squared   =    0.0032
+       Total |  83.2533393       222  .375015042   Root MSE        =     .6114
+
+------------------------------------------------------------------------------
+    __000002 | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+    __000003 |   .1425866   .1088695     1.31   0.192    -.0719687    .3571418
+       _cons |  -1.061751   .2561849    -4.14   0.000    -1.566629   -.5568733
+------------------------------------------------------------------------------
+              -> regression-based bias:      -1.061751 +  .1425866 × Mean(A,B)
+ 
+. regress adj_abs_resid mean
+
+      Source |       SS           df       MS      Number of obs   =       223
+-------------+----------------------------------   F(1, 221)       =      3.87
+       Model |  .929371437         1  .929371437   Prob > F        =    0.0504
+    Residual |  53.0537495       221  .240062215   R-squared       =    0.0172
+-------------+----------------------------------   Adj R-squared   =    0.0128
+       Total |  53.9831209       222  .243167211   Root MSE        =    .48996
+
+------------------------------------------------------------------------------
+    __00000C | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+    __000003 |   .1716624   .0872454     1.97   0.050     -.000277    .3436017
+       _cons |   .1842024   .2053003     0.90   0.371    -.2203945    .5887994
+------------------------------------------------------------------------------
+              -> regression-based SD:         .1842024 +  .1716624 × Mean(A,B)
+              -> regression-based 95% LLOA:  -1.422782 + -.1938655 × Mean(A,B)
+              -> regression-based 95% ULOA:  -.7007212 +  .4790386 × Mean(A,B)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. blandaltman pan_tail_trans ct_pan_tail_trans, plot(difference)
+ 
+A: pan_tail_trans        Tail, Transverse
+B: ct_pan_tail_trans     Pancreas tail size measure in anterior/posterior dimension
+ 
+DIFFERENCES...
+Calculation              N        Mean         SD       Interval(s)
+A-B                    265   -.4602642   .5448529
+ 
+. regress difference mean
+
+      Source |       SS           df       MS      Number of obs   =       265
+-------------+----------------------------------   F(1, 263)       =      1.27
+       Model |  .375348104         1  .375348104   Prob > F        =    0.2616
+    Residual |  77.9969333       263  .296566286   R-squared       =    0.0048
+-------------+----------------------------------   Adj R-squared   =    0.0010
+       Total |  78.3722814       264  .296864702   Root MSE        =    .54458
+
+------------------------------------------------------------------------------
+    __000002 | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+    __000003 |  -.1155561   .1027156    -1.13   0.262    -.3178057    .0866936
+       _cons |  -.2815512   .1623388    -1.73   0.084    -.6012004    .0380979
+------------------------------------------------------------------------------
+              -> regression-based bias:      -.2815512 + -.1155561 × Mean(A,B)
+ 
+. regress adj_abs_resid mean
+
+      Source |       SS           df       MS      Number of obs   =       265
+-------------+----------------------------------   F(1, 263)       =      9.25
+       Model |  1.61645531         1  1.61645531   Prob > F        =    0.0026
+    Residual |  45.9626454       263   .17476291   R-squared       =    0.0340
+-------------+----------------------------------   Adj R-squared   =    0.0303
+       Total |  47.5791008       264  .180223867   Root MSE        =    .41805
+
+------------------------------------------------------------------------------
+    __00000C | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+    __000003 |   .2398046   .0788497     3.04   0.003     .0845475    .3950617
+       _cons |   .1609068   .1246195     1.29   0.198    -.0844722    .4062858
+------------------------------------------------------------------------------
+              -> regression-based SD:         .1609068 +  .2398046 × Mean(A,B)
+              -> regression-based 95% LLOA:  -.5969228 + -.5855644 × Mean(A,B)
+              -> regression-based 95% ULOA:   .0338203 +  .3544523 × Mean(A,B)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. blandaltman pan_body_trans ct_pan_body_trans, plot(difference)
+ 
+A: pan_body_trans        Body, Transverse
+B: ct_pan_body_trans     Pancreas body size measures in anterior/posterior dimension; maximum diameter
+ 
+DIFFERENCES...
+Calculation              N        Mean         SD       Interval(s)
+A-B                    286   -.8905944   .5421911
+ 
+. regress difference mean
+
+      Source |       SS           df       MS      Number of obs   =       286
+-------------+----------------------------------   F(1, 284)       =     13.73
+       Model |  3.86241506         1  3.86241506   Prob > F        =    0.0003
+    Residual |  79.9193838       284  .281406281   R-squared       =    0.0461
+-------------+----------------------------------   Adj R-squared   =    0.0427
+       Total |  83.7817989       285  .293971224   Root MSE        =    .53048
+
+------------------------------------------------------------------------------
+    __000002 | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+    __000003 |  -.3137641   .0846917    -3.70   0.000    -.4804672   -.1470611
+       _cons |  -.3895537   .1388317    -2.81   0.005    -.6628234    -.116284
+------------------------------------------------------------------------------
+              -> regression-based bias:      -.3895537 + -.3137641 × Mean(A,B)
+ 
+. regress adj_abs_resid mean
+
+      Source |       SS           df       MS      Number of obs   =       286
+-------------+----------------------------------   F(1, 284)       =      0.10
+       Model |  .018203235         1  .018203235   Prob > F        =    0.7536
+    Residual |  52.3576347       284  .184357869   R-squared       =    0.0003
+-------------+----------------------------------   Adj R-squared   =   -0.0032
+       Total |  52.3758379       285   .18377487   Root MSE        =    .42937
+
+------------------------------------------------------------------------------
+    __00000C | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+    __000003 |   .0215401   .0685496     0.31   0.754    -.1133896    .1564698
+       _cons |   .4713784   .1123706     4.19   0.000     .2501935    .6925632
+------------------------------------------------------------------------------
+              -> regression-based SD:         .4713784 +  .0215401 × Mean(A,B)
+              -> regression-based 95% LLOA:  -1.313438 +  -.355982 × Mean(A,B)
+              -> regression-based 95% ULOA:    .534331 + -.2715463 × Mean(A,B)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. blandaltman pan_head_trans ct_pan_head_trans, plot(difference)
+ 
+A: pan_head_trans        Head, Transverse
+B: ct_pan_head_trans     Pancreas head size measured in transverse dimension
+ 
+DIFFERENCES...
+Calculation              N        Mean         SD       Interval(s)
+A-B                    223   -.7305381   .6123847
+ 
+. regress difference mean
+
+      Source |       SS           df       MS      Number of obs   =       223
+-------------+----------------------------------   F(1, 221)       =      1.72
+       Model |  .641204181         1  .641204181   Prob > F        =    0.1917
+    Residual |  82.6121351       221  .373810566   R-squared       =    0.0077
+-------------+----------------------------------   Adj R-squared   =    0.0032
+       Total |  83.2533393       222  .375015042   Root MSE        =     .6114
+
+------------------------------------------------------------------------------
+    __000002 | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+    __000003 |   .1425866   .1088695     1.31   0.192    -.0719687    .3571418
+       _cons |  -1.061751   .2561849    -4.14   0.000    -1.566629   -.5568733
+------------------------------------------------------------------------------
+              -> regression-based bias:      -1.061751 +  .1425866 × Mean(A,B)
+ 
+. regress adj_abs_resid mean
+
+      Source |       SS           df       MS      Number of obs   =       223
+-------------+----------------------------------   F(1, 221)       =      3.87
+       Model |  .929371437         1  .929371437   Prob > F        =    0.0504
+    Residual |  53.0537495       221  .240062215   R-squared       =    0.0172
+-------------+----------------------------------   Adj R-squared   =    0.0128
+       Total |  53.9831209       222  .243167211   Root MSE        =    .48996
+
+------------------------------------------------------------------------------
+    __00000C | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+    __000003 |   .1716624   .0872454     1.97   0.050     -.000277    .3436017
+       _cons |   .1842024   .2053003     0.90   0.371    -.2203945    .5887994
+------------------------------------------------------------------------------
+              -> regression-based SD:         .1842024 +  .1716624 × Mean(A,B)
+              -> regression-based 95% LLOA:  -1.422782 + -.1938655 × Mean(A,B)
+              -> regression-based 95% ULOA:  -.7007212 +  .4790386 × Mean(A,B)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. blandaltman pan_head_ap ct_pan_head_ap, plot(difference)
+ 
+A: pan_head_ap           Head, AP
+B: ct_pan_head_ap        Pancreas head size measured in anterior/posterior dimension
+ 
+DIFFERENCES...
+Calculation              N        Mean         SD       Interval(s)
+A-B                    286   -.5277273    .606714
+ 
+. regress difference mean
+
+      Source |       SS           df       MS      Number of obs   =       286
+-------------+----------------------------------   F(1, 284)       =      0.37
+       Model |  .136146338         1  .136146338   Prob > F        =    0.5440
+    Residual |  104.772878       284  .368918585   R-squared       =    0.0013
+-------------+----------------------------------   Adj R-squared   =   -0.0022
+       Total |  104.909024       285   .36810184   Root MSE        =    .60739
+
+------------------------------------------------------------------------------
+    __000002 | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+    __000003 |   .0537868   .0885396     0.61   0.544    -.1204904    .2280639
+       _cons |  -.6481165   .2014037    -3.22   0.001     -1.04455   -.2516831
+------------------------------------------------------------------------------
+              -> regression-based bias:      -.6481165 +  .0537868 × Mean(A,B)
+ 
+. regress adj_abs_resid mean
+
+      Source |       SS           df       MS      Number of obs   =       286
+-------------+----------------------------------   F(1, 284)       =      0.57
+       Model |  .133535868         1  .133535868   Prob > F        =    0.4490
+    Residual |  65.9887835       284  .232354871   R-squared       =    0.0020
+-------------+----------------------------------   Adj R-squared   =   -0.0015
+       Total |  66.1223193       285  .232008138   Root MSE        =    .48203
+
+------------------------------------------------------------------------------
+    __00000C | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+    __000003 |   .0532686   .0702665     0.76   0.449    -.0850406    .1915778
+       _cons |   .4674959   .1598373     2.92   0.004     .1528798    .7821119
+------------------------------------------------------------------------------
+              -> regression-based SD:         .4674959 +  .0532686 × Mean(A,B)
+              -> regression-based 95% LLOA:  -1.564392 + -.0506178 × Mean(A,B)
+              -> regression-based 95% ULOA:   .2681586 +  .1581913 × Mean(A,B)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. set scheme stsj
+
+. 
+. scatter pan_head_ap ct_pan_head_ap
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. scatter pan_head_ap ct_pan_head_ap, ytitle() xtitle()
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. scatter pan_head_ap ct_pan_head_ap, ytitle("") xtitle("")
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. set scheme stsj
+
+. 
+. gr combine ///
+>     (scatter pan_head_ap ct_pan_head_ap, ytitle("") xtitle("") title("Head, AP")) ///
+>     (scatter pan_head_trans ct_pan_head_trans, ytitle("") xtitle("") title("Head, Transverse")) ///
+>     (scatter pan_body_trans ct_pan_body_trans, ytitle("") xtitle("") title("Body, Transverse")) ///
+>     (scatter pan_tail_trans ct_pan_tail_trans, ytitle("") xtitle("") title("Tail, Transverse")), ///
+>     rows(2) cols(2) ///
+>     l1title("Ultrasound (cm)") ///
+>     b1title("CT Scan (cm)")
+scatter is not a memory graph
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. set scheme stsj
+
+. 
+. scatter pan_head_ap ct_pan_head_ap, ytitle("") xtitle("") title("Head, AP") name(g1, replace)
+
+. scatter pan_head_trans ct_pan_head_trans, ytitle("") xtitle("") title("Head, Transverse") name(g2, re
+> place)
+
+. scatter pan_body_trans ct_pan_body_trans, ytitle("") xtitle("") title("Body, Transverse") name(g3, re
+> place)
+
+. scatter pan_tail_trans ct_pan_tail_trans, ytitle("") xtitle("") title("Tail, Transverse") name(g4, re
+> place)
+
+. 
+. gr combine g1 g2 g3 g4, ///
+>     rows(2) cols(2) ///
+>     l1title("Ultrasound (cm)") ///
+>     b1title("CT Scan (cm)")
+
+. 
+. gr save "./figures/fige", replace
+file ./figures/fige saved as .gph format
+
+. gr export "./figures/fige.png", as(png) width(2400) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/fige.png saved as PNG format
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. set scheme stsj
+
+. 
+. scatter pan_head_ap ct_pan_head_ap, ytitle("") xtitle("") title("Head, AP") msize(small) name(g1, rep
+> lace)
+
+. scatter pan_head_trans ct_pan_head_trans, ytitle("") xtitle("") title("Head, Transverse") msize(small
+> ) name(g2, replace)
+
+. scatter pan_body_trans ct_pan_body_trans, ytitle("") xtitle("") title("Body, Transverse") msize(small
+> ) name(g3, replace)
+
+. scatter pan_tail_trans ct_pan_tail_trans, ytitle("") xtitle("") title("Tail, Transverse") msize(small
+> ) name(g4, replace)
+
+. 
+. gr combine g1 g2 g3 g4, ///
+>     rows(2) cols(2) ///
+>     ycommon xcommon ///
+>     l1title("Ultrasound (cm)") ///
+>     b1title("CT Scan (cm)")
+
+. 
+. gr save "./figures/fige", replace
+file ./figures/fige saved as .gph format
+
+. gr export "./figures/fige.png", as(png) width(2400) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/fige.png saved as PNG format
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. scatter pan_head_ap ct_pan_head_ap, ytitle("") xtitle("") title("Head, AP") msize(vsmall) name(g1, re
+> place)
+
+. scatter pan_head_trans ct_pan_head_trans, ytitle("") xtitle("") title("Head, Transverse") msize(vsmal
+> l) name(g2, replace)
+
+. scatter pan_body_trans ct_pan_body_trans, ytitle("") xtitle("") title("Body, Transverse") msize(vsmal
+> l) name(g3, replace)
+
+. scatter pan_tail_trans ct_pan_tail_trans, ytitle("") xtitle("") title("Tail, Transverse") msize(vsmal
+> l) name(g4, replace)
+
+. 
+. gr combine g1 g2 g3 g4, ///
+>     rows(2) cols(2) ///
+>     ycommon xcommon ///
+>     l1title("Ultrasound (cm)") ///
+>     b1title("CT Scan (cm)")
+
+. 
+. gr save "./figures/fige", replace
+file ./figures/fige saved as .gph format
+
+. gr export "./figures/fige.png", as(png) width(2400) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/fige.png saved as PNG format
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. 
+. twoway (scatter pan_head_ap ct_pan_head_ap, msize(small)) ///
+>        (lfitci pan_head_ap ct_pan_head_ap), ///
+>        ytitle("") xtitle("") title("Head, AP") name(g1, replace)
+
+. 
+. twoway (scatter pan_head_trans ct_pan_head_trans, msize(small)) ///
+>        (lfitci pan_head_trans ct_pan_head_trans), ///
+>        ytitle("") xtitle("") title("Head, Transverse") name(g2, replace)
+
+. 
+. twoway (scatter pan_body_trans ct_pan_body_trans, msize(small)) ///
+>        (lfitci pan_body_trans ct_pan_body_trans), ///
+>        ytitle("") xtitle("") title("Body, Transverse") name(g3, replace)
+
+. 
+. twoway (scatter pan_tail_trans ct_pan_tail_trans, msize(small)) ///
+>        (lfitci pan_tail_trans ct_pan_tail_trans), ///
+>        ytitle("") xtitle("") title("Tail, Transverse") name(g4, replace)
+
+. 
+. gr combine g1 g2 g3 g4, ///
+>     rows(2) cols(2) ///
+>     ycommon xcommon ///
+>     l1title("Ultrasound (cm)") ///
+>     b1title("CT Scan (cm)")
+
+. 
+. gr save "./figures/fige", replace
+file ./figures/fige saved as .gph format
+
+. gr export "./figures/fige.png", as(png) width(2400) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/fige.png saved as PNG format
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. 
+. twoway (scatter pan_head_ap ct_pan_head_ap, msize(tiny)) ///
+>        (lfitci pan_head_ap ct_pan_head_ap), ///
+>        ytitle("") xtitle("") title("Head, AP") name(g1, replace)
+
+. 
+. twoway (scatter pan_head_trans ct_pan_head_trans, msize(tiny)) ///
+>        (lfitci pan_head_trans ct_pan_head_trans), ///
+>        ytitle("") xtitle("") title("Head, Transverse") name(g2, replace)
+
+. 
+. twoway (scatter pan_body_trans ct_pan_body_trans, msize(tiny)) ///
+>        (lfitci pan_body_trans ct_pan_body_trans), ///
+>        ytitle("") xtitle("") title("Body, Transverse") name(g3, replace)
+
+. 
+. twoway (scatter pan_tail_trans ct_pan_tail_trans, msize(tiny)) ///
+>        (lfitci pan_tail_trans ct_pan_tail_trans), ///
+>        ytitle("") xtitle("") title("Tail, Transverse") name(g4, replace)
+
+. 
+. gr combine g1 g2 g3 g4, ///
+>     rows(2) cols(2) ///
+>     ycommon xcommon ///
+>     l1title("Ultrasound (cm)") ///
+>     b1title("CT Scan (cm)")
+
+. 
+. gr save "./figures/fige", replace
+file ./figures/fige saved as .gph format
+
+. gr export "./figures/fige.png", as(png) width(2400) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/fige.png saved as PNG format
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. 
+. twoway (scatter pan_head_ap ct_pan_head_ap if ct_pan_head_ap <= 4, msize(tiny)) ///
+>        (lfitci pan_head_ap ct_pan_head_ap if ct_pan_head_ap <= 4), ///
+>        ytitle("") xtitle("") title("Head, AP") ///
+>        ylabel(0(1)4) xlabel(0(1)4) ///
+>        legend(off) name(g1, replace)
+
+. 
+. twoway (scatter pan_head_trans ct_pan_head_trans if ct_pan_head_trans <= 4, msize(tiny)) ///
+>        (lfitci pan_head_trans ct_pan_head_trans if ct_pan_head_trans <= 4), ///
+>        ytitle("") xtitle("") title("Head, Transverse") ///
+>        ylabel(0(1)4) xlabel(0(1)4) ///
+>        legend(off) name(g2, replace)
+
+. 
+. twoway (scatter pan_body_trans ct_pan_body_trans if ct_pan_body_trans <= 4, msize(tiny)) ///
+>        (lfitci pan_body_trans ct_pan_body_trans if ct_pan_body_trans <= 4), ///
+>        ytitle("") xtitle("") title("Body, Transverse") ///
+>        ylabel(0(1)4) xlabel(0(1)4) ///
+>        legend(off) name(g3, replace)
+
+. 
+. twoway (scatter pan_tail_trans ct_pan_tail_trans if ct_pan_tail_trans <= 4, msize(tiny)) ///
+>        (lfitci pan_tail_trans ct_pan_tail_trans if ct_pan_tail_trans <= 4), ///
+>        ytitle("") xtitle("") title("Tail, Transverse") ///
+>        ylabel(0(1)4) xlabel(0(1)4) ///
+>        legend(off) name(g4, replace)
+
+. 
+. gr combine g1 g2 g3 g4, ///
+>     rows(2) cols(2) ///
+>     ycommon xcommon ///
+>     l1title("Ultrasound (cm)") ///
+>     b1title("CT Scan (cm)")
+
+. 
+. gr save "./figures/fige", replace
+file ./figures/fige saved as .gph format
+
+. gr export "./figures/fige.png", as(png) width(2400) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/fige.png saved as PNG format
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. 
+. * Head AP
+. spearman pan_head_ap ct_pan_head_ap if ct_pan_head_ap <= 4
+
+Number of observations =    284
+        Spearman's rho = 0.2167
+
+Test of H0: pan_head_ap and ct_pan_head_ap are independent
+                  Prob = 0.0002
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. twoway (scatter pan_head_ap ct_pan_head_ap if ct_pan_head_ap <= 4, msize(tiny)) ///
+>        (lfitci pan_head_ap ct_pan_head_ap if ct_pan_head_ap <= 4), ///
+>        ytitle("") xtitle("") title("Head, AP") ///
+>        ylabel(0(1)4) xlabel(0(1)4) ///
+>        text(3.8 0.2 "ρ = `rho'" "p = `p'", size(small) just(left)) ///
+>        legend(off) name(g1, replace)
+
+. 
+. * Head Transverse
+. spearman pan_head_trans ct_pan_head_trans if ct_pan_head_trans <= 4
+
+Number of observations =    222
+        Spearman's rho = 0.2045
+
+Test of H0: pan_head_trans and ct_pan_head_trans are independent
+                  Prob = 0.0022
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. twoway (scatter pan_head_trans ct_pan_head_trans if ct_pan_head_trans <= 4, msize(tiny)) ///
+>        (lfitci pan_head_trans ct_pan_head_trans if ct_pan_head_trans <= 4), ///
+>        ytitle("") xtitle("") title("Head, Transverse") ///
+>        ylabel(0(1)4) xlabel(0(1)4) ///
+>        text(3.8 0.2 "ρ = `rho'" "p = `p'", size(small) just(left)) ///
+>        legend(off) name(g2, replace)
+
+. 
+. * Body Transverse
+. spearman pan_body_trans ct_pan_body_trans if ct_pan_body_trans <= 4
+
+Number of observations =    286
+        Spearman's rho = 0.3117
+
+Test of H0: pan_body_trans and ct_pan_body_trans are independent
+                  Prob = 0.0000
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. twoway (scatter pan_body_trans ct_pan_body_trans if ct_pan_body_trans <= 4, msize(tiny)) ///
+>        (lfitci pan_body_trans ct_pan_body_trans if ct_pan_body_trans <= 4), ///
+>        ytitle("") xtitle("") title("Body, Transverse") ///
+>        ylabel(0(1)4) xlabel(0(1)4) ///
+>        text(3.8 0.2 "ρ = `rho'" "p = `p'", size(small) just(left)) ///
+>        legend(off) name(g3, replace)
+
+. 
+. * Tail Transverse
+. spearman pan_tail_trans ct_pan_tail_trans if ct_pan_tail_trans <= 4
+
+Number of observations =    265
+        Spearman's rho = 0.0959
+
+Test of H0: pan_tail_trans and ct_pan_tail_trans are independent
+                  Prob = 0.1193
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. twoway (scatter pan_tail_trans ct_pan_tail_trans if ct_pan_tail_trans <= 4, msize(tiny)) ///
+>        (lfitci pan_tail_trans ct_pan_tail_trans if ct_pan_tail_trans <= 4), ///
+>        ytitle("") xtitle("") title("Tail, Transverse") ///
+>        ylabel(0(1)4) xlabel(0(1)4) ///
+>        text(3.8 0.2 "ρ = `rho'" "p = `p'", size(small) just(left)) ///
+>        legend(off) name(g4, replace)
+
+. 
+. gr combine g1 g2 g3 g4, ///
+>     rows(2) cols(2) ///
+>     ycommon xcommon ///
+>     l1title("Ultrasound (cm)") ///
+>     b1title("CT Scan (cm)")
+
+. 
+. gr save "./figures/fige", replace
+file ./figures/fige saved as .gph format
+
+. gr export "./figures/fige.png", as(png) width(2400) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/fige.png saved as PNG format
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. * Head AP
+. spearman pan_head_ap ct_pan_head_ap if ct_pan_head_ap <= 4
+
+Number of observations =    284
+        Spearman's rho = 0.2167
+
+Test of H0: pan_head_ap and ct_pan_head_ap are independent
+                  Prob = 0.0002
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. twoway (scatter pan_head_ap ct_pan_head_ap if ct_pan_head_ap <= 4, msize(tiny)) ///
+>        (lfitci pan_head_ap ct_pan_head_ap if ct_pan_head_ap <= 4), ///
+>        ytitle("") xtitle("") title("Head, AP") ///
+>        ylabel(0(1)4) xlabel(0(1)4) ///
+>        text(3.8 1 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+>        legend(off) name(g1, replace)
+
+. 
+. * Head Transverse
+. spearman pan_head_trans ct_pan_head_trans if ct_pan_head_trans <= 4
+
+Number of observations =    222
+        Spearman's rho = 0.2045
+
+Test of H0: pan_head_trans and ct_pan_head_trans are independent
+                  Prob = 0.0022
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. twoway (scatter pan_head_trans ct_pan_head_trans if ct_pan_head_trans <= 4, msize(tiny)) ///
+>        (lfitci pan_head_trans ct_pan_head_trans if ct_pan_head_trans <= 4), ///
+>        ytitle("") xtitle("") title("Head, Transverse") ///
+>        ylabel(0(1)4) xlabel(0(1)4) ///
+>        text(3.8 1 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+>        legend(off) name(g2, replace)
+
+. 
+. * Body Transverse
+. spearman pan_body_trans ct_pan_body_trans if ct_pan_body_trans <= 4
+
+Number of observations =    286
+        Spearman's rho = 0.3117
+
+Test of H0: pan_body_trans and ct_pan_body_trans are independent
+                  Prob = 0.0000
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. twoway (scatter pan_body_trans ct_pan_body_trans if ct_pan_body_trans <= 4, msize(tiny)) ///
+>        (lfitci pan_body_trans ct_pan_body_trans if ct_pan_body_trans <= 4), ///
+>        ytitle("") xtitle("") title("Body, Transverse") ///
+>        ylabel(0(1)4) xlabel(0(1)4) ///
+>        text(3.8 1 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+>        legend(off) name(g3, replace)
+
+. 
+. * Tail Transverse
+. spearman pan_tail_trans ct_pan_tail_trans if ct_pan_tail_trans <= 4
+
+Number of observations =    265
+        Spearman's rho = 0.0959
+
+Test of H0: pan_tail_trans and ct_pan_tail_trans are independent
+                  Prob = 0.1193
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. twoway (scatter pan_tail_trans ct_pan_tail_trans if ct_pan_tail_trans <= 4, msize(tiny)) ///
+>        (lfitci pan_tail_trans ct_pan_tail_trans if ct_pan_tail_trans <= 4), ///
+>        ytitle("") xtitle("") title("Tail, Transverse") ///
+>        ylabel(0(1)4) xlabel(0(1)4) ///
+>        text(3.8 1 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+>        legend(off) name(g4, replace)
+
+. 
+. gr combine g1 g2 g3 g4, ///
+>     rows(2) cols(2) ///
+>     ycommon xcommon ///
+>     l1title("Ultrasound (cm)") ///
+>     b1title("CT Scan (cm)")
+
+. 
+. gr save "./figures/fige", replace
+file ./figures/fige saved as .gph format
+
+. gr export "./figures/fige.png", as(png) width(2400) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/fige.png saved as PNG format
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. 
+. * Head AP
+. spearman pan_head_ap ct_pan_head_ap if ct_pan_head_ap <= 4
+
+Number of observations =    284
+        Spearman's rho = 0.2167
+
+Test of H0: pan_head_ap and ct_pan_head_ap are independent
+                  Prob = 0.0002
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. twoway (scatter pan_head_ap ct_pan_head_ap if ct_pan_head_ap <= 4, msize(tiny)) ///
+>        (lfitci pan_head_ap ct_pan_head_ap if ct_pan_head_ap <= 4), ///
+>        ytitle("") xtitle("") title("Head, AP") ///
+>        ylabel(0(1)4) xlabel(0(1)4) ///
+>        text(2 0.5 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+>        legend(off) name(g1, replace)
+
+. 
+. * Head Transverse
+. spearman pan_head_trans ct_pan_head_trans if ct_pan_head_trans <= 4
+
+Number of observations =    222
+        Spearman's rho = 0.2045
+
+Test of H0: pan_head_trans and ct_pan_head_trans are independent
+                  Prob = 0.0022
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. twoway (scatter pan_head_trans ct_pan_head_trans if ct_pan_head_trans <= 4, msize(tiny)) ///
+>        (lfitci pan_head_trans ct_pan_head_trans if ct_pan_head_trans <= 4), ///
+>        ytitle("") xtitle("") title("Head, Transverse") ///
+>        ylabel(0(1)4) xlabel(0(1)4) ///
+>        text(2 0.5 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+>        legend(off) name(g2, replace)
+
+. 
+. * Body Transverse
+. spearman pan_body_trans ct_pan_body_trans if ct_pan_body_trans <= 4
+
+Number of observations =    286
+        Spearman's rho = 0.3117
+
+Test of H0: pan_body_trans and ct_pan_body_trans are independent
+                  Prob = 0.0000
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. twoway (scatter pan_body_trans ct_pan_body_trans if ct_pan_body_trans <= 4, msize(tiny)) ///
+>        (lfitci pan_body_trans ct_pan_body_trans if ct_pan_body_trans <= 4), ///
+>        ytitle("") xtitle("") title("Body, Transverse") ///
+>        ylabel(0(1)4) xlabel(0(1)4) ///
+>        text(2 0.5 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+>        legend(off) name(g3, replace)
+
+. 
+. * Tail Transverse
+. spearman pan_tail_trans ct_pan_tail_trans if ct_pan_tail_trans <= 4
+
+Number of observations =    265
+        Spearman's rho = 0.0959
+
+Test of H0: pan_tail_trans and ct_pan_tail_trans are independent
+                  Prob = 0.1193
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. twoway (scatter pan_tail_trans ct_pan_tail_trans if ct_pan_tail_trans <= 4, msize(tiny)) ///
+>        (lfitci pan_tail_trans ct_pan_tail_trans if ct_pan_tail_trans <= 4), ///
+>        ytitle("") xtitle("") title("Tail, Transverse") ///
+>        ylabel(0(1)4) xlabel(0(1)4) ///
+>        text(2 0.5 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+>        legend(off) name(g4, replace)
+
+. 
+. gr combine g1 g2 g3 g4, ///
+>     rows(2) cols(2) ///
+>     ycommon xcommon ///
+>     l1title("Ultrasound (cm)") ///
+>     b1title("CT Scan (cm)")
+
+. 
+. gr save "./figures/fige", replace
+file ./figures/fige saved as .gph format
+
+. gr export "./figures/fige.png", as(png) width(2400) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/fige.png saved as PNG format
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. 
+. * Head AP
+. spearman pan_head_ap ct_pan_head_ap if ct_pan_head_ap <= 4
+
+Number of observations =    284
+        Spearman's rho = 0.2167
+
+Test of H0: pan_head_ap and ct_pan_head_ap are independent
+                  Prob = 0.0002
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. twoway (scatter pan_head_ap ct_pan_head_ap if ct_pan_head_ap <= 4, msize(tiny)) ///
+>        (lfitci pan_head_ap ct_pan_head_ap if ct_pan_head_ap <= 4), ///
+>        ytitle("") xtitle("") title("Head, AP") ///
+>        ylabel(0(1)4) xlabel(0(1)4) yscale(range(0 4)) ///
+>        text(2.5 0.5 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+>        legend(off) name(g1, replace)
+
+. 
+. * Head Transverse
+. spearman pan_head_trans ct_pan_head_trans if ct_pan_head_trans <= 4
+
+Number of observations =    222
+        Spearman's rho = 0.2045
+
+Test of H0: pan_head_trans and ct_pan_head_trans are independent
+                  Prob = 0.0022
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. twoway (scatter pan_head_trans ct_pan_head_trans if ct_pan_head_trans <= 4, msize(tiny)) ///
+>        (lfitci pan_head_trans ct_pan_head_trans if ct_pan_head_trans <= 4), ///
+>        ytitle("") xtitle("") title("Head, Transverse") ///
+>        ylabel(0(1)4) xlabel(0(1)4) yscale(range(0 4)) ///
+>        text(2.5 0.5 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+>        legend(off) name(g2, replace)
+
+. 
+. * Body Transverse
+. spearman pan_body_trans ct_pan_body_trans if ct_pan_body_trans <= 4
+
+Number of observations =    286
+        Spearman's rho = 0.3117
+
+Test of H0: pan_body_trans and ct_pan_body_trans are independent
+                  Prob = 0.0000
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. twoway (scatter pan_body_trans ct_pan_body_trans if ct_pan_body_trans <= 4, msize(tiny)) ///
+>        (lfitci pan_body_trans ct_pan_body_trans if ct_pan_body_trans <= 4), ///
+>        ytitle("") xtitle("") title("Body, Transverse") ///
+>        ylabel(0(1)4) xlabel(0(1)4) yscale(range(0 4)) ///
+>        text(2.5 0.5 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+>        legend(off) name(g3, replace)
+
+. 
+. * Tail Transverse
+. spearman pan_tail_trans ct_pan_tail_trans if ct_pan_tail_trans <= 4
+
+Number of observations =    265
+        Spearman's rho = 0.0959
+
+Test of H0: pan_tail_trans and ct_pan_tail_trans are independent
+                  Prob = 0.1193
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. twoway (scatter pan_tail_trans ct_pan_tail_trans if ct_pan_tail_trans <= 4, msize(tiny)) ///
+>        (lfitci pan_tail_trans ct_pan_tail_trans if ct_pan_tail_trans <= 4), ///
+>        ytitle("") xtitle("") title("Tail, Transverse") ///
+>        ylabel(0(1)4) xlabel(0(1)4) yscale(range(0 4)) ///
+>        text(2.5 0.5 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+>        legend(off) name(g4, replace)
+
+. 
+. gr combine g1 g2 g3 g4, ///
+>     rows(2) cols(2) ///
+>     ycommon xcommon ///
+>     l1title("Ultrasound (cm)") ///
+>     b1title("CT Scan (cm)")
+
+. 
+. gr save "./figures/fige", replace
+file ./figures/fige saved as .gph format
+
+. gr export "./figures/fige.png", as(png) width(2400) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/fige.png saved as PNG format
+
+. 
+end of do-file
+
