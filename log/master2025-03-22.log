@@ -2,7 +2,7 @@
       name:  <unnamed>
        log:  /Users/juansolon/Documents/GitHub/sampa-radio/log/master2025-03-22.log
   log type:  text
- opened on:  22 Mar 2025, 03:27:24
+ opened on:  22 Mar 2025, 13:52:33
 
 . 
 . *CLEAR
@@ -12,7 +12,7 @@
 
 . 
 . display "`c(current_time)' `c(current_date)'"
-03:27:24 22 Mar 2025
+13:52:34 22 Mar 2025
 
 . 
 . * GLOBALS (or locals)

@@ -34,3 +34,5 @@ rename _merge from_trypsin
 label variable from_trypsin "With Copenhagen Lab Trypsin Data"
 
 rename ngml_trysinogen ngml_trypsinogen
+
+replace ngml_trypsinogen = 44.03 if ngml_trypsinogen ==4403 // outlier verified by copenhagen lab

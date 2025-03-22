@@ -179,6 +179,10 @@ file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002 saved as .
 . rename ngml_trysinogen ngml_trypsinogen
 
 . 
+. replace ngml_trypsinogen = 44.03 if ngml_trypsinogen ==4403 // outlier verified by copenhagen lab
+(1 real change made)
+
+. 
 end of do-file
 
 . 
@@ -636,7 +640,7 @@ end of do-file
 > inogenic_index rhba1c" 
 
 . 
-. local enzymes "lipase ngml_trypsinogen mgl_crp mgl_cystatin ul_amylp"
+. local enzymes "fecal_elastase lipase ngml_trypsinogen mgl_crp mgl_cystatin ul_amylp"
 
 . 
 . local body "bia fm_kg fm_per ffm_kg ffm_per fmi ffmi impedance bia_prob bia_comment adp adpfm_kg adpf
@@ -665,42 +669,219 @@ end of do-file
 . note: Selected variables kept for this paper in cr_keep.do 
 
 . describe, simple
-record_id     ses_tercile6  impedance     pan_pa~rosis  ct_pan_tai~s  from_trypsin  adj_wt_ct_~y
-cohort        ses_tercile   bia_prob      pan_pa~tosis  ct_pan_bod~l  recruited     adj_wt_ct_~d
-sampa_id      hiv           bia_comment   pan_duct      ct_pan_cc_~y  assay_feca~e  adj_sqrt_c..
-orgid         metformin     adp           pan_duct_s~s  ct_pan_cc_~d  assay_lipase  adj_sqrt_c~p
-sex           insulin       adpfm_kg      pan_duct_m~s  ct_pan_shape  radio2        adj_sqrt_c..
-dob           ogtt_time0    adpffm_kg     pan_calci     ct_pan_sha~m  ct2           adj_sqrt_c..
-age           hba1c         adpfm_per     pan_calci_~e  ct_pan_sha~c  radio_mis_~s  adj_sqrt_c~l
-indepth_sa~e  gluc_mean_~l  adpffm_per    pan_cyst_yes  ct_pan_con~r  radio_mis_~l  adj_sqrt_c~y
-indepth_exp   insulin_me~l  adp_prob      pan_oth_ab~l  ct_pan_con~m  radio3        adj_sqrt_c~d
-ct_sample     Matsuda_in~x  adp_comment   pan_oth_ab~y  ct_pan_con~c  subset        adj_wt_pan~p
-ct            insulinoge~x  pan_size_q~l  hepatomegaly  ct_pan_par~a  subset2       adj_wt_pan..
-ivgtt_sample  rhba1c        pan_head_t~s  splenomegaly  ct_pan_par~m  epi_binary    adj_wt_pan..
-ivgtt         lipase        pan_head_ap   cholelithi~s  ct_pan~rosis  epi_ordinal   adj_wt_pan..
-uss_sample    mgl_crp       pan_body_t~s  steatosis     ct_pan~tosis  child         adj_sqrt_p~p
-uss           mgl_cystatin  pan_tail_t~s  mass          ct_pan_duct   africa        adj_sqrt_p..
-ever_mal      ul_amylp      pan_shape     gynecologic   ct_pan_du~es  exposuretime  adj_sqrt_p..
-degree_mal    bia           pan_shape_~m  atheroscle~s  ct_pan_du~ss  fec_cohort    adj_sqrt_p..
-ses_tercile1  fm_kg         pan_shape_~y  nephrolith~s  ct_pan_calci  ct_pan_vol
-ses_tercile2  fm_per        pan_contour   pancreatic    ct_pan_cal~e  adj_wt_ct_..
-ses_tercile3  ffm_kg        pan_contou~m  ct_pan_siz~l  ct_pan_oth~l  adj_wt_ct_~p
-ses_tercile4  ffm_per       pan_contou~y  ct_pan_hea~s  ct_pan_oth~c  adj_wt_ct_..
-ses_tercile5  fmi           pan_parenc~a  ct_pan_hea~p  flag_fecal~e  adj_wt_ct_..
-comp1         ffmi          pan_paren_~m  ct_pan_bod~s  ngml_tryps~n  adj_wt_ct_~l
+record_id     ses_tercile6  impedance     pan_paren_~m  ct_pan_bod~s  ngml_tryps~n  adj_wt_ct_~l
+cohort        ses_tercile   bia_prob      pan_pa~rosis  ct_pan_tai~s  from_trypsin  adj_wt_ct_~y
+sampa_id      hiv           bia_comment   pan_pa~tosis  ct_pan_bod~l  recruited     adj_wt_ct_~d
+orgid         metformin     adp           pan_duct      ct_pan_cc_~y  assay_feca~e  adj_sqrt_c..
+sex           insulin       adpfm_kg      pan_duct_s~s  ct_pan_cc_~d  assay_lipase  adj_sqrt_c~p
+dob           ogtt_time0    adpffm_kg     pan_duct_m~s  ct_pan_shape  radio2        adj_sqrt_c..
+age           hba1c         adpfm_per     pan_calci     ct_pan_sha~m  ct2           adj_sqrt_c..
+indepth_sa~e  gluc_mean_~l  adpffm_per    pan_calci_~e  ct_pan_sha~c  radio_mis_~s  adj_sqrt_c~l
+indepth_exp   insulin_me~l  adp_prob      pan_cyst_yes  ct_pan_con~r  radio_mis_~l  adj_sqrt_c~y
+ct_sample     Matsuda_in~x  adp_comment   pan_oth_ab~l  ct_pan_con~m  radio3        adj_sqrt_c~d
+ct            insulinoge~x  fecal_elas~e  pan_oth_ab~y  ct_pan_con~c  subset        adj_wt_pan~p
+ivgtt_sample  rhba1c        pan_size_q~l  hepatomegaly  ct_pan_par~a  subset2       adj_wt_pan..
+ivgtt         lipase        pan_head_t~s  splenomegaly  ct_pan_par~m  epi_binary    adj_wt_pan..
+uss_sample    mgl_crp       pan_head_ap   cholelithi~s  ct_pan~rosis  epi_ordinal   adj_wt_pan..
+uss           mgl_cystatin  pan_body_t~s  steatosis     ct_pan~tosis  child         adj_sqrt_p~p
+ever_mal      ul_amylp      pan_tail_t~s  mass          ct_pan_duct   africa        adj_sqrt_p..
+degree_mal    bia           pan_shape     gynecologic   ct_pan_du~es  exposuretime  adj_sqrt_p..
+ses_tercile1  fm_kg         pan_shape_~m  atheroscle~s  ct_pan_du~ss  fec_cohort    adj_sqrt_p..
+ses_tercile2  fm_per        pan_shape_~y  nephrolith~s  ct_pan_calci  ct_pan_vol
+ses_tercile3  ffm_kg        pan_contour   pancreatic    ct_pan_cal~e  adj_wt_ct_..
+ses_tercile4  ffm_per       pan_contou~m  ct_pan_siz~l  ct_pan_oth~l  adj_wt_ct_~p
+ses_tercile5  fmi           pan_contou~y  ct_pan_hea~s  ct_pan_oth~c  adj_wt_ct_..
+comp1         ffmi          pan_parenc~a  ct_pan_hea~p  flag_fecal~e  adj_wt_ct_..
 
 . notes 
 
 _dta:
-  1.  Created for Imaging Paper on 22 Mar 2025 at 03:27:25 by juansolon
+  1.  Created for Imaging Paper on 22 Mar 2025 at 13:52:35 by juansolon
   2.  Trypsin data inserted from temporary dropbox data
   3.  Selected variables kept for this paper in cr_keep.do
 
 . 
 . save ./data-temp/subset_imaging.dta, replace
-(file ./data-temp/subset_imaging.dta not found)
 file ./data-temp/subset_imaging.dta saved
 
 . 
 end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. dtable fecal_elastase ul_amylp lipase ngml_trypsinogen if subset==1, by(ever_mal, tests) 
+note: using test regress across levels of ever_mal for fecal_elastase, ul_amylp, lipase, and
+      ngml_trypsinogen.
+
+--------------------------------------------------------------------------------
+                                    Ever experience malnutrition?               
+                           NPM                PM              Total        Test 
+--------------------------------------------------------------------------------
+N                       1,095 (51.6%)     1,029 (48.4%)    2,124 (100.0%)       
+Fecal Elastase      332.686 (211.491) 360.990 (215.727) 345.236 (213.783)  0.005
+Amylase (U/L)         32.391 (13.742)   35.610 (17.845)   33.772 (15.711) <0.001
+Lipase                 31.463 (6.154)    31.241 (7.396)    31.280 (7.184)  0.837
+Trypsinogen (ng/ml)   26.675 (14.668)   32.900 (33.882)   29.866 (26.470)  0.050
+--------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. help dtable
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+
+. 
+. dtable if subset==1, by(ever_mal, tests) ///
+> continuous(fecal_elastase ul_amylp lipase ngml_trypsinogen, ///
+> statistics(mean) test(kwallis))
+note: using test kwallis across levels of ever_mal for fecal_elastase, ul_amylp, lipase, and
+      ngml_trypsinogen.
+
+---------------------------------------------------------------------
+                              Ever experience malnutrition?          
+                         NPM            PM           Total      Test 
+---------------------------------------------------------------------
+N                   1,095 (51.6%) 1,029 (48.4%) 2,124 (100.0%)       
+Fecal Elastase            332.686       360.990        345.236  0.005
+Amylase (U/L)              32.391        35.610         33.772 <0.001
+Lipase                     31.463        31.241         31.280  0.576
+Trypsinogen (ng/ml)        26.675        32.900         29.866  0.286
+---------------------------------------------------------------------
+
+. 
+end of do-file
+
+. sktest ngml_tryp
+
+Skewness and kurtosis tests for normality
+                                                             ----- Joint test -----
+        Variable |       Obs   Pr(skewness)   Pr(kurtosis)   Adj chi2(2)  Prob>chi2
+-----------------+-----------------------------------------------------------------
+ngml_trypsinogen |       313         0.0000         0.0000        292.75     0.0000
+
+. regress trypsinogen ever_mal
+variable trypsinogen not found
+r(111);
+
+. regress ngml_trypsinogen ever_mal
+
+      Source |       SS           df       MS      Number of obs   =       313
+-------------+----------------------------------   F(1, 311)       =      4.37
+       Model |  2715.41875         1  2715.41875   Prob > F        =    0.0374
+    Residual |  193329.432       311  621.638045   R-squared       =    0.0139
+-------------+----------------------------------   Adj R-squared   =    0.0107
+       Total |  196044.851       312  628.348881   Root MSE        =    24.933
+
+------------------------------------------------------------------------------
+ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+    ever_mal |     5.8923   2.819261     2.09   0.037     .3450631    11.43954
+       _cons |   26.22314   2.015687    13.01   0.000     22.25703    30.18925
+------------------------------------------------------------------------------
+
+. regress ngml_trypsinogen ever_mal age bmi
+variable bmi not found
+r(111);
+
+. regress ngml_trypsinogen ever_mal age sex
+
+      Source |       SS           df       MS      Number of obs   =       313
+-------------+----------------------------------   F(3, 309)       =      6.18
+       Model |  11102.8444         3  3700.94815   Prob > F        =    0.0004
+    Residual |  184942.006       309   598.51782   R-squared       =    0.0566
+-------------+----------------------------------   Adj R-squared   =    0.0475
+       Total |  196044.851       312  628.348881   Root MSE        =    24.465
+
+------------------------------------------------------------------------------
+ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+    ever_mal |   6.015799   2.781884     2.16   0.031     .5419655    11.48963
+         age |    .370531   .1207325     3.07   0.002     .1329692    .6080928
+         sex |  -4.828645   2.798988    -1.73   0.086    -10.33613    .6788423
+       _cons |   17.02383   7.580853     2.25   0.025      2.10721    31.94046
+------------------------------------------------------------------------------
+
+. regress ngml_trypsinogen ever_mal age sex cohort
+
+      Source |       SS           df       MS      Number of obs   =       313
+-------------+----------------------------------   F(4, 308)       =      6.38
+       Model |  15002.9144         4  3750.72861   Prob > F        =    0.0001
+    Residual |  181041.936       308  587.798495   R-squared       =    0.0765
+-------------+----------------------------------   Adj R-squared   =    0.0645
+       Total |  196044.851       312  628.348881   Root MSE        =    24.245
+
+------------------------------------------------------------------------------
+ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+    ever_mal |   5.258331   2.772499     1.90   0.059    -.1971055    10.71377
+         age |   .2750096   .1252615     2.20   0.029     .0285331    .5214862
+         sex |  -6.365023   2.837213    -2.24   0.026     -11.9478   -.7822498
+      cohort |  -3.418207   1.327017    -2.58   0.010    -6.029373   -.8070415
+       _cons |   40.06975   11.68276     3.43   0.001     17.08163    63.05787
+------------------------------------------------------------------------------
+
+. regress ngml_trypsinogen ever_mal age sex i.cohort
+
+      Source |       SS           df       MS      Number of obs   =       313
+-------------+----------------------------------   F(6, 306)       =     11.04
+       Model |  34874.1437         6  5812.35729   Prob > F        =    0.0000
+    Residual |  161170.707       306  526.701657   R-squared       =    0.1779
+-------------+----------------------------------   Adj R-squared   =    0.1618
+       Total |  196044.851       312  628.348881   Root MSE        =     22.95
+
+------------------------------------------------------------------------------
+ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+    ever_mal |   3.841189   2.640927     1.45   0.147    -1.355486    9.037864
+         age |   .3154288   .1204727     2.62   0.009     .0783691    .5524886
+         sex |  -10.39944   2.769189    -3.76   0.000     -15.8485   -4.950377
+             |
+      cohort |
+    NUSTART  |   20.59947   4.175198     4.93   0.000     12.38374     28.8152
+      STATT  |   -1.26972   3.945653    -0.32   0.748    -9.033765    6.494326
+      CLHNS  |   -2.45063   3.992541    -0.61   0.540    -10.30694     5.40568
+             |
+       _cons |   25.44781   8.558902     2.97   0.003     8.606056    42.28956
+------------------------------------------------------------------------------
+
+. regress ngml_trypsinogen ever_mal age sex i.child
+note: 2.child omitted because of collinearity.
+
+      Source |       SS           df       MS      Number of obs   =       313
+-------------+----------------------------------   F(3, 309)       =      6.18
+       Model |  11102.8444         3  3700.94815   Prob > F        =    0.0004
+    Residual |  184942.006       309   598.51782   R-squared       =    0.0566
+-------------+----------------------------------   Adj R-squared   =    0.0475
+       Total |  196044.851       312  628.348881   Root MSE        =    24.465
+
+------------------------------------------------------------------------------
+ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+    ever_mal |   6.015799   2.781884     2.16   0.031     .5419655    11.48963
+         age |    .370531   .1207325     3.07   0.002     .1329692    .6080928
+         sex |  -4.828645   2.798988    -1.73   0.086    -10.33613    .6788423
+             |
+       child |
+      Adult  |          0  (omitted)
+       _cons |   17.02383   7.580853     2.25   0.025      2.10721    31.94046
+------------------------------------------------------------------------------
+
+. regress ngml_trypsinogen ever_mal age sex 
+
+      Source |       SS           df       MS      Number of obs   =       313
+-------------+----------------------------------   F(3, 309)       =      6.18
+       Model |  11102.8444         3  3700.94815   Prob > F        =    0.0004
+    Residual |  184942.006       309   598.51782   R-squared       =    0.0566
+-------------+----------------------------------   Adj R-squared   =    0.0475
+       Total |  196044.851       312  628.348881   Root MSE        =    24.465
+
+------------------------------------------------------------------------------
+ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+    ever_mal |   6.015799   2.781884     2.16   0.031     .5419655    11.48963
+         age |    .370531   .1207325     3.07   0.002     .1329692    .6080928
+         sex |  -4.828645   2.798988    -1.73   0.086    -10.33613    .6788423
+       _cons |   17.02383   7.580853     2.25   0.025      2.10721    31.94046
+------------------------------------------------------------------------------
 

@@ -19,7 +19,7 @@ local derived3 "flag_fecal_elastase ngml_trypsinogen from_trypsin recruited assa
 
 local glucose "metformin insulin ogtt_time0 hba1c gluc_mean_mgdl insulin_mean_mul Matsuda_index insulinogenic_index rhba1c" 
 
-local enzymes "lipase ngml_trypsinogen mgl_crp mgl_cystatin ul_amylp"
+local enzymes "fecal_elastase lipase ngml_trypsinogen mgl_crp mgl_cystatin ul_amylp"
 
 local body "bia fm_kg fm_per ffm_kg ffm_per fmi ffmi impedance bia_prob bia_comment adp adpfm_kg adpffm_kg adpfm_per adpffm_per adp_prob adp_comment"
 
