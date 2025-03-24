@@ -27,3 +27,5 @@ local organs "hepatomegaly splenomegaly cholelithiasis steatosis mass gynecologi
 
 
 keep `subj1' `subj2' `ses' `uss' `ct' `derived1' `derived2' `derived3' `glucose' `enzymes' `body' `organs'
+
+keep if subset==1

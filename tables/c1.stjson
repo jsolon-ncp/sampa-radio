@@ -1,0 +1,731 @@
+{
+  "AutoHideDims": [
+    "var"
+  ],
+  "Items": {
+    "cmdset[1]#colname[fecal_elastase]#command[0]#ever_mal[0]#result[column1]#statcmd[3]#var[fecal_elastase]": {
+      "d": 313.7040100097656
+    },
+    "cmdset[1]#colname[fecal_elastase]#command[0]#ever_mal[0]#result[column2]#statcmd[4]#var[fecal_elastase]": {
+      "d": 132.43699645996094
+    },
+    "cmdset[1]#colname[fecal_elastase]#command[0]#ever_mal[0]#result[column3]#statcmd[5]#var[fecal_elastase]": {
+      "d": 587.6311645507813
+    },
+    "cmdset[1]#colname[fecal_elastase]#command[0]#ever_mal[0]#result[count]#statcmd[2]#var[fecal_elastase]": {
+      "d": 1003.0
+    },
+    "cmdset[1]#colname[fecal_elastase]#command[0]#ever_mal[1]#result[column1]#statcmd[3]#var[fecal_elastase]": {
+      "d": 374.8240051269531
+    },
+    "cmdset[1]#colname[fecal_elastase]#command[0]#ever_mal[1]#result[column2]#statcmd[4]#var[fecal_elastase]": {
+      "d": 146.21653747558594
+    },
+    "cmdset[1]#colname[fecal_elastase]#command[0]#ever_mal[1]#result[column3]#statcmd[5]#var[fecal_elastase]": {
+      "d": 600.0
+    },
+    "cmdset[1]#colname[fecal_elastase]#command[0]#ever_mal[1]#result[count]#statcmd[2]#var[fecal_elastase]": {
+      "d": 799.0
+    },
+    "cmdset[1]#colname[lipase]#command[0]#ever_mal[0]#result[column1]#statcmd[3]#var[lipase]": {
+      "d": 30.5
+    },
+    "cmdset[1]#colname[lipase]#command[0]#ever_mal[0]#result[column2]#statcmd[4]#var[lipase]": {
+      "d": 26.0
+    },
+    "cmdset[1]#colname[lipase]#command[0]#ever_mal[0]#result[column3]#statcmd[5]#var[lipase]": {
+      "d": 36.0
+    },
+    "cmdset[1]#colname[lipase]#command[0]#ever_mal[0]#result[count]#statcmd[2]#var[lipase]": {
+      "d": 54.0
+    },
+    "cmdset[1]#colname[lipase]#command[0]#ever_mal[1]#result[column1]#statcmd[3]#var[lipase]": {
+      "d": 30.0
+    },
+    "cmdset[1]#colname[lipase]#command[0]#ever_mal[1]#result[column2]#statcmd[4]#var[lipase]": {
+      "d": 26.0
+    },
+    "cmdset[1]#colname[lipase]#command[0]#ever_mal[1]#result[column3]#statcmd[5]#var[lipase]": {
+      "d": 35.0
+    },
+    "cmdset[1]#colname[lipase]#command[0]#ever_mal[1]#result[count]#statcmd[2]#var[lipase]": {
+      "d": 253.0
+    },
+    "cmdset[1]#colname[ngml_trypsinogen]#command[0]#ever_mal[0]#result[column1]#statcmd[3]#var[ngml_trypsinogen]": {
+      "d": 24.2
+    },
+    "cmdset[1]#colname[ngml_trypsinogen]#command[0]#ever_mal[0]#result[column2]#statcmd[4]#var[ngml_trypsinogen]": {
+      "d": 17.2
+    },
+    "cmdset[1]#colname[ngml_trypsinogen]#command[0]#ever_mal[0]#result[column3]#statcmd[5]#var[ngml_trypsinogen]": {
+      "d": 32.5
+    },
+    "cmdset[1]#colname[ngml_trypsinogen]#command[0]#ever_mal[0]#result[count]#statcmd[2]#var[ngml_trypsinogen]": {
+      "d": 135.0
+    },
+    "cmdset[1]#colname[ngml_trypsinogen]#command[0]#ever_mal[1]#result[column1]#statcmd[3]#var[ngml_trypsinogen]": {
+      "d": 25.75
+    },
+    "cmdset[1]#colname[ngml_trypsinogen]#command[0]#ever_mal[1]#result[column2]#statcmd[4]#var[ngml_trypsinogen]": {
+      "d": 17.6
+    },
+    "cmdset[1]#colname[ngml_trypsinogen]#command[0]#ever_mal[1]#result[column3]#statcmd[5]#var[ngml_trypsinogen]": {
+      "d": 36.1
+    },
+    "cmdset[1]#colname[ngml_trypsinogen]#command[0]#ever_mal[1]#result[count]#statcmd[2]#var[ngml_trypsinogen]": {
+      "d": 142.0
+    },
+    "cmdset[1]#colname[ul_amylp]#command[0]#ever_mal[0]#result[column1]#statcmd[3]#var[ul_amylp]": {
+      "d": 29.6
+    },
+    "cmdset[1]#colname[ul_amylp]#command[0]#ever_mal[0]#result[column2]#statcmd[4]#var[ul_amylp]": {
+      "d": 23.45
+    },
+    "cmdset[1]#colname[ul_amylp]#command[0]#ever_mal[0]#result[column3]#statcmd[5]#var[ul_amylp]": {
+      "d": 38.0
+    },
+    "cmdset[1]#colname[ul_amylp]#command[0]#ever_mal[0]#result[count]#statcmd[2]#var[ul_amylp]": {
+      "d": 1008.0
+    },
+    "cmdset[1]#colname[ul_amylp]#command[0]#ever_mal[1]#result[column1]#statcmd[3]#var[ul_amylp]": {
+      "d": 31.1
+    },
+    "cmdset[1]#colname[ul_amylp]#command[0]#ever_mal[1]#result[column2]#statcmd[4]#var[ul_amylp]": {
+      "d": 24.4
+    },
+    "cmdset[1]#colname[ul_amylp]#command[0]#ever_mal[1]#result[column3]#statcmd[5]#var[ul_amylp]": {
+      "d": 42.0
+    },
+    "cmdset[1]#colname[ul_amylp]#command[0]#ever_mal[1]#result[count]#statcmd[2]#var[ul_amylp]": {
+      "d": 757.0
+    },
+    "cmdset[1]#command[0]#ever_mal[0]#result[frequency]#statcmd[1]#var[_hide]": {
+      "d": 1095.0
+    },
+    "cmdset[1]#command[0]#ever_mal[1]#result[frequency]#statcmd[1]#var[_hide]": {
+      "d": 1029.0
+    },
+    "cmdset[1]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
+      "d": 7.918321480477971
+    },
+    "cmdset[1]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[_hide]": {
+      "d": 8.052272173180189
+    },
+    "cmdset[1]#program_class[rclass]#result[DF]#result_type[scalar]#var[_hide]": {
+      "d": 1.0
+    },
+    "cmdset[1]#program_class[rclass]#result[p]#result_type[scalar]#var[_hide]": {
+      "d": 0.004893665328462576
+    },
+    "cmdset[1]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[_hide]": {
+      "d": 0.004544661942877413
+    },
+    "cmdset[2]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
+      "d": 12.04590967568129
+    },
+    "cmdset[2]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[_hide]": {
+      "d": 12.046055966907321
+    },
+    "cmdset[2]#program_class[rclass]#result[DF]#result_type[scalar]#var[_hide]": {
+      "d": 1.0
+    },
+    "cmdset[2]#program_class[rclass]#result[p]#result_type[scalar]#var[_hide]": {
+      "d": 0.0005190615043542241
+    },
+    "cmdset[2]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[_hide]": {
+      "d": 0.0005190207705199956
+    },
+    "cmdset[3]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
+      "d": 0.3124497652183891
+    },
+    "cmdset[3]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[_hide]": {
+      "d": 0.3134619085312719
+    },
+    "cmdset[3]#program_class[rclass]#result[DF]#result_type[scalar]#var[_hide]": {
+      "d": 1.0
+    },
+    "cmdset[3]#program_class[rclass]#result[p]#result_type[scalar]#var[_hide]": {
+      "d": 0.5761807878073121
+    },
+    "cmdset[3]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[_hide]": {
+      "d": 0.5755635489939235
+    },
+    "cmdset[4]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
+      "d": 1.138274939615144
+    },
+    "cmdset[4]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[_hide]": {
+      "d": 1.1383147871689792
+    },
+    "cmdset[4]#program_class[rclass]#result[DF]#result_type[scalar]#var[_hide]": {
+      "d": 1.0
+    },
+    "cmdset[4]#program_class[rclass]#result[p]#result_type[scalar]#var[_hide]": {
+      "d": 0.286017136740101
+    },
+    "cmdset[4]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[_hide]": {
+      "d": 0.2860087032613525
+    }
+  },
+  "Labels": {
+    "Dimensions": {
+      "_dimensions": {
+        "border_block": "Table border block",
+        "cell_type": "Table cell type",
+        "cmdset": "Command results index",
+        "colname": "Covariate names and column names",
+        "command": "Command option index",
+        "ever_mal": "Ever experience malnutrition?",
+        "program_class": "Result program class",
+        "result": "Result",
+        "result_type": "Result type",
+        "statcmd": "Statistic/command option index",
+        "var": "Statistic option variable"
+      },
+      "colname": {
+        "fecal_elastase": "Fecal Elastase",
+        "lipase": "Lipase",
+        "ngml_trypsinogen": "Trypsinogen (ng/ml)",
+        "ul_amylp": "Amylase (U/L)"
+      },
+      "command": {
+        "0": "Statistic"
+      },
+      "ever_mal": {
+        ".m": "Total",
+        "0": "NPM",
+        "1": "PM"
+      },
+      "result": {
+        "count": "Number of nonmissing values",
+        "frequency": "Frequency",
+        "p25": "25th percentile",
+        "p50": "50th percentile",
+        "p75": "75th percentile"
+      },
+      "result_type": {
+        "scalar": "Scalar"
+      },
+      "var": {
+        "fecal_elastase": "Fecal Elastase",
+        "lipase": "Lipase",
+        "ngml_trypsinogen": "Trypsinogen (ng/ml)",
+        "ul_amylp": "Amylase (U/L)"
+      }
+    }
+  },
+  "Layout": {
+    "columns": "ever_mal#result[count column1 column4]",
+    "rows": "var",
+    "tables": ""
+  },
+  "NumericDimNames": [
+    "ever_mal"
+  ],
+  "ScalarResults": [
+    "Chi2",
+    "Chi2_adj",
+    "DF",
+    "p",
+    "p_adj"
+  ],
+  "Styles": {
+    "CompositeMap": {
+      "column4": {
+        "elements": [
+          "column2",
+          "column3"
+        ]
+      }
+    },
+    "cell": {
+      "base": {
+        "ci-delimiter": "   ",
+        "cri-delimiter": "   ",
+        "nformat": "%9.0g"
+      },
+      "edits": [
+        [
+          "cell_type[item]",
+          {
+            "smcl": "result"
+          }
+        ],
+        [
+          "result[_r_b _r_se _r_lb _r_ub _r_ci _r_crlb _r_crub _r_cri]",
+          {
+            "nformat": "%9.0g"
+          }
+        ],
+        [
+          "result[_r_z _r_z_abs]",
+          {
+            "nformat": "%8.2f"
+          }
+        ],
+        [
+          "result[_r_p]",
+          {
+            "nformat": "%5.3f"
+          }
+        ],
+        [
+          "result[count frequency fvrawfrequency]",
+          {
+            "nformat": "%18.0fc"
+          }
+        ],
+        [
+          "result[fvpercent fvrawpercent percent rawpercent]",
+          {
+            "nformat": "%9.2f"
+          }
+        ],
+        [
+          "result[fvproportion fvrawproportion proportion rawproportion]",
+          {
+            "nformat": "%9.4g"
+          }
+        ],
+        [
+          "result[rawtotal sumw total fvfrequency]",
+          {
+            "nformat": "%18.6gc"
+          }
+        ],
+        [
+          "cell_type[item]",
+          {
+            "margin-left": {
+              "width": "10pt"
+            }
+          }
+        ],
+        [
+          "cell_type[corner]",
+          {
+            "halign": "center"
+          }
+        ],
+        [
+          "cell_type[column-header]",
+          {
+            "halign": "right"
+          }
+        ],
+        [
+          "cell_type[column-header]#result[_r_ci _r_cri]",
+          {
+            "halign": "center"
+          }
+        ],
+        [
+          "cell_type[item]",
+          {
+            "halign": "right"
+          }
+        ],
+        [
+          "cell_type[row-header]",
+          {
+            "halign": "left"
+          }
+        ],
+        [
+          "border_block[corner]",
+          {
+            "border-right": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[column-header]",
+          {
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[row-header]",
+          {
+            "border-bottom": {
+              "pattern": "single"
+            },
+            "border-right": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[item]",
+          {
+            "border-bottom": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "result[p]",
+          {
+            "nformat": "%5.3f"
+          }
+        ],
+        [
+          "result[p]",
+          {
+            "sformat": "p=%s"
+          }
+        ],
+        [
+          "border_block",
+          {
+            "border-right": {
+              "pattern": "nil"
+            }
+          }
+        ],
+        [
+          "result[column1]#var[fecal_elastase ul_amylp lipase ngml_trypsinogen]",
+          {
+            "nformat": "%5.0f"
+          }
+        ],
+        [
+          "result[column2]#var[fecal_elastase ul_amylp lipase ngml_trypsinogen]",
+          {
+            "nformat": "%5.0f",
+            "sformat": "(%s-"
+          }
+        ],
+        [
+          "result[column3]#var[fecal_elastase ul_amylp lipase ngml_trypsinogen]",
+          {
+            "nformat": "%5.0f",
+            "sformat": "%s)"
+          }
+        ],
+        [
+          "result[count]",
+          {
+            "nformat": "%4.0f"
+          }
+        ],
+        [
+          "result[count]",
+          {
+            "sformat": "[%s]"
+          }
+        ]
+      ]
+    },
+    "export": {
+      "tex": {
+        "begintable": "true",
+        "centering": "true"
+      }
+    },
+    "header": {
+      "auto-levels": {
+        "result": [
+          {
+            "stripe": "count",
+            "term-index": 1
+          },
+          {
+            "stripe": "frequency",
+            "term-index": 0
+          },
+          {
+            "stripe": "p25",
+            "term-index": 3
+          },
+          {
+            "stripe": "p50",
+            "term-index": 2
+          },
+          {
+            "stripe": "p75",
+            "term-index": 4
+          }
+        ]
+      },
+      "base": {
+        "level": "label",
+        "title": "hide"
+      },
+      "column": {
+        "dups": "center",
+        "extra-space": 1
+      },
+      "dimensions": {
+        "across": {
+          "title": "hide"
+        },
+        "coleq": {
+          "title": "hide"
+        },
+        "colname": {
+          "title": "hide"
+        },
+        "command": {
+          "title": "hide"
+        },
+        "ever_mal": {
+          "nformat": "%9.0g",
+          "title": "hide"
+        },
+        "result": {
+          "level": "hide",
+          "title": "hide"
+        },
+        "roweq": {
+          "title": "hide"
+        },
+        "rowname": {
+          "title": "hide"
+        },
+        "stars": {
+          "level": "hide",
+          "title": "hide"
+        },
+        "statcmd": {
+          "title": "hide"
+        },
+        "var": {
+          "title": "hide"
+        }
+      },
+      "row": {
+        "arrangement": "stack",
+        "nobinder": "true",
+        "spacer": "true"
+      }
+    },
+    "notes": [
+      "Values are [N] median (p25-p50).",
+      "Faecal elastase values are upper limit of detection is 600.",
+      "Lipase from DIVIDS cohort only.",
+      "Trypsinogen from CT Scan subset only."
+    ],
+    "title": "Table . Pancreatic Enzyme Assays"
+  },
+  "Tags": {
+    "border_block": [
+      {
+        "stripe": "column-header",
+        "term-index": 0
+      },
+      {
+        "stripe": "corner",
+        "term-index": 0
+      },
+      {
+        "stripe": "item",
+        "term-index": 0
+      },
+      {
+        "stripe": "row-header",
+        "term-index": 0
+      }
+    ],
+    "cell_type": [
+      {
+        "stripe": "column-header",
+        "term-index": 0
+      },
+      {
+        "stripe": "corner",
+        "term-index": 0
+      },
+      {
+        "stripe": "item",
+        "term-index": 0
+      },
+      {
+        "stripe": "row-header",
+        "term-index": 0
+      }
+    ],
+    "cmdset": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      },
+      {
+        "stripe": "2",
+        "term-index": 1
+      },
+      {
+        "stripe": "3",
+        "term-index": 2
+      },
+      {
+        "stripe": "4",
+        "term-index": 3
+      }
+    ],
+    "colname": [
+      {
+        "stripe": "fecal_elastase",
+        "term-index": 1
+      },
+      {
+        "stripe": "lipase",
+        "term-index": 3
+      },
+      {
+        "stripe": "ngml_trypsinogen",
+        "term-index": 4
+      },
+      {
+        "stripe": "ul_amylp",
+        "term-index": 2
+      }
+    ],
+    "command": [
+      {
+        "stripe": "0",
+        "term-index": 0
+      }
+    ],
+    "ever_mal": [
+      {
+        "stripe": "0",
+        "term-index": 0
+      },
+      {
+        "stripe": "1",
+        "term-index": 1
+      }
+    ],
+    "program_class": [
+      {
+        "stripe": "eclass",
+        "term-index": 0
+      },
+      {
+        "stripe": "rclass",
+        "term-index": 0
+      }
+    ],
+    "result": [
+      {
+        "stripe": "Chi2",
+        "term-index": 0
+      },
+      {
+        "stripe": "Chi2_adj",
+        "term-index": 0
+      },
+      {
+        "stripe": "DF",
+        "term-index": 0
+      },
+      {
+        "stripe": "column1",
+        "term-index": 0
+      },
+      {
+        "stripe": "column2",
+        "term-index": 0
+      },
+      {
+        "stripe": "column3",
+        "term-index": 0
+      },
+      {
+        "stripe": "column4",
+        "term-index": 0
+      },
+      {
+        "stripe": "count",
+        "term-index": 0
+      },
+      {
+        "stripe": "frequency",
+        "term-index": 0
+      },
+      {
+        "stripe": "p",
+        "term-index": 0
+      },
+      {
+        "stripe": "p25",
+        "term-index": 0
+      },
+      {
+        "stripe": "p50",
+        "term-index": 0
+      },
+      {
+        "stripe": "p75",
+        "term-index": 0
+      },
+      {
+        "stripe": "p_adj",
+        "term-index": 0
+      }
+    ],
+    "result_type": [
+      {
+        "stripe": "scalar",
+        "term-index": 0
+      }
+    ],
+    "statcmd": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      },
+      {
+        "stripe": "2",
+        "term-index": 0
+      },
+      {
+        "stripe": "3",
+        "term-index": 0
+      },
+      {
+        "stripe": "4",
+        "term-index": 0
+      },
+      {
+        "stripe": "5",
+        "term-index": 0
+      }
+    ],
+    "var": [
+      {
+        "stripe": "_hide",
+        "term-index": 1
+      },
+      {
+        "stripe": "fecal_elastase",
+        "term-index": 2
+      },
+      {
+        "stripe": "lipase",
+        "term-index": 4
+      },
+      {
+        "stripe": "ngml_trypsinogen",
+        "term-index": 5
+      },
+      {
+        "stripe": "ul_amylp",
+        "term-index": 3
+      }
+    ]
+  },
+  "collection-name": "c1"
+}

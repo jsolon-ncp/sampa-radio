@@ -83,7 +83,7 @@ do ./do/cr_continuous_independent.do 		// Derived variables for imaging that are
 do ./do/cr_keep.do 
 
 notes drop _dta 
-note: Created for Imaging Paper on `c(current_date)' at `c(current_time)' by `c(username)'
+note: Subset Created for Imaging Paper on `c(current_date)' at `c(current_time)' by `c(username)'
 note: Trypsin data inserted from temporary dropbox data 
 note: Selected variables kept for this paper in cr_keep.do 
 describe, simple

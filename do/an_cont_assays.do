@@ -1,6 +1,9 @@
 /*
 an_cont_assays.do 
 Analysis of fecal elastase levels
+ul_amylp mgl_crp mgl_cystatin
+ngml tryp
+
 */
 capture log close
 log using ./log/an_cont.txt, replace
@@ -8,13 +11,20 @@ log using ./log/an_cont.txt, replace
 * 1. Descriptive Statistics
 * ------------------------
 * Basic statistics for key variables
-table () (ever_mal), ///
+table (cohort) (ever_mal), ///
 stat(frequency) /// 
-stat(mean fecal_elastase) ///
-stat(p25 fecal_elastase) ///
-stat(p50 fecal_elastase) ///
-stat(p75 fecal_elastase) ///
-stat(iqr fecal_elastase)
+stat(mean fecal_elastase ul_amylp lipase ngml_trypsinogen) ///
+stat(p25 fecal_elastase ul_amylp lipase ngml_trypsinogen) ///
+stat(p50 fecal_elastase ul_amylp lipase ngml_trypsinogen) ///
+stat(p75 fecal_elastase ul_amylp lipase ngml_trypsinogen) ///
+stat(iqr fecal_elastase ul_amylp lipase ngml_trypsinogen)
+
+
+
+dtable if subset==1, by(ever_mal, tests) ///
+continuous(fecal_elastase ul_amylp lipase ngml_trypsinogen, ///
+statistics(p50 iqr) test(kwallis)) 
+
 
 table () (bmi_cat), ///
 stat(frequency) /// 

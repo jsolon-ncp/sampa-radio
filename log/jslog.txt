@@ -29,8 +29,7 @@ end of do-file
 /Users/juansolon/Documents/GitHub/sampa-radio
 
 . 
-. do ./do/cr_flag_elastase.do             // Flags the elastase samples that should not be analyzed bas
-> ed on ELISA standards ; n = 90
+. do ./do/cr_flag_elastase.do             // Flags the elastase samples that should not be analyzed based on ELISA standards ; n = 90
 
 . /*
 > cr_flag_elastase.do                     
@@ -49,7 +48,7 @@ end of do-file
 
 . 
 . save `1'
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000001 saved as .dta format
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000001 saved as .dta format
 
 . 
 . ***  IMPORT ZAMBIA ELISA DATA (PLATE DROPPED)
@@ -84,7 +83,7 @@ file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000001 saved as .
 
 . 
 . save `2'
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002 saved as .dta format
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000002 saved as .dta format
 
 . 
 . frame change sampa
@@ -129,7 +128,7 @@ end of do-file
 
 . 
 . save `1'
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000001 saved as .dta format
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000001 saved as .dta format
 
 . 
 . ***  reads trypsin
@@ -139,15 +138,14 @@ file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000001 saved as .
 . frame change trypsin
 
 . 
-. use  "~/Cox working group Dropbox/TB Nutrition working group/SAMPA/DATA monitoring/Data/Copenhagen la
-> b/data/cohort_temporary_trypsinogen.dta"
+. use  "~/Cox working group Dropbox/TB Nutrition working group/SAMPA/DATA monitoring/Data/Copenhagen lab/data/cohort_temporary_trypsinogen.dta"
 
 . 
 . sort sampa_id
 
 . 
 . save `2'
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002 saved as .dta format
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000002 saved as .dta format
 
 . 
 . frame change sampa
@@ -165,8 +163,7 @@ file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_77831.000002 saved as .
     -----------------------------------------
 
 . 
-. drop if _merge ==2 // _merge ==2 from lab only.  these are individuals with no bmi and dropped from c
-> ombined.
+. drop if _merge ==2 // _merge ==2 from lab only.  these are individuals with no bmi and dropped from combined.
 (6 observations deleted)
 
 . 
@@ -191,14 +188,11 @@ end of do-file
 
 . 
 .  
-. do ./do/cr_sample_binary.do             // Generates or recodes ultrasound ct scan and elisa assays a
-> s binary with or without samples
+. do ./do/cr_sample_binary.do             // Generates or recodes ultrasound ct scan and elisa assays as binary with or without samples
 
 . /* 
-> cr_sample_binary.do                             // Generates or recodes ultrasound ct scan and elisa 
-> assays as binary with or without samples
->                                                                 // Include here the same for presence
->  or absence of functional enzyme assays 
+> cr_sample_binary.do                             // Generates or recodes ultrasound ct scan and elisa assays as binary with or without samples
+>                                                                 // Include here the same for presence or absence of functional enzyme assays 
 >                                                                 
 > Juan Solon
 > March 3 2025
@@ -265,10 +259,9 @@ end of do-file
 
 . 
 . 
-. egen radio_mis_all = rowmiss(pan_size_qual pan_head_trans pan_head_ap pan_body_trans pan_tail_trans p
-> an_shape pan_shape_problem pan_shape_prob_specify pan_contour pan_contour_problem pan_contour_prob_sp
-> ecify pan_parenchyma pan_paren_inflam pan_paren_fibrosis pan_paren_steatosis pan_duct pan_duct_stones
->  pan_duct_mass pan_calci pan_calci_place pan_cyst_yes pan_oth_abnormal pan_oth_abn_specify)
+. egen radio_mis_all = rowmiss(pan_size_qual pan_head_trans pan_head_ap pan_body_trans pan_tail_trans pan_shape pan_shape_problem pan_shape_prob_specify pan_contour pan_contour_problem pan_cont
+> our_prob_specify pan_parenchyma pan_paren_inflam pan_paren_fibrosis pan_paren_steatosis pan_duct pan_duct_stones pan_duct_mass pan_calci pan_calci_place pan_cyst_yes pan_oth_abnormal pan_oth_
+> abn_specify)
 
 . 
 . clonevar radio3 = radio2
@@ -299,10 +292,8 @@ end of do-file
 . 
 end of do-file
 
-.                                                                                 // Include here the s
-> ame for presence or absence of functional enzyme assays 
-.                                                                                 // Revise once amylas
-> e and trypsinogen 
+.                                                                                 // Include here the same for presence or absence of functional enzyme assays 
+.                                                                                 // Revise once amylase and trypsinogen 
 . 
 . 
 .  cd `pwd'
@@ -363,10 +354,8 @@ end of do-file
 end of do-file
 
 . 
-.                                                                                 // Recodes fecal_elas
-> tase to with or without EPI and levels of EPI
-.                                                                                 // Include here any r
-> ecoding of other functional enzymes once that data is in and cut-offs are known
+.                                                                                 // Recodes fecal_elastase to with or without EPI and levels of EPI
+.                                                                                 // Include here any recoding of other functional enzymes once that data is in and cut-offs are known
 . 
 .  cd `pwd'
 /Users/juansolon/Documents/GitHub/sampa-radio
@@ -488,14 +477,12 @@ end of do-file
 end of do-file
 
 . 
-.                                                                                 // Include here any d
-> erived variables for imaging that are categorical
+.                                                                                 // Include here any derived variables for imaging that are categorical
 . 
 .  cd `pwd'
 /Users/juansolon/Documents/GitHub/sampa-radio
 
-. do ./do/cr_continuous_independent.do            // Derived variables for imaging that are continuous 
-> ; include transformations / weights
+. do ./do/cr_continuous_independent.do            // Derived variables for imaging that are continuous ; include transformations / weights
 
 . /*
 > SAMPA
@@ -525,8 +512,7 @@ end of do-file
 . 
 . cap drop ct_pan_vol
 
-.         gen ct_pan_vol=((ct_pan_tail_trans+ct_pan_body_trans)/2)*ct_pan_body_tail*ct_pan_cc_body+((ct
-> _pan_head_ap/2)^2)*3.14*ct_pan_cc_head
+.         gen ct_pan_vol=((ct_pan_tail_trans+ct_pan_body_trans)/2)*ct_pan_body_tail*ct_pan_cc_body+((ct_pan_head_ap/2)^2)*3.14*ct_pan_cc_head
 (2,036 missing values generated)
 
 .         cap label variable ct_pan_vol "Calculated Pancreatic Volume; Study"
@@ -534,8 +520,7 @@ end of do-file
 . 
 .         
 . 
-. foreach var of varlist ct_pan_head_trans ct_pan_head_ap ct_pan_body_trans ct_pan_tail_trans ct_pan_bo
-> dy_tail ct_pan_cc_body ct_pan_cc_head {
+. foreach var of varlist ct_pan_head_trans ct_pan_head_ap ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan_cc_body ct_pan_cc_head {
   2.         gen adj_wt_`var' = `var'/weight
   3. }
 (1,954 missing values generated)
@@ -548,8 +533,7 @@ end of do-file
 
 . 
 . 
-. foreach var of varlist ct_pan_head_trans ct_pan_head_ap ct_pan_body_trans ct_pan_tail_trans ct_pan_bo
-> dy_tail ct_pan_cc_body ct_pan_cc_head {
+. foreach var of varlist ct_pan_head_trans ct_pan_head_ap ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan_cc_body ct_pan_cc_head {
   2.         gen adj_sqrt_`var' = sqrt(`var')
   3. }               
 (1,954 missing values generated)
@@ -599,61 +583,52 @@ end of do-file
 . local nutrition "bmi haz bmiz bmi_cat_child bmi_cat weight height"
 
 . 
-. local subj2 "indepth_sample indepth_exp ct_sample ct ivgtt_sample ivgtt uss_sample uss ever_mal degre
-> e_mal"
+. local subj2 "indepth_sample indepth_exp ct_sample ct ivgtt_sample ivgtt uss_sample uss ever_mal degree_mal"
 
 . 
-. local ses "ses_tercile1 ses_tercile2 ses_tercile3 ses_tercile4 ses_tercile5 comp1 ses_tercile6 ses_te
-> rcile"
+. local ses "ses_tercile1 ses_tercile2 ses_tercile3 ses_tercile4 ses_tercile5 comp1 ses_tercile6 ses_tercile"
 
 . 
-. local uss "pan_size_qual pan_head_trans pan_head_ap pan_body_trans pan_tail_trans pan_shape pan_shape
-> _problem pan_shape_prob_specify pan_contour pan_contour_problem pan_contour_prob_specify pan_parenchy
-> ma pan_paren_inflam pan_paren_fibrosis pan_paren_steatosis pan_duct pan_duct_stones pan_duct_mass pan
-> _calci pan_calci_place pan_cyst_yes pan_oth_abnormal pan_oth_abn_specify pancreatic"
+. local uss "pan_size_qual pan_head_trans pan_head_ap pan_body_trans pan_tail_trans pan_shape pan_shape_problem pan_shape_prob_specify pan_contour pan_contour_problem pan_contour_prob_specify p
+> an_parenchyma pan_paren_inflam pan_paren_fibrosis pan_paren_steatosis pan_duct pan_duct_stones pan_duct_mass pan_calci pan_calci_place pan_cyst_yes pan_oth_abnormal pan_oth_abn_specify pancre
+> atic"
 
 . 
-. local ct "ct_pan_size_qual ct_pan_head_trans ct_pan_head_ap ct_pan_body_trans ct_pan_tail_trans ct_pa
-> n_body_tail ct_pan_cc_body ct_pan_cc_head ct_pan_shape ct_pan_shape_problem ct_pan_shape_prob_spec ct
-> _pan_contour ct_pan_contour_problem ct_pan_contour_prob_spec ct_pan_parenchyma ct_pan_paren_inflam ct
-> _pan_paren_fibrosis ct_pan_paren_steatosis ct_pan_duct ct_pan_duct_stones ct_pan_duct_mass ct_pan_cal
-> ci ct_pan_calci_place ct_pan_oth_abnormal ct_pan_oth_abn_spec"
+. local ct "ct_pan_size_qual ct_pan_head_trans ct_pan_head_ap ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan_cc_body ct_pan_cc_head ct_pan_shape ct_pan_shape_problem ct_pan_shape_p
+> rob_spec ct_pan_contour ct_pan_contour_problem ct_pan_contour_prob_spec ct_pan_parenchyma ct_pan_paren_inflam ct_pan_paren_fibrosis ct_pan_paren_steatosis ct_pan_duct ct_pan_duct_stones ct_pa
+> n_duct_mass ct_pan_calci ct_pan_calci_place ct_pan_oth_abnormal ct_pan_oth_abn_spec"
 
 . 
 . local derived1 "ct_pan_vol"
 
 . 
-. local derived2 "adj_wt_ct_pan_head_trans adj_wt_ct_pan_head_ap adj_wt_ct_pan_body_trans adj_wt_ct_pan
-> _tail_trans adj_wt_ct_pan_body_tail adj_wt_ct_pan_cc_body adj_wt_ct_pan_cc_head adj_sqrt_ct_pan_head_
-> trans adj_sqrt_ct_pan_head_ap adj_sqrt_ct_pan_body_trans adj_sqrt_ct_pan_tail_trans adj_sqrt_ct_pan_b
-> ody_tail adj_sqrt_ct_pan_cc_body adj_sqrt_ct_pan_cc_head adj_wt_pan_head_ap adj_wt_pan_head_trans adj
-> _wt_pan_body_trans adj_wt_pan_tail_trans adj_sqrt_pan_head_ap adj_sqrt_pan_head_trans adj_sqrt_pan_bo
-> dy_trans adj_sqrt_pan_tail_trans"
+. local derived2 "adj_wt_ct_pan_head_trans adj_wt_ct_pan_head_ap adj_wt_ct_pan_body_trans adj_wt_ct_pan_tail_trans adj_wt_ct_pan_body_tail adj_wt_ct_pan_cc_body adj_wt_ct_pan_cc_head adj_sqrt_c
+> t_pan_head_trans adj_sqrt_ct_pan_head_ap adj_sqrt_ct_pan_body_trans adj_sqrt_ct_pan_tail_trans adj_sqrt_ct_pan_body_tail adj_sqrt_ct_pan_cc_body adj_sqrt_ct_pan_cc_head adj_wt_pan_head_ap adj
+> _wt_pan_head_trans adj_wt_pan_body_trans adj_wt_pan_tail_trans adj_sqrt_pan_head_ap adj_sqrt_pan_head_trans adj_sqrt_pan_body_trans adj_sqrt_pan_tail_trans"
 
 . 
-. local derived3 "flag_fecal_elastase ngml_trypsinogen from_trypsin recruited assay_fecal_elastase assa
-> y_lipase radio2 ct2 radio_mis_dims radio_mis_all radio3 subset subset2 epi_binary epi_ordinal child a
-> frica exposuretime fec_cohort"
+. local derived3 "flag_fecal_elastase ngml_trypsinogen from_trypsin recruited assay_fecal_elastase assay_lipase radio2 ct2 radio_mis_dims radio_mis_all radio3 subset subset2 epi_binary epi_ordi
+> nal child africa exposuretime fec_cohort"
 
 . 
-. local glucose "metformin insulin ogtt_time0 hba1c gluc_mean_mgdl insulin_mean_mul Matsuda_index insul
-> inogenic_index rhba1c" 
+. local glucose "metformin insulin ogtt_time0 hba1c gluc_mean_mgdl insulin_mean_mul Matsuda_index insulinogenic_index rhba1c" 
 
 . 
 . local enzymes "fecal_elastase lipase ngml_trypsinogen mgl_crp mgl_cystatin ul_amylp"
 
 . 
-. local body "bia fm_kg fm_per ffm_kg ffm_per fmi ffmi impedance bia_prob bia_comment adp adpfm_kg adpf
-> fm_kg adpfm_per adpffm_per adp_prob adp_comment"
+. local body "bia fm_kg fm_per ffm_kg ffm_per fmi ffmi impedance bia_prob bia_comment adp adpfm_kg adpffm_kg adpfm_per adpffm_per adp_prob adp_comment"
 
 . 
-. local organs "hepatomegaly splenomegaly cholelithiasis steatosis mass gynecologic atherosclerosis nep
-> hrolithiasis pancreatic"
+. local organs "hepatomegaly splenomegaly cholelithiasis steatosis mass gynecologic atherosclerosis nephrolithiasis pancreatic"
 
 . 
 . 
-. keep `subj1' `subj2' `ses' `uss' `ct' `derived1' `derived2' `derived3' `glucose' `enzymes' `body' `or
-> gans'
+. keep `subj1' `subj2' `ses' `uss' `ct' `derived1' `derived2' `derived3' `glucose' `enzymes' `body' `organs'
+
+. 
+. keep if subset==1
+(154 observations deleted)
 
 . 
 end of do-file
@@ -662,43 +637,35 @@ end of do-file
 . notes drop _dta 
   (15 notes dropped)
 
-. note: Created for Imaging Paper on `c(current_date)' at `c(current_time)' by `c(username)'
+. note: Subset Created for Imaging Paper on `c(current_date)' at `c(current_time)' by `c(username)'
+
+. note: Keeps only participants with Fecal Elastse or Visible Ultrasound Scans (N=2124)
 
 . note: Trypsin data inserted from temporary dropbox data 
 
 . note: Selected variables kept for this paper in cr_keep.do 
 
 . describe, simple
-record_id     ses_tercile6  impedance     pan_paren_~m  ct_pan_bod~s  ngml_tryps~n  adj_wt_ct_~l
-cohort        ses_tercile   bia_prob      pan_pa~rosis  ct_pan_tai~s  from_trypsin  adj_wt_ct_~y
-sampa_id      hiv           bia_comment   pan_pa~tosis  ct_pan_bod~l  recruited     adj_wt_ct_~d
-orgid         metformin     adp           pan_duct      ct_pan_cc_~y  assay_feca~e  adj_sqrt_c..
-sex           insulin       adpfm_kg      pan_duct_s~s  ct_pan_cc_~d  assay_lipase  adj_sqrt_c~p
-dob           ogtt_time0    adpffm_kg     pan_duct_m~s  ct_pan_shape  radio2        adj_sqrt_c..
-age           hba1c         adpfm_per     pan_calci     ct_pan_sha~m  ct2           adj_sqrt_c..
-indepth_sa~e  gluc_mean_~l  adpffm_per    pan_calci_~e  ct_pan_sha~c  radio_mis_~s  adj_sqrt_c~l
-indepth_exp   insulin_me~l  adp_prob      pan_cyst_yes  ct_pan_con~r  radio_mis_~l  adj_sqrt_c~y
-ct_sample     Matsuda_in~x  adp_comment   pan_oth_ab~l  ct_pan_con~m  radio3        adj_sqrt_c~d
-ct            insulinoge~x  fecal_elas~e  pan_oth_ab~y  ct_pan_con~c  subset        adj_wt_pan~p
-ivgtt_sample  rhba1c        pan_size_q~l  hepatomegaly  ct_pan_par~a  subset2       adj_wt_pan..
-ivgtt         lipase        pan_head_t~s  splenomegaly  ct_pan_par~m  epi_binary    adj_wt_pan..
-uss_sample    mgl_crp       pan_head_ap   cholelithi~s  ct_pan~rosis  epi_ordinal   adj_wt_pan..
-uss           mgl_cystatin  pan_body_t~s  steatosis     ct_pan~tosis  child         adj_sqrt_p~p
-ever_mal      ul_amylp      pan_tail_t~s  mass          ct_pan_duct   africa        adj_sqrt_p..
-degree_mal    bia           pan_shape     gynecologic   ct_pan_du~es  exposuretime  adj_sqrt_p..
-ses_tercile1  fm_kg         pan_shape_~m  atheroscle~s  ct_pan_du~ss  fec_cohort    adj_sqrt_p..
-ses_tercile2  fm_per        pan_shape_~y  nephrolith~s  ct_pan_calci  ct_pan_vol
-ses_tercile3  ffm_kg        pan_contour   pancreatic    ct_pan_cal~e  adj_wt_ct_..
-ses_tercile4  ffm_per       pan_contou~m  ct_pan_siz~l  ct_pan_oth~l  adj_wt_ct_~p
-ses_tercile5  fmi           pan_contou~y  ct_pan_hea~s  ct_pan_oth~c  adj_wt_ct_..
-comp1         ffmi          pan_parenc~a  ct_pan_hea~p  flag_fecal~e  adj_wt_ct_..
+record_id     ivgtt         ses_tercile   mgl_crp       bia_comment   pan_body_t~s  pan_duct      mass          ct_pan_cc_~d  ct_pan_du~es  radio2        fec_cohort    adj_sqrt_c..
+cohort        uss_sample    hiv           mgl_cystatin  adp           pan_tail_t~s  pan_duct_s~s  gynecologic   ct_pan_shape  ct_pan_du~ss  ct2           ct_pan_vol    adj_sqrt_c~l
+sampa_id      uss           metformin     ul_amylp      adpfm_kg      pan_shape     pan_duct_m~s  atheroscle~s  ct_pan_sha~m  ct_pan_calci  radio_mis_~s  adj_wt_ct_..  adj_sqrt_c~y
+orgid         ever_mal      insulin       bia           adpffm_kg     pan_shape_~m  pan_calci     nephrolith~s  ct_pan_sha~c  ct_pan_cal~e  radio_mis_~l  adj_wt_ct_~p  adj_sqrt_c~d
+sex           degree_mal    ogtt_time0    fm_kg         adpfm_per     pan_shape_~y  pan_calci_~e  pancreatic    ct_pan_con~r  ct_pan_oth~l  radio3        adj_wt_ct_..  adj_wt_pan~p
+dob           ses_tercile1  hba1c         fm_per        adpffm_per    pan_contour   pan_cyst_yes  ct_pan_siz~l  ct_pan_con~m  ct_pan_oth~c  subset        adj_wt_ct_..  adj_wt_pan..
+age           ses_tercile2  gluc_mean_~l  ffm_kg        adp_prob      pan_contou~m  pan_oth_ab~l  ct_pan_hea~s  ct_pan_con~c  flag_fecal~e  subset2       adj_wt_ct_~l  adj_wt_pan..
+indepth_sa~e  ses_tercile3  insulin_me~l  ffm_per       adp_comment   pan_contou~y  pan_oth_ab~y  ct_pan_hea~p  ct_pan_par~a  ngml_tryps~n  epi_binary    adj_wt_ct_~y  adj_wt_pan..
+indepth_exp   ses_tercile4  Matsuda_in~x  fmi           fecal_elas~e  pan_parenc~a  hepatomegaly  ct_pan_bod~s  ct_pan_par~m  from_trypsin  epi_ordinal   adj_wt_ct_~d  adj_sqrt_p~p
+ct_sample     ses_tercile5  insulinoge~x  ffmi          pan_size_q~l  pan_paren_~m  splenomegaly  ct_pan_tai~s  ct_pan~rosis  recruited     child         adj_sqrt_c..  adj_sqrt_p..
+ct            comp1         rhba1c        impedance     pan_head_t~s  pan_pa~rosis  cholelithi~s  ct_pan_bod~l  ct_pan~tosis  assay_feca~e  africa        adj_sqrt_c~p  adj_sqrt_p..
+ivgtt_sample  ses_tercile6  lipase        bia_prob      pan_head_ap   pan_pa~tosis  steatosis     ct_pan_cc_~y  ct_pan_duct   assay_lipase  exposuretime  adj_sqrt_c..  adj_sqrt_p..
 
 . notes 
 
 _dta:
-  1.  Created for Imaging Paper on 22 Mar 2025 at 13:52:35 by juansolon
-  2.  Trypsin data inserted from temporary dropbox data
-  3.  Selected variables kept for this paper in cr_keep.do
+  1.  Subset Created for Imaging Paper on 24 Mar 2025 at 10:28:52 by juansolon
+  2.  Keeps only participants with Fecal Elastse or Visible Ultrasound Scans (N=2124)
+  3.  Trypsin data inserted from temporary dropbox data
+  4.  Selected variables kept for this paper in cr_keep.do
 
 . 
 . save ./data-temp/subset_imaging.dta, replace
@@ -707,181 +674,3948 @@ file ./data-temp/subset_imaging.dta saved
 . 
 end of do-file
 
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
 
-. dtable fecal_elastase ul_amylp lipase ngml_trypsinogen if subset==1, by(ever_mal, tests) 
-note: using test regress across levels of ever_mal for fecal_elastase, ul_amylp, lipase, and
-      ngml_trypsinogen.
+. 
+. cap prog drop mystats
 
---------------------------------------------------------------------------------
-                                    Ever experience malnutrition?               
-                           NPM                PM              Total        Test 
---------------------------------------------------------------------------------
-N                       1,095 (51.6%)     1,029 (48.4%)    2,124 (100.0%)       
-Fecal Elastase      332.686 (211.491) 360.990 (215.727) 345.236 (213.783)  0.005
-Amylase (U/L)         32.391 (13.742)   35.610 (17.845)   33.772 (15.711) <0.001
-Lipase                 31.463 (6.154)    31.241 (7.396)    31.280 (7.184)  0.837
-Trypsinogen (ng/ml)   26.675 (14.668)   32.900 (33.882)   29.866 (26.470)  0.050
---------------------------------------------------------------------------------
+. program mystats, rclass
+  1. return scalar p_adj= chi2tail(r(df), r(chi2_adj))
+  2. return scalar Chi2_adj =  r(chi2_adj)
+  3. return scalar  DF =  r(df)
+  4. return scalar p= chi2tail(r(df), r(chi2))
+  5. return scalar  Chi2 =   r(chi2)
+  6. end
+
+. 
+. collect clear
+
+. 
+. local col "ever_mal"
+
+. local contmed "fecal_elastase ul_amylp lipase  ngml_trypsinogen"  /*continous variables; median (p25-p75)  will be reported*/
+
+. 
+. local colhead2 `"0 "NPM" 1 "PM""'
+
+.                 
+. * format median of `contmed'
+. local nfrmt_p50 "%5.0f"
+
+. local nfrmt_iqr "%5.0f"
+
+. local sfrmt_p25 "(%s-"
+
+. local sfrmt_p75 "%s)"
+
+. 
+. local title "Table . Pancreatic Enzyme Assays"
+
+. 
+. local notes1 "Values are [N] median (p25-p50)."
+
+. local notes2 "Faecal elastase values are upper limit of detection is 600."
+
+. local notes3 "Lipase from DIVIDS cohort only."
+
+. local notes4 "Trypsinogen from CT Scan subset only."
+
+. 
+. * STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  
+. * THERE IS NOTHING TO MODIFY BEYOND THIS LINE UNLESS CHANGING CODE. 
+. 
+. * GENERATE TABLE STATS 
+. 
+.         table (var)(`col')  , ///
+>                 stat(frequency) ///
+>                 stat(count `contmed') ///
+>                 stat(p50 `contmed') ///
+>                 stat(p25 `contmed') ///
+>                 stat(p75 `contmed') ///
+>                 nototal
+
+----------------------------------------------------------------
+                              |   Ever experience malnutrition? 
+                              |             NPM               PM
+------------------------------+---------------------------------
+Frequency                     |           1,095            1,029
+Fecal Elastase                |                                 
+  Number of nonmissing values |           1,003              799
+  50th percentile             |         313.704          374.824
+  25th percentile             |         132.437         146.2165
+  75th percentile             |        587.6312              600
+Amylase (U/L)                 |                                 
+  Number of nonmissing values |           1,008              757
+  50th percentile             |            29.6             31.1
+  25th percentile             |           23.45             24.4
+  75th percentile             |              38               42
+Lipase                        |                                 
+  Number of nonmissing values |              54              253
+  50th percentile             |            30.5               30
+  25th percentile             |              26               26
+  75th percentile             |              36               35
+Trypsinogen (ng/ml)           |                                 
+  Number of nonmissing values |             135              142
+  50th percentile             |            24.2            25.75
+  25th percentile             |            17.2             17.6
+  75th percentile             |            32.5             36.1
+----------------------------------------------------------------
+
+.                 
+. collect rename Table c1
+(current collection is c1)
+
+.                 
+. *REFORMAT RESULTS TO DESIRED COLUMNS
+.                 
+.         * recodes median and iqr
+.                 collect recode result p50 = column1
+(8 items recoded in collection c1)
+
+.                 collect recode result p25 = column2
+(8 items recoded in collection c1)
+
+.                 collect recode result p75 = column3
+(8 items recoded in collection c1)
+
+.                 
+.         * Create composite result : this is needed because 75 is in column3 and we want it in the same column as column 2 .  Use for medians and probably CIs
+.                 collect composite define column4 = column2 column3, replace
+
+. 
+.         * Calculate p-values from chi2 and df
+.         foreach v in `contmed' {
+  2.                 quietly kwallis `v', by(`col')
+  3.                 collect: mystats
+  4.         }
+
+. 
+.         
+. 
+. * CREATE THE TABLE 1 Layout Super column - column 
+. 
+.         collect layout (var) (ever_mal#result[count column1 column4])
+
+Collection: c1
+      Rows: var
+   Columns: ever_mal#result[count column1 column4]
+   Table 1: 4 x 6
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+                    |                                               Ever experience malnutrition?                                            
+                    |                             NPM                                                          PM                            
+                    |  Number of nonmissing values   column1     column2 column3   Number of nonmissing values   column1      column2 column3
+--------------------+------------------------------------------------------------------------------------------------------------------------
+Fecal Elastase      |                        1,003   313.704   132.437  587.6312                           799   374.824   146.2165       600
+Amylase (U/L)       |                        1,008      29.6     23.45        38                           757      31.1       24.4        42
+Lipase              |                           54      30.5        26        36                           253        30         26        35
+Trypsinogen (ng/ml) |                          135      24.2      17.2      32.5                           142     25.75       17.6      36.1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+. 
+. * Format p-values
+.         collect style cell result[p], nformat("%5.3f")
+
+.         collect style cell result[p], sformat("p=%s")
+
+. 
+. * CHANGE HEADER TEXT
+.         * column
+.                 collect label levels `col' `colhead2', modify
+
+. 
+. collect preview /* preview changes */
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+                    |                                               Ever experience malnutrition?                                            
+                    |                             NPM                                                          PM                            
+                    |  Number of nonmissing values   column1     column2 column3   Number of nonmissing values   column1      column2 column3
+--------------------+------------------------------------------------------------------------------------------------------------------------
+Fecal Elastase      |                        1,003   313.704   132.437  587.6312                           799   374.824   146.2165       600
+Amylase (U/L)       |                        1,008      29.6     23.45        38                           757      31.1       24.4        42
+Lipase              |                           54      30.5        26        36                           253        30         26        35
+Trypsinogen (ng/ml) |                          135      24.2      17.2      32.5                           142     25.75       17.6      36.1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+. 
+. * HIDE COLUMN HEADERS
+. 
+.         * Hide supercolumn variable name because it is self-descriptive
+.                 
+.         *       collect style header `scol', title(hide) /* this removes the column variable name or label by hiding it */
+. 
+.         * Hide the column variable name 
+.                 
+.                 collect style header `col', title(hide) /* this removes the column variable name or label by hiding it */
+
+. 
+.         * Hide the words column 1 and column 2 for the results 
+. 
+.                 collect style header result, level(hide) /* this removes column 1 and column2 header names*/
+
+. 
+. collect preview /* preview changes */
+
+-----------------------------------------------------------------------------------------------
+                    |                  NPM                                   PM                
+--------------------+--------------------------------------------------------------------------
+Fecal Elastase      |  1,003   313.704   132.437  587.6312   799   374.824   146.2165       600
+Amylase (U/L)       |  1,008      29.6     23.45        38   757      31.1       24.4        42
+Lipase              |     54      30.5        26        36   253        30         26        35
+Trypsinogen (ng/ml) |    135      24.2      17.2      32.5   142     25.75       17.6      36.1
+-----------------------------------------------------------------------------------------------
+
+. 
+. * MODIFY ROW TEXT
+. 
+. 
+. * REVISE ROW STYLES
+. 
+. * Stack levels of each variable , place a space between variables (spacer) ; 
+. 
+.         collect style row stack, nobinder spacer
+
+. 
+. * Remove vertical line after variables
+. 
+.         collect style cell border_block, border(right, pattern(nil))
+
+. 
+. * HIDE ROW Text
+. 
+. * Hide the variable names 
+. collect style header `hiderows', title(hide)
+
+. 
+. 
+. * FORMAT NUMBERS
+. 
+. * Format median
+. 
+.         collect style cell result[column1]#var[`contmed'], nformat(`nfrmt_p50')
+
+. 
+. * Add IQR formatting to p25 and p75 separately:
+.         collect style cell result[column2]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`sfrmt_p25'") /* formats iqr as (p25 - p75)*/
+
+.         collect style cell result[column3]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`sfrmt_p75'") 
+
+. 
+. * Format count column
+.         collect style cell result[count], nformat("%4.0f") /* Format count as whole number */
+
+.         collect style cell result[count], sformat("[%s]") /* Format count as whole number */
+
+.         
+. /* format factor variables (categorical) column 1 and column 2
+> 
+>         collect style cell var[`frmt_catvar1']#result[column1], nformat(`nfrmt_freq')
+> 
+>         collect style cell var[`frmt_catvar1']#result[column2], nformat(`nfrmt_perc') sformat("(`sfrmt_perc')") /* Adds (%) to percent */
+> 
+> * format means variable column 1 and column 2
+> 
+>         collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats continuous variable to one decimal*/
+> 
+>         collect style cell var[`contn']#result[column2], nformat(`nfrmt_sd') sformat(`sfrmt_sd') /* Formats continuous variable to one decimal*/
+> */
+. * Change font of results
+.         *collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats continuous variable to one decimal*/
+.         
+. * Add text
+.         collect title `title'
+
+.         collect notes `notes1'
+
+.         collect notes `notes2'
+
+.         collect notes `notes3'
+
+.         collect notes `notes4'
+
+.         
+. collect preview
+
+Table . Pancreatic Enzyme Assays
+---------------------------------------------------------------------------
+                                 NPM                          PM           
+---------------------------------------------------------------------------
+Fecal Elastase       [1003]   314   (132-  588)   [799]   375   (146-  600)
+Amylase (U/L)        [1008]    30    (23-   38)   [757]    31    (24-   42)
+Lipase                 [54]    30    (26-   36)   [253]    30    (26-   35)
+Trypsinogen (ng/ml)   [135]    24    (17-   32)   [142]    26    (18-   36)
+---------------------------------------------------------------------------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. 
+. * Save first collection with main stats
+. collect layout (var) (ever_mal#result[count column1 column4])
+
+Collection: c1
+      Rows: var
+   Columns: ever_mal#result[count column1 column4]
+   Table 1: 4 x 6
+
+Table . Pancreatic Enzyme Assays
+---------------------------------------------------------------------------
+                                 NPM                          PM           
+---------------------------------------------------------------------------
+Fecal Elastase       [1003]   314   (132-  588)   [799]   375   (146-  600)
+Amylase (U/L)        [1008]    30    (23-   38)   [757]    31    (24-   42)
+Lipase                 [54]    30    (26-   36)   [253]    30    (26-   35)
+Trypsinogen (ng/ml)   [135]    24    (17-   32)   [142]    26    (18-   36)
+---------------------------------------------------------------------------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. collect save ./tables/enzymes1.json, replace
+(collection c1 saved to file ./tables/enzymes1.json)
+
+. 
+. * Create new collection for p-values
+. collect create c2
+(current collection is c2)
+
+. foreach v in `contmed' {
+  2.     quietly kwallis `v', by(`col')
+  3.     collect: mystats
+  4. }
 
 . 
 end of do-file
 
-. help dtable
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
 
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD77831.000000"
+. collect dir // check collections
 
-. 
-. dtable if subset==1, by(ever_mal, tests) ///
-> continuous(fecal_elastase ul_amylp lipase ngml_trypsinogen, ///
-> statistics(mean) test(kwallis))
-note: using test kwallis across levels of ever_mal for fecal_elastase, ul_amylp, lipase, and
-      ngml_trypsinogen.
-
----------------------------------------------------------------------
-                              Ever experience malnutrition?          
-                         NPM            PM           Total      Test 
----------------------------------------------------------------------
-N                   1,095 (51.6%) 1,029 (48.4%) 2,124 (100.0%)       
-Fecal Elastase            332.686       360.990        345.236  0.005
-Amylase (U/L)              32.391        35.610         33.772 <0.001
-Lipase                     31.463        31.241         31.280  0.576
-Trypsinogen (ng/ml)        26.675        32.900         29.866  0.286
----------------------------------------------------------------------
+Collections in memory
+Current: c2
+----------------
+Name   No. items
+----------------
+  c1   54       
+  c2   20       
+----------------
 
 . 
 end of do-file
 
-. sktest ngml_tryp
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
 
-Skewness and kurtosis tests for normality
-                                                             ----- Joint test -----
-        Variable |       Obs   Pr(skewness)   Pr(kurtosis)   Adj chi2(2)  Prob>chi2
------------------+-----------------------------------------------------------------
-ngml_trypsinogen |       313         0.0000         0.0000        292.75     0.0000
+. collect remap cmdset[1 2 3 4] = pvals[fecal_elastase ul_amylp lipase ngml_trypsinogen]
+(20 items remapped in collection c2)
 
-. regress trypsinogen ever_mal
-variable trypsinogen not found
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect layout (pvals) (result[p])
+
+Collection: c2
+      Rows: pvals
+   Columns: result[p]
+   Table 1: 4 x 1
+
+---------------------------
+                 |        p
+-----------------+---------
+fecal_elastase   | .0048937
+ul_amylp         | .0005191
+lipase           | .5761808
+ngml_trypsinogen | .2860171
+---------------------------
+
+. 
+end of do-file
+
+. collect dims
+
+Collection dimensions
+Collection: c2
+-----------------------------------------
+                   Dimension   No. levels
+-----------------------------------------
+Layout, style, header, label
+                      cmdset   4         
+               program_class   2         
+                       pvals   4         
+                      result   5         
+                 result_type   1         
+
+Style only
+                border_block   4         
+                   cell_type   4         
+-----------------------------------------
+
+. collect levelsof result
+
+Collection: c2
+ Dimension: result
+    Levels: Chi2 Chi2_adj DF p p_adj
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect combine c3 = c1 c2
+(current collection is c3)
+
+. 
+end of do-file
+
+. collect dims
+
+Collection dimensions
+Collection: c3
+-----------------------------------------
+                   Dimension   No. levels
+-----------------------------------------
+Layout, style, header, label
+                      cmdset   4         
+                  collection   2         
+                     colname   4         
+                     command   1         
+                    ever_mal   2         
+               program_class   2         
+                       pvals   4         
+                      result   14        
+                 result_type   1         
+                     statcmd   5         
+                         var   5         
+
+Style only
+                border_block   4         
+                   cell_type   4         
+-----------------------------------------
+
+. collect levelsof var
+
+Collection: c3
+ Dimension: var
+    Levels: _hide fecal_elastase ul_amylp lipase ngml_trypsinogen
+
+. collect levelsof result
+
+Collection: c3
+ Dimension: result
+    Levels: Chi2 Chi2_adj DF column1 column2 column3 column4 count frequency p p25 p50 p75 p_adj
+
+. collect layout (var) (result)
+
+Collection: c3
+      Rows: var
+   Columns: result
+
+Your layout specification does not uniquely match any items. One or more of the following dimensions might help uniquely match items: colname, ever_mal, statcmd.
+
+. collect layout (var) (ever_mal#result)
+
+Collection: c3
+      Rows: var
+   Columns: ever_mal#result
+   Table 1: 5 x 4
+
+Table . Pancreatic Enzyme Assays
+---------------------------------------------------
+                           NPM              PM     
+---------------------------------------------------
+                     1,095            1,029        
+Fecal Elastase               [1003]           [799]
+Amylase (U/L)                [1008]           [757]
+Lipase                         [54]           [253]
+Trypsinogen (ng/ml)           [135]           [142]
+---------------------------------------------------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. collect layout (var) (ever_mal#result[column1 column4)
+invalid something: [ closed by )
+
+r(198);
+
+. collect layout (var) (ever_mal#result[column1 column4])
+
+Collection: c3
+      Rows: var
+   Columns: ever_mal#result[column1 column4]
+   Table 1: 4 x 4
+
+Table . Pancreatic Enzyme Assays
+----------------------------------------------------------
+                            NPM                  PM       
+----------------------------------------------------------
+Fecal Elastase       314   (132-  588)   375   (146-  600)
+Amylase (U/L)         30    (23-   38)    31    (24-   42)
+Lipase                30    (26-   36)    30    (26-   35)
+Trypsinogen (ng/ml)   24    (17-   32)    26    (18-   36)
+----------------------------------------------------------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. collect layout (var) (ever_mal#result[column1 column4 p])
+
+Collection: c3
+      Rows: var
+   Columns: ever_mal#result[column1 column4 p]
+   Table 1: 4 x 4
+
+Table . Pancreatic Enzyme Assays
+----------------------------------------------------------
+                            NPM                  PM       
+----------------------------------------------------------
+Fecal Elastase       314   (132-  588)   375   (146-  600)
+Amylase (U/L)         30    (23-   38)    31    (24-   42)
+Lipase                30    (26-   36)    30    (26-   35)
+Trypsinogen (ng/ml)   24    (17-   32)    26    (18-   36)
+----------------------------------------------------------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. collect layout (var) (ever_mal#result[column1 column4])
+
+Collection: c3
+      Rows: var
+   Columns: ever_mal#result[column1 column4]
+   Table 1: 4 x 4
+
+Table . Pancreatic Enzyme Assays
+----------------------------------------------------------
+                            NPM                  PM       
+----------------------------------------------------------
+Fecal Elastase       314   (132-  588)   375   (146-  600)
+Amylase (U/L)         30    (23-   38)    31    (24-   42)
+Lipase                30    (26-   36)    30    (26-   35)
+Trypsinogen (ng/ml)   24    (17-   32)    26    (18-   36)
+----------------------------------------------------------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. collect layout (cmdset) (ever_mal#result[p])
+
+Collection: c3
+      Rows: cmdset
+   Columns: ever_mal#result[p]
+
+Your layout specification does not uniquely match any items. One or more of the following dimensions might help uniquely match items: colname, ever_mal, result, statcmd, var.
+
+. collect layout (cmdset) (result[p])
+
+Collection: c3
+      Rows: cmdset
+   Columns: result[p]
+   Table 1: 4 x 1
+
+Table . Pancreatic Enzyme Assays
+----------
+1  p=0.005
+2  p=0.001
+3  p=0.576
+4  p=0.286
+----------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. collect layout (cmdset) (var#result[p])
+
+Collection: c3
+      Rows: cmdset
+   Columns: var#result[p]
+   Table 1: 4 x 1
+
+Table . Pancreatic Enzyme Assays
+----------
+1  p=0.005
+2  p=0.001
+3  p=0.576
+4  p=0.286
+----------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. collect layout (cmdset) (ever_mal#result[count] var#result[p])
+
+Collection: c3
+      Rows: cmdset
+   Columns: ever_mal#result[count] var#result[p]
+   Table 1: 4 x 1
+
+Table . Pancreatic Enzyme Assays
+----------
+1  p=0.005
+2  p=0.001
+3  p=0.576
+4  p=0.286
+----------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. collect layout (var cmdset) (ever_mal#result[count] var#result[p])
+invalid layout; dimension var cannot take on levels fecal_elastase and _hide at the same time
+r(507);
+
+. collect layout (var#cmdset) (ever_mal#result[count] var#result[p])
+invalid layout; dimension var cannot take on levels fecal_elastase and _hide at the same time
+r(507);
+
+. collect layout (var) (ever_mal#result[count] var#result[p])
+invalid layout; dimension var cannot take on levels fecal_elastase and _hide at the same time
+r(507);
+
+. collect layout () (ever_mal#result[count] var#result[p])
+
+Collection: c3
+   Columns: ever_mal#result[count] var#result[p]
+
+Your layout specification does not uniquely match any items. One or more of the following dimensions might help uniquely match items: cmdset, colname, var.
+
+. collect layout (cmdset) (ever_mal#result[count])
+
+Collection: c3
+      Rows: cmdset
+   Columns: ever_mal#result[count]
+
+Your layout specification does not uniquely match any items. One or both of the dimensions colname and var might help uniquely match items.
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect layout (var) (ever_mal#result[count column1 column4]) (pvals#result[p])
+invalid layout; dimension result cannot take on levels count and p at the same time
+r(507);
+
+end of do-file
+
+r(507);
+
+. collect dims
+
+Collection dimensions
+Collection: c3
+-----------------------------------------
+                   Dimension   No. levels
+-----------------------------------------
+Layout, style, header, label
+                      cmdset   4         
+                  collection   2         
+                     colname   4         
+                     command   1         
+                    ever_mal   2         
+               program_class   2         
+                       pvals   4         
+                      result   14        
+                 result_type   1         
+                     statcmd   5         
+                         var   5         
+
+Style only
+                border_block   4         
+                   cell_type   4         
+-----------------------------------------
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect layout (var[fecal_elastase]) (result[column1])
+
+Collection: c3
+      Rows: var[fecal_elastase]
+   Columns: result[column1]
+
+Your layout specification does not uniquely match any items. Dimension ever_mal might help uniquely match items.
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect layout (var) (result[column1])
+
+Collection: c3
+      Rows: var
+   Columns: result[column1]
+
+Your layout specification does not uniquely match any items. One or both of the dimensions colname and ever_mal might help uniquely match items.
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect layout (var) (ever_mal#esult[column1])
+(dimension esult not found)
+
+Collection: c3
+      Rows: var
+   Columns: ever_mal#esult[column1]
+
+Your layout specification does not uniquely match any items. One or more of the following dimensions might help uniquely match items: cmdset, colname, ever_mal, result, statcmd.
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect layout (var) (ever_mal#result[column1])
+
+Collection: c3
+      Rows: var
+   Columns: ever_mal#result[column1]
+   Table 1: 4 x 2
+
+Table . Pancreatic Enzyme Assays
+------------------------------
+                     NPM    PM
+------------------------------
+Fecal Elastase       314   375
+Amylase (U/L)         30    31
+Lipase                30    30
+Trypsinogen (ng/ml)   24    26
+------------------------------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect layout (var[fecal_elastase]) (ever_mal#result[column1])
+
+Collection: c3
+      Rows: var[fecal_elastase]
+   Columns: ever_mal#result[column1]
+   Table 1: 1 x 2
+
+Table . Pancreatic Enzyme Assays
+-------------------------
+                NPM    PM
+-------------------------
+Fecal Elastase  314   375
+-------------------------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect layout (var[fecal_elastase] var[lipase]) (ever_mal#result[column1])
+
+Collection: c3
+      Rows: var[fecal_elastase] var[lipase]
+   Columns: ever_mal#result[column1]
+   Table 1: 2 x 2
+
+Table . Pancreatic Enzyme Assays
+-------------------------
+                NPM    PM
+-------------------------
+Fecal Elastase  314   375
+Lipase           30    30
+-------------------------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect layout (var[fecal_elastase] var[lipase]) (ever_mal#result[column1] pvals#result[p])
+
+Collection: c3
+      Rows: var[fecal_elastase] var[lipase]
+   Columns: ever_mal#result[column1] pvals#result[p]
+   Table 1: 2 x 2
+
+Table . Pancreatic Enzyme Assays
+-------------------------
+                NPM    PM
+-------------------------
+Fecal Elastase  314   375
+Lipase           30    30
+-------------------------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect layout (var[fecal_elastase] var[lipase]) (ever_mal#result[column1] cmdset#result[p])
+
+Collection: c3
+      Rows: var[fecal_elastase] var[lipase]
+   Columns: ever_mal#result[column1] cmdset#result[p]
+   Table 1: 2 x 2
+
+Table . Pancreatic Enzyme Assays
+-------------------------
+                NPM    PM
+-------------------------
+Fecal Elastase  314   375
+Lipase           30    30
+-------------------------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect layout (var) (ever_mal#result[count column1 column4] pvals#result[p])
+
+Collection: c3
+      Rows: var
+   Columns: ever_mal#result[count column1 column4] pvals#result[p]
+   Table 1: 4 x 6
+
+Table . Pancreatic Enzyme Assays
+---------------------------------------------------------------------------
+                                 NPM                          PM           
+---------------------------------------------------------------------------
+Fecal Elastase       [1003]   314   (132-  588)   [799]   375   (146-  600)
+Amylase (U/L)        [1008]    30    (23-   38)   [757]    31    (24-   42)
+Lipase                 [54]    30    (26-   36)   [253]    30    (26-   35)
+Trypsinogen (ng/ml)   [135]    24    (17-   32)   [142]    26    (18-   36)
+---------------------------------------------------------------------------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect layout (var pvals) (ever_mal#result[count column1 column4] result[p])
+
+Collection: c3
+      Rows: var pvals
+   Columns: ever_mal#result[count column1 column4] result[p]
+   Table 1: 9 x 7
+
+Table . Pancreatic Enzyme Assays
+-------------------------------------------------------------------------------------
+                                 NPM                          PM                     
+-------------------------------------------------------------------------------------
+Fecal Elastase       [1003]   314   (132-  588)   [799]   375   (146-  600)          
+Amylase (U/L)        [1008]    30    (23-   38)   [757]    31    (24-   42)          
+Lipase                 [54]    30    (26-   36)   [253]    30    (26-   35)          
+Trypsinogen (ng/ml)   [135]    24    (17-   32)   [142]    26    (18-   36)          
+                                                                                     
+fecal_elastase                                                                p=0.005
+ul_amylp                                                                      p=0.001
+lipase                                                                        p=0.576
+ngml_trypsinogen                                                              p=0.286
+-------------------------------------------------------------------------------------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. 
+. cap prog drop mystats
+
+. program mystats, rclass
+  1. return scalar p_adj= chi2tail(r(df), r(chi2_adj))
+  2. return scalar Chi2_adj =  r(chi2_adj)
+  3. return scalar  DF =  r(df)
+  4. return scalar p= chi2tail(r(df), r(chi2))
+  5. return scalar  Chi2 =   r(chi2)
+  6. end
+
+. 
+. collect clear
+
+. 
+. local col "ever_mal"
+
+. local contmed "fecal_elastase ul_amylp lipase  ngml_trypsinogen"  /*continous variables; median (p25-p75)  will be reported*/
+
+. 
+. local colhead2 `"0 "NPM" 1 "PM""'
+
+.                 
+. * format median of `contmed'
+. local nfrmt_p50 "%5.0f"
+
+. local nfrmt_iqr "%5.0f"
+
+. local sfrmt_p25 "(%s-"
+
+. local sfrmt_p75 "%s)"
+
+. 
+. local title "Table . Pancreatic Enzyme Assays"
+
+. 
+. local notes1 "Values are [N] median (p25-p50)."
+
+. local notes2 "Faecal elastase values are upper limit of detection is 600."
+
+. local notes3 "Lipase from DIVIDS cohort only."
+
+. local notes4 "Trypsinogen from CT Scan subset only."
+
+. 
+. * STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  
+. * THERE IS NOTHING TO MODIFY BEYOND THIS LINE UNLESS CHANGING CODE. 
+. 
+. * GENERATE TABLE STATS 
+. 
+.         table (var)(`col')  , ///
+>                 stat(frequency) ///
+>                 stat(count `contmed') ///
+>                 stat(p50 `contmed') ///
+>                 stat(p25 `contmed') ///
+>                 stat(p75 `contmed') ///
+>                 nototal
+
+----------------------------------------------------------------
+                              |   Ever experience malnutrition? 
+                              |             NPM               PM
+------------------------------+---------------------------------
+Frequency                     |           1,095            1,029
+Fecal Elastase                |                                 
+  Number of nonmissing values |           1,003              799
+  50th percentile             |         313.704          374.824
+  25th percentile             |         132.437         146.2165
+  75th percentile             |        587.6312              600
+Amylase (U/L)                 |                                 
+  Number of nonmissing values |           1,008              757
+  50th percentile             |            29.6             31.1
+  25th percentile             |           23.45             24.4
+  75th percentile             |              38               42
+Lipase                        |                                 
+  Number of nonmissing values |              54              253
+  50th percentile             |            30.5               30
+  25th percentile             |              26               26
+  75th percentile             |              36               35
+Trypsinogen (ng/ml)           |                                 
+  Number of nonmissing values |             135              142
+  50th percentile             |            24.2            25.75
+  25th percentile             |            17.2             17.6
+  75th percentile             |            32.5             36.1
+----------------------------------------------------------------
+
+.                 
+. collect rename Table c1
+(current collection is c1)
+
+.                 
+. *REFORMAT RESULTS TO DESIRED COLUMNS
+.                 
+.         * recodes median and iqr
+.                 collect recode result p50 = column1
+(8 items recoded in collection c1)
+
+.                 collect recode result p25 = column2
+(8 items recoded in collection c1)
+
+.                 collect recode result p75 = column3
+(8 items recoded in collection c1)
+
+.                 
+.         * Create composite result : this is needed because 75 is in column3 and we want it in the same column as column 2 .  Use for medians and probably CIs
+.                 collect composite define column4 = column2 column3, replace
+
+. 
+.         * Calculate p-values from chi2 and df
+.         foreach v in `contmed' {
+  2.                 quietly kwallis `v', by(`col')
+  3.                 collect: mystats
+  4.         }
+
+. 
+.         
+. 
+. * CREATE THE TABLE 1 Layout Super column - column 
+. 
+.         collect layout (var) (ever_mal#result[count column1 column4])
+
+Collection: c1
+      Rows: var
+   Columns: ever_mal#result[count column1 column4]
+   Table 1: 4 x 6
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+                    |                                               Ever experience malnutrition?                                            
+                    |                             NPM                                                          PM                            
+                    |  Number of nonmissing values   column1     column2 column3   Number of nonmissing values   column1      column2 column3
+--------------------+------------------------------------------------------------------------------------------------------------------------
+Fecal Elastase      |                        1,003   313.704   132.437  587.6312                           799   374.824   146.2165       600
+Amylase (U/L)       |                        1,008      29.6     23.45        38                           757      31.1       24.4        42
+Lipase              |                           54      30.5        26        36                           253        30         26        35
+Trypsinogen (ng/ml) |                          135      24.2      17.2      32.5                           142     25.75       17.6      36.1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+. 
+. * Format p-values
+.         collect style cell result[p], nformat("%5.3f")
+
+.         collect style cell result[p], sformat("p=%s")
+
+. 
+. * CHANGE HEADER TEXT
+.         * column
+.                 collect label levels `col' `colhead2', modify
+
+. 
+. collect preview /* preview changes */
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+                    |                                               Ever experience malnutrition?                                            
+                    |                             NPM                                                          PM                            
+                    |  Number of nonmissing values   column1     column2 column3   Number of nonmissing values   column1      column2 column3
+--------------------+------------------------------------------------------------------------------------------------------------------------
+Fecal Elastase      |                        1,003   313.704   132.437  587.6312                           799   374.824   146.2165       600
+Amylase (U/L)       |                        1,008      29.6     23.45        38                           757      31.1       24.4        42
+Lipase              |                           54      30.5        26        36                           253        30         26        35
+Trypsinogen (ng/ml) |                          135      24.2      17.2      32.5                           142     25.75       17.6      36.1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+. 
+. * HIDE COLUMN HEADERS
+. 
+.         * Hide supercolumn variable name because it is self-descriptive
+.                 
+.         *       collect style header `scol', title(hide) /* this removes the column variable name or label by hiding it */
+. 
+.         * Hide the column variable name 
+.                 
+.                 collect style header `col', title(hide) /* this removes the column variable name or label by hiding it */
+
+. 
+.         * Hide the words column 1 and column 2 for the results 
+. 
+.                 collect style header result, level(hide) /* this removes column 1 and column2 header names*/
+
+. 
+. collect preview /* preview changes */
+
+-----------------------------------------------------------------------------------------------
+                    |                  NPM                                   PM                
+--------------------+--------------------------------------------------------------------------
+Fecal Elastase      |  1,003   313.704   132.437  587.6312   799   374.824   146.2165       600
+Amylase (U/L)       |  1,008      29.6     23.45        38   757      31.1       24.4        42
+Lipase              |     54      30.5        26        36   253        30         26        35
+Trypsinogen (ng/ml) |    135      24.2      17.2      32.5   142     25.75       17.6      36.1
+-----------------------------------------------------------------------------------------------
+
+. 
+. * MODIFY ROW TEXT
+. 
+. 
+. * REVISE ROW STYLES
+. 
+. * Stack levels of each variable , place a space between variables (spacer) ; 
+. 
+.         collect style row stack, nobinder spacer
+
+. 
+. * Remove vertical line after variables
+. 
+.         collect style cell border_block, border(right, pattern(nil))
+
+. 
+. * HIDE ROW Text
+. 
+. * Hide the variable names 
+. collect style header `hiderows', title(hide)
+
+. 
+. 
+. * FORMAT NUMBERS
+. 
+. * Format median
+. 
+.         collect style cell result[column1]#var[`contmed'], nformat(`nfrmt_p50')
+
+. 
+. * Add IQR formatting to p25 and p75 separately:
+.         collect style cell result[column2]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`sfrmt_p25'") /* formats iqr as (p25 - p75)*/
+
+.         collect style cell result[column3]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`sfrmt_p75'") 
+
+. 
+. * Format count column
+.         collect style cell result[count], nformat("%4.0f") /* Format count as whole number */
+
+.         collect style cell result[count], sformat("[%s]") /* Format count as whole number */
+
+.         
+. /* format factor variables (categorical) column 1 and column 2
+> 
+>         collect style cell var[`frmt_catvar1']#result[column1], nformat(`nfrmt_freq')
+> 
+>         collect style cell var[`frmt_catvar1']#result[column2], nformat(`nfrmt_perc') sformat("(`sfrmt_perc')") /* Adds (%) to percent */
+> 
+> * format means variable column 1 and column 2
+> 
+>         collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats continuous variable to one decimal*/
+> 
+>         collect style cell var[`contn']#result[column2], nformat(`nfrmt_sd') sformat(`sfrmt_sd') /* Formats continuous variable to one decimal*/
+> */
+. * Change font of results
+.         *collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats continuous variable to one decimal*/
+.         
+. * Add text
+.         collect title `title'
+
+.         collect notes `notes1'
+
+.         collect notes `notes2'
+
+.         collect notes `notes3'
+
+.         collect notes `notes4'
+
+.         
+. collect preview
+
+Table . Pancreatic Enzyme Assays
+---------------------------------------------------------------------------
+                                 NPM                          PM           
+---------------------------------------------------------------------------
+Fecal Elastase       [1003]   314   (132-  588)   [799]   375   (146-  600)
+Amylase (U/L)        [1008]    30    (23-   38)   [757]    31    (24-   42)
+Lipase                 [54]    30    (26-   36)   [253]    30    (26-   35)
+Trypsinogen (ng/ml)   [135]    24    (17-   32)   [142]    26    (18-   36)
+---------------------------------------------------------------------------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. 
+. * Save first collection with main stats
+. collect layout (var) (ever_mal#result[count column1 column4])
+
+Collection: c1
+      Rows: var
+   Columns: ever_mal#result[count column1 column4]
+   Table 1: 4 x 6
+
+Table . Pancreatic Enzyme Assays
+---------------------------------------------------------------------------
+                                 NPM                          PM           
+---------------------------------------------------------------------------
+Fecal Elastase       [1003]   314   (132-  588)   [799]   375   (146-  600)
+Amylase (U/L)        [1008]    30    (23-   38)   [757]    31    (24-   42)
+Lipase                 [54]    30    (26-   36)   [253]    30    (26-   35)
+Trypsinogen (ng/ml)   [135]    24    (17-   32)   [142]    26    (18-   36)
+---------------------------------------------------------------------------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. collect save ./tables/enzymes1.json, replace
+(collection c1 saved to file ./tables/enzymes1.json)
+
+. 
+. * Create new collection for p-values
+. collect create c2
+(current collection is c2)
+
+. foreach v in `contmed' {
+  2.     quietly kwallis `v', by(`col')
+  3.     collect: mystats
+  4. }
+
+. 
+. collect dir // check collections
+
+Collections in memory
+Current: c2
+----------------
+Name   No. items
+----------------
+  c1   54       
+  c2   20       
+----------------
+
+. 
+. * Create p-value layout and remap cmdset to pvals
+. collect remap cmdset[1 2 3 4] = pvals[fecal_elastase ul_amylp lipase ngml_trypsinogen]
+(20 items remapped in collection c2)
+
+. collect layout (pvals) (result[p])
+
+Collection: c2
+      Rows: pvals
+   Columns: result[p]
+   Table 1: 4 x 1
+
+---------------------------
+                 |        p
+-----------------+---------
+fecal_elastase   | .0048937
+ul_amylp         | .0005191
+lipase           | .5761808
+ngml_trypsinogen | .2860171
+---------------------------
+
+. 
+. * Combine collections
+. collect combine c3 = c1 c2
+(current collection is c3)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect layout (var pvals) (ever_mal#result[count column1 column4] result[p])
+
+Collection: c3
+      Rows: var pvals
+   Columns: ever_mal#result[count column1 column4] result[p]
+   Table 1: 9 x 7
+
+Table . Pancreatic Enzyme Assays
+-------------------------------------------------------------------------------------
+                                 NPM                          PM                     
+-------------------------------------------------------------------------------------
+Fecal Elastase       [1003]   314   (132-  588)   [799]   375   (146-  600)          
+Amylase (U/L)        [1008]    30    (23-   38)   [757]    31    (24-   42)          
+Lipase                 [54]    30    (26-   36)   [253]    30    (26-   35)          
+Trypsinogen (ng/ml)   [135]    24    (17-   32)   [142]    26    (18-   36)          
+                                                                                     
+fecal_elastase                                                                p=0.005
+ul_amylp                                                                      p=0.001
+lipase                                                                        p=0.576
+ngml_trypsinogen                                                              p=0.286
+-------------------------------------------------------------------------------------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect layout (pvals) (result[p])
+
+Collection: c3
+      Rows: pvals
+   Columns: result[p]
+   Table 1: 4 x 1
+
+Table . Pancreatic Enzyme Assays
+-------------------------
+fecal_elastase    p=0.005
+ul_amylp          p=0.001
+lipase            p=0.576
+ngml_trypsinogen  p=0.286
+-------------------------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect layout (var) (result[p])
+
+Collection: c3
+      Rows: var
+   Columns: result[p]
+
+Your layout specification does not uniquely match any items. Dimension cmdset might help uniquely match items.
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect layout (cmdset) (result[p])
+
+Collection: c3
+      Rows: cmdset
+   Columns: result[p]
+   Table 1: 4 x 1
+
+Table . Pancreatic Enzyme Assays
+----------
+1  p=0.005
+2  p=0.001
+3  p=0.576
+4  p=0.286
+----------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect layout (var pvals) (ever_mal#result[count column1 column4] result[p])
+
+Collection: c3
+      Rows: var pvals
+   Columns: ever_mal#result[count column1 column4] result[p]
+   Table 1: 9 x 7
+
+Table . Pancreatic Enzyme Assays
+-------------------------------------------------------------------------------------
+                                 NPM                          PM                     
+-------------------------------------------------------------------------------------
+Fecal Elastase       [1003]   314   (132-  588)   [799]   375   (146-  600)          
+Amylase (U/L)        [1008]    30    (23-   38)   [757]    31    (24-   42)          
+Lipase                 [54]    30    (26-   36)   [253]    30    (26-   35)          
+Trypsinogen (ng/ml)   [135]    24    (17-   32)   [142]    26    (18-   36)          
+                                                                                     
+fecal_elastase                                                                p=0.005
+ul_amylp                                                                      p=0.001
+lipase                                                                        p=0.576
+ngml_trypsinogen                                                              p=0.286
+-------------------------------------------------------------------------------------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect layout(var) (ever_mal#result[count column1 column4])
+collect layout(var) not recognized
+r(199);
+
+end of do-file
+
+r(199);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect layout (var) (ever_mal#result[count column1 column4])
+
+Collection: c3
+      Rows: var
+   Columns: ever_mal#result[count column1 column4]
+   Table 1: 4 x 6
+
+Table . Pancreatic Enzyme Assays
+---------------------------------------------------------------------------
+                                 NPM                          PM           
+---------------------------------------------------------------------------
+Fecal Elastase       [1003]   314   (132-  588)   [799]   375   (146-  600)
+Amylase (U/L)        [1008]    30    (23-   38)   [757]    31    (24-   42)
+Lipase                 [54]    30    (26-   36)   [253]    30    (26-   35)
+Trypsinogen (ng/ml)   [135]    24    (17-   32)   [142]    26    (18-   36)
+---------------------------------------------------------------------------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect layout (cmdset) (ever_mal#result[count column1 column4])
+
+Collection: c3
+      Rows: cmdset
+   Columns: ever_mal#result[count column1 column4]
+
+Your layout specification does not uniquely match any items. One or more of the following dimensions might help uniquely match items: colname, statcmd, var.
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect layout (cmdset) (result[p])
+
+Collection: c3
+      Rows: cmdset
+   Columns: result[p]
+   Table 1: 4 x 1
+
+Table . Pancreatic Enzyme Assays
+----------
+1  p=0.005
+2  p=0.001
+3  p=0.576
+4  p=0.286
+----------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect layout (var cmdset) (ever_mal#result[count column1 column4] result[p])
+
+Collection: c3
+      Rows: var cmdset
+   Columns: ever_mal#result[count column1 column4] result[p]
+   Table 1: 9 x 7
+
+Table . Pancreatic Enzyme Assays
+-------------------------------------------------------------------------------------
+                                 NPM                          PM                     
+-------------------------------------------------------------------------------------
+Fecal Elastase       [1003]   314   (132-  588)   [799]   375   (146-  600)          
+Amylase (U/L)        [1008]    30    (23-   38)   [757]    31    (24-   42)          
+Lipase                 [54]    30    (26-   36)   [253]    30    (26-   35)          
+Trypsinogen (ng/ml)   [135]    24    (17-   32)   [142]    26    (18-   36)          
+                                                                                     
+1                                                                             p=0.005
+2                                                                             p=0.001
+3                                                                             p=0.576
+4                                                                             p=0.286
+-------------------------------------------------------------------------------------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect remap cmdset cmdset = var
+cmdset cmdset found where dimension name expected
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect remap cmdset = var
+dimension var already exists in tag matched with cmdset[1]
+r(198);
+
+end of do-file
+
+r(198);
+
+. help collect drop
+
+. help remap
+
+. help collect remap
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect remap cmdset = var2
+(54 items remapped in collection c3)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. 
+. cap prog drop mystats
+
+. program mystats, rclass
+  1. return scalar p_adj= chi2tail(r(df), r(chi2_adj))
+  2. return scalar Chi2_adj =  r(chi2_adj)
+  3. return scalar  DF =  r(df)
+  4. return scalar p= chi2tail(r(df), r(chi2))
+  5. return scalar  Chi2 =   r(chi2)
+  6. end
+
+. 
+. collect clear
+
+. 
+. local col "ever_mal"
+
+. local contmed "fecal_elastase ul_amylp lipase  ngml_trypsinogen"  /*continous variables; median (p25-p75)  will be reported*/
+
+. 
+. local colhead2 `"0 "NPM" 1 "PM""'
+
+.                 
+. * format median of `contmed'
+. local nfrmt_p50 "%5.0f"
+
+. local nfrmt_iqr "%5.0f"
+
+. local sfrmt_p25 "(%s-"
+
+. local sfrmt_p75 "%s)"
+
+. 
+. local title "Table . Pancreatic Enzyme Assays"
+
+. 
+. local notes1 "Values are [N] median (p25-p50)."
+
+. local notes2 "Faecal elastase values are upper limit of detection is 600."
+
+. local notes3 "Lipase from DIVIDS cohort only."
+
+. local notes4 "Trypsinogen from CT Scan subset only."
+
+. 
+. * STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  
+. * THERE IS NOTHING TO MODIFY BEYOND THIS LINE UNLESS CHANGING CODE. 
+. 
+. * GENERATE TABLE STATS 
+. 
+.         table (var)(`col')  , ///
+>                 stat(frequency) ///
+>                 stat(count `contmed') ///
+>                 stat(p50 `contmed') ///
+>                 stat(p25 `contmed') ///
+>                 stat(p75 `contmed') ///
+>                 nototal
+
+----------------------------------------------------------------
+                              |   Ever experience malnutrition? 
+                              |             NPM               PM
+------------------------------+---------------------------------
+Frequency                     |           1,095            1,029
+Fecal Elastase                |                                 
+  Number of nonmissing values |           1,003              799
+  50th percentile             |         313.704          374.824
+  25th percentile             |         132.437         146.2165
+  75th percentile             |        587.6312              600
+Amylase (U/L)                 |                                 
+  Number of nonmissing values |           1,008              757
+  50th percentile             |            29.6             31.1
+  25th percentile             |           23.45             24.4
+  75th percentile             |              38               42
+Lipase                        |                                 
+  Number of nonmissing values |              54              253
+  50th percentile             |            30.5               30
+  25th percentile             |              26               26
+  75th percentile             |              36               35
+Trypsinogen (ng/ml)           |                                 
+  Number of nonmissing values |             135              142
+  50th percentile             |            24.2            25.75
+  25th percentile             |            17.2             17.6
+  75th percentile             |            32.5             36.1
+----------------------------------------------------------------
+
+.                 
+. collect rename Table c1
+(current collection is c1)
+
+.                 
+. *REFORMAT RESULTS TO DESIRED COLUMNS
+.                 
+.         * recodes median and iqr
+.                 collect recode result p50 = column1
+(8 items recoded in collection c1)
+
+.                 collect recode result p25 = column2
+(8 items recoded in collection c1)
+
+.                 collect recode result p75 = column3
+(8 items recoded in collection c1)
+
+.                 
+.         * Create composite result : this is needed because 75 is in column3 and we want it in the same column as column 2 .  Use for medians and probably CIs
+.                 collect composite define column4 = column2 column3, replace
+
+. 
+.         * Calculate p-values from chi2 and df
+.         foreach v in `contmed' {
+  2.                 quietly kwallis `v', by(`col')
+  3.                 collect: mystats
+  4.         }
+
+. 
+.         
+. 
+. * CREATE THE TABLE 1 Layout Super column - column 
+. 
+.         collect layout (var) (ever_mal#result[count column1 column4])
+
+Collection: c1
+      Rows: var
+   Columns: ever_mal#result[count column1 column4]
+   Table 1: 4 x 6
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+                    |                                               Ever experience malnutrition?                                            
+                    |                             NPM                                                          PM                            
+                    |  Number of nonmissing values   column1     column2 column3   Number of nonmissing values   column1      column2 column3
+--------------------+------------------------------------------------------------------------------------------------------------------------
+Fecal Elastase      |                        1,003   313.704   132.437  587.6312                           799   374.824   146.2165       600
+Amylase (U/L)       |                        1,008      29.6     23.45        38                           757      31.1       24.4        42
+Lipase              |                           54      30.5        26        36                           253        30         26        35
+Trypsinogen (ng/ml) |                          135      24.2      17.2      32.5                           142     25.75       17.6      36.1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+. 
+. * Format p-values
+.         collect style cell result[p], nformat("%5.3f")
+
+.         collect style cell result[p], sformat("p=%s")
+
+. 
+. * CHANGE HEADER TEXT
+.         * column
+.                 collect label levels `col' `colhead2', modify
+
+. 
+. collect preview /* preview changes */
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+                    |                                               Ever experience malnutrition?                                            
+                    |                             NPM                                                          PM                            
+                    |  Number of nonmissing values   column1     column2 column3   Number of nonmissing values   column1      column2 column3
+--------------------+------------------------------------------------------------------------------------------------------------------------
+Fecal Elastase      |                        1,003   313.704   132.437  587.6312                           799   374.824   146.2165       600
+Amylase (U/L)       |                        1,008      29.6     23.45        38                           757      31.1       24.4        42
+Lipase              |                           54      30.5        26        36                           253        30         26        35
+Trypsinogen (ng/ml) |                          135      24.2      17.2      32.5                           142     25.75       17.6      36.1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+. 
+. * HIDE COLUMN HEADERS
+. 
+.         * Hide supercolumn variable name because it is self-descriptive
+.                 
+.         *       collect style header `scol', title(hide) /* this removes the column variable name or label by hiding it */
+. 
+.         * Hide the column variable name 
+.                 
+.                 collect style header `col', title(hide) /* this removes the column variable name or label by hiding it */
+
+. 
+.         * Hide the words column 1 and column 2 for the results 
+. 
+.                 collect style header result, level(hide) /* this removes column 1 and column2 header names*/
+
+. 
+. collect preview /* preview changes */
+
+-----------------------------------------------------------------------------------------------
+                    |                  NPM                                   PM                
+--------------------+--------------------------------------------------------------------------
+Fecal Elastase      |  1,003   313.704   132.437  587.6312   799   374.824   146.2165       600
+Amylase (U/L)       |  1,008      29.6     23.45        38   757      31.1       24.4        42
+Lipase              |     54      30.5        26        36   253        30         26        35
+Trypsinogen (ng/ml) |    135      24.2      17.2      32.5   142     25.75       17.6      36.1
+-----------------------------------------------------------------------------------------------
+
+. 
+. * MODIFY ROW TEXT
+. 
+. 
+. * REVISE ROW STYLES
+. 
+. * Stack levels of each variable , place a space between variables (spacer) ; 
+. 
+.         collect style row stack, nobinder spacer
+
+. 
+. * Remove vertical line after variables
+. 
+.         collect style cell border_block, border(right, pattern(nil))
+
+. 
+. * HIDE ROW Text
+. 
+. * Hide the variable names 
+. collect style header `hiderows', title(hide)
+
+. 
+. 
+. * FORMAT NUMBERS
+. 
+. * Format median
+. 
+.         collect style cell result[column1]#var[`contmed'], nformat(`nfrmt_p50')
+
+. 
+. * Add IQR formatting to p25 and p75 separately:
+.         collect style cell result[column2]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`sfrmt_p25'") /* formats iqr as (p25 - p75)*/
+
+.         collect style cell result[column3]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`sfrmt_p75'") 
+
+. 
+. * Format count column
+.         collect style cell result[count], nformat("%4.0f") /* Format count as whole number */
+
+.         collect style cell result[count], sformat("[%s]") /* Format count as whole number */
+
+.         
+. /* format factor variables (categorical) column 1 and column 2
+> 
+>         collect style cell var[`frmt_catvar1']#result[column1], nformat(`nfrmt_freq')
+> 
+>         collect style cell var[`frmt_catvar1']#result[column2], nformat(`nfrmt_perc') sformat("(`sfrmt_perc')") /* Adds (%) to percent */
+> 
+> * format means variable column 1 and column 2
+> 
+>         collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats continuous variable to one decimal*/
+> 
+>         collect style cell var[`contn']#result[column2], nformat(`nfrmt_sd') sformat(`sfrmt_sd') /* Formats continuous variable to one decimal*/
+> */
+. * Change font of results
+.         *collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats continuous variable to one decimal*/
+.         
+. * Add text
+.         collect title `title'
+
+.         collect notes `notes1'
+
+.         collect notes `notes2'
+
+.         collect notes `notes3'
+
+.         collect notes `notes4'
+
+.         
+. collect preview
+
+Table . Pancreatic Enzyme Assays
+---------------------------------------------------------------------------
+                                 NPM                          PM           
+---------------------------------------------------------------------------
+Fecal Elastase       [1003]   314   (132-  588)   [799]   375   (146-  600)
+Amylase (U/L)        [1008]    30    (23-   38)   [757]    31    (24-   42)
+Lipase                 [54]    30    (26-   36)   [253]    30    (26-   35)
+Trypsinogen (ng/ml)   [135]    24    (17-   32)   [142]    26    (18-   36)
+---------------------------------------------------------------------------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. 
+. * Save first collection with main stats
+. collect layout (var) (ever_mal#result[count column1 column4])
+
+Collection: c1
+      Rows: var
+   Columns: ever_mal#result[count column1 column4]
+   Table 1: 4 x 6
+
+Table . Pancreatic Enzyme Assays
+---------------------------------------------------------------------------
+                                 NPM                          PM           
+---------------------------------------------------------------------------
+Fecal Elastase       [1003]   314   (132-  588)   [799]   375   (146-  600)
+Amylase (U/L)        [1008]    30    (23-   38)   [757]    31    (24-   42)
+Lipase                 [54]    30    (26-   36)   [253]    30    (26-   35)
+Trypsinogen (ng/ml)   [135]    24    (17-   32)   [142]    26    (18-   36)
+---------------------------------------------------------------------------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. collect save ./tables/enzymes1.json, replace
+(collection c1 saved to file ./tables/enzymes1.json)
+
+. 
+. * Create new collection for p-values
+. collect create c2
+(current collection is c2)
+
+. foreach v in `contmed' {
+  2.     quietly kwallis `v', by(`col')
+  3.     collect: mystats
+  4. }
+
+. 
+. collect dir // check collections
+
+Collections in memory
+Current: c2
+----------------
+Name   No. items
+----------------
+  c1   54       
+  c2   20       
+----------------
+
+. 
+. * Combine collections
+. collect combine c3 = c1 c2
+(current collection is c3)
+
+. 
+. * Create layout for combined collection
+. collect layout (var pvals) (ever_mal#result[count column1 column4] result[p])
+(dimension pvals not found)
+
+Collection: c3
+      Rows: var pvals
+   Columns: ever_mal#result[count column1 column4] result[p]
+   Table 1: 4 x 6
+
+Table . Pancreatic Enzyme Assays
+---------------------------------------------------------------------------
+                                 NPM                          PM           
+---------------------------------------------------------------------------
+Fecal Elastase       [1003]   314   (132-  588)   [799]   375   (146-  600)
+Amylase (U/L)        [1008]    30    (23-   38)   [757]    31    (24-   42)
+Lipase                 [54]    30    (26-   36)   [253]    30    (26-   35)
+Trypsinogen (ng/ml)   [135]    24    (17-   32)   [142]    26    (18-   36)
+---------------------------------------------------------------------------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. 
+. collect layout (var) (ever_mal#result[count column1 column4])
+
+Collection: c3
+      Rows: var
+   Columns: ever_mal#result[count column1 column4]
+   Table 1: 4 x 6
+
+Table . Pancreatic Enzyme Assays
+---------------------------------------------------------------------------
+                                 NPM                          PM           
+---------------------------------------------------------------------------
+Fecal Elastase       [1003]   314   (132-  588)   [799]   375   (146-  600)
+Amylase (U/L)        [1008]    30    (23-   38)   [757]    31    (24-   42)
+Lipase                 [54]    30    (26-   36)   [253]    30    (26-   35)
+Trypsinogen (ng/ml)   [135]    24    (17-   32)   [142]    26    (18-   36)
+---------------------------------------------------------------------------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. collect layout (cmdset) (result[p])
+
+Collection: c3
+      Rows: cmdset
+   Columns: result[p]
+   Table 1: 4 x 1
+
+Table . Pancreatic Enzyme Assays
+----------
+1  p=0.005
+2  p=0.001
+3  p=0.576
+4  p=0.286
+----------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. 
+. collect layout (var cmdset) (ever_mal#result[count column1 column4] result[p])
+
+Collection: c3
+      Rows: var cmdset
+   Columns: ever_mal#result[count column1 column4] result[p]
+   Table 1: 9 x 7
+
+Table . Pancreatic Enzyme Assays
+-------------------------------------------------------------------------------------
+                                 NPM                          PM                     
+-------------------------------------------------------------------------------------
+Fecal Elastase       [1003]   314   (132-  588)   [799]   375   (146-  600)          
+Amylase (U/L)        [1008]    30    (23-   38)   [757]    31    (24-   42)          
+Lipase                 [54]    30    (26-   36)   [253]    30    (26-   35)          
+Trypsinogen (ng/ml)   [135]    24    (17-   32)   [142]    26    (18-   36)          
+                                                                                     
+1                                                                             p=0.005
+2                                                                             p=0.001
+3                                                                             p=0.576
+4                                                                             p=0.286
+-------------------------------------------------------------------------------------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. 
+end of do-file
+
+. kwallis fecal_elastase, by(ever_mal)
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +------------------------------+
+  | ever_mal |   Obs |  Rank sum |
+  |----------+-------+-----------|
+  |      NPM | 1,003 | 873326.50 |
+  |       PM |   799 | 751176.50 |
+  +------------------------------+
+
+  chi2(1) =  7.918
+     Prob = 0.0049
+
+  chi2(1) with ties =  8.052
+               Prob = 0.0045
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect layout (var cmdset) (ever_mal#result[count column1 column4] result[p])
+
+Collection: c3
+      Rows: var cmdset
+   Columns: ever_mal#result[count column1 column4] result[p]
+   Table 1: 9 x 7
+
+Table . Pancreatic Enzyme Assays
+-------------------------------------------------------------------------------------
+                                 NPM                          PM                     
+-------------------------------------------------------------------------------------
+Fecal Elastase       [1003]   314   (132-  588)   [799]   375   (146-  600)          
+Amylase (U/L)        [1008]    30    (23-   38)   [757]    31    (24-   42)          
+Lipase                 [54]    30    (26-   36)   [253]    30    (26-   35)          
+Trypsinogen (ng/ml)   [135]    24    (17-   32)   [142]    26    (18-   36)          
+                                                                                     
+1                                                                             p=0.005
+2                                                                             p=0.001
+3                                                                             p=0.576
+4                                                                             p=0.286
+-------------------------------------------------------------------------------------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect layout (var pvals) (ever_mal#result[count column1 column4] result[p])
+
+Collection: c3
+      Rows: var pvals
+   Columns: ever_mal#result[count column1 column4] result[p]
+   Table 1: 4 x 6
+
+Table . Pancreatic Enzyme Assays
+---------------------------------------------------------------------------
+                                 NPM                          PM           
+---------------------------------------------------------------------------
+Fecal Elastase       [1003]   314   (132-  588)   [799]   375   (146-  600)
+Amylase (U/L)        [1008]    30    (23-   38)   [757]    31    (24-   42)
+Lipase                 [54]    30    (26-   36)   [253]    30    (26-   35)
+Trypsinogen (ng/ml)   [135]    24    (17-   32)   [142]    26    (18-   36)
+---------------------------------------------------------------------------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect remap cmdset = var
+dimension var already exists in tag matched with cmdset[1]
+r(198);
+
+end of do-file
+
+r(198);
+
+. help remap
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. 
+. cap prog drop mystats
+
+. program mystats, rclass
+  1. return scalar p_adj= chi2tail(r(df), r(chi2_adj))
+  2. return scalar Chi2_adj =  r(chi2_adj)
+  3. return scalar  DF =  r(df)
+  4. return scalar p= chi2tail(r(df), r(chi2))
+  5. return scalar  Chi2 =   r(chi2)
+  6. end
+
+. 
+. collect clear
+
+. 
+. local col "ever_mal"
+
+. local contmed "fecal_elastase ul_amylp lipase  ngml_trypsinogen"  /*continous variables; median (p25-p75)  will be reported*/
+
+. 
+. local colhead2 `"0 "NPM" 1 "PM""'
+
+.                 
+. * format median of `contmed'
+. local nfrmt_p50 "%5.0f"
+
+. local nfrmt_iqr "%5.0f"
+
+. local sfrmt_p25 "(%s-"
+
+. local sfrmt_p75 "%s)"
+
+. 
+. local title "Table . Pancreatic Enzyme Assays"
+
+. 
+. local notes1 "Values are [N] median (p25-p50)."
+
+. local notes2 "Faecal elastase values are upper limit of detection is 600."
+
+. local notes3 "Lipase from DIVIDS cohort only."
+
+. local notes4 "Trypsinogen from CT Scan subset only."
+
+. 
+. * STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  
+. * THERE IS NOTHING TO MODIFY BEYOND THIS LINE UNLESS CHANGING CODE. 
+. 
+. * GENERATE TABLE STATS 
+. 
+.         table (var)(`col')  , ///
+>                 stat(frequency) ///
+>                 stat(count `contmed') ///
+>                 stat(p50 `contmed') ///
+>                 stat(p25 `contmed') ///
+>                 stat(p75 `contmed') ///
+>                 nototal
+
+----------------------------------------------------------------
+                              |   Ever experience malnutrition? 
+                              |             NPM               PM
+------------------------------+---------------------------------
+Frequency                     |           1,095            1,029
+Fecal Elastase                |                                 
+  Number of nonmissing values |           1,003              799
+  50th percentile             |         313.704          374.824
+  25th percentile             |         132.437         146.2165
+  75th percentile             |        587.6312              600
+Amylase (U/L)                 |                                 
+  Number of nonmissing values |           1,008              757
+  50th percentile             |            29.6             31.1
+  25th percentile             |           23.45             24.4
+  75th percentile             |              38               42
+Lipase                        |                                 
+  Number of nonmissing values |              54              253
+  50th percentile             |            30.5               30
+  25th percentile             |              26               26
+  75th percentile             |              36               35
+Trypsinogen (ng/ml)           |                                 
+  Number of nonmissing values |             135              142
+  50th percentile             |            24.2            25.75
+  25th percentile             |            17.2             17.6
+  75th percentile             |            32.5             36.1
+----------------------------------------------------------------
+
+.                 
+. collect rename Table c1
+(current collection is c1)
+
+.                 
+. *REFORMAT RESULTS TO DESIRED COLUMNS
+.                 
+.         * recodes median and iqr
+.                 collect recode result p50 = column1
+(8 items recoded in collection c1)
+
+.                 collect recode result p25 = column2
+(8 items recoded in collection c1)
+
+.                 collect recode result p75 = column3
+(8 items recoded in collection c1)
+
+.                 
+.         * Create composite result : this is needed because 75 is in column3 and we want it in the same column as column 2 .  Use for medians and probably CIs
+.                 collect composite define column4 = column2 column3, replace
+
+. 
+.         * Calculate p-values from chi2 and df
+.         foreach v in `contmed' {
+  2.                 quietly kwallis `v', by(`col')
+  3.                 collect: mystats
+  4.         }
+
+. 
+.         
+. 
+. * CREATE THE TABLE 1 Layout Super column - column 
+. 
+.         collect layout (var) (ever_mal#result[count column1 column4])
+
+Collection: c1
+      Rows: var
+   Columns: ever_mal#result[count column1 column4]
+   Table 1: 4 x 6
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+                    |                                               Ever experience malnutrition?                                            
+                    |                             NPM                                                          PM                            
+                    |  Number of nonmissing values   column1     column2 column3   Number of nonmissing values   column1      column2 column3
+--------------------+------------------------------------------------------------------------------------------------------------------------
+Fecal Elastase      |                        1,003   313.704   132.437  587.6312                           799   374.824   146.2165       600
+Amylase (U/L)       |                        1,008      29.6     23.45        38                           757      31.1       24.4        42
+Lipase              |                           54      30.5        26        36                           253        30         26        35
+Trypsinogen (ng/ml) |                          135      24.2      17.2      32.5                           142     25.75       17.6      36.1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+. 
+. * Format p-values
+.         collect style cell result[p], nformat("%5.3f")
+
+.         collect style cell result[p], sformat("p=%s")
+
+. 
+. * CHANGE HEADER TEXT
+.         * column
+.                 collect label levels `col' `colhead2', modify
+
+. 
+. collect preview /* preview changes */
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+                    |                                               Ever experience malnutrition?                                            
+                    |                             NPM                                                          PM                            
+                    |  Number of nonmissing values   column1     column2 column3   Number of nonmissing values   column1      column2 column3
+--------------------+------------------------------------------------------------------------------------------------------------------------
+Fecal Elastase      |                        1,003   313.704   132.437  587.6312                           799   374.824   146.2165       600
+Amylase (U/L)       |                        1,008      29.6     23.45        38                           757      31.1       24.4        42
+Lipase              |                           54      30.5        26        36                           253        30         26        35
+Trypsinogen (ng/ml) |                          135      24.2      17.2      32.5                           142     25.75       17.6      36.1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+. 
+. * HIDE COLUMN HEADERS
+. 
+.         * Hide supercolumn variable name because it is self-descriptive
+.                 
+.         *       collect style header `scol', title(hide) /* this removes the column variable name or label by hiding it */
+. 
+.         * Hide the column variable name 
+.                 
+.                 collect style header `col', title(hide) /* this removes the column variable name or label by hiding it */
+
+. 
+.         * Hide the words column 1 and column 2 for the results 
+. 
+.                 collect style header result, level(hide) /* this removes column 1 and column2 header names*/
+
+. 
+. collect preview /* preview changes */
+
+-----------------------------------------------------------------------------------------------
+                    |                  NPM                                   PM                
+--------------------+--------------------------------------------------------------------------
+Fecal Elastase      |  1,003   313.704   132.437  587.6312   799   374.824   146.2165       600
+Amylase (U/L)       |  1,008      29.6     23.45        38   757      31.1       24.4        42
+Lipase              |     54      30.5        26        36   253        30         26        35
+Trypsinogen (ng/ml) |    135      24.2      17.2      32.5   142     25.75       17.6      36.1
+-----------------------------------------------------------------------------------------------
+
+. 
+. * MODIFY ROW TEXT
+. 
+. 
+. * REVISE ROW STYLES
+. 
+. * Stack levels of each variable , place a space between variables (spacer) ; 
+. 
+.         collect style row stack, nobinder spacer
+
+. 
+. * Remove vertical line after variables
+. 
+.         collect style cell border_block, border(right, pattern(nil))
+
+. 
+. * HIDE ROW Text
+. 
+. * Hide the variable names 
+. collect style header `hiderows', title(hide)
+
+. 
+. 
+. * FORMAT NUMBERS
+. 
+. * Format median
+. 
+.         collect style cell result[column1]#var[`contmed'], nformat(`nfrmt_p50')
+
+. 
+. * Add IQR formatting to p25 and p75 separately:
+.         collect style cell result[column2]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`sfrmt_p25'") /* formats iqr as (p25 - p75)*/
+
+.         collect style cell result[column3]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`sfrmt_p75'") 
+
+. 
+. * Format count column
+.         collect style cell result[count], nformat("%4.0f") /* Format count as whole number */
+
+.         collect style cell result[count], sformat("[%s]") /* Format count as whole number */
+
+.         
+. /* format factor variables (categorical) column 1 and column 2
+> 
+>         collect style cell var[`frmt_catvar1']#result[column1], nformat(`nfrmt_freq')
+> 
+>         collect style cell var[`frmt_catvar1']#result[column2], nformat(`nfrmt_perc') sformat("(`sfrmt_perc')") /* Adds (%) to percent */
+> 
+> * format means variable column 1 and column 2
+> 
+>         collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats continuous variable to one decimal*/
+> 
+>         collect style cell var[`contn']#result[column2], nformat(`nfrmt_sd') sformat(`sfrmt_sd') /* Formats continuous variable to one decimal*/
+> */
+. * Change font of results
+.         *collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats continuous variable to one decimal*/
+.         
+. * Add text
+.         collect title `title'
+
+.         collect notes `notes1'
+
+.         collect notes `notes2'
+
+.         collect notes `notes3'
+
+.         collect notes `notes4'
+
+.         
+. collect preview
+
+Table . Pancreatic Enzyme Assays
+---------------------------------------------------------------------------
+                                 NPM                          PM           
+---------------------------------------------------------------------------
+Fecal Elastase       [1003]   314   (132-  588)   [799]   375   (146-  600)
+Amylase (U/L)        [1008]    30    (23-   38)   [757]    31    (24-   42)
+Lipase                 [54]    30    (26-   36)   [253]    30    (26-   35)
+Trypsinogen (ng/ml)   [135]    24    (17-   32)   [142]    26    (18-   36)
+---------------------------------------------------------------------------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. 
+. * Save first collection with main stats
+. collect layout (var) (ever_mal#result[count column1 column4])
+
+Collection: c1
+      Rows: var
+   Columns: ever_mal#result[count column1 column4]
+   Table 1: 4 x 6
+
+Table . Pancreatic Enzyme Assays
+---------------------------------------------------------------------------
+                                 NPM                          PM           
+---------------------------------------------------------------------------
+Fecal Elastase       [1003]   314   (132-  588)   [799]   375   (146-  600)
+Amylase (U/L)        [1008]    30    (23-   38)   [757]    31    (24-   42)
+Lipase                 [54]    30    (26-   36)   [253]    30    (26-   35)
+Trypsinogen (ng/ml)   [135]    24    (17-   32)   [142]    26    (18-   36)
+---------------------------------------------------------------------------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. collect save ./tables/enzymes1.json, replace
+(collection c1 saved to file ./tables/enzymes1.json)
+
+. 
+. * Create new collection for p-values
+. collect create c2
+(current collection is c2)
+
+. foreach v in `contmed' {
+  2.     quietly kwallis `v', by(`col')
+  3.     collect: mystats
+  4. }
+
+. 
+. * Remap cmdset to match var levels
+. collect recode cmdset 1 = fecal_elastase
+(5 items recoded in collection c2)
+
+. collect recode cmdset 2 = ul_amylp
+(5 items recoded in collection c2)
+
+. collect recode cmdset 3 = lipase
+(5 items recoded in collection c2)
+
+. collect recode cmdset 4 = ngml_trypsinogen
+(5 items recoded in collection c2)
+
+. collect remap cmdset = var
+(20 items remapped in collection c2)
+
+. 
+. * Combine collections
+. collect combine c3 = c1 c2
+(current collection is c3)
+
+. 
+end of do-file
+
+. collect dir
+
+Collections in memory
+Current: c3
+----------------
+Name   No. items
+----------------
+  c1   54       
+  c2   20       
+  c3   74       
+----------------
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect layout (var) (ever_mal#result[count column1 column4] result[p])
+
+Collection: c3
+      Rows: var
+   Columns: ever_mal#result[count column1 column4] result[p]
+   Table 1: 4 x 7
+
+Table . Pancreatic Enzyme Assays
+-------------------------------------------------------------------------------------
+                                 NPM                          PM                     
+-------------------------------------------------------------------------------------
+Fecal Elastase       [1003]   314   (132-  588)   [799]   375   (146-  600)   p=0.005
+Amylase (U/L)        [1008]    30    (23-   38)   [757]    31    (24-   42)   p=0.001
+Lipase                 [54]    30    (26-   36)   [253]    30    (26-   35)   p=0.576
+Trypsinogen (ng/ml)   [135]    24    (17-   32)   [142]    26    (18-   36)   p=0.286
+-------------------------------------------------------------------------------------
+Values are [N] median (p25-p50).
+Faecal elastase values are upper limit of detection is 600.
+Lipase from DIVIDS cohort only.
+Trypsinogen from CT Scan subset only.
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect export ./tables/enzymes.html, as(html) replace
+(collection c3 exported to file ./tables/enzymes.html)
+
+. collect export ./tables/enzymes.docx, as(docx) replace
+(collection c3 exported to file ./tables/enzymes.docx)
+
+. 
+end of do-file
+
+. collect dims
+
+Collection dimensions
+Collection: c3
+-----------------------------------------
+                   Dimension   No. levels
+-----------------------------------------
+Layout, style, header, label
+                      cmdset   8         
+                  collection   2         
+                     colname   4         
+                     command   1         
+                    ever_mal   2         
+               program_class   2         
+                      result   14        
+                 result_type   1         
+                     statcmd   5         
+                         var   9         
+
+Style only
+                border_block   4         
+                   cell_type   4         
+-----------------------------------------
+
+. collect levelsof var
+
+Collection: c3
+ Dimension: var
+    Levels: 1 2 _hide 3 fecal_elastase 4 ul_amylp lipase ngml_trypsinogen
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect export ./tables/enzymes.html, as(html) replace
+(collection c3 exported to file ./tables/enzymes.html)
+
+. collect export ./tables/enzymes.docx, as(docx) replace
+(collection c3 exported to file ./tables/enzymes.docx)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collet save ./tables/enzymes
+command collet is unrecognized
+r(199);
+
+end of do-file
+
+r(199);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect save ./tables/enzymes, replace
+(collection c3 saved to file ./tables/enzymes.stjson)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. 
+. set scheme stsj
+
+. 
+. 
+. *--- v4 works. LIPASE 
+. 
+. tempfile graphlist
+
+. local graphlist "" // Clear the graphlist
+
+. local i = 1
+
+. forvalues c = 0/5 {
+  2.     local grtitle : label cohort `i'
+  3.     gr box lipase if cohort == `i', over(ever_mal) title("`grtitle'")
+  4. 
+.     tempfile temp_graph_`i'
+  5.     gr save "`temp_graph_`i''.gph", replace
+  6. 
+.     display "`temp_graph_`i''.gph"
+  7. 
+.     local graphlist "`graphlist' `temp_graph_`i''.gph"
+  8. 
+.     local i = `i' + 1
+  9. }
+(file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000002.gph not found)
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000002.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000002.gph
+(file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000003.gph not found)
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000003.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000003.gph
+(file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000004.gph not found)
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000004.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000004.gph
+(file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000005.gph not found)
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000005.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000005.gph
+(file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000006.gph not found)
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000006.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000006.gph
+(file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000007.gph not found)
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000007.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000007.gph
+
+. 
+. display "`graphlist'"
+ /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000002.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000003.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51
+> 173.000004.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000005.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000006.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr
+> 7h0000gq/T//S_51173.000007.gph
+
+. 
+. gr combine `graphlist', rows(2) cols(3)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. tempfile graphlist
+
+. local graphlist ""
+
+. local i = 1
+
+. 
+. local cohort_order "2 4 3 1 6 5" // Define the desired order
+
+. 
+. foreach c of local cohort_order {
+  2.     local grtitle : label cohort `c'
+  3.     
+.         gr box fecal_elastase if cohort == `c', over(ever_mal) title("`grtitle'") ///
+>         ytitle("Lipase (units)") ///
+>         ylabel(0(1)5, angle(0) format(%2.0f)) ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+> 
+  4.     tempfile temp_graph_`i'
+  5.     gr save "`temp_graph_`i''.gph", replace
+  6. 
+.     display "`temp_graph_`i''.gph"
+  7. 
+.     local graphlist "`graphlist' `temp_graph_`i''.gph"
+  8. 
+.     local i = `i' + 1
+  9. }
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000002.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000002.gph
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000003.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000003.gph
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000004.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000004.gph
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000005.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000005.gph
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000006.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000006.gph
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000007.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000007.gph
+
+. 
+. display "`graphlist'"
+ /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000002.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000003.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51
+> 173.000004.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000005.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000006.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr
+> 7h0000gq/T//S_51173.000007.gph
+
+. 
+. gr combine `graphlist', rows(2) cols(3)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. tempfile graphlist
+
+. local graphlist "" // Clear the graphlist
+
+. local i = 1
+
+. forvalues c = 0/5 {
+  2.     local grtitle : label cohort `i'
+  3.     gr box lipase if cohort == `i', over(ever_mal) title("`grtitle'")
+  4.         ylabel(0(1)5, angle(0) format(%2.0f)) ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+> 
+  5.     tempfile temp_graph_`i'
+  6.     gr save "`temp_graph_`i''.gph", replace
+  7. 
+.     display "`temp_graph_`i''.gph"
+  8. 
+.     local graphlist "`graphlist' `temp_graph_`i''.gph"
+  9. 
+.     local i = `i' + 1
+ 10. }
+command ylabel is unrecognized
+r(199);
+
+end of do-file
+
+r(199);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. 
+. set scheme stsj
+
+. 
+. 
+. *--- v4 works. LIPASE 
+. 
+. tempfile graphlist
+
+. local graphlist "" // Clear the graphlist
+
+. local i = 1
+
+. forvalues c = 0/5 {
+  2.     local grtitle : label cohort `i'
+  3.     gr box lipase if cohort == `i', over(ever_mal) title("`grtitle'") ///
+>         ylabel(0(1)5, angle(0) format(%2.0f)) ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+> 
+  4.     tempfile temp_graph_`i'
+  5.     gr save "`temp_graph_`i''.gph", replace
+  6. 
+.     display "`temp_graph_`i''.gph"
+  7. 
+.     local graphlist "`graphlist' `temp_graph_`i''.gph"
+  8. 
+.     local i = `i' + 1
+  9. }
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000002.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000002.gph
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000003.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000003.gph
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000004.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000004.gph
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000005.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000005.gph
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000006.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000006.gph
+file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000007.gph saved
+/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000007.gph
+
+. 
+. display "`graphlist'"
+ /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000002.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000003.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51
+> 173.000004.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000005.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_51173.000006.gph /var/folders/lh/z7glx7t90sxdbn12r3xcjr
+> 7h0000gq/T//S_51173.000007.gph
+
+. 
+. gr combine `graphlist', rows(2) cols(3)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. local grtitle : label cohort `i'
+invalid syntax
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. local grtitle : label cohort `i'
+invalid syntax
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. local grtitle : label cohort 1
+
+. gr box lipase if, over(ever_mal) title("`grtitle'") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) 
+invalid syntax
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. 
+. gr box lipase if, over(ever_mal) title("Lipase Levels DIVIDS") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) 
+invalid syntax
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. gr box lipase, over(ever_mal) title("Lipase Levels DIVIDS") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) 
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+.                 
+. kwallis lipase, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +---------------------------+
+  | ever_mal | Obs | Rank sum |
+  |----------+-----+----------|
+  |      NPM |  54 |  8647.00 |
+  |       PM | 253 | 38631.00 |
+  +---------------------------+
+
+  chi2(1) =  0.312
+     Prob = 0.5762
+
+  chi2(1) with ties =  0.313
+               Prob = 0.5756
+
+. mystats
+
+. 
+end of do-file
+
+. rest list
+command rest is unrecognized
+r(199);
+
+. ret list
+
+scalars:
+               r(Chi2) =  .3124497652183891
+                  r(p) =  .5761807878073121
+                 r(DF) =  1
+           r(Chi2_adj) =  .3134619085312719
+              r(p_adj) =  .5755635489939235
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. 
+. cap prog drop mystats
+
+. program mystats, rclass
+  1. return scalar p_adj= chi2tail(r(df), r(chi2_adj))
+  2. return scalar Chi2_adj =  r(chi2_adj)
+  3. return scalar  DF =  r(df)
+  4. return scalar p= chi2tail(r(df), r(chi2))
+  5. return scalar  Chi2 =   r(chi2)
+  6. end
+
+. 
+. set scheme stsj
+
+. 
+. 
+. *--- v4 works. LIPASE 
+. 
+.                 
+. kwallis lipase, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +---------------------------+
+  | ever_mal | Obs | Rank sum |
+  |----------+-----+----------|
+  |      NPM |  54 |  8647.00 |
+  |       PM | 253 | 38631.00 |
+  +---------------------------+
+
+  chi2(1) =  0.312
+     Prob = 0.5762
+
+  chi2(1) with ties =  0.313
+               Prob = 0.5756
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. gr box lipase, over(ever_mal) title("Lipase Levels DIVIDS") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(2.5 0.5 "ρ = `chi2'" "p = `p'", size(vsmall) just(left)) ///
+> 
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. kwallis lipase, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +---------------------------+
+  | ever_mal | Obs | Rank sum |
+  |----------+-----+----------|
+  |      NPM |  54 |  8647.00 |
+  |       PM | 253 | 38631.00 |
+  +---------------------------+
+
+  chi2(1) =  0.312
+     Prob = 0.5762
+
+  chi2(1) with ties =  0.313
+               Prob = 0.5756
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. gr box lipase, over(ever_mal) title("Lipase Levels DIVIDS") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(10) 0.5 "ρ = `chi2'" "p = `p'", size(vsmall) just(left)) ///
+
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+.                 
+. kwallis lipase, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +---------------------------+
+  | ever_mal | Obs | Rank sum |
+  |----------+-----+----------|
+  |      NPM |  54 |  8647.00 |
+  |       PM | 253 | 38631.00 |
+  +---------------------------+
+
+  chi2(1) =  0.312
+     Prob = 0.5762
+
+  chi2(1) with ties =  0.313
+               Prob = 0.5756
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. gr box lipase, over(ever_mal) title("Lipase Levels DIVIDS") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(10) 0.5 "ρ = `chi2'" "p = `p'", size(vsmall) just(left)) 
+invalid 'size' 
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. kwallis lipase, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +---------------------------+
+  | ever_mal | Obs | Rank sum |
+  |----------+-----+----------|
+  |      NPM |  54 |  8647.00 |
+  |       PM | 253 | 38631.00 |
+  +---------------------------+
+
+  chi2(1) =  0.312
+     Prob = 0.5762
+
+  chi2(1) with ties =  0.313
+               Prob = 0.5756
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. gr box lipase, over(ever_mal) title("Lipase Levels DIVIDS") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(10 0.5 "ρ = `chi2'" "p = `p'", size(vsmall) just(left)) 
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+.                 
+. kwallis lipase, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +---------------------------+
+  | ever_mal | Obs | Rank sum |
+  |----------+-----+----------|
+  |      NPM |  54 |  8647.00 |
+  |       PM | 253 | 38631.00 |
+  +---------------------------+
+
+  chi2(1) =  0.312
+     Prob = 0.5762
+
+  chi2(1) with ties =  0.313
+               Prob = 0.5756
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. gr box lipase, over(ever_mal) title("Lipase Levels DIVIDS") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(60 1 "ρ = `chi2'" "p = `p'", size(small) just(left)) 
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+.                 
+. kwallis lipase, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +---------------------------+
+  | ever_mal | Obs | Rank sum |
+  |----------+-----+----------|
+  |      NPM |  54 |  8647.00 |
+  |       PM | 253 | 38631.00 |
+  +---------------------------+
+
+  chi2(1) =  0.312
+     Prob = 0.5762
+
+  chi2(1) with ties =  0.313
+               Prob = 0.5756
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. gr box lipase, over(ever_mal) title("Lipase Levels DIVIDS") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(60 3 "ρ = `chi2'" "p = `p'", size(small) just(left)) 
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+.                 
+. kwallis lipase, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +---------------------------+
+  | ever_mal | Obs | Rank sum |
+  |----------+-----+----------|
+  |      NPM |  54 |  8647.00 |
+  |       PM | 253 | 38631.00 |
+  +---------------------------+
+
+  chi2(1) =  0.312
+     Prob = 0.5762
+
+  chi2(1) with ties =  0.313
+               Prob = 0.5756
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. gr box lipase, over(ever_mal) title("Lipase Levels DIVIDS") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(60 5 "ρ = `chi2'" "p = `p'", size(vsmall) just(left)) 
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+.                 
+. kwallis lipase, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +---------------------------+
+  | ever_mal | Obs | Rank sum |
+  |----------+-----+----------|
+  |      NPM |  54 |  8647.00 |
+  |       PM | 253 | 38631.00 |
+  +---------------------------+
+
+  chi2(1) =  0.312
+     Prob = 0.5762
+
+  chi2(1) with ties =  0.313
+               Prob = 0.5756
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. gr box lipase, over(ever_mal) title("Lipase Levels DIVIDS") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(60 5 "Chi2 = `chi2'" "p = `p'", size(vsmall) just(left)) 
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+.  
+. kwallis ngml_trypsinogen, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +---------------------------+
+  | ever_mal | Obs | Rank sum |
+  |----------+-----+----------|
+  |      NPM | 135 | 18054.00 |
+  |       PM | 142 | 20449.00 |
+  +---------------------------+
+
+  chi2(1) =  1.138
+     Prob = 0.2860
+
+  chi2(1) with ties =  1.138
+               Prob = 0.2860
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. gr box ngml, over(ever_mal) title("Trypsinogen") subtitle("CT Scan subset") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(60 5 "Chi2 = `chi2'" "p = `p'", size(vsmall) just(left)) 
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. kwallis ngml_trypsinogen, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +---------------------------+
+  | ever_mal | Obs | Rank sum |
+  |----------+-----+----------|
+  |      NPM | 135 | 18054.00 |
+  |       PM | 142 | 20449.00 |
+  +---------------------------+
+
+  chi2(1) =  1.138
+     Prob = 0.2860
+
+  chi2(1) with ties =  1.138
+               Prob = 0.2860
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. gr box ngml, over(ever_mal) title("Trypsinogen") subtitle("CT Scan subset") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(250 5 "Chi2 = `chi2'" "p = `p'", size(vsmall) just(left)) 
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. kwallis fecal_elastase, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +------------------------------+
+  | ever_mal |   Obs |  Rank sum |
+  |----------+-------+-----------|
+  |      NPM | 1,003 | 873326.50 |
+  |       PM |   799 | 751176.50 |
+  +------------------------------+
+
+  chi2(1) =  7.918
+     Prob = 0.0049
+
+  chi2(1) with ties =  8.052
+               Prob = 0.0045
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. gr box fecal_elastase, over(ever_mal) title("Faecal Elastase") subtitle("All cohort") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(250 5 "Chi2 = `chi2'" "p = `p'", size(vsmall) just(left)) 
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. kwallis fecal_elastase, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +------------------------------+
+  | ever_mal |   Obs |  Rank sum |
+  |----------+-------+-----------|
+  |      NPM | 1,003 | 873326.50 |
+  |       PM |   799 | 751176.50 |
+  +------------------------------+
+
+  chi2(1) =  7.918
+     Prob = 0.0049
+
+  chi2(1) with ties =  8.052
+               Prob = 0.0045
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. gr box fecal_elastase, over(ever_mal) title("Faecal Elastase") subtitle("All cohorts") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(700 5 "Chi2 = `chi2'" "p = `p'", size(vsmall) just(left)) 
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. 
+. kwallis fecal_elastase, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +------------------------------+
+  | ever_mal |   Obs |  Rank sum |
+  |----------+-------+-----------|
+  |      NPM | 1,003 | 873326.50 |
+  |       PM |   799 | 751176.50 |
+  +------------------------------+
+
+  chi2(1) =  7.918
+     Prob = 0.0049
+
+  chi2(1) with ties =  8.052
+               Prob = 0.0045
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. gr box fecal_elastase, over(ever_mal) title("Faecal Elastase") subtitle("All cohorts") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(620 5 "Chi2 = `chi2'" "p = `p'", size(vsmall) just(left)) 
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. 
+. kwallis ul_amylp, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +------------------------------+
+  | ever_mal |   Obs |  Rank sum |
+  |----------+-------+-----------|
+  |      NPM | 1,008 | 853284.50 |
+  |       PM |   757 | 705210.50 |
+  +------------------------------+
+
+  chi2(1) = 12.046
+     Prob = 0.0005
+
+  chi2(1) with ties = 12.046
+               Prob = 0.0005
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. gr box ul_amylp, over(ever_mal) title("Amylase") subtitle("All cohorts") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(620 5 "Chi2 = `chi2'" "p = `p'", size(vsmall) just(left)) 
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. kwallis ul_amylp, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +------------------------------+
+  | ever_mal |   Obs |  Rank sum |
+  |----------+-------+-----------|
+  |      NPM | 1,008 | 853284.50 |
+  |       PM |   757 | 705210.50 |
+  +------------------------------+
+
+  chi2(1) = 12.046
+     Prob = 0.0005
+
+  chi2(1) with ties = 12.046
+               Prob = 0.0005
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. gr box ul_amylp, over(ever_mal) title("Amylase") subtitle("All cohorts") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(150 5 "Chi2 = `chi2'" "p = `p'", size(vsmall) just(left)) 
+
+. 
+end of do-file
+
+. spearman ct_pan_vol fecal_elastase
+
+Number of observations =     179
+        Spearman's rho = -0.0162
+
+Test of H0: ct_pan_vol and fecal_elastase are independent
+                  Prob =  0.8291
+
+. spearman fecal_elastase ct_pan_vol 
+
+Number of observations =     179
+        Spearman's rho = -0.0162
+
+Test of H0: fecal_elastase and ct_pan_vol are independent
+                  Prob =  0.8291
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. 
+. local enzymes "fecal_elastase ul_amylp lipase  ngml_trypsinogen"  /*continous variables; median (p25-p75)  will be reported*/           forea
+invalid syntax
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. local enzymes "fecal_elastase ul_amylp lipase  ngml_trypsinogen"  
+
+. foreach var of varlist `enzymes' 
+{ required
+r(100);
+
+end of do-file
+
+r(100);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. local enzymes "fecal_elastase ul_amylp lipase  ngml_trypsinogen"  
+
+. foreach var of varlist `enzymes' {}
+program error:  code follows on the same line as open brace
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. local enzymes "fecal_elastase ul_amylp lipase  ngml_trypsinogen"  
+
+. foreach var of varlist `enzymes' {
+  2.         spearman `var' ct_pan_vol
+  3. }
+
+Number of observations =     179
+        Spearman's rho = -0.0162
+
+Test of H0: fecal_elastase and ct_pan_vol are independent
+                  Prob =  0.8291
+
+Number of observations =    206
+        Spearman's rho = 0.1811
+
+Test of H0: ul_amylp and ct_pan_vol are independent
+                  Prob = 0.0093
+no observations
+r(2000);
+
+end of do-file
+
+r(2000);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. local enzymes "fecal_elastase ul_amylp lipase  ngml_trypsinogen"  
+
+. foreach var of varlist `enzymes' {
+  2.         capture spearman `var' ct_pan_vol
+  3. }
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+.                 
+. local enzymes "fecal_elastase ul_amylp ngml_trypsinogen"  
+
+. foreach var of varlist `enzymes' {
+  2.          spearman `var' ct_pan_vol
+  3. }
+
+Number of observations =     179
+        Spearman's rho = -0.0162
+
+Test of H0: fecal_elastase and ct_pan_vol are independent
+                  Prob =  0.8291
+
+Number of observations =    206
+        Spearman's rho = 0.1811
+
+Test of H0: ul_amylp and ct_pan_vol are independent
+                  Prob = 0.0093
+
+Number of observations =    199
+        Spearman's rho = 0.0786
+
+Test of H0: ngml_trypsinogen and ct_pan_vol are independent
+                  Prob = 0.2693
+
+. 
+. spearman pan_head_ap lipase
+
+Number of observations =    305
+        Spearman's rho = 0.0962
+
+Test of H0: pan_head_ap and lipase are independent
+                  Prob = 0.0934
+
+. 
+end of do-file
+
+. scatter ct_pan_vol ul_amylp
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. local enzymes "fecal_elastase ul_amylp ngml_trypsinogen"  
+
+. foreach var of varlist `enzymes' {
+  2.          local grtitle : variable label `var'
+  3.          spearman `var' ct_pan_vol title(`grtitle')
+  4. }
+factor-variable and time-series operators not allowed
+r(101);
+
+end of do-file
+
+r(101);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. local enzymes "fecal_elastase ul_amylp ngml_trypsinogen"  
+
+. foreach var of varlist `enzymes' {
+  2.          local grtitle : variable label `var'
+  3.          spearman `var' ct_pan_vol, title(`grtitle')
+  4. }
+option title() not allowed
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. local enzymes "fecal_elastase ul_amylp ngml_trypsinogen"  
+
+. foreach var of varlist `enzymes' {
+  2.          local grtitle : variable label `var'
+  3.          spearman `var' ct_pan_vol, title("`grtitle'")
+  4. }
+option title() not allowed
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. local enzymes "fecal_elastase ul_amylp ngml_trypsinogen"  
+
+. foreach var of varlist `enzymes' {
+  2.          local grtitle : variable label `var'
+  3.          spearman `var' ct_pan_vol, title("`grtitle'")
+  4. }
+option title() not allowed
+r(198);
+
+end of do-file
+
+r(198);
+
+. d fecal_elastase
+
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+fecal_elastase  float   %9.0g                 Fecal Elastase
+
+. d amylase
+variable amylase not found
 r(111);
 
-. regress ngml_trypsinogen ever_mal
+. d ul
 
-      Source |       SS           df       MS      Number of obs   =       313
--------------+----------------------------------   F(1, 311)       =      4.37
-       Model |  2715.41875         1  2715.41875   Prob > F        =    0.0374
-    Residual |  193329.432       311  621.638045   R-squared       =    0.0139
--------------+----------------------------------   Adj R-squared   =    0.0107
-       Total |  196044.851       312  628.348881   Root MSE        =    24.933
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ul_amylp        double  %10.0g                Amylase (U/L)
 
-------------------------------------------------------------------------------
-ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
--------------+----------------------------------------------------------------
-    ever_mal |     5.8923   2.819261     2.09   0.037     .3450631    11.43954
-       _cons |   26.22314   2.015687    13.01   0.000     22.25703    30.18925
-------------------------------------------------------------------------------
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
 
-. regress ngml_trypsinogen ever_mal age bmi
-variable bmi not found
+.                 
+. *--- v4 works. Fecal Elastase
+. 
+. kwallis fecal_elastase, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +------------------------------+
+  | ever_mal |   Obs |  Rank sum |
+  |----------+-------+-----------|
+  |      NPM | 1,003 | 873326.50 |
+  |       PM |   799 | 751176.50 |
+  +------------------------------+
+
+  chi2(1) =  7.918
+     Prob = 0.0049
+
+  chi2(1) with ties =  8.052
+               Prob = 0.0045
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. local grtitle : variable label fecal_elastase
+
+. 
+. gr box fecal_elastase, over(ever_mal) title("`grtitle'") subtitle("All cohorts") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(620 5 "Chi2 = `chi2'" "p = `p'", size(vsmall) just(left)) 
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. 
+.                 
+. local enzymes "fecal_elastase ul_amylp ngml_trypsinogen"  
+
+. foreach var of varlist `enzymes' {
+  2.          local grtitle : variable label `var'
+  3.          spearman `var' ct_pan_vol, title("`grtitle'")
+  4. }
+option title() not allowed
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+.                 
+. local enzymes "fecal_elastase ul_amylp ngml_trypsinogen"  
+
+. foreach var of varlist `enzymes' {
+  2.          local grtitle : variable label `var'
+  3.          local volabel : variable label ct_pan_vol
+  4.          spearman `var' ct_pan_vol, title("`grtitle' vs `volabel'")
+  5. }
+option title() not allowed
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. spearman fecal_elastase ct_pan_vol, title("Fecal Elastase")
+option title() not allowed
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. local enzymes "fecal_elastase ul_amylp ngml_trypsinogen"  
+
+. foreach var of varlist `enzymes' {
+  2.          local grtitle : variable label `var'
+  3.          local volabel : variable label ct_pan_vol
+  4.          scatter `var' ct_pan_vol, title("`grtitle' vs `volabel'")
+  5. }
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. local enzymes "fecal_elastase ul_amylp ngml_trypsinogen"  
+
+. foreach var of varlist `enzymes' {
+  2.          local grtitle : variable label `var'
+  3.          local volabel : variable label ct_pan_vol
+  4.          scatter `var' ct_pan_vol, title("`grtitle' vs `volabel'")
+  5. }
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. scatter fecal_elastase ct_pan_vol
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. scatter ul_amylp ct_pan_vol
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. scatter ngml_trypsinogen  ct_pan_vol
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. scatter ngml_trypsinogen  ct_pan_vol, mlabel(ever_mal)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. scatter ngml_trypsinogen ct_pan_vol if ever_mal==0 || scatter ngml_trypsinogen ct_pan_vol if evermal==1 
+evermal not found
 r(111);
 
-. regress ngml_trypsinogen ever_mal age sex
+end of do-file
 
-      Source |       SS           df       MS      Number of obs   =       313
--------------+----------------------------------   F(3, 309)       =      6.18
-       Model |  11102.8444         3  3700.94815   Prob > F        =    0.0004
-    Residual |  184942.006       309   598.51782   R-squared       =    0.0566
--------------+----------------------------------   Adj R-squared   =    0.0475
-       Total |  196044.851       312  628.348881   Root MSE        =    24.465
+r(111);
 
-------------------------------------------------------------------------------
-ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
--------------+----------------------------------------------------------------
-    ever_mal |   6.015799   2.781884     2.16   0.031     .5419655    11.48963
-         age |    .370531   .1207325     3.07   0.002     .1329692    .6080928
-         sex |  -4.828645   2.798988    -1.73   0.086    -10.33613    .6788423
-       _cons |   17.02383   7.580853     2.25   0.025      2.10721    31.94046
-------------------------------------------------------------------------------
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
 
-. regress ngml_trypsinogen ever_mal age sex cohort
+. scatter ngml_trypsinogen ct_pan_vol if ever_mal==0 || scatter ngml_trypsinogen ct_pan_vol if ever_mal==1 
 
-      Source |       SS           df       MS      Number of obs   =       313
--------------+----------------------------------   F(4, 308)       =      6.38
-       Model |  15002.9144         4  3750.72861   Prob > F        =    0.0001
-    Residual |  181041.936       308  587.798495   R-squared       =    0.0765
--------------+----------------------------------   Adj R-squared   =    0.0645
-       Total |  196044.851       312  628.348881   Root MSE        =    24.245
+. 
+end of do-file
 
-------------------------------------------------------------------------------
-ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
--------------+----------------------------------------------------------------
-    ever_mal |   5.258331   2.772499     1.90   0.059    -.1971055    10.71377
-         age |   .2750096   .1252615     2.20   0.029     .0285331    .5214862
-         sex |  -6.365023   2.837213    -2.24   0.026     -11.9478   -.7822498
-      cohort |  -3.418207   1.327017    -2.58   0.010    -6.029373   -.8070415
-       _cons |   40.06975   11.68276     3.43   0.001     17.08163    63.05787
-------------------------------------------------------------------------------
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
 
-. regress ngml_trypsinogen ever_mal age sex i.cohort
+. scatter ul_amylp ct_pan_vol if ever_mal==0 || scatter ul_amylp ct_pan_vol if ever_mal==1 
 
-      Source |       SS           df       MS      Number of obs   =       313
--------------+----------------------------------   F(6, 306)       =     11.04
-       Model |  34874.1437         6  5812.35729   Prob > F        =    0.0000
-    Residual |  161170.707       306  526.701657   R-squared       =    0.1779
--------------+----------------------------------   Adj R-squared   =    0.1618
-       Total |  196044.851       312  628.348881   Root MSE        =     22.95
+. 
+end of do-file
 
-------------------------------------------------------------------------------
-ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
--------------+----------------------------------------------------------------
-    ever_mal |   3.841189   2.640927     1.45   0.147    -1.355486    9.037864
-         age |   .3154288   .1204727     2.62   0.009     .0783691    .5524886
-         sex |  -10.39944   2.769189    -3.76   0.000     -15.8485   -4.950377
-             |
-      cohort |
-    NUSTART  |   20.59947   4.175198     4.93   0.000     12.38374     28.8152
-      STATT  |   -1.26972   3.945653    -0.32   0.748    -9.033765    6.494326
-      CLHNS  |   -2.45063   3.992541    -0.61   0.540    -10.30694     5.40568
-             |
-       _cons |   25.44781   8.558902     2.97   0.003     8.606056    42.28956
-------------------------------------------------------------------------------
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
 
-. regress ngml_trypsinogen ever_mal age sex i.child
-note: 2.child omitted because of collinearity.
+. scatter fecal_elastase ct_pan_vol if ever_mal==0 || scatter fecal_elastase ct_pan_vol if ever_mal==1 
 
-      Source |       SS           df       MS      Number of obs   =       313
--------------+----------------------------------   F(3, 309)       =      6.18
-       Model |  11102.8444         3  3700.94815   Prob > F        =    0.0004
-    Residual |  184942.006       309   598.51782   R-squared       =    0.0566
--------------+----------------------------------   Adj R-squared   =    0.0475
-       Total |  196044.851       312  628.348881   Root MSE        =    24.465
+. 
+end of do-file
 
-------------------------------------------------------------------------------
-ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
--------------+----------------------------------------------------------------
-    ever_mal |   6.015799   2.781884     2.16   0.031     .5419655    11.48963
-         age |    .370531   .1207325     3.07   0.002     .1329692    .6080928
-         sex |  -4.828645   2.798988    -1.73   0.086    -10.33613    .6788423
-             |
-       child |
-      Adult  |          0  (omitted)
-       _cons |   17.02383   7.580853     2.25   0.025      2.10721    31.94046
-------------------------------------------------------------------------------
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
 
-. regress ngml_trypsinogen ever_mal age sex 
+. set scheme tab2
 
-      Source |       SS           df       MS      Number of obs   =       313
--------------+----------------------------------   F(3, 309)       =      6.18
-       Model |  11102.8444         3  3700.94815   Prob > F        =    0.0004
-    Residual |  184942.006       309   598.51782   R-squared       =    0.0566
--------------+----------------------------------   Adj R-squared   =    0.0475
-       Total |  196044.851       312  628.348881   Root MSE        =    24.465
+. 
+. scatter fecal_elastase ct_pan_vol if ever_mal==0 || scatter fecal_elastase ct_pan_vol if ever_mal==1 
 
-------------------------------------------------------------------------------
-ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
--------------+----------------------------------------------------------------
-    ever_mal |   6.015799   2.781884     2.16   0.031     .5419655    11.48963
-         age |    .370531   .1207325     3.07   0.002     .1329692    .6080928
-         sex |  -4.828645   2.798988    -1.73   0.086    -10.33613    .6788423
-       _cons |   17.02383   7.580853     2.25   0.025      2.10721    31.94046
-------------------------------------------------------------------------------
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. set scheme tab2
+
+. 
+. scatter fecal_elastase ct_pan_vol if ever_mal==0, msymbol(circle) || ///
+> scatter fecal_elastase ct_pan_vol if ever_mal==1, msymbol(diamond) ///
+> legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'"))
+
+. 
+end of do-file
+
+. help schemepack
+
+. set scheme tab2
+
+. set scheme tab2
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. 
+. scatter fecal_elastase ct_pan_vol if ever_mal==0, msymbol(circle) mcolor(navy) || ///
+> scatter fecal_elastase ct_pan_vol if ever_mal==1, msymbol(diamond) mcolor(maroon) ///
+> legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'"))
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. set scheme tab2
+
+. 
+. scatter fecal_elastase ct_pan_vol if ever_mal==0, msymbol(circle) mcolor(blue) || ///
+> scatter fecal_elastase ct_pan_vol if ever_mal==1, msymbol(diamond) mcolor(red) ///
+> legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'"))
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. 
+. spearman fecal_elastase ct_pan_vol
+
+Number of observations =     179
+        Spearman's rho = -0.0162
+
+Test of H0: fecal_elastase and ct_pan_vol are independent
+                  Prob =  0.8291
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. scatter fecal_elastase ct_pan_vol if ever_mal==0, msymbol(circle) mcolor(blue) || ///
+> scatter fecal_elastase ct_pan_vol if ever_mal==1, msymbol(diamond) mcolor(red) ///
+> legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'")) ///
+>        text(2.5 0.5 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) 
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. scatter ul_amylp ct_pan_vol if ever_mal==0, msymbol(circle) mcolor(blue) || ///
+> scatter ul_amylp ct_pan_vol if ever_mal==1, msymbol(diamond) mcolor(red) ///
+> legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'"))
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. spearman fecal_elastase ct_pan_vol
+
+Number of observations =     179
+        Spearman's rho = -0.0162
+
+Test of H0: fecal_elastase and ct_pan_vol are independent
+                  Prob =  0.8291
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. scatter fecal_elastase ct_pan_vol if ever_mal==0, msymbol(circle) mcolor(blue) || ///
+> scatter fecal_elastase ct_pan_vol if ever_mal==1, msymbol(diamond) mcolor(red) ///
+> legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'")) ///
+>        text(2.5 150 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) 
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. scatter ul_amylp ct_pan_vol if ever_mal==0, msymbol(circle) mcolor(blue) || ///
+> scatter ul_amylp ct_pan_vol if ever_mal==1, msymbol(diamond) mcolor(red) ///
+> legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'")) ///
+>        text(2 150 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) 
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. spearman fecal_elastase ct_pan_vol
+
+Number of observations =     179
+        Spearman's rho = -0.0162
+
+Test of H0: fecal_elastase and ct_pan_vol are independent
+                  Prob =  0.8291
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. scatter fecal_elastase ct_pan_vol if ever_mal==0, msymbol(circle) mcolor(blue) || ///
+> scatter fecal_elastase ct_pan_vol if ever_mal==1, msymbol(diamond) mcolor(red) ///
+> legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'")) ///
+>        text(200 150 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) 
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. scatter ul_amylp ct_pan_vol if ever_mal==0, msymbol(circle) mcolor(blue) || ///
+> scatter ul_amylp ct_pan_vol if ever_mal==1, msymbol(diamond) mcolor(red) ///
+> legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'")) ///
+>        text(2 150 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) 
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. scatter ngml_trypsinogen ct_pan_vol if ever_mal==0, msymbol(circle) mcolor(blue) || ///
+> scatter ngml_trypsinogen ct_pan_vol if ever_mal==1, msymbol(diamond) mcolor(red) ///
+> legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'"))
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. local liplabel : variable label lipase
+
+. local headlabel : variable label pan_head_ap
+
+. scatter lipase pan_head_ap if ever_mal==0, msymbol(circle) mcolor(blue) || ///
+> scatter lipase pan_head_ap if ever_mal==1, msymbol(diamond) mcolor(red) ///
+> title("`liplabel' vs `headlabel'") ///
+> legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'"))
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. spearman lipase pan_head_ap
+
+Number of observations =    305
+        Spearman's rho = 0.0962
+
+Test of H0: lipase and pan_head_ap are independent
+                  Prob = 0.0934
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. local liplabel : variable label lipase
+
+. local headlabel : variable label pan_head_ap
+
+. scatter lipase pan_head_ap if ever_mal==0, msymbol(circle) mcolor(blue) || ///
+> scatter lipase pan_head_ap if ever_mal==1, msymbol(diamond) mcolor(red) ///
+> title("`liplabel' vs `headlabel'") ///
+> legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'"))
+
+.        text(60 4 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) 
+command text is unrecognized
+r(199);
+
+end of do-file
+
+r(199);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. spearman lipase pan_head_ap
+
+Number of observations =    305
+        Spearman's rho = 0.0962
+
+Test of H0: lipase and pan_head_ap are independent
+                  Prob = 0.0934
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. local liplabel : variable label lipase
+
+. local headlabel : variable label pan_head_ap
+
+. scatter lipase pan_head_ap if ever_mal==0, msymbol(circle) mcolor(blue) || ///
+> scatter lipase pan_head_ap if ever_mal==1, msymbol(diamond) mcolor(red) ///
+> title("`liplabel' vs `headlabel'") ///
+> legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'")) ///
+>        text(60 4 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) 
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. spearman fecal_elastase ct_pan_vol
+
+Number of observations =     179
+        Spearman's rho = -0.0162
+
+Test of H0: fecal_elastase and ct_pan_vol are independent
+                  Prob =  0.8291
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. scatter fecal_elastase ct_pan_vol if ever_mal==0, msymbol(circle) mcolor(blue) || ///
+> scatter fecal_elastase ct_pan_vol if ever_mal==1, msymbol(diamond) mcolor(red) ///
+> legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'")) ///
+>        text(200 150 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) 
+
+. 
+end of do-file
 

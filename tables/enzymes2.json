@@ -1,0 +1,342 @@
+{
+  "Items": {
+    "program_class[rclass]#pvals[fecal_elastase]#result[Chi2]#result_type[scalar]": {
+      "d": 7.918321480477971
+    },
+    "program_class[rclass]#pvals[fecal_elastase]#result[Chi2_adj]#result_type[scalar]": {
+      "d": 8.052272173180189
+    },
+    "program_class[rclass]#pvals[fecal_elastase]#result[DF]#result_type[scalar]": {
+      "d": 1.0
+    },
+    "program_class[rclass]#pvals[fecal_elastase]#result[p]#result_type[scalar]": {
+      "d": 0.004893665328462576
+    },
+    "program_class[rclass]#pvals[fecal_elastase]#result[p_adj]#result_type[scalar]": {
+      "d": 0.004544661942877413
+    },
+    "program_class[rclass]#pvals[lipase]#result[Chi2]#result_type[scalar]": {
+      "d": 0.3124497652183891
+    },
+    "program_class[rclass]#pvals[lipase]#result[Chi2_adj]#result_type[scalar]": {
+      "d": 0.3134619085312719
+    },
+    "program_class[rclass]#pvals[lipase]#result[DF]#result_type[scalar]": {
+      "d": 1.0
+    },
+    "program_class[rclass]#pvals[lipase]#result[p]#result_type[scalar]": {
+      "d": 0.5761807878073121
+    },
+    "program_class[rclass]#pvals[lipase]#result[p_adj]#result_type[scalar]": {
+      "d": 0.5755635489939235
+    },
+    "program_class[rclass]#pvals[ngml_trypsinogen]#result[Chi2]#result_type[scalar]": {
+      "d": 1.138274939615144
+    },
+    "program_class[rclass]#pvals[ngml_trypsinogen]#result[Chi2_adj]#result_type[scalar]": {
+      "d": 1.1383147871689792
+    },
+    "program_class[rclass]#pvals[ngml_trypsinogen]#result[DF]#result_type[scalar]": {
+      "d": 1.0
+    },
+    "program_class[rclass]#pvals[ngml_trypsinogen]#result[p]#result_type[scalar]": {
+      "d": 0.286017136740101
+    },
+    "program_class[rclass]#pvals[ngml_trypsinogen]#result[p_adj]#result_type[scalar]": {
+      "d": 0.2860087032613525
+    },
+    "program_class[rclass]#pvals[ul_amylp]#result[Chi2]#result_type[scalar]": {
+      "d": 12.04590967568129
+    },
+    "program_class[rclass]#pvals[ul_amylp]#result[Chi2_adj]#result_type[scalar]": {
+      "d": 12.046055966907321
+    },
+    "program_class[rclass]#pvals[ul_amylp]#result[DF]#result_type[scalar]": {
+      "d": 1.0
+    },
+    "program_class[rclass]#pvals[ul_amylp]#result[p]#result_type[scalar]": {
+      "d": 0.0005190615043542241
+    },
+    "program_class[rclass]#pvals[ul_amylp]#result[p_adj]#result_type[scalar]": {
+      "d": 0.0005190207705199956
+    }
+  },
+  "Labels": {
+    "Dimensions": {
+      "_dimensions": {
+        "border_block": "Table border block",
+        "cell_type": "Table cell type",
+        "cmdset": "Command results index",
+        "program_class": "Result program class",
+        "result": "Result",
+        "result_type": "Result type"
+      },
+      "result_type": {
+        "scalar": "Scalar"
+      }
+    }
+  },
+  "Layout": {
+    "columns": "result[p]",
+    "rows": "pvals",
+    "tables": ""
+  },
+  "ScalarResults": [
+    "Chi2",
+    "Chi2_adj",
+    "DF",
+    "p",
+    "p_adj"
+  ],
+  "Styles": {
+    "cell": {
+      "base": {
+        "ci-delimiter": " ",
+        "cri-delimiter": " ",
+        "nformat": "%9.0g"
+      },
+      "edits": [
+        [
+          "cell_type[item]",
+          {
+            "smcl": "result"
+          }
+        ],
+        [
+          "result[_r_b _r_se _r_lb _r_ub _r_ci _r_crlb _r_crub _r_cri]",
+          {
+            "nformat": "%9.0g"
+          }
+        ],
+        [
+          "result[_r_z _r_z_abs]",
+          {
+            "nformat": "%8.2f"
+          }
+        ],
+        [
+          "result[_r_p]",
+          {
+            "nformat": "%5.3f"
+          }
+        ],
+        [
+          "cell_type[item]",
+          {
+            "margin-left": {
+              "width": "10pt"
+            }
+          }
+        ],
+        [
+          "cell_type[corner]",
+          {
+            "halign": "center"
+          }
+        ],
+        [
+          "cell_type[column-header]",
+          {
+            "halign": "right"
+          }
+        ],
+        [
+          "cell_type[column-header]#result[_r_ci _r_cri]",
+          {
+            "halign": "center"
+          }
+        ],
+        [
+          "cell_type[item]",
+          {
+            "halign": "right"
+          }
+        ],
+        [
+          "cell_type[row-header]",
+          {
+            "halign": "left"
+          }
+        ],
+        [
+          "border_block[corner]",
+          {
+            "border-right": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[column-header]",
+          {
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[row-header]",
+          {
+            "border-bottom": {
+              "pattern": "single"
+            },
+            "border-right": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[item]",
+          {
+            "border-bottom": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ]
+      ]
+    },
+    "export": {
+      "tex": {
+        "begintable": "true",
+        "centering": "true"
+      }
+    },
+    "header": {
+      "base": {
+        "level": "label",
+        "title": "hide"
+      },
+      "dimensions": {
+        "stars": {
+          "level": "hide",
+          "title": "hide"
+        }
+      },
+      "row": {
+        "arrangement": "stack"
+      }
+    }
+  },
+  "Tags": {
+    "border_block": [
+      {
+        "stripe": "column-header",
+        "term-index": 0
+      },
+      {
+        "stripe": "corner",
+        "term-index": 0
+      },
+      {
+        "stripe": "item",
+        "term-index": 0
+      },
+      {
+        "stripe": "row-header",
+        "term-index": 0
+      }
+    ],
+    "cell_type": [
+      {
+        "stripe": "column-header",
+        "term-index": 0
+      },
+      {
+        "stripe": "corner",
+        "term-index": 0
+      },
+      {
+        "stripe": "item",
+        "term-index": 0
+      },
+      {
+        "stripe": "row-header",
+        "term-index": 0
+      }
+    ],
+    "cmdset": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      },
+      {
+        "stripe": "2",
+        "term-index": 1
+      },
+      {
+        "stripe": "3",
+        "term-index": 2
+      },
+      {
+        "stripe": "4",
+        "term-index": 3
+      }
+    ],
+    "program_class": [
+      {
+        "stripe": "eclass",
+        "term-index": 0
+      },
+      {
+        "stripe": "rclass",
+        "term-index": 0
+      }
+    ],
+    "pvals": [
+      {
+        "stripe": "fecal_elastase",
+        "term-index": 0
+      },
+      {
+        "stripe": "lipase",
+        "term-index": 2
+      },
+      {
+        "stripe": "ngml_trypsinogen",
+        "term-index": 3
+      },
+      {
+        "stripe": "ul_amylp",
+        "term-index": 1
+      }
+    ],
+    "result": [
+      {
+        "stripe": "Chi2",
+        "term-index": 0
+      },
+      {
+        "stripe": "Chi2_adj",
+        "term-index": 0
+      },
+      {
+        "stripe": "DF",
+        "term-index": 0
+      },
+      {
+        "stripe": "p",
+        "term-index": 0
+      },
+      {
+        "stripe": "p_adj",
+        "term-index": 0
+      }
+    ],
+    "result_type": [
+      {
+        "stripe": "scalar",
+        "term-index": 0
+      }
+    ]
+  },
+  "collection-name": "c2"
+}
