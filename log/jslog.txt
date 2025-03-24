@@ -4619,3 +4619,2342 @@ Test of H0: fecal_elastase and ct_pan_vol are independent
 . 
 end of do-file
 
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. 
+. spearman ngml_trypsinogen ct_pan_vol
+
+Number of observations =    199
+        Spearman's rho = 0.0786
+
+Test of H0: ngml_trypsinogen and ct_pan_vol are independent
+                  Prob = 0.2693
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. scatter ngml_trypsinogen ct_pan_vol if ever_mal==0, msymbol(circle) mcolor(blue) || ///
+> scatter ngml_trypsinogen ct_pan_vol if ever_mal==1, msymbol(diamond) mcolor(red) ///
+> legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'")) ///
+> text(200 150 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+> ytitle("Trypsinogen ng?ml")
+
+. 
+end of do-file
+
+. help gr twoway
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. 
+. spearman fecal_elastase ct_pan_vol
+
+Number of observations =     179
+        Spearman's rho = -0.0162
+
+Test of H0: fecal_elastase and ct_pan_vol are independent
+                  Prob =  0.8291
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. scatter fecal_elastase ct_pan_vol if ever_mal==0, msymbol(circle) mcolor(blue) || ///
+> scatter fecal_elastase ct_pan_vol if ever_mal==1, msymbol(diamond) mcolor(red) ///
+> legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'")) ///
+>        text(200 150 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+>            ytitle("Fecal Elastase ng/ml") ///
+>            name(g_`1', replace)
+
+. 
+. * Amylase scatter
+.            
+. spearman ul_amylp ct_pan_vol
+
+Number of observations =    206
+        Spearman's rho = 0.1811
+
+Test of H0: ul_amylp and ct_pan_vol are independent
+                  Prob = 0.0093
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. scatter ul_amylp ct_pan_vol if ever_mal==0, msymbol(circle) mcolor(blue) || ///
+> scatter ul_amylp ct_pan_vol if ever_mal==1, msymbol(diamond) mcolor(red) ///
+> legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'")) ///
+>        text(150 150 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+>                    ytitle("Amylase U/L") ///
+>                            name(g_`2', replace)
+
+.                            
+. gr combine g_`1' g_`2'
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. tempfile 1 2 3 4
+
+. 
+. spearman fecal_elastase ct_pan_vol
+
+Number of observations =     179
+        Spearman's rho = -0.0162
+
+Test of H0: fecal_elastase and ct_pan_vol are independent
+                  Prob =  0.8291
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. scatter fecal_elastase ct_pan_vol if ever_mal==0, msymbol(circle) mcolor(blue) || ///
+> scatter fecal_elastase ct_pan_vol if ever_mal==1, msymbol(diamond) mcolor(red) ///
+> legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'")) ///
+>        text(200 150 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+>            ytitle("Fecal Elastase ng/ml") ///
+>            name(g_`1', replace)
+/ invalid name
+/ invalid name
+/ invalid name
+/ invalid name
+/ invalid name
+/ invalid name
+/ invalid name
+S_51173.000001 invalid name
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. tempfile g1 g2 g3 g4
+
+. 
+. local enzymes "fecal_elastase ul_amylp ngml_trypsinogen"  
+
+. local i = 1
+
+. foreach var of varlist `enzymes' {
+  2.          local grtitle : variable label `var'
+  3.          local volabel : variable label ct_pan_vol
+  4.          
+.          spearman `var' ct_pan_vol
+  5.          local rho = string(r(rho), "%4.2f")
+  6.          local p = string(r(p), "%4.3f")
+  7.          
+.          scatter `var' ct_pan_vol if ever_mal==0, msymbol(circle) mcolor(blue) || ///
+>          scatter `var' ct_pan_vol if ever_mal==1, msymbol(diamond) mcolor(red) ///
+>          title("`grtitle' vs `volabel'") ///
+>          legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'")) ///
+>          text(200 150 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+>          name(g_`i', replace)
+  8.          
+.          local ++i
+  9. }
+
+Number of observations =     179
+        Spearman's rho = -0.0162
+
+Test of H0: fecal_elastase and ct_pan_vol are independent
+                  Prob =  0.8291
+
+Number of observations =    206
+        Spearman's rho = 0.1811
+
+Test of H0: ul_amylp and ct_pan_vol are independent
+                  Prob = 0.0093
+
+Number of observations =    199
+        Spearman's rho = 0.0786
+
+Test of H0: ngml_trypsinogen and ct_pan_vol are independent
+                  Prob = 0.2693
+
+. 
+. * Lipase separately since it uses different x variable
+. spearman lipase pan_head_ap
+
+Number of observations =    305
+        Spearman's rho = 0.0962
+
+Test of H0: lipase and pan_head_ap are independent
+                  Prob = 0.0934
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. local liplabel : variable label lipase
+
+. local headlabel : variable label pan_head_ap
+
+. scatter lipase pan_head_ap if ever_mal==0, msymbol(circle) mcolor(blue) || ///
+> scatter lipase pan_head_ap if ever_mal==1, msymbol(diamond) mcolor(red) ///
+> title("`liplabel' vs `headlabel'") ///
+> legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'")) ///
+> text(60 4 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+> name(g_4, replace)
+
+. 
+. gr combine g_1 g_2 g_3 g_4, rows(2) cols(2)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. tempfile g1 g2 g3 g4
+
+. 
+. local enzymes "fecal_elastase ul_amylp ngml_trypsinogen"  
+
+. local i = 1
+
+. foreach var of varlist `enzymes' {
+  2.          local grtitle : variable label `var'
+  3.          local volabel : variable label ct_pan_vol
+  4.          
+.          spearman `var' ct_pan_vol
+  5.          local rho = string(r(rho), "%4.2f")
+  6.          local p = string(r(p), "%4.3f")
+  7.          
+.          scatter `var' ct_pan_vol if ever_mal==0, msymbol(circle) mcolor(blue) || ///
+>          scatter `var' ct_pan_vol if ever_mal==1, msymbol(diamond) mcolor(red) ///
+>          title("`grtitle'") ///
+>          legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'")) ///
+>          text(200 150 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+>          xtitle("Pancreatic volume, ml") ///
+>          name(g_`i', replace)
+  8.          
+.          local ++i
+  9. }
+
+Number of observations =     179
+        Spearman's rho = -0.0162
+
+Test of H0: fecal_elastase and ct_pan_vol are independent
+                  Prob =  0.8291
+
+Number of observations =    206
+        Spearman's rho = 0.1811
+
+Test of H0: ul_amylp and ct_pan_vol are independent
+                  Prob = 0.0093
+
+Number of observations =    199
+        Spearman's rho = 0.0786
+
+Test of H0: ngml_trypsinogen and ct_pan_vol are independent
+                  Prob = 0.2693
+
+. 
+. * Lipase separately since it uses different x variable
+. spearman lipase pan_head_ap
+
+Number of observations =    305
+        Spearman's rho = 0.0962
+
+Test of H0: lipase and pan_head_ap are independent
+                  Prob = 0.0934
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. local liplabel : variable label lipase
+
+. local headlabel : variable label pan_head_ap
+
+. scatter lipase pan_head_ap if ever_mal==0, msymbol(circle) mcolor(blue) || ///
+> scatter lipase pan_head_ap if ever_mal==1, msymbol(diamond) mcolor(red) ///
+> title("`liplabel' vs `headlabel'") ///
+> legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'")) ///
+> text(60 4 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+> xtitle("Pancreatic Head AP length, cm") ///
+> name(g_4, replace)
+
+. 
+. gr combine g_1 g_2 g_3 g_4, rows(2) cols(2)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. tempfile g1 g2 g3 g4
+
+. 
+. local enzymes "fecal_elastase ul_amylp ngml_trypsinogen"  
+
+. local i = 1
+
+. foreach var of varlist `enzymes' {
+  2.          local grtitle : variable label `var'
+  3.          local volabel : variable label ct_pan_vol
+  4.          
+.          spearman `var' ct_pan_vol
+  5.          local rho = string(r(rho), "%4.2f")
+  6.          local p = string(r(p), "%4.3f")
+  7.          
+.          scatter `var' ct_pan_vol if ever_mal==0, msymbol(circle) mcolor(blue) || ///
+>          scatter `var' ct_pan_vol if ever_mal==1, msymbol(diamond) mcolor(red) ///
+>          title("`grtitle'") ///
+>          legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'")) ///
+>          text(200 150 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+>          xtitle("Pancreatic volume, ml") ///
+>          name(g_`i', replace)
+  8.          
+.          local ++i
+  9. }
+
+Number of observations =     179
+        Spearman's rho = -0.0162
+
+Test of H0: fecal_elastase and ct_pan_vol are independent
+                  Prob =  0.8291
+
+Number of observations =    206
+        Spearman's rho = 0.1811
+
+Test of H0: ul_amylp and ct_pan_vol are independent
+                  Prob = 0.0093
+
+Number of observations =    199
+        Spearman's rho = 0.0786
+
+Test of H0: ngml_trypsinogen and ct_pan_vol are independent
+                  Prob = 0.2693
+
+. 
+. * Lipase separately since it uses different x variable
+. spearman lipase pan_head_ap
+
+Number of observations =    305
+        Spearman's rho = 0.0962
+
+Test of H0: lipase and pan_head_ap are independent
+                  Prob = 0.0934
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. local liplabel : variable label lipase
+
+. local headlabel : variable label pan_head_ap
+
+. scatter lipase pan_head_ap if ever_mal==0, msymbol(circle) mcolor(blue) || ///
+> scatter lipase pan_head_ap if ever_mal==1, msymbol(diamond) mcolor(red) ///
+> title("`liplabel'") ///
+> legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'")) ///
+> text(60 4 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+> xtitle("Pancreatic Head AP length, cm") ///
+> name(g_4, replace)
+
+. 
+. gr combine g_1 g_2 g_3 g_4, rows(2) cols(2)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. 
+. cap prog drop mystats
+
+. program mystats, rclass
+  1. return scalar p_adj= chi2tail(r(df), r(chi2_adj))
+  2. return scalar Chi2_adj =  r(chi2_adj)
+  3. return scalar  DF =  r(df)
+  4. return scalar p= chi2tail(r(df), r(chi2))
+  5. return scalar  Chi2 =   r(chi2)
+  6. end
+
+. 
+. set scheme stsj
+
+. 
+.                 
+. *--- v4 works. Fecal Elastase
+. 
+. kwallis fecal_elastase, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +------------------------------+
+  | ever_mal |   Obs |  Rank sum |
+  |----------+-------+-----------|
+  |      NPM | 1,003 | 873326.50 |
+  |       PM |   799 | 751176.50 |
+  +------------------------------+
+
+  chi2(1) =  7.918
+     Prob = 0.0049
+
+  chi2(1) with ties =  8.052
+               Prob = 0.0045
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. local grtitle : variable label fecal_elastase
+
+. 
+. gr box fecal_elastase, over(ever_mal) title("`grtitle'") subtitle("All cohorts") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(620 5 "Chi2 = `chi2'" "p = `p'", size(vsmall) just(left)) 
+
+.                 
+.                 
+. *--- v4 works. Amylase
+. 
+. kwallis ul_amylp, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +------------------------------+
+  | ever_mal |   Obs |  Rank sum |
+  |----------+-------+-----------|
+  |      NPM | 1,008 | 853284.50 |
+  |       PM |   757 | 705210.50 |
+  +------------------------------+
+
+  chi2(1) = 12.046
+     Prob = 0.0005
+
+  chi2(1) with ties = 12.046
+               Prob = 0.0005
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. local grtitle : variable label ul_amylp
+
+. 
+. gr box ul_amylp, over(ever_mal) title("`grtitle'") subtitle("All cohorts") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(150 5 "Chi2 = `chi2'" "p = `p'", size(vsmall) just(left)) 
+
+. 
+. *--- v4 works. LIPASE 
+. 
+. kwallis lipase, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +---------------------------+
+  | ever_mal | Obs | Rank sum |
+  |----------+-----+----------|
+  |      NPM |  54 |  8647.00 |
+  |       PM | 253 | 38631.00 |
+  +---------------------------+
+
+  chi2(1) =  0.312
+     Prob = 0.5762
+
+  chi2(1) with ties =  0.313
+               Prob = 0.5756
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. local grtitle : variable label lipase
+
+. 
+. gr box lipase, over(ever_mal) title("`grtitle'") subtitle("DIVIDS only") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(60 5 "Chi2 = `chi2'" "p = `p'", size(vsmall) just(left)) 
+
+.                 
+. 
+. *--- v4 works. Trypsinogen
+.  
+. kwallis ngml_trypsinogen, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +---------------------------+
+  | ever_mal | Obs | Rank sum |
+  |----------+-----+----------|
+  |      NPM | 135 | 18054.00 |
+  |       PM | 142 | 20449.00 |
+  +---------------------------+
+
+  chi2(1) =  1.138
+     Prob = 0.2860
+
+  chi2(1) with ties =  1.138
+               Prob = 0.2860
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. local grtitle : variable label ngml_trypsinogen
+
+. 
+. gr box ngml_trypsinogen, over(ever_mal) title("`grtitle'") subtitle("CT Scan subset") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(250 5 "Chi2 = `chi2'" "p = `p'", size(vsmall) just(left)) 
+
+. 
+. 
+.                 
+. local enzymes "fecal_elastase ul_amylp ngml_trypsinogen"  
+
+. foreach var of varlist `enzymes' {
+  2.          local grtitle : variable label `var'
+  3.          local volabel : variable label ct_pan_vol
+  4.          local mallabel : value label ever_mal
+  5.          scatter `var' ct_pan_vol if ever_mal==0, msymbol(circle) mcolor(blue%50) || ///
+>          scatter `var' ct_pan_vol if ever_mal==1, msymbol(diamond) mcolor(red%50) ///
+>          title("`grtitle' vs `volabel'") ///
+>          legend(order(1 "`:label (`mallabel') 0'" 2 "`:label (`mallabel') 1'"))
+  6. }
+
+. 
+. set scheme tab2
+
+. 
+. * FE-1 scatter
+. 
+. tempfile g1 g2 g3 g4
+
+. 
+. local enzymes "fecal_elastase ul_amylp ngml_trypsinogen"  
+
+. local i = 1
+
+. foreach var of varlist `enzymes' {
+  2.          local grtitle : variable label `var'
+  3.          local volabel : variable label ct_pan_vol
+  4.          
+.          spearman `var' ct_pan_vol
+  5.          local rho = string(r(rho), "%4.2f")
+  6.          local p = string(r(p), "%4.3f")
+  7.          
+.          scatter `var' ct_pan_vol if ever_mal==0, msymbol(circle) mcolor(blue%50) || ///
+>          scatter `var' ct_pan_vol if ever_mal==1, msymbol(diamond) mcolor(red%50) ///
+>          title("`grtitle'") ///
+>          legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'")) ///
+>          text(200 150 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+>          xtitle("Pancreatic volume, ml") ///
+>          name(g_`i', replace)
+  8.          
+.          local ++i
+  9. }
+
+Number of observations =     179
+        Spearman's rho = -0.0162
+
+Test of H0: fecal_elastase and ct_pan_vol are independent
+                  Prob =  0.8291
+
+Number of observations =    206
+        Spearman's rho = 0.1811
+
+Test of H0: ul_amylp and ct_pan_vol are independent
+                  Prob = 0.0093
+
+Number of observations =    199
+        Spearman's rho = 0.0786
+
+Test of H0: ngml_trypsinogen and ct_pan_vol are independent
+                  Prob = 0.2693
+
+. 
+. * Lipase separately since it uses different x variable
+. spearman lipase pan_head_ap
+
+Number of observations =    305
+        Spearman's rho = 0.0962
+
+Test of H0: lipase and pan_head_ap are independent
+                  Prob = 0.0934
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. local liplabel : variable label lipase
+
+. local headlabel : variable label pan_head_ap
+
+. scatter lipase pan_head_ap if ever_mal==0, msymbol(circle) mcolor(blue%50) || ///
+> scatter lipase pan_head_ap if ever_mal==1, msymbol(diamond) mcolor(red%50) ///
+> title("`liplabel'") ///
+> legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'")) ///
+> text(60 4 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+> xtitle("Pancreatic Head AP length, cm") ///
+> name(g_4, replace)
+
+. 
+. gr combine g_1 g_2 g_3 g_4, rows(2) cols(2)
+
+. 
+end of do-file
+
+. pwd
+/Users/juansolon/Documents/GitHub/sampa-radio
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. /* figc_all_enzymes.do 
+> Sampa
+> J Solon
+> March 20 2025
+> 
+> Creates Fig
+> local fig3 "./figures/fe1_coh_mn.png"
+> local fig3head "Figure 3 Faecal elastase distribution by cohort and malnutrition status."
+> 
+> local fig3text "a) axial anterior-posterior and transverse head diameters, b) coronal cranio-caudal head diameter, c) coronal cranio-caudal body diameters, d) axial anterior-posterior body an
+> d tail diameters, body, and d) length of body and tail."
+> 
+> schemename Foreground s2color color
+> s2mono monochrome s2gcolor color s2manual monochrome s2gmanual monochrome
+> For instance, you might type
+> Background
+> white white white white white
+> 
+> s1 family s1rcolor
+>   s1color
+>   s1mono
+>   s1manual
+> Foreground
+> color
+> color monochrome monochrome
+> Background
+> black white white white
+> set scheme tab2
+> set scheme stmono
+> set scheme sj
+> set scheme stcolor 
+> 
+> sj
+> */
+. 
+. cap prog drop mystats
+
+. program mystats, rclass
+  1. return scalar p_adj= chi2tail(r(df), r(chi2_adj))
+  2. return scalar Chi2_adj =  r(chi2_adj)
+  3. return scalar  DF =  r(df)
+  4. return scalar p= chi2tail(r(df), r(chi2))
+  5. return scalar  Chi2 =   r(chi2)
+  6. end
+
+. 
+. set scheme stsj
+
+. 
+.                 
+. *--- v4 works. Fecal Elastase
+. 
+. kwallis fecal_elastase, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +------------------------------+
+  | ever_mal |   Obs |  Rank sum |
+  |----------+-------+-----------|
+  |      NPM | 1,003 | 873326.50 |
+  |       PM |   799 | 751176.50 |
+  +------------------------------+
+
+  chi2(1) =  7.918
+     Prob = 0.0049
+
+  chi2(1) with ties =  8.052
+               Prob = 0.0045
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. local grtitle : variable label fecal_elastase
+
+. 
+. gr box fecal_elastase, over(ever_mal) title("`grtitle'") subtitle("All cohorts") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(620 5 "Chi2 = `chi2'" "p = `p'", size(vsmall) just(left)) 
+
+.                 
+.                 
+. *--- v4 works. Amylase
+. 
+. kwallis ul_amylp, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +------------------------------+
+  | ever_mal |   Obs |  Rank sum |
+  |----------+-------+-----------|
+  |      NPM | 1,008 | 853284.50 |
+  |       PM |   757 | 705210.50 |
+  +------------------------------+
+
+  chi2(1) = 12.046
+     Prob = 0.0005
+
+  chi2(1) with ties = 12.046
+               Prob = 0.0005
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. local grtitle : variable label ul_amylp
+
+. 
+. gr box ul_amylp, over(ever_mal) title("`grtitle'") subtitle("All cohorts") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(150 5 "Chi2 = `chi2'" "p = `p'", size(vsmall) just(left)) 
+
+. 
+. *--- v4 works. LIPASE 
+. 
+. kwallis lipase, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +---------------------------+
+  | ever_mal | Obs | Rank sum |
+  |----------+-----+----------|
+  |      NPM |  54 |  8647.00 |
+  |       PM | 253 | 38631.00 |
+  +---------------------------+
+
+  chi2(1) =  0.312
+     Prob = 0.5762
+
+  chi2(1) with ties =  0.313
+               Prob = 0.5756
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. local grtitle : variable label lipase
+
+. 
+. gr box lipase, over(ever_mal) title("`grtitle'") subtitle("DIVIDS only") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(60 5 "Chi2 = `chi2'" "p = `p'", size(vsmall) just(left)) 
+
+.                 
+. 
+. *--- v4 works. Trypsinogen
+.  
+. kwallis ngml_trypsinogen, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +---------------------------+
+  | ever_mal | Obs | Rank sum |
+  |----------+-----+----------|
+  |      NPM | 135 | 18054.00 |
+  |       PM | 142 | 20449.00 |
+  +---------------------------+
+
+  chi2(1) =  1.138
+     Prob = 0.2860
+
+  chi2(1) with ties =  1.138
+               Prob = 0.2860
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. local grtitle : variable label ngml_trypsinogen
+
+. 
+. gr box ngml_trypsinogen, over(ever_mal) title("`grtitle'") subtitle("CT Scan subset") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(250 5 "Chi2 = `chi2'" "p = `p'", size(vsmall) just(left)) 
+
+. 
+. gr export ./figures/figc_all_enzymes_box.png, as(png)
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/figc_all_enzymes_box.png saved as PNG format
+
+. set scheme tab2
+
+. 
+. * FE-1 scatter
+. 
+. tempfile g1 g2 g3 g4
+
+. 
+. local enzymes "fecal_elastase ul_amylp ngml_trypsinogen"  
+
+. local i = 1
+
+. foreach var of varlist `enzymes' {
+  2.          local grtitle : variable label `var'
+  3.          local volabel : variable label ct_pan_vol
+  4.          
+.          spearman `var' ct_pan_vol
+  5.          local rho = string(r(rho), "%4.2f")
+  6.          local p = string(r(p), "%4.3f")
+  7.          
+.          scatter `var' ct_pan_vol if ever_mal==0, msymbol(circle) mcolor(blue%50) || ///
+>          scatter `var' ct_pan_vol if ever_mal==1, msymbol(diamond) mcolor(red%50) ///
+>          title("`grtitle'") ///
+>          legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'")) ///
+>          text(200 150 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+>          xtitle("Pancreatic volume, ml") ///
+>          name(g_`i', replace)
+  8.          
+.          local ++i
+  9. }
+
+Number of observations =     179
+        Spearman's rho = -0.0162
+
+Test of H0: fecal_elastase and ct_pan_vol are independent
+                  Prob =  0.8291
+
+Number of observations =    206
+        Spearman's rho = 0.1811
+
+Test of H0: ul_amylp and ct_pan_vol are independent
+                  Prob = 0.0093
+
+Number of observations =    199
+        Spearman's rho = 0.0786
+
+Test of H0: ngml_trypsinogen and ct_pan_vol are independent
+                  Prob = 0.2693
+
+. 
+. * Lipase separately since it uses different x variable
+. spearman lipase pan_head_ap
+
+Number of observations =    305
+        Spearman's rho = 0.0962
+
+Test of H0: lipase and pan_head_ap are independent
+                  Prob = 0.0934
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. local liplabel : variable label lipase
+
+. local headlabel : variable label pan_head_ap
+
+. scatter lipase pan_head_ap if ever_mal==0, msymbol(circle) mcolor(blue%50) || ///
+> scatter lipase pan_head_ap if ever_mal==1, msymbol(diamond) mcolor(red%50) ///
+> title("`liplabel'") ///
+> legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'")) ///
+> text(60 4 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+> xtitle("Pancreatic Head AP length, cm") ///
+> name(g_4, replace)
+
+. 
+. gr combine g_1 g_2 g_3 g_4, rows(2) cols(2)
+
+. 
+. gr export ./figures/figc_all_enzymes_scatter.png, as(png)
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/figc_all_enzymes_scatter.png saved as PNG format
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. /* figc_all_enzymes.do 
+> Sampa
+> J Solon
+> March 20 2025
+> 
+> output
+> gr export ./figures/figc_a.png, as(png) replace
+> gr export ./figures/figc_b.png, as(png) replace
+> */
+. 
+. cap prog drop mystats
+
+. program mystats, rclass
+  1. return scalar p_adj= chi2tail(r(df), r(chi2_adj))
+  2. return scalar Chi2_adj =  r(chi2_adj)
+  3. return scalar  DF =  r(df)
+  4. return scalar p= chi2tail(r(df), r(chi2))
+  5. return scalar  Chi2 =   r(chi2)
+  6. end
+
+. 
+. set scheme stsj
+
+. 
+.                 
+. *--- v4 works. Fecal Elastase
+. 
+. kwallis fecal_elastase, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +------------------------------+
+  | ever_mal |   Obs |  Rank sum |
+  |----------+-------+-----------|
+  |      NPM | 1,003 | 873326.50 |
+  |       PM |   799 | 751176.50 |
+  +------------------------------+
+
+  chi2(1) =  7.918
+     Prob = 0.0049
+
+  chi2(1) with ties =  8.052
+               Prob = 0.0045
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. local grtitle : variable label fecal_elastase
+
+. 
+. gr box fecal_elastase, over(ever_mal) title("`grtitle'") subtitle("All cohorts") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(620 5 "Chi2 = `chi2'" "p = `p'", size(vsmall) just(left)) 
+
+.                 
+.                 
+. *--- v4 works. Amylase
+. 
+. kwallis ul_amylp, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +------------------------------+
+  | ever_mal |   Obs |  Rank sum |
+  |----------+-------+-----------|
+  |      NPM | 1,008 | 853284.50 |
+  |       PM |   757 | 705210.50 |
+  +------------------------------+
+
+  chi2(1) = 12.046
+     Prob = 0.0005
+
+  chi2(1) with ties = 12.046
+               Prob = 0.0005
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. local grtitle : variable label ul_amylp
+
+. 
+. gr box ul_amylp, over(ever_mal) title("`grtitle'") subtitle("All cohorts") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(150 5 "Chi2 = `chi2'" "p = `p'", size(vsmall) just(left)) 
+
+. 
+. *--- v4 works. LIPASE 
+. 
+. kwallis lipase, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +---------------------------+
+  | ever_mal | Obs | Rank sum |
+  |----------+-----+----------|
+  |      NPM |  54 |  8647.00 |
+  |       PM | 253 | 38631.00 |
+  +---------------------------+
+
+  chi2(1) =  0.312
+     Prob = 0.5762
+
+  chi2(1) with ties =  0.313
+               Prob = 0.5756
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. local grtitle : variable label lipase
+
+. 
+. gr box lipase, over(ever_mal) title("`grtitle'") subtitle("DIVIDS only") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(60 5 "Chi2 = `chi2'" "p = `p'", size(vsmall) just(left)) 
+
+.                 
+. 
+. *--- v4 works. Trypsinogen
+.  
+. kwallis ngml_trypsinogen, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +---------------------------+
+  | ever_mal | Obs | Rank sum |
+  |----------+-----+----------|
+  |      NPM | 135 | 18054.00 |
+  |       PM | 142 | 20449.00 |
+  +---------------------------+
+
+  chi2(1) =  1.138
+     Prob = 0.2860
+
+  chi2(1) with ties =  1.138
+               Prob = 0.2860
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. local grtitle : variable label ngml_trypsinogen
+
+. 
+. gr box ngml_trypsinogen, over(ever_mal) title("`grtitle'") subtitle("CT Scan subset") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(250 5 "Chi2 = `chi2'" "p = `p'", size(vsmall) just(left)) 
+
+. 
+. gr export ./figures/figc_a.png, as(png) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/figc_a.png saved as PNG format
+
+. set scheme tab2
+
+. 
+. * FE-1 scatter
+. 
+. tempfile g1 g2 g3 g4
+
+. 
+. local enzymes "fecal_elastase ul_amylp ngml_trypsinogen"  
+
+. local i = 1
+
+. foreach var of varlist `enzymes' {
+  2.          local grtitle : variable label `var'
+  3.          local volabel : variable label ct_pan_vol
+  4.          
+.          spearman `var' ct_pan_vol
+  5.          local rho = string(r(rho), "%4.2f")
+  6.          local p = string(r(p), "%4.3f")
+  7.          
+.          scatter `var' ct_pan_vol if ever_mal==0, msymbol(circle) mcolor(blue%50) || ///
+>          scatter `var' ct_pan_vol if ever_mal==1, msymbol(diamond) mcolor(red%50) ///
+>          title("`grtitle'") ///
+>          legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'")) ///
+>          text(200 150 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+>          xtitle("Pancreatic volume, ml") ///
+>          name(g_`i', replace)
+  8.          
+.          local ++i
+  9. }
+
+Number of observations =     179
+        Spearman's rho = -0.0162
+
+Test of H0: fecal_elastase and ct_pan_vol are independent
+                  Prob =  0.8291
+
+Number of observations =    206
+        Spearman's rho = 0.1811
+
+Test of H0: ul_amylp and ct_pan_vol are independent
+                  Prob = 0.0093
+
+Number of observations =    199
+        Spearman's rho = 0.0786
+
+Test of H0: ngml_trypsinogen and ct_pan_vol are independent
+                  Prob = 0.2693
+
+. 
+. * Lipase separately since it uses different x variable
+. spearman lipase pan_head_ap
+
+Number of observations =    305
+        Spearman's rho = 0.0962
+
+Test of H0: lipase and pan_head_ap are independent
+                  Prob = 0.0934
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. local liplabel : variable label lipase
+
+. local headlabel : variable label pan_head_ap
+
+. scatter lipase pan_head_ap if ever_mal==0, msymbol(circle) mcolor(blue%50) || ///
+> scatter lipase pan_head_ap if ever_mal==1, msymbol(diamond) mcolor(red%50) ///
+> title("`liplabel'") ///
+> legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'")) ///
+> text(60 4 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+> xtitle("Pancreatic Head AP length, cm") ///
+> name(g_4, replace)
+
+. 
+. gr combine g_1 g_2 g_3 g_4, rows(2) cols(2)
+
+. 
+. gr export ./figures/figc_b.png, as(png) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/figc_b.png saved as PNG format
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. set scheme tab2
+
+. 
+. local enzymes "fecal_elastase ul_amylp ngml_trypsinogen lipase"
+
+. local i = 1
+
+. foreach var of varlist `enzymes' {
+  2.         kwallis `var', by(ever_mal) 
+  3.         mystats
+  4. 
+.         local chi2 = string(r(Chi2), "%4.2f")
+  5.         local p = string(r(p), "%4.3f")
+  6.         local grtitle : variable label `var'
+  7.         
+.         if "`var'" == "lipase" {
+  8.                 local subtitle "DIVIDS only"
+  9.                 local ymax = 60
+ 10.         }
+ 11.         else if "`var'" == "ngml_trypsinogen" {
+ 12.                 local subtitle "CT Scan subset"
+ 13.                 local ymax = 250
+ 14.         }
+ 15.         else {
+ 16.                 local subtitle "All cohorts"
+ 17.                 local ymax = 620
+ 18.         }
+ 19.         
+.         gr box `var', over(ever_mal) title("`grtitle'") subtitle("`subtitle'") ///
+>                 xsize(10) ysize(8) ///
+>                 marker(1, msize(vsmall)) ///
+>                 medline(lwidth(thin)) ///
+>                 text(`ymax' 5 "Chi2 = `chi2'" "p = `p'", size(vsmall) just(left)) ///
+>                 name(box_`i', replace)
+ 20.                 
+.         local ++i
+ 21. }
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +------------------------------+
+  | ever_mal |   Obs |  Rank sum |
+  |----------+-------+-----------|
+  |      NPM | 1,003 | 873326.50 |
+  |       PM |   799 | 751176.50 |
+  +------------------------------+
+
+  chi2(1) =  7.918
+     Prob = 0.0049
+
+  chi2(1) with ties =  8.052
+               Prob = 0.0045
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +------------------------------+
+  | ever_mal |   Obs |  Rank sum |
+  |----------+-------+-----------|
+  |      NPM | 1,008 | 853284.50 |
+  |       PM |   757 | 705210.50 |
+  +------------------------------+
+
+  chi2(1) = 12.046
+     Prob = 0.0005
+
+  chi2(1) with ties = 12.046
+               Prob = 0.0005
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +---------------------------+
+  | ever_mal | Obs | Rank sum |
+  |----------+-----+----------|
+  |      NPM | 135 | 18054.00 |
+  |       PM | 142 | 20449.00 |
+  +---------------------------+
+
+  chi2(1) =  1.138
+     Prob = 0.2860
+
+  chi2(1) with ties =  1.138
+               Prob = 0.2860
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +---------------------------+
+  | ever_mal | Obs | Rank sum |
+  |----------+-----+----------|
+  |      NPM |  54 |  8647.00 |
+  |       PM | 253 | 38631.00 |
+  +---------------------------+
+
+  chi2(1) =  0.312
+     Prob = 0.5762
+
+  chi2(1) with ties =  0.313
+               Prob = 0.5756
+
+. 
+. gr combine box_1 box_2 box_3 box_4, rows(2) cols(2)
+
+. gr export ./figures/figc_a.png, as(png) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/figc_a.png saved as PNG format
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. /* figc_all_enzymes.do 
+> Sampa
+> J Solon
+> March 20 2025
+> 
+> output
+> gr export ./figures/figc_a.png, as(png) replace
+> gr export ./figures/figc_b.png, as(png) replace
+> */
+. 
+. cap prog drop mystats
+
+. program mystats, rclass
+  1. return scalar p_adj= chi2tail(r(df), r(chi2_adj))
+  2. return scalar Chi2_adj =  r(chi2_adj)
+  3. return scalar  DF =  r(df)
+  4. return scalar p= chi2tail(r(df), r(chi2))
+  5. return scalar  Chi2 =   r(chi2)
+  6. end
+
+. 
+. set scheme stsj
+
+. 
+.                 
+. *--- v4 works. Fecal Elastase
+. 
+. kwallis fecal_elastase, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +------------------------------+
+  | ever_mal |   Obs |  Rank sum |
+  |----------+-------+-----------|
+  |      NPM | 1,003 | 873326.50 |
+  |       PM |   799 | 751176.50 |
+  +------------------------------+
+
+  chi2(1) =  7.918
+     Prob = 0.0049
+
+  chi2(1) with ties =  8.052
+               Prob = 0.0045
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. local grtitle : variable label fecal_elastase
+
+. 
+. gr box fecal_elastase, over(ever_mal) title("`grtitle'") subtitle("All cohorts") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(620 5 "Chi2 = `chi2'" "p = `p'", size(vsmall) just(left)) 
+
+.                 
+.                 
+. *--- v4 works. Amylase
+. 
+. kwallis ul_amylp, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +------------------------------+
+  | ever_mal |   Obs |  Rank sum |
+  |----------+-------+-----------|
+  |      NPM | 1,008 | 853284.50 |
+  |       PM |   757 | 705210.50 |
+  +------------------------------+
+
+  chi2(1) = 12.046
+     Prob = 0.0005
+
+  chi2(1) with ties = 12.046
+               Prob = 0.0005
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. local grtitle : variable label ul_amylp
+
+. 
+. gr box ul_amylp, over(ever_mal) title("`grtitle'") subtitle("All cohorts") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(150 5 "Chi2 = `chi2'" "p = `p'", size(vsmall) just(left)) 
+
+. 
+. *--- v4 works. LIPASE 
+. 
+. kwallis lipase, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +---------------------------+
+  | ever_mal | Obs | Rank sum |
+  |----------+-----+----------|
+  |      NPM |  54 |  8647.00 |
+  |       PM | 253 | 38631.00 |
+  +---------------------------+
+
+  chi2(1) =  0.312
+     Prob = 0.5762
+
+  chi2(1) with ties =  0.313
+               Prob = 0.5756
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. local grtitle : variable label lipase
+
+. 
+. gr box lipase, over(ever_mal) title("`grtitle'") subtitle("DIVIDS only") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(60 5 "Chi2 = `chi2'" "p = `p'", size(vsmall) just(left)) 
+
+.                 
+. 
+. *--- v4 works. Trypsinogen
+.  
+. kwallis ngml_trypsinogen, by(ever_mal) 
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +---------------------------+
+  | ever_mal | Obs | Rank sum |
+  |----------+-----+----------|
+  |      NPM | 135 | 18054.00 |
+  |       PM | 142 | 20449.00 |
+  +---------------------------+
+
+  chi2(1) =  1.138
+     Prob = 0.2860
+
+  chi2(1) with ties =  1.138
+               Prob = 0.2860
+
+. mystats
+
+. 
+. local chi2 = string(r(Chi2), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. local grtitle : variable label ngml_trypsinogen
+
+. 
+. gr box ngml_trypsinogen, over(ever_mal) title("`grtitle'") subtitle("CT Scan subset") ///
+>         xsize(10) ysize(8) ///
+>         marker(1, msize(vsmall)) ///
+>         medline(lwidth(thin)) ///
+>                 text(250 5 "Chi2 = `chi2'" "p = `p'", size(vsmall) just(left)) 
+
+. 
+. gr export ./figures/figc_a.png, as(png) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/figc_a.png saved as PNG format
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. local enzymes "fecal_elastase ul_amylp ngml_trypsinogen lipase"
+
+. local i = 1
+
+. foreach var of varlist `enzymes' {
+  2.         kwallis `var', by(ever_mal) 
+  3.         mystats
+  4. 
+.         local chi2 = string(r(Chi2), "%4.2f")
+  5.         local p = string(r(p), "%4.3f")
+  6.         local grtitle : variable label `var'
+  7.         
+.         if "`var'" == "lipase" {
+  8.                 local subtitle "DIVIDS only"
+  9.                 local ymax = 60
+ 10.         }
+ 11.         else if "`var'" == "ngml_trypsinogen" {
+ 12.                 local subtitle "CT Scan subset"
+ 13.                 local ymax = 250
+ 14.         }
+ 15.         else if "`var'" == "ul_amylp" {
+ 16.                 local subtitle "All cohorts"
+ 17.                 local ymax = 150
+ 18.         }
+ 19.         else {
+ 20.                 local subtitle "All cohorts"
+ 21.                 local ymax = 620
+ 22.         }
+ 23.         
+.         gr box `var', over(ever_mal) title("`grtitle'") subtitle("`subtitle'") ///
+>                 xsize(10) ysize(8) ///
+>                 marker(1, msize(vsmall)) ///
+>                 medline(lwidth(thin)) ///
+>                 text(`ymax' 5 "Chi2 = `chi2'" "p = `p'", size(vsmall) just(left)) ///
+>                 name(box_`i', replace)
+ 24.                 
+.         local ++i
+ 25. }
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +------------------------------+
+  | ever_mal |   Obs |  Rank sum |
+  |----------+-------+-----------|
+  |      NPM | 1,003 | 873326.50 |
+  |       PM |   799 | 751176.50 |
+  +------------------------------+
+
+  chi2(1) =  7.918
+     Prob = 0.0049
+
+  chi2(1) with ties =  8.052
+               Prob = 0.0045
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +------------------------------+
+  | ever_mal |   Obs |  Rank sum |
+  |----------+-------+-----------|
+  |      NPM | 1,008 | 853284.50 |
+  |       PM |   757 | 705210.50 |
+  +------------------------------+
+
+  chi2(1) = 12.046
+     Prob = 0.0005
+
+  chi2(1) with ties = 12.046
+               Prob = 0.0005
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +---------------------------+
+  | ever_mal | Obs | Rank sum |
+  |----------+-----+----------|
+  |      NPM | 135 | 18054.00 |
+  |       PM | 142 | 20449.00 |
+  +---------------------------+
+
+  chi2(1) =  1.138
+     Prob = 0.2860
+
+  chi2(1) with ties =  1.138
+               Prob = 0.2860
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +---------------------------+
+  | ever_mal | Obs | Rank sum |
+  |----------+-----+----------|
+  |      NPM |  54 |  8647.00 |
+  |       PM | 253 | 38631.00 |
+  +---------------------------+
+
+  chi2(1) =  0.312
+     Prob = 0.5762
+
+  chi2(1) with ties =  0.313
+               Prob = 0.5756
+
+. 
+. gr combine box_1 box_2 box_3 box_4, rows(2) cols(2)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. 
+. cap prog drop mystats
+
+. program mystats, rclass
+  1. return scalar p_adj= chi2tail(r(df), r(chi2_adj))
+  2. return scalar Chi2_adj =  r(chi2_adj)
+  3. return scalar  DF =  r(df)
+  4. return scalar p= chi2tail(r(df), r(chi2))
+  5. return scalar  Chi2 =   r(chi2)
+  6. end
+
+. 
+. set scheme stsj
+
+. ** Gr box 4 enzymes
+. 
+. local enzymes "fecal_elastase ul_amylp ngml_trypsinogen lipase"
+
+. local i = 1
+
+. foreach var of varlist `enzymes' {
+  2.         kwallis `var', by(ever_mal) 
+  3.         mystats
+  4. 
+.         local chi2 = string(r(Chi2), "%4.2f")
+  5.         local p = string(r(p), "%4.3f")
+  6.         local grtitle : variable label `var'
+  7.         
+.         if "`var'" == "lipase" {
+  8.                 local subtitle "DIVIDS only"
+  9.                 local ymax = 60
+ 10.         }
+ 11.         else if "`var'" == "ngml_trypsinogen" {
+ 12.                 local subtitle "CT Scan subset"
+ 13.                 local ymax = 250
+ 14.         }
+ 15.         else if "`var'" == "ul_amylp" {
+ 16.                 local subtitle "All cohorts"
+ 17.                 local ymax = 150
+ 18.         }
+ 19.         else {
+ 20.                 local subtitle "All cohorts"
+ 21.                 local ymax = 620
+ 22.         }
+ 23.         
+.         gr box `var', over(ever_mal) title("`grtitle'") subtitle("`subtitle'") ///
+>                 xsize(10) ysize(8) ///
+>                 marker(1, msize(vsmall)) ///
+>                 medline(lwidth(thin)) ///
+>                 text(`ymax' 5 "Chi2 = `chi2'" "p = `p'", size(vsmall) just(left)) ///
+>                 name(box_`i', replace)
+ 24.                 
+.         local ++i
+ 25. }
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +------------------------------+
+  | ever_mal |   Obs |  Rank sum |
+  |----------+-------+-----------|
+  |      NPM | 1,003 | 873326.50 |
+  |       PM |   799 | 751176.50 |
+  +------------------------------+
+
+  chi2(1) =  7.918
+     Prob = 0.0049
+
+  chi2(1) with ties =  8.052
+               Prob = 0.0045
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +------------------------------+
+  | ever_mal |   Obs |  Rank sum |
+  |----------+-------+-----------|
+  |      NPM | 1,008 | 853284.50 |
+  |       PM |   757 | 705210.50 |
+  +------------------------------+
+
+  chi2(1) = 12.046
+     Prob = 0.0005
+
+  chi2(1) with ties = 12.046
+               Prob = 0.0005
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +---------------------------+
+  | ever_mal | Obs | Rank sum |
+  |----------+-----+----------|
+  |      NPM | 135 | 18054.00 |
+  |       PM | 142 | 20449.00 |
+  +---------------------------+
+
+  chi2(1) =  1.138
+     Prob = 0.2860
+
+  chi2(1) with ties =  1.138
+               Prob = 0.2860
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +---------------------------+
+  | ever_mal | Obs | Rank sum |
+  |----------+-----+----------|
+  |      NPM |  54 |  8647.00 |
+  |       PM | 253 | 38631.00 |
+  +---------------------------+
+
+  chi2(1) =  0.312
+     Prob = 0.5762
+
+  chi2(1) with ties =  0.313
+               Prob = 0.5756
+
+. 
+. gr combine box_1 box_2 box_3 box_4, rows(2) cols(2)
+
+. gr export ./figures/figc_a.png, as(png) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/figc_a.png saved as PNG format
+
+. 
+. gr combine box_1 box_2 , rows(1) cols(1)
+
+. gr export ./figures/figc_a_fe_am.png, as(png) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/figc_a_fe_am.png saved as PNG format
+
+. 
+end of do-file
+
+. help gr combine
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. 
+. local enzymes "fecal_elastase ul_amylp ngml_trypsinogen lipase"
+
+. local i = 1
+
+. foreach var of varlist `enzymes' {
+  2.         kwallis `var', by(ever_mal) 
+  3.         mystats
+  4. 
+.         local chi2 = string(r(Chi2), "%4.2f")
+  5.         local p = string(r(p), "%4.3f")
+  6.         local grtitle : variable label `var'
+  7.         
+.         if "`var'" == "lipase" {
+  8.                 local subtitle "DIVIDS only"
+  9.                 local ymax = 60
+ 10.         }
+ 11.         else if "`var'" == "ngml_trypsinogen" {
+ 12.                 local subtitle "CT Scan subset"
+ 13.                 local ymax = 250
+ 14.         }
+ 15.         else if "`var'" == "ul_amylp" {
+ 16.                 local subtitle "All cohorts"
+ 17.                 local ymax = 150
+ 18.         }
+ 19.         else {
+ 20.                 local subtitle "All cohorts"
+ 21.                 local ymax = 650
+ 22.         }
+ 23.         
+.         gr box `var', over(ever_mal) title("`grtitle'") subtitle("`subtitle'") ///
+>                 xsize(10) ysize(8) ///
+>                 marker(1, msize(vsmall)) ///
+>                 medline(lwidth(thin)) ///
+>                 text(`ymax' 5 "Chi2 = `chi2'" "p = `p'", size(vsmall) just(left)) ///
+>                 name(box_`i', replace)
+ 24.                 
+.         local ++i
+ 25. }
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +------------------------------+
+  | ever_mal |   Obs |  Rank sum |
+  |----------+-------+-----------|
+  |      NPM | 1,003 | 873326.50 |
+  |       PM |   799 | 751176.50 |
+  +------------------------------+
+
+  chi2(1) =  7.918
+     Prob = 0.0049
+
+  chi2(1) with ties =  8.052
+               Prob = 0.0045
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +------------------------------+
+  | ever_mal |   Obs |  Rank sum |
+  |----------+-------+-----------|
+  |      NPM | 1,008 | 853284.50 |
+  |       PM |   757 | 705210.50 |
+  +------------------------------+
+
+  chi2(1) = 12.046
+     Prob = 0.0005
+
+  chi2(1) with ties = 12.046
+               Prob = 0.0005
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +---------------------------+
+  | ever_mal | Obs | Rank sum |
+  |----------+-----+----------|
+  |      NPM | 135 | 18054.00 |
+  |       PM | 142 | 20449.00 |
+  +---------------------------+
+
+  chi2(1) =  1.138
+     Prob = 0.2860
+
+  chi2(1) with ties =  1.138
+               Prob = 0.2860
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +---------------------------+
+  | ever_mal | Obs | Rank sum |
+  |----------+-----+----------|
+  |      NPM |  54 |  8647.00 |
+  |       PM | 253 | 38631.00 |
+  +---------------------------+
+
+  chi2(1) =  0.312
+     Prob = 0.5762
+
+  chi2(1) with ties =  0.313
+               Prob = 0.5756
+
+. 
+. gr combine box_1 box_2 box_3 box_4, rows(2) cols(2)
+
+. gr export ./figures/figc_a.png, as(png) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/figc_a.png saved as PNG format
+
+. 
+. gr combine box_1 box_2 , rows(1) 
+
+. gr export ./figures/figc_a_fe_am.png, as(png) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/figc_a_fe_am.png saved as PNG format
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. /* figc_all_enzymes.do 
+> Sampa
+> J Solon
+> March 20 2025
+> 
+> output
+> gr export ./figures/figc_a.png, as(png) replace
+> gr export ./figures/figc_b.png, as(png) replace
+> */
+. 
+. cap prog drop mystats
+
+. program mystats, rclass
+  1. return scalar p_adj= chi2tail(r(df), r(chi2_adj))
+  2. return scalar Chi2_adj =  r(chi2_adj)
+  3. return scalar  DF =  r(df)
+  4. return scalar p= chi2tail(r(df), r(chi2))
+  5. return scalar  Chi2 =   r(chi2)
+  6. end
+
+. 
+. set scheme stsj
+
+. ** Gr box 4 enzymes
+. 
+. local enzymes "fecal_elastase ul_amylp ngml_trypsinogen lipase"
+
+. local i = 1
+
+. foreach var of varlist `enzymes' {
+  2.         kwallis `var', by(ever_mal) 
+  3.         mystats
+  4. 
+.         local chi2 = string(r(Chi2), "%4.2f")
+  5.         local p = string(r(p), "%4.3f")
+  6.         local grtitle : variable label `var'
+  7.         
+.         if "`var'" == "lipase" {
+  8.                 local subtitle "DIVIDS only"
+  9.                 local ymax = 60
+ 10.         }
+ 11.         else if "`var'" == "ngml_trypsinogen" {
+ 12.                 local subtitle "CT Scan subset"
+ 13.                 local ymax = 250
+ 14.         }
+ 15.         else if "`var'" == "ul_amylp" {
+ 16.                 local subtitle "All cohorts"
+ 17.                 local ymax = 150
+ 18.         }
+ 19.         else {
+ 20.                 local subtitle "All cohorts"
+ 21.                 local ymax = 650
+ 22.         }
+ 23.         
+.         gr box `var', over(ever_mal) title("`grtitle'") subtitle("`subtitle'") ///
+>                 xsize(10) ysize(8) ///
+>                 marker(1, msize(vsmall)) ///
+>                 medline(lwidth(thin)) ///
+>                 text(`ymax' 5 "Chi2 = `chi2'" "p = `p'", size(vsmall) just(left)) ///
+>                 name(box_`i', replace)
+ 24.                 
+.         local ++i
+ 25. }
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +------------------------------+
+  | ever_mal |   Obs |  Rank sum |
+  |----------+-------+-----------|
+  |      NPM | 1,003 | 873326.50 |
+  |       PM |   799 | 751176.50 |
+  +------------------------------+
+
+  chi2(1) =  7.918
+     Prob = 0.0049
+
+  chi2(1) with ties =  8.052
+               Prob = 0.0045
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +------------------------------+
+  | ever_mal |   Obs |  Rank sum |
+  |----------+-------+-----------|
+  |      NPM | 1,008 | 853284.50 |
+  |       PM |   757 | 705210.50 |
+  +------------------------------+
+
+  chi2(1) = 12.046
+     Prob = 0.0005
+
+  chi2(1) with ties = 12.046
+               Prob = 0.0005
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +---------------------------+
+  | ever_mal | Obs | Rank sum |
+  |----------+-----+----------|
+  |      NPM | 135 | 18054.00 |
+  |       PM | 142 | 20449.00 |
+  +---------------------------+
+
+  chi2(1) =  1.138
+     Prob = 0.2860
+
+  chi2(1) with ties =  1.138
+               Prob = 0.2860
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +---------------------------+
+  | ever_mal | Obs | Rank sum |
+  |----------+-----+----------|
+  |      NPM |  54 |  8647.00 |
+  |       PM | 253 | 38631.00 |
+  +---------------------------+
+
+  chi2(1) =  0.312
+     Prob = 0.5762
+
+  chi2(1) with ties =  0.313
+               Prob = 0.5756
+
+. 
+. * FE-1 AND amylase only
+. gr combine box_1 box_2 , rows(1) 
+
+. gr export ./figures/figc_a_1.png, as(png) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/figc_a_1.png saved as PNG format
+
+. 
+. * all four enzymes 
+. gr combine box_1 box_2 box_3 box_4, rows(2) cols(2)
+
+. gr export ./figures/figc_a_2.png, as(png) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/figc_a_2.png saved as PNG format
+
+. 
+. * FE-1 scatter
+. 
+. tempfile g1 g2 g3 g4
+
+. 
+. local enzymes "fecal_elastase ul_amylp ngml_trypsinogen"  
+
+. local i = 1
+
+. foreach var of varlist `enzymes' {
+  2.          local grtitle : variable label `var'
+  3.          local volabel : variable label ct_pan_vol
+  4.          
+.          spearman `var' ct_pan_vol
+  5.          local rho = string(r(rho), "%4.2f")
+  6.          local p = string(r(p), "%4.3f")
+  7.          
+.          scatter `var' ct_pan_vol if ever_mal==0, msymbol(circle) mcolor(blue%50) || ///
+>          scatter `var' ct_pan_vol if ever_mal==1, msymbol(diamond) mcolor(red%50) ///
+>          title("`grtitle'") ///
+>          legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'")) ///
+>          text(200 150 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+>          xtitle("Pancreatic volume, ml") ///
+>          name(g_`i', replace)
+  8.          
+.          local ++i
+  9. }
+
+Number of observations =     179
+        Spearman's rho = -0.0162
+
+Test of H0: fecal_elastase and ct_pan_vol are independent
+                  Prob =  0.8291
+
+Number of observations =    206
+        Spearman's rho = 0.1811
+
+Test of H0: ul_amylp and ct_pan_vol are independent
+                  Prob = 0.0093
+
+Number of observations =    199
+        Spearman's rho = 0.0786
+
+Test of H0: ngml_trypsinogen and ct_pan_vol are independent
+                  Prob = 0.2693
+
+. 
+. * Lipase separately since it uses different x variable
+. spearman lipase pan_head_ap
+
+Number of observations =    305
+        Spearman's rho = 0.0962
+
+Test of H0: lipase and pan_head_ap are independent
+                  Prob = 0.0934
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. local liplabel : variable label lipase
+
+. local headlabel : variable label pan_head_ap
+
+. scatter lipase pan_head_ap if ever_mal==0, msymbol(circle) mcolor(blue%50) || ///
+> scatter lipase pan_head_ap if ever_mal==1, msymbol(diamond) mcolor(red%50) ///
+> title("`liplabel'") ///
+> legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'")) ///
+> text(60 4 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+> xtitle("Pancreatic Head AP length, cm") ///
+> name(g_4, replace)
+
+. 
+. gr combine g_1 g_2 g_3 g_4, rows(2) cols(2)
+
+. 
+. gr export ./figures/figc_b.png, as(png) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/figc_b.png saved as PNG format
+
+. 
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. local enzymes "fecal_elastase ul_amylp ngml_trypsinogen"  
+
+. local i = 1
+
+. foreach var of varlist `enzymes' {
+  2.          local grtitle : variable label `var'
+  3.          local volabel : variable label ct_pan_vol
+  4.          
+.          spearman `var' ct_pan_vol
+  5.          local rho = string(r(rho), "%4.2f")
+  6.          local p = string(r(p), "%4.3f")
+  7.          
+.          scatter `var' ct_pan_vol if ever_mal==0, msymbol(circle) mcolor(blue%50) msize(small) || ///
+>          scatter `var' ct_pan_vol if ever_mal==1, msymbol(diamond) mcolor(red%50) ///
+>          title("`grtitle'") ///
+>          legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'")) ///
+>          text(200 150 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+>          xtitle("Pancreatic volume, ml") ///
+>          name(g_`i', replace)
+  8.          
+.          local ++i
+  9. }
+
+Number of observations =     179
+        Spearman's rho = -0.0162
+
+Test of H0: fecal_elastase and ct_pan_vol are independent
+                  Prob =  0.8291
+
+Number of observations =    206
+        Spearman's rho = 0.1811
+
+Test of H0: ul_amylp and ct_pan_vol are independent
+                  Prob = 0.0093
+
+Number of observations =    199
+        Spearman's rho = 0.0786
+
+Test of H0: ngml_trypsinogen and ct_pan_vol are independent
+                  Prob = 0.2693
+
+. 
+. * Lipase separately since it uses different x variable
+. spearman lipase pan_head_ap
+
+Number of observations =    305
+        Spearman's rho = 0.0962
+
+Test of H0: lipase and pan_head_ap are independent
+                  Prob = 0.0934
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. local liplabel : variable label lipase
+
+. local headlabel : variable label pan_head_ap
+
+. scatter lipase pan_head_ap if ever_mal==0, msymbol(circle) mcolor(blue%50) || ///
+> scatter lipase pan_head_ap if ever_mal==1, msymbol(diamond) mcolor(red%50) ///
+> title("`liplabel'") ///
+> legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'")) ///
+> text(60 4 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+> xtitle("Pancreatic Head AP length, cm") ///
+> name(g_4, replace)
+
+. 
+. gr combine g_1 g_2 g_3 g_4, rows(2) cols(2)
+error (1) reading file
+Error in file, skipping lines:
+ .insert (l1title = .sized_textbox.new, mtextq(`""') style(scheme l1title) orientation(vertical)) leftof plotregion1 , ring(1) 
+.insert (l2title = .sized_textbox.new, mtextq(`""') style(scheme l2title) orientation(vertical)) leftof plotregion1 , ring(2) 
+.insert (t1title = .sized_textbox.new, mtextq(`""') style(scheme t1title) ) above plotregion1 , ring(1) 
+.insert (t2title = .sized_textbox.new, mtextq(`""') style(scheme t2title) ) above plotregion1 , ring(2) 
+.insert (b1title = .sized_textbox.new, mtextq(`""') style(scheme b1title) ) below plotregion1 , ring(1) 
+.insert (b2title = .sized_textbox.new, mtextq(`""') style(scheme b1title) ) below plotregion1 , ring(2) 
+.insert (note = .sized_textbox.new, mtextq(`""') style(scheme note) ) below plotregion1 , ring(4) 
+.note.style.editstyle box_alignment(SW) editcopy
+.note.style.editstyle horizontal(left) editcopy
+.insert (caption = .sized_textbox.new, mtextq(`""') style(scheme caption) ) below plotregion1 , ring(5) 
+.caption.style.editstyle box_alignment(SW) editcopy
+.caption.style.editstyle horizontal(left) editcopy
+.insert (subtitle = .sized_textbox.new, mtextq(`""') style(scheme subtitle) ) above plotregion1 , ring(6) 
+.subtitle.style.editstyle box_alignment(N) editcopy
+.subtitle.style.editstyle horizontal(center) editcopy
+.insert (title = .sized_textbox.new, mtextq(`""Lipase""') style(scheme title) ) above plotregion1 , ring(7) 
+.title.style.editstyle box_alignment(N) editcopy
+.title.style.editstyle horizontal(center) editcopy
+.insert (spacert = .spacer.new) above plotregion1 , ring(11)
+.insert (spacerb = .spacer.new) below plotregion1 , ring(11)
+.insert (spacerl = .spacer.new) leftof plotregion1 , ring(11)
+.insert (spacerr = .spacer.new) rightof plotregion1 , ring(11)
+local tfmt 
+.plotregion1.Declare textbox1 = .pos_textbox.new , ypos(60) xpos(4) forcesized mtextq(`" `"ρ = 0.10"' `"p = 0.093"'"') style(scheme text_option) 
+.plotregion1.textbox1.style.editstyle  horizontal(left) size(vsmall) editcopy
+.command = `"twoway scatter lipase pan_head_ap if ever_mal==0, msymbol(circle) mcolor(blue%50) || scatter lipase pan_head_ap if ever_mal==1, msymbol(diamond) mcolor(red%50) title("Lipase") lege
+> nd(order(1 "NPM" 2 "PM")) text(60 4 "ρ = 0.10" "p = 0.093", size(vsmall) just(left)) xtitle("Pancreatic Head AP length, cm") name(g_4, replace)"'
+.date = "24 Mar 2025"
+.time = "14:48:47"
+.dta_file = "./data-temp/subset_imaging.dta"
+.dta_date = "24 Mar 2025 10:28"
+<EndItem>
+__000003.gversion invalid name
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. tempfile g1 g2 g3 g4
+
+. 
+. local enzymes "fecal_elastase ul_amylp ngml_trypsinogen"  
+
+. local i = 1
+
+. foreach var of varlist `enzymes' {
+  2.          local grtitle : variable label `var'
+  3.          local volabel : variable label ct_pan_vol
+  4.          
+.          spearman `var' ct_pan_vol
+  5.          local rho = string(r(rho), "%4.2f")
+  6.          local p = string(r(p), "%4.3f")
+  7.          
+.          scatter `var' ct_pan_vol if ever_mal==0, msymbol(circle) mcolor(blue%50) msize(small) || ///
+>          scatter `var' ct_pan_vol if ever_mal==1, msymbol(diamond) mcolor(red%50) msize(small) ///
+>          title("`grtitle'") ///
+>          legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'")) ///
+>          text(200 150 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+>          xtitle("Pancreatic volume, ml") ///
+>          name(g_`i', replace)
+  8.          
+.          local ++i
+  9. }
+
+Number of observations =     179
+        Spearman's rho = -0.0162
+
+Test of H0: fecal_elastase and ct_pan_vol are independent
+                  Prob =  0.8291
+
+Number of observations =    206
+        Spearman's rho = 0.1811
+
+Test of H0: ul_amylp and ct_pan_vol are independent
+                  Prob = 0.0093
+
+Number of observations =    199
+        Spearman's rho = 0.0786
+
+Test of H0: ngml_trypsinogen and ct_pan_vol are independent
+                  Prob = 0.2693
+
+. 
+. * Lipase separately since it uses different x variable
+. spearman lipase pan_head_ap
+
+Number of observations =    305
+        Spearman's rho = 0.0962
+
+Test of H0: lipase and pan_head_ap are independent
+                  Prob = 0.0934
+
+. local rho = string(r(rho), "%4.2f")
+
+. local p = string(r(p), "%4.3f")
+
+. 
+. local liplabel : variable label lipase
+
+. local headlabel : variable label pan_head_ap
+
+. scatter lipase pan_head_ap if ever_mal==0, msymbol(circle) mcolor(blue%50) msize(small) || ///
+> scatter lipase pan_head_ap if ever_mal==1, msymbol(diamond) mcolor(red%50) msize(small) ///
+> title("`liplabel'") ///
+> legend(order(1 "`:label (ever_mal) 0'" 2 "`:label (ever_mal) 1'")) ///
+> text(60 4 "ρ = `rho'" "p = `p'", size(vsmall) just(left)) ///
+> xtitle("Pancreatic Head AP length, cm") ///
+> name(g_4, replace)
+
+. 
+. gr combine g_1 g_2 g_3 g_4, rows(2) cols(2)
+
+. 
+. gr export ./figures/figc_b.png, as(png) replace
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/figc_b.png saved as PNG format
+
+. 
+end of do-file
+
+. tobit fecal_elastase ever_mal
+
+Iteration 0:  Log likelihood =  -12220.18  
+Iteration 1:  Log likelihood =  -12220.18  
+
+Tobit regression                                    Number of obs     =  1,802
+                                                           Uncensored =  1,802
+Limits: Lower = -inf                                    Left-censored =      0
+        Upper = +inf                                   Right-censored =      0
+
+                                                    LR chi2(1)        =   7.82
+                                                    Prob > chi2       = 0.0052
+Log likelihood = -12220.18                          Pseudo R2         = 0.0003
+
+---------------------------------------------------------------------------------------
+       fecal_elastase | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+----------------------+----------------------------------------------------------------
+             ever_mal |   28.30351   10.11264     2.80   0.005     8.469776    48.13725
+                _cons |   332.6861   6.733804    49.41   0.000     319.4792     345.893
+----------------------+----------------------------------------------------------------
+ var(e.fecal_elastase)|   45480.15   1515.163                      42603.49    48551.04
+---------------------------------------------------------------------------------------
+
+. sum ul_am
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+    ul_amylp |      1,765    33.77156    15.71089        8.3      181.4
+
+. bysort ever_mal : sum ul_am, detail
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-> ever_mal = NPM
+
+                        Amylase (U/L)
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%         12.2            9.1
+ 5%         16.2            9.2
+10%         19.1            9.3       Obs               1,008
+25%        23.45           10.4       Sum of wgt.       1,008
+
+50%         29.6                      Mean           32.39077
+                        Largest       Std. dev.      13.74248
+75%           38          100.5
+90%         48.3          106.1       Variance       188.8559
+95%         57.5          120.3       Skewness       1.896368
+99%         78.6          124.8       Kurtosis       9.406015
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-> ever_mal = PM
+
+                        Amylase (U/L)
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%         13.1            8.3
+ 5%         17.2            8.8
+10%         20.1            8.9       Obs                 757
+25%         24.4              9       Sum of wgt.         757
+
+50%         31.1                      Mean           35.61017
+                        Largest       Std. dev.      17.84536
+75%           42          119.5
+90%         57.1          143.8       Variance       318.4567
+95%         66.7          178.3       Skewness       2.758245
+99%        101.1          181.4       Kurtosis        17.2142
+
+
+. bysort ever_mal : sum fecal_elastase, detail
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-> ever_mal = NPM
+
+                       Fecal Elastase
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%       10.776          2.716
+ 5%       30.022          3.922
+10%     48.67221          3.924       Obs               1,003
+25%      132.437          4.867       Sum of wgt.       1,003
+
+50%      313.704                      Mean           332.6861
+                        Largest       Std. dev.      211.4907
+75%     587.6312            600
+90%          600            600       Variance       44728.32
+95%          600            600       Skewness       .0038562
+99%          600            600       Kurtosis       1.483128
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-> ever_mal = PM
+
+                       Fecal Elastase
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%       12.428          1.823
+ 5%       34.982          3.761
+10%     62.09501          4.312       Obs                 799
+25%     146.2165          5.237       Sum of wgt.         799
+
+50%      374.824                      Mean           360.9896
+                        Largest       Std. dev.       215.727
+75%          600            600
+90%          600            600       Variance       46538.15
+95%          600            600       Skewness      -.1845184
+99%          600            600       Kurtosis       1.435243
+
+
