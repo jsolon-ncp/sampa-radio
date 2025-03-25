@@ -1,0 +1,726 @@
+{
+  "AutoHideDims": [
+    "var"
+  ],
+  "Items": {
+    "cmdset[1]#colname[pan_body_trans]#command[0]#ever_mal[0]#result[column1]#statcmd[3]#var[pan_body_trans]": {
+      "d": 1.2400000095367432
+    },
+    "cmdset[1]#colname[pan_body_trans]#command[0]#ever_mal[0]#result[column2]#statcmd[4]#var[pan_body_trans]": {
+      "d": 1.0700000524520874
+    },
+    "cmdset[1]#colname[pan_body_trans]#command[0]#ever_mal[0]#result[column3]#statcmd[5]#var[pan_body_trans]": {
+      "d": 1.5
+    },
+    "cmdset[1]#colname[pan_body_trans]#command[0]#ever_mal[0]#result[count]#statcmd[2]#var[pan_body_trans]": {
+      "d": 745.0
+    },
+    "cmdset[1]#colname[pan_body_trans]#command[0]#ever_mal[1]#result[column1]#statcmd[3]#var[pan_body_trans]": {
+      "d": 1.2300000190734863
+    },
+    "cmdset[1]#colname[pan_body_trans]#command[0]#ever_mal[1]#result[column2]#statcmd[4]#var[pan_body_trans]": {
+      "d": 1.0299999713897705
+    },
+    "cmdset[1]#colname[pan_body_trans]#command[0]#ever_mal[1]#result[column3]#statcmd[5]#var[pan_body_trans]": {
+      "d": 1.4900000095367432
+    },
+    "cmdset[1]#colname[pan_body_trans]#command[0]#ever_mal[1]#result[count]#statcmd[2]#var[pan_body_trans]": {
+      "d": 863.0
+    },
+    "cmdset[1]#colname[pan_head_ap]#command[0]#ever_mal[0]#result[column1]#statcmd[3]#var[pan_head_ap]": {
+      "d": 2.0899999141693115
+    },
+    "cmdset[1]#colname[pan_head_ap]#command[0]#ever_mal[0]#result[column2]#statcmd[4]#var[pan_head_ap]": {
+      "d": 1.8600000143051147
+    },
+    "cmdset[1]#colname[pan_head_ap]#command[0]#ever_mal[0]#result[column3]#statcmd[5]#var[pan_head_ap]": {
+      "d": 2.3499999046325684
+    },
+    "cmdset[1]#colname[pan_head_ap]#command[0]#ever_mal[0]#result[count]#statcmd[2]#var[pan_head_ap]": {
+      "d": 715.0
+    },
+    "cmdset[1]#colname[pan_head_ap]#command[0]#ever_mal[1]#result[column1]#statcmd[3]#var[pan_head_ap]": {
+      "d": 2.069999933242798
+    },
+    "cmdset[1]#colname[pan_head_ap]#command[0]#ever_mal[1]#result[column2]#statcmd[4]#var[pan_head_ap]": {
+      "d": 1.7799999713897705
+    },
+    "cmdset[1]#colname[pan_head_ap]#command[0]#ever_mal[1]#result[column3]#statcmd[5]#var[pan_head_ap]": {
+      "d": 2.390000104904175
+    },
+    "cmdset[1]#colname[pan_head_ap]#command[0]#ever_mal[1]#result[count]#statcmd[2]#var[pan_head_ap]": {
+      "d": 837.0
+    },
+    "cmdset[1]#colname[pan_head_trans]#command[0]#ever_mal[0]#result[column1]#statcmd[3]#var[pan_head_trans]": {
+      "d": 2.0999999046325684
+    },
+    "cmdset[1]#colname[pan_head_trans]#command[0]#ever_mal[0]#result[column2]#statcmd[4]#var[pan_head_trans]": {
+      "d": 1.8600000143051147
+    },
+    "cmdset[1]#colname[pan_head_trans]#command[0]#ever_mal[0]#result[column3]#statcmd[5]#var[pan_head_trans]": {
+      "d": 2.3499999046325684
+    },
+    "cmdset[1]#colname[pan_head_trans]#command[0]#ever_mal[0]#result[count]#statcmd[2]#var[pan_head_trans]": {
+      "d": 635.0
+    },
+    "cmdset[1]#colname[pan_head_trans]#command[0]#ever_mal[1]#result[column1]#statcmd[3]#var[pan_head_trans]": {
+      "d": 1.8200000524520874
+    },
+    "cmdset[1]#colname[pan_head_trans]#command[0]#ever_mal[1]#result[column2]#statcmd[4]#var[pan_head_trans]": {
+      "d": 1.4600000381469727
+    },
+    "cmdset[1]#colname[pan_head_trans]#command[0]#ever_mal[1]#result[column3]#statcmd[5]#var[pan_head_trans]": {
+      "d": 2.200000047683716
+    },
+    "cmdset[1]#colname[pan_head_trans]#command[0]#ever_mal[1]#result[count]#statcmd[2]#var[pan_head_trans]": {
+      "d": 764.0
+    },
+    "cmdset[1]#colname[pan_tail_trans]#command[0]#ever_mal[0]#result[column1]#statcmd[3]#var[pan_tail_trans]": {
+      "d": 1.2300000190734863
+    },
+    "cmdset[1]#colname[pan_tail_trans]#command[0]#ever_mal[0]#result[column2]#statcmd[4]#var[pan_tail_trans]": {
+      "d": 1.0700000524520874
+    },
+    "cmdset[1]#colname[pan_tail_trans]#command[0]#ever_mal[0]#result[column3]#statcmd[5]#var[pan_tail_trans]": {
+      "d": 1.590000033378601
+    },
+    "cmdset[1]#colname[pan_tail_trans]#command[0]#ever_mal[0]#result[count]#statcmd[2]#var[pan_tail_trans]": {
+      "d": 509.0
+    },
+    "cmdset[1]#colname[pan_tail_trans]#command[0]#ever_mal[1]#result[column1]#statcmd[3]#var[pan_tail_trans]": {
+      "d": 1.4199999570846558
+    },
+    "cmdset[1]#colname[pan_tail_trans]#command[0]#ever_mal[1]#result[column2]#statcmd[4]#var[pan_tail_trans]": {
+      "d": 1.1399999856948853
+    },
+    "cmdset[1]#colname[pan_tail_trans]#command[0]#ever_mal[1]#result[column3]#statcmd[5]#var[pan_tail_trans]": {
+      "d": 1.715000033378601
+    },
+    "cmdset[1]#colname[pan_tail_trans]#command[0]#ever_mal[1]#result[count]#statcmd[2]#var[pan_tail_trans]": {
+      "d": 692.0
+    },
+    "cmdset[1]#command[0]#ever_mal[0]#result[frequency]#statcmd[1]#var[_hide]": {
+      "d": 1101.0
+    },
+    "cmdset[1]#command[0]#ever_mal[1]#result[frequency]#statcmd[1]#var[_hide]": {
+      "d": 1021.0
+    },
+    "cmdset[1]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
+      "d": 1.545694731182266
+    },
+    "cmdset[1]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[_hide]": {
+      "d": 1.5458364203880586
+    },
+    "cmdset[1]#program_class[rclass]#result[DF]#result_type[scalar]#var[_hide]": {
+      "d": 1.0
+    },
+    "cmdset[1]#program_class[rclass]#result[p]#result_type[scalar]#var[_hide]": {
+      "d": 0.21377214224587957
+    },
+    "cmdset[1]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[_hide]": {
+      "d": 0.21375115205990403
+    },
+    "cmdset[2]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
+      "d": 87.9660165424284
+    },
+    "cmdset[2]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[_hide]": {
+      "d": 87.97091596213323
+    },
+    "cmdset[2]#program_class[rclass]#result[DF]#result_type[scalar]#var[_hide]": {
+      "d": 1.0
+    },
+    "cmdset[2]#program_class[rclass]#result[p]#result_type[scalar]#var[_hide]": {
+      "d": 6.658873443871055e-21
+    },
+    "cmdset[2]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[_hide]": {
+      "d": 6.6424001072122046e-21
+    },
+    "cmdset[3]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
+      "d": 3.051557006761868
+    },
+    "cmdset[3]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[_hide]": {
+      "d": 3.0522012147064044
+    },
+    "cmdset[3]#program_class[rclass]#result[DF]#result_type[scalar]#var[_hide]": {
+      "d": 1.0
+    },
+    "cmdset[3]#program_class[rclass]#result[p]#result_type[scalar]#var[_hide]": {
+      "d": 0.08065978100720633
+    },
+    "cmdset[3]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[_hide]": {
+      "d": 0.08062779608093461
+    },
+    "cmdset[4]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
+      "d": 28.71084135378078
+    },
+    "cmdset[4]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[_hide]": {
+      "d": 28.71742441038018
+    },
+    "cmdset[4]#program_class[rclass]#result[DF]#result_type[scalar]#var[_hide]": {
+      "d": 1.0
+    },
+    "cmdset[4]#program_class[rclass]#result[p]#result_type[scalar]#var[_hide]": {
+      "d": 8.403198487992848e-08
+    },
+    "cmdset[4]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[_hide]": {
+      "d": 8.374682049727525e-08
+    }
+  },
+  "Labels": {
+    "Dimensions": {
+      "_dimensions": {
+        "border_block": "Table border block",
+        "cell_type": "Table cell type",
+        "cmdset": "Command results index",
+        "colname": "Covariate names and column names",
+        "command": "Command option index",
+        "ever_mal": "Ever experience malnutrition?",
+        "program_class": "Result program class",
+        "result": "Result",
+        "result_type": "Result type",
+        "statcmd": "Statistic/command option index",
+        "var": "Statistic option variable"
+      },
+      "colname": {
+        "pan_body_trans": "Body, Transverse",
+        "pan_head_ap": "Head, AP",
+        "pan_head_trans": "Head, Transverse",
+        "pan_tail_trans": "Tail, Transverse"
+      },
+      "command": {
+        "0": "Statistic"
+      },
+      "ever_mal": {
+        ".m": "Total",
+        "0": "NPM",
+        "1": "PM"
+      },
+      "result": {
+        "count": "Number of nonmissing values",
+        "frequency": "Frequency",
+        "p25": "25th percentile",
+        "p50": "50th percentile",
+        "p75": "75th percentile"
+      },
+      "result_type": {
+        "scalar": "Scalar"
+      },
+      "var": {
+        "pan_body_trans": "Body, Transverse",
+        "pan_head_ap": "Head, AP",
+        "pan_head_trans": "Head, Transverse",
+        "pan_tail_trans": "Tail, Transverse"
+      }
+    }
+  },
+  "Layout": {
+    "columns": "ever_mal#result[count column1 column4]",
+    "rows": "var",
+    "tables": ""
+  },
+  "NumericDimNames": [
+    "ever_mal"
+  ],
+  "ScalarResults": [
+    "Chi2",
+    "Chi2_adj",
+    "DF",
+    "p",
+    "p_adj"
+  ],
+  "Styles": {
+    "CompositeMap": {
+      "column4": {
+        "elements": [
+          "column2",
+          "column3"
+        ]
+      }
+    },
+    "cell": {
+      "base": {
+        "ci-delimiter": "   ",
+        "cri-delimiter": "   ",
+        "nformat": "%9.0g"
+      },
+      "edits": [
+        [
+          "cell_type[item]",
+          {
+            "smcl": "result"
+          }
+        ],
+        [
+          "result[_r_b _r_se _r_lb _r_ub _r_ci _r_crlb _r_crub _r_cri]",
+          {
+            "nformat": "%9.0g"
+          }
+        ],
+        [
+          "result[_r_z _r_z_abs]",
+          {
+            "nformat": "%8.2f"
+          }
+        ],
+        [
+          "result[_r_p]",
+          {
+            "nformat": "%5.3f"
+          }
+        ],
+        [
+          "result[count frequency fvrawfrequency]",
+          {
+            "nformat": "%18.0fc"
+          }
+        ],
+        [
+          "result[fvpercent fvrawpercent percent rawpercent]",
+          {
+            "nformat": "%9.2f"
+          }
+        ],
+        [
+          "result[fvproportion fvrawproportion proportion rawproportion]",
+          {
+            "nformat": "%9.4g"
+          }
+        ],
+        [
+          "result[rawtotal sumw total fvfrequency]",
+          {
+            "nformat": "%18.6gc"
+          }
+        ],
+        [
+          "cell_type[item]",
+          {
+            "margin-left": {
+              "width": "10pt"
+            }
+          }
+        ],
+        [
+          "cell_type[corner]",
+          {
+            "halign": "center"
+          }
+        ],
+        [
+          "cell_type[column-header]",
+          {
+            "halign": "right"
+          }
+        ],
+        [
+          "cell_type[column-header]#result[_r_ci _r_cri]",
+          {
+            "halign": "center"
+          }
+        ],
+        [
+          "cell_type[item]",
+          {
+            "halign": "right"
+          }
+        ],
+        [
+          "cell_type[row-header]",
+          {
+            "halign": "left"
+          }
+        ],
+        [
+          "border_block[corner]",
+          {
+            "border-right": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[column-header]",
+          {
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[row-header]",
+          {
+            "border-bottom": {
+              "pattern": "single"
+            },
+            "border-right": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[item]",
+          {
+            "border-bottom": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "result[p]",
+          {
+            "nformat": "%5.3f"
+          }
+        ],
+        [
+          "result[p]",
+          {
+            "sformat": "p=%s"
+          }
+        ],
+        [
+          "border_block",
+          {
+            "border-right": {
+              "pattern": "nil"
+            }
+          }
+        ],
+        [
+          "result[column1]#var[pan_head_ap pan_head_trans pan_body_trans pan_tail_trans]",
+          {
+            "nformat": "%5.3f"
+          }
+        ],
+        [
+          "result[column2]#var[pan_head_ap pan_head_trans pan_body_trans pan_tail_trans]",
+          {
+            "nformat": "%5.3f",
+            "sformat": "(%s-"
+          }
+        ],
+        [
+          "result[column3]#var[pan_head_ap pan_head_trans pan_body_trans pan_tail_trans]",
+          {
+            "nformat": "%5.3f",
+            "sformat": "%s)"
+          }
+        ],
+        [
+          "result[count]",
+          {
+            "nformat": "%4.0f"
+          }
+        ],
+        [
+          "result[count]",
+          {
+            "sformat": "[%s]"
+          }
+        ]
+      ]
+    },
+    "export": {
+      "tex": {
+        "begintable": "true",
+        "centering": "true"
+      }
+    },
+    "header": {
+      "auto-levels": {
+        "result": [
+          {
+            "stripe": "count",
+            "term-index": 1
+          },
+          {
+            "stripe": "frequency",
+            "term-index": 0
+          },
+          {
+            "stripe": "p25",
+            "term-index": 3
+          },
+          {
+            "stripe": "p50",
+            "term-index": 2
+          },
+          {
+            "stripe": "p75",
+            "term-index": 4
+          }
+        ]
+      },
+      "base": {
+        "level": "label",
+        "title": "hide"
+      },
+      "column": {
+        "dups": "center",
+        "extra-space": 1
+      },
+      "dimensions": {
+        "across": {
+          "title": "hide"
+        },
+        "coleq": {
+          "title": "hide"
+        },
+        "colname": {
+          "title": "hide"
+        },
+        "command": {
+          "title": "hide"
+        },
+        "ever_mal": {
+          "nformat": "%9.0g",
+          "title": "hide"
+        },
+        "result": {
+          "level": "hide",
+          "title": "hide"
+        },
+        "roweq": {
+          "title": "hide"
+        },
+        "rowname": {
+          "title": "hide"
+        },
+        "stars": {
+          "level": "hide",
+          "title": "hide"
+        },
+        "statcmd": {
+          "title": "hide"
+        },
+        "var": {
+          "title": "hide"
+        }
+      },
+      "row": {
+        "arrangement": "stack",
+        "nobinder": "true",
+        "spacer": "true"
+      }
+    },
+    "notes": [
+      "Values are [N] median (p25-p50).",
+      "1621 contributing any ultrasound measurement.",
+      "291 contributing any CT scan measurement."
+    ],
+    "title": "Table .Unadjusted Ultrasound Measurements"
+  },
+  "Tags": {
+    "border_block": [
+      {
+        "stripe": "column-header",
+        "term-index": 0
+      },
+      {
+        "stripe": "corner",
+        "term-index": 0
+      },
+      {
+        "stripe": "item",
+        "term-index": 0
+      },
+      {
+        "stripe": "row-header",
+        "term-index": 0
+      }
+    ],
+    "cell_type": [
+      {
+        "stripe": "column-header",
+        "term-index": 0
+      },
+      {
+        "stripe": "corner",
+        "term-index": 0
+      },
+      {
+        "stripe": "item",
+        "term-index": 0
+      },
+      {
+        "stripe": "row-header",
+        "term-index": 0
+      }
+    ],
+    "cmdset": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      },
+      {
+        "stripe": "2",
+        "term-index": 1
+      },
+      {
+        "stripe": "3",
+        "term-index": 2
+      },
+      {
+        "stripe": "4",
+        "term-index": 3
+      }
+    ],
+    "colname": [
+      {
+        "stripe": "pan_body_trans",
+        "term-index": 3
+      },
+      {
+        "stripe": "pan_head_ap",
+        "term-index": 1
+      },
+      {
+        "stripe": "pan_head_trans",
+        "term-index": 2
+      },
+      {
+        "stripe": "pan_tail_trans",
+        "term-index": 4
+      }
+    ],
+    "command": [
+      {
+        "stripe": "0",
+        "term-index": 0
+      }
+    ],
+    "ever_mal": [
+      {
+        "stripe": "0",
+        "term-index": 0
+      },
+      {
+        "stripe": "1",
+        "term-index": 1
+      }
+    ],
+    "program_class": [
+      {
+        "stripe": "rclass",
+        "term-index": 0
+      }
+    ],
+    "result": [
+      {
+        "stripe": "Chi2",
+        "term-index": 0
+      },
+      {
+        "stripe": "Chi2_adj",
+        "term-index": 0
+      },
+      {
+        "stripe": "DF",
+        "term-index": 0
+      },
+      {
+        "stripe": "column1",
+        "term-index": 0
+      },
+      {
+        "stripe": "column2",
+        "term-index": 0
+      },
+      {
+        "stripe": "column3",
+        "term-index": 0
+      },
+      {
+        "stripe": "column4",
+        "term-index": 0
+      },
+      {
+        "stripe": "count",
+        "term-index": 0
+      },
+      {
+        "stripe": "frequency",
+        "term-index": 0
+      },
+      {
+        "stripe": "p",
+        "term-index": 0
+      },
+      {
+        "stripe": "p25",
+        "term-index": 0
+      },
+      {
+        "stripe": "p50",
+        "term-index": 0
+      },
+      {
+        "stripe": "p75",
+        "term-index": 0
+      },
+      {
+        "stripe": "p_adj",
+        "term-index": 0
+      }
+    ],
+    "result_type": [
+      {
+        "stripe": "scalar",
+        "term-index": 0
+      }
+    ],
+    "statcmd": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      },
+      {
+        "stripe": "2",
+        "term-index": 0
+      },
+      {
+        "stripe": "3",
+        "term-index": 0
+      },
+      {
+        "stripe": "4",
+        "term-index": 0
+      },
+      {
+        "stripe": "5",
+        "term-index": 0
+      }
+    ],
+    "var": [
+      {
+        "stripe": "_hide",
+        "term-index": 1
+      },
+      {
+        "stripe": "pan_body_trans",
+        "term-index": 4
+      },
+      {
+        "stripe": "pan_head_ap",
+        "term-index": 2
+      },
+      {
+        "stripe": "pan_head_trans",
+        "term-index": 3
+      },
+      {
+        "stripe": "pan_tail_trans",
+        "term-index": 5
+      }
+    ]
+  },
+  "collection-name": "c1"
+}

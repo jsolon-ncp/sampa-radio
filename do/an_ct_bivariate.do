@@ -1,10 +1,19 @@
-/* enzymes.do
-Sampa 2025 mar 23
+/* an_ct_bivariate.do 
+J Solon
+Sampa
+March19 
 
+Creates n median iqr and p values of var
 kwallis p value
-
 di chi2tail(r(df),r(chi2))
+d ct_pan_head_ap
+
+
+
 */
+
+capture log close
+log using ./log/an_ct_bivariate.txt, text replace
 
 cap prog drop mystats
 program mystats, rclass
@@ -15,25 +24,39 @@ return scalar p= chi2tail(r(df), r(chi2))
 return scalar  Chi2 =   r(chi2)
 end
 
+
+la var ct_pan_head_ap "Head, AP"
+la var ct_pan_head_trans "Head, Transverse"
+la var ct_pan_body_trans "Body, Transverse"
+la var ct_pan_tail_trans "Tail, Transverse"
+la var ct_pan_body_tail "Body-Tail, Length"
+la var ct_pan_vol "Pancreatic volume(ml)"
+
 collect clear
 
 local col "ever_mal"
-local contmed "fecal_elastase ul_amylp lipase  ngml_trypsinogen"  /*continous variables; median (p25-p75)  will be reported*/
+local contmed "ct_pan_head_ap ct_pan_head_trans ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan_vol "  /*continous variables; median (p25-p75)  will be reported*/
 
 local colhead2 `"0 "NPM" 1 "PM""'
 		
 * format median of `contmed'
-local nfrmt_p50 "%5.0f"
-local nfrmt_iqr "%5.0f"
+local nfrmt_p50 "%5.3f"
+local nfrmt_iqr "%5.3f"
 local sfrmt_p25 "(%s-"
 local sfrmt_p75 "%s)"
 
-local title "Table . Pancreatic Enzyme Assays"
-
+local title "Table .Unadjusted CT Measurements"
+count if radio3 ==1
+local obs_uss = r(N)
+di `obs_uss'
+count if ct2 ==1
+local obs_ct = r(N)
+di `obs_ct'
 local notes1 "Values are [N] median (p25-p50)."
-local notes2 "Faecal elastase values are upper limit of detection is 600."
-local notes3 "Lipase from DIVIDS cohort only."
-local notes4 "Trypsinogen from CT Scan subset only."
+local notes2 "`obs_uss' contributing any ultrasound measurement."
+local notes3 "`obs_ct' contributing any CT scan measurement."
+local notes4 "P values are for Kruskal-Wallis Tests"
+
 
 * STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  
 * THERE IS NOTHING TO MODIFY BEYOND THIS LINE UNLESS CHANGING CODE. 
@@ -67,7 +90,6 @@ collect rename Table c1
 	}
 
 	
-
 * CREATE THE TABLE 1 Layout Super column - column 
 
 	collect layout (var) (ever_mal#result[count column1 column4])
@@ -157,7 +179,7 @@ collect preview
 
 * Save first collection with main stats
 collect layout (var) (ever_mal#result[count column1 column4])
-collect save ./tables/enzymes1.json, replace
+collect save ./tables/ct1.json, replace
 
 * Create new collection for p-values
 collect create c2
@@ -165,26 +187,68 @@ foreach v in `contmed' {
     quietly kwallis `v', by(`col')
     collect: mystats
 }
+   
+   
 
 * Remap cmdset to match var levels
-collect recode cmdset 1 = fecal_elastase
-collect recode cmdset 2 = ul_amylp
-collect recode cmdset 3 = lipase
-collect recode cmdset 4 = ngml_trypsinogen
+collect recode cmdset 1 = ct_pan_head_ap
+collect recode cmdset 2 = ct_pan_head_trans
+collect recode cmdset 3 = ct_pan_body_trans
+collect recode cmdset 4 = ct_pan_tail_trans
+collect recode cmdset 5 = ct_pan_body_tail
+collect recode cmdset 6 = ct_pan_vol
 collect remap cmdset = var
 
 * Combine collections
-collect combine c3 = c1 c2
+collect combine c4 = c1 c2
 
 * Create layout for combined collection
-collect layout (var) (ever_mal#result[count column1 column4] result[p])
+collect layout (var[pan_head_ap pan_head_trans pan_body_trans pan_tail_trans ///
+				ct_pan_head_ap ct_pan_head_trans ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan_vol]) ///
+				(ever_mal#result[count column1 column4] result[p])   
+  
 
-collect save ./tables/enzymes, replace
+
+collect save ./tables/ct1, replace	
 * Export combined table
-collect export ./tables/enzymes.html, as(html) replace
-collect export ./tables/enzymes.docx, as(docx) replace
+collect export ./tables/ct1.html, as(html) replace
+collect export ./tables/ct1.docx, as(docx) replace
+collect export ./tables/ct1.xlsx, as(xlsx) replace
 
-collect export preview.xlsx, as(xlsx) replace
+collect use ./tables/uss1
+
+collect combine c5 = c3 c4
+
+collect layout (var) (ever_mal#result[count column1 column4] result[p])   
+
+* Reorder rows 
+collect layout (var[pan_head_ap pan_head_trans pan_body_trans pan_tail_trans ///
+				ct_pan_head_ap ct_pan_head_trans ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan_vol]) ///
+				(ever_mal#result[count column1 column4] result[p]) 
+				
+* Add a Dimension for USS and CT Variables
+
+collect addtags vartype[USS 1621 contributing any measurement], fortags(var[pan_head_ap pan_head_trans pan_body_trans pan_tail_trans])
+collect addtags vartype[CT 291 contributing any measurement], fortags(var[ct_pan_head_ap ct_pan_head_trans ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan_vol])
+
+collect layout (vartype#var[pan_head_ap pan_head_trans pan_body_trans pan_tail_trans ///
+				ct_pan_head_ap ct_pan_head_trans ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan_vol]) ///
+				(ever_mal#result[count column1 column4] result[p]) 
+				
+collect notes, clear
+collect notes "Values are [N] median (p25-p75)."
+collect notes "P values are for Kruskal-Wallis tests."
+collect title "Radiologic measurements in the whole cohort, by prior exposure"				
+collect save ./tables/uss_ct, replace	
+* Export combined table
+collect export ./tables/uss_ct.html, as(html) replace
+collect export ./tables/uss_ct.docx, as(docx) replace
+collect export ./tables/uss_ct.xlsx, as(xlsx) replace
+
+
+
 
 /* END END END END END END END END END END END END END END END END END END END END */
 	
+
+

@@ -28,6 +28,8 @@ merge 1:1 sampa_id using `2', keepusing(ul_amylp mgl_crp mgl_cystatin)
 
 drop if from_t ==2 // _merge ==2 from lab only.  these are individuals with no bmi and dropped from combined.
 
+clonevar amylase_ul = ul_amylp 
+
 rename _merge from_amylase
 
 label variable from_amylase "With Copenhagen Lab Amylase CRP Cystatin Data"

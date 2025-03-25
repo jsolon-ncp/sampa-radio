@@ -179,7 +179,7 @@ collect combine c3 = c1 c2
 * Create layout for combined collection
 collect layout (var) (ever_mal#result[count column1 column4] result[p])
 
-collect save ./tables/enzymes, replace
+collect save ./tables/enzymes, replace	
 * Export combined table
 collect export ./tables/enzymes.html, as(html) replace
 collect export ./tables/enzymes.docx, as(docx) replace

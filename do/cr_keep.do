@@ -1,7 +1,7 @@
 
 local subj1 "record_id cohort sampa_id orgid sex dob age hiv"
 
-local nutrition "bmi haz bmiz bmi_cat_child bmi_cat weight height"
+local nutrition "bmi haz bmiz bmi_cat_child bmi_cat weight height muac waist hip"
 
 local subj2 "indepth_sample indepth_exp ct_sample ct ivgtt_sample ivgtt uss_sample uss ever_mal degree_mal"
 
@@ -13,9 +13,22 @@ local ct "ct_pan_size_qual ct_pan_head_trans ct_pan_head_ap ct_pan_body_trans ct
 
 local derived1 "ct_pan_vol"
 
-local derived2 "adj_wt_ct_pan_head_trans adj_wt_ct_pan_head_ap adj_wt_ct_pan_body_trans adj_wt_ct_pan_tail_trans adj_wt_ct_pan_body_tail adj_wt_ct_pan_cc_body adj_wt_ct_pan_cc_head adj_sqrt_ct_pan_head_trans adj_sqrt_ct_pan_head_ap adj_sqrt_ct_pan_body_trans adj_sqrt_ct_pan_tail_trans adj_sqrt_ct_pan_body_tail adj_sqrt_ct_pan_cc_body adj_sqrt_ct_pan_cc_head adj_wt_pan_head_ap adj_wt_pan_head_trans adj_wt_pan_body_trans adj_wt_pan_tail_trans adj_sqrt_pan_head_ap adj_sqrt_pan_head_trans adj_sqrt_pan_body_trans adj_sqrt_pan_tail_trans"
+local adjwt_uss "adj_wt_pan_head_ap adj_wt_pan_head_trans adj_wt_pan_body_trans adj_wt_pan_tail_trans"  
 
-local derived3 "flag_fecal_elastase ngml_trypsinogen from_trypsin recruited assay_fecal_elastase assay_lipase radio2 ct2 radio_mis_dims radio_mis_all radio3 subset subset2 epi_binary epi_ordinal child africa exposuretime fec_cohort"
+local adjsq_uss "adj_sqrt_pan_head_ap adj_sqrt_pan_head_trans adj_sqrt_pan_body_trans adj_sqrt_pan_tail_trans"  
+
+local adjwt_ct "adj_wt_ct_pan_head_ap adj_wt_ct_pan_head_trans adj_wt_ct_pan_body_trans adj_wt_ct_pan_tail_trans adj_wt_ct_pan_body_tail adj_wt_ct_pan_vol"  
+
+local adjsq_ct "adj_sqrt_ct_pan_head_ap adj_sqrt_ct_pan_head_trans adj_sqrt_ct_pan_body_trans adj_sqrt_ct_pan_tail_trans adj_sqrt_ct_pan_body_tail adj_sqrt_ct_pan_vol"  
+
+
+
+
+/*local derived2 "adj_wt_ct_pan_head_trans adj_wt_ct_pan_head_ap adj_wt_ct_pan_body_trans adj_wt_ct_pan_tail_trans adj_wt_ct_pan_body_tail adj_wt_ct_pan_cc_body adj_wt_ct_pan_cc_head adj_sqrt_ct_pan_head_trans adj_sqrt_ct_pan_head_ap adj_sqrt_ct_pan_body_trans adj_sqrt_ct_pan_tail_trans adj_sqrt_ct_pan_body_tail adj_sqrt_ct_pan_cc_body adj_sqrt_ct_pan_cc_head adj_wt_pan_head_ap adj_wt_pan_head_trans adj_wt_pan_body_trans adj_wt_pan_tail_trans adj_sqrt_pan_head_ap adj_sqrt_pan_head_trans adj_sqrt_pan_body_trans adj_sqrt_pan_tail_trans"
+*/
+
+
+local derived3 "flag_fecal_elastase recruited assay_fecal_elastase assay_lipase radio2 ct2 radio_mis_dims radio_mis_all radio3 subset subset2 epi_binary epi_ordinal child africa exposuretime fec_cohort"
 
 local glucose "metformin insulin ogtt_time0 hba1c gluc_mean_mgdl insulin_mean_mul Matsuda_index insulinogenic_index rhba1c" 
 
@@ -26,6 +39,6 @@ local body "bia fm_kg fm_per ffm_kg ffm_per fmi ffmi impedance bia_prob bia_comm
 local organs "hepatomegaly splenomegaly cholelithiasis steatosis mass gynecologic atherosclerosis nephrolithiasis pancreatic"
 
 
-keep `subj1' `subj2' `ses' `uss' `ct' `derived1' `derived2' `derived3' `glucose' `enzymes' `body' `organs'
+keep `subj1' `subj2' `ses' `uss' `ct' `derived1' `adjwt_uss' `adjsq_uss' `adjwt_ct' `adjsq_ct' `derived3' `glucose' `enzymes' `body' `organs'
 
 keep if subset==1

@@ -32,13 +32,13 @@
       "d": 6.0
     },
     "across[_hide]#cmdset[1]#colname[1.pan_gallbladder]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_gallbladder[1]#result[fvpercent]#stars[value]#statcmd[4]#var[1.pan_gallbladder]": {
-      "d": 0.7017543859649122
+      "d": 0.544959128065395
     },
     "across[_hide]#cmdset[1]#colname[1.pan_gallbladder]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_gallbladder[1]#result[fvfrequency]#stars[value]#statcmd[3]#var[1.pan_gallbladder]": {
       "d": 8.0
     },
     "across[_hide]#cmdset[1]#colname[1.pan_gallbladder]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_gallbladder[1]#result[fvpercent]#stars[value]#statcmd[4]#var[1.pan_gallbladder]": {
-      "d": 0.8611410118406888
+      "d": 0.7835455435847208
     },
     "across[_hide]#cmdset[1]#colname[1.pan_heart]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_heart[1]#result[fvfrequency]#stars[value]#statcmd[3]#var[1.pan_heart]": {
       "d": 0.0
@@ -56,25 +56,25 @@
       "d": 4.0
     },
     "across[_hide]#cmdset[1]#colname[1.pan_kidney]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_kidney[1]#result[fvpercent]#stars[value]#statcmd[4]#var[1.pan_kidney]": {
-      "d": 0.46783625730994155
+      "d": 0.36330608537693004
     },
     "across[_hide]#cmdset[1]#colname[1.pan_kidney]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_kidney[1]#result[fvfrequency]#stars[value]#statcmd[3]#var[1.pan_kidney]": {
       "d": 5.0
     },
     "across[_hide]#cmdset[1]#colname[1.pan_kidney]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_kidney[1]#result[fvpercent]#stars[value]#statcmd[4]#var[1.pan_kidney]": {
-      "d": 0.5382131324004306
+      "d": 0.4897159647404506
     },
     "across[_hide]#cmdset[1]#colname[1.pan_liver]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_liver[1]#result[fvfrequency]#stars[value]#statcmd[3]#var[1.pan_liver]": {
-      "d": 89.0
+      "d": 88.0
     },
     "across[_hide]#cmdset[1]#colname[1.pan_liver]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_liver[1]#result[fvpercent]#stars[value]#statcmd[4]#var[1.pan_liver]": {
-      "d": 10.409356725146198
+      "d": 7.992733878292461
     },
     "across[_hide]#cmdset[1]#colname[1.pan_liver]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_liver[1]#result[fvfrequency]#stars[value]#statcmd[3]#var[1.pan_liver]": {
-      "d": 74.0
+      "d": 72.0
     },
     "across[_hide]#cmdset[1]#colname[1.pan_liver]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_liver[1]#result[fvpercent]#stars[value]#statcmd[4]#var[1.pan_liver]": {
-      "d": 7.965554359526372
+      "d": 7.051909892262488
     },
     "across[_hide]#cmdset[1]#colname[1.pan_lung]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_lung[1]#result[fvfrequency]#stars[value]#statcmd[3]#var[1.pan_lung]": {
       "d": 0.0
@@ -89,28 +89,28 @@
       "d": 0.0
     },
     "across[_hide]#cmdset[1]#colname[1.pan_mass]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_mass[1]#result[fvfrequency]#stars[value]#statcmd[3]#var[1.pan_mass]": {
-      "d": 5.0
+      "d": 4.0
     },
     "across[_hide]#cmdset[1]#colname[1.pan_mass]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_mass[1]#result[fvpercent]#stars[value]#statcmd[4]#var[1.pan_mass]": {
-      "d": 0.5847953216374269
+      "d": 0.36330608537693004
     },
     "across[_hide]#cmdset[1]#colname[1.pan_mass]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_mass[1]#result[fvfrequency]#stars[value]#statcmd[3]#var[1.pan_mass]": {
       "d": 6.0
     },
     "across[_hide]#cmdset[1]#colname[1.pan_mass]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_mass[1]#result[fvpercent]#stars[value]#statcmd[4]#var[1.pan_mass]": {
-      "d": 0.6458557588805167
+      "d": 0.5876591576885406
     },
     "across[_hide]#cmdset[1]#colname[1.pan_organs]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_organs[1]#result[fvfrequency]#stars[value]#statcmd[3]#var[1.pan_organs]": {
-      "d": 91.0
-    },
-    "across[_hide]#cmdset[1]#colname[1.pan_organs]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_organs[1]#result[fvpercent]#stars[value]#statcmd[4]#var[1.pan_organs]": {
-      "d": 10.64327485380117
-    },
-    "across[_hide]#cmdset[1]#colname[1.pan_organs]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_organs[1]#result[fvfrequency]#stars[value]#statcmd[3]#var[1.pan_organs]": {
       "d": 90.0
     },
+    "across[_hide]#cmdset[1]#colname[1.pan_organs]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_organs[1]#result[fvpercent]#stars[value]#statcmd[4]#var[1.pan_organs]": {
+      "d": 8.174386920980927
+    },
+    "across[_hide]#cmdset[1]#colname[1.pan_organs]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_organs[1]#result[fvfrequency]#stars[value]#statcmd[3]#var[1.pan_organs]": {
+      "d": 87.0
+    },
     "across[_hide]#cmdset[1]#colname[1.pan_organs]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_organs[1]#result[fvpercent]#stars[value]#statcmd[4]#var[1.pan_organs]": {
-      "d": 9.68783638320775
+      "d": 8.521057786483839
     },
     "across[_hide]#cmdset[1]#colname[1.pan_pancreas]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_pancreas[1]#result[fvfrequency]#stars[value]#statcmd[3]#var[1.pan_pancreas]": {
       "d": 0.0
@@ -128,13 +128,13 @@
       "d": 3.0
     },
     "across[_hide]#cmdset[1]#colname[1.pan_spleen]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_spleen[1]#result[fvpercent]#stars[value]#statcmd[4]#var[1.pan_spleen]": {
-      "d": 0.3508771929824561
+      "d": 0.2724795640326975
     },
     "across[_hide]#cmdset[1]#colname[1.pan_spleen]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_spleen[1]#result[fvfrequency]#stars[value]#statcmd[3]#var[1.pan_spleen]": {
-      "d": 5.0
+      "d": 4.0
     },
     "across[_hide]#cmdset[1]#colname[1.pan_spleen]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_spleen[1]#result[fvpercent]#stars[value]#statcmd[4]#var[1.pan_spleen]": {
-      "d": 0.5382131324004306
+      "d": 0.3917727717923604
     },
     "across[_hide]#cmdset[1]#colname[1.pan_stomach_intestine]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_stomach_intestine[1]#result[fvfrequency]#stars[value]#statcmd[3]#var[1.pan_stomach_intestine]": {
       "d": 0.0
@@ -146,25 +146,25 @@
       "d": 3.0
     },
     "across[_hide]#cmdset[1]#colname[1.pan_stomach_intestine]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_stomach_intestine[1]#result[fvpercent]#stars[value]#statcmd[4]#var[1.pan_stomach_intestine]": {
-      "d": 0.32292787944025836
+      "d": 0.2938295788442703
     },
     "across[_hide]#cmdset[1]#colname[1.pan_uterus_ovary]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_uterus_ovary[1]#result[fvfrequency]#stars[value]#statcmd[3]#var[1.pan_uterus_ovary]": {
       "d": 3.0
     },
     "across[_hide]#cmdset[1]#colname[1.pan_uterus_ovary]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_uterus_ovary[1]#result[fvpercent]#stars[value]#statcmd[4]#var[1.pan_uterus_ovary]": {
-      "d": 0.3508771929824561
+      "d": 0.2724795640326975
     },
     "across[_hide]#cmdset[1]#colname[1.pan_uterus_ovary]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_uterus_ovary[1]#result[fvfrequency]#stars[value]#statcmd[3]#var[1.pan_uterus_ovary]": {
       "d": 3.0
     },
     "across[_hide]#cmdset[1]#colname[1.pan_uterus_ovary]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_uterus_ovary[1]#result[fvpercent]#stars[value]#statcmd[4]#var[1.pan_uterus_ovary]": {
-      "d": 0.32292787944025836
+      "d": 0.2938295788442703
     },
     "across[_hide]#cmdset[1]#colname[1.pan_vascular]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_vascular[1]#result[fvfrequency]#stars[value]#statcmd[3]#var[1.pan_vascular]": {
       "d": 2.0
     },
     "across[_hide]#cmdset[1]#colname[1.pan_vascular]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_vascular[1]#result[fvpercent]#stars[value]#statcmd[4]#var[1.pan_vascular]": {
-      "d": 0.23391812865497078
+      "d": 0.18165304268846502
     },
     "across[_hide]#cmdset[1]#colname[1.pan_vascular]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_vascular[1]#result[fvfrequency]#stars[value]#statcmd[3]#var[1.pan_vascular]": {
       "d": 0.0
@@ -173,16 +173,16 @@
       "d": 0.0
     },
     "across[_hide]#cmdset[1]#command[0]#ever_mal[0]#result[frequency]#stars[value]#statcmd[1]#var[_N]": {
-      "d": 855.0
+      "d": 1101.0
     },
     "across[_hide]#cmdset[1]#command[0]#ever_mal[1]#result[frequency]#stars[value]#statcmd[1]#var[_N]": {
-      "d": 929.0
+      "d": 1021.0
     },
     "across[ever_mal]#cmdset[1]#command[0]#ever_mal[0]#result[percent]#stars[value]#statcmd[2]#var[_N]": {
-      "d": 47.92600896860987
+      "d": 51.885014137606035
     },
     "across[ever_mal]#cmdset[1]#command[0]#ever_mal[1]#result[percent]#stars[value]#statcmd[2]#var[_N]": {
-      "d": 52.07399103139013
+      "d": 48.114985862393965
     },
     "cmdset[1]#stars[value]#var[_N]": {
       "s": ".m"
@@ -662,7 +662,7 @@
     "notes": [
       "Participants may have multiple organ findings.",
       "No significant differences between groups on Chi-square test (p>0.05)",
-      "Remove in final : Created with 06_table_uss_other_organs.do on 25 Feb 2025 at 14:27:07 based on All_combined_sampa_data.dta"
+      "Remove in final : Created with  on 25 Mar 2025 at 13:33:48 based on ./data-temp/subset_imaging.dta"
     ],
     "title": "Supplement Table. Incidental Findings on Ultrasound (n=1784)",
     "title-styles": {

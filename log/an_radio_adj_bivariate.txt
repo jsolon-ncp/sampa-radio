@@ -1,0 +1,1277 @@
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/juansolon/Documents/GitHub/sampa-radio/log/an_radio_adj_bivariate.txt
+  log type:  text
+ opened on:  25 Mar 2025, 11:26:40
+
+. 
+. cap prog drop mystats
+
+. program mystats, rclass
+  1. return scalar p_adj= chi2tail(r(df), r(chi2_adj))
+  2. return scalar Chi2_adj =  r(chi2_adj)
+  3. return scalar  DF =  r(df)
+  4. return scalar p= chi2tail(r(df), r(chi2))
+  5. return scalar  Chi2 =   r(chi2)
+  6. end
+
+. 
+. collect clear
+
+. 
+. local col "ever_mal"
+
+. 
+. local adjwt_uss "adj_wt_pan_head_ap adj_wt_pan_head_trans adj_wt_pan_body_trans adj_wt_pan_tail_trans"  
+
+. 
+. local adjsq_uss "adj_sqrt_pan_head_ap adj_sqrt_pan_head_trans adj_sqrt_pan_body_trans adj_sqrt_pan_tail_trans"  
+
+. 
+. local adjwt_ct "adj_wt_ct_pan_head_ap adj_wt_ct_pan_head_trans adj_wt_ct_pan_body_trans adj_wt_ct_pan_tail_trans adj_wt_ct_pan_body_tail adj_wt_ct_pan_vol"  
+
+. 
+. local adjsq_ct "adj_sqrt_ct_pan_head_ap adj_sqrt_ct_pan_head_trans adj_sqrt_ct_pan_body_trans adj_sqrt_ct_pan_tail_trans adj_sqrt_ct_pan_body_tail adj_sqrt_ct_pan_vol"  
+
+. 
+. 
+. 
+. /*continous variables; median (p25-p75)  will be reported*/
+. 
+. 
+. local colhead2 `"0 "NPM" 1 "PM""'
+
+.                 
+. * format median of all cont vars
+. local nfrmt_p50 "%5.3f"
+
+. local nfrmt_iqr "%5.3f"
+
+. local sfrmt_p25 "(%s-"
+
+. local sfrmt_p75 "%s)"
+
+. 
+. local title "Table .Adjusted Ultrasound Measurements"
+
+. count if radio3 ==1
+  1,621
+
+. local obs_uss = r(N)
+
+. di `obs_uss'
+1621
+
+. count if ct2 ==1
+  291
+
+. local obs_ct = r(N)
+
+. di `obs_ct'
+291
+
+. local notes1 "Values are [N] median (p25-p50)."
+
+. local notes2 "`obs_uss' contributing any ultrasound measurement."
+
+. local notes3 "`obs_ct' contributing any CT scan measurement."
+
+. 
+. 
+. * STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  
+. * THERE IS NOTHING TO MODIFY BEYOND THIS LINE UNLESS CHANGING CODE. 
+. 
+. * GENERATE TABLE STATS 
+. 
+.         table (var)(`col')  , ///
+>                 stat(frequency) ///
+>                 stat(count `adjwt_uss' `adjsq_uss' `adjwt_ct' `adjsq_ct') ///
+>                 stat(p50 `adjwt_uss' `adjsq_uss' `adjwt_ct' `adjsq_ct') ///
+>                 stat(p25 `adjwt_uss' `adjsq_uss' `adjwt_ct' `adjsq_ct') ///
+>                 stat(p75 `adjwt_uss' `adjsq_uss' `adjwt_ct' `adjsq_ct') ///
+>                 nototal
+
+----------------------------------------------------------------
+                              |   Ever experience malnutrition? 
+                              |             NPM               PM
+------------------------------+---------------------------------
+Frequency                     |           1,101            1,021
+adj_wt_pan_head_ap            |                                 
+  Number of nonmissing values |             715              832
+  50th percentile             |        .0338684         .0432393
+  25th percentile             |        .0284433         .0349846
+  75th percentile             |        .0422562         .0530595
+adj_wt_pan_head_trans         |                                 
+  Number of nonmissing values |             635              759
+  50th percentile             |        .0336039         .0372839
+  25th percentile             |        .0282486              .03
+  75th percentile             |        .0400259         .0460803
+adj_wt_pan_body_trans         |                                 
+  Number of nonmissing values |             745              858
+  50th percentile             |        .0201342         .0254555
+  25th percentile             |        .0168242         .0198113
+  75th percentile             |        .0260823         .0332362
+adj_wt_pan_tail_trans         |                                 
+  Number of nonmissing values |             509              687
+  50th percentile             |        .0203625         .0321759
+  25th percentile             |        .0162826         .0238284
+  75th percentile             |        .0315126         .0397701
+adj_sqrt_pan_head_ap          |                                 
+  Number of nonmissing values |             715              837
+  50th percentile             |        1.445683         1.438749
+  25th percentile             |        1.363818         1.334166
+  75th percentile             |        1.532971         1.545963
+adj_sqrt_pan_head_trans       |                                 
+  Number of nonmissing values |             635              764
+  50th percentile             |        1.449138         1.349074
+  25th percentile             |        1.363818         1.208305
+  75th percentile             |        1.532971          1.48324
+adj_sqrt_pan_body_trans       |                                 
+  Number of nonmissing values |             745              863
+  50th percentile             |        1.113553         1.109054
+  25th percentile             |        1.034408         1.014889
+  75th percentile             |        1.224745         1.220656
+adj_sqrt_pan_tail_trans       |                                 
+  Number of nonmissing values |             509              692
+  50th percentile             |        1.109054         1.191638
+  25th percentile             |        1.034408         1.067708
+  75th percentile             |        1.260952         1.309579
+adj_wt_ct_pan_head_ap         |                                 
+  Number of nonmissing values |             149              141
+  50th percentile             |        .0409165         .0434638
+  25th percentile             |        .0341772         .0383475
+  75th percentile             |        .0480384          .053286
+adj_wt_ct_pan_head_trans      |                                 
+  Number of nonmissing values |             148              139
+  50th percentile             |        .0415808         .0478182
+  25th percentile             |        .0358704         .0380494
+  75th percentile             |        .0487101         .0594378
+adj_wt_ct_pan_body_trans      |                                 
+  Number of nonmissing values |             148              141
+  50th percentile             |        .0322719         .0365724
+  25th percentile             |        .0264048          .030678
+  75th percentile             |        .0378128         .0459502
+adj_wt_ct_pan_tail_trans      |                                 
+  Number of nonmissing values |             149              139
+  50th percentile             |         .027248         .0317568
+  25th percentile             |        .0225776         .0260188
+  75th percentile             |        .0337152         .0408397
+adj_wt_ct_pan_body_tail       |                                 
+  Number of nonmissing values |             102              112
+  50th percentile             |        .1677179         .1743133
+  25th percentile             |        .1441358         .1479615
+  75th percentile             |        .1913732         .1990182
+adj_wt_ct_pan_vol             |                                 
+  Number of nonmissing values |             101              108
+  50th percentile             |        1.035782          1.07195
+  25th percentile             |        .8579786         .8487658
+  75th percentile             |        1.212234         1.438702
+adj_sqrt_ct_pan_head_ap       |                                 
+  Number of nonmissing values |             149              141
+  50th percentile             |        1.603122          1.56205
+  25th percentile             |        1.513275         1.466288
+  75th percentile             |         1.67332         1.664332
+adj_sqrt_ct_pan_head_trans    |                                 
+  Number of nonmissing values |             148              139
+  50th percentile             |        1.612452         1.624808
+  25th percentile             |        1.547578         1.523155
+  75th percentile             |        1.702939         1.708801
+adj_sqrt_ct_pan_body_trans    |                                 
+  Number of nonmissing values |             148              141
+  50th percentile             |         1.43527         1.445683
+  25th percentile             |        1.313358         1.315295
+  75th percentile             |        1.523155         1.552418
+adj_sqrt_ct_pan_tail_trans    |                                 
+  Number of nonmissing values |             149              139
+  50th percentile             |         1.32665         1.330413
+  25th percentile             |        1.212436         1.228821
+  75th percentile             |        1.414214          1.44222
+adj_sqrt_ct_pan_body_tail     |                                 
+  Number of nonmissing values |             102              112
+  50th percentile             |        3.263433         3.164648
+  25th percentile             |        3.091925         3.029023
+  75th percentile             |        3.427827         3.307567
+adj_sqrt_ct_pan_vol           |                                 
+  Number of nonmissing values |             101              108
+  50th percentile             |        8.058669         7.874255
+  25th percentile             |        7.382999         6.893843
+  75th percentile             |        8.945876         8.970416
+----------------------------------------------------------------
+
+.                 
+. collect rename Table c1
+(current collection is c1)
+
+.                 
+. *REFORMAT RESULTS TO DESIRED COLUMNS
+.                 
+.         * recodes median and iqr
+.                 collect recode result p50 = column1
+(40 items recoded in collection c1)
+
+.                 collect recode result p25 = column2
+(40 items recoded in collection c1)
+
+.                 collect recode result p75 = column3
+(40 items recoded in collection c1)
+
+.                 
+.         * Create composite result : this is needed because 75 is in column3 and we want it in the same column as column 2 .  Use for medians and probably CIs
+.                 collect composite define column4 = column2 column3, replace
+
+. 
+.         * Calculate p-values from chi2 and df
+.         foreach v in `adjwt_uss' `adjsq_uss' `adjwt_ct' `adjsq_ct' {
+  2.                 quietly kwallis `v', by(`col')
+  3.                 collect: mystats
+  4.         }
+
+. 
+.         
+. * CREATE THE TABLE 1 Layout Super column - column 
+. 
+.         collect layout (var) (ever_mal#result[count column1 column4])
+
+Collection: c1
+      Rows: var
+   Columns: ever_mal#result[count column1 column4]
+   Table 1: 20 x 6
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+                           |                                                Ever experience malnutrition?                                              
+                           |                              NPM                                                            PM                            
+                           |  Number of nonmissing values    column1      column2 column3   Number of nonmissing values    column1      column2 column3
+---------------------------+---------------------------------------------------------------------------------------------------------------------------
+adj_wt_pan_head_ap         |                          715   .0338684   .0284433  .0422562                           832   .0432393   .0349846  .0530595
+adj_wt_pan_head_trans      |                          635   .0336039   .0282486  .0400259                           759   .0372839        .03  .0460803
+adj_wt_pan_body_trans      |                          745   .0201342   .0168242  .0260823                           858   .0254555   .0198113  .0332362
+adj_wt_pan_tail_trans      |                          509   .0203625   .0162826  .0315126                           687   .0321759   .0238284  .0397701
+adj_sqrt_pan_head_ap       |                          715   1.445683   1.363818  1.532971                           837   1.438749   1.334166  1.545963
+adj_sqrt_pan_head_trans    |                          635   1.449138   1.363818  1.532971                           764   1.349074   1.208305   1.48324
+adj_sqrt_pan_body_trans    |                          745   1.113553   1.034408  1.224745                           863   1.109054   1.014889  1.220656
+adj_sqrt_pan_tail_trans    |                          509   1.109054   1.034408  1.260952                           692   1.191638   1.067708  1.309579
+adj_wt_ct_pan_head_ap      |                          149   .0409165   .0341772  .0480384                           141   .0434638   .0383475   .053286
+adj_wt_ct_pan_head_trans   |                          148   .0415808   .0358704  .0487101                           139   .0478182   .0380494  .0594378
+adj_wt_ct_pan_body_trans   |                          148   .0322719   .0264048  .0378128                           141   .0365724    .030678  .0459502
+adj_wt_ct_pan_tail_trans   |                          149    .027248   .0225776  .0337152                           139   .0317568   .0260188  .0408397
+adj_wt_ct_pan_body_tail    |                          102   .1677179   .1441358  .1913732                           112   .1743133   .1479615  .1990182
+adj_wt_ct_pan_vol          |                          101   1.035782   .8579786  1.212234                           108    1.07195   .8487658  1.438702
+adj_sqrt_ct_pan_head_ap    |                          149   1.603122   1.513275   1.67332                           141    1.56205   1.466288  1.664332
+adj_sqrt_ct_pan_head_trans |                          148   1.612452   1.547578  1.702939                           139   1.624808   1.523155  1.708801
+adj_sqrt_ct_pan_body_trans |                          148    1.43527   1.313358  1.523155                           141   1.445683   1.315295  1.552418
+adj_sqrt_ct_pan_tail_trans |                          149    1.32665   1.212436  1.414214                           139   1.330413   1.228821   1.44222
+adj_sqrt_ct_pan_body_tail  |                          102   3.263433   3.091925  3.427827                           112   3.164648   3.029023  3.307567
+adj_sqrt_ct_pan_vol        |                          101   8.058669   7.382999  8.945876                           108   7.874255   6.893843  8.970416
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+. 
+. * Format p-values
+.         collect style cell result[p], nformat("%5.3f")
+
+.         collect style cell result[p], sformat("p=%s")
+
+. 
+. * CHANGE HEADER TEXT
+.         * column
+.                 collect label levels `col' `colhead2', modify
+
+. 
+. collect preview /* preview changes */
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+                           |                                                Ever experience malnutrition?                                              
+                           |                              NPM                                                            PM                            
+                           |  Number of nonmissing values    column1      column2 column3   Number of nonmissing values    column1      column2 column3
+---------------------------+---------------------------------------------------------------------------------------------------------------------------
+adj_wt_pan_head_ap         |                          715   .0338684   .0284433  .0422562                           832   .0432393   .0349846  .0530595
+adj_wt_pan_head_trans      |                          635   .0336039   .0282486  .0400259                           759   .0372839        .03  .0460803
+adj_wt_pan_body_trans      |                          745   .0201342   .0168242  .0260823                           858   .0254555   .0198113  .0332362
+adj_wt_pan_tail_trans      |                          509   .0203625   .0162826  .0315126                           687   .0321759   .0238284  .0397701
+adj_sqrt_pan_head_ap       |                          715   1.445683   1.363818  1.532971                           837   1.438749   1.334166  1.545963
+adj_sqrt_pan_head_trans    |                          635   1.449138   1.363818  1.532971                           764   1.349074   1.208305   1.48324
+adj_sqrt_pan_body_trans    |                          745   1.113553   1.034408  1.224745                           863   1.109054   1.014889  1.220656
+adj_sqrt_pan_tail_trans    |                          509   1.109054   1.034408  1.260952                           692   1.191638   1.067708  1.309579
+adj_wt_ct_pan_head_ap      |                          149   .0409165   .0341772  .0480384                           141   .0434638   .0383475   .053286
+adj_wt_ct_pan_head_trans   |                          148   .0415808   .0358704  .0487101                           139   .0478182   .0380494  .0594378
+adj_wt_ct_pan_body_trans   |                          148   .0322719   .0264048  .0378128                           141   .0365724    .030678  .0459502
+adj_wt_ct_pan_tail_trans   |                          149    .027248   .0225776  .0337152                           139   .0317568   .0260188  .0408397
+adj_wt_ct_pan_body_tail    |                          102   .1677179   .1441358  .1913732                           112   .1743133   .1479615  .1990182
+adj_wt_ct_pan_vol          |                          101   1.035782   .8579786  1.212234                           108    1.07195   .8487658  1.438702
+adj_sqrt_ct_pan_head_ap    |                          149   1.603122   1.513275   1.67332                           141    1.56205   1.466288  1.664332
+adj_sqrt_ct_pan_head_trans |                          148   1.612452   1.547578  1.702939                           139   1.624808   1.523155  1.708801
+adj_sqrt_ct_pan_body_trans |                          148    1.43527   1.313358  1.523155                           141   1.445683   1.315295  1.552418
+adj_sqrt_ct_pan_tail_trans |                          149    1.32665   1.212436  1.414214                           139   1.330413   1.228821   1.44222
+adj_sqrt_ct_pan_body_tail  |                          102   3.263433   3.091925  3.427827                           112   3.164648   3.029023  3.307567
+adj_sqrt_ct_pan_vol        |                          101   8.058669   7.382999  8.945876                           108   7.874255   6.893843  8.970416
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+. 
+. * HIDE COLUMN HEADERS
+. 
+.         * Hide supercolumn variable name because it is self-descriptive
+.                 
+.         *       collect style header `scol', title(hide) /* this removes the column variable name or label by hiding it */
+. 
+.         * Hide the column variable name 
+.                 
+.                 collect style header `col', title(hide) /* this removes the column variable name or label by hiding it */
+
+. 
+.         * Hide the words column 1 and column 2 for the results 
+. 
+.                 collect style header result, level(hide) /* this removes column 1 and column2 header names*/
+
+. 
+. collect preview /* preview changes */
+
+-------------------------------------------------------------------------------------------------------
+                           |                  NPM                                    PM                
+---------------------------+---------------------------------------------------------------------------
+adj_wt_pan_head_ap         |  715   .0338684   .0284433  .0422562   832   .0432393   .0349846  .0530595
+adj_wt_pan_head_trans      |  635   .0336039   .0282486  .0400259   759   .0372839        .03  .0460803
+adj_wt_pan_body_trans      |  745   .0201342   .0168242  .0260823   858   .0254555   .0198113  .0332362
+adj_wt_pan_tail_trans      |  509   .0203625   .0162826  .0315126   687   .0321759   .0238284  .0397701
+adj_sqrt_pan_head_ap       |  715   1.445683   1.363818  1.532971   837   1.438749   1.334166  1.545963
+adj_sqrt_pan_head_trans    |  635   1.449138   1.363818  1.532971   764   1.349074   1.208305   1.48324
+adj_sqrt_pan_body_trans    |  745   1.113553   1.034408  1.224745   863   1.109054   1.014889  1.220656
+adj_sqrt_pan_tail_trans    |  509   1.109054   1.034408  1.260952   692   1.191638   1.067708  1.309579
+adj_wt_ct_pan_head_ap      |  149   .0409165   .0341772  .0480384   141   .0434638   .0383475   .053286
+adj_wt_ct_pan_head_trans   |  148   .0415808   .0358704  .0487101   139   .0478182   .0380494  .0594378
+adj_wt_ct_pan_body_trans   |  148   .0322719   .0264048  .0378128   141   .0365724    .030678  .0459502
+adj_wt_ct_pan_tail_trans   |  149    .027248   .0225776  .0337152   139   .0317568   .0260188  .0408397
+adj_wt_ct_pan_body_tail    |  102   .1677179   .1441358  .1913732   112   .1743133   .1479615  .1990182
+adj_wt_ct_pan_vol          |  101   1.035782   .8579786  1.212234   108    1.07195   .8487658  1.438702
+adj_sqrt_ct_pan_head_ap    |  149   1.603122   1.513275   1.67332   141    1.56205   1.466288  1.664332
+adj_sqrt_ct_pan_head_trans |  148   1.612452   1.547578  1.702939   139   1.624808   1.523155  1.708801
+adj_sqrt_ct_pan_body_trans |  148    1.43527   1.313358  1.523155   141   1.445683   1.315295  1.552418
+adj_sqrt_ct_pan_tail_trans |  149    1.32665   1.212436  1.414214   139   1.330413   1.228821   1.44222
+adj_sqrt_ct_pan_body_tail  |  102   3.263433   3.091925  3.427827   112   3.164648   3.029023  3.307567
+adj_sqrt_ct_pan_vol        |  101   8.058669   7.382999  8.945876   108   7.874255   6.893843  8.970416
+-------------------------------------------------------------------------------------------------------
+
+. 
+. * MODIFY ROW TEXT
+. 
+. 
+. * REVISE ROW STYLES
+. 
+. * Stack levels of each variable , place a space between variables (spacer) ; 
+. 
+.         collect style row stack, nobinder spacer
+
+. 
+. * Remove vertical line after variables
+. 
+.         collect style cell border_block, border(right, pattern(nil))
+
+. 
+. * HIDE ROW Text
+. 
+. * Hide the variable names 
+. collect style header `hiderows', title(hide)
+
+. 
+. 
+. * FORMAT NUMBERS
+. 
+. * Format median
+. 
+.         collect style cell result[column1]#var[`adjwt_uss' `adjsq_uss' `adjwt_ct' `adjsq_ct'], nformat(`nfrmt_p50')
+
+. 
+. * Add IQR formatting to p25 and p75 separately:
+.         collect style cell result[column2]#var[`adjwt_uss' `adjsq_uss' `adjwt_ct' `adjsq_ct'], nformat(`nfrmt_iqr') sformat("`sfrmt_p25'") /* formats iqr as (p25 - p75)*
+> /
+
+.         collect style cell result[column3]#var[`adjwt_uss' `adjsq_uss' `adjwt_ct' `adjsq_ct'], nformat(`nfrmt_iqr') sformat("`sfrmt_p75'") 
+
+. 
+. * Format count column
+.         collect style cell result[count], nformat("%4.0f") /* Format count as whole number */
+
+.         collect style cell result[count], sformat("[%s]") /* Format count as whole number */
+
+.         
+. * Add text
+.         collect title `title'
+
+.         /*collect notes `notes1'
+>         collect notes `notes2'
+>         collect notes `notes3'
+>         collect notes `notes4'
+>         */
+.         
+. collect preview
+
+Table .Adjusted Ultrasound Measurements
+-------------------------------------------------------------------------------------------
+                                          NPM                              PM              
+-------------------------------------------------------------------------------------------
+adj_wt_pan_head_ap          [715]   0.034   (0.028- 0.042)   [832]   0.043   (0.035- 0.053)
+adj_wt_pan_head_trans       [635]   0.034   (0.028- 0.040)   [759]   0.037   (0.030- 0.046)
+adj_wt_pan_body_trans       [745]   0.020   (0.017- 0.026)   [858]   0.025   (0.020- 0.033)
+adj_wt_pan_tail_trans       [509]   0.020   (0.016- 0.032)   [687]   0.032   (0.024- 0.040)
+adj_sqrt_pan_head_ap        [715]   1.446   (1.364- 1.533)   [837]   1.439   (1.334- 1.546)
+adj_sqrt_pan_head_trans     [635]   1.449   (1.364- 1.533)   [764]   1.349   (1.208- 1.483)
+adj_sqrt_pan_body_trans     [745]   1.114   (1.034- 1.225)   [863]   1.109   (1.015- 1.221)
+adj_sqrt_pan_tail_trans     [509]   1.109   (1.034- 1.261)   [692]   1.192   (1.068- 1.310)
+adj_wt_ct_pan_head_ap       [149]   0.041   (0.034- 0.048)   [141]   0.043   (0.038- 0.053)
+adj_wt_ct_pan_head_trans    [148]   0.042   (0.036- 0.049)   [139]   0.048   (0.038- 0.059)
+adj_wt_ct_pan_body_trans    [148]   0.032   (0.026- 0.038)   [141]   0.037   (0.031- 0.046)
+adj_wt_ct_pan_tail_trans    [149]   0.027   (0.023- 0.034)   [139]   0.032   (0.026- 0.041)
+adj_wt_ct_pan_body_tail     [102]   0.168   (0.144- 0.191)   [112]   0.174   (0.148- 0.199)
+adj_wt_ct_pan_vol           [101]   1.036   (0.858- 1.212)   [108]   1.072   (0.849- 1.439)
+adj_sqrt_ct_pan_head_ap     [149]   1.603   (1.513- 1.673)   [141]   1.562   (1.466- 1.664)
+adj_sqrt_ct_pan_head_trans  [148]   1.612   (1.548- 1.703)   [139]   1.625   (1.523- 1.709)
+adj_sqrt_ct_pan_body_trans  [148]   1.435   (1.313- 1.523)   [141]   1.446   (1.315- 1.552)
+adj_sqrt_ct_pan_tail_trans  [149]   1.327   (1.212- 1.414)   [139]   1.330   (1.229- 1.442)
+adj_sqrt_ct_pan_body_tail   [102]   3.263   (3.092- 3.428)   [112]   3.165   (3.029- 3.308)
+adj_sqrt_ct_pan_vol         [101]   8.059   (7.383- 8.946)   [108]   7.874   (6.894- 8.970)
+-------------------------------------------------------------------------------------------
+
+. 
+. * Save first collection with main stats
+. collect layout (var) (ever_mal#result[count column1 column4])
+
+Collection: c1
+      Rows: var
+   Columns: ever_mal#result[count column1 column4]
+   Table 1: 20 x 6
+
+Table .Adjusted Ultrasound Measurements
+-------------------------------------------------------------------------------------------
+                                          NPM                              PM              
+-------------------------------------------------------------------------------------------
+adj_wt_pan_head_ap          [715]   0.034   (0.028- 0.042)   [832]   0.043   (0.035- 0.053)
+adj_wt_pan_head_trans       [635]   0.034   (0.028- 0.040)   [759]   0.037   (0.030- 0.046)
+adj_wt_pan_body_trans       [745]   0.020   (0.017- 0.026)   [858]   0.025   (0.020- 0.033)
+adj_wt_pan_tail_trans       [509]   0.020   (0.016- 0.032)   [687]   0.032   (0.024- 0.040)
+adj_sqrt_pan_head_ap        [715]   1.446   (1.364- 1.533)   [837]   1.439   (1.334- 1.546)
+adj_sqrt_pan_head_trans     [635]   1.449   (1.364- 1.533)   [764]   1.349   (1.208- 1.483)
+adj_sqrt_pan_body_trans     [745]   1.114   (1.034- 1.225)   [863]   1.109   (1.015- 1.221)
+adj_sqrt_pan_tail_trans     [509]   1.109   (1.034- 1.261)   [692]   1.192   (1.068- 1.310)
+adj_wt_ct_pan_head_ap       [149]   0.041   (0.034- 0.048)   [141]   0.043   (0.038- 0.053)
+adj_wt_ct_pan_head_trans    [148]   0.042   (0.036- 0.049)   [139]   0.048   (0.038- 0.059)
+adj_wt_ct_pan_body_trans    [148]   0.032   (0.026- 0.038)   [141]   0.037   (0.031- 0.046)
+adj_wt_ct_pan_tail_trans    [149]   0.027   (0.023- 0.034)   [139]   0.032   (0.026- 0.041)
+adj_wt_ct_pan_body_tail     [102]   0.168   (0.144- 0.191)   [112]   0.174   (0.148- 0.199)
+adj_wt_ct_pan_vol           [101]   1.036   (0.858- 1.212)   [108]   1.072   (0.849- 1.439)
+adj_sqrt_ct_pan_head_ap     [149]   1.603   (1.513- 1.673)   [141]   1.562   (1.466- 1.664)
+adj_sqrt_ct_pan_head_trans  [148]   1.612   (1.548- 1.703)   [139]   1.625   (1.523- 1.709)
+adj_sqrt_ct_pan_body_trans  [148]   1.435   (1.313- 1.523)   [141]   1.446   (1.315- 1.552)
+adj_sqrt_ct_pan_tail_trans  [149]   1.327   (1.212- 1.414)   [139]   1.330   (1.229- 1.442)
+adj_sqrt_ct_pan_body_tail   [102]   3.263   (3.092- 3.428)   [112]   3.165   (3.029- 3.308)
+adj_sqrt_ct_pan_vol         [101]   8.059   (7.383- 8.946)   [108]   7.874   (6.894- 8.970)
+-------------------------------------------------------------------------------------------
+
+. collect save ./tables/radioadj.json, replace
+(collection c1 saved to file ./tables/radioadj.json)
+
+. 
+. * Create new collection for p-values
+. collect create c2
+(current collection is c2)
+
+. foreach v in `adjwt_uss' `adjsq_uss' `adjwt_ct' `adjsq_ct' {
+  2.     quietly kwallis `v', by(`col')
+  3.     collect: mystats
+  4. }
+
+.    
+.   
+. * Remap cmdset to match var levels
+. * Weighted USS measurements
+. collect recode cmdset 1 = adj_wt_pan_head_ap
+(5 items recoded in collection c2)
+
+. collect recode cmdset 2 = adj_wt_pan_head_trans
+(5 items recoded in collection c2)
+
+. collect recode cmdset 3 = adj_wt_pan_body_trans
+(5 items recoded in collection c2)
+
+. collect recode cmdset 4 = adj_wt_pan_tail_trans
+(5 items recoded in collection c2)
+
+. 
+. * Square root USS measurements
+. collect recode cmdset 5 = adj_sqrt_pan_head_ap
+(5 items recoded in collection c2)
+
+. collect recode cmdset 6 = adj_sqrt_pan_head_trans
+(5 items recoded in collection c2)
+
+. collect recode cmdset 7 = adj_sqrt_pan_body_trans
+(5 items recoded in collection c2)
+
+. collect recode cmdset 8 = adj_sqrt_pan_tail_trans
+(5 items recoded in collection c2)
+
+. 
+. * Weighted CT measurements
+. collect recode cmdset 9 = adj_wt_ct_pan_head_ap
+(5 items recoded in collection c2)
+
+. collect recode cmdset 10 = adj_wt_ct_pan_head_trans
+(5 items recoded in collection c2)
+
+. collect recode cmdset 11 = adj_wt_ct_pan_body_trans
+(5 items recoded in collection c2)
+
+. collect recode cmdset 12 = adj_wt_ct_pan_tail_trans
+(5 items recoded in collection c2)
+
+. collect recode cmdset 13 = adj_wt_ct_pan_body_tail
+(5 items recoded in collection c2)
+
+. collect recode cmdset 14 = adj_wt_ct_pan_vol
+(5 items recoded in collection c2)
+
+. 
+. * Square root CT measurements
+. collect recode cmdset 15 = adj_sqrt_ct_pan_head_ap
+(5 items recoded in collection c2)
+
+. collect recode cmdset 16 = adj_sqrt_ct_pan_head_trans
+(5 items recoded in collection c2)
+
+. collect recode cmdset 17 = adj_sqrt_ct_pan_body_trans
+(5 items recoded in collection c2)
+
+. collect recode cmdset 18 = adj_sqrt_ct_pan_tail_trans
+(5 items recoded in collection c2)
+
+. collect recode cmdset 19 = adj_sqrt_ct_pan_body_tail
+(5 items recoded in collection c2)
+
+. collect recode cmdset 20 = adj_sqrt_ct_pan_vol
+(5 items recoded in collection c2)
+
+. 
+. collect remap cmdset = var
+(100 items remapped in collection c2)
+
+. 
+. * combine collections
+. 
+. collect combine c3 = c1 c2
+(current collection is c3)
+
+. 
+. * Add tags
+. collect addtags vartype[USS Adjusted by weight], fortags(var[adj_wt_pan_head_ap adj_wt_pan_head_trans adj_wt_pan_body_trans adj_wt_pan_tail_trans])
+(52 items changed in collection c3)
+
+. collect addtags vartype[USS Square Root Transformed], fortags(var[adj_sqrt_pan_head_ap adj_sqrt_pan_head_trans adj_sqrt_pan_body_trans adj_sqrt_pan_tail_trans])
+(52 items changed in collection c3)
+
+. collect addtags vartype[CT Adjusted by weight ], fortags(var[adj_wt_ct_pan_head_ap adj_wt_ct_pan_head_trans adj_wt_ct_pan_body_trans adj_wt_ct_pan_tail_trans adj_wt_ct_p
+> an_body_tail adj_wt_ct_pan_vol])
+(78 items changed in collection c3)
+
+. collect addtags vartype[CT Square Root Transformed ], fortags(var[adj_sqrt_ct_pan_head_ap adj_sqrt_ct_pan_head_trans adj_sqrt_ct_pan_body_trans adj_sqrt_ct_pan_tail_tran
+> s adj_sqrt_ct_pan_body_tail adj_sqrt_ct_pan_vol])
+(78 items changed in collection c3)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect layout (var) (ever_mal#result[count column1 column4] result[p])   
+
+Collection: c3
+      Rows: var
+   Columns: ever_mal#result[count column1 column4] result[p]
+   Table 1: 20 x 7
+
+Table .Adjusted Ultrasound Measurements
+-----------------------------------------------------------------------------------------------------
+                                          NPM                              PM                        
+-----------------------------------------------------------------------------------------------------
+adj_wt_pan_head_ap          [715]   0.034   (0.028- 0.042)   [832]   0.043   (0.035- 0.053)   p=0.000
+adj_wt_pan_head_trans       [635]   0.034   (0.028- 0.040)   [759]   0.037   (0.030- 0.046)   p=0.000
+adj_wt_pan_body_trans       [745]   0.020   (0.017- 0.026)   [858]   0.025   (0.020- 0.033)   p=0.000
+adj_wt_pan_tail_trans       [509]   0.020   (0.016- 0.032)   [687]   0.032   (0.024- 0.040)   p=0.000
+adj_sqrt_pan_head_ap        [715]   1.446   (1.364- 1.533)   [837]   1.439   (1.334- 1.546)   p=0.214
+adj_sqrt_pan_head_trans     [635]   1.449   (1.364- 1.533)   [764]   1.349   (1.208- 1.483)   p=0.000
+adj_sqrt_pan_body_trans     [745]   1.114   (1.034- 1.225)   [863]   1.109   (1.015- 1.221)   p=0.081
+adj_sqrt_pan_tail_trans     [509]   1.109   (1.034- 1.261)   [692]   1.192   (1.068- 1.310)   p=0.000
+adj_wt_ct_pan_head_ap       [149]   0.041   (0.034- 0.048)   [141]   0.043   (0.038- 0.053)   p=0.001
+adj_wt_ct_pan_head_trans    [148]   0.042   (0.036- 0.049)   [139]   0.048   (0.038- 0.059)   p=0.000
+adj_wt_ct_pan_body_trans    [148]   0.032   (0.026- 0.038)   [141]   0.037   (0.031- 0.046)   p=0.000
+adj_wt_ct_pan_tail_trans    [149]   0.027   (0.023- 0.034)   [139]   0.032   (0.026- 0.041)   p=0.000
+adj_wt_ct_pan_body_tail     [102]   0.168   (0.144- 0.191)   [112]   0.174   (0.148- 0.199)   p=0.067
+adj_wt_ct_pan_vol           [101]   1.036   (0.858- 1.212)   [108]   1.072   (0.849- 1.439)   p=0.101
+adj_sqrt_ct_pan_head_ap     [149]   1.603   (1.513- 1.673)   [141]   1.562   (1.466- 1.664)   p=0.155
+adj_sqrt_ct_pan_head_trans  [148]   1.612   (1.548- 1.703)   [139]   1.625   (1.523- 1.709)   p=0.953
+adj_sqrt_ct_pan_body_trans  [148]   1.435   (1.313- 1.523)   [141]   1.446   (1.315- 1.552)   p=0.379
+adj_sqrt_ct_pan_tail_trans  [149]   1.327   (1.212- 1.414)   [139]   1.330   (1.229- 1.442)   p=0.461
+adj_sqrt_ct_pan_body_tail   [102]   3.263   (3.092- 3.428)   [112]   3.165   (3.029- 3.308)   p=0.001
+adj_sqrt_ct_pan_vol         [101]   8.059   (7.383- 8.946)   [108]   7.874   (6.894- 8.970)   p=0.463
+-----------------------------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect layout (vartype#var) (ever_mal#result[count column1 column4] result[p])   
+
+Collection: c3
+      Rows: vartype#var
+   Columns: ever_mal#result[count column1 column4] result[p]
+   Table 1: 27 x 7
+
+Table .Adjusted Ultrasound Measurements
+-------------------------------------------------------------------------------------------------------
+                                            NPM                              PM                        
+-------------------------------------------------------------------------------------------------------
+USS Adjusted by weight                                                                                 
+  adj_wt_pan_head_ap          [715]   0.034   (0.028- 0.042)   [832]   0.043   (0.035- 0.053)   p=0.000
+  adj_wt_pan_head_trans       [635]   0.034   (0.028- 0.040)   [759]   0.037   (0.030- 0.046)   p=0.000
+  adj_wt_pan_body_trans       [745]   0.020   (0.017- 0.026)   [858]   0.025   (0.020- 0.033)   p=0.000
+  adj_wt_pan_tail_trans       [509]   0.020   (0.016- 0.032)   [687]   0.032   (0.024- 0.040)   p=0.000
+                                                                                                       
+USS Square Root Transformed                                                                            
+  adj_sqrt_pan_head_ap        [715]   1.446   (1.364- 1.533)   [837]   1.439   (1.334- 1.546)   p=0.214
+  adj_sqrt_pan_head_trans     [635]   1.449   (1.364- 1.533)   [764]   1.349   (1.208- 1.483)   p=0.000
+  adj_sqrt_pan_body_trans     [745]   1.114   (1.034- 1.225)   [863]   1.109   (1.015- 1.221)   p=0.081
+  adj_sqrt_pan_tail_trans     [509]   1.109   (1.034- 1.261)   [692]   1.192   (1.068- 1.310)   p=0.000
+                                                                                                       
+CT Adjusted by weight                                                                                  
+  adj_wt_ct_pan_head_ap       [149]   0.041   (0.034- 0.048)   [141]   0.043   (0.038- 0.053)   p=0.001
+  adj_wt_ct_pan_head_trans    [148]   0.042   (0.036- 0.049)   [139]   0.048   (0.038- 0.059)   p=0.000
+  adj_wt_ct_pan_body_trans    [148]   0.032   (0.026- 0.038)   [141]   0.037   (0.031- 0.046)   p=0.000
+  adj_wt_ct_pan_tail_trans    [149]   0.027   (0.023- 0.034)   [139]   0.032   (0.026- 0.041)   p=0.000
+  adj_wt_ct_pan_body_tail     [102]   0.168   (0.144- 0.191)   [112]   0.174   (0.148- 0.199)   p=0.067
+  adj_wt_ct_pan_vol           [101]   1.036   (0.858- 1.212)   [108]   1.072   (0.849- 1.439)   p=0.101
+                                                                                                       
+CT Square Root Transformed                                                                             
+  adj_sqrt_ct_pan_head_ap     [149]   1.603   (1.513- 1.673)   [141]   1.562   (1.466- 1.664)   p=0.155
+  adj_sqrt_ct_pan_head_trans  [148]   1.612   (1.548- 1.703)   [139]   1.625   (1.523- 1.709)   p=0.953
+  adj_sqrt_ct_pan_body_trans  [148]   1.435   (1.313- 1.523)   [141]   1.446   (1.315- 1.552)   p=0.379
+  adj_sqrt_ct_pan_tail_trans  [149]   1.327   (1.212- 1.414)   [139]   1.330   (1.229- 1.442)   p=0.461
+  adj_sqrt_ct_pan_body_tail   [102]   3.263   (3.092- 3.428)   [112]   3.165   (3.029- 3.308)   p=0.001
+  adj_sqrt_ct_pan_vol         [101]   8.059   (7.383- 8.946)   [108]   7.874   (6.894- 8.970)   p=0.463
+-------------------------------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect label level vartype[adj_wt_pan_head_ap] "USS Head, AP"
+collect label level not recognized
+r(199);
+
+end of do-file
+
+r(199);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect label levels vartype[adj_wt_pan_head_ap] "USS Head, AP", modify
+nothing specified where label expected
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect label levels vartype adj_wt_pan_head_ap "USS Head, AP", modify
+
+. 
+end of do-file
+
+. collect preview
+
+Table .Adjusted Ultrasound Measurements
+-------------------------------------------------------------------------------------------------------
+                                            NPM                              PM                        
+-------------------------------------------------------------------------------------------------------
+USS Adjusted by weight                                                                                 
+  adj_wt_pan_head_ap          [715]   0.034   (0.028- 0.042)   [832]   0.043   (0.035- 0.053)   p=0.000
+  adj_wt_pan_head_trans       [635]   0.034   (0.028- 0.040)   [759]   0.037   (0.030- 0.046)   p=0.000
+  adj_wt_pan_body_trans       [745]   0.020   (0.017- 0.026)   [858]   0.025   (0.020- 0.033)   p=0.000
+  adj_wt_pan_tail_trans       [509]   0.020   (0.016- 0.032)   [687]   0.032   (0.024- 0.040)   p=0.000
+                                                                                                       
+USS Square Root Transformed                                                                            
+  adj_sqrt_pan_head_ap        [715]   1.446   (1.364- 1.533)   [837]   1.439   (1.334- 1.546)   p=0.214
+  adj_sqrt_pan_head_trans     [635]   1.449   (1.364- 1.533)   [764]   1.349   (1.208- 1.483)   p=0.000
+  adj_sqrt_pan_body_trans     [745]   1.114   (1.034- 1.225)   [863]   1.109   (1.015- 1.221)   p=0.081
+  adj_sqrt_pan_tail_trans     [509]   1.109   (1.034- 1.261)   [692]   1.192   (1.068- 1.310)   p=0.000
+                                                                                                       
+CT Adjusted by weight                                                                                  
+  adj_wt_ct_pan_head_ap       [149]   0.041   (0.034- 0.048)   [141]   0.043   (0.038- 0.053)   p=0.001
+  adj_wt_ct_pan_head_trans    [148]   0.042   (0.036- 0.049)   [139]   0.048   (0.038- 0.059)   p=0.000
+  adj_wt_ct_pan_body_trans    [148]   0.032   (0.026- 0.038)   [141]   0.037   (0.031- 0.046)   p=0.000
+  adj_wt_ct_pan_tail_trans    [149]   0.027   (0.023- 0.034)   [139]   0.032   (0.026- 0.041)   p=0.000
+  adj_wt_ct_pan_body_tail     [102]   0.168   (0.144- 0.191)   [112]   0.174   (0.148- 0.199)   p=0.067
+  adj_wt_ct_pan_vol           [101]   1.036   (0.858- 1.212)   [108]   1.072   (0.849- 1.439)   p=0.101
+                                                                                                       
+CT Square Root Transformed                                                                             
+  adj_sqrt_ct_pan_head_ap     [149]   1.603   (1.513- 1.673)   [141]   1.562   (1.466- 1.664)   p=0.155
+  adj_sqrt_ct_pan_head_trans  [148]   1.612   (1.548- 1.703)   [139]   1.625   (1.523- 1.709)   p=0.953
+  adj_sqrt_ct_pan_body_trans  [148]   1.435   (1.313- 1.523)   [141]   1.446   (1.315- 1.552)   p=0.379
+  adj_sqrt_ct_pan_tail_trans  [149]   1.327   (1.212- 1.414)   [139]   1.330   (1.229- 1.442)   p=0.461
+  adj_sqrt_ct_pan_body_tail   [102]   3.263   (3.092- 3.428)   [112]   3.165   (3.029- 3.308)   p=0.001
+  adj_sqrt_ct_pan_vol         [101]   8.059   (7.383- 8.946)   [108]   7.874   (6.894- 8.970)   p=0.463
+-------------------------------------------------------------------------------------------------------
+
+. collect levelsof vartype
+
+Collection: c3
+ Dimension: vartype
+    Levels: `"CT Adjusted by weight"' `"CT Square Root Transformed"' `"USS Adjusted by weight"' `"USS Square Root Transformed"'
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect label levels var adj_wt_pan_head_ap "USS Head, AP", modify
+
+. 
+end of do-file
+
+. collect preview
+
+Table .Adjusted Ultrasound Measurements
+-------------------------------------------------------------------------------------------------------
+                                            NPM                              PM                        
+-------------------------------------------------------------------------------------------------------
+USS Adjusted by weight                                                                                 
+  USS Head, AP                [715]   0.034   (0.028- 0.042)   [832]   0.043   (0.035- 0.053)   p=0.000
+  adj_wt_pan_head_trans       [635]   0.034   (0.028- 0.040)   [759]   0.037   (0.030- 0.046)   p=0.000
+  adj_wt_pan_body_trans       [745]   0.020   (0.017- 0.026)   [858]   0.025   (0.020- 0.033)   p=0.000
+  adj_wt_pan_tail_trans       [509]   0.020   (0.016- 0.032)   [687]   0.032   (0.024- 0.040)   p=0.000
+                                                                                                       
+USS Square Root Transformed                                                                            
+  adj_sqrt_pan_head_ap        [715]   1.446   (1.364- 1.533)   [837]   1.439   (1.334- 1.546)   p=0.214
+  adj_sqrt_pan_head_trans     [635]   1.449   (1.364- 1.533)   [764]   1.349   (1.208- 1.483)   p=0.000
+  adj_sqrt_pan_body_trans     [745]   1.114   (1.034- 1.225)   [863]   1.109   (1.015- 1.221)   p=0.081
+  adj_sqrt_pan_tail_trans     [509]   1.109   (1.034- 1.261)   [692]   1.192   (1.068- 1.310)   p=0.000
+                                                                                                       
+CT Adjusted by weight                                                                                  
+  adj_wt_ct_pan_head_ap       [149]   0.041   (0.034- 0.048)   [141]   0.043   (0.038- 0.053)   p=0.001
+  adj_wt_ct_pan_head_trans    [148]   0.042   (0.036- 0.049)   [139]   0.048   (0.038- 0.059)   p=0.000
+  adj_wt_ct_pan_body_trans    [148]   0.032   (0.026- 0.038)   [141]   0.037   (0.031- 0.046)   p=0.000
+  adj_wt_ct_pan_tail_trans    [149]   0.027   (0.023- 0.034)   [139]   0.032   (0.026- 0.041)   p=0.000
+  adj_wt_ct_pan_body_tail     [102]   0.168   (0.144- 0.191)   [112]   0.174   (0.148- 0.199)   p=0.067
+  adj_wt_ct_pan_vol           [101]   1.036   (0.858- 1.212)   [108]   1.072   (0.849- 1.439)   p=0.101
+                                                                                                       
+CT Square Root Transformed                                                                             
+  adj_sqrt_ct_pan_head_ap     [149]   1.603   (1.513- 1.673)   [141]   1.562   (1.466- 1.664)   p=0.155
+  adj_sqrt_ct_pan_head_trans  [148]   1.612   (1.548- 1.703)   [139]   1.625   (1.523- 1.709)   p=0.953
+  adj_sqrt_ct_pan_body_trans  [148]   1.435   (1.313- 1.523)   [141]   1.446   (1.315- 1.552)   p=0.379
+  adj_sqrt_ct_pan_tail_trans  [149]   1.327   (1.212- 1.414)   [139]   1.330   (1.229- 1.442)   p=0.461
+  adj_sqrt_ct_pan_body_tail   [102]   3.263   (3.092- 3.428)   [112]   3.165   (3.029- 3.308)   p=0.001
+  adj_sqrt_ct_pan_vol         [101]   8.059   (7.383- 8.946)   [108]   7.874   (6.894- 8.970)   p=0.463
+-------------------------------------------------------------------------------------------------------
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect label levels var adj_wt_pan_head_ap "USS Head, AP", modify
+
+. collect label levels var adj_wt_pan_head_trans "USS Head, Transverse", modify
+
+. collect label levels var adj_wt_pan_body_trans "USS Body, Transverse", modify
+
+. collect label levels var adj_wt_pan_tail_trans "USS Tail, Transverse", modify
+
+. 
+. collect label levels var adj_sqrt_pan_head_ap "USS Head, AP", modify
+
+. collect label levels var adj_sqrt_pan_head_trans "USS Head, Transverse", modify
+
+. collect label levels var adj_sqrt_pan_body_trans "USS Body, Transverse", modify
+
+. collect label levels var adj_sqrt_pan_tail_trans "USS Tail, Transverse", modify
+
+. 
+. collect label levels var adj_wt_ct_pan_head_ap "CT Head, AP", modify
+
+. collect label levels var adj_wt_ct_pan_head_trans "CT Head, Transverse", modify
+
+. collect label levels var adj_wt_ct_pan_body_trans "CT Body, Transverse", modify
+
+. collect label levels var adj_wt_ct_pan_tail_trans "CT Tail, Transverse", modify
+
+. collect label levels var adj_wt_ct_pan_body_tail "CT Body Tail Length", modify
+
+. collect label levels var adj_wt_ct_pan_vol "CT Volume", modify
+
+. 
+. collect label levels var adj_sqrt_ct_pan_head_ap "CT Head, AP", modify
+
+. collect label levels var adj_sqrt_ct_pan_head_trans "CT Head, Transverse", modify
+
+. collect label levels var adj_sqrt_ct_pan_body_trans "CT Body, Transverse", modify
+
+. collect label levels var adj_sqrt_ct_pan_tail_trans "CT Tail, Transverse", modify
+
+. collect label levels var adj_sqrt_ct_pan_body_tail "CT Body Tail Length", modify
+
+. collect label levels var adj_sqrt_ct_pan_vol "CT Volume", modify
+
+. 
+end of do-file
+
+. collect preview
+
+Table .Adjusted Ultrasound Measurements
+------------------------------------------------------------------------------------------------------
+                                           NPM                              PM                        
+------------------------------------------------------------------------------------------------------
+USS Adjusted by weight                                                                                
+  USS Head, AP               [715]   0.034   (0.028- 0.042)   [832]   0.043   (0.035- 0.053)   p=0.000
+  USS Head, Transverse       [635]   0.034   (0.028- 0.040)   [759]   0.037   (0.030- 0.046)   p=0.000
+  USS Body, Transverse       [745]   0.020   (0.017- 0.026)   [858]   0.025   (0.020- 0.033)   p=0.000
+  USS Tail, Transverse       [509]   0.020   (0.016- 0.032)   [687]   0.032   (0.024- 0.040)   p=0.000
+                                                                                                      
+USS Square Root Transformed                                                                           
+  USS Head, AP               [715]   1.446   (1.364- 1.533)   [837]   1.439   (1.334- 1.546)   p=0.214
+  USS Head, Transverse       [635]   1.449   (1.364- 1.533)   [764]   1.349   (1.208- 1.483)   p=0.000
+  USS Body, Transverse       [745]   1.114   (1.034- 1.225)   [863]   1.109   (1.015- 1.221)   p=0.081
+  USS Tail, Transverse       [509]   1.109   (1.034- 1.261)   [692]   1.192   (1.068- 1.310)   p=0.000
+                                                                                                      
+CT Adjusted by weight                                                                                 
+  CT Head, AP                [149]   0.041   (0.034- 0.048)   [141]   0.043   (0.038- 0.053)   p=0.001
+  CT Head, Transverse        [148]   0.042   (0.036- 0.049)   [139]   0.048   (0.038- 0.059)   p=0.000
+  CT Body, Transverse        [148]   0.032   (0.026- 0.038)   [141]   0.037   (0.031- 0.046)   p=0.000
+  CT Tail, Transverse        [149]   0.027   (0.023- 0.034)   [139]   0.032   (0.026- 0.041)   p=0.000
+  CT Body Tail Length        [102]   0.168   (0.144- 0.191)   [112]   0.174   (0.148- 0.199)   p=0.067
+  CT Volume                  [101]   1.036   (0.858- 1.212)   [108]   1.072   (0.849- 1.439)   p=0.101
+                                                                                                      
+CT Square Root Transformed                                                                            
+  CT Head, AP                [149]   1.603   (1.513- 1.673)   [141]   1.562   (1.466- 1.664)   p=0.155
+  CT Head, Transverse        [148]   1.612   (1.548- 1.703)   [139]   1.625   (1.523- 1.709)   p=0.953
+  CT Body, Transverse        [148]   1.435   (1.313- 1.523)   [141]   1.446   (1.315- 1.552)   p=0.379
+  CT Tail, Transverse        [149]   1.327   (1.212- 1.414)   [139]   1.330   (1.229- 1.442)   p=0.461
+  CT Body Tail Length        [102]   3.263   (3.092- 3.428)   [112]   3.165   (3.029- 3.308)   p=0.001
+  CT Volume                  [101]   8.059   (7.383- 8.946)   [108]   7.874   (6.894- 8.970)   p=0.463
+------------------------------------------------------------------------------------------------------
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect save ./tables/adj_radio, replace        
+(collection c3 saved to file ./tables/adj_radio.stjson)
+
+. * Export combined table
+. collect export ./tables/adj_radio.html, as(html) replace
+(collection c3 exported to file ./tables/adj_radio.html)
+
+. collect export ./tables/adj_radio.docx, as(docx) replace
+(collection c3 exported to file ./tables/adj_radio.docx)
+
+. collect export ./tables/adj_radio.xlsx, as(xlsx) replace
+(collection c3 exported to file ./tables/adj_radio.xlsx)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect notes, clear
+
+. collect notes "Values are [N] median (p25-p75)."
+
+. collect notes "P values are for Kruskal-Wallis tests."
+
+. collect title "Adjusted radiologic measurements in the whole cohort, by prior exposure" 
+
+. 
+. 
+. collect save ./tables/adj_radio, replace        
+(collection c3 saved to file ./tables/adj_radio.stjson)
+
+. * Export combined table
+. collect export ./tables/adj_radio.html, as(html) replace
+(collection c3 exported to file ./tables/adj_radio.html)
+
+. collect export ./tables/adj_radio.docx, as(docx) replace
+(collection c3 exported to file ./tables/adj_radio.docx)
+
+. collect export ./tables/adj_radio.xlsx, as(xlsx) replace
+(collection c3 exported to file ./tables/adj_radio.xlsx)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect notes, clear
+
+. collect notes "Values are [N] median (p25-p75)."
+
+. collect notes "P values are for Kruskal-Wallis tests."
+
+. collect title "Supplementary File Table Adjusted radiologic measurements in the whole cohort, by prior exposure"        
+
+. 
+. 
+. collect save ./tables/adj_radio, replace        
+(collection c3 saved to file ./tables/adj_radio.stjson)
+
+. * Export combined table
+. collect export ./tables/adj_radio.html, as(html) replace
+(collection c3 exported to file ./tables/adj_radio.html)
+
+. collect export ./tables/adj_radio.docx, as(docx) replace
+(collection c3 exported to file ./tables/adj_radio.docx)
+
+. collect export ./tables/adj_radio.xlsx, as(xlsx) replace
+(collection c3 exported to file ./tables/adj_radio.xlsx)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. tempvar clean_pan_oth_abn_specify // Using a tempvar to clean data 
+
+. gen `clean_pan_oth_abn_specify' = pan_oth_abn_specify
+(1,930 missing values generated)
+
+. 
+. // Remove common punctuation marks
+. 
+. local punct ". , ; : ? ! ' ( ) [ ]" // Added parentheses and brackets
+
+. 
+. foreach p of local punct {
+  2.     replace `clean_pan_oth_abn_specify' = subinstr(`clean_pan_oth_abn_specify', "`p'", "", .)
+  3. }
+(29 real changes made)
+(10 real changes made)
+(0 real changes made)
+(2 real changes made)
+(1 real change made)
+(0 real changes made)
+(0 real changes made)
+(12 real changes made)
+(12 real changes made)
+(0 real changes made)
+(0 real changes made)
+
+. 
+. // Replace hyphens and slashes separately (as you want to replace with spaces)
+. replace `clean_pan_oth_abn_specify' = subinstr(`clean_pan_oth_abn_specify', "-", " ", .)
+(16 real changes made)
+
+. replace `clean_pan_oth_abn_specify' = subinstr(`clean_pan_oth_abn_specify', "/", " ", .)
+(3 real changes made)
+
+. 
+. // Trim extra spaces
+. replace `clean_pan_oth_abn_specify' = trim(`clean_pan_oth_abn_specify')
+(0 real changes made)
+
+. replace `clean_pan_oth_abn_specify' = strtrim(`clean_pan_oth_abn_specify') // Remove multiple spaces
+(0 real changes made)
+
+. 
+. // Convert to lowercase
+. replace `clean_pan_oth_abn_specify' = lower(`clean_pan_oth_abn_specify')
+(183 real changes made)
+
+. 
+. 
+. // Creating local macros for strings found in pan_oth_abn_specify 
+. 
+. local lung_terms "empty"  // Dummy string to avoid empty regex
+
+. local liver_terms "liver|hepatic|hepatomegaly|fatty liver|fatty infiltration|hepatic steatosis|haemangioma|echogenic liver lesion|liver lesions|liver mass|parenchymal ec
+> hogenicity|hepatic cysts|necrotic periportal lymph nodes"
+
+. local gallbladder_terms "gallbladder|gallstone|cholelithiasis|gall stones|cholecystitis|lithiases|calculus"
+
+. local spleen_terms "spleen|splenomegaly|bulky spleen"
+
+. local pancreas_terms "empty" // Dummy string to avoid empty regex
+
+. local kidney_terms "kidney|renal|nephrolithiasis|atrophic kidneys|hydronephrosis|parapelvic cyst|reduced kidney sizes|chronic kidney disease"
+
+. local uterus_ovary_terms "uterus|ovary|fibroid|ovarian cyst|adnexal cyst|multi-fibroid uterus|dermoid cyst|gynae review|ovarian"
+
+. local bone_spine_terms "empty" // Dummy string to avoid empty regex
+
+. local vascular_terms "portal hypertension"
+
+. local heart_terms "empty" // Dummy string to avoid empty regex
+
+. local stomach_intestine_terms "worm infestation|o polyp"
+
+. local adrenal_terms "empty" // Dummy string to avoid empty regex
+
+. local mass_terms "mass|lymph nodes|lesion|haematoma|cystic\s+mass|\? haematoma|: multilocular cystic mass"
+
+. 
+. // Generate organ specific involvment based on regexm and macros above
+. 
+. gen pan_lung = regexm(lower(`clean_pan_oth_abn_specify'), "`lung_terms'")
+
+. gen pan_liver = regexm(lower(`clean_pan_oth_abn_specify'), "`liver_terms'")
+
+. gen pan_gallbladder = regexm(lower(`clean_pan_oth_abn_specify'), "`gallbladder_terms'")
+
+. gen pan_spleen = regexm(lower(`clean_pan_oth_abn_specify'), "`spleen_terms'")
+
+. gen pan_pancreas = regexm(lower(`clean_pan_oth_abn_specify'), "`pancreas_terms'")
+
+. gen pan_kidney = regexm(lower(`clean_pan_oth_abn_specify'), "`kidney_terms'")
+
+. gen pan_uterus_ovary = regexm(lower(`clean_pan_oth_abn_specify'), "`uterus_ovary_terms'")
+
+. gen pan_bone_spine = regexm(lower(`clean_pan_oth_abn_specify'), "`bone_spine_terms'")
+
+. gen pan_vascular = regexm(lower(`clean_pan_oth_abn_specify'), "`vascular_terms'")
+
+. gen pan_heart = regexm(lower(`clean_pan_oth_abn_specify'), "`heart_terms'")
+
+. gen pan_stomach_intestine = regexm(lower(`clean_pan_oth_abn_specify'), "`stomach_intestine_terms'")
+
+. gen pan_adrenal = regexm(lower(`clean_pan_oth_abn_specify'), "`adrenal_terms'")
+
+. gen pan_mass = regexm(lower(trim(`clean_pan_oth_abn_specify')), "`mass_terms'")
+
+. 
+. // Generate a variable to sum number of organs involved
+. 
+. local cat "pan_lung pan_liver pan_gallbladder pan_spleen pan_pancreas pan_kidney pan_uterus_ovary pan_bone_spine pan_vascular pan_heart pan_stomach_intestine pan_adrenal
+> "
+
+. egen pan_organs = rowtotal(`cat')
+
+. 
+. * QC of pancreas in other findings */
+. /*
+> 
+> tab pan_oth_abnormal pan_organs, missing
+> br sampa_id pan_oth_abn_specify pan_oth_abnormal pan_organs pan_lung pan_liver pan_gallbladder pan_spleen pan_pancreas pan_kidney pan_uterus_ovary pan_bone_spine pan_vas
+> cular pan_heart pan_stomach_intestine pan_adrenal if pan_organs==0 & pan_oth_abnormal==1
+> */
+. 
+. 
+. 
+. **#QC of data (used during regex- keep ) - This requires manual inspection by browsing
+. /*
+> * checks mass
+> 
+> local cat "pan_lung pan_liver pan_gallbladder pan_spleen pan_pancreas pan_kidney pan_uterus_ovary pan_bone_spine pan_vascular pan_heart pan_stomach_intestine pan_adrenal
+> "
+> 
+> br pan_oth_abnormal pan_oth_abn_spec pan_organs `cat' if pan_mass==1
+> 
+> * checks liver
+> local cat "pan_lung pan_liver pan_gallbladder pan_spleen pan_pancreas pan_kidney pan_uterus_ovary pan_bone_spine pan_vascular pan_heart pan_stomach_intestine pan_adrenal
+>  pan_mass"
+> 
+> br pan_oth_abnormal pan_oth_abn_spec pan_organs `cat' if pan_liver==1
+> 
+> * checks lung
+> local cat "pan_lung pan_liver pan_gallbladder pan_spleen pan_pancreas pan_kidney pan_uterus_ovary pan_bone_spine pan_vascular pan_heart pan_stomach_intestine pan_adrenal
+>  pan_mass"
+> br pan_oth_abnormal pan_oth_abn_spec pan_organs `cat' if pan_lung==1
+> 
+> * checks heart
+> local cat "pan_lung pan_liver pan_gallbladder pan_spleen pan_pancreas pan_kidney pan_uterus_ovary pan_bone_spine pan_vascular pan_heart pan_stomach_intestine pan_adrenal
+>  pan_mass"
+> br pan_oth_abnormal pan_oth_abn_spec pan_organs `cat' if pan_heart==1
+> 
+> * checks uterus
+> local cat "pan_lung pan_liver pan_gallbladder pan_spleen pan_pancreas pan_kidney pan_uterus_ovary pan_bone_spine pan_vascular pan_heart pan_stomach_intestine pan_adrenal
+>  pan_mass"
+> br pan_oth_abnormal pan_oth_abn_spec pan_organs `cat' if pan_uterus_ovary==1
+> 
+> * checks bone_spine
+> local cat "pan_lung pan_liver pan_gallbladder pan_spleen pan_pancreas pan_kidney pan_uterus_ovary pan_bone_spine pan_vascular pan_heart pan_stomach_intestine pan_adrenal
+>  pan_mass"
+> br pan_oth_abnormal pan_oth_abn_spec pan_organs `cat' if pan_bone_spine==1
+> 
+> * checks vascular
+> local cat "pan_lung pan_liver pan_gallbladder pan_spleen pan_pancreas pan_kidney pan_uterus_ovary pan_bone_spine pan_vascular pan_heart pan_stomach_intestine pan_adrenal
+>  pan_mass"
+> br pan_oth_abnormal pan_oth_abn_spec pan_organs `cat' if pan_vascular==1
+> 
+> * checks stomach
+> local cat "pan_lung pan_liver pan_gallbladder pan_spleen pan_pancreas pan_kidney pan_uterus_ovary pan_bone_spine pan_vascular pan_heart pan_stomach_intestine pan_adrenal
+>  pan_mass"
+> br pan_oth_abnormal pan_oth_abn_spec pan_organs `cat' if pan_stomach_intestine==1
+> 
+> * checks adrenal
+> local cat "pan_lung pan_liver pan_gallbladder pan_spleen pan_pancreas pan_kidney pan_uterus_ovary pan_bone_spine pan_vascular pan_heart pan_stomach_intestine pan_adrenal
+>  pan_mass"
+> br pan_oth_abnormal pan_oth_abn_spec pan_organs `cat' if pan_adrenal==1
+> */
+. 
+. ******************** IMPORTANT RECODE of original data
+. replace pan_oth_abnormal = 0  if  sampa_id ==10381 // comment on IDs only
+(1 real change made)
+
+. 
+. 
+. **# CREATE TABLE USING DTABLE
+. cd "$ghsamparadio"
+/Users/juansolon/Documents/GitHub/sampa-radio
+
+. cd 03-tables
+unable to change to 03-tables
+r(170);
+
+end of do-file
+
+r(170);
+
+. pwd
+/Users/juansolon/Documents/GitHub/sampa-radio
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. 
+. 
+. **#  TABLE CONFIGURATION 
+. local filter    "if radio_exam==1"
+
+. local title     "Supplement Table. Incidental Findings on Ultrasound (n=1784)"
+
+. local col               "ever_mal"
+
+. local colhead2 `"0 "NPM" 1 "PM""'
+
+. local cat "1.pan_organs 1.pan_pancreas 1.pan_lung 1.pan_liver 1.pan_gallbladder 1.pan_spleen  1.pan_stomach_intestine 1.pan_kidney 1.pan_uterus_ovary 1.pan_bone_spine 1.
+> pan_vascular 1.pan_heart  1.pan_adrenal 1.pan_mass"
+
+. local notes1 "Participants may have multiple organ findings."
+
+. local notes2 "No significant differences between groups on Chi-square test (p>0.05)"
+
+. local notes3 
+
+. local notes4 "Remove in final : Created with "`dofilename'" on "`c(current_date)'" at "`c(current_time)'"  based on  "`c(filename)'"" 
+
+. 
+. **# TABLE CODE
+. 
+. dtable () `filter', by(`col', notest nototals) ///
+>     factor(`cat', statistics(fvfrequency fvpercent) test(pearson)) ///
+>     title("`title'") ///
+>     note(`notes1') ///
+>         note(`notes2') ///
+>     note(`notes4')             
+radio_exam not found
+r(111);
+
+end of do-file
+
+r(111);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. 
+. tempvar clean_pan_oth_abn_specify // Using a tempvar to clean data 
+
+. gen `clean_pan_oth_abn_specify' = pan_oth_abn_specify
+(1,930 missing values generated)
+
+. 
+. // Remove common punctuation marks
+. 
+. local punct ". , ; : ? ! ' ( ) [ ]" // Added parentheses and brackets
+
+. 
+. foreach p of local punct {
+  2.     replace `clean_pan_oth_abn_specify' = subinstr(`clean_pan_oth_abn_specify', "`p'", "", .)
+  3. }
+(29 real changes made)
+(10 real changes made)
+(0 real changes made)
+(2 real changes made)
+(1 real change made)
+(0 real changes made)
+(0 real changes made)
+(12 real changes made)
+(12 real changes made)
+(0 real changes made)
+(0 real changes made)
+
+. 
+. // Replace hyphens and slashes separately (as you want to replace with spaces)
+. replace `clean_pan_oth_abn_specify' = subinstr(`clean_pan_oth_abn_specify', "-", " ", .)
+(16 real changes made)
+
+. replace `clean_pan_oth_abn_specify' = subinstr(`clean_pan_oth_abn_specify', "/", " ", .)
+(3 real changes made)
+
+. 
+. // Trim extra spaces
+. replace `clean_pan_oth_abn_specify' = trim(`clean_pan_oth_abn_specify')
+(0 real changes made)
+
+. replace `clean_pan_oth_abn_specify' = strtrim(`clean_pan_oth_abn_specify') // Remove multiple spaces
+(0 real changes made)
+
+. 
+. // Convert to lowercase
+. replace `clean_pan_oth_abn_specify' = lower(`clean_pan_oth_abn_specify')
+(183 real changes made)
+
+. 
+. 
+. // Creating local macros for strings found in pan_oth_abn_specify 
+. 
+. local lung_terms "empty"  // Dummy string to avoid empty regex
+
+. local liver_terms "liver|hepatic|hepatomegaly|fatty liver|fatty infiltration|hepatic steatosis|haemangioma|echogenic liver lesion|liver lesions|liver mass|parenchymal ec
+> hogenicity|hepatic cysts|necrotic periportal lymph nodes"
+
+. local gallbladder_terms "gallbladder|gallstone|cholelithiasis|gall stones|cholecystitis|lithiases|calculus"
+
+. local spleen_terms "spleen|splenomegaly|bulky spleen"
+
+. local pancreas_terms "empty" // Dummy string to avoid empty regex
+
+. local kidney_terms "kidney|renal|nephrolithiasis|atrophic kidneys|hydronephrosis|parapelvic cyst|reduced kidney sizes|chronic kidney disease"
+
+. local uterus_ovary_terms "uterus|ovary|fibroid|ovarian cyst|adnexal cyst|multi-fibroid uterus|dermoid cyst|gynae review|ovarian"
+
+. local bone_spine_terms "empty" // Dummy string to avoid empty regex
+
+. local vascular_terms "portal hypertension"
+
+. local heart_terms "empty" // Dummy string to avoid empty regex
+
+. local stomach_intestine_terms "worm infestation|o polyp"
+
+. local adrenal_terms "empty" // Dummy string to avoid empty regex
+
+. local mass_terms "mass|lymph nodes|lesion|haematoma|cystic\s+mass|\? haematoma|: multilocular cystic mass"
+
+. 
+. // Generate organ specific involvment based on regexm and macros above
+. 
+. gen pan_lung = regexm(lower(`clean_pan_oth_abn_specify'), "`lung_terms'")
+variable pan_lung already defined
+r(110);
+
+end of do-file
+
+r(110);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. */
+. 
+. **# Create Study Dataset for Analysis
+. version 18.5
+
+. 
+. local pwd "~/Documents/GitHub/sampa-radio"
+
+. cd `pwd'
+/Users/juansolon/Documents/GitHub/sampa-radio
+
+. local suffix: display %tdCCYY-NN-DD =daily("`c(current_date)'", "DMY")
+
+. *use "my_file.`suffix'.dta", clear
+. capture log close

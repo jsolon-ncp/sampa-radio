@@ -52,16 +52,22 @@ local fig2text "Not shown are lipase, amylase and trypsinogen assays in particip
 
 ** two enzymes 
 local fig3a1 "./figures/figc_a_1.png"
-local fig3a1head "Figure 3A Enzyme levels by malnutrition status."
+local fig3a1head "Figure 3A Elastase and Amylase levels by malnutrition status."
 
-local fig3a1text "Fecal elastase values were truncated at 600 µg/g. NPM, not previously malnourished; PM, previously malnourished. A fecal elastase value of <200 µg/g is regarded as evidence of exocrine pancreatic insufficiency. Kruskal-wallis Chi squared and p values in graph. Median amylase in PM 31.1. in PM and 29.6 in NPM. Median FE-1 375 in PM and 314 in NPM. "
+local fig3a1text "NPM, not previously malnourished; PM, previously malnourished. Fecal elastase values were truncated at 600 µg/g. A fecal elastase value of <200 µg/g is regarded as evidence of exocrine pancreatic insufficiency. Median FE-1 375 ug/g in PM and 314 ug/g in NPM. Median amylase in PM 31.1 U/L in PM and 29.6 U/L in NPM.  Significant differences in enzyme levels by malnutrition status. Kruskal-wallis Chi squared and p values in graph."
 
 ** four enzymes 
-local fig3a2 "./figures/figa_2.png"
-local fig3a2head "Figure 3B Enzyme levels by malnutrition status."
+local fig3a2 "./figures/figc_a_2.png"
+local fig3a2head "Figure 3B Pancreatic Enzyme levels by malnutrition status."
 
-local fig3text "Fecal elastase values were truncated at 600 µg/g. NPM, not previously malnourished; PM, previously malnourished. A fecal elastase value of <200 µg/g is regarded as evidence of exocrine pancreatic insufficiency. Kruskal-wallis Chi squared and p values in graph. Median amylase in PM 31.1. in PM and 29.6 in NPM. Median FE-1 375 in PM and 314 in NPM. No significant differences in lipase levels (measured in DIVIDS) and trypsinogen levels (measured among those with CT Scans) "
+local fig3a2text "NPM, not previously malnourished; PM, previously malnourished. Fecal elastase values were truncated at 600 µg/g and measured in all cohorts A fecal elastase value of <200 µg/g is regarded as evidence of exocrine pancreatic insufficiency. Median FE-1 375 ug/g in PM and 314 ug/g in NPM. Median amylase in PM 31.1 U/L in PM and 29.6 U/L in NPM measured in all but the cohort from India (DIVIDS).  Significant differences in FE-1 and amylase levels by past malnutrition exposure.  No significant differences in lipase levels (measured in DIVIDS) and trypsinogen levels(measured among those with CT Scans) by past malnutrition exposure. Kruskal-wallis Chi squared and p values in graph. "
 
+* Scatter Plot four enzymes
+
+local fig3b "./figures/figc_b.png"
+local fig3bhead "Figure 3B Pancreatic Enzyme levels by Pancreas Size."
+
+local fig3btext "Fecal elastase values were truncated at 600 µg/g. NPM, not previously malnourished; PM, previously malnourished. Spearman correlation coefficient and p values as shown."
 
 
 /*
@@ -74,9 +80,9 @@ local fig3text "Values were truncated at 600 µg/g. NPM, not previously malnouri
 *** FIGURE D USS CT
 
 local fig4 "./figures/figd.png"
-local fig4head "Figure 4 USS and CT measurements correlations"
+local fig4head "Figure 4 Correlation of USS and CT measurements"
 
-local fig4text "AP = Antero-posterior; All values above 4 cm removed for clarity. Spearman's correlation coefficient and p values shown. Correlation is significant for all four dimensions except the transverse measurement of the tail which is the most difficult to visualize"
+local fig4text "AP = Antero-posterior; All values above 4 cm removed for clarity. Spearman's correlation coefficient and p values shown. Correlation is significant for all dimensions except the transverse measurement of the tail which is the most difficult to visualize."
 
 
 *** FIGURE E USS by PM or NPM by cohort

@@ -1,0 +1,833 @@
+{
+  "AutoHideDims": [
+    "var"
+  ],
+  "Items": {
+    "cmdset[1]#colname[ct_pan_body_tail]#command[0]#ever_mal[0]#result[column1]#statcmd[3]#var[ct_pan_body_tail]": {
+      "d": 10.650000095367432
+    },
+    "cmdset[1]#colname[ct_pan_body_tail]#command[0]#ever_mal[0]#result[column2]#statcmd[4]#var[ct_pan_body_tail]": {
+      "d": 9.5600004196167
+    },
+    "cmdset[1]#colname[ct_pan_body_tail]#command[0]#ever_mal[0]#result[column3]#statcmd[5]#var[ct_pan_body_tail]": {
+      "d": 11.75
+    },
+    "cmdset[1]#colname[ct_pan_body_tail]#command[0]#ever_mal[0]#result[count]#statcmd[2]#var[ct_pan_body_tail]": {
+      "d": 102.0
+    },
+    "cmdset[1]#colname[ct_pan_body_tail]#command[0]#ever_mal[1]#result[column1]#statcmd[3]#var[ct_pan_body_tail]": {
+      "d": 10.014999866485596
+    },
+    "cmdset[1]#colname[ct_pan_body_tail]#command[0]#ever_mal[1]#result[column2]#statcmd[4]#var[ct_pan_body_tail]": {
+      "d": 9.174999713897705
+    },
+    "cmdset[1]#colname[ct_pan_body_tail]#command[0]#ever_mal[1]#result[column3]#statcmd[5]#var[ct_pan_body_tail]": {
+      "d": 10.940000057220459
+    },
+    "cmdset[1]#colname[ct_pan_body_tail]#command[0]#ever_mal[1]#result[count]#statcmd[2]#var[ct_pan_body_tail]": {
+      "d": 112.0
+    },
+    "cmdset[1]#colname[ct_pan_body_trans]#command[0]#ever_mal[0]#result[column1]#statcmd[3]#var[ct_pan_body_trans]": {
+      "d": 2.059999942779541
+    },
+    "cmdset[1]#colname[ct_pan_body_trans]#command[0]#ever_mal[0]#result[column2]#statcmd[4]#var[ct_pan_body_trans]": {
+      "d": 1.725000023841858
+    },
+    "cmdset[1]#colname[ct_pan_body_trans]#command[0]#ever_mal[0]#result[column3]#statcmd[5]#var[ct_pan_body_trans]": {
+      "d": 2.319999933242798
+    },
+    "cmdset[1]#colname[ct_pan_body_trans]#command[0]#ever_mal[0]#result[count]#statcmd[2]#var[ct_pan_body_trans]": {
+      "d": 148.0
+    },
+    "cmdset[1]#colname[ct_pan_body_trans]#command[0]#ever_mal[1]#result[column1]#statcmd[3]#var[ct_pan_body_trans]": {
+      "d": 2.0899999141693115
+    },
+    "cmdset[1]#colname[ct_pan_body_trans]#command[0]#ever_mal[1]#result[column2]#statcmd[4]#var[ct_pan_body_trans]": {
+      "d": 1.7300000190734863
+    },
+    "cmdset[1]#colname[ct_pan_body_trans]#command[0]#ever_mal[1]#result[column3]#statcmd[5]#var[ct_pan_body_trans]": {
+      "d": 2.4100000858306885
+    },
+    "cmdset[1]#colname[ct_pan_body_trans]#command[0]#ever_mal[1]#result[count]#statcmd[2]#var[ct_pan_body_trans]": {
+      "d": 141.0
+    },
+    "cmdset[1]#colname[ct_pan_head_ap]#command[0]#ever_mal[0]#result[column1]#statcmd[3]#var[ct_pan_head_ap]": {
+      "d": 2.569999933242798
+    },
+    "cmdset[1]#colname[ct_pan_head_ap]#command[0]#ever_mal[0]#result[column2]#statcmd[4]#var[ct_pan_head_ap]": {
+      "d": 2.2899999618530273
+    },
+    "cmdset[1]#colname[ct_pan_head_ap]#command[0]#ever_mal[0]#result[column3]#statcmd[5]#var[ct_pan_head_ap]": {
+      "d": 2.799999952316284
+    },
+    "cmdset[1]#colname[ct_pan_head_ap]#command[0]#ever_mal[0]#result[count]#statcmd[2]#var[ct_pan_head_ap]": {
+      "d": 149.0
+    },
+    "cmdset[1]#colname[ct_pan_head_ap]#command[0]#ever_mal[1]#result[column1]#statcmd[3]#var[ct_pan_head_ap]": {
+      "d": 2.440000057220459
+    },
+    "cmdset[1]#colname[ct_pan_head_ap]#command[0]#ever_mal[1]#result[column2]#statcmd[4]#var[ct_pan_head_ap]": {
+      "d": 2.1500000953674316
+    },
+    "cmdset[1]#colname[ct_pan_head_ap]#command[0]#ever_mal[1]#result[column3]#statcmd[5]#var[ct_pan_head_ap]": {
+      "d": 2.7699999809265137
+    },
+    "cmdset[1]#colname[ct_pan_head_ap]#command[0]#ever_mal[1]#result[count]#statcmd[2]#var[ct_pan_head_ap]": {
+      "d": 141.0
+    },
+    "cmdset[1]#colname[ct_pan_head_trans]#command[0]#ever_mal[0]#result[column1]#statcmd[3]#var[ct_pan_head_trans]": {
+      "d": 2.5999999046325684
+    },
+    "cmdset[1]#colname[ct_pan_head_trans]#command[0]#ever_mal[0]#result[column2]#statcmd[4]#var[ct_pan_head_trans]": {
+      "d": 2.3950001001358032
+    },
+    "cmdset[1]#colname[ct_pan_head_trans]#command[0]#ever_mal[0]#result[column3]#statcmd[5]#var[ct_pan_head_trans]": {
+      "d": 2.9000000953674316
+    },
+    "cmdset[1]#colname[ct_pan_head_trans]#command[0]#ever_mal[0]#result[count]#statcmd[2]#var[ct_pan_head_trans]": {
+      "d": 148.0
+    },
+    "cmdset[1]#colname[ct_pan_head_trans]#command[0]#ever_mal[1]#result[column1]#statcmd[3]#var[ct_pan_head_trans]": {
+      "d": 2.640000104904175
+    },
+    "cmdset[1]#colname[ct_pan_head_trans]#command[0]#ever_mal[1]#result[column2]#statcmd[4]#var[ct_pan_head_trans]": {
+      "d": 2.319999933242798
+    },
+    "cmdset[1]#colname[ct_pan_head_trans]#command[0]#ever_mal[1]#result[column3]#statcmd[5]#var[ct_pan_head_trans]": {
+      "d": 2.9200000762939453
+    },
+    "cmdset[1]#colname[ct_pan_head_trans]#command[0]#ever_mal[1]#result[count]#statcmd[2]#var[ct_pan_head_trans]": {
+      "d": 139.0
+    },
+    "cmdset[1]#colname[ct_pan_tail_trans]#command[0]#ever_mal[0]#result[column1]#statcmd[3]#var[ct_pan_tail_trans]": {
+      "d": 1.7599999904632568
+    },
+    "cmdset[1]#colname[ct_pan_tail_trans]#command[0]#ever_mal[0]#result[column2]#statcmd[4]#var[ct_pan_tail_trans]": {
+      "d": 1.4700000286102295
+    },
+    "cmdset[1]#colname[ct_pan_tail_trans]#command[0]#ever_mal[0]#result[column3]#statcmd[5]#var[ct_pan_tail_trans]": {
+      "d": 2.0
+    },
+    "cmdset[1]#colname[ct_pan_tail_trans]#command[0]#ever_mal[0]#result[count]#statcmd[2]#var[ct_pan_tail_trans]": {
+      "d": 149.0
+    },
+    "cmdset[1]#colname[ct_pan_tail_trans]#command[0]#ever_mal[1]#result[column1]#statcmd[3]#var[ct_pan_tail_trans]": {
+      "d": 1.7699999809265137
+    },
+    "cmdset[1]#colname[ct_pan_tail_trans]#command[0]#ever_mal[1]#result[column2]#statcmd[4]#var[ct_pan_tail_trans]": {
+      "d": 1.5099999904632568
+    },
+    "cmdset[1]#colname[ct_pan_tail_trans]#command[0]#ever_mal[1]#result[column3]#statcmd[5]#var[ct_pan_tail_trans]": {
+      "d": 2.0799999237060547
+    },
+    "cmdset[1]#colname[ct_pan_tail_trans]#command[0]#ever_mal[1]#result[count]#statcmd[2]#var[ct_pan_tail_trans]": {
+      "d": 139.0
+    },
+    "cmdset[1]#colname[ct_pan_vol]#command[0]#ever_mal[0]#result[column1]#statcmd[3]#var[ct_pan_vol]": {
+      "d": 64.94215393066406
+    },
+    "cmdset[1]#colname[ct_pan_vol]#command[0]#ever_mal[0]#result[column2]#statcmd[4]#var[ct_pan_vol]": {
+      "d": 54.50868225097656
+    },
+    "cmdset[1]#colname[ct_pan_vol]#command[0]#ever_mal[0]#result[column3]#statcmd[5]#var[ct_pan_vol]": {
+      "d": 80.02870178222656
+    },
+    "cmdset[1]#colname[ct_pan_vol]#command[0]#ever_mal[0]#result[count]#statcmd[2]#var[ct_pan_vol]": {
+      "d": 101.0
+    },
+    "cmdset[1]#colname[ct_pan_vol]#command[0]#ever_mal[1]#result[column1]#statcmd[3]#var[ct_pan_vol]": {
+      "d": 62.00394248962402
+    },
+    "cmdset[1]#colname[ct_pan_vol]#command[0]#ever_mal[1]#result[column2]#statcmd[4]#var[ct_pan_vol]": {
+      "d": 47.52548599243164
+    },
+    "cmdset[1]#colname[ct_pan_vol]#command[0]#ever_mal[1]#result[column3]#statcmd[5]#var[ct_pan_vol]": {
+      "d": 80.4683723449707
+    },
+    "cmdset[1]#colname[ct_pan_vol]#command[0]#ever_mal[1]#result[count]#statcmd[2]#var[ct_pan_vol]": {
+      "d": 108.0
+    },
+    "cmdset[1]#command[0]#ever_mal[0]#result[frequency]#statcmd[1]#var[_hide]": {
+      "d": 1101.0
+    },
+    "cmdset[1]#command[0]#ever_mal[1]#result[frequency]#statcmd[1]#var[_hide]": {
+      "d": 1021.0
+    },
+    "cmdset[1]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
+      "d": 2.018201208673986
+    },
+    "cmdset[1]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[_hide]": {
+      "d": 2.01861538192756
+    },
+    "cmdset[1]#program_class[rclass]#result[DF]#result_type[scalar]#var[_hide]": {
+      "d": 1.0
+    },
+    "cmdset[1]#program_class[rclass]#result[p]#result_type[scalar]#var[_hide]": {
+      "d": 0.15542316355136213
+    },
+    "cmdset[1]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[_hide]": {
+      "d": 0.15538077038904594
+    },
+    "cmdset[2]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
+      "d": 0.0034117305458494
+    },
+    "cmdset[2]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[_hide]": {
+      "d": 0.0034122060107046356
+    },
+    "cmdset[2]#program_class[rclass]#result[DF]#result_type[scalar]#var[_hide]": {
+      "d": 1.0
+    },
+    "cmdset[2]#program_class[rclass]#result[p]#result_type[scalar]#var[_hide]": {
+      "d": 0.9534220328484855
+    },
+    "cmdset[2]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[_hide]": {
+      "d": 0.953418791056867
+    },
+    "cmdset[3]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
+      "d": 0.7733206061328701
+    },
+    "cmdset[3]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[_hide]": {
+      "d": 0.7734574985430247
+    },
+    "cmdset[3]#program_class[rclass]#result[DF]#result_type[scalar]#var[_hide]": {
+      "d": 1.0
+    },
+    "cmdset[3]#program_class[rclass]#result[p]#result_type[scalar]#var[_hide]": {
+      "d": 0.37919175251535964
+    },
+    "cmdset[3]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[_hide]": {
+      "d": 0.3791495681881112
+    },
+    "cmdset[4]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
+      "d": 0.5441897347174063
+    },
+    "cmdset[4]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[_hide]": {
+      "d": 0.5442809206759589
+    },
+    "cmdset[4]#program_class[rclass]#result[DF]#result_type[scalar]#var[_hide]": {
+      "d": 1.0
+    },
+    "cmdset[4]#program_class[rclass]#result[p]#result_type[scalar]#var[_hide]": {
+      "d": 0.4607015325153858
+    },
+    "cmdset[4]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[_hide]": {
+      "d": 0.4606639690656842
+    },
+    "cmdset[5]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
+      "d": 10.22262551619212
+    },
+    "cmdset[5]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[_hide]": {
+      "d": 10.222925941050875
+    },
+    "cmdset[5]#program_class[rclass]#result[DF]#result_type[scalar]#var[_hide]": {
+      "d": 1.0
+    },
+    "cmdset[5]#program_class[rclass]#result[p]#result_type[scalar]#var[_hide]": {
+      "d": 0.0013872822616039398
+    },
+    "cmdset[5]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[_hide]": {
+      "d": 0.0013870563107582982
+    },
+    "cmdset[6]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
+      "d": 0.5397812713601979
+    },
+    "cmdset[6]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[_hide]": {
+      "d": 0.5397812713601979
+    },
+    "cmdset[6]#program_class[rclass]#result[DF]#result_type[scalar]#var[_hide]": {
+      "d": 1.0
+    },
+    "cmdset[6]#program_class[rclass]#result[p]#result_type[scalar]#var[_hide]": {
+      "d": 0.4625233888192716
+    },
+    "cmdset[6]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[_hide]": {
+      "d": 0.4625233888192716
+    }
+  },
+  "Labels": {
+    "Dimensions": {
+      "_dimensions": {
+        "border_block": "Table border block",
+        "cell_type": "Table cell type",
+        "cmdset": "Command results index",
+        "colname": "Covariate names and column names",
+        "command": "Command option index",
+        "ever_mal": "Ever experience malnutrition?",
+        "program_class": "Result program class",
+        "result": "Result",
+        "result_type": "Result type",
+        "statcmd": "Statistic/command option index",
+        "var": "Statistic option variable"
+      },
+      "colname": {
+        "ct_pan_body_tail": "Body-Tail, Length",
+        "ct_pan_body_trans": "Body, Transverse",
+        "ct_pan_head_ap": "Head, AP",
+        "ct_pan_head_trans": "Head, Transverse",
+        "ct_pan_tail_trans": "Tail, Transverse",
+        "ct_pan_vol": "Pancreatic volume(ml)"
+      },
+      "command": {
+        "0": "Statistic"
+      },
+      "ever_mal": {
+        ".m": "Total",
+        "0": "NPM",
+        "1": "PM"
+      },
+      "result": {
+        "count": "Number of nonmissing values",
+        "frequency": "Frequency",
+        "p25": "25th percentile",
+        "p50": "50th percentile",
+        "p75": "75th percentile"
+      },
+      "result_type": {
+        "scalar": "Scalar"
+      },
+      "var": {
+        "ct_pan_body_tail": "Body-Tail, Length",
+        "ct_pan_body_trans": "Body, Transverse",
+        "ct_pan_head_ap": "Head, AP",
+        "ct_pan_head_trans": "Head, Transverse",
+        "ct_pan_tail_trans": "Tail, Transverse",
+        "ct_pan_vol": "Pancreatic volume(ml)"
+      }
+    }
+  },
+  "Layout": {
+    "columns": "ever_mal#result[count column1 column4]",
+    "rows": "var",
+    "tables": ""
+  },
+  "NumericDimNames": [
+    "ever_mal"
+  ],
+  "ScalarResults": [
+    "Chi2",
+    "Chi2_adj",
+    "DF",
+    "p",
+    "p_adj"
+  ],
+  "Styles": {
+    "CompositeMap": {
+      "column4": {
+        "elements": [
+          "column2",
+          "column3"
+        ]
+      }
+    },
+    "cell": {
+      "base": {
+        "ci-delimiter": "   ",
+        "cri-delimiter": "   ",
+        "nformat": "%9.0g"
+      },
+      "edits": [
+        [
+          "cell_type[item]",
+          {
+            "smcl": "result"
+          }
+        ],
+        [
+          "result[_r_b _r_se _r_lb _r_ub _r_ci _r_crlb _r_crub _r_cri]",
+          {
+            "nformat": "%9.0g"
+          }
+        ],
+        [
+          "result[_r_z _r_z_abs]",
+          {
+            "nformat": "%8.2f"
+          }
+        ],
+        [
+          "result[_r_p]",
+          {
+            "nformat": "%5.3f"
+          }
+        ],
+        [
+          "result[count frequency fvrawfrequency]",
+          {
+            "nformat": "%18.0fc"
+          }
+        ],
+        [
+          "result[fvpercent fvrawpercent percent rawpercent]",
+          {
+            "nformat": "%9.2f"
+          }
+        ],
+        [
+          "result[fvproportion fvrawproportion proportion rawproportion]",
+          {
+            "nformat": "%9.4g"
+          }
+        ],
+        [
+          "result[rawtotal sumw total fvfrequency]",
+          {
+            "nformat": "%18.6gc"
+          }
+        ],
+        [
+          "cell_type[item]",
+          {
+            "margin-left": {
+              "width": "10pt"
+            }
+          }
+        ],
+        [
+          "cell_type[corner]",
+          {
+            "halign": "center"
+          }
+        ],
+        [
+          "cell_type[column-header]",
+          {
+            "halign": "right"
+          }
+        ],
+        [
+          "cell_type[column-header]#result[_r_ci _r_cri]",
+          {
+            "halign": "center"
+          }
+        ],
+        [
+          "cell_type[item]",
+          {
+            "halign": "right"
+          }
+        ],
+        [
+          "cell_type[row-header]",
+          {
+            "halign": "left"
+          }
+        ],
+        [
+          "border_block[corner]",
+          {
+            "border-right": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[column-header]",
+          {
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[row-header]",
+          {
+            "border-bottom": {
+              "pattern": "single"
+            },
+            "border-right": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[item]",
+          {
+            "border-bottom": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "result[p]",
+          {
+            "nformat": "%5.3f"
+          }
+        ],
+        [
+          "result[p]",
+          {
+            "sformat": "p=%s"
+          }
+        ],
+        [
+          "border_block",
+          {
+            "border-right": {
+              "pattern": "nil"
+            }
+          }
+        ],
+        [
+          "result[column1]#var[ct_pan_head_ap ct_pan_head_trans ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan_vol]",
+          {
+            "nformat": "%5.3f"
+          }
+        ],
+        [
+          "result[column2]#var[ct_pan_head_ap ct_pan_head_trans ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan_vol]",
+          {
+            "nformat": "%5.3f",
+            "sformat": "(%s-"
+          }
+        ],
+        [
+          "result[column3]#var[ct_pan_head_ap ct_pan_head_trans ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan_vol]",
+          {
+            "nformat": "%5.3f",
+            "sformat": "%s)"
+          }
+        ],
+        [
+          "result[count]",
+          {
+            "nformat": "%4.0f"
+          }
+        ],
+        [
+          "result[count]",
+          {
+            "sformat": "[%s]"
+          }
+        ]
+      ]
+    },
+    "export": {
+      "tex": {
+        "begintable": "true",
+        "centering": "true"
+      }
+    },
+    "header": {
+      "auto-levels": {
+        "result": [
+          {
+            "stripe": "count",
+            "term-index": 1
+          },
+          {
+            "stripe": "frequency",
+            "term-index": 0
+          },
+          {
+            "stripe": "p25",
+            "term-index": 3
+          },
+          {
+            "stripe": "p50",
+            "term-index": 2
+          },
+          {
+            "stripe": "p75",
+            "term-index": 4
+          }
+        ]
+      },
+      "base": {
+        "level": "label",
+        "title": "hide"
+      },
+      "column": {
+        "dups": "center",
+        "extra-space": 1
+      },
+      "dimensions": {
+        "across": {
+          "title": "hide"
+        },
+        "coleq": {
+          "title": "hide"
+        },
+        "colname": {
+          "title": "hide"
+        },
+        "command": {
+          "title": "hide"
+        },
+        "ever_mal": {
+          "nformat": "%9.0g",
+          "title": "hide"
+        },
+        "result": {
+          "level": "hide",
+          "title": "hide"
+        },
+        "roweq": {
+          "title": "hide"
+        },
+        "rowname": {
+          "title": "hide"
+        },
+        "stars": {
+          "level": "hide",
+          "title": "hide"
+        },
+        "statcmd": {
+          "title": "hide"
+        },
+        "var": {
+          "title": "hide"
+        }
+      },
+      "row": {
+        "arrangement": "stack",
+        "nobinder": "true",
+        "spacer": "true"
+      }
+    },
+    "notes": [
+      "Values are [N] median (p25-p50).",
+      "1621 contributing any ultrasound measurement.",
+      "291 contributing any CT scan measurement.",
+      "P values are for Kruskal-Wallis Tests"
+    ],
+    "title": "Table .Unadjusted CT Measurements"
+  },
+  "Tags": {
+    "border_block": [
+      {
+        "stripe": "column-header",
+        "term-index": 0
+      },
+      {
+        "stripe": "corner",
+        "term-index": 0
+      },
+      {
+        "stripe": "item",
+        "term-index": 0
+      },
+      {
+        "stripe": "row-header",
+        "term-index": 0
+      }
+    ],
+    "cell_type": [
+      {
+        "stripe": "column-header",
+        "term-index": 0
+      },
+      {
+        "stripe": "corner",
+        "term-index": 0
+      },
+      {
+        "stripe": "item",
+        "term-index": 0
+      },
+      {
+        "stripe": "row-header",
+        "term-index": 0
+      }
+    ],
+    "cmdset": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      },
+      {
+        "stripe": "2",
+        "term-index": 1
+      },
+      {
+        "stripe": "3",
+        "term-index": 2
+      },
+      {
+        "stripe": "4",
+        "term-index": 3
+      },
+      {
+        "stripe": "5",
+        "term-index": 4
+      },
+      {
+        "stripe": "6",
+        "term-index": 5
+      }
+    ],
+    "colname": [
+      {
+        "stripe": "ct_pan_body_tail",
+        "term-index": 5
+      },
+      {
+        "stripe": "ct_pan_body_trans",
+        "term-index": 3
+      },
+      {
+        "stripe": "ct_pan_head_ap",
+        "term-index": 1
+      },
+      {
+        "stripe": "ct_pan_head_trans",
+        "term-index": 2
+      },
+      {
+        "stripe": "ct_pan_tail_trans",
+        "term-index": 4
+      },
+      {
+        "stripe": "ct_pan_vol",
+        "term-index": 6
+      }
+    ],
+    "command": [
+      {
+        "stripe": "0",
+        "term-index": 0
+      }
+    ],
+    "ever_mal": [
+      {
+        "stripe": "0",
+        "term-index": 0
+      },
+      {
+        "stripe": "1",
+        "term-index": 1
+      }
+    ],
+    "program_class": [
+      {
+        "stripe": "rclass",
+        "term-index": 0
+      }
+    ],
+    "result": [
+      {
+        "stripe": "Chi2",
+        "term-index": 0
+      },
+      {
+        "stripe": "Chi2_adj",
+        "term-index": 0
+      },
+      {
+        "stripe": "DF",
+        "term-index": 0
+      },
+      {
+        "stripe": "column1",
+        "term-index": 0
+      },
+      {
+        "stripe": "column2",
+        "term-index": 0
+      },
+      {
+        "stripe": "column3",
+        "term-index": 0
+      },
+      {
+        "stripe": "column4",
+        "term-index": 0
+      },
+      {
+        "stripe": "count",
+        "term-index": 0
+      },
+      {
+        "stripe": "frequency",
+        "term-index": 0
+      },
+      {
+        "stripe": "p",
+        "term-index": 0
+      },
+      {
+        "stripe": "p25",
+        "term-index": 0
+      },
+      {
+        "stripe": "p50",
+        "term-index": 0
+      },
+      {
+        "stripe": "p75",
+        "term-index": 0
+      },
+      {
+        "stripe": "p_adj",
+        "term-index": 0
+      }
+    ],
+    "result_type": [
+      {
+        "stripe": "scalar",
+        "term-index": 0
+      }
+    ],
+    "statcmd": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      },
+      {
+        "stripe": "2",
+        "term-index": 0
+      },
+      {
+        "stripe": "3",
+        "term-index": 0
+      },
+      {
+        "stripe": "4",
+        "term-index": 0
+      },
+      {
+        "stripe": "5",
+        "term-index": 0
+      }
+    ],
+    "var": [
+      {
+        "stripe": "_hide",
+        "term-index": 1
+      },
+      {
+        "stripe": "ct_pan_body_tail",
+        "term-index": 6
+      },
+      {
+        "stripe": "ct_pan_body_trans",
+        "term-index": 4
+      },
+      {
+        "stripe": "ct_pan_head_ap",
+        "term-index": 2
+      },
+      {
+        "stripe": "ct_pan_head_trans",
+        "term-index": 3
+      },
+      {
+        "stripe": "ct_pan_tail_trans",
+        "term-index": 5
+      },
+      {
+        "stripe": "ct_pan_vol",
+        "term-index": 7
+      }
+    ]
+  },
+  "collection-name": "c1"
+}

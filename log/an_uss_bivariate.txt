@@ -1,0 +1,449 @@
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/juansolon/Documents/GitHub/sampa-radio/log/an_uss_bivariate.txt
+  log type:  text
+ opened on:  25 Mar 2025, 08:53:13
+
+. 
+. cap prog drop mystats
+
+. program mystats, rclass
+  1. return scalar p_adj= chi2tail(r(df), r(chi2_adj))
+  2. return scalar Chi2_adj =  r(chi2_adj)
+  3. return scalar  DF =  r(df)
+  4. return scalar p= chi2tail(r(df), r(chi2))
+  5. return scalar  Chi2 =   r(chi2)
+  6. end
+
+. 
+. collect clear
+
+. 
+. local col "ever_mal"
+
+. local contmed "pan_head_ap pan_head_trans pan_body_trans pan_tail_trans"  /*continous variables; median (p25-p75)  will be reported*/
+
+. 
+. local colhead2 `"0 "NPM" 1 "PM""'
+
+.                 
+. * format median of `contmed'
+. local nfrmt_p50 "%5.3f"
+
+. local nfrmt_iqr "%5.3f"
+
+. local sfrmt_p25 "(%s-"
+
+. local sfrmt_p75 "%s)"
+
+. 
+. local title "Table .Unadjusted Ultrasound Measurements"
+
+. count if radio3 ==1
+  1,621
+
+. local obs_uss = r(N)
+
+. di `obs_uss'
+1621
+
+. count if ct2 ==1
+  291
+
+. local obs_ct = r(N)
+
+. di `obs_ct'
+291
+
+. local notes1 "Values are [N] median (p25-p50)."
+
+. local notes2 "`obs_uss' contributing any ultrasound measurement."
+
+. local notes3 "`obs_ct' contributing any CT scan measurement."
+
+. 
+. 
+. * STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  
+. * THERE IS NOTHING TO MODIFY BEYOND THIS LINE UNLESS CHANGING CODE. 
+. 
+. * GENERATE TABLE STATS 
+. 
+.         table (var)(`col')  , ///
+>                 stat(frequency) ///
+>                 stat(count `contmed') ///
+>                 stat(p50 `contmed') ///
+>                 stat(p25 `contmed') ///
+>                 stat(p75 `contmed') ///
+>                 nototal
+
+----------------------------------------------------------------
+                              |   Ever experience malnutrition? 
+                              |             NPM               PM
+------------------------------+---------------------------------
+Frequency                     |           1,101            1,021
+Head, AP                      |                                 
+  Number of nonmissing values |             715              837
+  50th percentile             |            2.09             2.07
+  25th percentile             |            1.86             1.78
+  75th percentile             |            2.35             2.39
+Head, Transverse              |                                 
+  Number of nonmissing values |             635              764
+  50th percentile             |             2.1             1.82
+  25th percentile             |            1.86             1.46
+  75th percentile             |            2.35              2.2
+Body, Transverse              |                                 
+  Number of nonmissing values |             745              863
+  50th percentile             |            1.24             1.23
+  25th percentile             |            1.07             1.03
+  75th percentile             |             1.5             1.49
+Tail, Transverse              |                                 
+  Number of nonmissing values |             509              692
+  50th percentile             |            1.23             1.42
+  25th percentile             |            1.07             1.14
+  75th percentile             |            1.59            1.715
+----------------------------------------------------------------
+
+.                 
+. collect rename Table c1
+(current collection is c1)
+
+.                 
+. *REFORMAT RESULTS TO DESIRED COLUMNS
+.                 
+.         * recodes median and iqr
+.                 collect recode result p50 = column1
+(8 items recoded in collection c1)
+
+.                 collect recode result p25 = column2
+(8 items recoded in collection c1)
+
+.                 collect recode result p75 = column3
+(8 items recoded in collection c1)
+
+.                 
+.         * Create composite result : this is needed because 75 is in column3 and we want it in the same column as column 2 .  Use for medians and probably CIs
+.                 collect composite define column4 = column2 column3, replace
+
+. 
+.         * Calculate p-values from chi2 and df
+.         foreach v in `contmed' {
+  2.                 quietly kwallis `v', by(`col')
+  3.                 collect: mystats
+  4.         }
+
+. 
+.         
+. * CREATE THE TABLE 1 Layout Super column - column 
+. 
+.         collect layout (var) (ever_mal#result[count column1 column4])
+
+Collection: c1
+      Rows: var
+   Columns: ever_mal#result[count column1 column4]
+   Table 1: 4 x 6
+
+-------------------------------------------------------------------------------------------------------------------------------------
+                 |                                            Ever experience malnutrition?                                          
+                 |                            NPM                                                        PM                          
+                 |  Number of nonmissing values   column1   column2 column3   Number of nonmissing values   column1   column2 column3
+-----------------+-------------------------------------------------------------------------------------------------------------------
+Head, AP         |                          715      2.09    1.86      2.35                           837      2.07    1.78      2.39
+Head, Transverse |                          635       2.1    1.86      2.35                           764      1.82    1.46       2.2
+Body, Transverse |                          745      1.24    1.07       1.5                           863      1.23    1.03      1.49
+Tail, Transverse |                          509      1.23    1.07      1.59                           692      1.42    1.14     1.715
+-------------------------------------------------------------------------------------------------------------------------------------
+
+. 
+. * Format p-values
+.         collect style cell result[p], nformat("%5.3f")
+
+.         collect style cell result[p], sformat("p=%s")
+
+. 
+. * CHANGE HEADER TEXT
+.         * column
+.                 collect label levels `col' `colhead2', modify
+
+. 
+. collect preview /* preview changes */
+
+-------------------------------------------------------------------------------------------------------------------------------------
+                 |                                            Ever experience malnutrition?                                          
+                 |                            NPM                                                        PM                          
+                 |  Number of nonmissing values   column1   column2 column3   Number of nonmissing values   column1   column2 column3
+-----------------+-------------------------------------------------------------------------------------------------------------------
+Head, AP         |                          715      2.09    1.86      2.35                           837      2.07    1.78      2.39
+Head, Transverse |                          635       2.1    1.86      2.35                           764      1.82    1.46       2.2
+Body, Transverse |                          745      1.24    1.07       1.5                           863      1.23    1.03      1.49
+Tail, Transverse |                          509      1.23    1.07      1.59                           692      1.42    1.14     1.715
+-------------------------------------------------------------------------------------------------------------------------------------
+
+. 
+. * HIDE COLUMN HEADERS
+. 
+.         * Hide supercolumn variable name because it is self-descriptive
+.                 
+.         *       collect style header `scol', title(hide) /* this removes the column variable name or label by hiding it */
+. 
+.         * Hide the column variable name 
+.                 
+.                 collect style header `col', title(hide) /* this removes the column variable name or label by hiding it */
+
+. 
+.         * Hide the words column 1 and column 2 for the results 
+. 
+.                 collect style header result, level(hide) /* this removes column 1 and column2 header names*/
+
+. 
+. collect preview /* preview changes */
+
+-----------------------------------------------------------------------------
+                 |              NPM                            PM            
+-----------------+-----------------------------------------------------------
+Head, AP         |  715   2.09   1.86      2.35   837   2.07   1.78      2.39
+Head, Transverse |  635    2.1   1.86      2.35   764   1.82   1.46       2.2
+Body, Transverse |  745   1.24   1.07       1.5   863   1.23   1.03      1.49
+Tail, Transverse |  509   1.23   1.07      1.59   692   1.42   1.14     1.715
+-----------------------------------------------------------------------------
+
+. 
+. * MODIFY ROW TEXT
+. 
+. 
+. * REVISE ROW STYLES
+. 
+. * Stack levels of each variable , place a space between variables (spacer) ; 
+. 
+.         collect style row stack, nobinder spacer
+
+. 
+. * Remove vertical line after variables
+. 
+.         collect style cell border_block, border(right, pattern(nil))
+
+. 
+. * HIDE ROW Text
+. 
+. * Hide the variable names 
+. collect style header `hiderows', title(hide)
+
+. 
+. 
+. * FORMAT NUMBERS
+. 
+. * Format median
+. 
+.         collect style cell result[column1]#var[`contmed'], nformat(`nfrmt_p50')
+
+. 
+. * Add IQR formatting to p25 and p75 separately:
+.         collect style cell result[column2]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`sfrmt_p25'") /* formats iqr as (p25 - p75)*/
+
+.         collect style cell result[column3]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`sfrmt_p75'") 
+
+. 
+. * Format count column
+.         collect style cell result[count], nformat("%4.0f") /* Format count as whole number */
+
+.         collect style cell result[count], sformat("[%s]") /* Format count as whole number */
+
+.         
+. /* format factor variables (categorical) column 1 and column 2
+> 
+>         collect style cell var[`frmt_catvar1']#result[column1], nformat(`nfrmt_freq')
+> 
+>         collect style cell var[`frmt_catvar1']#result[column2], nformat(`nfrmt_perc') sformat("(`sfrmt_perc')") /* Adds (%) to percent */
+> 
+> * format means variable column 1 and column 2
+> 
+>         collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats continuous variable to one decimal*/
+> 
+>         collect style cell var[`contn']#result[column2], nformat(`nfrmt_sd') sformat(`sfrmt_sd') /* Formats continuous variable to one decimal*/
+> */
+. * Change font of results
+.         *collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats continuous variable to one decimal*/
+.         
+. * Add text
+.         collect title `title'
+
+.         collect notes `notes1'
+
+.         collect notes `notes2'
+
+.         collect notes `notes3'
+
+.         collect notes `notes4'
+
+.         
+. collect preview
+
+Table .Unadjusted Ultrasound Measurements
+---------------------------------------------------------------------------------
+                                NPM                              PM              
+---------------------------------------------------------------------------------
+Head, AP          [715]   2.090   (1.860- 2.350)   [837]   2.070   (1.780- 2.390)
+Head, Transverse  [635]   2.100   (1.860- 2.350)   [764]   1.820   (1.460- 2.200)
+Body, Transverse  [745]   1.240   (1.070- 1.500)   [863]   1.230   (1.030- 1.490)
+Tail, Transverse  [509]   1.230   (1.070- 1.590)   [692]   1.420   (1.140- 1.715)
+---------------------------------------------------------------------------------
+Values are [N] median (p25-p50).
+1621 contributing any ultrasound measurement.
+291 contributing any CT scan measurement.
+
+. 
+. * Save first collection with main stats
+. collect layout (var) (ever_mal#result[count column1 column4])
+
+Collection: c1
+      Rows: var
+   Columns: ever_mal#result[count column1 column4]
+   Table 1: 4 x 6
+
+Table .Unadjusted Ultrasound Measurements
+---------------------------------------------------------------------------------
+                                NPM                              PM              
+---------------------------------------------------------------------------------
+Head, AP          [715]   2.090   (1.860- 2.350)   [837]   2.070   (1.780- 2.390)
+Head, Transverse  [635]   2.100   (1.860- 2.350)   [764]   1.820   (1.460- 2.200)
+Body, Transverse  [745]   1.240   (1.070- 1.500)   [863]   1.230   (1.030- 1.490)
+Tail, Transverse  [509]   1.230   (1.070- 1.590)   [692]   1.420   (1.140- 1.715)
+---------------------------------------------------------------------------------
+Values are [N] median (p25-p50).
+1621 contributing any ultrasound measurement.
+291 contributing any CT scan measurement.
+
+. collect save ./tables/uss1.json, replace
+(collection c1 saved to file ./tables/uss1.json)
+
+. 
+. * Create new collection for p-values
+. collect create c2
+(current collection is c2)
+
+. foreach v in `contmed' {
+  2.     quietly kwallis `v', by(`col')
+  3.     collect: mystats
+  4. }
+
+.    
+.    
+. 
+. * Remap cmdset to match var levels
+. collect recode cmdset 1 = pan_head_ap
+(5 items recoded in collection c2)
+
+. collect recode cmdset 2 = pan_head_trans
+(5 items recoded in collection c2)
+
+. collect recode cmdset 3 = pan_body_trans
+(5 items recoded in collection c2)
+
+. collect recode cmdset 4 = pan_tail_trans
+(5 items recoded in collection c2)
+
+. collect remap cmdset = var
+(20 items remapped in collection c2)
+
+. 
+. * Combine collections
+. collect combine c3 = c1 c2
+(current collection is c3)
+
+. 
+. * Create layout for combined collection
+. collect layout (var) (ever_mal#result[count column1 column4] result[p])   
+
+Collection: c3
+      Rows: var
+   Columns: ever_mal#result[count column1 column4] result[p]
+   Table 1: 4 x 7
+
+Table .Unadjusted Ultrasound Measurements
+-------------------------------------------------------------------------------------------
+                                NPM                              PM                        
+-------------------------------------------------------------------------------------------
+Head, AP          [715]   2.090   (1.860- 2.350)   [837]   2.070   (1.780- 2.390)   p=0.214
+Head, Transverse  [635]   2.100   (1.860- 2.350)   [764]   1.820   (1.460- 2.200)   p=0.000
+Body, Transverse  [745]   1.240   (1.070- 1.500)   [863]   1.230   (1.030- 1.490)   p=0.081
+Tail, Transverse  [509]   1.230   (1.070- 1.590)   [692]   1.420   (1.140- 1.715)   p=0.000
+-------------------------------------------------------------------------------------------
+Values are [N] median (p25-p50).
+1621 contributing any ultrasound measurement.
+291 contributing any CT scan measurement.
+
+.    
+. 
+. 
+. collect save ./tables/uss1, replace     
+(collection c3 saved to file ./tables/uss1.stjson)
+
+. * Export combined table
+. collect export ./tables/uss1.html, as(html) replace
+(collection c3 exported to file ./tables/uss1.html)
+
+. collect export ./tables/uss1.docx, as(docx) replace
+(collection c3 exported to file ./tables/uss1.docx)
+
+. collect export .tables/uss1.xlsx, as(xlsx) replace
+file .tables/uss1.xlsx already exists; you must specify either option modify or option replace
+r(602);
+
+end of do-file
+
+r(602);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect export ./tables/uss1.xlsx, as(xlsx) replace
+(collection c3 exported to file ./tables/uss1.xlsx)
+
+. 
+end of do-file
+
+. collect dir
+
+Collections in memory
+Current: c3
+----------------
+Name   No. items
+----------------
+  c1   54       
+  c2   20       
+  c3   74       
+----------------
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect clear
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. collect use ./tables/uss1
+(collection c3 read from file ./tables/uss1.stjson)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+
+. /* an_ct_bivariate.do 
+> J Solon
+> Sampa
+> March19 
+> 
+> Creates n median iqr and p values of var
+> kwallis p value
+> di chi2tail(r(df),r(chi2))
+> ct_pan_head_ap
+> ct_pan_head_trans
+> ct_pan_body_trans
+> ct_pan_tail_trans
+> ct_pan_body_tail
+> ct_pan_vol 
+> */
+. 
+. 
+. capture log close

@@ -55,7 +55,12 @@ do ./do/cr_flag_elastase.do 		// Flags the elastase samples that should not be a
 
  cd `pwd'
 
-do ./do/cr_trypsin.do 
+*do ./do/cr_trypsin.do 				// Adds trypsinogen
+
+ cd `pwd'
+ 
+ 
+*do ./do/cr_amylase.do 				// Adds amylase
 
  cd `pwd'
 
@@ -80,12 +85,16 @@ do ./do/cr_categorical_independent.do
 do ./do/cr_continuous_independent.do 		// Derived variables for imaging that are continuous ; include transformations / weights
 
  cd `pwd'
+do ./do/cr_labels.do					// Adds additional labels
+
+ cd `pwd'
 do ./do/cr_keep.do 
 
+local obs = _N
 notes drop _dta 
 note: Subset Created for Imaging Paper on `c(current_date)' at `c(current_time)' by `c(username)'
-note: Keeps only participants with Fecal Elastse or Visible Ultrasound Scans (N=2124)
-note: Trypsin data inserted from temporary dropbox data 
+note: Keeps only participants with Fecal Elastase or Visible Ultrasound Scans; N=`obs'
+note: Data read from ~/Cox working group Dropbox/TB Nutrition working group/Sampa/DATA Monitoring/data/sampa/All_combined_sampa_data.dta
 note: Selected variables kept for this paper in cr_keep.do 
 describe, simple
 notes 

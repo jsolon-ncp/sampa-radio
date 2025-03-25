@@ -19,9 +19,10 @@ return scalar  Chi2 =   r(chi2)
 end
 
 set scheme stsj
+
 ** Gr box 4 enzymes
 
-local enzymes "fecal_elastase ul_amylp ngml_trypsinogen lipase"
+local enzymes "fecal_elastase amylase_ul trypsinogen_ngml lipase"
 local i = 1
 foreach var of varlist `enzymes' {
 	kwallis `var', by(ever_mal) 
@@ -35,12 +36,12 @@ foreach var of varlist `enzymes' {
 		local subtitle "DIVIDS only"
 		local ymax = 60
 	}
-	else if "`var'" == "ngml_trypsinogen" {
+	else if "`var'" == "trypsinogen_ngml" {
 		local subtitle "CT Scan subset"
 		local ymax = 250
 	}
-	else if "`var'" == "ul_amylp" {
-		local subtitle "All cohorts"
+	else if "`var'" == "amylase_ul" {
+		local subtitle "All except DIVIDS"
 		local ymax = 150
 	}
 	else {
@@ -70,7 +71,7 @@ gr export ./figures/figc_a_2.png, as(png) replace
 
 tempfile g1 g2 g3 g4
 
-local enzymes "fecal_elastase ul_amylp ngml_trypsinogen"  
+local enzymes "fecal_elastase amylase_ul trypsinogen_ngml"  
 local i = 1
 foreach var of varlist `enzymes' {
 	 local grtitle : variable label `var'
