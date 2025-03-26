@@ -1,4 +1,4 @@
-/* 07_table_uss_pancreas_abnormal
+/* table_uss_pancreas_abnormal
 Juan Solon
 2025 Feb 
 
@@ -32,54 +32,17 @@ Output : pan_findings
 version 18.5
 
 *CLEAR
-clear all
+collect clear 
 set more off
 
-* GLOBALS
+* Inspect vars, labels, missings 
 
-global dropboxsampa "~/Cox working group Dropbox/TB Nutrition working group/Sampa"
-global samparadio "~/Cox working group Dropbox/TB Nutrition working group/Sampa/DATA Analysis/Radiology"
-* global sampadata "~/Cox working group Dropbox/TB Nutrition working group/Sampa/DATA Management/04-data-delivered-v2/ALL/STATA"
-global sampadata "~/Cox working group Dropbox/TB Nutrition working group/Sampa/DATA Monitoring/data/sampa"
-
-global ghsamparadio = "~/Documents/GitHub/sampa-radio"
-
-* LOCAL FOR DO FILE
-local dofilename "7_table_uss_pancreas_abnormal.do"
-
-
-cd $ghstata
-* WORKING DIRECTORY
-
-cd "$ghsamparadio"
-*cd "$dropboxsampa"
-*cd "$sampadata"
-
-* LOG
-
-capture log close _all
-capture cmdlog close
-capture log using "./log/jslog.txt", replace text
-
-** TEMPS
-
-* USE
-
-local dataset "All_combined_sampa_data.dta"
-
-*. Use dataset /* revise as use*/
-cd "$sampadata"
-* use "../../Data Monitoring/data/sampa/All_combined_sampa_data.dta", clear
-use "All_combined_sampa_data.dta", clear
-
-cd "$ghsamparadio"
-
-* Inspect labels 
 local cat "pan_contour pan_contour_problem pan_parenchyma pan_paren_inflam pan_paren_fibrosis pan_paren_steatosis pan_duct pan_duct_stones pan_duct_mass pan_calci"
 
 foreach x in "`cat'" {
 		d `x'	
 		label list `x'
+		missings report `x'
 		}
 * relevant factor level for pan_contour pan_parenhyma, pan_duct ==2, for the rest it is 1
 		
@@ -87,44 +50,53 @@ foreach x in "`cat'" {
 
 
  **# CREATE TABLE USING DTABLE
-cd "$ghsamparadio"
-cd 03-tables
 
 **#  TABLE CONFIGURATION 
 collect clear
 
-local title "Supplement Table. Pancreas Findings on Ultrasound(n=1784)"
+
+count if radio3==1
+
+local obs = r(N)
+
+local title "Supplement Table. Pancreas Findings on Ultrasound(n=`obs')"
 local col "ever_mal"
 local colhead2 `"0 "NPM" 1 "PM""'
 local cat1 "2.pan_contour 2.pan_parenchyma 1.pan_paren_steatosis"
 local cat2 "1.pan_paren_inflam 1.pan_paren_fibrosis 2.pan_duct 1.pan_duct_stones 1.pan_duct_mass 1.pan_calci"
-local notes1 "Values are N(%). Fishers or Chi-square test p values are shown."
-local notes2 
+local notes1 "Numbers are Frequency(%) . Fishers or Chi-square test p values are shown."
+local notes2 "All but 1 with steatosis were also desccribed as having abnormal parenchyma."
 local notes3 
 local notes4 
 **# TABLE CODE
+
+local filter "if radio3==1"
 
 dtable () `filter', by(`col', test nototals) ///
     factor(`cat1', statistics(fvfrequency fvpercent) test(pearson)) ///
 	factor(`cat2', statistics(fvfrequency fvpercent) test(fisher)) ///
     title("`title'") ///
-    note(`notes1') 
+    note(`notes1') ///
+	note(`notes2') 
 
 **# TABLE LAYOUT
-
-    collect style row stack, nobinder nospacer // * Stack levels of each variable , places/removes space between variables ; 
+	collect style row stack, nobinder nospacer // * Stack levels of each variable , places/removes space between variables ; 
 
     collect style cell border_block, border(right, pattern(nil)) // Remove vertical line after variables
 	
 *** TABLE SPACES / WIDTH
-collect style cell, margin(all, width(10)) // Define space b/w text and cell margins ;  default space in points is 1.5 between text and cell margin 
+	collect style cell, margin(all, width(1.5)) //  space b/w text and cell margins default is 1.5 points 
 
-collect style column, width(asis) // Revise column width (equal or asis)
+	collect style column, width(equal) // Revise column width (equal or asis)
     
 *** TABLE TEXT
 
+* Table Styles
+	collect style cell, font(Arial, size(11))
+	collect style notes, font(Arial, size(11))
+
 * Table title styles
-collect style title, font(, bold)
+	collect style title, font(Arial, size(11) bold)
 
 * MODIFY row text
 
@@ -147,7 +119,8 @@ label list ct_pan_paren_fibrosis ct_pan_parenchyma ct_pan_paren_inflam ct_pan_pa
     collect style header ever_mal#result,title(hide)	
     
 	collect style header var, title(hide)
- * REMOVE VARIABLE NAME IN ROW 
+
+* REMOVE Levels NAME IN ROW 
  
  *  collect label dim var "Organs", modify
  
@@ -165,12 +138,12 @@ local cat2 "1.pan_paren_inflam 1.pan_paren_fibrosis 2.pan_duct 1.pan_duct_stones
 
    
    **#  SAVE COLLECTION 
-
-collect save ./tables/pan_findings, replace
+   
+collect rename DTable uss_findings, replace
+collect save ./tables/uss_findings, replace
 
 **# EXPORT
-
-collect export ./tables/pan_findings.html, as(html) replace
-html2docx ./tables/pan_findings.html , saving(pan_findings.docx) replace
-collect export ./tables/pan_findings_ms.docx, as(docx) replace
+collect export ./tables/uss_findings.html, as(html) replace
+html2docx ./tables/uss_findings.html , saving(pan_findings.docx) replace
+collect export ./tables/uss_findings_ms.docx, as(docx) replace
 

@@ -1,4 +1,4 @@
-/* 06_table_uss_other_organs.do 
+/* table_uss_other_organs.do 
 Juan Solon
 2025 Feb 
 
@@ -15,47 +15,6 @@ Output files : pan_organs
 */
 version 18.5
 
-*CLEAR
-clear all
-set more off
-
-* GLOBALS
-global dropboxsampa "~/Cox working group Dropbox/TB Nutrition working group/Sampa"
-global samparadio "~/Cox working group Dropbox/TB Nutrition working group/Sampa/DATA Analysis/Radiology"
-* global sampadata "~/Cox working group Dropbox/TB Nutrition working group/Sampa/DATA Management/04-data-delivered-v2/ALL/STATA"
-global sampadata "~/Cox working group Dropbox/TB Nutrition working group/Sampa/DATA Monitoring/data/sampa"
-global ghsamparadio = "~/Documents/GitHub/sampa-radio"
-
-* LOCAL FOR DO FILE
-local dofilename "06_table_uss_other_organs.do"
-
-cd $ghstata
-* WORKING DIRECTORY
-
-cd "$ghsamparadio"
-*cd "$dropboxsampa"
-*cd "$sampadata"
-
-* LOG
-
-capture log close _all
-capture cmdlog close
-capture log using "./log/jslog.txt", replace text
-
-** TEMPS
-
-tempfile 1 2 3 4 5 6 
-
-* USE
-
-local dataset "All_combined_sampa_data.dta"
-
-*. Use dataset /* revise as use*/
-cd "$sampadata"
-* use "../../Data Monitoring/data/sampa/All_combined_sampa_data.dta", clear
-use "All_combined_sampa_data.dta", clear
-
-cd "$ghsamparadio"
 
 /* Make do file folder of paper the pwd
 cd "$samparadio"
@@ -132,24 +91,25 @@ local mass_terms "mass|lymph nodes|lesion|haematoma|cystic\s+mass|\? haematoma|:
 
 // Generate organ specific involvment based on regexm and macros above
 
-gen pan_lung = regexm(lower(`clean_pan_oth_abn_specify'), "`lung_terms'")
-gen pan_liver = regexm(lower(`clean_pan_oth_abn_specify'), "`liver_terms'")
-gen pan_gallbladder = regexm(lower(`clean_pan_oth_abn_specify'), "`gallbladder_terms'")
-gen pan_spleen = regexm(lower(`clean_pan_oth_abn_specify'), "`spleen_terms'")
-gen pan_pancreas = regexm(lower(`clean_pan_oth_abn_specify'), "`pancreas_terms'")
-gen pan_kidney = regexm(lower(`clean_pan_oth_abn_specify'), "`kidney_terms'")
-gen pan_uterus_ovary = regexm(lower(`clean_pan_oth_abn_specify'), "`uterus_ovary_terms'")
-gen pan_bone_spine = regexm(lower(`clean_pan_oth_abn_specify'), "`bone_spine_terms'")
-gen pan_vascular = regexm(lower(`clean_pan_oth_abn_specify'), "`vascular_terms'")
-gen pan_heart = regexm(lower(`clean_pan_oth_abn_specify'), "`heart_terms'")
-gen pan_stomach_intestine = regexm(lower(`clean_pan_oth_abn_specify'), "`stomach_intestine_terms'")
-gen pan_adrenal = regexm(lower(`clean_pan_oth_abn_specify'), "`adrenal_terms'")
-gen pan_mass = regexm(lower(trim(`clean_pan_oth_abn_specify')), "`mass_terms'")
+capture gen pan_lung = regexm(lower(`clean_pan_oth_abn_specify'), "`lung_terms'")
+capture gen pan_liver = regexm(lower(`clean_pan_oth_abn_specify'), "`liver_terms'")
+capture gen pan_gallbladder = regexm(lower(`clean_pan_oth_abn_specify'), "`gallbladder_terms'")
+capture gen pan_spleen = regexm(lower(`clean_pan_oth_abn_specify'), "`spleen_terms'")
+capture gen pan_pancreas = regexm(lower(`clean_pan_oth_abn_specify'), "`pancreas_terms'")
+capture gen pan_kidney = regexm(lower(`clean_pan_oth_abn_specify'), "`kidney_terms'")
+capture gen pan_uterus_ovary = regexm(lower(`clean_pan_oth_abn_specify'), "`uterus_ovary_terms'")
+capture gen pan_bone_spine = regexm(lower(`clean_pan_oth_abn_specify'), "`bone_spine_terms'")
+capture gen pan_vascular = regexm(lower(`clean_pan_oth_abn_specify'), "`vascular_terms'")
+capture gen pan_heart = regexm(lower(`clean_pan_oth_abn_specify'), "`heart_terms'")
+capture gen pan_stomach_intestine = regexm(lower(`clean_pan_oth_abn_specify'), "`stomach_intestine_terms'")
+capture gen pan_adrenal = regexm(lower(`clean_pan_oth_abn_specify'), "`adrenal_terms'")
+capture gen pan_mass = regexm(lower(trim(`clean_pan_oth_abn_specify')), "`mass_terms'")
+
 
 // Generate a variable to sum number of organs involved
 
 local cat "pan_lung pan_liver pan_gallbladder pan_spleen pan_pancreas pan_kidney pan_uterus_ovary pan_bone_spine pan_vascular pan_heart pan_stomach_intestine pan_adrenal"
-egen pan_organs = rowtotal(`cat')
+capture egen pan_organs = rowtotal(`cat')
 
 * QC of pancreas in other findings */
 /*
@@ -212,23 +172,30 @@ cd "$ghsamparadio"
 
 **#  TABLE CONFIGURATION 
 
-local title 	"Supplement Table. Incidental Findings on Ultrasound (n=1784)"
+count if radio3==1
+
+local obs = r(N)
+
+
+local title 	"Supplement Table. Incidental Findings on Ultrasound (n=`obs')"
 local col 		"ever_mal"
 local colhead2 `"0 "NPM" 1 "PM""'
 local cat "1.pan_organs 1.pan_pancreas 1.pan_lung 1.pan_liver 1.pan_gallbladder 1.pan_spleen  1.pan_stomach_intestine 1.pan_kidney 1.pan_uterus_ovary 1.pan_bone_spine 1.pan_vascular 1.pan_heart  1.pan_adrenal 1.pan_mass"
-local notes1 "Participants may have multiple organ findings."
+local notes1 "Numbers are Frequency(%). Participants may have multiple organ findings."
 local notes2 "No significant differences between groups on Chi-square test (p>0.05)"
 local notes3 
 local notes4 "Remove in final : Created with "`dofilename'" on "`c(current_date)'" at "`c(current_time)'"  based on  "`c(filename)'"" 
 
 **# TABLE CODE
 
+local filter "if radio3==1"
 dtable () `filter', by(`col', notest nototals) ///
     factor(`cat', statistics(fvfrequency fvpercent) test(pearson)) ///
     title("`title'") ///
     note(`notes1') ///
 	note(`notes2') ///
     note(`notes4')             
+	
 
 **# Collection Dimensions and levels
 /*
@@ -254,16 +221,26 @@ collect dims
     collect style row stack, nobinder nospacer // * Stack levels of each variable , places/removes space between variables ; 
 
     collect style cell border_block, border(right, pattern(nil)) // Remove vertical line after variables
+
+**# TABLE LAYOUT
+	collect style row stack, nobinder nospacer // * Stack levels of each variable , places/removes space between variables ; 
+
+    collect style cell border_block, border(right, pattern(nil)) // Remove vertical line after variables
 	
 *** TABLE SPACES / WIDTH
-collect style cell, margin(all, width(10)) // Define space b/w text and cell margins ;  default space in points is 1.5 between text and cell margin 
+	collect style cell, margin(all, width(1.5)) //  space b/w text and cell margins default is 1.5 points 
 
-collect style column, width(asis) // Revise column width (equal or asis)
+	collect style column, width(asis) // Revise column width (equal or asis)
     
 *** TABLE TEXT
 
+* Table Styles
+	collect style cell, font(Arial, size(11))
+	collect style notes, font(Arial, size(11))
+
 * Table title styles
-collect style title, font(, bold)
+	collect style title, font(Arial, size(11) bold)
+
 
 * MODIFY row text
 
@@ -284,41 +261,30 @@ collect style title, font(, bold)
     collect label levels pan_adrenal 1 "Adrenal", modify
     collect label levels pan_stomach_intestine 1 "GI tract", modify
 
-
+* MODIFY TEXT
   
 * Modify Header Text
     collect label levels ever_mal 0 "NPM" 1 "PM", modify
     collect style header ever_mal#result,title(hide)	
     
  * REMOVE VARIABLE NAME IN ROW 
- 
-   collect label dim var "Organs", modify
    
    collect style header var, title(hide) // hides the label of the dimension var
    
-	   * collect style header var, title(label) // shows the label of the dimension var which is now "Organs"
-	   * collect style header var, title(name) // shows the name of the dimension var, which is var
- 
  * LAYOUT to apply to  LEVELS OF A DIMENSION 
    
    collect style header var, level(label) // SHOW the label of ALL LEVELS of dimension var 
    
-		* collect style header var, level(hide) // HIDES the labels of ALL LEVELS the levels of dimension var which includes the levels of the dimension and its levels
-   
-  
- * LAYOUT FOR EACH LEVEL implemented in a foreach loop that HIDES the title of the level but keeps labels of level
-   * collect style header var[1.pan_lung], title(label) // hides the title or name of levels of the dimension leaving on the level's labels modified above
 
+ * REMOVE level name in rows to show only the  label names
+  
 	local varlevel "1.pan_lung 1.pan_liver 1.pan_gallbladder 1.pan_spleen 1.pan_pancreas 1.pan_kidney 1.pan_uterus_ovary 1.pan_bone_spine 1.pan_vascular 1.pan_heart 1.pan_stomach_intestine 1.pan_adrenal 1.pan_mass 1.pan_organs"
    
     foreach x in "`varlevel'" {
 		collect style header var[`x'], title(hide)
 	}
 
-/* Check Table
-    collect export organs.html, as(html) replace
-    html2docx organs.html , saving(organs.docx) replace
-*/
+
  
 **# Create Composite Column so that counts and percentages are in separate columns
 collect preview
@@ -355,7 +321,7 @@ collect layout (var) (ever_mal#result[col1 col2 pearson]#stars) // shows p value
 
 
 *** Revise text / cell margins
-collect style cell, margin(all, width(10)) // approximates default space between text and cell margin 
+collect style cell, margin(all, width(1.5)) // approximates default space between text and cell margin 
 
 * collect style cell, margin(all, width(0)) // minimizes default
 
@@ -375,9 +341,15 @@ collect layout (var) (ever_mal#result[col1 col2 pearson]#stars[value]#stars[labe
 
 **#  SAVE COLLECTION 
 
-collect save ./tables/pan_organs, replace
+collect rename DTable uss_organs, replace
+collect save ./tables/uss_organs, replace
 **# EXPORT
 
-collect export ./tables/pan_organs.html, as(html) replace
-html2docx ./tables/pan_organs.html , saving(./tables/pan_organs.docx) replace
-collect export ./tables/pan_organs_ms.docx, as(docx) replace
+collect export ./tables/uss_organs.html, as(html) replace
+html2docx ./tables/uss_organs.html , saving(./tables/pan_organs.docx) replace
+collect export ./tables/uss_organs_ms.docx, as(docx) replace
+
+* drop newvars
+local newvars "pan_lung pan_liver pan_gallbladder pan_spleen pan_pancreas pan_kidney pan_uterus_ovary pan_bone_spine pan_vascular pan_heart pan_stomach_intestine pan_adrenal pan_mass"
+
+drop `newvars'

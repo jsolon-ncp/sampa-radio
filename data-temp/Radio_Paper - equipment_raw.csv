@@ -1,0 +1,12 @@
+id,type,cohort,make_model,health_facility,city_country
+1,USS,DIVIDS,Mindray P50,Dr. Gulati Imaging Centre,"Delhi, India"
+2,USS,St-ATT / CLHNS,GE LOGIQ F7,Hi-Precision Diagnostics,"Cebu, Philippines"
+3,USS,St-ATT / CLHNS,GE LOGIQ F6,MHAM Cebu,"Cebu, Philippines"
+4,USS,St-ATT,Mindray DC-26,Q Diagnostic,"Negros Occidental, Philippines"
+5,USS,CICADA,Sonosite M-Turbo,National Institute for Medical Research Health Centre,"Mwanza, Tanzania"
+6,USS,NUSTART ; SAM,Mindray DC-40,University Teaching Hospitals,"Lusaka, Zambia"
+7,CT,St-ATT/ CLHNS,Siemens Somatom Scope 64 slice,ARC Hospitals,"Cebu, Philippines"
+8,CT,St-ATT,Siemens Somatom Perspective 64 slice,DocScan Healthcare,"Negros Occidental, Philippines"
+9,CT,CICADA,Siemens Perspective 128 slice,Bugando Medical Centre,Mwanza Tanzania
+10,CT,NUSTART,Toshiba Aquilion 128 slice,Levy Mwanawasa University Teaching Hospital,"Lusaka, Zambia"
+11,CT,NUSTART,GE BrightSpeed 64 slice,University Teaching Hospital,"Lusaka, Zambia"

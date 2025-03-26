@@ -1,0 +1,925 @@
+{
+  "AutoHideDims": [
+    "across",
+    "var"
+  ],
+  "Items": {
+    "across[_hide]#cmdset[10]#colname_remainder[_cons]#ever_mal[_dtable_test]#pan_calci[1]#program_class[nclass]#result[fisher]#result_type[scalar]#var[1.pan_calci]": {
+      "d": 0.4299467963831731
+    },
+    "across[_hide]#cmdset[1]#colname[1.pan_calci]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_calci[1]#result[fvfrequency]#statcmd[3]#var[1.pan_calci]": {
+      "d": 3.0
+    },
+    "across[_hide]#cmdset[1]#colname[1.pan_calci]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_calci[1]#result[fvpercent]#statcmd[4]#var[1.pan_calci]": {
+      "d": 0.3994673768308922
+    },
+    "across[_hide]#cmdset[1]#colname[1.pan_calci]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_calci[1]#result[fvfrequency]#statcmd[3]#var[1.pan_calci]": {
+      "d": 1.0
+    },
+    "across[_hide]#cmdset[1]#colname[1.pan_calci]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_calci[1]#result[fvpercent]#statcmd[4]#var[1.pan_calci]": {
+      "d": 0.11507479861910241
+    },
+    "across[_hide]#cmdset[1]#colname[1.pan_duct_mass]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_duct_mass[1]#result[fvfrequency]#statcmd[3]#var[1.pan_duct_mass]": {
+      "d": 0.0
+    },
+    "across[_hide]#cmdset[1]#colname[1.pan_duct_mass]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_duct_mass[1]#result[fvpercent]#statcmd[4]#var[1.pan_duct_mass]": {
+      "d": 0.0
+    },
+    "across[_hide]#cmdset[1]#colname[1.pan_duct_mass]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_duct_mass[1]#result[fvfrequency]#statcmd[3]#var[1.pan_duct_mass]": {
+      "d": 0.0
+    },
+    "across[_hide]#cmdset[1]#colname[1.pan_duct_mass]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_duct_mass[1]#result[fvpercent]#statcmd[4]#var[1.pan_duct_mass]": {
+      "d": 0.0
+    },
+    "across[_hide]#cmdset[1]#colname[1.pan_duct_stones]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_duct_stones[1]#result[fvfrequency]#statcmd[3]#var[1.pan_duct_stones]": {
+      "d": 0.0
+    },
+    "across[_hide]#cmdset[1]#colname[1.pan_duct_stones]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_duct_stones[1]#result[fvpercent]#statcmd[4]#var[1.pan_duct_stones]": {
+      "d": 0.0
+    },
+    "across[_hide]#cmdset[1]#colname[1.pan_duct_stones]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_duct_stones[1]#result[fvfrequency]#statcmd[3]#var[1.pan_duct_stones]": {
+      "d": 0.0
+    },
+    "across[_hide]#cmdset[1]#colname[1.pan_duct_stones]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_duct_stones[1]#result[fvpercent]#statcmd[4]#var[1.pan_duct_stones]": {
+      "d": 0.0
+    },
+    "across[_hide]#cmdset[1]#colname[1.pan_paren_fibrosis]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_paren_fibrosis[1]#result[fvfrequency]#statcmd[3]#var[1.pan_paren_fibrosis]": {
+      "d": 2.0
+    },
+    "across[_hide]#cmdset[1]#colname[1.pan_paren_fibrosis]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_paren_fibrosis[1]#result[fvpercent]#statcmd[4]#var[1.pan_paren_fibrosis]": {
+      "d": 1.9230769230769231
+    },
+    "across[_hide]#cmdset[1]#colname[1.pan_paren_fibrosis]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_paren_fibrosis[1]#result[fvfrequency]#statcmd[3]#var[1.pan_paren_fibrosis]": {
+      "d": 2.0
+    },
+    "across[_hide]#cmdset[1]#colname[1.pan_paren_fibrosis]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_paren_fibrosis[1]#result[fvpercent]#statcmd[4]#var[1.pan_paren_fibrosis]": {
+      "d": 4.444444444444445
+    },
+    "across[_hide]#cmdset[1]#colname[1.pan_paren_inflam]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_paren_inflam[1]#result[fvfrequency]#statcmd[3]#var[1.pan_paren_inflam]": {
+      "d": 3.0
+    },
+    "across[_hide]#cmdset[1]#colname[1.pan_paren_inflam]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_paren_inflam[1]#result[fvpercent]#statcmd[4]#var[1.pan_paren_inflam]": {
+      "d": 2.8846153846153846
+    },
+    "across[_hide]#cmdset[1]#colname[1.pan_paren_inflam]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_paren_inflam[1]#result[fvfrequency]#statcmd[3]#var[1.pan_paren_inflam]": {
+      "d": 0.0
+    },
+    "across[_hide]#cmdset[1]#colname[1.pan_paren_inflam]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_paren_inflam[1]#result[fvpercent]#statcmd[4]#var[1.pan_paren_inflam]": {
+      "d": 0.0
+    },
+    "across[_hide]#cmdset[1]#colname[1.pan_paren_steatosis]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_paren_steatosis[1]#result[fvfrequency]#statcmd[3]#var[1.pan_paren_steatosis]": {
+      "d": 102.0
+    },
+    "across[_hide]#cmdset[1]#colname[1.pan_paren_steatosis]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_paren_steatosis[1]#result[fvpercent]#statcmd[4]#var[1.pan_paren_steatosis]": {
+      "d": 97.14285714285714
+    },
+    "across[_hide]#cmdset[1]#colname[1.pan_paren_steatosis]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_paren_steatosis[1]#result[fvfrequency]#statcmd[3]#var[1.pan_paren_steatosis]": {
+      "d": 47.0
+    },
+    "across[_hide]#cmdset[1]#colname[1.pan_paren_steatosis]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_paren_steatosis[1]#result[fvpercent]#statcmd[4]#var[1.pan_paren_steatosis]": {
+      "d": 90.38461538461539
+    },
+    "across[_hide]#cmdset[1]#colname[2.pan_contour]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_contour[2]#result[fvfrequency]#statcmd[3]#var[2.pan_contour]": {
+      "d": 11.0
+    },
+    "across[_hide]#cmdset[1]#colname[2.pan_contour]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_contour[2]#result[fvpercent]#statcmd[4]#var[2.pan_contour]": {
+      "d": 1.482479784366577
+    },
+    "across[_hide]#cmdset[1]#colname[2.pan_contour]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_contour[2]#result[fvfrequency]#statcmd[3]#var[2.pan_contour]": {
+      "d": 7.0
+    },
+    "across[_hide]#cmdset[1]#colname[2.pan_contour]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_contour[2]#result[fvpercent]#statcmd[4]#var[2.pan_contour]": {
+      "d": 0.8158508158508158
+    },
+    "across[_hide]#cmdset[1]#colname[2.pan_duct]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_duct[2]#result[fvfrequency]#statcmd[3]#var[2.pan_duct]": {
+      "d": 2.0
+    },
+    "across[_hide]#cmdset[1]#colname[2.pan_duct]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_duct[2]#result[fvpercent]#statcmd[4]#var[2.pan_duct]": {
+      "d": 0.2691790040376851
+    },
+    "across[_hide]#cmdset[1]#colname[2.pan_duct]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_duct[2]#result[fvfrequency]#statcmd[3]#var[2.pan_duct]": {
+      "d": 5.0
+    },
+    "across[_hide]#cmdset[1]#colname[2.pan_duct]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_duct[2]#result[fvpercent]#statcmd[4]#var[2.pan_duct]": {
+      "d": 0.5807200929152149
+    },
+    "across[_hide]#cmdset[1]#colname[2.pan_parenchyma]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_parenchyma[2]#result[fvfrequency]#statcmd[3]#var[2.pan_parenchyma]": {
+      "d": 106.0
+    },
+    "across[_hide]#cmdset[1]#colname[2.pan_parenchyma]#colname_remainder[_cons]#command[0]#ever_mal[0]#pan_parenchyma[2]#result[fvpercent]#statcmd[4]#var[2.pan_parenchyma]": {
+      "d": 14.152202937249667
+    },
+    "across[_hide]#cmdset[1]#colname[2.pan_parenchyma]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_parenchyma[2]#result[fvfrequency]#statcmd[3]#var[2.pan_parenchyma]": {
+      "d": 50.0
+    },
+    "across[_hide]#cmdset[1]#colname[2.pan_parenchyma]#colname_remainder[_cons]#command[0]#ever_mal[1]#pan_parenchyma[2]#result[fvpercent]#statcmd[4]#var[2.pan_parenchyma]": {
+      "d": 5.773672055427252
+    },
+    "across[_hide]#cmdset[1]#command[0]#ever_mal[0]#result[frequency]#statcmd[1]#var[_N]": {
+      "d": 752.0
+    },
+    "across[_hide]#cmdset[1]#command[0]#ever_mal[1]#result[frequency]#statcmd[1]#var[_N]": {
+      "d": 869.0
+    },
+    "across[_hide]#cmdset[2]#colname_remainder[_cons]#ever_mal[_dtable_test]#pan_contour[2]#program_class[nclass]#result[pearson]#result_type[scalar]#var[2.pan_contour]": {
+      "d": 0.383693575570223
+    },
+    "across[_hide]#cmdset[3]#colname_remainder[_cons]#ever_mal[_dtable_test]#pan_parenchyma[2]#program_class[nclass]#result[pearson]#result_type[scalar]#var[2.pan_parenchyma]": {
+      "d": 8.445430967129004e-08
+    },
+    "across[_hide]#cmdset[4]#colname_remainder[_cons]#ever_mal[_dtable_test]#pan_paren_steatosis[1]#program_class[nclass]#result[pearson]#result_type[scalar]#var[1.pan_paren_steatosis]": {
+      "d": 0.06993234525965646
+    },
+    "across[_hide]#cmdset[5]#colname_remainder[_cons]#ever_mal[_dtable_test]#pan_paren_inflam[1]#program_class[nclass]#result[fisher]#result_type[scalar]#var[1.pan_paren_inflam]": {
+      "d": 0.5538930246504467
+    },
+    "across[_hide]#cmdset[6]#colname_remainder[_cons]#ever_mal[_dtable_test]#pan_paren_fibrosis[1]#program_class[nclass]#result[fisher]#result_type[scalar]#var[1.pan_paren_fibrosis]": {
+      "d": 0.5844482969346608
+    },
+    "across[_hide]#cmdset[7]#colname_remainder[_cons]#ever_mal[_dtable_test]#pan_duct[2]#program_class[nclass]#result[fisher]#result_type[scalar]#var[2.pan_duct]": {
+      "d": 0.6434565885970667
+    },
+    "across[_hide]#cmdset[8]#colname_remainder[_cons]#ever_mal[_dtable_test]#pan_duct_stones[1]#program_class[nclass]#result[fisher]#result_type[scalar]#var[1.pan_duct_stones]": {
+      "s": "."
+    },
+    "across[_hide]#cmdset[9]#colname_remainder[_cons]#ever_mal[_dtable_test]#pan_duct_mass[1]#program_class[nclass]#result[fisher]#result_type[scalar]#var[1.pan_duct_mass]": {
+      "s": "."
+    },
+    "across[ever_mal]#cmdset[1]#command[0]#ever_mal[0]#result[percent]#statcmd[2]#var[_N]": {
+      "d": 46.39111659469463
+    },
+    "across[ever_mal]#cmdset[1]#command[0]#ever_mal[1]#result[percent]#statcmd[2]#var[_N]": {
+      "d": 53.60888340530536
+    },
+    "cmdset[1]#var[_N]": {
+      "s": ".m"
+    }
+  },
+  "Labels": {
+    "Dimensions": {
+      "_dimensions": {
+        "across": "Across",
+        "border_block": "Table border block",
+        "cell_type": "Table cell type",
+        "cmdset": "Command results index",
+        "colname": "Covariate names and column names",
+        "colname_remainder": "Covariate names with factors removed",
+        "command": "Command option index",
+        "ever_mal": "Ever experience malnutrition?",
+        "pan_calci": "Calcifications",
+        "pan_contour": "Pancreas contour",
+        "pan_duct": "Pancreas Duct",
+        "pan_duct_mass": "Mass detected in the duct",
+        "pan_duct_stones": "Stones detected in the duct",
+        "pan_paren_fibrosis": "Pancreas shows signs of fibrosis",
+        "pan_paren_inflam": "Pancreas shows signs of inflammation of edema",
+        "pan_paren_steatosis": "Pancreas shows signs of steatosis",
+        "pan_parenchyma": "Pancreatic Parenchyma",
+        "program_class": "Result program class",
+        "result": "Result",
+        "result_type": "Result type",
+        "statcmd": "Statistic/command option index",
+        "var": "Statistic option variable"
+      },
+      "across": {
+        "ever_mal": "Ever experience malnutrition?"
+      },
+      "colname": {
+        "pan_calci": "Calcifications",
+        "pan_contour": "Pancreas contour",
+        "pan_duct": "Pancreas Duct",
+        "pan_duct_mass": "Mass detected in the duct",
+        "pan_duct_stones": "Stones detected in the duct",
+        "pan_paren_fibrosis": "Pancreas shows signs of fibrosis",
+        "pan_paren_inflam": "Pancreas shows signs of inflammation of edema",
+        "pan_paren_steatosis": "Pancreas shows signs of steatosis",
+        "pan_parenchyma": "Pancreatic Parenchyma"
+      },
+      "command": {
+        "0": "Statistic"
+      },
+      "ever_mal": {
+        ".m": "Total",
+        "0": "NPM",
+        "1": "PM",
+        "_dtable_test": "Test"
+      },
+      "pan_calci": {
+        "1": "Calcification"
+      },
+      "pan_contour": {
+        "2": "Lobulated"
+      },
+      "pan_duct": {
+        "2": "Duct Abnormality"
+      },
+      "pan_duct_mass": {
+        "1": "Duct Mass"
+      },
+      "pan_duct_stones": {
+        "1": "Duct Stones"
+      },
+      "pan_paren_fibrosis": {
+        "1": "Fibrosis"
+      },
+      "pan_paren_inflam": {
+        "1": "Inflammation"
+      },
+      "pan_paren_steatosis": {
+        "1": "Steatosis"
+      },
+      "pan_parenchyma": {
+        "2": "Abnormal Parenchyma"
+      },
+      "result": {
+        "frequency": "Frequency",
+        "fvfrequency": "Factor-variable frequency",
+        "fvpercent": "Factor-variable percent",
+        "percent": "Percent"
+      },
+      "result_type": {
+        "scalar": "Scalar"
+      },
+      "var": {
+        "_N": "With Ultrasound",
+        "pan_calci": "Calcifications",
+        "pan_contour": "Pancreas contour",
+        "pan_duct": "Pancreas Duct",
+        "pan_duct_mass": "Mass detected in the duct",
+        "pan_duct_stones": "Stones detected in the duct",
+        "pan_paren_fibrosis": "Pancreas shows signs of fibrosis",
+        "pan_paren_inflam": "Pancreas shows signs of inflammation of edema",
+        "pan_paren_steatosis": "Pancreas shows signs of steatosis",
+        "pan_parenchyma": "Pancreatic Parenchyma"
+      }
+    }
+  },
+  "Layout": {
+    "columns": "ever_mal#result",
+    "rows": "var",
+    "tables": ""
+  },
+  "NumericDimNames": [
+    "ever_mal"
+  ],
+  "ScalarResults": [
+    "fisher",
+    "pearson"
+  ],
+  "StripeFactorDimNames": [
+    "pan_calci",
+    "pan_contour",
+    "pan_duct",
+    "pan_duct_mass",
+    "pan_duct_stones",
+    "pan_paren_fibrosis",
+    "pan_paren_inflam",
+    "pan_paren_steatosis",
+    "pan_parenchyma"
+  ],
+  "Styles": {
+    "CompositeMap": {
+      "_dtable_stats": {
+        "elements": [
+          "frequency",
+          "percent",
+          "fvfrequency",
+          "fvpercent"
+        ],
+        "trim": "true"
+      },
+      "_dtable_test": {
+        "elements": [
+          "pearson",
+          "fisher"
+        ],
+        "trim": "true"
+      }
+    },
+    "cell": {
+      "base": {
+        "nformat": "%21.3fc"
+      },
+      "edits": [
+        [
+          "result[N count sumw frequency fvfrequency fvrawfrequency]",
+          {
+            "nformat": "%21.0fc"
+          }
+        ],
+        [
+          "result[percent rawpercent fvpercent fvrawpercent]",
+          {
+            "nformat": "%9.1fc",
+            "sformat": "(%s%%)"
+          }
+        ],
+        [
+          "result[sd]",
+          {
+            "sformat": "(%s)"
+          }
+        ],
+        [
+          "result[regress poisson lnormal kwallis kwallis_ties pearson fisher lrchi2 svylr svywald svyllwald]",
+          {
+            "minimum": 0.001,
+            "nformat": "%6.3f"
+          }
+        ],
+        [
+          "cell_type[column-header]",
+          {
+            "halign": "center"
+          }
+        ],
+        [
+          "cell_type[row-header]",
+          {
+            "halign": "left"
+          }
+        ],
+        [
+          "stars[label]",
+          {
+            "halign": "left"
+          }
+        ],
+        [
+          "border_block[corner]",
+          {
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[column-header]",
+          {
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[row-header]",
+          {
+            "border-bottom": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[item]",
+          {
+            "border-bottom": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "cell_type[item]",
+          {
+            "smcl": "result"
+          }
+        ],
+        [
+          "cell_type[item]",
+          {
+            "margin-left": {
+              "width": "10pt"
+            }
+          }
+        ],
+        [
+          "border_block",
+          {
+            "border-right": {
+              "pattern": "nil"
+            }
+          }
+        ],
+        [
+          "",
+          {
+            "margin-bottom": {
+              "width": "1.5pt"
+            },
+            "margin-left": {
+              "width": "1.5pt"
+            },
+            "margin-right": {
+              "width": "1.5pt"
+            },
+            "margin-top": {
+              "width": "1.5pt"
+            }
+          }
+        ],
+        [
+          "",
+          {
+            "font-family": "Arial",
+            "font-size": "11pt"
+          }
+        ]
+      ]
+    },
+    "export": {
+      "_dtable": {
+        "by_tests": "true",
+        "by_totals": "false"
+      },
+      "tex": {
+        "begintable": "true",
+        "centering": "true"
+      }
+    },
+    "header": {
+      "auto-levels": {
+        "ever_mal": [
+          {
+            "stripe": "0",
+            "term-index": 0
+          },
+          {
+            "stripe": "1",
+            "term-index": 1
+          },
+          {
+            "stripe": "_dtable_test",
+            "term-index": 2
+          }
+        ],
+        "result": [
+          {
+            "stripe": "_dtable_stats",
+            "term-index": 0
+          },
+          {
+            "stripe": "_dtable_test",
+            "term-index": 1
+          }
+        ]
+      },
+      "base": {
+        "level": "label",
+        "title": "hide"
+      },
+      "column": {
+        "dups": "center",
+        "width": "equal"
+      },
+      "dimensions": {
+        "across": {
+          "level": "hide",
+          "title": "hide"
+        },
+        "ever_mal": {
+          "level": "label",
+          "nformat": "%9.0g",
+          "title": "hide"
+        },
+        "pan_calci": {
+          "level": "label",
+          "nformat": "%29.0g",
+          "title": "hide"
+        },
+        "pan_contour": {
+          "level": "label",
+          "nformat": "%29.0g",
+          "title": "hide"
+        },
+        "pan_duct": {
+          "level": "label",
+          "nformat": "%29.0g",
+          "title": "hide"
+        },
+        "pan_duct_mass": {
+          "level": "label",
+          "nformat": "%8.0g",
+          "title": "hide"
+        },
+        "pan_duct_stones": {
+          "level": "label",
+          "nformat": "%8.0g",
+          "title": "hide"
+        },
+        "pan_paren_fibrosis": {
+          "level": "label",
+          "nformat": "%8.0g",
+          "title": "hide"
+        },
+        "pan_paren_inflam": {
+          "level": "label",
+          "nformat": "%8.0g",
+          "title": "hide"
+        },
+        "pan_paren_steatosis": {
+          "level": "label",
+          "nformat": "%8.0g",
+          "title": "hide"
+        },
+        "pan_parenchyma": {
+          "level": "label",
+          "nformat": "%29.0g",
+          "title": "hide"
+        },
+        "result": {
+          "level": "hide",
+          "title": "hide"
+        },
+        "var": {
+          "level": "label",
+          "title": "hide"
+        }
+      },
+      "levels": [
+        [
+          [
+            "ever_mal",
+            {
+              "stripe": "_dtable_test",
+              "term-index": 0
+            }
+          ],
+          {
+            "level": "label"
+          }
+        ],
+        [
+          [
+            "var",
+            {
+              "stripe": "_N",
+              "term-index": 0
+            }
+          ],
+          {
+            "level": "label"
+          }
+        ]
+      ],
+      "row": {
+        "arrangement": "stack",
+        "nobinder": "true",
+        "spacer": "false"
+      }
+    },
+    "notes": [
+      "Numbers are Frequency(%) . Fishers or Chi-square test p values are shown.",
+      "All but 1 with steatosis were also desccribed as having abnormal parenchyma."
+    ],
+    "notes-styles": {
+      "font-family": "Arial",
+      "font-size": "11pt"
+    },
+    "title": "Supplement Table. Pancreas Findings on Ultrasound(n=1621)",
+    "title-styles": {
+      "font-family": "Arial",
+      "font-size": "11pt",
+      "font-weight": "bold"
+    }
+  },
+  "Tags": {
+    "across": [
+      {
+        "stripe": "_hide",
+        "term-index": 1
+      },
+      {
+        "stripe": "ever_mal",
+        "term-index": 2
+      }
+    ],
+    "border_block": [
+      {
+        "stripe": "column-header",
+        "term-index": 0
+      },
+      {
+        "stripe": "corner",
+        "term-index": 0
+      },
+      {
+        "stripe": "item",
+        "term-index": 0
+      },
+      {
+        "stripe": "row-header",
+        "term-index": 0
+      }
+    ],
+    "cell_type": [
+      {
+        "stripe": "column-header",
+        "term-index": 0
+      },
+      {
+        "stripe": "corner",
+        "term-index": 0
+      },
+      {
+        "stripe": "item",
+        "term-index": 0
+      },
+      {
+        "stripe": "row-header",
+        "term-index": 0
+      }
+    ],
+    "cmdset": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      },
+      {
+        "stripe": "10",
+        "term-index": 9
+      },
+      {
+        "stripe": "2",
+        "term-index": 1
+      },
+      {
+        "stripe": "3",
+        "term-index": 2
+      },
+      {
+        "stripe": "4",
+        "term-index": 3
+      },
+      {
+        "stripe": "5",
+        "term-index": 4
+      },
+      {
+        "stripe": "6",
+        "term-index": 5
+      },
+      {
+        "stripe": "7",
+        "term-index": 6
+      },
+      {
+        "stripe": "8",
+        "term-index": 7
+      },
+      {
+        "stripe": "9",
+        "term-index": 8
+      }
+    ],
+    "colname": [
+      {
+        "stripe": "1.pan_calci",
+        "term-index": 9
+      },
+      {
+        "stripe": "2.pan_contour",
+        "term-index": 1
+      },
+      {
+        "stripe": "2.pan_duct",
+        "term-index": 6
+      },
+      {
+        "stripe": "1.pan_duct_mass",
+        "term-index": 8
+      },
+      {
+        "stripe": "1.pan_duct_stones",
+        "term-index": 7
+      },
+      {
+        "stripe": "1.pan_paren_fibrosis",
+        "term-index": 5
+      },
+      {
+        "stripe": "1.pan_paren_inflam",
+        "term-index": 4
+      },
+      {
+        "stripe": "1.pan_paren_steatosis",
+        "term-index": 3
+      },
+      {
+        "stripe": "2.pan_parenchyma",
+        "term-index": 2
+      }
+    ],
+    "colname_remainder": [
+      {
+        "stripe": "_cons",
+        "term-index": 18446744073709551588
+      }
+    ],
+    "command": [
+      {
+        "stripe": "0",
+        "term-index": 0
+      }
+    ],
+    "ever_mal": [
+      {
+        "stripe": "0",
+        "term-index": 0
+      },
+      {
+        "stripe": "1",
+        "term-index": 1
+      },
+      {
+        "stripe": "_dtable_test",
+        "term-index": 2
+      }
+    ],
+    "pan_calci": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      }
+    ],
+    "pan_contour": [
+      {
+        "stripe": "2",
+        "term-index": 0
+      }
+    ],
+    "pan_duct": [
+      {
+        "stripe": "2",
+        "term-index": 0
+      }
+    ],
+    "pan_duct_mass": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      }
+    ],
+    "pan_duct_stones": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      }
+    ],
+    "pan_paren_fibrosis": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      }
+    ],
+    "pan_paren_inflam": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      }
+    ],
+    "pan_paren_steatosis": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      }
+    ],
+    "pan_parenchyma": [
+      {
+        "stripe": "2",
+        "term-index": 0
+      }
+    ],
+    "program_class": [
+      {
+        "stripe": "nclass",
+        "term-index": 0
+      }
+    ],
+    "result": [
+      {
+        "stripe": "_dtable_stats",
+        "term-index": 0
+      },
+      {
+        "stripe": "_dtable_test",
+        "term-index": 0
+      },
+      {
+        "stripe": "fisher",
+        "term-index": 0
+      },
+      {
+        "stripe": "frequency",
+        "term-index": 0
+      },
+      {
+        "stripe": "fvfrequency",
+        "term-index": 0
+      },
+      {
+        "stripe": "fvpercent",
+        "term-index": 0
+      },
+      {
+        "stripe": "pearson",
+        "term-index": 0
+      },
+      {
+        "stripe": "percent",
+        "term-index": 0
+      },
+      {
+        "stripe": "proportion",
+        "term-index": 0
+      },
+      {
+        "stripe": "rawpercent",
+        "term-index": 0
+      },
+      {
+        "stripe": "rawproportion",
+        "term-index": 0
+      },
+      {
+        "stripe": "sumw",
+        "term-index": 0
+      }
+    ],
+    "result_type": [
+      {
+        "stripe": "scalar",
+        "term-index": 0
+      }
+    ],
+    "statcmd": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      },
+      {
+        "stripe": "2",
+        "term-index": 0
+      },
+      {
+        "stripe": "3",
+        "term-index": 0
+      },
+      {
+        "stripe": "4",
+        "term-index": 0
+      }
+    ],
+    "var": [
+      {
+        "stripe": "_N",
+        "term-index": 1
+      },
+      {
+        "stripe": "_hide",
+        "term-index": 2
+      },
+      {
+        "stripe": "1.pan_calci",
+        "term-index": 11
+      },
+      {
+        "stripe": "2.pan_contour",
+        "term-index": 3
+      },
+      {
+        "stripe": "2.pan_duct",
+        "term-index": 8
+      },
+      {
+        "stripe": "1.pan_duct_mass",
+        "term-index": 10
+      },
+      {
+        "stripe": "1.pan_duct_stones",
+        "term-index": 9
+      },
+      {
+        "stripe": "1.pan_paren_fibrosis",
+        "term-index": 7
+      },
+      {
+        "stripe": "1.pan_paren_inflam",
+        "term-index": 6
+      },
+      {
+        "stripe": "1.pan_paren_steatosis",
+        "term-index": 5
+      },
+      {
+        "stripe": "2.pan_parenchyma",
+        "term-index": 4
+      }
+    ]
+  },
+  "collection-name": "uss_findings"
+}

@@ -1,4 +1,4 @@
-/*  09_table_ct_organs.do 
+/*  table_ct_organs.do 
 Juan Solon
 2025 Feb 
 
@@ -18,54 +18,15 @@ output  : ct_organs
 */
 version 18.5
 
-*CLEAR
-clear all
-set more off
-
-* GLOBALS
-
-global dropboxsampa "~/Cox working group Dropbox/TB Nutrition working group/Sampa"
-global samparadio "~/Cox working group Dropbox/TB Nutrition working group/Sampa/DATA Analysis/Radiology"
-* global sampadata "~/Cox working group Dropbox/TB Nutrition working group/Sampa/DATA Management/04-data-delivered-v2/ALL/STATA"
-global sampadata "~/Cox working group Dropbox/TB Nutrition working group/Sampa/DATA Monitoring/data/sampa"
-
-global ghsamparadio = "~/Documents/GitHub/sampa-radio"
-
-cd $ghstata
-* WORKING DIRECTORY
-
-cd "$ghsamparadio"
-*cd "$dropboxsampa"
-*cd "$sampadata"
-
-* LOG
-
-capture log close _all
-capture cmdlog close
-capture log using "./log/jslog.txt", replace text
-
-** TEMPS
-
-tempfile 1 2 3 4 5 6 
-
-* USE
-
-local dataset "All_combined_sampa_data.dta"
-
-*. Use dataset /* revise as use*/
-cd "$sampadata"
-* use "../../Data Monitoring/data/sampa/All_combined_sampa_data.dta", clear
-use "All_combined_sampa_data.dta", clear
-
 * LOCAL DO FILE
 local dofilename "09_table_ct_organs.do"
 
 * LOCAL Output
 local output "ct_organs"
+
 * Working Directory
 
-
-cd "$ghsamparadio"
+*cd "$ghsamparadio"
 
 /* Make do file folder of paper the pwd
 cd "$samparadio"
@@ -99,24 +60,24 @@ ct_image_qual ct_problem ct_problem_why name_ct sig_ct sig_ct_upload file_ct fil
 **# CREATE NEW VARIABLES BASED ON OTHER FINDINGS VARIABLE 
 
 /* Create organ involvement using regexm(lower(var),keywords)  */
-gen ct_lung = regexm(lower(ct_pan_oth_abn_spec), "lung|pulmonary|lower nodular|linear densities|pleural|tuberculosis|tb|fibrocavitary|fibrosis|consolidation|infiltrate|pleural effusion|bronchiectasis|cavitation")
-gen ct_liver = regexm(lower(ct_pan_oth_abn_spec), "liver|fatty infiltration|hepatic|hepatomegaly|cirrhosis|steatosis|hepatic lesion")
-gen ct_gallbladder = regexm(lower(ct_pan_oth_abn_spec), "gallbladder|gallstone|cholelithiasis|biliary sludge|cholecystitis|gall stone| cholecystolithiasis|cholecystolithiases")
-gen ct_spleen = regexm(lower(ct_pan_oth_abn_spec), "spleen|splenomegaly|splenic lesion|hypodense lesion|spenomegally")
-gen ct_pancreas = regexm(lower(ct_pan_oth_abn_spec), "pancreas|pseudocyst|pancreatitis|pancreatic lesion|atrophy|pancreatic")
-gen ct_kidney = regexm(lower(ct_pan_oth_abn_spec), "kidney|nephrolithiasis|renal|hydronephrosis|cortical thinning|renal cyst|nephrocalcinosis|calyces|calyceal|nephrolithiases|ureteroectacia")
-gen ct_uterus_ovary = regexm(lower(ct_pan_oth_abn_spec), "uterus|ovary|fibroid|ovarian cyst|bulky uterus|endometrial thickening|adnexal mass|paraplegic")
-gen ct_bone_spine = regexm(lower(ct_pan_oth_abn_spec), "bone|spine|spondyloarthropathy|lytic lesion|compression deformity|degenerative changes|osteophyte|vertebral|spondylosis|osseous")
-gen ct_vascular = regexm(lower(ct_pan_oth_abn_spec), "vascular|atherosclerosis|atherosclerotic|aortic|iliac artery|aneurysm|thrombosis")
-gen ct_heart = regexm(lower(ct_pan_oth_abn_spec), "heart|pericardial effusion|cardiomegaly")
-gen ct_stomach_intestine = regexm(lower(ct_pan_oth_abn_spec), "stomach|gastric|diverticulosis|bowel wall thickening|colonic lesion|intestinal obstruction")
-gen ct_adrenal = regexm(lower(ct_pan_oth_abn_spec), "adrenal|adrenal lesion|adrenal hyperplasia|adrenal adenoma")
-gen ct_mass= regexm(lower(ct_pan_oth_abn_spec), "mass|ascitis|carcinomatosis|carcinoma|lymph nodes")
+capture gen ct_lung = regexm(lower(ct_pan_oth_abn_spec), "lung|pulmonary|lower nodular|linear densities|pleural|tuberculosis|tb|fibrocavitary|fibrosis|consolidation|infiltrate|pleural effusion|bronchiectasis|cavitation")
+capture gen ct_liver = regexm(lower(ct_pan_oth_abn_spec), "liver|fatty infiltration|hepatic|hepatomegaly|cirrhosis|steatosis|hepatic lesion")
+capture gen ct_gallbladder = regexm(lower(ct_pan_oth_abn_spec), "gallbladder|gallstone|cholelithiasis|biliary sludge|cholecystitis|gall stone| cholecystolithiasis|cholecystolithiases")
+capture gen ct_spleen = regexm(lower(ct_pan_oth_abn_spec), "spleen|splenomegaly|splenic lesion|hypodense lesion|spenomegally")
+capture gen ct_pancreas = regexm(lower(ct_pan_oth_abn_spec), "pancreas|pseudocyst|pancreatitis|pancreatic lesion|atrophy|pancreatic")
+capture gen ct_kidney = regexm(lower(ct_pan_oth_abn_spec), "kidney|nephrolithiasis|renal|hydronephrosis|cortical thinning|renal cyst|nephrocalcinosis|calyces|calyceal|nephrolithiases|ureteroectacia")
+capture gen ct_uterus_ovary = regexm(lower(ct_pan_oth_abn_spec), "uterus|ovary|fibroid|ovarian cyst|bulky uterus|endometrial thickening|adnexal mass|paraplegic")
+capture gen ct_bone_spine = regexm(lower(ct_pan_oth_abn_spec), "bone|spine|spondyloarthropathy|lytic lesion|compression deformity|degenerative changes|osteophyte|vertebral|spondylosis|osseous")
+capture gen ct_vascular = regexm(lower(ct_pan_oth_abn_spec), "vascular|atherosclerosis|atherosclerotic|aortic|iliac artery|aneurysm|thrombosis")
+capture gen ct_heart = regexm(lower(ct_pan_oth_abn_spec), "heart|pericardial effusion|cardiomegaly")
+capture gen ct_stomach_intestine = regexm(lower(ct_pan_oth_abn_spec), "stomach|gastric|diverticulosis|bowel wall thickening|colonic lesion|intestinal obstruction")
+capture gen ct_adrenal = regexm(lower(ct_pan_oth_abn_spec), "adrenal|adrenal lesion|adrenal hyperplasia|adrenal adenoma")
+capture gen ct_mass= regexm(lower(ct_pan_oth_abn_spec), "mass|ascitis|carcinomatosis|carcinoma|lymph nodes")
 
 * Creates number of organs involved
 
 local cat "ct_lung ct_liver ct_gallbladder ct_spleen ct_pancreas ct_kidney ct_uterus_ovary ct_bone_spine ct_vascular ct_heart ct_stomach_intestine ct_adrenal"
-egen ct_organs = rowtotal(`cat')
+capture egen ct_organs = rowtotal(`cat')
 
 /*QC of data (used during regex- keep )
 
@@ -173,18 +134,20 @@ replace ct_pancreas =0 if sampa_id ==50240 // Calcification is already recorded 
 replace ct_pancreas =0 if sampa_id == 50645 // the text says unremarkable findings of pancreas (flagged on regex because of pancreas)
 **# CREATE TABLE USING DTABLE
 
-cd 03-tables
+count if ct2==1
+
+local obs = r(N)
 
 **#  TABLE CONFIGURATION 
-local filter 	"if ct_scan==1"
-local title "Supplement Table. Incidental Findings on CT Scan (n=235)"
+local filter 	"if ct2==1"
+local title "Supplement Table. Incidental Findings on CT Scan (N=`obs')"
 local col "ever_mal"
 local colhead2 `"0 "NPM" 1 "PM""'
 local cat "1.ct_organs 1.ct_pancreas 1.ct_lung 1.ct_liver 1.ct_gallbladder 1.ct_spleen  1.ct_stomach_intestine 1.ct_kidney 1.ct_uterus_ovary 1.ct_bone_spine 1.ct_vascular 1.ct_heart  1.ct_adrenal 1.ct_mass"
-local notes1 "Participants may have multiple organ findings."
-local notes2 "Chi-square test between groups"
-local notes3 
-local notes4 "Remove in final : Created with "`dofilename'" on "`c(current_date)'" at "`c(current_time)'"  based on  "`c(filename)'"" 
+local notes1 "Chi-square test between groups"
+local notes2 "Numbers are Frequency(%). Participants may have multiple organ findings."
+*local notes3 
+*local notes4 "Remove in final : Created with "`dofilename'" on "`c(current_date)'" at "`c(current_time)'"  based on  "`c(filename)'"" 
 
 **# TABLE CODE
 
@@ -192,7 +155,8 @@ dtable () `filter', by(`col', test nototals) ///
     factor(`cat', statistics(fvfrequency fvpercent) test(pearson)) ///
     title("`title'") ///
     note(`notes1') ///
-                note(`notes4')             
+	note(`notes2') 
+
 
 **# Collection Dimensions and levels
 /*
@@ -220,14 +184,26 @@ collect dims
     collect style cell border_block, border(right, pattern(nil)) // Remove vertical line after variables
 	
 *** TABLE SPACES / WIDTH
-collect style cell, margin(all, width(10)) // Define space b/w text and cell margins ;  default space in points is 1.5 between text and cell margin 
+collect style cell, margin(all, width(1.5)) // Define space b/w text and cell margins ;  default space in points is 1.5 between text and cell margin 
 
 collect style column, width(asis) // Revise column width (equal or asis)
-    
+ 
 *** TABLE TEXT
 
+* Table Styles
+	collect style cell, font(Arial, size(11))
+	collect style notes, font(Arial, size(11))
+
 * Table title styles
-collect style title, font(, bold)
+	collect style title, font(Arial, size(11) bold)
+
+* MODIFY TEXT
+
+* Modify Header Text
+    collect label levels ever_mal 0 "NPM" 1 "PM", modify
+    collect style header ever_mal#result,title(hide)
+	
+
 * MODIFY row text
 
     collect label levels var _N "With CT Scans", modify
@@ -247,28 +223,20 @@ collect style title, font(, bold)
     collect label levels ct_mass 1 "Masses", modify
 	collect label levels ct_organs 1 "Any CT Finding", modify
   
-* Modify Header Text
-    collect label levels ever_mal 0 "NPM" 1 "PM", modify
-    collect style header ever_mal#result,title(hide)	
-    
- * REMOVE VARIABLE NAME IN ROW 
- 
-   collect label dim var "Organs", modify
-   
-   collect style header var, title(hide) // hides the label of the dimension var
-   
-	   * collect style header var, title(label) // shows the label of the dimension var which is now "Organs"
-	   * collect style header var, title(name) // shows the name of the dimension var, which is var
- 
+
+****ROWS
+
  * LAYOUT to apply to  LEVELS OF A DIMENSION 
    
-   collect style header var, level(label) // SHOW the label of ALL LEVELS of dimension var 
+ *  collect style header var, level(label) // SHOW the label of ALL LEVELS of dimension var 
    
 		* collect style header var, level(hide) // HIDES the labels of ALL LEVELS the levels of dimension var which includes the levels of the dimension and its levels
    
   
  * LAYOUT FOR EACH LEVEL implemented in a foreach loop that HIDES the title of the level but keeps labels of level
    * collect style header var[1.ct_lung], title(label) // hides the title or name of levels of the dimension leaving on the level's labels modified above
+   
+ * REMOVE level name in rows
 
 	local varlevel "1.ct_lung 1.ct_liver 1.ct_gallbladder 1.ct_spleen 1.ct_pancreas 1.ct_kidney 1.ct_uterus_ovary 1.ct_bone_spine 1.ct_vascular 1.ct_heart 1.ct_stomach_intestine 1.ct_adrenal 1.ct_mass 1.ct_organs"
    
@@ -283,6 +251,7 @@ collect style title, font(, bold)
  
 **# Create Composite Column so that counts and percentages are in separate columns
 collect preview
+
 collect composite define col1 = frequency fvfrequency
 collect composite define col2 = fvpercent
 
@@ -311,7 +280,6 @@ collect style header stars, title(hide) level(hide)
 
 * change the layout to show the stars instead of the p-values
 
-
 collect layout (var) (ever_mal#result[col1 col2 pearson]#stars) // shows p values and stars
 
 
@@ -325,10 +293,11 @@ collect layout (var) (ever_mal#result[col1 col2 pearson]#stars[value]#stars[labe
 
 **#  SAVE COLLECTION 
 
+collect rename DTable ct_organs, replace
 collect save ct_organs, replace
 
 **# EXPORT
 
-collect export ct_organs.html, as(html) replace
-html2docx ct_organs.html , saving(organs.docx) replace
-collect export ct_organs_ms.docx, as(docx) replace
+collect export ./tables/ct_organs.html, as(html) replace
+html2docx ./tables/ct_organs.html , saving(organs.docx) replace
+collect export ./tables/ct_organs_ms.docx, as(docx) replace

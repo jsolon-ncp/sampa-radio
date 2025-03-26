@@ -14,20 +14,19 @@ gen recruited = 1
 
 gen assay_fecal_elastase = 1 if fecal_elastase !=. & fecal_elastase >0
 	replace assay_fe = 0 if fecal_elastase==. 
-	la var assay_fe "Fecal Elastase"
+	la var assay_fe "Fecal Elastase Assay"
 
 gen assay_lipase = 1 if lipase !=. & lipase >0
 	replace assay_lip = 0 if lipase ==.
-	la var assay_lip "Lipase"
+	la var assay_lip "Lipase Assay"
 
-/*
-gen assay_amylase = 1 if amylase !=. & amylase >0
+gen assay_amylase = 1 if ul_amylp   !=. & ul_amylp   >0
 	*replace assay_amylase = 0 if amylase ==.
-	la var assay_amylase "Amylase"
+	la var assay_amylase "Amylase Assay"
 	
-gen assay_trypsinogen = 1 if trypsinogen !=. & trypsinogen >0
+gen assay_trypsinogen = 1 if ngml_trypsinogen !=. & ngml_trypsinogen >0
 	*replace assay_trypsinogen = 0 if trypsinogen ==.
-	la var assay_trypsinogen "Trypsinogen"
+	la var assay_trypsinogen "Trypsinogen Assay"
 */
 
 **# Create new variables for imaging presence; Do not replace combined

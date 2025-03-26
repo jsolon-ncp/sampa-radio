@@ -62,6 +62,10 @@ local fig3a2head "Figure 3B Pancreatic Enzyme levels by malnutrition status."
 
 local fig3a2text "NPM, not previously malnourished; PM, previously malnourished. Fecal elastase values were truncated at 600 µg/g and measured in all cohorts A fecal elastase value of <200 µg/g is regarded as evidence of exocrine pancreatic insufficiency. Median FE-1 375 ug/g in PM and 314 ug/g in NPM. Median amylase in PM 31.1 U/L in PM and 29.6 U/L in NPM measured in all but the cohort from India (DIVIDS).  Significant differences in FE-1 and amylase levels by past malnutrition exposure.  No significant differences in lipase levels (measured in DIVIDS) and trypsinogen levels(measured among those with CT Scans) by past malnutrition exposure. Kruskal-wallis Chi squared and p values in graph. "
 
+
+
+
+
 * Scatter Plot four enzymes
 
 local fig3b "./figures/figc_b.png"
@@ -82,7 +86,7 @@ local fig3text "Values were truncated at 600 µg/g. NPM, not previously malnouri
 local fig4 "./figures/figd.png"
 local fig4head "Figure 4 Correlation of USS and CT measurements"
 
-local fig4text "AP = Antero-posterior; All values above 4 cm removed for clarity. Spearman's correlation coefficient and p values shown. Correlation is significant for all dimensions except the transverse measurement of the tail which is the most difficult to visualize."
+local fig4text "pancreatic head transverse diameter (Spearman's ρ=0.22; P<0.001); B, pancreatic head antero-posterior (AP) diameter (Spearman's ρ=0.25; P<0.001); C, pancreatic body transverse diameter (Spearman's ρ=0.31; P<0.001); D, pancreatic tail transverse diameter (Spearman's ρ=0.10; P=0.10). All measurements are shown in cm.  Where correlations are statistically significant (panels A-C) a linear regression line is shown with 95% confidence limits. Measurements above 4 cm are not shown, for clarity"
 
 
 *** FIGURE E USS by PM or NPM by cohort
@@ -117,7 +121,7 @@ local fig6text "a) axial anterior-posterior and transverse head diameters, b) co
 
 //# ******************** CODE  ********************
 
-
+putdocx clear
 putdocx begin, font(Arial, 11) pagenum(decimal) footer(npage)
 putdocx paragraph, style(Title)
 putdocx text ("`title'")

@@ -28,9 +28,9 @@ local adjsq_ct "adj_sqrt_ct_pan_head_ap adj_sqrt_ct_pan_head_trans adj_sqrt_ct_p
 */
 
 
-local derived3 "flag_fecal_elastase recruited assay_fecal_elastase assay_lipase radio2 ct2 radio_mis_dims radio_mis_all radio3 subset subset2 epi_binary epi_ordinal child africa exposuretime fec_cohort"
+local derived3 "flag_fecal_elastase recruited assay_fecal_elastase assay_lipase assay_trypsinogen assay_amylase radio2 ct2 radio_mis_dims radio_mis_all radio3 subset subset2 epi_binary epi_ordinal child africa exposuretime fec_cohort"
 
-local glucose "metformin insulin ogtt_time0 hba1c gluc_mean_mgdl insulin_mean_mul Matsuda_index insulinogenic_index rhba1c" 
+local glucose "metformin insulin ogttr_confirm hba1c glu0 mmol_glu0 ogtt_time0 hba1c mmol_glu120 gluc_mean_mgdl insulin_mean_mul Matsuda_index insulinogenic_index rhba1c diab_hb_gl120" 
 
 local enzymes "fecal_elastase lipase ngml_trypsinogen mgl_crp mgl_cystatin ul_amylp"
 
@@ -39,6 +39,6 @@ local body "bia fm_kg fm_per ffm_kg ffm_per fmi ffmi impedance bia_prob bia_comm
 local organs "hepatomegaly splenomegaly cholelithiasis steatosis mass gynecologic atherosclerosis nephrolithiasis pancreatic"
 
 
-keep `subj1' `subj2' `ses' `uss' `ct' `derived1' `adjwt_uss' `adjsq_uss' `adjwt_ct' `adjsq_ct' `derived3' `glucose' `enzymes' `body' `organs'
+keep `subj1' `subj2' `nutrition' `ses' `uss' `ct' `derived1' `adjwt_uss' `adjsq_uss' `adjwt_ct' `adjsq_ct' `derived3' `glucose' `enzymes' `body' `organs'
 
 keep if subset==1

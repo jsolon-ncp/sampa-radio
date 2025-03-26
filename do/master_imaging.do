@@ -58,7 +58,8 @@ do ./do/cr_flag_elastase.do 		// Flags the elastase samples that should not be a
 *do ./do/cr_trypsin.do 				// Adds trypsinogen
 
  cd `pwd'
- 
+  
+do ./do/cr_diabetes.do 
  
 *do ./do/cr_amylase.do 				// Adds amylase
 

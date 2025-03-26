@@ -121,7 +121,7 @@ local fig6text "a) axial anterior-posterior and transverse head diameters, b) co
 
 //# ******************** CODE  ********************
 
-
+putdocx clear
 putdocx begin, font(Arial, 11) pagenum(decimal) footer(npage)
 putdocx paragraph, style(Title)
 putdocx text ("`title'")

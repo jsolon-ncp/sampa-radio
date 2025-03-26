@@ -1,0 +1,1587 @@
+{
+  "AutoHideDims": [
+    "var"
+  ],
+  "Items": {
+    "assay_fecal_elastase[1]#cmdset[1]#cohort2[1]#colname[1.assay_fecal_elastase]#colname_remainder[_cons]#command[0]#ever_mal[0]#result[column1]#statcmd[4]#var[1.assay_fecal_elastase]": {
+      "d": 21.0
+    },
+    "assay_fecal_elastase[1]#cmdset[1]#cohort2[1]#colname[1.assay_fecal_elastase]#colname_remainder[_cons]#command[0]#ever_mal[0]#result[column2]#statcmd[5]#var[1.assay_fecal_elastase]": {
+      "d": 38.88888888888889
+    },
+    "assay_fecal_elastase[1]#cmdset[1]#cohort2[1]#colname[1.assay_fecal_elastase]#colname_remainder[_cons]#command[0]#ever_mal[1]#result[column1]#statcmd[4]#var[1.assay_fecal_elastase]": {
+      "d": 97.0
+    },
+    "assay_fecal_elastase[1]#cmdset[1]#cohort2[1]#colname[1.assay_fecal_elastase]#colname_remainder[_cons]#command[0]#ever_mal[1]#result[column2]#statcmd[5]#var[1.assay_fecal_elastase]": {
+      "d": 38.3399209486166
+    },
+    "assay_fecal_elastase[1]#cmdset[1]#cohort2[2]#colname[1.assay_fecal_elastase]#colname_remainder[_cons]#command[0]#ever_mal[0]#result[column1]#statcmd[4]#var[1.assay_fecal_elastase]": {
+      "d": 38.0
+    },
+    "assay_fecal_elastase[1]#cmdset[1]#cohort2[2]#colname[1.assay_fecal_elastase]#colname_remainder[_cons]#command[0]#ever_mal[0]#result[column2]#statcmd[5]#var[1.assay_fecal_elastase]": {
+      "d": 84.44444444444444
+    },
+    "assay_fecal_elastase[1]#cmdset[1]#cohort2[2]#colname[1.assay_fecal_elastase]#colname_remainder[_cons]#command[0]#ever_mal[1]#result[column1]#statcmd[4]#var[1.assay_fecal_elastase]": {
+      "d": 45.0
+    },
+    "assay_fecal_elastase[1]#cmdset[1]#cohort2[2]#colname[1.assay_fecal_elastase]#colname_remainder[_cons]#command[0]#ever_mal[1]#result[column2]#statcmd[5]#var[1.assay_fecal_elastase]": {
+      "d": 77.58620689655173
+    },
+    "assay_fecal_elastase[1]#cmdset[1]#cohort2[3]#colname[1.assay_fecal_elastase]#colname_remainder[_cons]#command[0]#ever_mal[0]#result[column1]#statcmd[4]#var[1.assay_fecal_elastase]": {
+      "d": 188.0
+    },
+    "assay_fecal_elastase[1]#cmdset[1]#cohort2[3]#colname[1.assay_fecal_elastase]#colname_remainder[_cons]#command[0]#ever_mal[0]#result[column2]#statcmd[5]#var[1.assay_fecal_elastase]": {
+      "d": 95.91836734693877
+    },
+    "assay_fecal_elastase[1]#cmdset[1]#cohort2[3]#colname[1.assay_fecal_elastase]#colname_remainder[_cons]#command[0]#ever_mal[1]#result[column1]#statcmd[4]#var[1.assay_fecal_elastase]": {
+      "d": 103.0
+    },
+    "assay_fecal_elastase[1]#cmdset[1]#cohort2[3]#colname[1.assay_fecal_elastase]#colname_remainder[_cons]#command[0]#ever_mal[1]#result[column2]#statcmd[5]#var[1.assay_fecal_elastase]": {
+      "d": 97.16981132075472
+    },
+    "assay_fecal_elastase[1]#cmdset[1]#cohort2[4]#colname[1.assay_fecal_elastase]#colname_remainder[_cons]#command[0]#ever_mal[0]#result[column1]#statcmd[4]#var[1.assay_fecal_elastase]": {
+      "d": 543.0
+    },
+    "assay_fecal_elastase[1]#cmdset[1]#cohort2[4]#colname[1.assay_fecal_elastase]#colname_remainder[_cons]#command[0]#ever_mal[0]#result[column2]#statcmd[5]#var[1.assay_fecal_elastase]": {
+      "d": 95.43057996485061
+    },
+    "assay_fecal_elastase[1]#cmdset[1]#cohort2[4]#colname[1.assay_fecal_elastase]#colname_remainder[_cons]#command[0]#ever_mal[1]#result[column1]#statcmd[4]#var[1.assay_fecal_elastase]": {
+      "d": 277.0
+    },
+    "assay_fecal_elastase[1]#cmdset[1]#cohort2[4]#colname[1.assay_fecal_elastase]#colname_remainder[_cons]#command[0]#ever_mal[1]#result[column2]#statcmd[5]#var[1.assay_fecal_elastase]": {
+      "d": 92.9530201342282
+    },
+    "assay_fecal_elastase[1]#cmdset[1]#cohort2[5]#colname[1.assay_fecal_elastase]#colname_remainder[_cons]#command[0]#ever_mal[0]#result[column1]#statcmd[4]#var[1.assay_fecal_elastase]": {
+      "d": 75.0
+    },
+    "assay_fecal_elastase[1]#cmdset[1]#cohort2[5]#colname[1.assay_fecal_elastase]#colname_remainder[_cons]#command[0]#ever_mal[0]#result[column2]#statcmd[5]#var[1.assay_fecal_elastase]": {
+      "d": 86.20689655172413
+    },
+    "assay_fecal_elastase[1]#cmdset[1]#cohort2[5]#colname[1.assay_fecal_elastase]#colname_remainder[_cons]#command[0]#ever_mal[1]#result[column1]#statcmd[4]#var[1.assay_fecal_elastase]": {
+      "d": 166.0
+    },
+    "assay_fecal_elastase[1]#cmdset[1]#cohort2[5]#colname[1.assay_fecal_elastase]#colname_remainder[_cons]#command[0]#ever_mal[1]#result[column2]#statcmd[5]#var[1.assay_fecal_elastase]": {
+      "d": 85.12820512820512
+    },
+    "assay_fecal_elastase[1]#cmdset[1]#cohort2[6]#colname[1.assay_fecal_elastase]#colname_remainder[_cons]#command[0]#ever_mal[0]#result[column1]#statcmd[4]#var[1.assay_fecal_elastase]": {
+      "d": 143.0
+    },
+    "assay_fecal_elastase[1]#cmdset[1]#cohort2[6]#colname[1.assay_fecal_elastase]#colname_remainder[_cons]#command[0]#ever_mal[0]#result[column2]#statcmd[5]#var[1.assay_fecal_elastase]": {
+      "d": 95.33333333333334
+    },
+    "assay_fecal_elastase[1]#cmdset[1]#cohort2[6]#colname[1.assay_fecal_elastase]#colname_remainder[_cons]#command[0]#ever_mal[1]#result[column1]#statcmd[4]#var[1.assay_fecal_elastase]": {
+      "d": 104.0
+    },
+    "assay_fecal_elastase[1]#cmdset[1]#cohort2[6]#colname[1.assay_fecal_elastase]#colname_remainder[_cons]#command[0]#ever_mal[1]#result[column2]#statcmd[5]#var[1.assay_fecal_elastase]": {
+      "d": 93.69369369369369
+    },
+    "cmdset[1]#cohort2[1]#colname[0.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[0]#ever_mal[0]#result[column1]#statcmd[4]#var[0.diab_hb_gl120]": {
+      "d": 50.0
+    },
+    "cmdset[1]#cohort2[1]#colname[0.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[0]#ever_mal[0]#result[column2]#statcmd[5]#var[0.diab_hb_gl120]": {
+      "d": 98.0392156862745
+    },
+    "cmdset[1]#cohort2[1]#colname[0.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[0]#ever_mal[1]#result[column1]#statcmd[4]#var[0.diab_hb_gl120]": {
+      "d": 222.0
+    },
+    "cmdset[1]#cohort2[1]#colname[0.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[0]#ever_mal[1]#result[column2]#statcmd[5]#var[0.diab_hb_gl120]": {
+      "d": 99.10714285714286
+    },
+    "cmdset[1]#cohort2[1]#colname[1.ct2]#colname_remainder[_cons]#command[0]#ct2[1]#ever_mal[0]#result[column1]#statcmd[4]#var[1.ct2]": {
+      "d": 0.0
+    },
+    "cmdset[1]#cohort2[1]#colname[1.ct2]#colname_remainder[_cons]#command[0]#ct2[1]#ever_mal[0]#result[column2]#statcmd[5]#var[1.ct2]": {
+      "d": 0.0
+    },
+    "cmdset[1]#cohort2[1]#colname[1.ct2]#colname_remainder[_cons]#command[0]#ct2[1]#ever_mal[1]#result[column1]#statcmd[4]#var[1.ct2]": {
+      "d": 0.0
+    },
+    "cmdset[1]#cohort2[1]#colname[1.ct2]#colname_remainder[_cons]#command[0]#ct2[1]#ever_mal[1]#result[column2]#statcmd[5]#var[1.ct2]": {
+      "d": 0.0
+    },
+    "cmdset[1]#cohort2[1]#colname[1.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[1]#ever_mal[0]#result[column1]#statcmd[4]#var[1.diab_hb_gl120]": {
+      "d": 1.0
+    },
+    "cmdset[1]#cohort2[1]#colname[1.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[1]#ever_mal[0]#result[column2]#statcmd[5]#var[1.diab_hb_gl120]": {
+      "d": 1.9607843137254901
+    },
+    "cmdset[1]#cohort2[1]#colname[1.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[1]#ever_mal[1]#result[column1]#statcmd[4]#var[1.diab_hb_gl120]": {
+      "d": 2.0
+    },
+    "cmdset[1]#cohort2[1]#colname[1.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[1]#ever_mal[1]#result[column2]#statcmd[5]#var[1.diab_hb_gl120]": {
+      "d": 0.8928571428571428
+    },
+    "cmdset[1]#cohort2[1]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#ever_mal[0]#result[column1]#statcmd[4]#var[1.epi_binary]": {
+      "d": 2.0
+    },
+    "cmdset[1]#cohort2[1]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#ever_mal[0]#result[column2]#statcmd[5]#var[1.epi_binary]": {
+      "d": 9.523809523809524
+    },
+    "cmdset[1]#cohort2[1]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#ever_mal[1]#result[column1]#statcmd[4]#var[1.epi_binary]": {
+      "d": 16.0
+    },
+    "cmdset[1]#cohort2[1]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#ever_mal[1]#result[column2]#statcmd[5]#var[1.epi_binary]": {
+      "d": 16.49484536082474
+    },
+    "cmdset[1]#cohort2[1]#colname[1.hiv]#colname_remainder[_cons]#command[0]#ever_mal[0]#hiv[1]#result[column1]#statcmd[4]#var[1.hiv]": {
+      "d": 0.0
+    },
+    "cmdset[1]#cohort2[1]#colname[1.hiv]#colname_remainder[_cons]#command[0]#ever_mal[0]#hiv[1]#result[column2]#statcmd[5]#var[1.hiv]": {
+      "s": "."
+    },
+    "cmdset[1]#cohort2[1]#colname[1.hiv]#colname_remainder[_cons]#command[0]#ever_mal[1]#hiv[1]#result[column1]#statcmd[4]#var[1.hiv]": {
+      "d": 0.0
+    },
+    "cmdset[1]#cohort2[1]#colname[1.hiv]#colname_remainder[_cons]#command[0]#ever_mal[1]#hiv[1]#result[column2]#statcmd[5]#var[1.hiv]": {
+      "s": "."
+    },
+    "cmdset[1]#cohort2[1]#colname[1.radio3]#colname_remainder[_cons]#command[0]#ever_mal[0]#radio3[1]#result[column1]#statcmd[4]#var[1.radio3]": {
+      "d": 54.0
+    },
+    "cmdset[1]#cohort2[1]#colname[1.radio3]#colname_remainder[_cons]#command[0]#ever_mal[0]#radio3[1]#result[column2]#statcmd[5]#var[1.radio3]": {
+      "d": 100.0
+    },
+    "cmdset[1]#cohort2[1]#colname[1.radio3]#colname_remainder[_cons]#command[0]#ever_mal[1]#radio3[1]#result[column1]#statcmd[4]#var[1.radio3]": {
+      "d": 251.0
+    },
+    "cmdset[1]#cohort2[1]#colname[1.radio3]#colname_remainder[_cons]#command[0]#ever_mal[1]#radio3[1]#result[column2]#statcmd[5]#var[1.radio3]": {
+      "d": 99.2094861660079
+    },
+    "cmdset[1]#cohort2[1]#colname[2.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[2]#ever_mal[0]#result[column1]#statcmd[4]#var[2.diab_hb_gl120]": {
+      "d": 0.0
+    },
+    "cmdset[1]#cohort2[1]#colname[2.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[2]#ever_mal[0]#result[column2]#statcmd[5]#var[2.diab_hb_gl120]": {
+      "d": 0.0
+    },
+    "cmdset[1]#cohort2[1]#colname[2.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[2]#ever_mal[1]#result[column1]#statcmd[4]#var[2.diab_hb_gl120]": {
+      "d": 0.0
+    },
+    "cmdset[1]#cohort2[1]#colname[2.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[2]#ever_mal[1]#result[column2]#statcmd[5]#var[2.diab_hb_gl120]": {
+      "d": 0.0
+    },
+    "cmdset[1]#cohort2[1]#colname[2.sex]#colname_remainder[_cons]#command[0]#ever_mal[0]#result[column1]#sex[2]#statcmd[4]#var[2.sex]": {
+      "d": 25.0
+    },
+    "cmdset[1]#cohort2[1]#colname[2.sex]#colname_remainder[_cons]#command[0]#ever_mal[0]#result[column2]#sex[2]#statcmd[5]#var[2.sex]": {
+      "d": 46.2962962962963
+    },
+    "cmdset[1]#cohort2[1]#colname[2.sex]#colname_remainder[_cons]#command[0]#ever_mal[1]#result[column1]#sex[2]#statcmd[4]#var[2.sex]": {
+      "d": 125.0
+    },
+    "cmdset[1]#cohort2[1]#colname[2.sex]#colname_remainder[_cons]#command[0]#ever_mal[1]#result[column2]#sex[2]#statcmd[5]#var[2.sex]": {
+      "d": 49.40711462450593
+    },
+    "cmdset[1]#cohort2[1]#colname[age]#command[0]#ever_mal[0]#result[column1]#statcmd[2]#var[age]": {
+      "d": 11.848148098698369
+    },
+    "cmdset[1]#cohort2[1]#colname[age]#command[0]#ever_mal[0]#result[column2]#statcmd[3]#var[age]": {
+      "d": 1.4340523249557195
+    },
+    "cmdset[1]#cohort2[1]#colname[age]#command[0]#ever_mal[1]#result[column1]#statcmd[2]#var[age]": {
+      "d": 13.934387354040334
+    },
+    "cmdset[1]#cohort2[1]#colname[age]#command[0]#ever_mal[1]#result[column2]#statcmd[3]#var[age]": {
+      "d": 0.783487401414409
+    },
+    "cmdset[1]#cohort2[1]#colname[weight]#command[0]#ever_mal[0]#result[column1]#statcmd[2]#var[weight]": {
+      "d": 35.3055553789492
+    },
+    "cmdset[1]#cohort2[1]#colname[weight]#command[0]#ever_mal[0]#result[column2]#statcmd[3]#var[weight]": {
+      "d": 13.362195710801577
+    },
+    "cmdset[1]#cohort2[1]#colname[weight]#command[0]#ever_mal[1]#result[column1]#statcmd[2]#var[weight]": {
+      "d": 40.64879507807843
+    },
+    "cmdset[1]#cohort2[1]#colname[weight]#command[0]#ever_mal[1]#result[column2]#statcmd[3]#var[weight]": {
+      "d": 9.375392343939982
+    },
+    "cmdset[1]#cohort2[1]#command[0]#ever_mal[0]#result[column1]#statcmd[1]#var[_hide]": {
+      "d": 54.0
+    },
+    "cmdset[1]#cohort2[1]#command[0]#ever_mal[1]#result[column1]#statcmd[1]#var[_hide]": {
+      "d": 253.0
+    },
+    "cmdset[1]#cohort2[2]#colname[0.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[0]#ever_mal[0]#result[column1]#statcmd[4]#var[0.diab_hb_gl120]": {
+      "d": 34.0
+    },
+    "cmdset[1]#cohort2[2]#colname[0.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[0]#ever_mal[0]#result[column2]#statcmd[5]#var[0.diab_hb_gl120]": {
+      "d": 94.44444444444444
+    },
+    "cmdset[1]#cohort2[2]#colname[0.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[0]#ever_mal[1]#result[column1]#statcmd[4]#var[0.diab_hb_gl120]": {
+      "d": 42.0
+    },
+    "cmdset[1]#cohort2[2]#colname[0.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[0]#ever_mal[1]#result[column2]#statcmd[5]#var[0.diab_hb_gl120]": {
+      "d": 95.45454545454545
+    },
+    "cmdset[1]#cohort2[2]#colname[1.ct2]#colname_remainder[_cons]#command[0]#ct2[1]#ever_mal[0]#result[column1]#statcmd[4]#var[1.ct2]": {
+      "d": 0.0
+    },
+    "cmdset[1]#cohort2[2]#colname[1.ct2]#colname_remainder[_cons]#command[0]#ct2[1]#ever_mal[0]#result[column2]#statcmd[5]#var[1.ct2]": {
+      "d": 0.0
+    },
+    "cmdset[1]#cohort2[2]#colname[1.ct2]#colname_remainder[_cons]#command[0]#ct2[1]#ever_mal[1]#result[column1]#statcmd[4]#var[1.ct2]": {
+      "d": 0.0
+    },
+    "cmdset[1]#cohort2[2]#colname[1.ct2]#colname_remainder[_cons]#command[0]#ct2[1]#ever_mal[1]#result[column2]#statcmd[5]#var[1.ct2]": {
+      "d": 0.0
+    },
+    "cmdset[1]#cohort2[2]#colname[1.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[1]#ever_mal[0]#result[column1]#statcmd[4]#var[1.diab_hb_gl120]": {
+      "d": 0.0
+    },
+    "cmdset[1]#cohort2[2]#colname[1.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[1]#ever_mal[0]#result[column2]#statcmd[5]#var[1.diab_hb_gl120]": {
+      "d": 0.0
+    },
+    "cmdset[1]#cohort2[2]#colname[1.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[1]#ever_mal[1]#result[column1]#statcmd[4]#var[1.diab_hb_gl120]": {
+      "d": 1.0
+    },
+    "cmdset[1]#cohort2[2]#colname[1.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[1]#ever_mal[1]#result[column2]#statcmd[5]#var[1.diab_hb_gl120]": {
+      "d": 2.272727272727273
+    },
+    "cmdset[1]#cohort2[2]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#ever_mal[0]#result[column1]#statcmd[4]#var[1.epi_binary]": {
+      "d": 21.0
+    },
+    "cmdset[1]#cohort2[2]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#ever_mal[0]#result[column2]#statcmd[5]#var[1.epi_binary]": {
+      "d": 55.26315789473685
+    },
+    "cmdset[1]#cohort2[2]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#ever_mal[1]#result[column1]#statcmd[4]#var[1.epi_binary]": {
+      "d": 33.0
+    },
+    "cmdset[1]#cohort2[2]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#ever_mal[1]#result[column2]#statcmd[5]#var[1.epi_binary]": {
+      "d": 73.33333333333333
+    },
+    "cmdset[1]#cohort2[2]#colname[1.hiv]#colname_remainder[_cons]#command[0]#ever_mal[0]#hiv[1]#result[column1]#statcmd[4]#var[1.hiv]": {
+      "d": 0.0
+    },
+    "cmdset[1]#cohort2[2]#colname[1.hiv]#colname_remainder[_cons]#command[0]#ever_mal[0]#hiv[1]#result[column2]#statcmd[5]#var[1.hiv]": {
+      "d": 0.0
+    },
+    "cmdset[1]#cohort2[2]#colname[1.hiv]#colname_remainder[_cons]#command[0]#ever_mal[1]#hiv[1]#result[column1]#statcmd[4]#var[1.hiv]": {
+      "d": 2.0
+    },
+    "cmdset[1]#cohort2[2]#colname[1.hiv]#colname_remainder[_cons]#command[0]#ever_mal[1]#hiv[1]#result[column2]#statcmd[5]#var[1.hiv]": {
+      "d": 3.4482758620689653
+    },
+    "cmdset[1]#cohort2[2]#colname[1.radio3]#colname_remainder[_cons]#command[0]#ever_mal[0]#radio3[1]#result[column1]#statcmd[4]#var[1.radio3]": {
+      "d": 36.0
+    },
+    "cmdset[1]#cohort2[2]#colname[1.radio3]#colname_remainder[_cons]#command[0]#ever_mal[0]#radio3[1]#result[column2]#statcmd[5]#var[1.radio3]": {
+      "d": 80.0
+    },
+    "cmdset[1]#cohort2[2]#colname[1.radio3]#colname_remainder[_cons]#command[0]#ever_mal[1]#radio3[1]#result[column1]#statcmd[4]#var[1.radio3]": {
+      "d": 46.0
+    },
+    "cmdset[1]#cohort2[2]#colname[1.radio3]#colname_remainder[_cons]#command[0]#ever_mal[1]#radio3[1]#result[column2]#statcmd[5]#var[1.radio3]": {
+      "d": 79.3103448275862
+    },
+    "cmdset[1]#cohort2[2]#colname[2.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[2]#ever_mal[0]#result[column1]#statcmd[4]#var[2.diab_hb_gl120]": {
+      "d": 2.0
+    },
+    "cmdset[1]#cohort2[2]#colname[2.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[2]#ever_mal[0]#result[column2]#statcmd[5]#var[2.diab_hb_gl120]": {
+      "d": 5.555555555555555
+    },
+    "cmdset[1]#cohort2[2]#colname[2.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[2]#ever_mal[1]#result[column1]#statcmd[4]#var[2.diab_hb_gl120]": {
+      "d": 1.0
+    },
+    "cmdset[1]#cohort2[2]#colname[2.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[2]#ever_mal[1]#result[column2]#statcmd[5]#var[2.diab_hb_gl120]": {
+      "d": 2.272727272727273
+    },
+    "cmdset[1]#cohort2[2]#colname[2.sex]#colname_remainder[_cons]#command[0]#ever_mal[0]#result[column1]#sex[2]#statcmd[4]#var[2.sex]": {
+      "d": 25.0
+    },
+    "cmdset[1]#cohort2[2]#colname[2.sex]#colname_remainder[_cons]#command[0]#ever_mal[0]#result[column2]#sex[2]#statcmd[5]#var[2.sex]": {
+      "d": 55.55555555555556
+    },
+    "cmdset[1]#cohort2[2]#colname[2.sex]#colname_remainder[_cons]#command[0]#ever_mal[1]#result[column1]#sex[2]#statcmd[4]#var[2.sex]": {
+      "d": 30.0
+    },
+    "cmdset[1]#cohort2[2]#colname[2.sex]#colname_remainder[_cons]#command[0]#ever_mal[1]#result[column2]#sex[2]#statcmd[5]#var[2.sex]": {
+      "d": 51.724137931034484
+    },
+    "cmdset[1]#cohort2[2]#colname[age]#command[0]#ever_mal[0]#result[column1]#statcmd[2]#var[age]": {
+      "d": 13.159999953375923
+    },
+    "cmdset[1]#cohort2[2]#colname[age]#command[0]#ever_mal[0]#result[column2]#statcmd[3]#var[age]": {
+      "d": 2.032508435902078
+    },
+    "cmdset[1]#cohort2[2]#colname[age]#command[0]#ever_mal[1]#result[column1]#statcmd[2]#var[age]": {
+      "d": 12.234482798083075
+    },
+    "cmdset[1]#cohort2[2]#colname[age]#command[0]#ever_mal[1]#result[column2]#statcmd[3]#var[age]": {
+      "d": 0.9718045813977523
+    },
+    "cmdset[1]#cohort2[2]#colname[weight]#command[0]#ever_mal[0]#result[column1]#statcmd[2]#var[weight]": {
+      "d": 40.1022223578559
+    },
+    "cmdset[1]#cohort2[2]#colname[weight]#command[0]#ever_mal[0]#result[column2]#statcmd[3]#var[weight]": {
+      "d": 11.642603620723317
+    },
+    "cmdset[1]#cohort2[2]#colname[weight]#command[0]#ever_mal[1]#result[column1]#statcmd[2]#var[weight]": {
+      "d": 35.344827520436255
+    },
+    "cmdset[1]#cohort2[2]#colname[weight]#command[0]#ever_mal[1]#result[column2]#statcmd[3]#var[weight]": {
+      "d": 7.451154981913624
+    },
+    "cmdset[1]#cohort2[2]#command[0]#ever_mal[0]#result[column1]#statcmd[1]#var[_hide]": {
+      "d": 45.0
+    },
+    "cmdset[1]#cohort2[2]#command[0]#ever_mal[1]#result[column1]#statcmd[1]#var[_hide]": {
+      "d": 58.0
+    },
+    "cmdset[1]#cohort2[3]#colname[0.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[0]#ever_mal[0]#result[column1]#statcmd[4]#var[0.diab_hb_gl120]": {
+      "d": 59.0
+    },
+    "cmdset[1]#cohort2[3]#colname[0.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[0]#ever_mal[0]#result[column2]#statcmd[5]#var[0.diab_hb_gl120]": {
+      "d": 47.199999999999996
+    },
+    "cmdset[1]#cohort2[3]#colname[0.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[0]#ever_mal[1]#result[column1]#statcmd[4]#var[0.diab_hb_gl120]": {
+      "d": 32.0
+    },
+    "cmdset[1]#cohort2[3]#colname[0.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[0]#ever_mal[1]#result[column2]#statcmd[5]#var[0.diab_hb_gl120]": {
+      "d": 49.23076923076923
+    },
+    "cmdset[1]#cohort2[3]#colname[1.ct2]#colname_remainder[_cons]#command[0]#ct2[1]#ever_mal[0]#result[column1]#statcmd[4]#var[1.ct2]": {
+      "d": 50.0
+    },
+    "cmdset[1]#cohort2[3]#colname[1.ct2]#colname_remainder[_cons]#command[0]#ct2[1]#ever_mal[0]#result[column2]#statcmd[5]#var[1.ct2]": {
+      "d": 25.510204081632654
+    },
+    "cmdset[1]#cohort2[3]#colname[1.ct2]#colname_remainder[_cons]#command[0]#ct2[1]#ever_mal[1]#result[column1]#statcmd[4]#var[1.ct2]": {
+      "d": 50.0
+    },
+    "cmdset[1]#cohort2[3]#colname[1.ct2]#colname_remainder[_cons]#command[0]#ct2[1]#ever_mal[1]#result[column2]#statcmd[5]#var[1.ct2]": {
+      "d": 47.16981132075472
+    },
+    "cmdset[1]#cohort2[3]#colname[1.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[1]#ever_mal[0]#result[column1]#statcmd[4]#var[1.diab_hb_gl120]": {
+      "d": 26.0
+    },
+    "cmdset[1]#cohort2[3]#colname[1.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[1]#ever_mal[0]#result[column2]#statcmd[5]#var[1.diab_hb_gl120]": {
+      "d": 20.8
+    },
+    "cmdset[1]#cohort2[3]#colname[1.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[1]#ever_mal[1]#result[column1]#statcmd[4]#var[1.diab_hb_gl120]": {
+      "d": 15.0
+    },
+    "cmdset[1]#cohort2[3]#colname[1.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[1]#ever_mal[1]#result[column2]#statcmd[5]#var[1.diab_hb_gl120]": {
+      "d": 23.076923076923077
+    },
+    "cmdset[1]#cohort2[3]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#ever_mal[0]#result[column1]#statcmd[4]#var[1.epi_binary]": {
+      "d": 22.0
+    },
+    "cmdset[1]#cohort2[3]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#ever_mal[0]#result[column2]#statcmd[5]#var[1.epi_binary]": {
+      "d": 11.702127659574469
+    },
+    "cmdset[1]#cohort2[3]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#ever_mal[1]#result[column1]#statcmd[4]#var[1.epi_binary]": {
+      "d": 16.0
+    },
+    "cmdset[1]#cohort2[3]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#ever_mal[1]#result[column2]#statcmd[5]#var[1.epi_binary]": {
+      "d": 15.53398058252427
+    },
+    "cmdset[1]#cohort2[3]#colname[1.hiv]#colname_remainder[_cons]#command[0]#ever_mal[0]#hiv[1]#result[column1]#statcmd[4]#var[1.hiv]": {
+      "d": 0.0
+    },
+    "cmdset[1]#cohort2[3]#colname[1.hiv]#colname_remainder[_cons]#command[0]#ever_mal[0]#hiv[1]#result[column2]#statcmd[5]#var[1.hiv]": {
+      "s": "."
+    },
+    "cmdset[1]#cohort2[3]#colname[1.hiv]#colname_remainder[_cons]#command[0]#ever_mal[1]#hiv[1]#result[column1]#statcmd[4]#var[1.hiv]": {
+      "d": 0.0
+    },
+    "cmdset[1]#cohort2[3]#colname[1.hiv]#colname_remainder[_cons]#command[0]#ever_mal[1]#hiv[1]#result[column2]#statcmd[5]#var[1.hiv]": {
+      "s": "."
+    },
+    "cmdset[1]#cohort2[3]#colname[1.radio3]#colname_remainder[_cons]#command[0]#ever_mal[0]#radio3[1]#result[column1]#statcmd[4]#var[1.radio3]": {
+      "d": 186.0
+    },
+    "cmdset[1]#cohort2[3]#colname[1.radio3]#colname_remainder[_cons]#command[0]#ever_mal[0]#radio3[1]#result[column2]#statcmd[5]#var[1.radio3]": {
+      "d": 94.89795918367348
+    },
+    "cmdset[1]#cohort2[3]#colname[1.radio3]#colname_remainder[_cons]#command[0]#ever_mal[1]#radio3[1]#result[column1]#statcmd[4]#var[1.radio3]": {
+      "d": 104.0
+    },
+    "cmdset[1]#cohort2[3]#colname[1.radio3]#colname_remainder[_cons]#command[0]#ever_mal[1]#radio3[1]#result[column2]#statcmd[5]#var[1.radio3]": {
+      "d": 98.11320754716981
+    },
+    "cmdset[1]#cohort2[3]#colname[2.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[2]#ever_mal[0]#result[column1]#statcmd[4]#var[2.diab_hb_gl120]": {
+      "d": 40.0
+    },
+    "cmdset[1]#cohort2[3]#colname[2.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[2]#ever_mal[0]#result[column2]#statcmd[5]#var[2.diab_hb_gl120]": {
+      "d": 32.0
+    },
+    "cmdset[1]#cohort2[3]#colname[2.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[2]#ever_mal[1]#result[column1]#statcmd[4]#var[2.diab_hb_gl120]": {
+      "d": 18.0
+    },
+    "cmdset[1]#cohort2[3]#colname[2.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[2]#ever_mal[1]#result[column2]#statcmd[5]#var[2.diab_hb_gl120]": {
+      "d": 27.692307692307693
+    },
+    "cmdset[1]#cohort2[3]#colname[2.sex]#colname_remainder[_cons]#command[0]#ever_mal[0]#result[column1]#sex[2]#statcmd[4]#var[2.sex]": {
+      "d": 72.0
+    },
+    "cmdset[1]#cohort2[3]#colname[2.sex]#colname_remainder[_cons]#command[0]#ever_mal[0]#result[column2]#sex[2]#statcmd[5]#var[2.sex]": {
+      "d": 36.734693877551024
+    },
+    "cmdset[1]#cohort2[3]#colname[2.sex]#colname_remainder[_cons]#command[0]#ever_mal[1]#result[column1]#sex[2]#statcmd[4]#var[2.sex]": {
+      "d": 38.0
+    },
+    "cmdset[1]#cohort2[3]#colname[2.sex]#colname_remainder[_cons]#command[0]#ever_mal[1]#result[column2]#sex[2]#statcmd[5]#var[2.sex]": {
+      "d": 35.84905660377358
+    },
+    "cmdset[1]#cohort2[3]#colname[age]#command[0]#ever_mal[0]#result[column1]#statcmd[2]#var[age]": {
+      "d": 39.0494898387364
+    },
+    "cmdset[1]#cohort2[3]#colname[age]#command[0]#ever_mal[0]#result[column2]#statcmd[3]#var[age]": {
+      "d": 0.3847739602669532
+    },
+    "cmdset[1]#cohort2[3]#colname[age]#command[0]#ever_mal[1]#result[column1]#statcmd[2]#var[age]": {
+      "d": 38.75943403423957
+    },
+    "cmdset[1]#cohort2[3]#colname[age]#command[0]#ever_mal[1]#result[column2]#statcmd[3]#var[age]": {
+      "d": 0.45372070064545295
+    },
+    "cmdset[1]#cohort2[3]#colname[weight]#command[0]#ever_mal[0]#result[column1]#statcmd[2]#var[weight]": {
+      "d": 72.08137761330119
+    },
+    "cmdset[1]#cohort2[3]#colname[weight]#command[0]#ever_mal[0]#result[column2]#statcmd[3]#var[weight]": {
+      "d": 14.212170522345518
+    },
+    "cmdset[1]#cohort2[3]#colname[weight]#command[0]#ever_mal[1]#result[column1]#statcmd[2]#var[weight]": {
+      "d": 63.744340032901405
+    },
+    "cmdset[1]#cohort2[3]#colname[weight]#command[0]#ever_mal[1]#result[column2]#statcmd[3]#var[weight]": {
+      "d": 13.037713235063139
+    },
+    "cmdset[1]#cohort2[3]#command[0]#ever_mal[0]#result[column1]#statcmd[1]#var[_hide]": {
+      "d": 196.0
+    },
+    "cmdset[1]#cohort2[3]#command[0]#ever_mal[1]#result[column1]#statcmd[1]#var[_hide]": {
+      "d": 106.0
+    },
+    "cmdset[1]#cohort2[4]#colname[0.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[0]#ever_mal[0]#result[column1]#statcmd[4]#var[0.diab_hb_gl120]": {
+      "d": 224.0
+    },
+    "cmdset[1]#cohort2[4]#colname[0.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[0]#ever_mal[0]#result[column2]#statcmd[5]#var[0.diab_hb_gl120]": {
+      "d": 60.37735849056604
+    },
+    "cmdset[1]#cohort2[4]#colname[0.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[0]#ever_mal[1]#result[column1]#statcmd[4]#var[0.diab_hb_gl120]": {
+      "d": 98.0
+    },
+    "cmdset[1]#cohort2[4]#colname[0.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[0]#ever_mal[1]#result[column2]#statcmd[5]#var[0.diab_hb_gl120]": {
+      "d": 48.51485148514851
+    },
+    "cmdset[1]#cohort2[4]#colname[1.ct2]#colname_remainder[_cons]#command[0]#ct2[1]#ever_mal[0]#result[column1]#statcmd[4]#var[1.ct2]": {
+      "d": 8.0
+    },
+    "cmdset[1]#cohort2[4]#colname[1.ct2]#colname_remainder[_cons]#command[0]#ct2[1]#ever_mal[0]#result[column2]#statcmd[5]#var[1.ct2]": {
+      "d": 1.4059753954305798
+    },
+    "cmdset[1]#cohort2[4]#colname[1.ct2]#colname_remainder[_cons]#command[0]#ct2[1]#ever_mal[1]#result[column1]#statcmd[4]#var[1.ct2]": {
+      "d": 14.0
+    },
+    "cmdset[1]#cohort2[4]#colname[1.ct2]#colname_remainder[_cons]#command[0]#ct2[1]#ever_mal[1]#result[column2]#statcmd[5]#var[1.ct2]": {
+      "d": 4.697986577181208
+    },
+    "cmdset[1]#cohort2[4]#colname[1.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[1]#ever_mal[0]#result[column1]#statcmd[4]#var[1.diab_hb_gl120]": {
+      "d": 40.0
+    },
+    "cmdset[1]#cohort2[4]#colname[1.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[1]#ever_mal[0]#result[column2]#statcmd[5]#var[1.diab_hb_gl120]": {
+      "d": 10.781671159029651
+    },
+    "cmdset[1]#cohort2[4]#colname[1.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[1]#ever_mal[1]#result[column1]#statcmd[4]#var[1.diab_hb_gl120]": {
+      "d": 25.0
+    },
+    "cmdset[1]#cohort2[4]#colname[1.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[1]#ever_mal[1]#result[column2]#statcmd[5]#var[1.diab_hb_gl120]": {
+      "d": 12.376237623762377
+    },
+    "cmdset[1]#cohort2[4]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#ever_mal[0]#result[column1]#statcmd[4]#var[1.epi_binary]": {
+      "d": 248.0
+    },
+    "cmdset[1]#cohort2[4]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#ever_mal[0]#result[column2]#statcmd[5]#var[1.epi_binary]": {
+      "d": 45.67219152854512
+    },
+    "cmdset[1]#cohort2[4]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#ever_mal[1]#result[column1]#statcmd[4]#var[1.epi_binary]": {
+      "d": 114.0
+    },
+    "cmdset[1]#cohort2[4]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#ever_mal[1]#result[column2]#statcmd[5]#var[1.epi_binary]": {
+      "d": 41.15523465703971
+    },
+    "cmdset[1]#cohort2[4]#colname[1.hiv]#colname_remainder[_cons]#command[0]#ever_mal[0]#hiv[1]#result[column1]#statcmd[4]#var[1.hiv]": {
+      "d": 293.0
+    },
+    "cmdset[1]#cohort2[4]#colname[1.hiv]#colname_remainder[_cons]#command[0]#ever_mal[0]#hiv[1]#result[column2]#statcmd[5]#var[1.hiv]": {
+      "d": 53.27272727272727
+    },
+    "cmdset[1]#cohort2[4]#colname[1.hiv]#colname_remainder[_cons]#command[0]#ever_mal[1]#hiv[1]#result[column1]#statcmd[4]#var[1.hiv]": {
+      "d": 238.0
+    },
+    "cmdset[1]#cohort2[4]#colname[1.hiv]#colname_remainder[_cons]#command[0]#ever_mal[1]#hiv[1]#result[column2]#statcmd[5]#var[1.hiv]": {
+      "d": 81.22866894197952
+    },
+    "cmdset[1]#cohort2[4]#colname[1.radio3]#colname_remainder[_cons]#command[0]#ever_mal[0]#radio3[1]#result[column1]#statcmd[4]#var[1.radio3]": {
+      "d": 242.0
+    },
+    "cmdset[1]#cohort2[4]#colname[1.radio3]#colname_remainder[_cons]#command[0]#ever_mal[0]#radio3[1]#result[column2]#statcmd[5]#var[1.radio3]": {
+      "d": 42.53075571177504
+    },
+    "cmdset[1]#cohort2[4]#colname[1.radio3]#colname_remainder[_cons]#command[0]#ever_mal[1]#radio3[1]#result[column1]#statcmd[4]#var[1.radio3]": {
+      "d": 172.0
+    },
+    "cmdset[1]#cohort2[4]#colname[1.radio3]#colname_remainder[_cons]#command[0]#ever_mal[1]#radio3[1]#result[column2]#statcmd[5]#var[1.radio3]": {
+      "d": 57.71812080536913
+    },
+    "cmdset[1]#cohort2[4]#colname[2.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[2]#ever_mal[0]#result[column1]#statcmd[4]#var[2.diab_hb_gl120]": {
+      "d": 107.0
+    },
+    "cmdset[1]#cohort2[4]#colname[2.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[2]#ever_mal[0]#result[column2]#statcmd[5]#var[2.diab_hb_gl120]": {
+      "d": 28.84097035040431
+    },
+    "cmdset[1]#cohort2[4]#colname[2.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[2]#ever_mal[1]#result[column1]#statcmd[4]#var[2.diab_hb_gl120]": {
+      "d": 79.0
+    },
+    "cmdset[1]#cohort2[4]#colname[2.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[2]#ever_mal[1]#result[column2]#statcmd[5]#var[2.diab_hb_gl120]": {
+      "d": 39.10891089108911
+    },
+    "cmdset[1]#cohort2[4]#colname[2.sex]#colname_remainder[_cons]#command[0]#ever_mal[0]#result[column1]#sex[2]#statcmd[4]#var[2.sex]": {
+      "d": 345.0
+    },
+    "cmdset[1]#cohort2[4]#colname[2.sex]#colname_remainder[_cons]#command[0]#ever_mal[0]#result[column2]#sex[2]#statcmd[5]#var[2.sex]": {
+      "d": 60.632688927943754
+    },
+    "cmdset[1]#cohort2[4]#colname[2.sex]#colname_remainder[_cons]#command[0]#ever_mal[1]#result[column1]#sex[2]#statcmd[4]#var[2.sex]": {
+      "d": 156.0
+    },
+    "cmdset[1]#cohort2[4]#colname[2.sex]#colname_remainder[_cons]#command[0]#ever_mal[1]#result[column2]#sex[2]#statcmd[5]#var[2.sex]": {
+      "d": 52.348993288590606
+    },
+    "cmdset[1]#cohort2[4]#colname[age]#command[0]#ever_mal[0]#result[column1]#statcmd[2]#var[age]": {
+      "d": 47.40615110280015
+    },
+    "cmdset[1]#cohort2[4]#colname[age]#command[0]#ever_mal[0]#result[column2]#statcmd[3]#var[age]": {
+      "d": 10.97305026530172
+    },
+    "cmdset[1]#cohort2[4]#colname[age]#command[0]#ever_mal[1]#result[column1]#statcmd[2]#var[age]": {
+      "d": 49.17080532304393
+    },
+    "cmdset[1]#cohort2[4]#colname[age]#command[0]#ever_mal[1]#result[column2]#statcmd[3]#var[age]": {
+      "d": 10.399620502015724
+    },
+    "cmdset[1]#cohort2[4]#colname[weight]#command[0]#ever_mal[0]#result[column1]#statcmd[2]#var[weight]": {
+      "d": 66.44666077759648
+    },
+    "cmdset[1]#cohort2[4]#colname[weight]#command[0]#ever_mal[0]#result[column2]#statcmd[3]#var[weight]": {
+      "d": 13.61120204781756
+    },
+    "cmdset[1]#cohort2[4]#colname[weight]#command[0]#ever_mal[1]#result[column1]#statcmd[2]#var[weight]": {
+      "d": 54.52684547117092
+    },
+    "cmdset[1]#cohort2[4]#colname[weight]#command[0]#ever_mal[1]#result[column2]#statcmd[3]#var[weight]": {
+      "d": 9.097086721252351
+    },
+    "cmdset[1]#cohort2[4]#command[0]#ever_mal[0]#result[column1]#statcmd[1]#var[_hide]": {
+      "d": 569.0
+    },
+    "cmdset[1]#cohort2[4]#command[0]#ever_mal[1]#result[column1]#statcmd[1]#var[_hide]": {
+      "d": 298.0
+    },
+    "cmdset[1]#cohort2[5]#colname[0.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[0]#ever_mal[0]#result[column1]#statcmd[4]#var[0.diab_hb_gl120]": {
+      "d": 51.0
+    },
+    "cmdset[1]#cohort2[5]#colname[0.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[0]#ever_mal[0]#result[column2]#statcmd[5]#var[0.diab_hb_gl120]": {
+      "d": 75.0
+    },
+    "cmdset[1]#cohort2[5]#colname[0.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[0]#ever_mal[1]#result[column1]#statcmd[4]#var[0.diab_hb_gl120]": {
+      "d": 135.0
+    },
+    "cmdset[1]#cohort2[5]#colname[0.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[0]#ever_mal[1]#result[column2]#statcmd[5]#var[0.diab_hb_gl120]": {
+      "d": 91.21621621621621
+    },
+    "cmdset[1]#cohort2[5]#colname[1.ct2]#colname_remainder[_cons]#command[0]#ct2[1]#ever_mal[0]#result[column1]#statcmd[4]#var[1.ct2]": {
+      "d": 28.0
+    },
+    "cmdset[1]#cohort2[5]#colname[1.ct2]#colname_remainder[_cons]#command[0]#ct2[1]#ever_mal[0]#result[column2]#statcmd[5]#var[1.ct2]": {
+      "d": 32.18390804597701
+    },
+    "cmdset[1]#cohort2[5]#colname[1.ct2]#colname_remainder[_cons]#command[0]#ct2[1]#ever_mal[1]#result[column1]#statcmd[4]#var[1.ct2]": {
+      "d": 41.0
+    },
+    "cmdset[1]#cohort2[5]#colname[1.ct2]#colname_remainder[_cons]#command[0]#ct2[1]#ever_mal[1]#result[column2]#statcmd[5]#var[1.ct2]": {
+      "d": 21.025641025641026
+    },
+    "cmdset[1]#cohort2[5]#colname[1.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[1]#ever_mal[0]#result[column1]#statcmd[4]#var[1.diab_hb_gl120]": {
+      "d": 4.0
+    },
+    "cmdset[1]#cohort2[5]#colname[1.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[1]#ever_mal[0]#result[column2]#statcmd[5]#var[1.diab_hb_gl120]": {
+      "d": 5.88235294117647
+    },
+    "cmdset[1]#cohort2[5]#colname[1.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[1]#ever_mal[1]#result[column1]#statcmd[4]#var[1.diab_hb_gl120]": {
+      "d": 1.0
+    },
+    "cmdset[1]#cohort2[5]#colname[1.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[1]#ever_mal[1]#result[column2]#statcmd[5]#var[1.diab_hb_gl120]": {
+      "d": 0.6756756756756757
+    },
+    "cmdset[1]#cohort2[5]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#ever_mal[0]#result[column1]#statcmd[4]#var[1.epi_binary]": {
+      "d": 18.0
+    },
+    "cmdset[1]#cohort2[5]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#ever_mal[0]#result[column2]#statcmd[5]#var[1.epi_binary]": {
+      "d": 24.0
+    },
+    "cmdset[1]#cohort2[5]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#ever_mal[1]#result[column1]#statcmd[4]#var[1.epi_binary]": {
+      "d": 59.0
+    },
+    "cmdset[1]#cohort2[5]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#ever_mal[1]#result[column2]#statcmd[5]#var[1.epi_binary]": {
+      "d": 35.54216867469879
+    },
+    "cmdset[1]#cohort2[5]#colname[1.hiv]#colname_remainder[_cons]#command[0]#ever_mal[0]#hiv[1]#result[column1]#statcmd[4]#var[1.hiv]": {
+      "d": 39.0
+    },
+    "cmdset[1]#cohort2[5]#colname[1.hiv]#colname_remainder[_cons]#command[0]#ever_mal[0]#hiv[1]#result[column2]#statcmd[5]#var[1.hiv]": {
+      "d": 45.348837209302324
+    },
+    "cmdset[1]#cohort2[5]#colname[1.hiv]#colname_remainder[_cons]#command[0]#ever_mal[1]#hiv[1]#result[column1]#statcmd[4]#var[1.hiv]": {
+      "d": 195.0
+    },
+    "cmdset[1]#cohort2[5]#colname[1.hiv]#colname_remainder[_cons]#command[0]#ever_mal[1]#hiv[1]#result[column2]#statcmd[5]#var[1.hiv]": {
+      "d": 100.0
+    },
+    "cmdset[1]#cohort2[5]#colname[1.radio3]#colname_remainder[_cons]#command[0]#ever_mal[0]#radio3[1]#result[column1]#statcmd[4]#var[1.radio3]": {
+      "d": 85.0
+    },
+    "cmdset[1]#cohort2[5]#colname[1.radio3]#colname_remainder[_cons]#command[0]#ever_mal[0]#radio3[1]#result[column2]#statcmd[5]#var[1.radio3]": {
+      "d": 97.70114942528735
+    },
+    "cmdset[1]#cohort2[5]#colname[1.radio3]#colname_remainder[_cons]#command[0]#ever_mal[1]#radio3[1]#result[column1]#statcmd[4]#var[1.radio3]": {
+      "d": 185.0
+    },
+    "cmdset[1]#cohort2[5]#colname[1.radio3]#colname_remainder[_cons]#command[0]#ever_mal[1]#radio3[1]#result[column2]#statcmd[5]#var[1.radio3]": {
+      "d": 94.87179487179486
+    },
+    "cmdset[1]#cohort2[5]#colname[2.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[2]#ever_mal[0]#result[column1]#statcmd[4]#var[2.diab_hb_gl120]": {
+      "d": 13.0
+    },
+    "cmdset[1]#cohort2[5]#colname[2.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[2]#ever_mal[0]#result[column2]#statcmd[5]#var[2.diab_hb_gl120]": {
+      "d": 19.11764705882353
+    },
+    "cmdset[1]#cohort2[5]#colname[2.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[2]#ever_mal[1]#result[column1]#statcmd[4]#var[2.diab_hb_gl120]": {
+      "d": 12.0
+    },
+    "cmdset[1]#cohort2[5]#colname[2.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[2]#ever_mal[1]#result[column2]#statcmd[5]#var[2.diab_hb_gl120]": {
+      "d": 8.108108108108109
+    },
+    "cmdset[1]#cohort2[5]#colname[2.sex]#colname_remainder[_cons]#command[0]#ever_mal[0]#result[column1]#sex[2]#statcmd[4]#var[2.sex]": {
+      "d": 75.0
+    },
+    "cmdset[1]#cohort2[5]#colname[2.sex]#colname_remainder[_cons]#command[0]#ever_mal[0]#result[column2]#sex[2]#statcmd[5]#var[2.sex]": {
+      "d": 86.20689655172413
+    },
+    "cmdset[1]#cohort2[5]#colname[2.sex]#colname_remainder[_cons]#command[0]#ever_mal[1]#result[column1]#sex[2]#statcmd[4]#var[2.sex]": {
+      "d": 111.0
+    },
+    "cmdset[1]#cohort2[5]#colname[2.sex]#colname_remainder[_cons]#command[0]#ever_mal[1]#result[column2]#sex[2]#statcmd[5]#var[2.sex]": {
+      "d": 56.92307692307692
+    },
+    "cmdset[1]#cohort2[5]#colname[age]#command[0]#ever_mal[0]#result[column1]#statcmd[2]#var[age]": {
+      "d": 39.90114942090265
+    },
+    "cmdset[1]#cohort2[5]#colname[age]#command[0]#ever_mal[0]#result[column2]#statcmd[3]#var[age]": {
+      "d": 12.600115267451939
+    },
+    "cmdset[1]#cohort2[5]#colname[age]#command[0]#ever_mal[1]#result[column1]#statcmd[2]#var[age]": {
+      "d": 45.26820516341772
+    },
+    "cmdset[1]#cohort2[5]#colname[age]#command[0]#ever_mal[1]#result[column2]#statcmd[3]#var[age]": {
+      "d": 7.543312400491908
+    },
+    "cmdset[1]#cohort2[5]#colname[weight]#command[0]#ever_mal[0]#result[column1]#statcmd[2]#var[weight]": {
+      "d": 68.5827584979178
+    },
+    "cmdset[1]#cohort2[5]#colname[weight]#command[0]#ever_mal[0]#result[column2]#statcmd[3]#var[weight]": {
+      "d": 17.305162413064195
+    },
+    "cmdset[1]#cohort2[5]#colname[weight]#command[0]#ever_mal[1]#result[column1]#statcmd[2]#var[weight]": {
+      "d": 55.0827317975231
+    },
+    "cmdset[1]#cohort2[5]#colname[weight]#command[0]#ever_mal[1]#result[column2]#statcmd[3]#var[weight]": {
+      "d": 9.901932128566708
+    },
+    "cmdset[1]#cohort2[5]#command[0]#ever_mal[0]#result[column1]#statcmd[1]#var[_hide]": {
+      "d": 87.0
+    },
+    "cmdset[1]#cohort2[5]#command[0]#ever_mal[1]#result[column1]#statcmd[1]#var[_hide]": {
+      "d": 195.0
+    },
+    "cmdset[1]#cohort2[6]#colname[0.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[0]#ever_mal[0]#result[column1]#statcmd[4]#var[0.diab_hb_gl120]": {
+      "d": 46.0
+    },
+    "cmdset[1]#cohort2[6]#colname[0.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[0]#ever_mal[0]#result[column2]#statcmd[5]#var[0.diab_hb_gl120]": {
+      "d": 44.66019417475729
+    },
+    "cmdset[1]#cohort2[6]#colname[0.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[0]#ever_mal[1]#result[column1]#statcmd[4]#var[0.diab_hb_gl120]": {
+      "d": 49.0
+    },
+    "cmdset[1]#cohort2[6]#colname[0.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[0]#ever_mal[1]#result[column2]#statcmd[5]#var[0.diab_hb_gl120]": {
+      "d": 65.33333333333333
+    },
+    "cmdset[1]#cohort2[6]#colname[1.ct2]#colname_remainder[_cons]#command[0]#ct2[1]#ever_mal[0]#result[column1]#statcmd[4]#var[1.ct2]": {
+      "d": 63.0
+    },
+    "cmdset[1]#cohort2[6]#colname[1.ct2]#colname_remainder[_cons]#command[0]#ct2[1]#ever_mal[0]#result[column2]#statcmd[5]#var[1.ct2]": {
+      "d": 42.0
+    },
+    "cmdset[1]#cohort2[6]#colname[1.ct2]#colname_remainder[_cons]#command[0]#ct2[1]#ever_mal[1]#result[column1]#statcmd[4]#var[1.ct2]": {
+      "d": 37.0
+    },
+    "cmdset[1]#cohort2[6]#colname[1.ct2]#colname_remainder[_cons]#command[0]#ct2[1]#ever_mal[1]#result[column2]#statcmd[5]#var[1.ct2]": {
+      "d": 33.33333333333333
+    },
+    "cmdset[1]#cohort2[6]#colname[1.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[1]#ever_mal[0]#result[column1]#statcmd[4]#var[1.diab_hb_gl120]": {
+      "d": 1.0
+    },
+    "cmdset[1]#cohort2[6]#colname[1.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[1]#ever_mal[0]#result[column2]#statcmd[5]#var[1.diab_hb_gl120]": {
+      "d": 0.9708737864077669
+    },
+    "cmdset[1]#cohort2[6]#colname[1.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[1]#ever_mal[1]#result[column1]#statcmd[4]#var[1.diab_hb_gl120]": {
+      "d": 4.0
+    },
+    "cmdset[1]#cohort2[6]#colname[1.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[1]#ever_mal[1]#result[column2]#statcmd[5]#var[1.diab_hb_gl120]": {
+      "d": 5.333333333333334
+    },
+    "cmdset[1]#cohort2[6]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#ever_mal[0]#result[column1]#statcmd[4]#var[1.epi_binary]": {
+      "d": 35.0
+    },
+    "cmdset[1]#cohort2[6]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#ever_mal[0]#result[column2]#statcmd[5]#var[1.epi_binary]": {
+      "d": 24.475524475524477
+    },
+    "cmdset[1]#cohort2[6]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#ever_mal[1]#result[column1]#statcmd[4]#var[1.epi_binary]": {
+      "d": 14.0
+    },
+    "cmdset[1]#cohort2[6]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#ever_mal[1]#result[column2]#statcmd[5]#var[1.epi_binary]": {
+      "d": 13.461538461538462
+    },
+    "cmdset[1]#cohort2[6]#colname[1.hiv]#colname_remainder[_cons]#command[0]#ever_mal[0]#hiv[1]#result[column1]#statcmd[4]#var[1.hiv]": {
+      "d": 1.0
+    },
+    "cmdset[1]#cohort2[6]#colname[1.hiv]#colname_remainder[_cons]#command[0]#ever_mal[0]#hiv[1]#result[column2]#statcmd[5]#var[1.hiv]": {
+      "d": 50.0
+    },
+    "cmdset[1]#cohort2[6]#colname[1.hiv]#colname_remainder[_cons]#command[0]#ever_mal[1]#hiv[1]#result[column1]#statcmd[4]#var[1.hiv]": {
+      "d": 0.0
+    },
+    "cmdset[1]#cohort2[6]#colname[1.hiv]#colname_remainder[_cons]#command[0]#ever_mal[1]#hiv[1]#result[column2]#statcmd[5]#var[1.hiv]": {
+      "s": "."
+    },
+    "cmdset[1]#cohort2[6]#colname[1.radio3]#colname_remainder[_cons]#command[0]#ever_mal[0]#radio3[1]#result[column1]#statcmd[4]#var[1.radio3]": {
+      "d": 149.0
+    },
+    "cmdset[1]#cohort2[6]#colname[1.radio3]#colname_remainder[_cons]#command[0]#ever_mal[0]#radio3[1]#result[column2]#statcmd[5]#var[1.radio3]": {
+      "d": 99.33333333333333
+    },
+    "cmdset[1]#cohort2[6]#colname[1.radio3]#colname_remainder[_cons]#command[0]#ever_mal[1]#radio3[1]#result[column1]#statcmd[4]#var[1.radio3]": {
+      "d": 111.0
+    },
+    "cmdset[1]#cohort2[6]#colname[1.radio3]#colname_remainder[_cons]#command[0]#ever_mal[1]#radio3[1]#result[column2]#statcmd[5]#var[1.radio3]": {
+      "d": 100.0
+    },
+    "cmdset[1]#cohort2[6]#colname[2.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[2]#ever_mal[0]#result[column1]#statcmd[4]#var[2.diab_hb_gl120]": {
+      "d": 56.0
+    },
+    "cmdset[1]#cohort2[6]#colname[2.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[2]#ever_mal[0]#result[column2]#statcmd[5]#var[2.diab_hb_gl120]": {
+      "d": 54.36893203883495
+    },
+    "cmdset[1]#cohort2[6]#colname[2.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[2]#ever_mal[1]#result[column1]#statcmd[4]#var[2.diab_hb_gl120]": {
+      "d": 22.0
+    },
+    "cmdset[1]#cohort2[6]#colname[2.diab_hb_gl120]#colname_remainder[_cons]#command[0]#diab_hb_gl120[2]#ever_mal[1]#result[column2]#statcmd[5]#var[2.diab_hb_gl120]": {
+      "d": 29.333333333333332
+    },
+    "cmdset[1]#cohort2[6]#colname[2.sex]#colname_remainder[_cons]#command[0]#ever_mal[0]#result[column1]#sex[2]#statcmd[4]#var[2.sex]": {
+      "d": 49.0
+    },
+    "cmdset[1]#cohort2[6]#colname[2.sex]#colname_remainder[_cons]#command[0]#ever_mal[0]#result[column2]#sex[2]#statcmd[5]#var[2.sex]": {
+      "d": 32.666666666666664
+    },
+    "cmdset[1]#cohort2[6]#colname[2.sex]#colname_remainder[_cons]#command[0]#ever_mal[1]#result[column1]#sex[2]#statcmd[4]#var[2.sex]": {
+      "d": 33.0
+    },
+    "cmdset[1]#cohort2[6]#colname[2.sex]#colname_remainder[_cons]#command[0]#ever_mal[1]#result[column2]#sex[2]#statcmd[5]#var[2.sex]": {
+      "d": 29.72972972972973
+    },
+    "cmdset[1]#cohort2[6]#colname[age]#command[0]#ever_mal[0]#result[column1]#statcmd[2]#var[age]": {
+      "d": 52.208000335693356
+    },
+    "cmdset[1]#cohort2[6]#colname[age]#command[0]#ever_mal[0]#result[column2]#statcmd[3]#var[age]": {
+      "d": 13.78897796772305
+    },
+    "cmdset[1]#cohort2[6]#colname[age]#command[0]#ever_mal[1]#result[column1]#statcmd[2]#var[age]": {
+      "d": 47.84954971450943
+    },
+    "cmdset[1]#cohort2[6]#colname[age]#command[0]#ever_mal[1]#result[column2]#statcmd[3]#var[age]": {
+      "d": 16.43249521580158
+    },
+    "cmdset[1]#cohort2[6]#colname[weight]#command[0]#ever_mal[0]#result[column1]#statcmd[2]#var[weight]": {
+      "d": 57.407333348592125
+    },
+    "cmdset[1]#cohort2[6]#colname[weight]#command[0]#ever_mal[0]#result[column2]#statcmd[3]#var[weight]": {
+      "d": 9.919393343653923
+    },
+    "cmdset[1]#cohort2[6]#colname[weight]#command[0]#ever_mal[1]#result[column1]#statcmd[2]#var[weight]": {
+      "d": 45.615315411541914
+    },
+    "cmdset[1]#cohort2[6]#colname[weight]#command[0]#ever_mal[1]#result[column2]#statcmd[3]#var[weight]": {
+      "d": 7.349925459313692
+    },
+    "cmdset[1]#cohort2[6]#command[0]#ever_mal[0]#result[column1]#statcmd[1]#var[_hide]": {
+      "d": 150.0
+    },
+    "cmdset[1]#cohort2[6]#command[0]#ever_mal[1]#result[column1]#statcmd[1]#var[_hide]": {
+      "d": 111.0
+    }
+  },
+  "Labels": {
+    "Dimensions": {
+      "_dimensions": {
+        "assay_fecal_elastase": "Fecal Elastase Assay",
+        "border_block": "Table border block",
+        "cell_type": "Table cell type",
+        "cmdset": "Command results index",
+        "cohort2": "Cohort",
+        "colname": "Covariate names and column names",
+        "colname_remainder": "Covariate names with factors removed",
+        "command": "Command option index",
+        "ct2": "CT Scan",
+        "epi_binary": "EPI",
+        "ever_mal": "Ever experience malnutrition?",
+        "hiv": "Is the person HIV-infected? This should already be known for all adults but may",
+        "radio3": "USS Scans Visualized",
+        "result": "Result",
+        "sex": "Sex",
+        "statcmd": "Statistic/command option index",
+        "var": "Statistic option variable"
+      },
+      "assay_f": {
+        "1": "With Faecal Elastase"
+      },
+      "cohort2": {
+        ".m": "Total",
+        "1": "DIVIDS (India)",
+        "2": "SAM (Zambia)",
+        "3": "CLHNS (Philippines)",
+        "4": "CICADA (Tanzania)",
+        "5": "NUSTART (Zambia)",
+        "6": "St-ATT (Philippines)"
+      },
+      "colname": {
+        "age": "Age",
+        "assay_fecal_elastase": "Fecal Elastase Assay",
+        "ct2": "CT Scan",
+        "epi_binary": "EPI",
+        "hiv": "Is the person HIV-infected? This should already be known for all adults but may",
+        "radio3": "USS Scans Visualized",
+        "sex": "Sex",
+        "weight": "Average weight (kg)"
+      },
+      "command": {
+        "0": "Statistic"
+      },
+      "ct2": {
+        "1": "With CT Scan"
+      },
+      "diab_hb_gl120": {
+        "0": "Normal",
+        "1": "Prediabetes",
+        "2": "Diabetes"
+      },
+      "epi_bin": {
+        "1": "EPI"
+      },
+      "epi_binary": {
+        "1": "With EPI"
+      },
+      "ever_mal": {
+        ".m": "Total",
+        "0": "NPM",
+        "1": "PM"
+      },
+      "hiv": {
+        "0": "Seronegative",
+        "1": "HIv Seropositive"
+      },
+      "radio3": {
+        "1": "With Ultrasound"
+      },
+      "result": {
+        "frequency": "Frequency",
+        "fvfrequency": "Factor-variable frequency",
+        "fvpercent": "Factor-variable percent",
+        "mean": "Mean",
+        "sd": "Standard deviation"
+      },
+      "sex": {
+        "1": "Female sex",
+        "2": "Female"
+      },
+      "var": {
+        "age": "Age",
+        "assay_fecal_elastase": "Fecal Elastase Assay",
+        "ct2": "CT Scan",
+        "epi_binary": "EPI",
+        "hiv": "Is the person HIV-infected? This should already be known for all adults but may",
+        "radio3": "USS Scans Visualized",
+        "sex": "Sex",
+        "weight": "Average weight (kg)"
+      }
+    }
+  },
+  "Layout": {
+    "columns": "cohort2#ever_mal#result[column1 column2]",
+    "rows": "var[age  2.sex 1.hiv weight diab_hb_gl120 1.epi_binary 1.ct2 1.radio3 1.assay_fecal_elastase]",
+    "tables": ""
+  },
+  "NumericDimNames": [
+    "cohort2",
+    "ever_mal"
+  ],
+  "StripeFactorDimNames": [
+    "assay_fecal_elastase",
+    "ct2",
+    "diab_hb_gl120",
+    "epi_bin",
+    "epi_binary",
+    "hiv",
+    "radio3",
+    "sex"
+  ],
+  "Styles": {
+    "cell": {
+      "base": {
+        "ci-delimiter": "   ",
+        "cri-delimiter": "   ",
+        "nformat": "%9.0g"
+      },
+      "edits": [
+        [
+          "cell_type[item]",
+          {
+            "smcl": "result"
+          }
+        ],
+        [
+          "result[_r_b _r_se _r_lb _r_ub _r_ci _r_crlb _r_crub _r_cri]",
+          {
+            "nformat": "%9.0g"
+          }
+        ],
+        [
+          "result[_r_z _r_z_abs]",
+          {
+            "nformat": "%8.2f"
+          }
+        ],
+        [
+          "result[_r_p]",
+          {
+            "nformat": "%5.3f"
+          }
+        ],
+        [
+          "result[count frequency fvrawfrequency]",
+          {
+            "nformat": "%18.0fc"
+          }
+        ],
+        [
+          "result[fvpercent fvrawpercent percent rawpercent]",
+          {
+            "nformat": "%9.2f"
+          }
+        ],
+        [
+          "result[fvproportion fvrawproportion proportion rawproportion]",
+          {
+            "nformat": "%9.4g"
+          }
+        ],
+        [
+          "result[rawtotal sumw total fvfrequency]",
+          {
+            "nformat": "%18.6gc"
+          }
+        ],
+        [
+          "cell_type[item]",
+          {
+            "margin-left": {
+              "width": "10pt"
+            }
+          }
+        ],
+        [
+          "cell_type[corner]",
+          {
+            "halign": "center"
+          }
+        ],
+        [
+          "cell_type[column-header]",
+          {
+            "halign": "right"
+          }
+        ],
+        [
+          "cell_type[column-header]#result[_r_ci _r_cri]",
+          {
+            "halign": "center"
+          }
+        ],
+        [
+          "cell_type[item]",
+          {
+            "halign": "right"
+          }
+        ],
+        [
+          "cell_type[row-header]",
+          {
+            "halign": "left"
+          }
+        ],
+        [
+          "border_block[corner]",
+          {
+            "border-right": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[column-header]",
+          {
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[row-header]",
+          {
+            "border-bottom": {
+              "pattern": "single"
+            },
+            "border-right": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[item]",
+          {
+            "border-bottom": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "result[percent]",
+          {
+            "nformat": "%5.0f"
+          }
+        ],
+        [
+          "result[mean p25 p50 p75]",
+          {
+            "nformat": "%5.1f"
+          }
+        ],
+        [
+          "result[sd]",
+          {
+            "nformat": "%5.2f"
+          }
+        ],
+        [
+          "border_block",
+          {
+            "border-right": {
+              "pattern": "nil"
+            }
+          }
+        ],
+        [
+          "var[2.sex 1.hiv 1.ct2 1.radio3 1.assay_fecal_elastase 1.epi_bin]#result[column1]",
+          {
+            "nformat": "%5.0f"
+          }
+        ],
+        [
+          "var[2.sex 1.hiv 1.ct2 1.radio3 1.assay_fecal_elastase 1.epi_bin]#result[column2]",
+          {
+            "nformat": "%5.0f",
+            "sformat": "(%s)"
+          }
+        ],
+        [
+          "var#result[column1]",
+          {
+            "nformat": "%5.1f"
+          }
+        ],
+        [
+          "var#result[column2]",
+          {
+            "nformat": "%5.1f",
+            "sformat": "(%s)"
+          }
+        ],
+        [
+          "",
+          {
+            "font-family": "arial",
+            "font-size": "11pt"
+          }
+        ]
+      ]
+    },
+    "export": {
+      "tex": {
+        "begintable": "true",
+        "centering": "true"
+      }
+    },
+    "header": {
+      "auto-levels": {
+        "result": [
+          {
+            "stripe": "frequency",
+            "term-index": 0
+          },
+          {
+            "stripe": "fvfrequency",
+            "term-index": 3
+          },
+          {
+            "stripe": "fvpercent",
+            "term-index": 4
+          },
+          {
+            "stripe": "mean",
+            "term-index": 1
+          },
+          {
+            "stripe": "sd",
+            "term-index": 2
+          }
+        ]
+      },
+      "base": {
+        "level": "label",
+        "title": "label"
+      },
+      "column": {
+        "dups": "center",
+        "extra-space": 1
+      },
+      "dimensions": {
+        "across": {
+          "title": "hide"
+        },
+        "assay_fecal_elastase": {
+          "nformat": "%9.0g",
+          "title": "hide"
+        },
+        "cohort2": {
+          "nformat": "%20.0g"
+        },
+        "coleq": {
+          "title": "hide"
+        },
+        "colname": {
+          "title": "hide"
+        },
+        "command": {
+          "title": "hide"
+        },
+        "ct2": {
+          "nformat": "%12.0g",
+          "title": "hide"
+        },
+        "diab_hb_gl120": {
+          "nformat": "%11.0g"
+        },
+        "epi_binary": {
+          "nformat": "%11.0g",
+          "title": "hide"
+        },
+        "ever_mal": {
+          "nformat": "%9.0g",
+          "title": "hide"
+        },
+        "hiv": {
+          "nformat": "%10.0g",
+          "title": "hide"
+        },
+        "radio3": {
+          "nformat": "%12.0g",
+          "title": "hide"
+        },
+        "result": {
+          "level": "hide",
+          "title": "hide"
+        },
+        "roweq": {
+          "title": "hide"
+        },
+        "rowname": {
+          "title": "hide"
+        },
+        "sex": {
+          "nformat": "%8.0g",
+          "title": "hide"
+        },
+        "stars": {
+          "level": "hide",
+          "title": "hide"
+        },
+        "statcmd": {
+          "title": "hide"
+        },
+        "var": {
+          "title": "hide"
+        }
+      },
+      "row": {
+        "arrangement": "stack",
+        "nobinder": "true",
+        "spacer": "false"
+      }
+    },
+    "notes-styles": {
+      "font-family": "arial",
+      "font-size": "11pt"
+    }
+  },
+  "Tags": {
+    "assay_fecal_elastase": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      }
+    ],
+    "border_block": [
+      {
+        "stripe": "column-header",
+        "term-index": 0
+      },
+      {
+        "stripe": "corner",
+        "term-index": 0
+      },
+      {
+        "stripe": "item",
+        "term-index": 0
+      },
+      {
+        "stripe": "row-header",
+        "term-index": 0
+      }
+    ],
+    "cell_type": [
+      {
+        "stripe": "column-header",
+        "term-index": 0
+      },
+      {
+        "stripe": "corner",
+        "term-index": 0
+      },
+      {
+        "stripe": "item",
+        "term-index": 0
+      },
+      {
+        "stripe": "row-header",
+        "term-index": 0
+      }
+    ],
+    "cmdset": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      }
+    ],
+    "cohort2": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      },
+      {
+        "stripe": "2",
+        "term-index": 1
+      },
+      {
+        "stripe": "3",
+        "term-index": 2
+      },
+      {
+        "stripe": "4",
+        "term-index": 3
+      },
+      {
+        "stripe": "5",
+        "term-index": 4
+      },
+      {
+        "stripe": "6",
+        "term-index": 5
+      }
+    ],
+    "colname": [
+      {
+        "stripe": "age",
+        "term-index": 1
+      },
+      {
+        "stripe": "weight",
+        "term-index": 2
+      },
+      {
+        "stripe": "1.assay_fecal_elastase",
+        "term-index": 7
+      },
+      {
+        "stripe": "1.ct2",
+        "term-index": 5
+      },
+      {
+        "stripe": "0.diab_hb_gl120",
+        "term-index": 9
+      },
+      {
+        "stripe": "1.diab_hb_gl120",
+        "term-index": 9
+      },
+      {
+        "stripe": "2.diab_hb_gl120",
+        "term-index": 9
+      },
+      {
+        "stripe": "1.epi_binary",
+        "term-index": 8
+      },
+      {
+        "stripe": "1.hiv",
+        "term-index": 4
+      },
+      {
+        "stripe": "1.radio3",
+        "term-index": 6
+      },
+      {
+        "stripe": "2.sex",
+        "term-index": 3
+      }
+    ],
+    "colname_remainder": [
+      {
+        "stripe": "_cons",
+        "term-index": 18446744073709551588
+      }
+    ],
+    "command": [
+      {
+        "stripe": "0",
+        "term-index": 0
+      }
+    ],
+    "ct2": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      }
+    ],
+    "diab_hb_gl120": [
+      {
+        "stripe": "0",
+        "term-index": 0
+      },
+      {
+        "stripe": "1",
+        "term-index": 1
+      },
+      {
+        "stripe": "2",
+        "term-index": 2
+      }
+    ],
+    "epi_bin": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      }
+    ],
+    "epi_binary": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      }
+    ],
+    "ever_mal": [
+      {
+        "stripe": "0",
+        "term-index": 0
+      },
+      {
+        "stripe": "1",
+        "term-index": 1
+      }
+    ],
+    "hiv": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      }
+    ],
+    "radio3": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      }
+    ],
+    "result": [
+      {
+        "stripe": "column1",
+        "term-index": 0
+      },
+      {
+        "stripe": "column2",
+        "term-index": 0
+      },
+      {
+        "stripe": "frequency",
+        "term-index": 0
+      },
+      {
+        "stripe": "fvfrequency",
+        "term-index": 0
+      },
+      {
+        "stripe": "fvpercent",
+        "term-index": 0
+      },
+      {
+        "stripe": "mean",
+        "term-index": 0
+      },
+      {
+        "stripe": "p25",
+        "term-index": 0
+      },
+      {
+        "stripe": "p50",
+        "term-index": 0
+      },
+      {
+        "stripe": "p75",
+        "term-index": 0
+      },
+      {
+        "stripe": "percent",
+        "term-index": 0
+      },
+      {
+        "stripe": "sd",
+        "term-index": 0
+      }
+    ],
+    "sex": [
+      {
+        "stripe": "2",
+        "term-index": 0
+      }
+    ],
+    "statcmd": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      },
+      {
+        "stripe": "2",
+        "term-index": 0
+      },
+      {
+        "stripe": "3",
+        "term-index": 0
+      },
+      {
+        "stripe": "4",
+        "term-index": 0
+      },
+      {
+        "stripe": "5",
+        "term-index": 0
+      }
+    ],
+    "var": [
+      {
+        "stripe": "_hide",
+        "term-index": 1
+      },
+      {
+        "stripe": "age",
+        "term-index": 2
+      },
+      {
+        "stripe": "diab_hb_gl120",
+        "term-index": 11
+      },
+      {
+        "stripe": "weight",
+        "term-index": 3
+      },
+      {
+        "stripe": "1.assay_fecal_elastase",
+        "term-index": 8
+      },
+      {
+        "stripe": "1.ct2",
+        "term-index": 6
+      },
+      {
+        "stripe": "0.diab_hb_gl120",
+        "term-index": 10
+      },
+      {
+        "stripe": "1.diab_hb_gl120",
+        "term-index": 10
+      },
+      {
+        "stripe": "2.diab_hb_gl120",
+        "term-index": 10
+      },
+      {
+        "stripe": "1.epi_bin",
+        "term-index": 12
+      },
+      {
+        "stripe": "1.epi_binary",
+        "term-index": 9
+      },
+      {
+        "stripe": "1.hiv",
+        "term-index": 5
+      },
+      {
+        "stripe": "1.radio3",
+        "term-index": 7
+      },
+      {
+        "stripe": "2.sex",
+        "term-index": 4
+      }
+    ]
+  },
+  "collection-name": "participants"
+}
