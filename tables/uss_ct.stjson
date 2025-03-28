@@ -1155,6 +1155,13 @@
           {
             "sformat": "[%s]"
           }
+        ],
+        [
+          "",
+          {
+            "font-family": "Arial",
+            "font-size": "11pt"
+          }
         ]
       ]
     },
@@ -1245,7 +1252,16 @@
       "Values are [N] median (p25-p75).",
       "P values are for Kruskal-Wallis tests."
     ],
-    "title": "Radiologic measurements in the whole cohort, by prior exposure"
+    "notes-styles": {
+      "font-family": "Arial",
+      "font-size": "11pt"
+    },
+    "title": "Radiologic measurements in the whole cohort, by prior exposure",
+    "title-styles": {
+      "font-family": "Arial",
+      "font-size": "11pt",
+      "font-weight": "bold"
+    }
   },
   "Tags": {
     "border_block": [
@@ -1419,6 +1435,10 @@
       }
     ],
     "program_class": [
+      {
+        "stripe": "eclass",
+        "term-index": 0
+      },
       {
         "stripe": "rclass",
         "term-index": 0

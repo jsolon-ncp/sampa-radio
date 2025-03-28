@@ -1,8 +1,8 @@
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------
       name:  <unnamed>
        log:  /Users/juansolon/Documents/GitHub/sampa-radio/log/an_uss_bivariate.txt
   log type:  text
- opened on:  25 Mar 2025, 08:53:13
+ opened on:  27 Mar 2025, 10:09:09
 
 . 
 . cap prog drop mystats
@@ -21,7 +21,8 @@
 . 
 . local col "ever_mal"
 
-. local contmed "pan_head_ap pan_head_trans pan_body_trans pan_tail_trans"  /*continous variables; median (p25-p75)  will be reported*/
+. local contmed "pan_head_ap pan_head_trans pan_body_trans pan_tail_trans"  /*continous variables; median (p25-p75)  will be r
+> eported*/
 
 . 
 . local colhead2 `"0 "NPM" 1 "PM""'
@@ -121,7 +122,8 @@ Tail, Transverse              |
 (8 items recoded in collection c1)
 
 .                 
-.         * Create composite result : this is needed because 75 is in column3 and we want it in the same column as column 2 .  Use for medians and probably CIs
+.         * Create composite result : this is needed because 75 is in column3 and we want it in the same column as column 2 . 
+>  Use for medians and probably CIs
 .                 collect composite define column4 = column2 column3, replace
 
 . 
@@ -237,7 +239,8 @@ Tail, Transverse |  509   1.23   1.07      1.59   692   1.42   1.14     1.715
 
 . 
 . * Add IQR formatting to p25 and p75 separately:
-.         collect style cell result[column2]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`sfrmt_p25'") /* formats iqr as (p25 - p75)*/
+.         collect style cell result[column2]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`sfrmt_p25'") /* formats iqr as (p2
+> 5 - p75)*/
 
 .         collect style cell result[column3]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`sfrmt_p75'") 
 
@@ -252,28 +255,29 @@ Tail, Transverse |  509   1.23   1.07      1.59   692   1.42   1.14     1.715
 > 
 >         collect style cell var[`frmt_catvar1']#result[column1], nformat(`nfrmt_freq')
 > 
->         collect style cell var[`frmt_catvar1']#result[column2], nformat(`nfrmt_perc') sformat("(`sfrmt_perc')") /* Adds (%) to percent */
+>         collect style cell var[`frmt_catvar1']#result[column2], nformat(`nfrmt_perc') sformat("(`sfrmt_perc')") /* Adds (%) 
+> to percent */
 > 
 > * format means variable column 1 and column 2
 > 
->         collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats continuous variable to one decimal*/
+>         collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats continuous variable to one decimal
+> */
 > 
->         collect style cell var[`contn']#result[column2], nformat(`nfrmt_sd') sformat(`sfrmt_sd') /* Formats continuous variable to one decimal*/
+>         collect style cell var[`contn']#result[column2], nformat(`nfrmt_sd') sformat(`sfrmt_sd') /* Formats continuous varia
+> ble to one decimal*/
 > */
 . * Change font of results
-.         *collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats continuous variable to one decimal*/
+.         *collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats continuous variable to one decima
+> l*/
 .         
 . * Add text
 .         collect title `title'
 
-.         collect notes `notes1'
-
-.         collect notes `notes2'
-
-.         collect notes `notes3'
-
-.         collect notes `notes4'
-
+.         /*collect notes `notes1'
+>         collect notes `notes2'
+>         collect notes `notes3'
+>         collect notes `notes4'
+>         */
 .         
 . collect preview
 
@@ -286,9 +290,6 @@ Head, Transverse  [635]   2.100   (1.860- 2.350)   [764]   1.820   (1.460- 2.200
 Body, Transverse  [745]   1.240   (1.070- 1.500)   [863]   1.230   (1.030- 1.490)
 Tail, Transverse  [509]   1.230   (1.070- 1.590)   [692]   1.420   (1.140- 1.715)
 ---------------------------------------------------------------------------------
-Values are [N] median (p25-p50).
-1621 contributing any ultrasound measurement.
-291 contributing any CT scan measurement.
 
 . 
 . * Save first collection with main stats
@@ -308,9 +309,6 @@ Head, Transverse  [635]   2.100   (1.860- 2.350)   [764]   1.820   (1.460- 2.200
 Body, Transverse  [745]   1.240   (1.070- 1.500)   [863]   1.230   (1.030- 1.490)
 Tail, Transverse  [509]   1.230   (1.070- 1.590)   [692]   1.420   (1.140- 1.715)
 ---------------------------------------------------------------------------------
-Values are [N] median (p25-p50).
-1621 contributing any ultrasound measurement.
-291 contributing any CT scan measurement.
 
 . collect save ./tables/uss1.json, replace
 (collection c1 saved to file ./tables/uss1.json)
@@ -367,9 +365,6 @@ Head, Transverse  [635]   2.100   (1.860- 2.350)   [764]   1.820   (1.460- 2.200
 Body, Transverse  [745]   1.240   (1.070- 1.500)   [863]   1.230   (1.030- 1.490)   p=0.081
 Tail, Transverse  [509]   1.230   (1.070- 1.590)   [692]   1.420   (1.140- 1.715)   p=0.000
 -------------------------------------------------------------------------------------------
-Values are [N] median (p25-p50).
-1621 contributing any ultrasound measurement.
-291 contributing any CT scan measurement.
 
 .    
 . 
@@ -378,56 +373,29 @@ Values are [N] median (p25-p50).
 (collection c3 saved to file ./tables/uss1.stjson)
 
 . * Export combined table
-. collect export ./tables/uss1.html, as(html) replace
-(collection c3 exported to file ./tables/uss1.html)
+. collect export ./tables/uss_unadjusted.html, as(html) replace
+(collection c3 exported to file ./tables/uss_unadjusted.html)
 
-. collect export ./tables/uss1.docx, as(docx) replace
-(collection c3 exported to file ./tables/uss1.docx)
+. html2docx ./tables/uss_unadjusted.html , saving(uss_unadjusted.docx) replace
+successfully converted "/Users/juansolon/Documents/GitHub/sampa-radio/uss_unadjusted.docx"
 
-. collect export .tables/uss1.xlsx, as(xlsx) replace
-file .tables/uss1.xlsx already exists; you must specify either option modify or option replace
-r(602);
+. collect export ./tables/uss_unadjusted_ms.docx, as(docx) replace
+(collection c3 exported to file ./tables/uss_unadjusted_ms.docx)
 
-end of do-file
+. collect export ./tables/uss_unadjusted.xlsx, as(xlsx) replace
+(collection c3 exported to file ./tables/uss_unadjusted.xlsx)
 
-r(602);
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
-
-. collect export ./tables/uss1.xlsx, as(xlsx) replace
-(collection c3 exported to file ./tables/uss1.xlsx)
-
+. 
+. 
+. 
+. 
+. /* END END END END END END END END END END END END END END END END END END END END */
+.         
+. 
 . 
 end of do-file
 
-. collect dir
-
-Collections in memory
-Current: c3
-----------------
-Name   No. items
-----------------
-  c1   54       
-  c2   20       
-  c3   74       
-----------------
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
-
-. collect clear
-
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
-
-. collect use ./tables/uss1
-(collection c3 read from file ./tables/uss1.stjson)
-
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
 
 . /* an_ct_bivariate.do 
 > J Solon
@@ -437,13 +405,10 @@ end of do-file
 > Creates n median iqr and p values of var
 > kwallis p value
 > di chi2tail(r(df),r(chi2))
-> ct_pan_head_ap
-> ct_pan_head_trans
-> ct_pan_body_trans
-> ct_pan_tail_trans
-> ct_pan_body_tail
-> ct_pan_vol 
+> d ct_pan_head_ap
+> 
+> 
+> 
 > */
-. 
 . 
 . capture log close

@@ -1,0 +1,92 @@
+------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/juansolon/Documents/GitHub/sampa-radio/log/master2025-03-27.log
+  log type:  text
+ opened on:  27 Mar 2025, 11:30:38
+
+. 
+. *CLEAR
+. clear all
+
+. set more off
+
+. 
+. display "`c(current_time)' `c(current_date)'"
+11:30:39 27 Mar 2025
+
+. 
+. * GLOBALS (or locals)
+. * global sampadata "~/Cox working group Dropbox/TB Nutrition working group/Sampa/DATA Management/04-data-delivered-v2/ALL/ST
+> ATA"
+. 
+.         global dropboxsampa "~/Cox working group Dropbox/TB Nutrition working group/Sampa"
+
+.         global samparadio "~/Cox working group Dropbox/TB Nutrition working group/Sampa/DATA Analysis/Radiology"
+
+.         global sampadata "~/Cox working group Dropbox/TB Nutrition working group/Sampa/DATA Monitoring/data/sampa"
+
+. 
+.         global ghsamparadio = "~/Documents/GitHub/sampa-radio" // Juan's github
+
+. 
+. * WORKING DIRECTORY 
+. 
+. local pwd "~/Documents/GitHub/sampa-radio"
+
+.  cd `pwd'
+/Users/juansolon/Documents/GitHub/sampa-radio
+
+. 
+. do ./do/cr_read.do                                      // Read from Dropbox the Combined Dataset
+
+. /*
+> SAMPA
+> cr_read.do
+> March 3 2025
+> J Solon
+> Reads Combined Dataset from Dropbox
+> 
+> Reusable with
+>         1.  Access to Dropbox
+>         2.  Define globals and paths
+>         3.  A working directory with 
+>         01-data
+>         02-data-temp
+>         03-tables
+>         04-do
+>         05-figures
+>         log 
+> */
+. 
+. version 18.5
+
+. 
+. *CLEAR
+. clear all
+
+. set more off
+
+. 
+. * GLOBALS (or locals)
+. * global sampadata "~/Cox working group Dropbox/TB Nutrition working group/Sampa/DATA Management/04-data-delivered-v2/ALL/ST
+> ATA"
+. 
+.         global dropboxsampa "~/Cox working group Dropbox/TB Nutrition working group/Sampa"
+
+.         global samparadio "~/Cox working group Dropbox/TB Nutrition working group/Sampa/DATA Analysis/Radiology"
+
+.         global sampadata "~/Cox working group Dropbox/TB Nutrition working group/Sampa/DATA Monitoring/data/sampa"
+
+. 
+.         global ghsamparadio = "~/Documents/GitHub/sampa-radio" // Juan's github
+
+. 
+. * WORKING DIRECTORY 
+. 
+. cd "$ghsamparadio"
+/Users/juansolon/Documents/GitHub/sampa-radio
+
+. 
+. * LOG
+. 
+. capture log close _all

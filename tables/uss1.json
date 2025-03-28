@@ -511,11 +511,6 @@
         "spacer": "true"
       }
     },
-    "notes": [
-      "Values are [N] median (p25-p50).",
-      "1621 contributing any ultrasound measurement.",
-      "291 contributing any CT scan measurement."
-    ],
     "title": "Table .Unadjusted Ultrasound Measurements"
   },
   "Tags": {
@@ -608,6 +603,10 @@
       }
     ],
     "program_class": [
+      {
+        "stripe": "eclass",
+        "term-index": 0
+      },
       {
         "stripe": "rclass",
         "term-index": 0

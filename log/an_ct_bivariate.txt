@@ -1,8 +1,8 @@
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------
       name:  <unnamed>
        log:  /Users/juansolon/Documents/GitHub/sampa-radio/log/an_ct_bivariate.txt
   log type:  text
- opened on:  25 Mar 2025, 10:33:06
+ opened on:  27 Mar 2025, 10:14:12
 
 . 
 . cap prog drop mystats
@@ -35,8 +35,8 @@
 . 
 . local col "ever_mal"
 
-. local contmed "ct_pan_head_ap ct_pan_head_trans ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan_vol "  /*continous variables; median (p25-p75)  will be repor
-> ted*/
+. local contmed "ct_pan_head_ap ct_pan_head_trans ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan_vol "  /*contino
+> us variables; median (p25-p75)  will be reported*/
 
 . 
 . local colhead2 `"0 "NPM" 1 "PM""'
@@ -148,7 +148,8 @@ Pancreatic volume(ml)         |
 (12 items recoded in collection c1)
 
 .                 
-.         * Create composite result : this is needed because 75 is in column3 and we want it in the same column as column 2 .  Use for medians and probably CIs
+.         * Create composite result : this is needed because 75 is in column3 and we want it in the same column as column 2 . 
+>  Use for medians and probably CIs
 .                 collect composite define column4 = column2 column3, replace
 
 . 
@@ -270,7 +271,8 @@ Pancreatic volume(ml) |  101   64.94215   54.50868   80.0287   108   62.00394   
 
 . 
 . * Add IQR formatting to p25 and p75 separately:
-.         collect style cell result[column2]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`sfrmt_p25'") /* formats iqr as (p25 - p75)*/
+.         collect style cell result[column2]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`sfrmt_p25'") /* formats iqr as (p2
+> 5 - p75)*/
 
 .         collect style cell result[column3]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`sfrmt_p75'") 
 
@@ -285,16 +287,20 @@ Pancreatic volume(ml) |  101   64.94215   54.50868   80.0287   108   62.00394   
 > 
 >         collect style cell var[`frmt_catvar1']#result[column1], nformat(`nfrmt_freq')
 > 
->         collect style cell var[`frmt_catvar1']#result[column2], nformat(`nfrmt_perc') sformat("(`sfrmt_perc')") /* Adds (%) to percent */
+>         collect style cell var[`frmt_catvar1']#result[column2], nformat(`nfrmt_perc') sformat("(`sfrmt_perc')") /* Adds (%) 
+> to percent */
 > 
 > * format means variable column 1 and column 2
 > 
->         collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats continuous variable to one decimal*/
+>         collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats continuous variable to one decimal
+> */
 > 
->         collect style cell var[`contn']#result[column2], nformat(`nfrmt_sd') sformat(`sfrmt_sd') /* Formats continuous variable to one decimal*/
+>         collect style cell var[`contn']#result[column2], nformat(`nfrmt_sd') sformat(`sfrmt_sd') /* Formats continuous varia
+> ble to one decimal*/
 > */
 . * Change font of results
-.         *collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats continuous variable to one decimal*/
+.         *collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats continuous variable to one decima
+> l*/
 .         
 . * Add text
 .         collect title `title'
@@ -397,7 +403,8 @@ P values are for Kruskal-Wallis Tests
 . 
 . * Create layout for combined collection
 . collect layout (var[pan_head_ap pan_head_trans pan_body_trans pan_tail_trans ///
->                                 ct_pan_head_ap ct_pan_head_trans ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan_vol]) ///
+>                                 ct_pan_head_ap ct_pan_head_trans ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan
+> _vol]) ///
 >                                 (ever_mal#result[count column1 column4] result[p])   
 (level pan_body_trans of dimension var not found)
 (level pan_head_ap of dimension var not found)
@@ -405,8 +412,8 @@ P values are for Kruskal-Wallis Tests
 (level pan_tail_trans of dimension var not found)
 
 Collection: c4
-      Rows: var[pan_head_ap pan_head_trans pan_body_trans pan_tail_trans ct_pan_head_ap ct_pan_head_trans ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail
-            ct_pan_vol]
+      Rows: var[pan_head_ap pan_head_trans pan_body_trans pan_tail_trans ct_pan_head_ap ct_pan_head_trans ct_pan_body_trans
+            ct_pan_tail_trans ct_pan_body_tail ct_pan_vol]
    Columns: ever_mal#result[count column1 column4] result[p]
    Table 1: 6 x 7
 
@@ -476,16 +483,18 @@ Pancreatic volume(ml)  [101]   64.942   (54.509- 80.029)   [108]   62.004   (47.
 Values are [N] median (p25-p50).
 1621 contributing any ultrasound measurement.
 291 contributing any CT scan measurement.
+P values are for Kruskal-Wallis Tests
 
 . 
 . * Reorder rows 
 . collect layout (var[pan_head_ap pan_head_trans pan_body_trans pan_tail_trans ///
->                                 ct_pan_head_ap ct_pan_head_trans ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan_vol]) ///
+>                                 ct_pan_head_ap ct_pan_head_trans ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan
+> _vol]) ///
 >                                 (ever_mal#result[count column1 column4] result[p]) 
 
 Collection: c5
-      Rows: var[pan_head_ap pan_head_trans pan_body_trans pan_tail_trans ct_pan_head_ap ct_pan_head_trans ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail
-            ct_pan_vol]
+      Rows: var[pan_head_ap pan_head_trans pan_body_trans pan_tail_trans ct_pan_head_ap ct_pan_head_trans ct_pan_body_trans
+            ct_pan_tail_trans ct_pan_body_tail ct_pan_vol]
    Columns: ever_mal#result[count column1 column4] result[p]
    Table 1: 10 x 7
 
@@ -507,25 +516,28 @@ Pancreatic volume(ml)  [101]   64.942   (54.509- 80.029)   [108]   62.004   (47.
 Values are [N] median (p25-p50).
 1621 contributing any ultrasound measurement.
 291 contributing any CT scan measurement.
+P values are for Kruskal-Wallis Tests
 
 .                                 
 . * Add a Dimension for USS and CT Variables
 . 
-. collect addtags vartype[USS 1621 contributing any measurement], fortags(var[pan_head_ap pan_head_trans pan_body_trans pan_tail_trans])
+. collect addtags vartype[USS 1621 contributing any measurement], fortags(var[pan_head_ap pan_head_trans pan_body_trans pan_ta
+> il_trans])
 (52 items changed in collection c5)
 
-. collect addtags vartype[CT 291 contributing any measurement], fortags(var[ct_pan_head_ap ct_pan_head_trans ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan_vo
-> l])
+. collect addtags vartype[CT 291 contributing any measurement], fortags(var[ct_pan_head_ap ct_pan_head_trans ct_pan_body_trans
+>  ct_pan_tail_trans ct_pan_body_tail ct_pan_vol])
 (78 items changed in collection c5)
 
 . 
 . collect layout (vartype#var[pan_head_ap pan_head_trans pan_body_trans pan_tail_trans ///
->                                 ct_pan_head_ap ct_pan_head_trans ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan_vol]) ///
+>                                 ct_pan_head_ap ct_pan_head_trans ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan
+> _vol]) ///
 >                                 (ever_mal#result[count column1 column4] result[p]) 
 
 Collection: c5
-      Rows: vartype#var[pan_head_ap pan_head_trans pan_body_trans pan_tail_trans ct_pan_head_ap ct_pan_head_trans ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail
-            ct_pan_vol]
+      Rows: vartype#var[pan_head_ap pan_head_trans pan_body_trans pan_tail_trans ct_pan_head_ap ct_pan_head_trans
+            ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan_vol]
    Columns: ever_mal#result[count column1 column4] result[p]
    Table 1: 13 x 7
 
@@ -550,6 +562,17 @@ CT 291 contributing any measurement
 Values are [N] median (p25-p50).
 1621 contributing any ultrasound measurement.
 291 contributing any CT scan measurement.
+P values are for Kruskal-Wallis Tests
+
+. 
+. * Table Styles
+.         collect style cell, font(Arial, size(11))
+
+.         collect style notes, font(Arial, size(11))
+
+. 
+. * Table title styles
+.         collect style title, font(Arial, size(11) bold)
 
 .                                 
 . collect notes, clear
@@ -567,6 +590,7 @@ Values are [N] median (p25-p50).
 . collect export ./tables/uss_ct.html, as(html) replace
 (collection c5 exported to file ./tables/uss_ct.html)
 
+. 
 . collect export ./tables/uss_ct.docx, as(docx) replace
 (collection c5 exported to file ./tables/uss_ct.docx)
 
@@ -583,21 +607,430 @@ Values are [N] median (p25-p50).
 . 
 end of do-file
 
-. d crp
-variable crp not found
+. d pan_*
+
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+------------------------------------------------------------------------------------------------------------------------------
+pan_size_qual   byte    %29.0g     pan_size_qual
+                                              Qualitative indicator of pancreas size
+pan_head_trans  float   %9.0g                 Head, Transverse
+pan_head_ap     float   %9.0g                 Head, AP
+pan_body_trans  float   %9.0g                 Body, Transverse
+pan_tail_trans  float   %9.0g                 Tail, Transverse
+pan_shape       byte    %29.0g     pan_shape
+                                              Pancreas shape
+pan_shape_pro~m byte    %42.0g     pan_shape_problem
+                                              For abnormal shape, specify the problem
+pan_shape_pro~y str23   %23s                  Other shape abnormality, specify
+pan_contour     byte    %29.0g     pan_contour
+                                              Pancreas contour
+pan_contour_p~m byte    %30.0g     pan_contour_problem
+                                              For abnormal contour, specify the problem
+pan_contour_p~y str17   %17s                  Other contour problem, specify
+pan_parenchyma  byte    %29.0g     pan_parenchyma
+                                              Pancreatic Parenchyma
+pan_paren_inf~m byte    %8.0g      pan_paren_inflam
+                                              Pancreas shows signs of inflammation of edema
+pan_paren_fib~s byte    %8.0g      pan_paren_fibrosis
+                                              Pancreas shows signs of fibrosis
+pan_paren_ste~s byte    %8.0g      pan_paren_steatosis
+                                              Pancreas shows signs of steatosis
+pan_duct        byte    %29.0g     pan_duct   Pancreas Duct
+pan_duct_stones byte    %8.0g      pan_duct_stones
+                                              Stones detected in the duct
+pan_duct_mass   byte    %8.0g      pan_duct_mass
+                                              Mass detected in the duct
+pan_calci       byte    %29.0g     pan_calci
+                                              Calcifications
+pan_calci_place byte    %14.0g     pan_calci_place
+                                              If calcification is present, indicate where it is
+pan_cyst_yes    strL    %9s                   If yes specify
+pan_oth_abnor~l byte    %12.0g     pan_oth_abnormal
+                                              Any other abnormalities detected?
+pan_oth_abn_s~y strL    %9s                   Specify other abnormalities detected
+
+. tab pan_paren_steatosis
+
+   Pancreas |
+shows signs |
+         of |
+  steatosis |      Freq.     Percent        Cum.
+------------+-----------------------------------
+         No |          8        4.91        4.91
+        Yes |        155       95.09      100.00
+------------+-----------------------------------
+      Total |        163      100.00
+
+. tab pan_paren_steatosis, mis
+
+   Pancreas |
+shows signs |
+         of |
+  steatosis |      Freq.     Percent        Cum.
+------------+-----------------------------------
+         No |          8        0.38        0.38
+        Yes |        155        7.30        7.68
+          . |      1,959       92.32      100.00
+------------+-----------------------------------
+      Total |      2,122      100.00
+
+. tab pan_paren_steatosis ever_mal, mis
+
+  Pancreas |
+     shows |    Ever experience
+  signs of |     malnutrition?
+ steatosis |       NPM         PM |     Total
+-----------+----------------------+----------
+        No |         3          5 |         8 
+       Yes |       104         51 |       155 
+         . |       994        965 |     1,959 
+-----------+----------------------+----------
+     Total |     1,101      1,021 |     2,122 
+
+. tab pan_paren_steatosis ever_mal if radio3==1, mis
+
+  Pancreas |
+     shows |    Ever experience
+  signs of |     malnutrition?
+ steatosis |       NPM         PM |     Total
+-----------+----------------------+----------
+        No |         3          5 |         8 
+       Yes |       102         47 |       149 
+         . |       647        817 |     1,464 
+-----------+----------------------+----------
+     Total |       752        869 |     1,621 
+
+. tab pan_paren_steatosis ever_mal, mis col chi
+
++-------------------+
+| Key               |
+|-------------------|
+|     frequency     |
+| column percentage |
++-------------------+
+
+  Pancreas |
+     shows |    Ever experience
+  signs of |     malnutrition?
+ steatosis |       NPM         PM |     Total
+-----------+----------------------+----------
+        No |         3          5 |         8 
+           |      0.27       0.49 |      0.38 
+-----------+----------------------+----------
+       Yes |       104         51 |       155 
+           |      9.45       5.00 |      7.30 
+-----------+----------------------+----------
+         . |       994        965 |     1,959 
+           |     90.28      94.52 |     92.32 
+-----------+----------------------+----------
+     Total |     1,101      1,021 |     2,122 
+           |    100.00     100.00 |    100.00 
+
+          Pearson chi2(2) =  16.0587   Pr = 0.000
+
+. tab pan_paren_steatosis ever_mal if pan_paren_steatosis !=., mis col chi
+
++-------------------+
+| Key               |
+|-------------------|
+|     frequency     |
+| column percentage |
++-------------------+
+
+  Pancreas |
+     shows |    Ever experience
+  signs of |     malnutrition?
+ steatosis |       NPM         PM |     Total
+-----------+----------------------+----------
+        No |         3          5 |         8 
+           |      2.80       8.93 |      4.91 
+-----------+----------------------+----------
+       Yes |       104         51 |       155 
+           |     97.20      91.07 |     95.09 
+-----------+----------------------+----------
+     Total |       107         56 |       163 
+           |    100.00     100.00 |    100.00 
+
+          Pearson chi2(1) =   2.9548   Pr = 0.086
+
+. tab pan_paren_steatosis ever_mal if pan_paren_steatosis !=. & radioe==1, mis col chi
+radioe not found
 r(111);
+
+. tab pan_paren_steatosis ever_mal if pan_paren_steatosis !=. & radio3==1, mis col chi
+
++-------------------+
+| Key               |
+|-------------------|
+|     frequency     |
+| column percentage |
++-------------------+
+
+  Pancreas |
+     shows |    Ever experience
+  signs of |     malnutrition?
+ steatosis |       NPM         PM |     Total
+-----------+----------------------+----------
+        No |         3          5 |         8 
+           |      2.86       9.62 |      5.10 
+-----------+----------------------+----------
+       Yes |       102         47 |       149 
+           |     97.14      90.38 |     94.90 
+-----------+----------------------+----------
+     Total |       105         52 |       157 
+           |    100.00     100.00 |    100.00 
+
+          Pearson chi2(1) =   3.2846   Pr = 0.070
+
+. tab pan_paren*
+too many variables specified
+r(103);
+
+. tab pan_parenchy ever_mal, col chi mis
+
++-------------------+
+| Key               |
+|-------------------|
+|     frequency     |
+| column percentage |
++-------------------+
+
+                      |    Ever experience
+                      |     malnutrition?
+Pancreatic Parenchyma |       NPM         PM |     Total
+----------------------+----------------------+----------
+               Normal |       640        809 |     1,449 
+                      |     58.13      79.24 |     68.28 
+----------------------+----------------------+----------
+             Abnormal |       108         54 |       162 
+                      |      9.81       5.29 |      7.63 
+----------------------+----------------------+----------
+Can't see well enough |        86         36 |       122 
+                      |      7.81       3.53 |      5.75 
+----------------------+----------------------+----------
+                    . |       267        122 |       389 
+                      |     24.25      11.95 |     18.33 
+----------------------+----------------------+----------
+                Total |     1,101      1,021 |     2,122 
+                      |    100.00     100.00 |    100.00 
+
+          Pearson chi2(3) = 109.3909   Pr = 0.000
+
+. tab pan_parenchy ever_mal if radio3==1 & if pan_parenchyma <2, col chi mis
+if not found
+r(111);
+
+. tab pan_parenchy ever_mal if radio3==1 * if pan_parenchy <2, col chi mis
+if not found
+r(111);
+
+. tab pan_parenchy ever_mal if radio3==1 & if pan_parenchy <2, col chi mis
+if not found
+r(111);
+
+. tab pan_parenchy ever_mal if radio3==1
+
+                      |    Ever experience
+                      |     malnutrition?
+Pancreatic Parenchyma |       NPM         PM |     Total
+----------------------+----------------------+----------
+               Normal |       639        809 |     1,448 
+             Abnormal |       106         50 |       156 
+Can't see well enough |         4          7 |        11 
+----------------------+----------------------+----------
+                Total |       749        866 |     1,615 
+
+. tab pan_parenchy ever_mal if radio3==1 & pan_parenchy <2
+
+                      |    Ever experience
+                      |     malnutrition?
+Pancreatic Parenchyma |       NPM         PM |     Total
+----------------------+----------------------+----------
+               Normal |       639        809 |     1,448 
+----------------------+----------------------+----------
+                Total |       639        809 |     1,448 
+
+. tab pan_parenchy ever_mal if radio3==1 & pan_parenchy <3
+
+                      |    Ever experience
+                      |     malnutrition?
+Pancreatic Parenchyma |       NPM         PM |     Total
+----------------------+----------------------+----------
+               Normal |       639        809 |     1,448 
+             Abnormal |       106         50 |       156 
+----------------------+----------------------+----------
+                Total |       745        859 |     1,604 
+
+. tab pan_parenchy ever_mal if radio3==1 & pan_parenchy <3, col row chi
+
++-------------------+
+| Key               |
+|-------------------|
+|     frequency     |
+|  row percentage   |
+| column percentage |
++-------------------+
+
+                      |    Ever experience
+                      |     malnutrition?
+Pancreatic Parenchyma |       NPM         PM |     Total
+----------------------+----------------------+----------
+               Normal |       639        809 |     1,448 
+                      |     44.13      55.87 |    100.00 
+                      |     85.77      94.18 |     90.27 
+----------------------+----------------------+----------
+             Abnormal |       106         50 |       156 
+                      |     67.95      32.05 |    100.00 
+                      |     14.23       5.82 |      9.73 
+----------------------+----------------------+----------
+                Total |       745        859 |     1,604 
+                      |     46.45      53.55 |    100.00 
+                      |    100.00     100.00 |    100.00 
+
+          Pearson chi2(1) =  32.1211   Pr = 0.000
 
 . tab assay_f
 
       Fecal |
-   Elastase |      Freq.     Percent        Cum.
+   Elastase |
+      Assay |      Freq.     Percent        Cum.
 ------------+-----------------------------------
           0 |        322       15.17       15.17
           1 |      1,800       84.83      100.00
 ------------+-----------------------------------
       Total |      2,122      100.00
 
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD51173.000000"
+. tab radio2
+
+  Ultrasound |      Freq.     Percent        Cum.
+-------------+-----------------------------------
+          No |        382       18.00       18.00
+         Yes |      1,740       82.00      100.00
+-------------+-----------------------------------
+       Total |      2,122      100.00
+
+. tab radio3
+
+   USS Scans |
+  Visualized |      Freq.     Percent        Cum.
+-------------+-----------------------------------
+          No |        501       23.61       23.61
+         Yes |      1,621       76.39      100.00
+-------------+-----------------------------------
+       Total |      2,122      100.00
+
+. tab subset
+
+   Analysis |
+     Subset |
+ (With Fe-1 |
+    or USS) |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          1 |      2,122      100.00      100.00
+------------+-----------------------------------
+      Total |      2,122      100.00
+
+. tab recruited
+
+  Recruited |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          1 |      2,122      100.00      100.00
+------------+-----------------------------------
+      Total |      2,122      100.00
+
+. tab radio_exam
+variable radio_exam not found
+r(111);
+
+. tab radio2
+
+  Ultrasound |      Freq.     Percent        Cum.
+-------------+-----------------------------------
+          No |        382       18.00       18.00
+         Yes |      1,740       82.00      100.00
+-------------+-----------------------------------
+       Total |      2,122      100.00
+
+. tab ct2
+
+     CT Scan |      Freq.     Percent        Cum.
+-------------+-----------------------------------
+          No |      1,831       86.29       86.29
+         Yes |        291       13.71      100.00
+-------------+-----------------------------------
+       Total |      2,122      100.00
+
+. tab ct2 radio3
+
+             | USS Scans Visualized
+     CT Scan |        No        Yes |     Total
+-------------+----------------------+----------
+          No |       498      1,333 |     1,831 
+         Yes |         3        288 |       291 
+-------------+----------------------+----------
+       Total |       501      1,621 |     2,122 
+
+. use "/Users/juansolon/Cox working group Dropbox/TB Nutrition working group/SAMPA/DATA monitoring/Data/SAMPA/All_combined_sam
+> pa_data.dta", clear
+
+. d radio*
+
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+------------------------------------------------------------------------------------------------------------------------------
+radio           byte    %8.0g      radio      Radio / radio cassette/ CD player
+radiol_refer    byte    %17.0g     radiol_refer
+                                              What specialist does the radiologist or site clinician think the participant sho
+radiol_refer_~s str24   %24s                  Others, specify
+radio_exam      byte    %12.0g     radio_exam
+                                              Was a radiological examination performed?
+
+. tab radio_exam
+
+       Was a |
+radiological |
+ examination |
+  performed? |      Freq.     Percent        Cum.
+-------------+-----------------------------------
+         Yes |      1,763      100.00      100.00
+-------------+-----------------------------------
+       Total |      1,763      100.00
+
+. tab assay_f
+variable assay_f not found
+r(111);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. /* master_imaging.do
+> Juan Solon
+> March 3 2025
+> Purpose
+> This serves as the master do file for the Sampa Imaging Elastase Paper
+> 
+> Reusable with
+>         1.  Access to Dropbox
+>         2.  Define globals and paths
+>         3.  A working directory with 
+>         01-data
+>         02-data-temp
+>         03-tables
+>         04-do
+>         05-figures
+>         log 
+> */
+. 
+. **# Create Study Dataset for Analysis
+. version 18.5
 
 . 
+. local pwd "~/Documents/GitHub/sampa-radio"
+
+. cd `pwd'
+/Users/juansolon/Documents/GitHub/sampa-radio
+
+. local suffix: display %tdCCYY-NN-DD =daily("`c(current_date)'", "DMY")
+
+. *use "my_file.`suffix'.dta", clear
 . capture log close

@@ -175,13 +175,13 @@
       "d": 11.848148098698369
     },
     "cmdset[1]#cohort2[1]#colname[age]#command[0]#ever_mal[0]#result[column2]#statcmd[3]#var[age]": {
-      "d": 1.4340523249557195
+      "d": 1.4340523249557198
     },
     "cmdset[1]#cohort2[1]#colname[age]#command[0]#ever_mal[1]#result[column1]#statcmd[2]#var[age]": {
       "d": 13.934387354040334
     },
     "cmdset[1]#cohort2[1]#colname[age]#command[0]#ever_mal[1]#result[column2]#statcmd[3]#var[age]": {
-      "d": 0.783487401414409
+      "d": 0.7834874014144092
     },
     "cmdset[1]#cohort2[1]#colname[weight]#command[0]#ever_mal[0]#result[column1]#statcmd[2]#var[weight]": {
       "d": 35.3055553789492
@@ -307,7 +307,7 @@
       "d": 12.234482798083075
     },
     "cmdset[1]#cohort2[2]#colname[age]#command[0]#ever_mal[1]#result[column2]#statcmd[3]#var[age]": {
-      "d": 0.9718045813977523
+      "d": 0.9718045813977522
     },
     "cmdset[1]#cohort2[2]#colname[weight]#command[0]#ever_mal[0]#result[column1]#statcmd[2]#var[weight]": {
       "d": 40.1022223578559
@@ -319,7 +319,7 @@
       "d": 35.344827520436255
     },
     "cmdset[1]#cohort2[2]#colname[weight]#command[0]#ever_mal[1]#result[column2]#statcmd[3]#var[weight]": {
-      "d": 7.451154981913624
+      "d": 7.451154981913622
     },
     "cmdset[1]#cohort2[2]#command[0]#ever_mal[0]#result[column1]#statcmd[1]#var[_hide]": {
       "d": 45.0
@@ -427,7 +427,7 @@
       "d": 39.0494898387364
     },
     "cmdset[1]#cohort2[3]#colname[age]#command[0]#ever_mal[0]#result[column2]#statcmd[3]#var[age]": {
-      "d": 0.3847739602669532
+      "d": 0.38477396026695326
     },
     "cmdset[1]#cohort2[3]#colname[age]#command[0]#ever_mal[1]#result[column1]#statcmd[2]#var[age]": {
       "d": 38.75943403423957
@@ -439,13 +439,13 @@
       "d": 72.08137761330119
     },
     "cmdset[1]#cohort2[3]#colname[weight]#command[0]#ever_mal[0]#result[column2]#statcmd[3]#var[weight]": {
-      "d": 14.212170522345518
+      "d": 14.212170522345522
     },
     "cmdset[1]#cohort2[3]#colname[weight]#command[0]#ever_mal[1]#result[column1]#statcmd[2]#var[weight]": {
       "d": 63.744340032901405
     },
     "cmdset[1]#cohort2[3]#colname[weight]#command[0]#ever_mal[1]#result[column2]#statcmd[3]#var[weight]": {
-      "d": 13.037713235063139
+      "d": 13.037713235063137
     },
     "cmdset[1]#cohort2[3]#command[0]#ever_mal[0]#result[column1]#statcmd[1]#var[_hide]": {
       "d": 196.0
@@ -559,19 +559,19 @@
       "d": 49.17080532304393
     },
     "cmdset[1]#cohort2[4]#colname[age]#command[0]#ever_mal[1]#result[column2]#statcmd[3]#var[age]": {
-      "d": 10.399620502015724
+      "d": 10.399620502015722
     },
     "cmdset[1]#cohort2[4]#colname[weight]#command[0]#ever_mal[0]#result[column1]#statcmd[2]#var[weight]": {
       "d": 66.44666077759648
     },
     "cmdset[1]#cohort2[4]#colname[weight]#command[0]#ever_mal[0]#result[column2]#statcmd[3]#var[weight]": {
-      "d": 13.61120204781756
+      "d": 13.611202047817562
     },
     "cmdset[1]#cohort2[4]#colname[weight]#command[0]#ever_mal[1]#result[column1]#statcmd[2]#var[weight]": {
       "d": 54.52684547117092
     },
     "cmdset[1]#cohort2[4]#colname[weight]#command[0]#ever_mal[1]#result[column2]#statcmd[3]#var[weight]": {
-      "d": 9.097086721252351
+      "d": 9.09708672125235
     },
     "cmdset[1]#cohort2[4]#command[0]#ever_mal[0]#result[column1]#statcmd[1]#var[_hide]": {
       "d": 569.0
@@ -679,13 +679,13 @@
       "d": 39.90114942090265
     },
     "cmdset[1]#cohort2[5]#colname[age]#command[0]#ever_mal[0]#result[column2]#statcmd[3]#var[age]": {
-      "d": 12.600115267451939
+      "d": 12.60011526745194
     },
     "cmdset[1]#cohort2[5]#colname[age]#command[0]#ever_mal[1]#result[column1]#statcmd[2]#var[age]": {
       "d": 45.26820516341772
     },
     "cmdset[1]#cohort2[5]#colname[age]#command[0]#ever_mal[1]#result[column2]#statcmd[3]#var[age]": {
-      "d": 7.543312400491908
+      "d": 7.543312400491911
     },
     "cmdset[1]#cohort2[5]#colname[weight]#command[0]#ever_mal[0]#result[column1]#statcmd[2]#var[weight]": {
       "d": 68.5827584979178
@@ -805,7 +805,7 @@
       "d": 52.208000335693356
     },
     "cmdset[1]#cohort2[6]#colname[age]#command[0]#ever_mal[0]#result[column2]#statcmd[3]#var[age]": {
-      "d": 13.78897796772305
+      "d": 13.788977967723051
     },
     "cmdset[1]#cohort2[6]#colname[age]#command[0]#ever_mal[1]#result[column1]#statcmd[2]#var[age]": {
       "d": 47.84954971450943
@@ -817,13 +817,13 @@
       "d": 57.407333348592125
     },
     "cmdset[1]#cohort2[6]#colname[weight]#command[0]#ever_mal[0]#result[column2]#statcmd[3]#var[weight]": {
-      "d": 9.919393343653923
+      "d": 9.91939334365392
     },
     "cmdset[1]#cohort2[6]#colname[weight]#command[0]#ever_mal[1]#result[column1]#statcmd[2]#var[weight]": {
       "d": 45.615315411541914
     },
     "cmdset[1]#cohort2[6]#colname[weight]#command[0]#ever_mal[1]#result[column2]#statcmd[3]#var[weight]": {
-      "d": 7.349925459313692
+      "d": 7.349925459313693
     },
     "cmdset[1]#cohort2[6]#command[0]#ever_mal[0]#result[column1]#statcmd[1]#var[_hide]": {
       "d": 150.0
@@ -853,7 +853,7 @@
         "statcmd": "Statistic/command option index",
         "var": "Statistic option variable"
       },
-      "assay_f": {
+      "assay_fecal_elastase": {
         "1": "With Faecal Elastase"
       },
       "cohort2": {
@@ -886,11 +886,8 @@
         "1": "Prediabetes",
         "2": "Diabetes"
       },
-      "epi_bin": {
-        "1": "EPI"
-      },
       "epi_binary": {
-        "1": "With EPI"
+        "1": "EPI"
       },
       "ever_mal": {
         ".m": "Total",
@@ -899,7 +896,7 @@
       },
       "hiv": {
         "0": "Seronegative",
-        "1": "HIv Seropositive"
+        "1": "HIV Seropositive"
       },
       "radio3": {
         "1": "With Ultrasound"
@@ -929,7 +926,7 @@
   },
   "Layout": {
     "columns": "cohort2#ever_mal#result[column1 column2]",
-    "rows": "var[age  2.sex 1.hiv weight diab_hb_gl120 1.epi_binary 1.ct2 1.radio3 1.assay_fecal_elastase]",
+    "rows": "var[_hide age  2.sex 1.hiv weight diab_hb_gl120 1.ct2 1.radio3 1.assay_fecal_elastase 1.epi_binary ]",
     "tables": ""
   },
   "NumericDimNames": [
@@ -1258,10 +1255,17 @@
         "spacer": "false"
       }
     },
+    "notes": [
+      "Variable distributions are reported as n(%) unless otherwise specified. Where the denominator is less than shown at the column head it is given per cell",
+      "HIV status  NT not tested status unknown for DIVIDS  St-ATT  CLHNS  HIV status was known for most tested for all African participants.",
+      "Diabetes was defined as 2-hour plasma glucose from oral glucose tolerance (OGTT) ≥11.1 mmol/L and /or HbA1c ≥6.5%",
+      "USS ultrasound CT CT Scan NPM Not Previously Malnourished PM Previously Malnourished"
+    ],
     "notes-styles": {
       "font-family": "arial",
       "font-size": "11pt"
-    }
+    },
+    "title": "Table 1. Demographic clinical and exposure characteristics of the SAMPA study cohorts"
   },
   "Tags": {
     "assay_fecal_elastase": [

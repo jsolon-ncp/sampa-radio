@@ -106,10 +106,10 @@ local sfrmt_p75 "%s)"
 
 * Table Text /* Revise */ - comment out local notes5 for publication;
 
-local title "Table 1. Participant Characteristics"
+local title "Table 1. Demographic clinical and exposure characteristics of the SAMPA study cohorts"
 
 local notes1 "Variable distributions are reported as n(%) unless otherwise specified. Where the denominator is less than shown at the column head it is given per cell"
-local notes2 "Variable distributions are reported as N(%) unless otherwise specified."
+local notes2 "HIV status  NT not tested status unknown for DIVIDS  St-ATT  CLHNS  HIV status was known for most tested for all African participants." 
 local notes3 "Diabetes was defined as 2-hour plasma glucose from oral glucose tolerance (OGTT) ≥11.1 mmol/L and /or HbA1c ≥6.5%"
 local notes4 "USS ultrasound CT CT Scan NPM Not Previously Malnourished PM Previously Malnourished"
 
@@ -180,7 +180,7 @@ collect layout (var) (cohort2#ever_mal#result[])
 /*collect layout (var[`contn1' `ind1' `ind2' `contn2' `cat' `ind5' `ind3' `ind4']) (cohort2#ever_mal#result[column1 column2])
 */
 
-collect layout (var[`contn1' `ind1' `ind2' `contn2' `cat' `ind5' `ind3' `ind4']) (`scol'#`col'#result[column1 column2])
+collect layout (var[_hide `contn1' `ind1' `ind2' `contn2' `cat' `ind3' `ind4' `ind5' ]) (`scol'#`col'#result[column1 column2])
 
 collect export ./tables/preview.html, as(html) replace
 * CHANGE HEADER TEXT
@@ -244,13 +244,21 @@ collect preview /* preview changes */
 	collect style cell var[`contn']#result[column2], nformat(`nfrmt_sd') sformat(`sfrmt_sd') /* Formats continuous variable to one decimal*/
 
 ***ROWS
+/*
+_hide age weight 2.sex 1.hiv 1.ct2 1.radio3 1.assay_fecal_elastase 1.epi_binary 0.diab_hb_gl120 1.diab_hb_gl120
+            2.diab_hb_gl120 diab_hb_gl120 1.epi_bin
+
+
+*/
+
+collect export ./tables/preview.html, as(html) replace
 
     collect label levels sex 1 "Female sex" , modify
-	collect label levels hiv 1 "HIv Seropositive" ,  modify
+	collect label levels hiv 1 "HIV Seropositive" ,  modify
 	collect label levels ct2 1 "With CT Scan",  modify
 	collect label levels radio3 1 "With Ultrasound",  modify
-	collect label levels assay_f 1 "With Faecal Elastase",  modify
-	collect label levels epi_bin 1 "EPI",  modify
+	collect label levels assay_fecal_elastase 1 "With Faecal Elastase",  modify
+	collect label levels epi_binary 1 "EPI",  modify
 
     local cat "diab_hb_gl120" /* categorical with multiple levels n(%) */
 	local ind1 "2.sex" 
@@ -283,15 +291,19 @@ collect style notes, font(arial, size(11 pt))
 
 collect rename Table participants, replace
 collect save ./tables/participants, replace
-
-collect export ./tables/participants.html, as(html) replace
 	
-	
-	collect export tab1_radio_rev3.docx, as(docx) replace 
-	collect export tab1_radio_rev3.xlsx, as(xlsx) replace
-	collect export tab1_radio_rev3.pdf, as(pdf) replace
 
+**# EXPORT
 
+	collect export ./tables/participants.html, as(html) replace
+		collect export ./tables/participants.xlsx, as(xls) replace
+	html2docx ./tables/participants.html , saving(participants.docx) replace
+	collect export ./tables/participants_ms.docx, as(docx) replace
+
+** drop new vars
+
+capture drop cohort2 
+capture label drop cohort2	
 /*
 * FORMAT CELL BORDERS
 collect style cell var[N age bmi muac 2.sex 1.hiv 2.diab_hb_gl120], border(bottom, width(1 pt))

@@ -938,6 +938,10 @@
     ],
     "program_class": [
       {
+        "stripe": "eclass",
+        "term-index": 0
+      },
+      {
         "stripe": "rclass",
         "term-index": 0
       }

@@ -59,7 +59,7 @@ do ./do/cr_flag_elastase.do 		// Flags the elastase samples that should not be a
 
  cd `pwd'
   
-do ./do/cr_diabe
+do ./do/cr_diabetes.do 
  
 *do ./do/cr_amylase.do 				// Adds amylase
 
@@ -102,6 +102,7 @@ notes
 
 save ./data-temp/subset_imaging.dta, replace
 
+/*
 ************  This is the analysis dataset 
 
 do ./do/an_samples_images_counts.do 						//  What is the proportion of samples per MN and cohort
