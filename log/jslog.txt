@@ -1196,3 +1196,2333 @@ ses_tercile     float   %9.0g      ses_tercile
 
 . help collect style cell 
 
+. d ngml
+
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+------------------------------------------------------------------------------------------------------------------------------
+ngml_trypsino~n double  %10.0g                Trypsinogen (ng/ml)
+
+. dotpot ngml, over(ever_mal) msize(tiny) mstyle(oh)
+command dotpot is unrecognized
+r(199);
+
+. dotplot ngml, over(ever_mal) msize(tiny) mstyle(oh)
+(note:  named style oh not found in class markerstyle, default attributes used)
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. dotplot ngml, over(ever_mal) msize(tiny) mstyle(oh) center 
+(note:  named style oh not found in class markerstyle, default attributes used)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. dotplot ngml, over(ever_mal) msize(tiny) msymbol(oh) center 
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. cap prog drop mystats
+
+. program mystats, rclass
+  1. return scalar p_adj= chi2tail(r(df), r(chi2_adj))
+  2. return scalar Chi2_adj =  r(chi2_adj)
+  3. return scalar  DF =  r(df)
+  4. return scalar p= chi2tail(r(df), r(chi2))
+  5. return scalar  Chi2 =   r(chi2)
+  6. end
+
+. 
+. kwallis ngml_trypsinogen, by(ever_mal)
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +---------------------------+
+  | ever_mal | Obs | Rank sum |
+  |----------+-----+----------|
+  |      NPM | 135 | 18017.00 |
+  |       PM | 141 | 20209.00 |
+  +---------------------------+
+
+  chi2(1) =  1.054
+     Prob = 0.3046
+
+  chi2(1) with ties =  1.054
+               Prob = 0.3046
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. mystats
+
+. 
+end of do-file
+
+. ret list
+
+scalars:
+               r(Chi2) =  1.053916182702778
+                  r(p) =  .3046068757197195
+                 r(DF) =  1
+           r(Chi2_adj) =  1.053953479611062
+              r(p_adj) =  .3045983188094293
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. violinplot ngml_trypsinogen, over(ever_mal)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. violinplot ngml_trypsinogen, over(ever_mal) vertical
+
+. 
+end of do-file
+
+. help dotplot
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. dotplot ngml, over(ever_mal) msize(tiny) msymbol(oh) center mlabel(cohort)
+
+. 
+end of do-file
+
+. d mu*
+
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+------------------------------------------------------------------------------------------------------------------------------
+muac            float   %9.0g                 Average mid-upper arm circumference (cm)
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. scatter ngml muac
+
+. 
+end of do-file
+
+. scatter muac bmi
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. scatter ngml bmi
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. scatter ngml bmi || lfitci ngml bmi
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. scatter ngml crp
+variable crp not found
+r(111);
+
+end of do-file
+
+r(111);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. scatter ngml mgl_crp
+
+. 
+end of do-file
+
+. help heatmap
+
+. help twoway contour
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. scatter ct_pan_vol ngml_trypsinogen
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. scatter  ngml_trypsinogen ct_pan_vol
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. scatter  ngml_trypsinogen ct_pan_vol mlabel(cohort)
+mlabel:  operator invalid
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. scatter  ngml_trypsinogen ct_pan_vol, mlabel(cohort)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. dotplot ngml_trypsinogen, by(africa)
+option by() not allowed
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. dotplot ngml_trypsinogen, over(africa)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. dotplot ngml_trypsinogen, over(child) msize(tiny) msymbol(oh) center mlabel(cohort)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. dotplot ngml_trypsinogen, over(exposuretime) msize(tiny) msymbol(oh) center mlabel(cohort)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. kwallis ngml_trypsinogen, by(exposuretime)
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +----------------------------------------+
+  |          exposuretime | Obs | Rank sum |
+  |-----------------------+-----+----------|
+  | Exposure in Childhood | 100 | 11117.00 |
+  |    Exposure as Adults | 176 | 27109.00 |
+  +----------------------------------------+
+
+  chi2(1) = 18.385
+     Prob = 0.0001
+
+  chi2(1) with ties = 18.386
+               Prob = 0.0001
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. qnorm ngml_trypsinogen
+
+. 
+end of do-file
+
+. sktest ngml
+
+Skewness and kurtosis tests for normality
+                                                             ----- Joint test -----
+        Variable |       Obs   Pr(skewness)   Pr(kurtosis)   Adj chi2(2)  Prob>chi2
+-----------------+-----------------------------------------------------------------
+ngml_trypsinogen |       276         0.0000         0.0000        251.48     0.0000
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen age sex
+
+      Source |       SS           df       MS      Number of obs   =       276
+-------------+----------------------------------   F(2, 273)       =      7.30
+       Model |  9822.13883         2  4911.06941   Prob > F        =    0.0008
+    Residual |  183563.932       273  672.395355   R-squared       =    0.0508
+-------------+----------------------------------   Adj R-squared   =    0.0438
+       Total |  193386.071       275  703.222076   Root MSE        =    25.931
+
+------------------------------------------------------------------------------
+ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+         age |   .4256984   .1379313     3.09   0.002     .1541542    .6972427
+         sex |  -5.965982   3.141718    -1.90   0.059    -12.15106     .219092
+       _cons |   20.25933   8.148822     2.49   0.014     4.216812    36.30185
+------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. scatter ngml age
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. scatter ngml age || lfitci ngml age
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. correl ngml_trypsinogen age
+(obs=276)
+
+             | ngml_t~n      age
+-------------+------------------
+ngml_tryps~n |   1.0000
+         age |   0.1956   1.0000
+
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. spearman ngml_trypsinogen age
+
+Number of observations =    276
+        Spearman's rho = 0.2322
+
+Test of H0: ngml_trypsinogen and age are independent
+                  Prob = 0.0001
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen age sex
+
+      Source |       SS           df       MS      Number of obs   =       276
+-------------+----------------------------------   F(2, 273)       =      7.30
+       Model |  9822.13883         2  4911.06941   Prob > F        =    0.0008
+    Residual |  183563.932       273  672.395355   R-squared       =    0.0508
+-------------+----------------------------------   Adj R-squared   =    0.0438
+       Total |  193386.071       275  703.222076   Root MSE        =    25.931
+
+------------------------------------------------------------------------------
+ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+         age |   .4256984   .1379313     3.09   0.002     .1541542    .6972427
+         sex |  -5.965982   3.141718    -1.90   0.059    -12.15106     .219092
+       _cons |   20.25933   8.148822     2.49   0.014     4.216812    36.30185
+------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. spearman ngml bmi
+
+Number of observations =     276
+        Spearman's rho = -0.2882
+
+Test of H0: ngml_trypsinogen and bmi are independent
+                  Prob =  0.0000
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen age sex bmi
+
+      Source |       SS           df       MS      Number of obs   =       276
+-------------+----------------------------------   F(3, 272)       =      9.99
+       Model |  19187.4836         3  6395.82786   Prob > F        =    0.0000
+    Residual |  174198.587       272  640.435982   R-squared       =    0.0992
+-------------+----------------------------------   Adj R-squared   =    0.0893
+       Total |  193386.071       275  703.222076   Root MSE        =    25.307
+
+------------------------------------------------------------------------------
+ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+         age |   .3671852   .1354803     2.71   0.007     .1004619    .6339084
+         sex |  -4.461902   3.091269    -1.44   0.150    -10.54776    1.623954
+         bmi |  -1.173793   .3069498    -3.82   0.000    -1.778092   -.5694932
+       _cons |   47.70364   10.71228     4.45   0.000     26.61412    68.79316
+------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen age sex bmi ever_mal
+
+      Source |       SS           df       MS      Number of obs   =       276
+-------------+----------------------------------   F(4, 271)       =      7.61
+       Model |  19535.5164         4  4883.87909   Prob > F        =    0.0000
+    Residual |  173850.554       271  641.514961   R-squared       =    0.1010
+-------------+----------------------------------   Adj R-squared   =    0.0877
+       Total |  193386.071       275  703.222076   Root MSE        =    25.328
+
+------------------------------------------------------------------------------
+ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+         age |   .3797054   .1366557     2.78   0.006     .1106637    .6487472
+         sex |  -4.346297   3.097851    -1.40   0.162    -10.44521    1.752617
+         bmi |  -1.083897   .3305642    -3.28   0.001    -1.734697   -.4330965
+    ever_mal |   2.433158   3.303419     0.74   0.462    -4.070468    8.936784
+       _cons |   43.66599   12.04143     3.63   0.000     19.95934    67.37265
+------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. kwallis ngml_trypsinogen, by(sex)
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +-------------------------+
+  |    sex | Obs | Rank sum |
+  |--------+-----+----------|
+  |   Male | 141 | 21039.50 |
+  | Female | 135 | 17186.50 |
+  +-------------------------+
+
+  chi2(1) =  5.196
+     Prob = 0.0226
+
+  chi2(1) with ties =  5.196
+               Prob = 0.0226
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen age sex bmi exposuretime
+
+      Source |       SS           df       MS      Number of obs   =       276
+-------------+----------------------------------   F(4, 271)       =      8.19
+       Model |  20852.4348         4  5213.10871   Prob > F        =    0.0000
+    Residual |  172533.636       271  636.655483   R-squared       =    0.1078
+-------------+----------------------------------   Adj R-squared   =    0.0947
+       Total |  193386.071       275  703.222076   Root MSE        =    25.232
+
+------------------------------------------------------------------------------
+ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+         age |   .2990514    .141498     2.11   0.035     .0204764    .5776264
+         sex |  -5.650601   3.168573    -1.78   0.076    -11.88875    .5875467
+         bmi |  -.9401167   .3384406    -2.78   0.006    -1.606424   -.2738096
+exposuretime |   5.997501   3.708701     1.62   0.107    -1.304027    13.29903
+       _cons |   37.20689   12.49831     2.98   0.003     12.60077      61.813
+------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. scatter ngml bmi || lfitci ngml bmi
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. scatter ngml bmi || lfitci ngml age
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. scatter ngml age || lfitci ngml age
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. scatter age bmi
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. scatter age bmi if ngml!=.
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. scatter age bmi if ngml!=. & if cohort!=6
+if not found
+r(111);
+
+end of do-file
+
+r(111);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. scatter age bmi if ngml!=. &  cohort!=6
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. scatter age bmi if ngml!=. &  cohort!=6 || lfitci age bmi if ngml!=. &  cohort!=6
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. scatter age bmi if ngml!=. || lfitci age bmi if ngml!=.
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen age sex bmi exposuretime
+
+      Source |       SS           df       MS      Number of obs   =       276
+-------------+----------------------------------   F(4, 271)       =      8.19
+       Model |  20852.4348         4  5213.10871   Prob > F        =    0.0000
+    Residual |  172533.636       271  636.655483   R-squared       =    0.1078
+-------------+----------------------------------   Adj R-squared   =    0.0947
+       Total |  193386.071       275  703.222076   Root MSE        =    25.232
+
+------------------------------------------------------------------------------
+ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+         age |   .2990514    .141498     2.11   0.035     .0204764    .5776264
+         sex |  -5.650601   3.168573    -1.78   0.076    -11.88875    .5875467
+         bmi |  -.9401167   .3384406    -2.78   0.006    -1.606424   -.2738096
+exposuretime |   5.997501   3.708701     1.62   0.107    -1.304027    13.29903
+       _cons |   37.20689   12.49831     2.98   0.003     12.60077      61.813
+------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. kwallis ngml_trypsinogen, by(sex)
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +-------------------------+
+  |    sex | Obs | Rank sum |
+  |--------+-----+----------|
+  |   Male | 141 | 21039.50 |
+  | Female | 135 | 17186.50 |
+  +-------------------------+
+
+  chi2(1) =  5.196
+     Prob = 0.0226
+
+  chi2(1) with ties =  5.196
+               Prob = 0.0226
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen age sex bmi exposuretime
+
+      Source |       SS           df       MS      Number of obs   =       276
+-------------+----------------------------------   F(4, 271)       =      8.19
+       Model |  20852.4348         4  5213.10871   Prob > F        =    0.0000
+    Residual |  172533.636       271  636.655483   R-squared       =    0.1078
+-------------+----------------------------------   Adj R-squared   =    0.0947
+       Total |  193386.071       275  703.222076   Root MSE        =    25.232
+
+------------------------------------------------------------------------------
+ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+         age |   .2990514    .141498     2.11   0.035     .0204764    .5776264
+         sex |  -5.650601   3.168573    -1.78   0.076    -11.88875    .5875467
+         bmi |  -.9401167   .3384406    -2.78   0.006    -1.606424   -.2738096
+exposuretime |   5.997501   3.708701     1.62   0.107    -1.304027    13.29903
+       _cons |   37.20689   12.49831     2.98   0.003     12.60077      61.813
+------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen age sex bmi exposuretime age##bmi
+age:  factor variables may not contain noninteger values
+r(452);
+
+end of do-file
+
+r(452);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen age sex bmi exposuretime age#bmi
+age:  factor variables may not contain noninteger values
+r(452);
+
+end of do-file
+
+r(452);
+
+. d age 
+
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+------------------------------------------------------------------------------------------------------------------------------
+age             float   %9.0g                 Age
+
+. d bmi
+
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+------------------------------------------------------------------------------------------------------------------------------
+bmi             float   %9.0g                 Body mass index
+
+. br age 
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen age sex bmi exposuretime age##bmi_cat
+age:  factor variables may not contain noninteger values
+r(452);
+
+end of do-file
+
+r(452);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen age sex bmi exposuretime ever_mal##bmi_cat
+
+      Source |       SS           df       MS      Number of obs   =       276
+-------------+----------------------------------   F(11, 264)      =      4.41
+       Model |  30019.7958        11  2729.07235   Prob > F        =    0.0000
+    Residual |  163366.275       264  618.811648   R-squared       =    0.1552
+-------------+----------------------------------   Adj R-squared   =    0.1200
+       Total |  193386.071       275  703.222076   Root MSE        =    24.876
+
+-----------------------------------------------------------------------------------
+ ngml_trypsinogen | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+------------------+----------------------------------------------------------------
+              age |   .2995945   .1446668     2.07   0.039     .0147469    .5844421
+              sex |   -5.28646    3.19006    -1.66   0.099    -11.56766    .9947383
+              bmi |  -1.423575   .7974246    -1.79   0.075    -2.993697    .1465462
+     exposuretime |   5.117618   3.823758     1.34   0.182    -2.411325    12.64656
+                  |
+         ever_mal |
+              PM  |   16.07111   10.45753     1.54   0.126    -4.519664    36.66189
+                  |
+          bmi_cat |
+   Normal Weight  |   4.061146    10.7926     0.38   0.707    -17.18938    25.31167
+      Overweight  |   14.09507   12.96248     1.09   0.278    -11.42794    39.61807
+           Obese  |   20.59716   17.62674     1.17   0.244    -14.10971    55.30404
+                  |
+ ever_mal#bmi_cat |
+PM#Normal Weight  |  -15.64429   11.27024    -1.39   0.166    -37.83528      6.5467
+   PM#Overweight  |  -21.16135    12.4217    -1.70   0.090    -45.61955    3.296857
+        PM#Obese  |  -13.17433   15.35028    -0.86   0.392     -43.3989    17.05023
+                  |
+            _cons |   40.01673   20.99118     1.91   0.058    -1.314694    81.34816
+-----------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. d age_*
+variable age_* not found
+r(111);
+
+. d age*
+
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+------------------------------------------------------------------------------------------------------------------------------
+age             float   %9.0g                 Age
+
+. sum age
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+         age |      2,122    39.72545    16.34535        9.1       82.1
+
+. sum age if ngml!=.
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+         age |        276      43.425     11.4067       18.3       77.3
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. kwallis ngml_trypsinogen, by(cohort)
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +--------------------------+
+  |  cohort | Obs | Rank sum |
+  |---------+-----+----------|
+  |  CICADA |  21 |  3093.50 |
+  | NUSTART |  69 | 12839.00 |
+  |   STATT |  86 | 11176.50 |
+  |   CLHNS | 100 | 11117.00 |
+  +--------------------------+
+
+  chi2(3) = 37.475
+     Prob = 0.0001
+
+  chi2(3) with ties = 37.476
+               Prob = 0.0001
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. kwallis ngml_trypsinogen, by(exposuretime)
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +----------------------------------------+
+  |          exposuretime | Obs | Rank sum |
+  |-----------------------+-----+----------|
+  | Exposure in Childhood | 100 | 11117.00 |
+  |    Exposure as Adults | 176 | 27109.00 |
+  +----------------------------------------+
+
+  chi2(1) = 18.385
+     Prob = 0.0001
+
+  chi2(1) with ties = 18.386
+               Prob = 0.0001
+
+. 
+end of do-file
+
+. help upsetplot
+
+. upsetplot assay_t ct2 radio3
+
+  +-----------------------------------------------------------------------+
+  | _binary   _decimal                            _text   _freq   _degree |
+  |-----------------------------------------------------------------------|
+  |     110          6           assay_trypsinogen, ct2       3         2 |
+  |     111          7   assay_trypsinogen, ct2, radio3     273         3 |
+  +-----------------------------------------------------------------------+
+
+  +------------------------------+
+  |              _set   _setfreq |
+  |------------------------------|
+  | assay_trypsinogen        276 |
+  |               ct2        276 |
+  |            radio3        273 |
+  +------------------------------+
+
+. sum nmgl
+variable nmgl not found
+r(111);
+
+. sum ngml
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+ngml_tryps~n |        276    29.86116    26.51833        3.6      299.2
+
+. kwalis ngml, over(ever_mal)
+command kwalis is unrecognized
+r(199);
+
+. scatter ct_pan_vol age
+
+. scatter ct_pan_vol ngml
+
+. d glu120*
+variable glu120* not found
+r(111);
+
+. d mmol*
+
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+------------------------------------------------------------------------------------------------------------------------------
+mmol_glu0       float   %9.0g                 Timepoint 0 Glucose in mmol/L
+mmol_glu120     float   %9.0g                 Timepoint 120 Glucose in mmol/L
+
+. d diab*
+
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+------------------------------------------------------------------------------------------------------------------------------
+diab_hb_gl120   float   %11.0g     diab_hb_gl120
+                                              
+
+. tab diab*
+
+diab_hb_gl1 |
+         20 |      Freq.     Percent        Cum.
+------------+-----------------------------------
+     Normal |      1,042       68.92       68.92
+Prediabetes |        120        7.94       76.85
+   Diabetes |        350       23.15      100.00
+------------+-----------------------------------
+      Total |      1,512      100.00
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. dotplot ngml, over(diab_hb_gl120) msize(tiny) msymbol(oh) center mlabel(cohort)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. dotplot ngml, over(diab_hb_gl120) msize(tiny) msymbol(oh) center mlabel(hiv)
+
+. 
+end of do-file
+
+. d assay_t
+
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+------------------------------------------------------------------------------------------------------------------------------
+assay_trypsin~n float   %9.0g                 Trypsinogen Assay
+
+. tab assay_t
+
+Trypsinogen |
+      Assay |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          1 |        276      100.00      100.00
+------------+-----------------------------------
+      Total |        276      100.00
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+.         replace assay_amylase = 0 if amylase ==.
+amylase not found
+r(111);
+
+end of do-file
+
+r(111);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+.         replace assay_amylase = 0 if ul_amylp ==.
+(338 real changes made)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+.         replace assay_trypsinogen = 0 if ngml_trypsinogen ==.
+(1,846 real changes made)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. table ()(assay_trypsinogen), statistic(mean age bmi) statistic(sd age bmi) 
+
+----------------------------------------------------
+                   |         Trypsinogen Assay      
+                   |         0          1      Total
+-------------------+--------------------------------
+Mean               |                                
+  Age              |  39.17232     43.425   39.72545
+  Body mass index  |  21.96228   23.12431     22.114
+Standard deviation |                                
+  Age              |  16.89351    11.4067   16.34535
+  Body mass index  |  5.489854   5.053079   5.447777
+----------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. table ()(assay_trypsinogen), statistic(mean age bmi) statistic(sd age bmi) fvpercent(hiv)
+option fvpercent() not allowed
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. table ()(assay_trypsinogen), statistic(mean age bmi) statistic(sd age bmi) statistic(fvpercent hiv)
+
+-----------------------------------------------------------------------------------------------------------------------
+                                                                                      |         Trypsinogen Assay      
+                                                                                      |         0          1      Total
+--------------------------------------------------------------------------------------+--------------------------------
+Mean                                                                                  |                                
+  Age                                                                                 |  39.17232     43.425   39.72545
+  Body mass index                                                                     |  21.96228   23.12431     22.114
+Standard deviation                                                                    |                                
+  Age                                                                                 |  16.89351    11.4067   16.34535
+  Body mass index                                                                     |  5.489854   5.053079   5.447777
+Factor-variable percent                                                               |                                
+  Is the person HIV-infected? This should already be known for all adults but may=No  |     39.07      17.78      37.51
+  Is the person HIV-infected? This should already be known for all adults but may=Yes |     60.93      82.22      62.49
+-----------------------------------------------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. table ()(assay_trypsinogen), statistic(mean age bmi) statistic(sd age bmi) ///
+>                                                                                                         statistic(fvpercent 
+> hiv) ///
+>                                                                                                         statistic(fvpercent 
+> diab_hb_gl120) ///
+>                                                                                                         statistic(fvpercent 
+> exposuretime)
+
+-----------------------------------------------------------------------------------------------------------------------
+                                                                                      |         Trypsinogen Assay      
+                                                                                      |         0          1      Total
+--------------------------------------------------------------------------------------+--------------------------------
+Mean                                                                                  |                                
+  Age                                                                                 |  39.17232     43.425   39.72545
+  Body mass index                                                                     |  21.96228   23.12431     22.114
+Standard deviation                                                                    |                                
+  Age                                                                                 |  16.89351    11.4067   16.34535
+  Body mass index                                                                     |  5.489854   5.053079   5.447777
+Factor-variable percent                                                               |                                
+  Is the person HIV-infected? This should already be known for all adults but may=No  |     39.07      17.78      37.51
+  Is the person HIV-infected? This should already be known for all adults but may=Yes |     60.93      82.22      62.49
+  diab_hb_gl120=Normal                                                                |     70.85      54.70      68.92
+  diab_hb_gl120=Prediabetes                                                           |      7.66       9.94       7.94
+  diab_hb_gl120=Diabetes                                                              |     21.49      35.36      23.15
+  Exposure Time=Exposure in Childhood                                                 |     33.15      36.23      33.55
+  Exposure Time=Exposure as Adults                                                    |     66.85      63.77      66.45
+-----------------------------------------------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. table () (diab_hb_gl120), statistic(p50 ngml_trypsinogen) statistic(iqr ngml_trypsinogen)
+
+--------------------------------------------------------------
+                    |               diab_hb_gl120             
+                    |  Normal   Prediabetes   Diabetes   Total
+--------------------+-----------------------------------------
+50th percentile     |    26.2          19.1      24.15    24.5
+Interquartile range |    18.4          13.6       15.8    17.2
+--------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. table () (diab_hb_gl120), statistic(count ngml_trypsinogen )statistic(p50 ngml_trypsinogen) statistic(iqr ngml_trypsinogen)
+
+----------------------------------------------------------------------
+                            |               diab_hb_gl120             
+                            |  Normal   Prediabetes   Diabetes   Total
+----------------------------+-----------------------------------------
+Number of nonmissing values |      99            18         64     181
+50th percentile             |    26.2          19.1      24.15    24.5
+Interquartile range         |    18.4          13.6       15.8    17.2
+----------------------------------------------------------------------
+
+. 
+end of do-file
+
+. d mmol*
+
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+------------------------------------------------------------------------------------------------------------------------------
+mmol_glu0       float   %9.0g                 Timepoint 0 Glucose in mmol/L
+mmol_glu120     float   %9.0g                 Timepoint 120 Glucose in mmol/L
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. scatter ngml_trypsinogen mmol_glu0
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. scatter ngml_trypsinogen mmol_glu120
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. scatter ngml_trypsinogen mmol_glu120 mlabe(diab_hb_gl120)
+mlabe:  operator invalid
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. scatter ngml_trypsinogen mmol_glu120,  mlabel(diab_hb_gl120)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen over(diab_hb_gl120)
+factor-variable and time-series operators not allowed
+r(101);
+
+end of do-file
+
+r(101);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(diab_hb_gl120)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(diab_hb_gl120) cumul stack
+may not combine cumulate and stack options
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(diab_hb_gl120) cumul vertical
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(diab_hb_gl120) cumul vertical bar
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(diab_hb_gl120) vertical bar
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(diab_hb_gl120) vertical box
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(diab_hb_gl120) cumul vertical box
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(diab_hb_gl120) cumul vertical tufte
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(diab_hb_gl120) vertical tufte
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(diab_hb_gl120) 
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(diab_hb_gl120) separate(exposuretime)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(diab_hb_gl120) separate(exposuretime) jitter msize(tiny)
+option jitter not allowed
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(diab_hb_gl120) separate(exposuretime) msize(tiny)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(diab_hb_gl120) stack separate(exposuretime) msize(tiny)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(diab_hb_gl120) cumul separate(exposuretime) msize(tiny)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(diab_hb_gl120) cumul separate(cohort) msize(tiny)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen age
+
+      Source |       SS           df       MS      Number of obs   =       276
+-------------+----------------------------------   F(1, 274)       =     10.90
+       Model |  7397.46029         1  7397.46029   Prob > F        =    0.0011
+    Residual |  185988.611       274  678.790549   R-squared       =    0.0383
+-------------+----------------------------------   Adj R-squared   =    0.0347
+       Total |  193386.071       275  703.222076   Root MSE        =    26.054
+
+------------------------------------------------------------------------------
+ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+         age |   .4546897   .1377342     3.30   0.001      .183538    .7258413
+       _cons |   10.11626   6.183285     1.64   0.103    -2.056523    22.28904
+------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. sum ngml, detail
+
+                     Trypsinogen (ng/ml)
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%          8.2            3.6
+ 5%         10.1            4.7
+10%         12.5            8.2       Obs                 276
+25%        17.25            8.6       Sum of wgt.         276
+
+50%         24.6                      Mean           29.86116
+                        Largest       Std. dev.      26.51833
+75%         34.5          129.8
+90%           47          179.6       Variance       703.2221
+95%         55.5          188.7       Skewness        5.74845
+99%        179.6          299.2       Kurtosis       49.06555
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen bmi
+
+      Source |       SS           df       MS      Number of obs   =       276
+-------------+----------------------------------   F(1, 274)       =     19.12
+       Model |  12615.3994         1  12615.3994   Prob > F        =    0.0000
+    Residual |  180770.671       274  659.746976   R-squared       =    0.0652
+-------------+----------------------------------   Adj R-squared   =    0.0618
+       Total |  193386.071       275  703.222076   Root MSE        =    25.686
+
+------------------------------------------------------------------------------
+ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+         bmi |   -1.34038   .3065253    -4.37   0.000    -1.943824   -.7369365
+       _cons |   60.85653   7.254843     8.39   0.000     46.57421    75.13885
+------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen hba1c // decrease with bmi
+
+      Source |       SS           df       MS      Number of obs   =       274
+-------------+----------------------------------   F(1, 272)       =      2.67
+       Model |   1875.7671         1   1875.7671   Prob > F        =    0.1036
+    Residual |  191255.325       272  703.144577   R-squared       =    0.0097
+-------------+----------------------------------   Adj R-squared   =    0.0061
+       Total |  193131.092       273  707.439898   Root MSE        =    26.517
+
+------------------------------------------------------------------------------
+ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+       hba1c |  -2.556722   1.565368    -1.63   0.104    -5.638499    .5250547
+       _cons |   44.02132   8.807337     5.00   0.000      26.6821    61.36053
+------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen mmol_glu120 // decrease with bmi
+
+      Source |       SS           df       MS      Number of obs   =       276
+-------------+----------------------------------   F(1, 274)       =      2.36
+       Model |   1648.4537         1   1648.4537   Prob > F        =    0.1260
+    Residual |  191737.617       274  699.772325   R-squared       =    0.0085
+-------------+----------------------------------   Adj R-squared   =    0.0049
+       Total |  193386.071       275  703.222076   Root MSE        =    26.453
+
+------------------------------------------------------------------------------
+ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+ mmol_glu120 |  -.6716683   .4376176    -1.53   0.126    -1.533188    .1898519
+       _cons |    35.5011   4.004796     8.86   0.000     27.61702    43.38518
+------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen i.ever_mal // decrease with bmi
+
+      Source |       SS           df       MS      Number of obs   =       276
+-------------+----------------------------------   F(1, 274)       =      3.85
+       Model |  2682.43033         1  2682.43033   Prob > F        =    0.0506
+    Residual |   190703.64       274  695.998688   R-squared       =    0.0139
+-------------+----------------------------------   Adj R-squared   =    0.0103
+       Total |  193386.071       275  703.222076   Root MSE        =    26.382
+
+------------------------------------------------------------------------------
+ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+    ever_mal |
+         PM  |    6.23652   3.176745     1.96   0.051    -.0174089    12.49045
+       _cons |   26.67511   2.270583    11.75   0.000     22.20511    31.14512
+------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen i.sex // decrease with ever_mal  6.2 ( -.0174089    12.49045)
+
+      Source |       SS           df       MS      Number of obs   =       276
+-------------+----------------------------------   F(1, 274)       =      4.93
+       Model |  3417.37521         1  3417.37521   Prob > F        =    0.0272
+    Residual |  189968.696       274  693.316407   R-squared       =    0.0177
+-------------+----------------------------------   Adj R-squared   =    0.0141
+       Total |  193386.071       275  703.222076   Root MSE        =    26.331
+
+------------------------------------------------------------------------------
+ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+         sex |
+     Female  |  -7.039218   3.170617    -2.22   0.027    -13.28108   -.7973518
+       _cons |   33.30426   2.217462    15.02   0.000     28.93883    37.66968
+------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen i.exposuretime // decrease with female  -7 ( -13.28108   -.7973518)
+
+      Source |       SS           df       MS      Number of obs   =       276
+-------------+----------------------------------   F(1, 274)       =     12.48
+       Model |  8423.73607         1  8423.73607   Prob > F        =    0.0005
+    Residual |  184962.335       274  675.045017   R-squared       =    0.0436
+-------------+----------------------------------   Adj R-squared   =    0.0401
+       Total |  193386.071       275  703.222076   Root MSE        =    25.982
+
+-------------------------------------------------------------------------------------
+   ngml_trypsinogen | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+--------------------+----------------------------------------------------------------
+       exposuretime |
+Exposure as Adults  |   11.49345   3.253603     3.53   0.000     5.088217    17.89869
+              _cons |     22.532   2.598163     8.67   0.000      17.4171     27.6469
+-------------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen i.hiv // exposure as adultst 11 (5-17)
+
+      Source |       SS           df       MS      Number of obs   =        90
+-------------+----------------------------------   F(1, 88)        =      1.73
+       Model |  2816.32054         1  2816.32054   Prob > F        =    0.1918
+    Residual |  143252.331        88   1627.8674   R-squared       =    0.0193
+-------------+----------------------------------   Adj R-squared   =    0.0081
+       Total |  146068.652        89   1641.2208   Root MSE        =    40.347
+
+------------------------------------------------------------------------------
+ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+         hiv |
+        Yes  |   14.63142   11.12384     1.32   0.192    -7.474885    36.73772
+       _cons |    29.1875   10.08671     2.89   0.005     9.142284    49.23272
+------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen adj_wt_ct_pan_vol
+
+      Source |       SS           df       MS      Number of obs   =       198
+-------------+----------------------------------   F(1, 196)       =      5.85
+       Model |  4476.40159         1  4476.40159   Prob > F        =    0.0165
+    Residual |  149876.632       196  764.676692   R-squared       =    0.0290
+-------------+----------------------------------   Adj R-squared   =    0.0240
+       Total |  154353.033       197  783.517935   Root MSE        =    27.653
+
+-----------------------------------------------------------------------------------
+ ngml_trypsinogen | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+------------------+----------------------------------------------------------------
+adj_wt_ct_pan_vol |   12.09218   4.997802     2.42   0.016      2.23581    21.94855
+            _cons |   15.54922   5.948036     2.61   0.010     3.818857    27.27959
+-----------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen ct_pan_vol // 12 (2,21)
+
+      Source |       SS           df       MS      Number of obs   =       198
+-------------+----------------------------------   F(1, 196)       =      0.85
+       Model |  667.867455         1  667.867455   Prob > F        =    0.3572
+    Residual |  153685.166       196  784.107988   R-squared       =    0.0043
+-------------+----------------------------------   Adj R-squared   =   -0.0008
+       Total |  154353.033       197  783.517935   Root MSE        =    28.002
+
+------------------------------------------------------------------------------
+ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+  ct_pan_vol |   .0846191   .0916878     0.92   0.357    -.0962021    .2654403
+       _cons |   23.46196   6.458272     3.63   0.000     10.72534    36.19859
+------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen adj_wt_ct_pan_head_ap // 12 (2,21)
+
+      Source |       SS           df       MS      Number of obs   =       275
+-------------+----------------------------------   F(1, 273)       =     15.12
+       Model |  10131.1778         1  10131.1778   Prob > F        =    0.0001
+    Residual |  182972.935       273  670.230531   R-squared       =    0.0525
+-------------+----------------------------------   Adj R-squared   =    0.0490
+       Total |  193104.113       274  704.759536   Root MSE        =    25.889
+
+---------------------------------------------------------------------------------------
+     ngml_trypsinogen | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+----------------------+----------------------------------------------------------------
+adj_wt_ct_pan_head_ap |   520.9134   133.9824     3.89   0.000     257.1434    784.6833
+                _cons |   7.172459    6.05604     1.18   0.237    -4.750016    19.09493
+---------------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen adj_wt_pan_head_ap // 12 (2,21)
+
+      Source |       SS           df       MS      Number of obs   =       272
+-------------+----------------------------------   F(1, 270)       =     17.29
+       Model |  11516.1956         1  11516.1956   Prob > F        =    0.0000
+    Residual |   179808.97       270  665.959147   R-squared       =    0.0602
+-------------+----------------------------------   Adj R-squared   =    0.0567
+       Total |  191325.165       271  705.996919   Root MSE        =    25.806
+
+------------------------------------------------------------------------------------
+  ngml_trypsinogen | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------------+----------------------------------------------------------------
+adj_wt_pan_head_ap |   568.3615   136.6765     4.16   0.000     299.2743    837.4488
+             _cons |   9.973882   5.000816     1.99   0.047       .12833    19.81943
+------------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. dotplot ngml, over(cohort) msize(tiny) msymbol(oh) center mlabel(hiv)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. table () (cohort), statistic(count ngml_trypsinogen) statistic(p50 ngml_trypsinogen) statistic(iqr ngml_trypsinogen)
+
+--------------------------------------------------------------------------------------
+                            |                           Cohort                        
+                            |  DIVIDS   SAM   CICADA   NUSTART   STATT   CLHNS   Total
+----------------------------+---------------------------------------------------------
+Number of nonmissing values |       0     0       21        69      86     100     276
+50th percentile             |                   23.4      33.8    22.7    21.4    24.6
+Interquartile range         |                   11.9      21.7    17.5   13.35   17.25
+--------------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. kwallis ngml_trypsinogen, by(cohort)
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +--------------------------+
+  |  cohort | Obs | Rank sum |
+  |---------+-----+----------|
+  |  CICADA |  21 |  3093.50 |
+  | NUSTART |  69 | 12839.00 |
+  |   STATT |  86 | 11176.50 |
+  |   CLHNS | 100 | 11117.00 |
+  +--------------------------+
+
+  chi2(3) = 37.475
+     Prob = 0.0001
+
+  chi2(3) with ties = 37.476
+               Prob = 0.0001
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. kwallis ngml_trypsinogen, by(exposuretime)
+
+Kruskal–Wallis equality-of-populations rank test
+
+  +----------------------------------------+
+  |          exposuretime | Obs | Rank sum |
+  |-----------------------+-----+----------|
+  | Exposure in Childhood | 100 | 11117.00 |
+  |    Exposure as Adults | 176 | 27109.00 |
+  +----------------------------------------+
+
+  chi2(1) = 18.385
+     Prob = 0.0001
+
+  chi2(1) with ties = 18.386
+               Prob = 0.0001
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. table () (exposuretime), statistic(count ngml_trypsinogen) statistic(p50 ngml_trypsinogen) statistic(iqr ngml_trypsinogen)
+
+---------------------------------------------------------------------------------
+                            |                     Exposure Time                  
+                            |  Exposure in Childhood   Exposure as Adults   Total
+----------------------------+----------------------------------------------------
+Number of nonmissing values |                    100                  176     276
+50th percentile             |                   21.4                 28.3    24.6
+Interquartile range         |                  13.35                20.05   17.25
+---------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. table () (ever_mal), statistic(count ngml_trypsinogen) statistic(p50 ngml_trypsinogen) statistic(iqr ngml_trypsinogen)
+
+----------------------------------------------------------------
+                            |    Ever experience malnutrition?  
+                            |        NPM          PM       Total
+----------------------------+-----------------------------------
+Number of nonmissing values |        135         141         276
+50th percentile             |       24.2        25.3        24.6
+Interquartile range         |       15.3        18.5       17.25
+----------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen i.cohort // decrease with female  -7 ( -13.28108   -.7973518)
+
+      Source |       SS           df       MS      Number of obs   =       276
+-------------+----------------------------------   F(3, 272)       =     10.57
+       Model |  20186.1231         3  6728.70772   Prob > F        =    0.0000
+    Residual |  173199.948       272  636.764514   R-squared       =    0.1044
+-------------+----------------------------------   Adj R-squared   =    0.0945
+       Total |  193386.071       275  703.222076   Root MSE        =    25.234
+
+------------------------------------------------------------------------------
+ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+      cohort |
+    NUSTART  |   11.78095   6.288926     1.87   0.062    -.6002063    24.16211
+      STATT  |   -5.68711   6.142179    -0.93   0.355    -17.77936    6.405144
+      CLHNS  |  -9.653714   6.057208    -1.59   0.112    -21.57868    2.271255
+             |
+       _cons |   32.18571   5.506552     5.84   0.000     21.34483     43.0266
+------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. dotplot ngml, over(cohort) msize(tiny) msymbol(oh) center median
+
+. 
+end of do-file
+
+. help dotplot
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(cohort) cumul separate(cohort) msize(tiny)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(cohort) cumul separate(cohort) msize(tiny) msize(tiny)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(cohort) stack separate(cohort) msize(tiny) msize(tiny)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(cohort) stack separate(cohort) msize(tiny) msize(tiny) mcolor(grey)
+(note:  named style grey not found in class color, default attributes used)
+(note:  named style grey not found in class color, default attributes used)
+
+. 
+end of do-file
+
+. help stripplot
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(cohort) stack 
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(cohort) stack separate(hiv)
+
+. 
+end of do-file
+
+. tab hiv
+
+     Is the |
+     person |
+HIV-infecte |
+    d? This |
+     should |
+ already be |
+  known for |
+ all adults |
+   but may  |      Freq.     Percent        Cum.
+------------+-----------------------------------
+         No |        461       37.51       37.51
+        Yes |        768       62.49      100.00
+------------+-----------------------------------
+      Total |      1,229      100.00
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(cohort) stack separate(hiv) msize(tiny) msymbol(oh)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(cohort) stack msize(tiny) msymbol(oh)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(cohort) stack msize(small) msymbol(oh)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(cohort) stack msize(small) msymbol(oh) tufte
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(cohort) stack msize(small) msymbol(oh) tufte separate(ever_mal)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(cohort) stack msize(small) msymbol(oh) tufte separate(hiv)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(cohort) stack msize(small) msymbol(oh) tufte 
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(ever_mal) stack msize(small) msymbol(oh) tufte 
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(ever_mal) msize(small) msymbol(oh) tufte 
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen age bmi i.cohort
+
+      Source |       SS           df       MS      Number of obs   =       276
+-------------+----------------------------------   F(5, 270)       =     11.62
+       Model |   34235.031         5   6847.0062   Prob > F        =    0.0000
+    Residual |   159151.04       270  589.448296   R-squared       =    0.1770
+-------------+----------------------------------   Adj R-squared   =    0.1618
+       Total |  193386.071       275  703.222076   Root MSE        =    24.279
+
+------------------------------------------------------------------------------
+ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+         age |   .4177632   .1355166     3.08   0.002     .1509595    .6845668
+         bmi |  -1.227057   .3210618    -3.82   0.000     -1.85916   -.5949543
+             |
+      cohort |
+    NUSTART  |    16.5968   6.130648     2.71   0.007     4.526847    28.66675
+      STATT  |   -3.32384   5.930418    -0.56   0.576    -14.99958    8.351901
+      CLHNS  |   1.671414   6.275061     0.27   0.790    -10.68286    14.02568
+             |
+       _cons |   36.37555    10.5523     3.45   0.001     15.60029    57.15081
+------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen i.hiv // hiv 
+
+      Source |       SS           df       MS      Number of obs   =        90
+-------------+----------------------------------   F(1, 88)        =      1.73
+       Model |  2816.32054         1  2816.32054   Prob > F        =    0.1918
+    Residual |  143252.331        88   1627.8674   R-squared       =    0.0193
+-------------+----------------------------------   Adj R-squared   =    0.0081
+       Total |  146068.652        89   1641.2208   Root MSE        =    40.347
+
+------------------------------------------------------------------------------
+ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+         hiv |
+        Yes  |   14.63142   11.12384     1.32   0.192    -7.474885    36.73772
+       _cons |    29.1875   10.08671     2.89   0.005     9.142284    49.23272
+------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen i.diab_hb_gl120 // diab 
+
+      Source |       SS           df       MS      Number of obs   =       181
+-------------+----------------------------------   F(2, 178)       =      0.60
+       Model |   1076.8241         2  538.412052   Prob > F        =    0.5502
+    Residual |  159845.261       178  898.007082   R-squared       =    0.0067
+-------------+----------------------------------   Adj R-squared   =   -0.0045
+       Total |  160922.085       180  894.011582   Root MSE        =    29.967
+
+-------------------------------------------------------------------------------
+ngml_trypsi~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+--------------+----------------------------------------------------------------
+diab_hb_gl120 |
+ Prediabetes  |  -3.528788   7.678545    -0.46   0.646    -18.68148    11.62391
+    Diabetes  |  -5.173718   4.806468    -1.08   0.283    -14.65871    4.311275
+              |
+        _cons |   32.53434   3.011773    10.80   0.000     26.59097    38.47772
+-------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen age bmi i.cohort adj_wt_ct_pan_vol
+
+      Source |       SS           df       MS      Number of obs   =       198
+-------------+----------------------------------   F(6, 191)       =      7.63
+       Model |  29858.4777         6  4976.41296   Prob > F        =    0.0000
+    Residual |  124494.555       191  651.803955   R-squared       =    0.1934
+-------------+----------------------------------   Adj R-squared   =    0.1681
+       Total |  154353.033       197  783.517935   Root MSE        =     25.53
+
+-----------------------------------------------------------------------------------
+ ngml_trypsinogen | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+------------------+----------------------------------------------------------------
+              age |   .4134082    .211702     1.95   0.052    -.0041659    .8309823
+              bmi |  -1.257225   .4609148    -2.73   0.007    -2.166362   -.3480877
+                  |
+           cohort |
+         NUSTART  |   25.53202   7.082004     3.61   0.000     11.56304      39.501
+           STATT  |   5.315517    7.43891     0.71   0.476     -9.35745    19.98848
+           CLHNS  |   7.918276   7.156333     1.11   0.270    -6.197319    22.03387
+                  |
+adj_wt_ct_pan_vol |   4.781844   5.302625     0.90   0.368    -5.677383    15.24107
+            _cons |   26.00767   18.97054     1.37   0.172    -11.41101    63.42635
+-----------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen age i.cohort adj_wt_ct_pan_vol
+
+      Source |       SS           df       MS      Number of obs   =       198
+-------------+----------------------------------   F(5, 192)       =      7.42
+       Model |  25008.9276         5  5001.78553   Prob > F        =    0.0000
+    Residual |  129344.105       192  673.667216   R-squared       =    0.1620
+-------------+----------------------------------   Adj R-squared   =    0.1402
+       Total |  154353.033       197  783.517935   Root MSE        =    25.955
+
+-----------------------------------------------------------------------------------
+ ngml_trypsinogen | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+------------------+----------------------------------------------------------------
+              age |   .4282441   .2151522     1.99   0.048     .0038787    .8526095
+                  |
+           cohort |
+         NUSTART  |   23.92115   7.174722     3.33   0.001     9.769755    38.07255
+           STATT  |   5.420226   7.562541     0.72   0.474    -9.496104    20.33655
+           CLHNS  |   2.446122   6.983641     0.35   0.727    -11.32839    16.22063
+                  |
+adj_wt_ct_pan_vol |   9.631836   5.078721     1.90   0.059    -.3854151    19.64909
+            _cons |  -6.798416   14.91472    -0.46   0.649    -36.21616    22.61933
+-----------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen age muac i.cohort adj_wt_ct_pan_vol
+
+      Source |       SS           df       MS      Number of obs   =       198
+-------------+----------------------------------   F(6, 191)       =      7.53
+       Model |  29530.0198         6  4921.66997   Prob > F        =    0.0000
+    Residual |  124823.013       191   653.52363   R-squared       =    0.1913
+-------------+----------------------------------   Adj R-squared   =    0.1659
+       Total |  154353.033       197  783.517935   Root MSE        =    25.564
+
+-----------------------------------------------------------------------------------
+ ngml_trypsinogen | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+------------------+----------------------------------------------------------------
+              age |   .4168936    .211955     1.97   0.051    -.0011796    .8349669
+             muac |  -1.403193   .5334903    -2.63   0.009    -2.455483   -.3509041
+                  |
+           cohort |
+         NUSTART  |   25.26623   7.085121     3.57   0.000      11.2911    39.24136
+           STATT  |   5.892544   7.450782     0.79   0.430     -8.80384    20.58893
+           CLHNS  |   7.102118   7.102571     1.00   0.319    -6.907433    21.11167
+                  |
+adj_wt_ct_pan_vol |   5.786843   5.211446     1.11   0.268    -4.492536    16.06622
+            _cons |   36.10141   21.95055     1.64   0.102    -7.195204    79.39803
+-----------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen age i.bmi_cat i.cohort adj_wt_ct_pan_vol
+
+      Source |       SS           df       MS      Number of obs   =       198
+-------------+----------------------------------   F(8, 189)       =      7.66
+       Model |  37793.5387         8  4724.19234   Prob > F        =    0.0000
+    Residual |  116559.494       189  616.716902   R-squared       =    0.2449
+-------------+----------------------------------   Adj R-squared   =    0.2129
+       Total |  154353.033       197  783.517935   Root MSE        =    24.834
+
+-----------------------------------------------------------------------------------
+ ngml_trypsinogen | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+------------------+----------------------------------------------------------------
+              age |   .3730866   .2063541     1.81   0.072    -.0339665    .7801397
+                  |
+          bmi_cat |
+   Normal Weight  |  -25.01144    5.72804    -4.37   0.000    -36.31054   -13.71234
+      Overweight  |  -27.01177   6.895924    -3.92   0.000    -40.61464   -13.40891
+           Obese  |  -30.48378   8.520376    -3.58   0.000    -47.29103   -13.67653
+                  |
+           cohort |
+         NUSTART  |    28.0255   6.933333     4.04   0.000     14.34884    41.70215
+           STATT  |   7.941645   7.267739     1.09   0.276    -6.394662    22.27795
+           CLHNS  |    11.1206   7.082064     1.57   0.118    -2.849449    25.09064
+                  |
+adj_wt_ct_pan_vol |   4.101418   5.047777     0.81   0.418    -5.855802    14.05864
+            _cons |   18.65189   15.32907     1.22   0.225    -11.58615    48.88993
+-----------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(bmi_cat) stack msize(small) msymbol(oh) tufte 
+
+. 
+end of do-file
+
+. tab cohort bmi_cat
+
+           |  BMI classification of children and adult
+    Cohort | Underweig  Normal We  Overweigh      Obese |     Total
+-----------+--------------------------------------------+----------
+    DIVIDS |       150        127         19          4 |       300 
+       SAM |        34         62          7          0 |       103 
+    CICADA |       126        495        161         85 |       867 
+   NUSTART |        69        150         34         29 |       282 
+     STATT |        80        152         28          1 |       261 
+     CLHNS |         4        111        122         65 |       302 
+-----------+--------------------------------------------+----------
+     Total |       463      1,097        371        184 |     2,115 
+
+. tab cohort bmi_cat if ngml!=.
+
+           |  BMI classification of children and adult
+    Cohort | Underweig  Normal We  Overweigh      Obese |     Total
+-----------+--------------------------------------------+----------
+    CICADA |         9         11          1          0 |        21 
+   NUSTART |        18         34          9          8 |        69 
+     STATT |        22         53         11          0 |        86 
+     CLHNS |         2         44         39         15 |       100 
+-----------+--------------------------------------------+----------
+     Total |        51        142         60         23 |       276 
+
+. tab cohort bmi_cat if ngml!=., col
+
++-------------------+
+| Key               |
+|-------------------|
+|     frequency     |
+| column percentage |
++-------------------+
+
+           |  BMI classification of children and adult
+    Cohort | Underweig  Normal We  Overweigh      Obese |     Total
+-----------+--------------------------------------------+----------
+    CICADA |         9         11          1          0 |        21 
+           |     17.65       7.75       1.67       0.00 |      7.61 
+-----------+--------------------------------------------+----------
+   NUSTART |        18         34          9          8 |        69 
+           |     35.29      23.94      15.00      34.78 |     25.00 
+-----------+--------------------------------------------+----------
+     STATT |        22         53         11          0 |        86 
+           |     43.14      37.32      18.33       0.00 |     31.16 
+-----------+--------------------------------------------+----------
+     CLHNS |         2         44         39         15 |       100 
+           |      3.92      30.99      65.00      65.22 |     36.23 
+-----------+--------------------------------------------+----------
+     Total |        51        142         60         23 |       276 
+           |    100.00     100.00     100.00     100.00 |    100.00 
+
+. tab cohort bmi_cat if ngml!=., row
+
++----------------+
+| Key            |
+|----------------|
+|   frequency    |
+| row percentage |
++----------------+
+
+           |  BMI classification of children and adult
+    Cohort | Underweig  Normal We  Overweigh      Obese |     Total
+-----------+--------------------------------------------+----------
+    CICADA |         9         11          1          0 |        21 
+           |     42.86      52.38       4.76       0.00 |    100.00 
+-----------+--------------------------------------------+----------
+   NUSTART |        18         34          9          8 |        69 
+           |     26.09      49.28      13.04      11.59 |    100.00 
+-----------+--------------------------------------------+----------
+     STATT |        22         53         11          0 |        86 
+           |     25.58      61.63      12.79       0.00 |    100.00 
+-----------+--------------------------------------------+----------
+     CLHNS |         2         44         39         15 |       100 
+           |      2.00      44.00      39.00      15.00 |    100.00 
+-----------+--------------------------------------------+----------
+     Total |        51        142         60         23 |       276 
+           |     18.48      51.45      21.74       8.33 |    100.00 
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen age i.bmi_cat i.cohort adj_wt_ct_pan_vol
+
+      Source |       SS           df       MS      Number of obs   =       198
+-------------+----------------------------------   F(8, 189)       =      7.66
+       Model |  37793.5387         8  4724.19234   Prob > F        =    0.0000
+    Residual |  116559.494       189  616.716902   R-squared       =    0.2449
+-------------+----------------------------------   Adj R-squared   =    0.2129
+       Total |  154353.033       197  783.517935   Root MSE        =    24.834
+
+-----------------------------------------------------------------------------------
+ ngml_trypsinogen | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+------------------+----------------------------------------------------------------
+              age |   .3730866   .2063541     1.81   0.072    -.0339665    .7801397
+                  |
+          bmi_cat |
+   Normal Weight  |  -25.01144    5.72804    -4.37   0.000    -36.31054   -13.71234
+      Overweight  |  -27.01177   6.895924    -3.92   0.000    -40.61464   -13.40891
+           Obese  |  -30.48378   8.520376    -3.58   0.000    -47.29103   -13.67653
+                  |
+           cohort |
+         NUSTART  |    28.0255   6.933333     4.04   0.000     14.34884    41.70215
+           STATT  |   7.941645   7.267739     1.09   0.276    -6.394662    22.27795
+           CLHNS  |    11.1206   7.082064     1.57   0.118    -2.849449    25.09064
+                  |
+adj_wt_ct_pan_vol |   4.101418   5.047777     0.81   0.418    -5.855802    14.05864
+            _cons |   18.65189   15.32907     1.22   0.225    -11.58615    48.88993
+-----------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen age bmi i.cohort adj_wt_ct_pan_vol
+
+      Source |       SS           df       MS      Number of obs   =       198
+-------------+----------------------------------   F(6, 191)       =      7.63
+       Model |  29858.4777         6  4976.41296   Prob > F        =    0.0000
+    Residual |  124494.555       191  651.803955   R-squared       =    0.1934
+-------------+----------------------------------   Adj R-squared   =    0.1681
+       Total |  154353.033       197  783.517935   Root MSE        =     25.53
+
+-----------------------------------------------------------------------------------
+ ngml_trypsinogen | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+------------------+----------------------------------------------------------------
+              age |   .4134082    .211702     1.95   0.052    -.0041659    .8309823
+              bmi |  -1.257225   .4609148    -2.73   0.007    -2.166362   -.3480877
+                  |
+           cohort |
+         NUSTART  |   25.53202   7.082004     3.61   0.000     11.56304      39.501
+           STATT  |   5.315517    7.43891     0.71   0.476     -9.35745    19.98848
+           CLHNS  |   7.918276   7.156333     1.11   0.270    -6.197319    22.03387
+                  |
+adj_wt_ct_pan_vol |   4.781844   5.302625     0.90   0.368    -5.677383    15.24107
+            _cons |   26.00767   18.97054     1.37   0.172    -11.41101    63.42635
+-----------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(cohort) stack msize(small) msymbol(oh) tufte 
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(cohort) over(bmi_cat) stack msize(small) msymbol(oh) tufte 
+option over() not allowed
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. dotplot ngml, over(cohort) over(bmi_cat) msize(tiny) msymbol(oh) center median
+option over() not allowed
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. dotplot ngml, over(cohort bmi_cat) msize(tiny) msymbol(oh) center median
+over():  too many variables specified
+r(103);
+
+end of do-file
+
+r(103);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. dotplot ngml, over(cohort) msize(tiny) msymbol(oh) center median
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(cohort) cumul cumprob box centre vertical mcolor(cyan)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(cohort) cumul cumprob box centre vertical mcolor(blue)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(cohort) cumul cumprob tufte centre vertical mcolor(blue)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(cohort) cumul tufte centre vertical mcolor(blue)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(cohort) cumul bar centre vertical mcolor(blue)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(cohort) tufte centre vertical mcolor(blue)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(cohort) cumul tufte centre vertical mcolor(blue)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(cohort) cumul tufte centre vertical mcolor(grey) msize(tiny)
+(note:  named style grey not found in class color, default attributes used)
+(note:  named style grey not found in class color, default attributes used)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(cohort) cumul tufte centre vertical mcolor(gray) msize(tiny)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(cohort) cumul tufte centre vertical mcolor(gray) msize(small)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(cohort) cumul tufte centre vertical mcolor(gray) msize(vsmall)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. stripplot ngml_trypsinogen, over(cohort) cumul tufte centre mcolor(gray) msize(vsmall)
+
+. 
+end of do-file
+
+. help twoway box
+
+. help graph twoway box
+
+. help graph twoway
+
+. help gr box
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. gr box ngml_trypsinogen, over(cohort)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. gr box ngml_trypsinogen if assay_trypsinogen ==1, over(cohort)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. local filter "if assay_trypsinogen==1"
+
+. gr box ngml_trypsinogen `filter', over(cohort) ///
+>                                                                 medtype(marker)
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. local filter "if assay_trypsinogen==1"
+
+. gr box ngml_trypsinogen `filter', over(cohort) ///
+>                                                                 medtype(marker) marker(d)
+invalid marker number, d
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. 
+. local filter "if assay_trypsinogen==1"
+
+. gr box ngml_trypsinogen `filter', over(cohort) ///
+>                                                                 medtype(marker) marker(D)
+invalid marker number, D
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. local filter "if assay_trypsinogen==1"
+
+. gr box ngml_trypsinogen `filter', over(cohort) ///
+>                                                                 medtype(marker) medmarker(D)
+option D not allowed
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. 
+. local filter "if assay_trypsinogen==1"
+
+. gr box ngml_trypsinogen `filter', over(cohort) ///
+>                                                                 medtype(marker) medmarker(msymbol(D))
+
+. 
+end of do-file
+
+. count if ngml<10
+  10
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. local filter "if assay_trypsinogen==1"
+
+. gr box ngml_trypsinogen fecal_elastase `filter', over(cohort) ///
+>                                                                 medtype(marker) medmarker(msymbol(D))
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. local filter "if assay_trypsinogen==1"
+
+. gr box ngml_trypsinogen fecal_elastase ul_amylp `filter', over(cohort) ///
+>                                                                 medtype(marker) medmarker(msymbol(D))
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. 
+. local filter "if assay_trypsinogen==1"
+
+. gr box ngml_trypsinogen  `filter', over(cohort) ///
+>                                                                 medtype(marker) medmarker(msymbol(D))
+
+.                                                                                                         
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. local filter "if assay_trypsinogen==1"
+
+. gr box ngml_trypsinogen  `filter', over(cohort) ///
+>                                                                 medtype(marker) medmarker(msymbol(D) msize(small))
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. local filter "if assay_trypsinogen==1"
+
+. gr box ngml_trypsinogen  `filter', over(cohort) ///
+>                                                                 medtype(marker) ///
+>                                                                 medmarker(msymbol(D) msize(small) mlstyle(none))
+
+. 
+end of do-file
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. regress ngml_trypsinogen mgl_crp // 12 (2,21)
+
+      Source |       SS           df       MS      Number of obs   =       272
+-------------+----------------------------------   F(1, 270)       =      4.56
+       Model |   3041.2776         1   3041.2776   Prob > F        =    0.0337
+    Residual |   180161.41       270   667.26448   R-squared       =    0.0166
+-------------+----------------------------------   Adj R-squared   =    0.0130
+       Total |  183202.687       271  676.024676   Root MSE        =    25.831
+
+------------------------------------------------------------------------------
+ngml_tryps~n | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+     mgl_crp |    .340716   .1595929     2.13   0.034     .0265113    .6549207
+       _cons |   27.94565   1.741768    16.04   0.000     24.51647    31.37482
+------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. tobit fecal_elastase ever_mal, ul(600)
+
+Refining starting values:
+
+Grid node 0:  Log likelihood = -9977.0241
+
+Fitting full model:
+
+Iteration 0:  Log likelihood = -9977.0241  
+Iteration 1:  Log likelihood = -9880.7015  
+Iteration 2:  Log likelihood = -9877.2509  
+Iteration 3:  Log likelihood = -9877.2397  
+Iteration 4:  Log likelihood = -9877.2397  
+
+Tobit regression                                    Number of obs     =  1,800
+                                                           Uncensored =  1,340
+Limits: Lower = -inf                                    Left-censored =      0
+        Upper =  600                                   Right-censored =    460
+
+                                                    LR chi2(1)        =   8.57
+                                                    Prob > chi2       = 0.0034
+Log likelihood = -9877.2397                         Pseudo R2         = 0.0004
+
+---------------------------------------------------------------------------------------
+       fecal_elastase | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+----------------------+----------------------------------------------------------------
+             ever_mal |   39.20986   13.38882     2.93   0.003     12.95059    65.46913
+                _cons |   368.2905   8.884669    41.45   0.000     350.8652    385.7159
+----------------------+----------------------------------------------------------------
+ var(e.fecal_elastase)|   74646.45   3085.378                      68833.93    80949.79
+---------------------------------------------------------------------------------------
+
