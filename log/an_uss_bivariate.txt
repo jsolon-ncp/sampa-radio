@@ -1178,3 +1178,51 @@ file /Users/juansolon/Documents/GitHub/sampa-radio/figures/tryp_crp.png saved as
 variable sob not found
 r(111);
 
+. scatter ul_am bmi
+
+. sktest ul_am
+
+Skewness and kurtosis tests for normality
+                                                         ----- Joint test -----
+    Variable |       Obs   Pr(skewness)   Pr(kurtosis)   Adj chi2(2)  Prob>chi2
+-------------+-----------------------------------------------------------------
+    ul_amylp |     1,784         0.0000         0.0000        816.42     0.0000
+
+. hist ul_am
+(bin=32, start=8.3, width=5.409375)
+
+. correl ul_am bmi
+(obs=1,783)
+
+             | ul_amylp      bmi
+-------------+------------------
+    ul_amylp |   1.0000
+         bmi |  -0.1171   1.0000
+
+
+. spearman ul_am bmi
+
+Number of observations =   1,783
+        Spearman's rho = -0.1026
+
+Test of H0: ul_amylp and bmi are independent
+                  Prob =  0.0000
+
+. spearman ngml mgl*
+
+Number of observations = 272
+
+             | ngml_t~n  mgl_crp mgl_cy~n
+-------------+---------------------------
+ngml_tryps~n |   1.0000 
+     mgl_crp |  -0.1548   1.0000 
+mgl_cystatin |   0.2571   0.1830   1.0000 
+
+. spearman ngml mgl_crp
+
+Number of observations =     272
+        Spearman's rho = -0.1548
+
+Test of H0: ngml_trypsinogen and mgl_crp are independent
+                  Prob =  0.0106
+
