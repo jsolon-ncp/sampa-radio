@@ -1,0 +1,1058 @@
+{
+  "AutoHideDims": [
+    "across",
+    "var"
+  ],
+  "Items": {
+    "across[_hide]#amyl_low[1]#cmdset[1]#cohort[1]#colname[1.amyl_low]#colname_remainder[_cons]#command[0]#result[fvfrequency]#statcmd[3]#var[1.amyl_low]": {
+      "d": 0.0
+    },
+    "across[_hide]#amyl_low[1]#cmdset[1]#cohort[1]#colname[1.amyl_low]#colname_remainder[_cons]#command[0]#result[fvpercent]#statcmd[4]#var[1.amyl_low]": {
+      "s": "."
+    },
+    "across[_hide]#amyl_low[1]#cmdset[1]#cohort[2]#colname[1.amyl_low]#colname_remainder[_cons]#command[0]#result[fvfrequency]#statcmd[3]#var[1.amyl_low]": {
+      "d": 99.0
+    },
+    "across[_hide]#amyl_low[1]#cmdset[1]#cohort[2]#colname[1.amyl_low]#colname_remainder[_cons]#command[0]#result[fvpercent]#statcmd[4]#var[1.amyl_low]": {
+      "d": 99.0
+    },
+    "across[_hide]#amyl_low[1]#cmdset[1]#cohort[3]#colname[1.amyl_low]#colname_remainder[_cons]#command[0]#result[fvfrequency]#statcmd[3]#var[1.amyl_low]": {
+      "d": 782.0
+    },
+    "across[_hide]#amyl_low[1]#cmdset[1]#cohort[3]#colname[1.amyl_low]#colname_remainder[_cons]#command[0]#result[fvpercent]#statcmd[4]#var[1.amyl_low]": {
+      "d": 92.65402843601895
+    },
+    "across[_hide]#amyl_low[1]#cmdset[1]#cohort[4]#colname[1.amyl_low]#colname_remainder[_cons]#command[0]#result[fvfrequency]#statcmd[3]#var[1.amyl_low]": {
+      "d": 245.0
+    },
+    "across[_hide]#amyl_low[1]#cmdset[1]#cohort[4]#colname[1.amyl_low]#colname_remainder[_cons]#command[0]#result[fvpercent]#statcmd[4]#var[1.amyl_low]": {
+      "d": 87.18861209964413
+    },
+    "across[_hide]#amyl_low[1]#cmdset[1]#cohort[5]#colname[1.amyl_low]#colname_remainder[_cons]#command[0]#result[fvfrequency]#statcmd[3]#var[1.amyl_low]": {
+      "d": 231.0
+    },
+    "across[_hide]#amyl_low[1]#cmdset[1]#cohort[5]#colname[1.amyl_low]#colname_remainder[_cons]#command[0]#result[fvpercent]#statcmd[4]#var[1.amyl_low]": {
+      "d": 89.53488372093024
+    },
+    "across[_hide]#amyl_low[1]#cmdset[1]#cohort[6]#colname[1.amyl_low]#colname_remainder[_cons]#command[0]#result[fvfrequency]#statcmd[3]#var[1.amyl_low]": {
+      "d": 296.0
+    },
+    "across[_hide]#amyl_low[1]#cmdset[1]#cohort[6]#colname[1.amyl_low]#colname_remainder[_cons]#command[0]#result[fvpercent]#statcmd[4]#var[1.amyl_low]": {
+      "d": 98.33887043189368
+    },
+    "across[_hide]#amyl_low[1]#cmdset[5]#cohort[_dtable_test]#colname_remainder[_cons]#program_class[nclass]#result[pearson]#result_type[scalar]#var[1.amyl_low]": {
+      "d": 2.580321124972167e-07
+    },
+    "across[_hide]#cmdset[1]#cohort[1]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#result[fvfrequency]#statcmd[3]#var[1.epi_binary]": {
+      "d": 18.0
+    },
+    "across[_hide]#cmdset[1]#cohort[1]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#result[fvpercent]#statcmd[4]#var[1.epi_binary]": {
+      "d": 15.254237288135593
+    },
+    "across[_hide]#cmdset[1]#cohort[1]#colname[1.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[1]#result[fvfrequency]#statcmd[3]#var[1.epi_ordinal]": {
+      "d": 100.0
+    },
+    "across[_hide]#cmdset[1]#cohort[1]#colname[1.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[1]#result[fvpercent]#statcmd[4]#var[1.epi_ordinal]": {
+      "d": 84.7457627118644
+    },
+    "across[_hide]#cmdset[1]#cohort[1]#colname[1.tryp_high]#colname_remainder[_cons]#command[0]#result[fvfrequency]#statcmd[3]#tryp_high[1]#var[1.tryp_high]": {
+      "d": 0.0
+    },
+    "across[_hide]#cmdset[1]#cohort[1]#colname[1.tryp_high]#colname_remainder[_cons]#command[0]#result[fvpercent]#statcmd[4]#tryp_high[1]#var[1.tryp_high]": {
+      "s": "."
+    },
+    "across[_hide]#cmdset[1]#cohort[1]#colname[1.tryp_low]#colname_remainder[_cons]#command[0]#result[fvfrequency]#statcmd[3]#tryp_low[1]#var[1.tryp_low]": {
+      "d": 0.0
+    },
+    "across[_hide]#cmdset[1]#cohort[1]#colname[1.tryp_low]#colname_remainder[_cons]#command[0]#result[fvpercent]#statcmd[4]#tryp_low[1]#var[1.tryp_low]": {
+      "s": "."
+    },
+    "across[_hide]#cmdset[1]#cohort[1]#colname[2.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[2]#result[fvfrequency]#statcmd[3]#var[2.epi_ordinal]": {
+      "d": 9.0
+    },
+    "across[_hide]#cmdset[1]#cohort[1]#colname[2.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[2]#result[fvpercent]#statcmd[4]#var[2.epi_ordinal]": {
+      "d": 7.627118644067797
+    },
+    "across[_hide]#cmdset[1]#cohort[1]#colname[3.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[3]#result[fvfrequency]#statcmd[3]#var[3.epi_ordinal]": {
+      "d": 9.0
+    },
+    "across[_hide]#cmdset[1]#cohort[1]#colname[3.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[3]#result[fvpercent]#statcmd[4]#var[3.epi_ordinal]": {
+      "d": 7.627118644067797
+    },
+    "across[_hide]#cmdset[1]#cohort[1]#command[0]#result[frequency]#statcmd[1]#var[_N]": {
+      "d": 307.0
+    },
+    "across[_hide]#cmdset[1]#cohort[2]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#result[fvfrequency]#statcmd[3]#var[1.epi_binary]": {
+      "d": 54.0
+    },
+    "across[_hide]#cmdset[1]#cohort[2]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#result[fvpercent]#statcmd[4]#var[1.epi_binary]": {
+      "d": 65.06024096385542
+    },
+    "across[_hide]#cmdset[1]#cohort[2]#colname[1.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[1]#result[fvfrequency]#statcmd[3]#var[1.epi_ordinal]": {
+      "d": 29.0
+    },
+    "across[_hide]#cmdset[1]#cohort[2]#colname[1.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[1]#result[fvpercent]#statcmd[4]#var[1.epi_ordinal]": {
+      "d": 34.93975903614458
+    },
+    "across[_hide]#cmdset[1]#cohort[2]#colname[1.tryp_high]#colname_remainder[_cons]#command[0]#result[fvfrequency]#statcmd[3]#tryp_high[1]#var[1.tryp_high]": {
+      "d": 0.0
+    },
+    "across[_hide]#cmdset[1]#cohort[2]#colname[1.tryp_high]#colname_remainder[_cons]#command[0]#result[fvpercent]#statcmd[4]#tryp_high[1]#var[1.tryp_high]": {
+      "s": "."
+    },
+    "across[_hide]#cmdset[1]#cohort[2]#colname[1.tryp_low]#colname_remainder[_cons]#command[0]#result[fvfrequency]#statcmd[3]#tryp_low[1]#var[1.tryp_low]": {
+      "d": 0.0
+    },
+    "across[_hide]#cmdset[1]#cohort[2]#colname[1.tryp_low]#colname_remainder[_cons]#command[0]#result[fvpercent]#statcmd[4]#tryp_low[1]#var[1.tryp_low]": {
+      "s": "."
+    },
+    "across[_hide]#cmdset[1]#cohort[2]#colname[2.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[2]#result[fvfrequency]#statcmd[3]#var[2.epi_ordinal]": {
+      "d": 20.0
+    },
+    "across[_hide]#cmdset[1]#cohort[2]#colname[2.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[2]#result[fvpercent]#statcmd[4]#var[2.epi_ordinal]": {
+      "d": 24.096385542168676
+    },
+    "across[_hide]#cmdset[1]#cohort[2]#colname[3.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[3]#result[fvfrequency]#statcmd[3]#var[3.epi_ordinal]": {
+      "d": 34.0
+    },
+    "across[_hide]#cmdset[1]#cohort[2]#colname[3.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[3]#result[fvpercent]#statcmd[4]#var[3.epi_ordinal]": {
+      "d": 40.963855421686745
+    },
+    "across[_hide]#cmdset[1]#cohort[2]#command[0]#result[frequency]#statcmd[1]#var[_N]": {
+      "d": 103.0
+    },
+    "across[_hide]#cmdset[1]#cohort[3]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#result[fvfrequency]#statcmd[3]#var[1.epi_binary]": {
+      "d": 362.0
+    },
+    "across[_hide]#cmdset[1]#cohort[3]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#result[fvpercent]#statcmd[4]#var[1.epi_binary]": {
+      "d": 44.146341463414636
+    },
+    "across[_hide]#cmdset[1]#cohort[3]#colname[1.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[1]#result[fvfrequency]#statcmd[3]#var[1.epi_ordinal]": {
+      "d": 458.0
+    },
+    "across[_hide]#cmdset[1]#cohort[3]#colname[1.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[1]#result[fvpercent]#statcmd[4]#var[1.epi_ordinal]": {
+      "d": 55.85365853658537
+    },
+    "across[_hide]#cmdset[1]#cohort[3]#colname[1.tryp_high]#colname_remainder[_cons]#command[0]#result[fvfrequency]#statcmd[3]#tryp_high[1]#var[1.tryp_high]": {
+      "d": 19.0
+    },
+    "across[_hide]#cmdset[1]#cohort[3]#colname[1.tryp_high]#colname_remainder[_cons]#command[0]#result[fvpercent]#statcmd[4]#tryp_high[1]#var[1.tryp_high]": {
+      "d": 90.47619047619048
+    },
+    "across[_hide]#cmdset[1]#cohort[3]#colname[1.tryp_low]#colname_remainder[_cons]#command[0]#result[fvfrequency]#statcmd[3]#tryp_low[1]#var[1.tryp_low]": {
+      "d": 0.0
+    },
+    "across[_hide]#cmdset[1]#cohort[3]#colname[1.tryp_low]#colname_remainder[_cons]#command[0]#result[fvpercent]#statcmd[4]#tryp_low[1]#var[1.tryp_low]": {
+      "d": 0.0
+    },
+    "across[_hide]#cmdset[1]#cohort[3]#colname[2.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[2]#result[fvfrequency]#statcmd[3]#var[2.epi_ordinal]": {
+      "d": 158.0
+    },
+    "across[_hide]#cmdset[1]#cohort[3]#colname[2.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[2]#result[fvpercent]#statcmd[4]#var[2.epi_ordinal]": {
+      "d": 19.26829268292683
+    },
+    "across[_hide]#cmdset[1]#cohort[3]#colname[3.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[3]#result[fvfrequency]#statcmd[3]#var[3.epi_ordinal]": {
+      "d": 204.0
+    },
+    "across[_hide]#cmdset[1]#cohort[3]#colname[3.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[3]#result[fvpercent]#statcmd[4]#var[3.epi_ordinal]": {
+      "d": 24.878048780487806
+    },
+    "across[_hide]#cmdset[1]#cohort[3]#command[0]#result[frequency]#statcmd[1]#var[_N]": {
+      "d": 867.0
+    },
+    "across[_hide]#cmdset[1]#cohort[4]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#result[fvfrequency]#statcmd[3]#var[1.epi_binary]": {
+      "d": 77.0
+    },
+    "across[_hide]#cmdset[1]#cohort[4]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#result[fvpercent]#statcmd[4]#var[1.epi_binary]": {
+      "d": 31.950207468879665
+    },
+    "across[_hide]#cmdset[1]#cohort[4]#colname[1.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[1]#result[fvfrequency]#statcmd[3]#var[1.epi_ordinal]": {
+      "d": 164.0
+    },
+    "across[_hide]#cmdset[1]#cohort[4]#colname[1.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[1]#result[fvpercent]#statcmd[4]#var[1.epi_ordinal]": {
+      "d": 68.04979253112033
+    },
+    "across[_hide]#cmdset[1]#cohort[4]#colname[1.tryp_high]#colname_remainder[_cons]#command[0]#result[fvfrequency]#statcmd[3]#tryp_high[1]#var[1.tryp_high]": {
+      "d": 61.0
+    },
+    "across[_hide]#cmdset[1]#cohort[4]#colname[1.tryp_high]#colname_remainder[_cons]#command[0]#result[fvpercent]#statcmd[4]#tryp_high[1]#var[1.tryp_high]": {
+      "d": 88.40579710144928
+    },
+    "across[_hide]#cmdset[1]#cohort[4]#colname[1.tryp_low]#colname_remainder[_cons]#command[0]#result[fvfrequency]#statcmd[3]#tryp_low[1]#var[1.tryp_low]": {
+      "d": 2.0
+    },
+    "across[_hide]#cmdset[1]#cohort[4]#colname[1.tryp_low]#colname_remainder[_cons]#command[0]#result[fvpercent]#statcmd[4]#tryp_low[1]#var[1.tryp_low]": {
+      "d": 2.898550724637681
+    },
+    "across[_hide]#cmdset[1]#cohort[4]#colname[2.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[2]#result[fvfrequency]#statcmd[3]#var[2.epi_ordinal]": {
+      "d": 36.0
+    },
+    "across[_hide]#cmdset[1]#cohort[4]#colname[2.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[2]#result[fvpercent]#statcmd[4]#var[2.epi_ordinal]": {
+      "d": 14.937759336099585
+    },
+    "across[_hide]#cmdset[1]#cohort[4]#colname[3.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[3]#result[fvfrequency]#statcmd[3]#var[3.epi_ordinal]": {
+      "d": 41.0
+    },
+    "across[_hide]#cmdset[1]#cohort[4]#colname[3.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[3]#result[fvpercent]#statcmd[4]#var[3.epi_ordinal]": {
+      "d": 17.012448132780083
+    },
+    "across[_hide]#cmdset[1]#cohort[4]#command[0]#result[frequency]#statcmd[1]#var[_N]": {
+      "d": 282.0
+    },
+    "across[_hide]#cmdset[1]#cohort[5]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#result[fvfrequency]#statcmd[3]#var[1.epi_binary]": {
+      "d": 49.0
+    },
+    "across[_hide]#cmdset[1]#cohort[5]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#result[fvpercent]#statcmd[4]#var[1.epi_binary]": {
+      "d": 19.838056680161944
+    },
+    "across[_hide]#cmdset[1]#cohort[5]#colname[1.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[1]#result[fvfrequency]#statcmd[3]#var[1.epi_ordinal]": {
+      "d": 198.0
+    },
+    "across[_hide]#cmdset[1]#cohort[5]#colname[1.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[1]#result[fvpercent]#statcmd[4]#var[1.epi_ordinal]": {
+      "d": 80.16194331983806
+    },
+    "across[_hide]#cmdset[1]#cohort[5]#colname[1.tryp_high]#colname_remainder[_cons]#command[0]#result[fvfrequency]#statcmd[3]#tryp_high[1]#var[1.tryp_high]": {
+      "d": 83.0
+    },
+    "across[_hide]#cmdset[1]#cohort[5]#colname[1.tryp_high]#colname_remainder[_cons]#command[0]#result[fvpercent]#statcmd[4]#tryp_high[1]#var[1.tryp_high]": {
+      "d": 96.51162790697676
+    },
+    "across[_hide]#cmdset[1]#cohort[5]#colname[1.tryp_low]#colname_remainder[_cons]#command[0]#result[fvfrequency]#statcmd[3]#tryp_low[1]#var[1.tryp_low]": {
+      "d": 2.0
+    },
+    "across[_hide]#cmdset[1]#cohort[5]#colname[1.tryp_low]#colname_remainder[_cons]#command[0]#result[fvpercent]#statcmd[4]#tryp_low[1]#var[1.tryp_low]": {
+      "d": 2.3255813953488373
+    },
+    "across[_hide]#cmdset[1]#cohort[5]#colname[2.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[2]#result[fvfrequency]#statcmd[3]#var[2.epi_ordinal]": {
+      "d": 23.0
+    },
+    "across[_hide]#cmdset[1]#cohort[5]#colname[2.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[2]#result[fvpercent]#statcmd[4]#var[2.epi_ordinal]": {
+      "d": 9.31174089068826
+    },
+    "across[_hide]#cmdset[1]#cohort[5]#colname[3.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[3]#result[fvfrequency]#statcmd[3]#var[3.epi_ordinal]": {
+      "d": 26.0
+    },
+    "across[_hide]#cmdset[1]#cohort[5]#colname[3.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[3]#result[fvpercent]#statcmd[4]#var[3.epi_ordinal]": {
+      "d": 10.526315789473683
+    },
+    "across[_hide]#cmdset[1]#cohort[5]#command[0]#result[frequency]#statcmd[1]#var[_N]": {
+      "d": 261.0
+    },
+    "across[_hide]#cmdset[1]#cohort[6]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#result[fvfrequency]#statcmd[3]#var[1.epi_binary]": {
+      "d": 38.0
+    },
+    "across[_hide]#cmdset[1]#cohort[6]#colname[1.epi_binary]#colname_remainder[_cons]#command[0]#epi_binary[1]#result[fvpercent]#statcmd[4]#var[1.epi_binary]": {
+      "d": 13.058419243986256
+    },
+    "across[_hide]#cmdset[1]#cohort[6]#colname[1.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[1]#result[fvfrequency]#statcmd[3]#var[1.epi_ordinal]": {
+      "d": 253.0
+    },
+    "across[_hide]#cmdset[1]#cohort[6]#colname[1.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[1]#result[fvpercent]#statcmd[4]#var[1.epi_ordinal]": {
+      "d": 86.94158075601375
+    },
+    "across[_hide]#cmdset[1]#cohort[6]#colname[1.tryp_high]#colname_remainder[_cons]#command[0]#result[fvfrequency]#statcmd[3]#tryp_high[1]#var[1.tryp_high]": {
+      "d": 100.0
+    },
+    "across[_hide]#cmdset[1]#cohort[6]#colname[1.tryp_high]#colname_remainder[_cons]#command[0]#result[fvpercent]#statcmd[4]#tryp_high[1]#var[1.tryp_high]": {
+      "d": 100.0
+    },
+    "across[_hide]#cmdset[1]#cohort[6]#colname[1.tryp_low]#colname_remainder[_cons]#command[0]#result[fvfrequency]#statcmd[3]#tryp_low[1]#var[1.tryp_low]": {
+      "d": 6.0
+    },
+    "across[_hide]#cmdset[1]#cohort[6]#colname[1.tryp_low]#colname_remainder[_cons]#command[0]#result[fvpercent]#statcmd[4]#tryp_low[1]#var[1.tryp_low]": {
+      "d": 6.0
+    },
+    "across[_hide]#cmdset[1]#cohort[6]#colname[2.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[2]#result[fvfrequency]#statcmd[3]#var[2.epi_ordinal]": {
+      "d": 28.0
+    },
+    "across[_hide]#cmdset[1]#cohort[6]#colname[2.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[2]#result[fvpercent]#statcmd[4]#var[2.epi_ordinal]": {
+      "d": 9.621993127147768
+    },
+    "across[_hide]#cmdset[1]#cohort[6]#colname[3.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[3]#result[fvfrequency]#statcmd[3]#var[3.epi_ordinal]": {
+      "d": 10.0
+    },
+    "across[_hide]#cmdset[1]#cohort[6]#colname[3.epi_ordinal]#colname_remainder[_cons]#command[0]#epi_ordinal[3]#result[fvpercent]#statcmd[4]#var[3.epi_ordinal]": {
+      "d": 3.436426116838488
+    },
+    "across[_hide]#cmdset[1]#cohort[6]#command[0]#result[frequency]#statcmd[1]#var[_N]": {
+      "d": 302.0
+    },
+    "across[_hide]#cmdset[2]#cohort[_dtable_test]#colname_remainder[_cons]#epi_ordinal[1]#program_class[nclass]#result[pearson]#result_type[scalar]#var[1.epi_ordinal]": {
+      "d": 1.076649527578968e-33
+    },
+    "across[_hide]#cmdset[3]#cohort[_dtable_test]#colname_remainder[_cons]#epi_binary[1]#program_class[nclass]#result[pearson]#result_type[scalar]#var[1.epi_binary]": {
+      "d": 1.9792835931752509e-35
+    },
+    "across[_hide]#cmdset[4]#cohort[_dtable_test]#colname_remainder[_cons]#program_class[nclass]#result[pearson]#result_type[scalar]#tryp_low[1]#var[1.tryp_low]": {
+      "d": 0.4032191818275179
+    },
+    "across[_hide]#cmdset[6]#cohort[_dtable_test]#colname_remainder[_cons]#program_class[nclass]#result[pearson]#result_type[scalar]#tryp_high[1]#var[1.tryp_high]": {
+      "d": 0.003505707443455088
+    },
+    "across[cohort]#cmdset[1]#cohort[1]#command[0]#result[percent]#statcmd[2]#var[_N]": {
+      "d": 14.467483506126296
+    },
+    "across[cohort]#cmdset[1]#cohort[2]#command[0]#result[percent]#statcmd[2]#var[_N]": {
+      "d": 4.853911404335533
+    },
+    "across[cohort]#cmdset[1]#cohort[3]#command[0]#result[percent]#statcmd[2]#var[_N]": {
+      "d": 40.85768143261074
+    },
+    "across[cohort]#cmdset[1]#cohort[4]#command[0]#result[percent]#statcmd[2]#var[_N]": {
+      "d": 13.289349670122528
+    },
+    "across[cohort]#cmdset[1]#cohort[5]#command[0]#result[percent]#statcmd[2]#var[_N]": {
+      "d": 12.299717247879359
+    },
+    "across[cohort]#cmdset[1]#cohort[6]#command[0]#result[percent]#statcmd[2]#var[_N]": {
+      "d": 14.231856738925542
+    },
+    "cmdset[1]#var[_N]": {
+      "s": ".m"
+    }
+  },
+  "Labels": {
+    "Dimensions": {
+      "_dimensions": {
+        "across": "Across",
+        "amyl_low": "Low Serum Amylase",
+        "border_block": "Table border block",
+        "cell_type": "Table cell type",
+        "cmdset": "Command results index",
+        "cohort": "Cohort",
+        "colname": "Covariate names and column names",
+        "colname_remainder": "Covariate names with factors removed",
+        "command": "Command option index",
+        "epi_binary": "EPI",
+        "epi_ordinal": "EPI Levels",
+        "program_class": "Result program class",
+        "result": "Result",
+        "result_type": "Result type",
+        "statcmd": "Statistic/command option index",
+        "tryp_high": "High trypsinogen",
+        "tryp_low": "Low trypsinogen",
+        "var": "Statistic option variable"
+      },
+      "across": {
+        "cohort": "Cohort"
+      },
+      "amyl_low": {
+        "1": "Low Amylase"
+      },
+      "cohort": {
+        ".m": "Total",
+        "1": "DIVIDS",
+        "2": "SAM",
+        "3": "CICADA",
+        "4": "NUSTART",
+        "5": "STATT",
+        "6": "CLHNS",
+        "_dtable_test": "Test"
+      },
+      "colname": {
+        "amyl_low": "Low Serum Amylase",
+        "epi_binary": "EPI",
+        "epi_ordinal": "EPI Levels",
+        "tryp_high": "High trypsinogen",
+        "tryp_low": "Low trypsinogen"
+      },
+      "command": {
+        "0": "Statistic"
+      },
+      "ct_pan_calci": {
+        "1": "Calcifications"
+      },
+      "ct_pan_duct": {
+        "2": "Duct Abnormality",
+        "3": "Duct not visualized"
+      },
+      "ct_pan_paren_fibrosis": {
+        "1": "Fibrosis"
+      },
+      "ct_pan_paren_inflam_new": {
+        "1": "Edema or Inflammation"
+      },
+      "ct_pan_paren_steatosis_new": {
+        "1": "Steatosis"
+      },
+      "ct_pan_parenchyma": {
+        "2": "Abnormal Parenchyma",
+        "3": "Not well visualized"
+      },
+      "ct_pan_shape": {
+        "1": "Normal Shape",
+        "2": "Small Pancreas",
+        "3": "Enlarged Pancreas"
+      },
+      "epi_binary": {
+        "1": "With EPI"
+      },
+      "epi_ordinal": {
+        "1": "Without EPI",
+        "2": "Mild-Moderate EPI",
+        "3": "Severe EPI"
+      },
+      "ever_mal": {
+        "0": "NPM",
+        "1": "PM"
+      },
+      "result": {
+        "frequency": "Frequency",
+        "fvfrequency": "Factor-variable frequency",
+        "fvpercent": "Factor-variable percent",
+        "percent": "Percent"
+      },
+      "result_type": {
+        "scalar": "Scalar"
+      },
+      "tryp_high": {
+        "1": "High Trypsinogen"
+      },
+      "tryp_low": {
+        "1": "Low Trypsinogen"
+      },
+      "var": {
+        "_N": "XX",
+        "amyl_low": "Low Serum Amylase",
+        "epi_binary": "EPI",
+        "epi_ordinal": "EPI Levels",
+        "tryp_high": "High trypsinogen",
+        "tryp_low": "Low trypsinogen"
+      }
+    }
+  },
+  "Layout": {
+    "columns": "cohort#result",
+    "rows": "var",
+    "tables": ""
+  },
+  "NumericDimNames": [
+    "cohort"
+  ],
+  "ScalarResults": [
+    "pearson"
+  ],
+  "StripeFactorDimNames": [
+    "amyl_low",
+    "ebi_binary",
+    "epi_binary",
+    "epi_ordinal",
+    "tryp_high",
+    "tryp_low"
+  ],
+  "Styles": {
+    "CompositeMap": {
+      "_dtable_stats": {
+        "elements": [
+          "frequency",
+          "percent",
+          "fvfrequency",
+          "fvpercent"
+        ],
+        "trim": "true"
+      },
+      "_dtable_test": {
+        "elements": [
+          "pearson"
+        ],
+        "trim": "true"
+      }
+    },
+    "cell": {
+      "base": {
+        "nformat": "%21.3fc"
+      },
+      "edits": [
+        [
+          "result[N count sumw frequency fvfrequency fvrawfrequency]",
+          {
+            "nformat": "%21.0fc"
+          }
+        ],
+        [
+          "result[percent rawpercent fvpercent fvrawpercent]",
+          {
+            "nformat": "%9.1fc",
+            "sformat": "(%s%%)"
+          }
+        ],
+        [
+          "result[sd]",
+          {
+            "sformat": "(%s)"
+          }
+        ],
+        [
+          "result[regress poisson lnormal kwallis kwallis_ties pearson fisher lrchi2 svylr svywald svyllwald]",
+          {
+            "minimum": 0.001,
+            "nformat": "%6.3f"
+          }
+        ],
+        [
+          "cell_type[column-header]",
+          {
+            "halign": "center"
+          }
+        ],
+        [
+          "cell_type[row-header]",
+          {
+            "halign": "left"
+          }
+        ],
+        [
+          "stars[label]",
+          {
+            "halign": "left"
+          }
+        ],
+        [
+          "border_block[corner]",
+          {
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[column-header]",
+          {
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[row-header]",
+          {
+            "border-bottom": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[item]",
+          {
+            "border-bottom": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "cell_type[item]",
+          {
+            "smcl": "result"
+          }
+        ],
+        [
+          "cell_type[item]",
+          {
+            "margin-left": {
+              "width": "10pt"
+            }
+          }
+        ],
+        [
+          "border_block",
+          {
+            "border-right": {
+              "pattern": "nil"
+            }
+          }
+        ],
+        [
+          "",
+          {
+            "margin-bottom": {
+              "width": "1.5pt"
+            },
+            "margin-left": {
+              "width": "1.5pt"
+            },
+            "margin-right": {
+              "width": "1.5pt"
+            },
+            "margin-top": {
+              "width": "1.5pt"
+            }
+          }
+        ],
+        [
+          "",
+          {
+            "font-family": "Arial",
+            "font-size": "11pt"
+          }
+        ]
+      ]
+    },
+    "export": {
+      "_dtable": {
+        "by_tests": "true",
+        "by_totals": "false"
+      },
+      "tex": {
+        "begintable": "true",
+        "centering": "true"
+      }
+    },
+    "header": {
+      "auto-levels": {
+        "cohort": [
+          {
+            "stripe": "1",
+            "term-index": 0
+          },
+          {
+            "stripe": "2",
+            "term-index": 1
+          },
+          {
+            "stripe": "3",
+            "term-index": 2
+          },
+          {
+            "stripe": "4",
+            "term-index": 3
+          },
+          {
+            "stripe": "5",
+            "term-index": 4
+          },
+          {
+            "stripe": "6",
+            "term-index": 5
+          },
+          {
+            "stripe": "_dtable_test",
+            "term-index": 6
+          }
+        ],
+        "result": [
+          {
+            "stripe": "_dtable_stats",
+            "term-index": 0
+          },
+          {
+            "stripe": "_dtable_test",
+            "term-index": 1
+          }
+        ]
+      },
+      "base": {
+        "level": "label",
+        "title": "hide"
+      },
+      "column": {
+        "dups": "center",
+        "width": "equal"
+      },
+      "dimensions": {
+        "across": {
+          "level": "hide",
+          "title": "hide"
+        },
+        "amyl_low": {
+          "level": "label",
+          "nformat": "%22.0g",
+          "title": "hide"
+        },
+        "cohort": {
+          "level": "label",
+          "nformat": "%8.0g",
+          "title": "label"
+        },
+        "ebi_binary": {
+          "title": "hide"
+        },
+        "epi_binary": {
+          "level": "label",
+          "nformat": "%11.0g",
+          "title": "hide"
+        },
+        "epi_ordinal": {
+          "level": "label",
+          "nformat": "%17.0g",
+          "title": "hide"
+        },
+        "ever_mal": {
+          "title": "hide"
+        },
+        "result": {
+          "level": "hide",
+          "title": "hide"
+        },
+        "tryp_high": {
+          "level": "label",
+          "nformat": "%25.0g",
+          "title": "hide"
+        },
+        "tryp_low": {
+          "level": "label",
+          "nformat": "%26.0g",
+          "title": "hide"
+        },
+        "var": {
+          "level": "label",
+          "title": "hide"
+        }
+      },
+      "levels": [
+        [
+          [
+            "cohort",
+            {
+              "stripe": "_dtable_test",
+              "term-index": 0
+            }
+          ],
+          {
+            "level": "label"
+          }
+        ],
+        [
+          [
+            "var",
+            {
+              "stripe": "_N",
+              "term-index": 0
+            }
+          ],
+          {
+            "level": "label"
+          }
+        ]
+      ],
+      "row": {
+        "arrangement": "stack",
+        "nobinder": "true",
+        "spacer": "false"
+      }
+    },
+    "notes-styles": {
+      "font-family": "Arial",
+      "font-size": "11pt"
+    },
+    "title-styles": {
+      "font-family": "Arial",
+      "font-size": "11pt",
+      "font-weight": "bold"
+    }
+  },
+  "Tags": {
+    "across": [
+      {
+        "stripe": "_hide",
+        "term-index": 1
+      },
+      {
+        "stripe": "cohort",
+        "term-index": 2
+      }
+    ],
+    "amyl_low": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      }
+    ],
+    "border_block": [
+      {
+        "stripe": "column-header",
+        "term-index": 0
+      },
+      {
+        "stripe": "corner",
+        "term-index": 0
+      },
+      {
+        "stripe": "item",
+        "term-index": 0
+      },
+      {
+        "stripe": "row-header",
+        "term-index": 0
+      }
+    ],
+    "cell_type": [
+      {
+        "stripe": "column-header",
+        "term-index": 0
+      },
+      {
+        "stripe": "corner",
+        "term-index": 0
+      },
+      {
+        "stripe": "item",
+        "term-index": 0
+      },
+      {
+        "stripe": "row-header",
+        "term-index": 0
+      }
+    ],
+    "cmdset": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      },
+      {
+        "stripe": "2",
+        "term-index": 1
+      },
+      {
+        "stripe": "3",
+        "term-index": 2
+      },
+      {
+        "stripe": "4",
+        "term-index": 3
+      },
+      {
+        "stripe": "5",
+        "term-index": 4
+      },
+      {
+        "stripe": "6",
+        "term-index": 5
+      }
+    ],
+    "cohort": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      },
+      {
+        "stripe": "2",
+        "term-index": 1
+      },
+      {
+        "stripe": "3",
+        "term-index": 2
+      },
+      {
+        "stripe": "4",
+        "term-index": 3
+      },
+      {
+        "stripe": "5",
+        "term-index": 4
+      },
+      {
+        "stripe": "6",
+        "term-index": 5
+      },
+      {
+        "stripe": "_dtable_test",
+        "term-index": 6
+      }
+    ],
+    "colname": [
+      {
+        "stripe": "1.amyl_low",
+        "term-index": 4
+      },
+      {
+        "stripe": "1.epi_binary",
+        "term-index": 2
+      },
+      {
+        "stripe": "1.epi_ordinal",
+        "term-index": 1
+      },
+      {
+        "stripe": "2.epi_ordinal",
+        "term-index": 1
+      },
+      {
+        "stripe": "3.epi_ordinal",
+        "term-index": 1
+      },
+      {
+        "stripe": "1.tryp_high",
+        "term-index": 5
+      },
+      {
+        "stripe": "1.tryp_low",
+        "term-index": 3
+      }
+    ],
+    "colname_remainder": [
+      {
+        "stripe": "_cons",
+        "term-index": 18446744073709551588
+      }
+    ],
+    "command": [
+      {
+        "stripe": "0",
+        "term-index": 0
+      }
+    ],
+    "ebi_binary": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      }
+    ],
+    "epi_binary": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      }
+    ],
+    "epi_ordinal": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      },
+      {
+        "stripe": "2",
+        "term-index": 1
+      },
+      {
+        "stripe": "3",
+        "term-index": 2
+      }
+    ],
+    "program_class": [
+      {
+        "stripe": "nclass",
+        "term-index": 0
+      }
+    ],
+    "result": [
+      {
+        "stripe": "_dtable_stats",
+        "term-index": 0
+      },
+      {
+        "stripe": "_dtable_test",
+        "term-index": 0
+      },
+      {
+        "stripe": "frequency",
+        "term-index": 0
+      },
+      {
+        "stripe": "fvfrequency",
+        "term-index": 0
+      },
+      {
+        "stripe": "fvpercent",
+        "term-index": 0
+      },
+      {
+        "stripe": "pearson",
+        "term-index": 0
+      },
+      {
+        "stripe": "percent",
+        "term-index": 0
+      },
+      {
+        "stripe": "proportion",
+        "term-index": 0
+      },
+      {
+        "stripe": "rawpercent",
+        "term-index": 0
+      },
+      {
+        "stripe": "rawproportion",
+        "term-index": 0
+      },
+      {
+        "stripe": "sumw",
+        "term-index": 0
+      }
+    ],
+    "result_type": [
+      {
+        "stripe": "scalar",
+        "term-index": 0
+      }
+    ],
+    "statcmd": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      },
+      {
+        "stripe": "2",
+        "term-index": 0
+      },
+      {
+        "stripe": "3",
+        "term-index": 0
+      },
+      {
+        "stripe": "4",
+        "term-index": 0
+      }
+    ],
+    "tryp_high": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      }
+    ],
+    "tryp_low": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      }
+    ],
+    "var": [
+      {
+        "stripe": "_N",
+        "term-index": 1
+      },
+      {
+        "stripe": "_hide",
+        "term-index": 2
+      },
+      {
+        "stripe": "1.amyl_low",
+        "term-index": 6
+      },
+      {
+        "stripe": "1.ebi_binary",
+        "term-index": 8
+      },
+      {
+        "stripe": "1.epi_binary",
+        "term-index": 4
+      },
+      {
+        "stripe": "1.epi_ordinal",
+        "term-index": 3
+      },
+      {
+        "stripe": "2.epi_ordinal",
+        "term-index": 3
+      },
+      {
+        "stripe": "3.epi_ordinal",
+        "term-index": 3
+      },
+      {
+        "stripe": "1.tryp_high",
+        "term-index": 7
+      },
+      {
+        "stripe": "1.tryp_low",
+        "term-index": 5
+      }
+    ]
+  },
+  "collection-name": "enzymes_cat_coh"
+}

@@ -6,6 +6,10 @@ kwallis p value
 di chi2tail(r(df),r(chi2))
 */
 
+collect clear
+local pwd "~/Documents/GitHub/sampa-radio"
+
+cd `pwd'
 cap prog drop mystats
 program mystats, rclass
 return scalar p_adj= chi2tail(r(df), r(chi2_adj))
@@ -20,7 +24,7 @@ collect clear
 local col "ever_mal"
 local contmed "fecal_elastase ul_amylp lipase  ngml_trypsinogen"  /*continous variables; median (p25-p75)  will be reported*/
 
-local colhead2 `"0 "NPM" 1 "PM""'
+local colhead2 `"1 "DIVIDS" 1 "PM""'
 		
 * format median of `contmed'
 local nfrmt_p50 "%5.0f"
@@ -31,7 +35,7 @@ local sfrmt_p75 "%s)"
 local title "Table 3. Pancreatic Enzyme Assays"
 
 local notes1 "Values are [N] median (p25-p75)."
-local notes2 "Faecal elastase values have an upper limit of detection is 600."
+local notes2 "Faecal elastase values that reached the upper limit of detection of 600 (n=460) ."
 local notes3 "Lipase from DIVIDS cohort only. Trypsinogen from CT Scan subset only."
 local notes4 "Tobit regression was performed for faecal elastase and Kruskal-Wallis tests for the rest."
 
@@ -99,6 +103,15 @@ collect preview /* preview changes */
 
 collect preview /* preview changes */
 
+*** TABLE TEXT
+
+* Table Styles
+	collect style cell, font(Arial, size(11))
+	collect style notes, font(Arial, size(11))
+
+* Table title styles
+	collect style title, font(Arial, size(11) bold)
+
 * MODIFY ROW TEXT
 
 
@@ -162,7 +175,10 @@ collect save ./tables/enzymes1.json, replace
 
 * Create new collection for p-values
 collect create c2
-foreach v in `contmed' {
+
+collect _r_p : tobit fecal_elastase ever_mal, ul(600)
+ 
+foreach v in ul_amylp lipase ngml_trypsinogen {
     quietly kwallis `v', by(`col')
     collect: mystats
 }
@@ -183,9 +199,10 @@ collect layout (var) (ever_mal#result[count column1 column4] result[p])
 collect save ./tables/enzymes, replace	
 * Export combined table
 collect export ./tables/enzymes.html, as(html) replace
-collect export ./tables/enzymes.docx, as(docx) replace
+html2docx ./tables/enzymes.html , saving(./tables/enzymes.docx) replace
+collect export ./tables/enzymes_ms.docx, as(docx) replace
 
-collect export preview.xlsx, as(xlsx) replace
+
 
 /* END END END END END END END END END END END END END END END END END END END END */
 	

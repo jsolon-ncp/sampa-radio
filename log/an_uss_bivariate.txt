@@ -1,8 +1,8 @@
-------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
       name:  <unnamed>
        log:  /Users/juansolon/Documents/GitHub/sampa-radio/log/an_uss_bivariate.txt
   log type:  text
- opened on:  27 Mar 2025, 10:09:09
+ opened on:   2 Apr 2025, 15:48:18
 
 . 
 . cap prog drop mystats
@@ -21,8 +21,8 @@
 . 
 . local col "ever_mal"
 
-. local contmed "pan_head_ap pan_head_trans pan_body_trans pan_tail_trans"  /*continous variables; median (p25-p75)  will be r
-> eported*/
+. local contmed "pan_head_ap pan_head_trans pan_body_trans pan_tail_trans"  /*continous varia
+> bles; median (p25-p75)  will be reported*/
 
 . 
 . local colhead2 `"0 "NPM" 1 "PM""'
@@ -64,7 +64,8 @@
 
 . 
 . 
-. * STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  
+. * STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  S
+> TOP !  STOP !  STOP !  
 . * THERE IS NOTHING TO MODIFY BEYOND THIS LINE UNLESS CHANGING CODE. 
 . 
 . * GENERATE TABLE STATS 
@@ -122,8 +123,8 @@ Tail, Transverse              |
 (8 items recoded in collection c1)
 
 .                 
-.         * Create composite result : this is needed because 75 is in column3 and we want it in the same column as column 2 . 
->  Use for medians and probably CIs
+.         * Create composite result : this is needed because 75 is in column3 and we want it 
+> in the same column as column 2 .  Use for medians and probably CIs
 .                 collect composite define column4 = column2 column3, replace
 
 . 
@@ -185,16 +186,19 @@ Tail, Transverse |                          509      1.23    1.07      1.59     
 . 
 .         * Hide supercolumn variable name because it is self-descriptive
 .                 
-.         *       collect style header `scol', title(hide) /* this removes the column variable name or label by hiding it */
+.         *       collect style header `scol', title(hide) /* this removes the column variabl
+> e name or label by hiding it */
 . 
 .         * Hide the column variable name 
 .                 
-.                 collect style header `col', title(hide) /* this removes the column variable name or label by hiding it */
+.                 collect style header `col', title(hide) /* this removes the column variable
+>  name or label by hiding it */
 
 . 
 .         * Hide the words column 1 and column 2 for the results 
 . 
-.                 collect style header result, level(hide) /* this removes column 1 and column2 header names*/
+.                 collect style header result, level(hide) /* this removes column 1 and colum
+> n2 header names*/
 
 . 
 . collect preview /* preview changes */
@@ -239,36 +243,39 @@ Tail, Transverse |  509   1.23   1.07      1.59   692   1.42   1.14     1.715
 
 . 
 . * Add IQR formatting to p25 and p75 separately:
-.         collect style cell result[column2]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`sfrmt_p25'") /* formats iqr as (p2
-> 5 - p75)*/
+.         collect style cell result[column2]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`s
+> frmt_p25'") /* formats iqr as (p25 - p75)*/
 
-.         collect style cell result[column3]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`sfrmt_p75'") 
+.         collect style cell result[column3]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`s
+> frmt_p75'") 
 
 . 
 . * Format count column
-.         collect style cell result[count], nformat("%4.0f") /* Format count as whole number */
+.         collect style cell result[count], nformat("%4.0f") /* Format count as whole number 
+> */
 
-.         collect style cell result[count], sformat("[%s]") /* Format count as whole number */
+.         collect style cell result[count], sformat("[%s]") /* Format count as whole number *
+> /
 
 .         
 . /* format factor variables (categorical) column 1 and column 2
 > 
 >         collect style cell var[`frmt_catvar1']#result[column1], nformat(`nfrmt_freq')
 > 
->         collect style cell var[`frmt_catvar1']#result[column2], nformat(`nfrmt_perc') sformat("(`sfrmt_perc')") /* Adds (%) 
-> to percent */
+>         collect style cell var[`frmt_catvar1']#result[column2], nformat(`nfrmt_perc') sform
+> at("(`sfrmt_perc')") /* Adds (%) to percent */
 > 
 > * format means variable column 1 and column 2
 > 
->         collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats continuous variable to one decimal
-> */
+>         collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats c
+> ontinuous variable to one decimal*/
 > 
->         collect style cell var[`contn']#result[column2], nformat(`nfrmt_sd') sformat(`sfrmt_sd') /* Formats continuous varia
-> ble to one decimal*/
+>         collect style cell var[`contn']#result[column2], nformat(`nfrmt_sd') sformat(`sfrmt
+> _sd') /* Formats continuous variable to one decimal*/
 > */
 . * Change font of results
-.         *collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats continuous variable to one decima
-> l*/
+.         *collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats 
+> continuous variable to one decimal*/
 .         
 . * Add text
 .         collect title `title'
@@ -397,10 +404,559 @@ end of do-file
 
 . do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
 
-. /* an_ct_bivariate.do 
+. /* table_uss_unadjusted_bivariate.do 
 > J Solon
 > Sampa
 > March19 
+> 
+> Creates n median iqr and p values of var
+> kwallis p value
+> di chi2tail(r(df),r(chi2))
+> 
+> */
+. 
+. 
+. cap prog drop mystats
+
+. program mystats, rclass
+  1. return scalar p_adj= chi2tail(r(df), r(chi2_adj))
+  2. return scalar Chi2_adj =  r(chi2_adj)
+  3. return scalar  DF =  r(df)
+  4. return scalar p= chi2tail(r(df), r(chi2))
+  5. return scalar  Chi2 =   r(chi2)
+  6. end
+
+. 
+. collect clear
+
+. 
+. local col "ever_mal"
+
+. local contmed "adj_wt_pan_head_ap adj_wt_pan_head_trans adj_wt_pan_body_trans adj_wt_pan_ta
+> il_trans adj_wt_ct_pan_head_trans adj_wt_ct_pan_head_ap adj_wt_ct_pan_body_trans adj_wt_ct_
+> pan_tail_trans adj_wt_ct_pan_body_tail adj_wt_ct_pan_vol "  /*continous variables; median (
+> p25-p75)  will be reported*/
+
+. 
+. local colhead2 `"0 "NPM" 1 "PM""'
+
+.                 
+. * format median of `contmed'
+. local nfrmt_p50 "%5.3f"
+
+. local nfrmt_iqr "%5.3f"
+
+. local sfrmt_p25 "(%s-"
+
+. local sfrmt_p75 "%s)"
+
+. 
+. local title "Table . Radiology Measurements Adj by Weight"
+
+. count if radio3 ==1
+  1,621
+
+. local obs_uss = r(N)
+
+. di `obs_uss'
+1621
+
+. count if ct2 ==1
+  291
+
+. local obs_ct = r(N)
+
+. di `obs_ct'
+291
+
+. local notes1 "Values are [N] median (p25-p75)."
+
+. local notes2 "`obs_uss' contributing any ultrasound measurement."
+
+. local notes3 "`obs_ct' contributing any CT scan measurement."
+
+. 
+. 
+. * STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  S
+> TOP !  STOP !  STOP !  
+. * THERE IS NOTHING TO MODIFY BEYOND THIS LINE UNLESS CHANGING CODE. 
+. 
+. * GENERATE TABLE STATS 
+. 
+.         table (var)(`col')  , ///
+>                 stat(frequency) ///
+>                 stat(count `contmed') ///
+>                 stat(p50 `contmed') ///
+>                 stat(p25 `contmed') ///
+>                 stat(p75 `contmed') ///
+>                 nototal
+
+----------------------------------------------------------------
+                              |   Ever experience malnutrition? 
+                              |             NPM               PM
+------------------------------+---------------------------------
+Frequency                     |           1,101            1,021
+adj_wt_pan_head_ap            |                                 
+  Number of nonmissing values |             715              832
+  50th percentile             |        .0338684         .0432393
+  25th percentile             |        .0284433         .0349846
+  75th percentile             |        .0422562         .0530595
+adj_wt_pan_head_trans         |                                 
+  Number of nonmissing values |             635              759
+  50th percentile             |        .0336039         .0372839
+  25th percentile             |        .0282486              .03
+  75th percentile             |        .0400259         .0460803
+adj_wt_pan_body_trans         |                                 
+  Number of nonmissing values |             745              858
+  50th percentile             |        .0201342         .0254555
+  25th percentile             |        .0168242         .0198113
+  75th percentile             |        .0260823         .0332362
+adj_wt_pan_tail_trans         |                                 
+  Number of nonmissing values |             509              687
+  50th percentile             |        .0203625         .0321759
+  25th percentile             |        .0162826         .0238284
+  75th percentile             |        .0315126         .0397701
+adj_wt_ct_pan_head_trans      |                                 
+  Number of nonmissing values |             148              139
+  50th percentile             |        .0415808         .0478182
+  25th percentile             |        .0358704         .0380494
+  75th percentile             |        .0487101         .0594378
+adj_wt_ct_pan_head_ap         |                                 
+  Number of nonmissing values |             149              141
+  50th percentile             |        .0409165         .0434638
+  25th percentile             |        .0341772         .0383475
+  75th percentile             |        .0480384          .053286
+adj_wt_ct_pan_body_trans      |                                 
+  Number of nonmissing values |             148              141
+  50th percentile             |        .0322719         .0365724
+  25th percentile             |        .0264048          .030678
+  75th percentile             |        .0378128         .0459502
+adj_wt_ct_pan_tail_trans      |                                 
+  Number of nonmissing values |             149              139
+  50th percentile             |         .027248         .0317568
+  25th percentile             |        .0225776         .0260188
+  75th percentile             |        .0337152         .0408397
+adj_wt_ct_pan_body_tail       |                                 
+  Number of nonmissing values |             102              112
+  50th percentile             |        .1677179         .1743133
+  25th percentile             |        .1441358         .1479615
+  75th percentile             |        .1913732         .1990182
+adj_wt_ct_pan_vol             |                                 
+  Number of nonmissing values |             101              108
+  50th percentile             |        1.035782          1.07195
+  25th percentile             |        .8579786         .8487658
+  75th percentile             |        1.212234         1.438702
+----------------------------------------------------------------
+
+.                 
+. collect rename Table c1
+(current collection is c1)
+
+.                 
+. *REFORMAT RESULTS TO DESIRED COLUMNS
+.                 
+.         * recodes median and iqr
+.                 collect recode result p50 = column1
+(20 items recoded in collection c1)
+
+.                 collect recode result p25 = column2
+(20 items recoded in collection c1)
+
+.                 collect recode result p75 = column3
+(20 items recoded in collection c1)
+
+.                 
+.         * Create composite result : this is needed because 75 is in column3 and we want it 
+> in the same column as column 2 .  Use for medians and probably CIs
+.                 collect composite define column4 = column2 column3, replace
+
+. 
+.         * Calculate p-values from chi2 and df
+.         foreach v in `contmed' {
+  2.                 quietly kwallis `v', by(`col')
+  3.                 collect: mystats
+  4.         }
+
+. 
+.         
+. * CREATE THE TABLE 1 Layout Super column - column 
+. 
+.         collect layout (var) (ever_mal#result[count column1 column4])
+
+Collection: c1
+      Rows: var
+   Columns: ever_mal#result[count column1 column4]
+   Table 1: 10 x 6
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+                         |                                                Ever experience malnutrition?                                              
+                         |                              NPM                                                            PM                            
+                         |  Number of nonmissing values    column1      column2 column3   Number of nonmissing values    column1      column2 column3
+-------------------------+---------------------------------------------------------------------------------------------------------------------------
+adj_wt_pan_head_ap       |                          715   .0338684   .0284433  .0422562                           832   .0432393   .0349846  .0530595
+adj_wt_pan_head_trans    |                          635   .0336039   .0282486  .0400259                           759   .0372839        .03  .0460803
+adj_wt_pan_body_trans    |                          745   .0201342   .0168242  .0260823                           858   .0254555   .0198113  .0332362
+adj_wt_pan_tail_trans    |                          509   .0203625   .0162826  .0315126                           687   .0321759   .0238284  .0397701
+adj_wt_ct_pan_head_trans |                          148   .0415808   .0358704  .0487101                           139   .0478182   .0380494  .0594378
+adj_wt_ct_pan_head_ap    |                          149   .0409165   .0341772  .0480384                           141   .0434638   .0383475   .053286
+adj_wt_ct_pan_body_trans |                          148   .0322719   .0264048  .0378128                           141   .0365724    .030678  .0459502
+adj_wt_ct_pan_tail_trans |                          149    .027248   .0225776  .0337152                           139   .0317568   .0260188  .0408397
+adj_wt_ct_pan_body_tail  |                          102   .1677179   .1441358  .1913732                           112   .1743133   .1479615  .1990182
+adj_wt_ct_pan_vol        |                          101   1.035782   .8579786  1.212234                           108    1.07195   .8487658  1.438702
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+. 
+. * Format p-values
+.         collect style cell result[p], nformat("%5.3f")
+
+.         collect style cell result[p], sformat("p=%s")
+
+. 
+. * CHANGE HEADER TEXT
+.         * column
+.                 collect label levels `col' `colhead2', modify
+
+. 
+. collect preview /* preview changes */
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+                         |                                                Ever experience malnutrition?                                              
+                         |                              NPM                                                            PM                            
+                         |  Number of nonmissing values    column1      column2 column3   Number of nonmissing values    column1      column2 column3
+-------------------------+---------------------------------------------------------------------------------------------------------------------------
+adj_wt_pan_head_ap       |                          715   .0338684   .0284433  .0422562                           832   .0432393   .0349846  .0530595
+adj_wt_pan_head_trans    |                          635   .0336039   .0282486  .0400259                           759   .0372839        .03  .0460803
+adj_wt_pan_body_trans    |                          745   .0201342   .0168242  .0260823                           858   .0254555   .0198113  .0332362
+adj_wt_pan_tail_trans    |                          509   .0203625   .0162826  .0315126                           687   .0321759   .0238284  .0397701
+adj_wt_ct_pan_head_trans |                          148   .0415808   .0358704  .0487101                           139   .0478182   .0380494  .0594378
+adj_wt_ct_pan_head_ap    |                          149   .0409165   .0341772  .0480384                           141   .0434638   .0383475   .053286
+adj_wt_ct_pan_body_trans |                          148   .0322719   .0264048  .0378128                           141   .0365724    .030678  .0459502
+adj_wt_ct_pan_tail_trans |                          149    .027248   .0225776  .0337152                           139   .0317568   .0260188  .0408397
+adj_wt_ct_pan_body_tail  |                          102   .1677179   .1441358  .1913732                           112   .1743133   .1479615  .1990182
+adj_wt_ct_pan_vol        |                          101   1.035782   .8579786  1.212234                           108    1.07195   .8487658  1.438702
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+. 
+. * HIDE COLUMN HEADERS
+. 
+.         * Hide supercolumn variable name because it is self-descriptive
+.                 
+.         *       collect style header `scol', title(hide) /* this removes the column variabl
+> e name or label by hiding it */
+. 
+.         * Hide the column variable name 
+.                 
+.                 collect style header `col', title(hide) /* this removes the column variable
+>  name or label by hiding it */
+
+. 
+.         * Hide the words column 1 and column 2 for the results 
+. 
+.                 collect style header result, level(hide) /* this removes column 1 and colum
+> n2 header names*/
+
+. 
+. collect preview /* preview changes */
+
+-----------------------------------------------------------------------------------------------------
+                         |                  NPM                                    PM                
+-------------------------+---------------------------------------------------------------------------
+adj_wt_pan_head_ap       |  715   .0338684   .0284433  .0422562   832   .0432393   .0349846  .0530595
+adj_wt_pan_head_trans    |  635   .0336039   .0282486  .0400259   759   .0372839        .03  .0460803
+adj_wt_pan_body_trans    |  745   .0201342   .0168242  .0260823   858   .0254555   .0198113  .0332362
+adj_wt_pan_tail_trans    |  509   .0203625   .0162826  .0315126   687   .0321759   .0238284  .0397701
+adj_wt_ct_pan_head_trans |  148   .0415808   .0358704  .0487101   139   .0478182   .0380494  .0594378
+adj_wt_ct_pan_head_ap    |  149   .0409165   .0341772  .0480384   141   .0434638   .0383475   .053286
+adj_wt_ct_pan_body_trans |  148   .0322719   .0264048  .0378128   141   .0365724    .030678  .0459502
+adj_wt_ct_pan_tail_trans |  149    .027248   .0225776  .0337152   139   .0317568   .0260188  .0408397
+adj_wt_ct_pan_body_tail  |  102   .1677179   .1441358  .1913732   112   .1743133   .1479615  .1990182
+adj_wt_ct_pan_vol        |  101   1.035782   .8579786  1.212234   108    1.07195   .8487658  1.438702
+-----------------------------------------------------------------------------------------------------
+
+. 
+. *** TABLE TEXT
+. 
+. * Table Styles
+.         collect style cell, font(Arial, size(11))
+
+.         collect style notes, font(Arial, size(11))
+
+. 
+. * Table title styles
+.         collect style title, font(Arial, size(11) bold)
+
+. 
+. * MODIFY ROW TEXT
+. 
+. 
+. * REVISE ROW STYLES
+. 
+. * Stack levels of each variable , place a space between variables (spacer) ; 
+. 
+.         collect style row stack, nobinder spacer
+
+. 
+. * Remove vertical line after variables
+. 
+.         collect style cell border_block, border(right, pattern(nil))
+
+. 
+. * HIDE ROW Text
+. 
+. * Hide the variable names 
+. collect style header `hiderows', title(hide)
+
+. 
+. 
+. * FORMAT NUMBERS
+. 
+. * Format median
+. 
+.         collect style cell result[column1]#var[`contmed'], nformat(`nfrmt_p50')
+
+. 
+. * Add IQR formatting to p25 and p75 separately:
+.         collect style cell result[column2]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`s
+> frmt_p25'") /* formats iqr as (p25 - p75)*/
+
+.         collect style cell result[column3]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`s
+> frmt_p75'") 
+
+. 
+. * Format count column
+.         collect style cell result[count], nformat("%4.0f") /* Format count as whole number 
+> */
+
+.         collect style cell result[count], sformat("[%s]") /* Format count as whole number *
+> /
+
+.         
+. /* format factor variables (categorical) column 1 and column 2
+> 
+>         collect style cell var[`frmt_catvar1']#result[column1], nformat(`nfrmt_freq')
+> 
+>         collect style cell var[`frmt_catvar1']#result[column2], nformat(`nfrmt_perc') sform
+> at("(`sfrmt_perc')") /* Adds (%) to percent */
+> 
+> * format means variable column 1 and column 2
+> 
+>         collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats c
+> ontinuous variable to one decimal*/
+> 
+>         collect style cell var[`contn']#result[column2], nformat(`nfrmt_sd') sformat(`sfrmt
+> _sd') /* Formats continuous variable to one decimal*/
+> */
+. * Change font of results
+.         *collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats 
+> continuous variable to one decimal*/
+.         
+. * Add text
+.         collect title `title'
+
+.         collect notes `notes1'
+
+.         collect notes `notes2'
+
+.         collect notes `notes3'
+
+.         
+. collect preview
+
+Table . Radiology Measurements Adj by Weight
+-----------------------------------------------------------------------------------------
+                                        NPM                              PM              
+-----------------------------------------------------------------------------------------
+adj_wt_pan_head_ap        [715]   0.034   (0.028- 0.042)   [832]   0.043   (0.035- 0.053)
+adj_wt_pan_head_trans     [635]   0.034   (0.028- 0.040)   [759]   0.037   (0.030- 0.046)
+adj_wt_pan_body_trans     [745]   0.020   (0.017- 0.026)   [858]   0.025   (0.020- 0.033)
+adj_wt_pan_tail_trans     [509]   0.020   (0.016- 0.032)   [687]   0.032   (0.024- 0.040)
+adj_wt_ct_pan_head_trans  [148]   0.042   (0.036- 0.049)   [139]   0.048   (0.038- 0.059)
+adj_wt_ct_pan_head_ap     [149]   0.041   (0.034- 0.048)   [141]   0.043   (0.038- 0.053)
+adj_wt_ct_pan_body_trans  [148]   0.032   (0.026- 0.038)   [141]   0.037   (0.031- 0.046)
+adj_wt_ct_pan_tail_trans  [149]   0.027   (0.023- 0.034)   [139]   0.032   (0.026- 0.041)
+adj_wt_ct_pan_body_tail   [102]   0.168   (0.144- 0.191)   [112]   0.174   (0.148- 0.199)
+adj_wt_ct_pan_vol         [101]   1.036   (0.858- 1.212)   [108]   1.072   (0.849- 1.439)
+-----------------------------------------------------------------------------------------
+Values are [N] median (p25-p75).
+1621 contributing any ultrasound measurement.
+291 contributing any CT scan measurement.
+
+. 
+. * Save first collection with main stats
+. collect layout (var) (ever_mal#result[count column1 column4])
+
+Collection: c1
+      Rows: var
+   Columns: ever_mal#result[count column1 column4]
+   Table 1: 10 x 6
+
+Table . Radiology Measurements Adj by Weight
+-----------------------------------------------------------------------------------------
+                                        NPM                              PM              
+-----------------------------------------------------------------------------------------
+adj_wt_pan_head_ap        [715]   0.034   (0.028- 0.042)   [832]   0.043   (0.035- 0.053)
+adj_wt_pan_head_trans     [635]   0.034   (0.028- 0.040)   [759]   0.037   (0.030- 0.046)
+adj_wt_pan_body_trans     [745]   0.020   (0.017- 0.026)   [858]   0.025   (0.020- 0.033)
+adj_wt_pan_tail_trans     [509]   0.020   (0.016- 0.032)   [687]   0.032   (0.024- 0.040)
+adj_wt_ct_pan_head_trans  [148]   0.042   (0.036- 0.049)   [139]   0.048   (0.038- 0.059)
+adj_wt_ct_pan_head_ap     [149]   0.041   (0.034- 0.048)   [141]   0.043   (0.038- 0.053)
+adj_wt_ct_pan_body_trans  [148]   0.032   (0.026- 0.038)   [141]   0.037   (0.031- 0.046)
+adj_wt_ct_pan_tail_trans  [149]   0.027   (0.023- 0.034)   [139]   0.032   (0.026- 0.041)
+adj_wt_ct_pan_body_tail   [102]   0.168   (0.144- 0.191)   [112]   0.174   (0.148- 0.199)
+adj_wt_ct_pan_vol         [101]   1.036   (0.858- 1.212)   [108]   1.072   (0.849- 1.439)
+-----------------------------------------------------------------------------------------
+Values are [N] median (p25-p75).
+1621 contributing any ultrasound measurement.
+291 contributing any CT scan measurement.
+
+. collect save ./tables/uss1.json, replace
+(collection c1 saved to file ./tables/uss1.json)
+
+. 
+. * Create new collection for p-values
+. collect create c2
+(current collection is c2)
+
+. foreach v in `contmed' {
+  2.     quietly kwallis `v', by(`col')
+  3.     collect: mystats
+  4. }
+
+.    
+.             
+. 
+. * Remap cmdset to match var levels
+. collect recode cmdset 1 = adj_wt_pan_head_ap
+(5 items recoded in collection c2)
+
+. collect recode cmdset 2 = adj_wt_pan_head_trans
+(5 items recoded in collection c2)
+
+. collect recode cmdset 3 = adj_wt_pan_body_trans
+(5 items recoded in collection c2)
+
+. collect recode cmdset 4 = adj_wt_pan_tail_trans
+(5 items recoded in collection c2)
+
+. collect recode cmdset 5 = adj_wt_ct_pan_head_trans
+(5 items recoded in collection c2)
+
+. collect recode cmdset 6 = adj_wt_ct_pan_head_ap
+(5 items recoded in collection c2)
+
+. collect recode cmdset 7 = adj_wt_ct_pan_body_trans
+(5 items recoded in collection c2)
+
+. collect recode cmdset 8 = adj_wt_ct_pan_tail_trans
+(5 items recoded in collection c2)
+
+. collect recode cmdset 9 = adj_wt_ct_pan_body_tail
+(5 items recoded in collection c2)
+
+. collect recode cmdset 10 = adj_wt_ct_pan_vol
+(5 items recoded in collection c2)
+
+. 
+. 
+. collect remap cmdset = var
+(50 items remapped in collection c2)
+
+. 
+. * Combine collections
+. collect combine c3 = c1 c2
+(current collection is c3)
+
+. 
+. * Create layout for combined collection
+. collect layout (var) (ever_mal#result[count column1 column4] result[p])   
+
+Collection: c3
+      Rows: var
+   Columns: ever_mal#result[count column1 column4] result[p]
+   Table 1: 10 x 7
+
+Table . Radiology Measurements Adj by Weight
+---------------------------------------------------------------------------------------------------
+                                        NPM                              PM                        
+---------------------------------------------------------------------------------------------------
+adj_wt_pan_head_ap        [715]   0.034   (0.028- 0.042)   [832]   0.043   (0.035- 0.053)   p=0.000
+adj_wt_pan_head_trans     [635]   0.034   (0.028- 0.040)   [759]   0.037   (0.030- 0.046)   p=0.000
+adj_wt_pan_body_trans     [745]   0.020   (0.017- 0.026)   [858]   0.025   (0.020- 0.033)   p=0.000
+adj_wt_pan_tail_trans     [509]   0.020   (0.016- 0.032)   [687]   0.032   (0.024- 0.040)   p=0.000
+adj_wt_ct_pan_head_trans  [148]   0.042   (0.036- 0.049)   [139]   0.048   (0.038- 0.059)   p=0.000
+adj_wt_ct_pan_head_ap     [149]   0.041   (0.034- 0.048)   [141]   0.043   (0.038- 0.053)   p=0.001
+adj_wt_ct_pan_body_trans  [148]   0.032   (0.026- 0.038)   [141]   0.037   (0.031- 0.046)   p=0.000
+adj_wt_ct_pan_tail_trans  [149]   0.027   (0.023- 0.034)   [139]   0.032   (0.026- 0.041)   p=0.000
+adj_wt_ct_pan_body_tail   [102]   0.168   (0.144- 0.191)   [112]   0.174   (0.148- 0.199)   p=0.067
+adj_wt_ct_pan_vol         [101]   1.036   (0.858- 1.212)   [108]   1.072   (0.849- 1.439)   p=0.101
+---------------------------------------------------------------------------------------------------
+Values are [N] median (p25-p75).
+1621 contributing any ultrasound measurement.
+291 contributing any CT scan measurement.
+
+.    
+. 
+. 
+. collect save ./tables/adjusted, replace 
+(collection c3 saved to file ./tables/adjusted.stjson)
+
+. * Export combined table
+. collect export ./tables/adjusted.html, as(html) replace
+(collection c3 exported to file ./tables/adjusted.html)
+
+. html2docx ./tables/adjusted.html , saving(adjusted.docx) replace
+successfully converted "/Users/juansolon/Documents/GitHub/sampa-radio/adjusted.docx"
+
+. collect export ./tables/adjusted.docx, as(docx) replace
+(collection c3 exported to file ./tables/adjusted.docx)
+
+. collect export ./tables/adjusted.xlsx, as(xlsx) replace
+(collection c3 exported to file ./tables/adjusted.xlsx)
+
+. 
+. 
+. 
+. 
+. /* END END END END END END END END END END END END END END END END END END END END */
+.         
+. 
+. 
+end of do-file
+
+. spearman ct_pan_vol bmi
+
+Number of observations =    209
+        Spearman's rho = 0.1563
+
+Test of H0: ct_pan_vol and bmi are independent
+                  Prob = 0.0239
+
+. bysort ever_mal:spearman ct_pan_vol bmi 
+
+---------------------------------------------------------------------------------------------
+-> ever_mal = NPM
+
+Number of observations =    101
+        Spearman's rho = 0.2281
+
+Test of H0: ct_pan_vol and bmi are independent
+                  Prob = 0.0220
+
+---------------------------------------------------------------------------------------------
+-> ever_mal = PM
+
+Number of observations =    108
+        Spearman's rho = 0.1114
+
+Test of H0: ct_pan_vol and bmi are independent
+                  Prob = 0.2507
+
+. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+
+. /* table_enzymes_cat.do 
+> J Solon
+> Sampa
+> April 2 
 > 
 > Creates n median iqr and p values of var
 > kwallis p value
@@ -411,4 +967,214 @@ end of do-file
 > 
 > */
 . 
-. capture log close
+. version 18.5
+
+. 
+. collect clear
+
+. 
+. 
+. **# CREATE TABLE USING DTABLE
+. 
+. **#  TABLE CONFIGURATION 
+. 
+. * CREATE LOCAL MACROS FOR VARIABLES IN TABLE - USE COMPLETE VARIABLE NAME)
+. 
+.         local col "cohort"
+
+.         local cat "epi_ordinal" /* categorical with multiple levels n(%) */
+
+.         local ind1 "1.epi_bin" 
+
+.         local ind2 "1.tryp_low" 
+
+.         local ind3 "1.amyl_low" 
+
+.         local ind4 "1.tryp_high" 
+
+.         
+. 
+. 
+. **# TABLE CODE
+. 
+. local filter "if subset==1"
+
+. dtable () `filter', by(`col', test nototals) ///
+>     factor(`cat', statistics(fvfrequency fvpercent) test(pearson)) ///
+>         factor(`ind1' `ind2' `ind3' `ind4', statistics(fvfrequency fvpercent) test(pearson)
+> ) ///
+>     title("`title'") ///
+>     note(`notes1') ///
+>         note(`notes2') 
+note: using test pearson across levels of cohort for epi_ordinal, epi_binary, tryp_low,
+      amyl_low, and tryp_high.
+
+--------------------------------------------------------------------------------------------------
+                                                        Cohort                                    
+                       DIVIDS       SAM       CICADA     NUSTART      STATT        CLHNS     Test 
+--------------------------------------------------------------------------------------------------
+N                   307 (14.5%) 103 (4.9%) 867 (40.9%) 282 (13.3%) 261 (12.3%)  302 (14.2%)       
+EPI Levels                                                                                        
+  Without EPI       100 (84.7%) 29 (34.9%) 458 (55.9%) 164 (68.0%) 198 (80.2%)  253 (86.9%) <0.001
+  Mild-Moderate EPI    9 (7.6%) 20 (24.1%) 158 (19.3%)  36 (14.9%)   23 (9.3%)    28 (9.6%)       
+  Severe EPI           9 (7.6%) 34 (41.0%) 204 (24.9%)  41 (17.0%)  26 (10.5%)    10 (3.4%)       
+EPI                                                                                               
+  With EPI           18 (15.3%) 54 (65.1%) 362 (44.1%)  77 (32.0%)  49 (19.8%)   38 (13.1%) <0.001
+Low trypsinogen                                                                                   
+  Low Trypsinogen        0 (.%)     0 (.%)    0 (0.0%)    2 (2.9%)    2 (2.3%)     6 (6.0%)  0.403
+Low Serum Amylase                                                                                 
+  Low Amylase            0 (.%) 99 (99.0%) 782 (92.7%) 245 (87.2%) 231 (89.5%)  296 (98.3%) <0.001
+High trypsinogen                                                                                  
+  High Trypsinogen       0 (.%)     0 (.%)  19 (90.5%)  61 (88.4%)  83 (96.5%) 100 (100.0%)  0.004
+--------------------------------------------------------------------------------------------------
+
+. 
+. **# TABLE LAYOUT
+. 
+.     collect style row stack, nobinder nospacer // * Stack levels of each variable , places/
+> removes space between variables ; 
+
+. 
+.     collect style cell border_block, border(right, pattern(nil)) // Remove vertical line af
+> ter variables
+
+.         
+. *** TABLE SPACES / WIDTH
+.         collect style cell, margin(all, width(1.5)) //  space b/w text and cell margins def
+> ault is 1.5 points 
+
+. 
+.         collect style column, width(equal) // Revise column width (equal or asis)
+
+.     
+. *** TABLE TEXT
+. 
+. * Table Styles
+.         collect style cell, font(Arial, size(11))
+
+.         collect style notes, font(Arial, size(11))
+
+. 
+. * Table title styles
+.         collect style title, font(Arial, size(11) bold)
+
+. 
+. * MODIFY TEXT
+. 
+. * Modify Header Text
+.     collect label levels ever_mal 0 "NPM" 1 "PM", modify
+
+.     collect style header ever_mal#result,title(hide)
+(dimension ever_mal not found)
+
+.         
+. ****ROWS
+. 
+.         label list epi_binary epi_ordinal tryp_high tryp_low amyl_low
+epi_binary:
+           0 Without EPI
+           1 With EPI
+epi_ordinal:
+           1 Without EPI
+           2 Mild-Moderate EPI
+           3 Severe EPI
+tryp_high:
+           0 Low to Normal Trypsinogen
+           1 High Trypsinogen
+tryp_low:
+           0 Normal to High Trypsinogen
+           1 Low Trypsinogen
+amyl_low:
+           0 Normal to High Amylase
+           1 Low Amylase
+
+. 
+.     collect label levels var _N "XX", modify
+
+.     collect label levels ct_pan_shape 1 "Normal Shape" 2 "Small Pancreas" 3 "Enlarged Pancr
+> eas", modify
+
+.         collect label levels ct_pan_parenchyma 2 "Abnormal Parenchyma" 3 "Not well visualiz
+> ed",  modify
+
+.         collect label levels ct_pan_paren_inflam_new 1 "Edema or Inflammation",  modify
+
+.         collect label levels ct_pan_paren_fibrosis 1 "Fibrosis",  modify
+
+.         collect label levels ct_pan_paren_steatosis_new 1 "Steatosis",  modify
+
+.         collect label levels ct_pan_duct 2 "Duct Abnormality" 3 "Duct not visualized",  mod
+> ify
+
+.         collect label levels ct_pan_calci 1 "Calcifications",  modify
+
+.     
+. * REMOVE level name in rows to show only the  label names
+.    
+.    local cat "1.epi_ordinal 2.epi_ordinal 3.epi_ordinal 1.ebi_binary 1.tryp_high 1.tryp_low
+>  1.amyl_low "
+
+.   
+.    
+.    foreach x in "`cat'" {
+  2.                 collect style header var[`x'], title(hide)
+  3.                 }
+(dimension ebi_binary not found)
+(level 1.ebi_binary of dimension var not found)
+
+.                 
+.         collect style header var[1.epi_binary], title(hide)
+
+.   
+. * Save collection   
+.         collect rename DTable enzymes_cat_coh, replace
+(current collection is enzymes_cat_coh)
+
+.         collect save ./tables/enzymes_cat_coh, replace
+(collection enzymes_cat_coh saved to file ./tables/enzymes_cat_coh.stjson)
+
+. 
+. **# EXPORT
+. 
+.         collect export ./tables/enzymes_cat_coh.html, as(html) replace
+(collection enzymes_cat_coh exported to file ./tables/enzymes_cat_coh.html)
+
+.         html2docx ./tables/enzymes_cat_coh.html , saving(enzymes_cat_coh.docx) replace
+successfully converted "/Users/juansolon/Documents/GitHub/sampa-radio/enzymes_cat_coh.docx"
+
+.         collect export ./tables/enzymes_cat_coh_ms.docx, as(docx) replace
+(collection enzymes_cat_coh exported to file ./tables/enzymes_cat_coh_ms.docx)
+
+. 
+. ** Drop generated variables
+. 
+. drop ct_pan_paren_inflam_new ct_pan_paren_steatosis_new
+variable ct_pan_paren_inflam_new not found
+r(111);
+
+end of do-file
+
+r(111);
+
+. scatter ngml_tryp ct_pan_vol
+
+. gr export ./figures/tryp_ct
+output file suffix  not recognized
+    Specify correct suffix or specify as() option.
+r(198);
+
+. pwd
+/Users/juansolon/Documents/GitHub/sampa-radio
+
+. gr export ./figures/tryp_ct.png, as(png)
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/tryp_ct.png saved as PNG format
+
+. scatter ngml_tryp mgl_crp
+
+. gr export ./figures/tryp_crp.png, as(png)
+file /Users/juansolon/Documents/GitHub/sampa-radio/figures/tryp_crp.png saved as PNG format
+
+. d sob
+variable sob not found
+r(111);
+

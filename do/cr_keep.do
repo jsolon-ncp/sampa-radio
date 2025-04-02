@@ -32,7 +32,7 @@ local derived3 "flag_fecal_elastase recruited assay_fecal_elastase assay_lipase 
 
 local glucose "metformin insulin ogttr_confirm hba1c glu0 mmol_glu0 ogtt_time0 hba1c mmol_glu120 gluc_mean_mgdl insulin_mean_mul Matsuda_index insulinogenic_index rhba1c diab_hb_gl120" 
 
-local enzymes "fecal_elastase lipase ngml_trypsinogen mgl_crp mgl_cystatin ul_amylp"
+local enzymes "fecal_elastase lipase ngml_trypsinogen mgl_crp mgl_cystatin ul_amylp tryp_high tryp_low amyl_low "
 
 local body "bia fm_kg fm_per ffm_kg ffm_per fmi ffmi impedance bia_prob bia_comment adp adpfm_kg adpffm_kg adpfm_per adpffm_per adp_prob adp_comment"
 

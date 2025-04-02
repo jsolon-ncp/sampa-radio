@@ -22,7 +22,7 @@ set scheme stsj
 
 ** Gr box 4 enzymes
 
-local enzymes "fecal_elastase amylase_ul trypsinogen_ngml lipase"
+local enzymes "fecal_elastase ul_amylp ngml_trypsinogen lipase"
 local i = 1
 foreach var of varlist `enzymes' {
 	kwallis `var', by(ever_mal) 
@@ -35,21 +35,25 @@ foreach var of varlist `enzymes' {
 	if "`var'" == "lipase" {
 		local subtitle "DIVIDS only"
 		local ymax = 60
+		local ytitle "Lipase U/L"
 	}
-	else if "`var'" == "trypsinogen_ngml" {
+	else if "`var'" == "ngml_trypsinogen" {
 		local subtitle "CT Scan subset"
 		local ymax = 250
+		local ytitle = "Trypsinogen (ng/ml)"
 	}
-	else if "`var'" == "amylase_ul" {
+	else if "`var'" == "ul_amylp" {
 		local subtitle "All except DIVIDS"
 		local ymax = 150
+		local ytitle = "Amylase (U/L)"
 	}
 	else {
 		local subtitle "All cohorts"
 		local ymax = 650
+		local ytitle "Fecal Elastase (ug/g)"
 	}
 	
-	gr box `var', over(ever_mal) title("`grtitle'") subtitle("`subtitle'") ///
+	gr box `var', over(ever_mal) title("`grtitle'") subtitle("`subtitle'") ytitle("`ytitle'") ///
 		xsize(10) ysize(8) ///
 		marker(1, msize(vsmall)) ///
 		medline(lwidth(thin)) ///

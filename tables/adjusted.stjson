@@ -1,0 +1,1386 @@
+{
+  "AutoHideDims": [
+    "var"
+  ],
+  "Items": {
+    "cmdset[10]#collection[c1]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
+      "d": 2.693096377306802
+    },
+    "cmdset[10]#collection[c1]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[_hide]": {
+      "d": 2.693096377306802
+    },
+    "cmdset[10]#collection[c1]#program_class[rclass]#result[DF]#result_type[scalar]#var[_hide]": {
+      "d": 1.0
+    },
+    "cmdset[10]#collection[c1]#program_class[rclass]#result[p]#result_type[scalar]#var[_hide]": {
+      "d": 0.1007837939227315
+    },
+    "cmdset[10]#collection[c1]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[_hide]": {
+      "d": 0.1007837939227315
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_body_tail]#command[0]#ever_mal[0]#result[column1]#statcmd[3]#var[adj_wt_ct_pan_body_tail]": {
+      "d": 0.16771791875362396
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_body_tail]#command[0]#ever_mal[0]#result[column2]#statcmd[4]#var[adj_wt_ct_pan_body_tail]": {
+      "d": 0.14413580298423767
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_body_tail]#command[0]#ever_mal[0]#result[column3]#statcmd[5]#var[adj_wt_ct_pan_body_tail]": {
+      "d": 0.19137322902679443
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_body_tail]#command[0]#ever_mal[0]#result[count]#statcmd[2]#var[adj_wt_ct_pan_body_tail]": {
+      "d": 102.0
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_body_tail]#command[0]#ever_mal[1]#result[column1]#statcmd[3]#var[adj_wt_ct_pan_body_tail]": {
+      "d": 0.17431331425905228
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_body_tail]#command[0]#ever_mal[1]#result[column2]#statcmd[4]#var[adj_wt_ct_pan_body_tail]": {
+      "d": 0.14796148240566254
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_body_tail]#command[0]#ever_mal[1]#result[column3]#statcmd[5]#var[adj_wt_ct_pan_body_tail]": {
+      "d": 0.199018232524395
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_body_tail]#command[0]#ever_mal[1]#result[count]#statcmd[2]#var[adj_wt_ct_pan_body_tail]": {
+      "d": 112.0
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_body_trans]#command[0]#ever_mal[0]#result[column1]#statcmd[3]#var[adj_wt_ct_pan_body_trans]": {
+      "d": 0.0322718545794487
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_body_trans]#command[0]#ever_mal[0]#result[column2]#statcmd[4]#var[adj_wt_ct_pan_body_trans]": {
+      "d": 0.02640476170927286
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_body_trans]#command[0]#ever_mal[0]#result[column3]#statcmd[5]#var[adj_wt_ct_pan_body_trans]": {
+      "d": 0.03781282529234886
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_body_trans]#command[0]#ever_mal[0]#result[count]#statcmd[2]#var[adj_wt_ct_pan_body_trans]": {
+      "d": 148.0
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_body_trans]#command[0]#ever_mal[1]#result[column1]#statcmd[3]#var[adj_wt_ct_pan_body_trans]": {
+      "d": 0.03657243773341179
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_body_trans]#command[0]#ever_mal[1]#result[column2]#statcmd[4]#var[adj_wt_ct_pan_body_trans]": {
+      "d": 0.03067796491086483
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_body_trans]#command[0]#ever_mal[1]#result[column3]#statcmd[5]#var[adj_wt_ct_pan_body_trans]": {
+      "d": 0.045950159430503845
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_body_trans]#command[0]#ever_mal[1]#result[count]#statcmd[2]#var[adj_wt_ct_pan_body_trans]": {
+      "d": 141.0
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_head_ap]#command[0]#ever_mal[0]#result[column1]#statcmd[3]#var[adj_wt_ct_pan_head_ap]": {
+      "d": 0.04091653227806091
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_head_ap]#command[0]#ever_mal[0]#result[column2]#statcmd[4]#var[adj_wt_ct_pan_head_ap]": {
+      "d": 0.03417721390724182
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_head_ap]#command[0]#ever_mal[0]#result[column3]#statcmd[5]#var[adj_wt_ct_pan_head_ap]": {
+      "d": 0.048038430511951447
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_head_ap]#command[0]#ever_mal[0]#result[count]#statcmd[2]#var[adj_wt_ct_pan_head_ap]": {
+      "d": 149.0
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_head_ap]#command[0]#ever_mal[1]#result[column1]#statcmd[3]#var[adj_wt_ct_pan_head_ap]": {
+      "d": 0.043463777750730515
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_head_ap]#command[0]#ever_mal[1]#result[column2]#statcmd[4]#var[adj_wt_ct_pan_head_ap]": {
+      "d": 0.038347456604242325
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_head_ap]#command[0]#ever_mal[1]#result[column3]#statcmd[5]#var[adj_wt_ct_pan_head_ap]": {
+      "d": 0.05328596383333206
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_head_ap]#command[0]#ever_mal[1]#result[count]#statcmd[2]#var[adj_wt_ct_pan_head_ap]": {
+      "d": 141.0
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_head_trans]#command[0]#ever_mal[0]#result[column1]#statcmd[3]#var[adj_wt_ct_pan_head_trans]": {
+      "d": 0.041580772027373314
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_head_trans]#command[0]#ever_mal[0]#result[column2]#statcmd[4]#var[adj_wt_ct_pan_head_trans]": {
+      "d": 0.035870447754859924
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_head_trans]#command[0]#ever_mal[0]#result[column3]#statcmd[5]#var[adj_wt_ct_pan_head_trans]": {
+      "d": 0.048710109665989876
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_head_trans]#command[0]#ever_mal[0]#result[count]#statcmd[2]#var[adj_wt_ct_pan_head_trans]": {
+      "d": 148.0
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_head_trans]#command[0]#ever_mal[1]#result[column1]#statcmd[3]#var[adj_wt_ct_pan_head_trans]": {
+      "d": 0.04781818389892578
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_head_trans]#command[0]#ever_mal[1]#result[column2]#statcmd[4]#var[adj_wt_ct_pan_head_trans]": {
+      "d": 0.038049448281526566
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_head_trans]#command[0]#ever_mal[1]#result[column3]#statcmd[5]#var[adj_wt_ct_pan_head_trans]": {
+      "d": 0.05943775177001953
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_head_trans]#command[0]#ever_mal[1]#result[count]#statcmd[2]#var[adj_wt_ct_pan_head_trans]": {
+      "d": 139.0
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_tail_trans]#command[0]#ever_mal[0]#result[column1]#statcmd[3]#var[adj_wt_ct_pan_tail_trans]": {
+      "d": 0.0272479560226202
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_tail_trans]#command[0]#ever_mal[0]#result[column2]#statcmd[4]#var[adj_wt_ct_pan_tail_trans]": {
+      "d": 0.02257760986685753
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_tail_trans]#command[0]#ever_mal[0]#result[column3]#statcmd[5]#var[adj_wt_ct_pan_tail_trans]": {
+      "d": 0.03371522203087807
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_tail_trans]#command[0]#ever_mal[0]#result[count]#statcmd[2]#var[adj_wt_ct_pan_tail_trans]": {
+      "d": 149.0
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_tail_trans]#command[0]#ever_mal[1]#result[column1]#statcmd[3]#var[adj_wt_ct_pan_tail_trans]": {
+      "d": 0.03175675496459007
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_tail_trans]#command[0]#ever_mal[1]#result[column2]#statcmd[4]#var[adj_wt_ct_pan_tail_trans]": {
+      "d": 0.026018807664513588
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_tail_trans]#command[0]#ever_mal[1]#result[column3]#statcmd[5]#var[adj_wt_ct_pan_tail_trans]": {
+      "d": 0.04083969444036484
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_tail_trans]#command[0]#ever_mal[1]#result[count]#statcmd[2]#var[adj_wt_ct_pan_tail_trans]": {
+      "d": 139.0
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_vol]#command[0]#ever_mal[0]#result[column1]#statcmd[3]#var[adj_wt_ct_pan_vol]": {
+      "d": 1.035781741142273
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_vol]#command[0]#ever_mal[0]#result[column2]#statcmd[4]#var[adj_wt_ct_pan_vol]": {
+      "d": 0.8579786419868469
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_vol]#command[0]#ever_mal[0]#result[column3]#statcmd[5]#var[adj_wt_ct_pan_vol]": {
+      "d": 1.2122342586517334
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_vol]#command[0]#ever_mal[0]#result[count]#statcmd[2]#var[adj_wt_ct_pan_vol]": {
+      "d": 101.0
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_vol]#command[0]#ever_mal[1]#result[column1]#statcmd[3]#var[adj_wt_ct_pan_vol]": {
+      "d": 1.07194983959198
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_vol]#command[0]#ever_mal[1]#result[column2]#statcmd[4]#var[adj_wt_ct_pan_vol]": {
+      "d": 0.8487657904624939
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_vol]#command[0]#ever_mal[1]#result[column3]#statcmd[5]#var[adj_wt_ct_pan_vol]": {
+      "d": 1.438701570034027
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_ct_pan_vol]#command[0]#ever_mal[1]#result[count]#statcmd[2]#var[adj_wt_ct_pan_vol]": {
+      "d": 108.0
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_body_trans]#command[0]#ever_mal[0]#result[column1]#statcmd[3]#var[adj_wt_pan_body_trans]": {
+      "d": 0.020134229212999344
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_body_trans]#command[0]#ever_mal[0]#result[column2]#statcmd[4]#var[adj_wt_pan_body_trans]": {
+      "d": 0.01682419516146183
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_body_trans]#command[0]#ever_mal[0]#result[column3]#statcmd[5]#var[adj_wt_pan_body_trans]": {
+      "d": 0.02608230896294117
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_body_trans]#command[0]#ever_mal[0]#result[count]#statcmd[2]#var[adj_wt_pan_body_trans]": {
+      "d": 745.0
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_body_trans]#command[0]#ever_mal[1]#result[column1]#statcmd[3]#var[adj_wt_pan_body_trans]": {
+      "d": 0.025455452501773834
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_body_trans]#command[0]#ever_mal[1]#result[column2]#statcmd[4]#var[adj_wt_pan_body_trans]": {
+      "d": 0.019811319187283516
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_body_trans]#command[0]#ever_mal[1]#result[column3]#statcmd[5]#var[adj_wt_pan_body_trans]": {
+      "d": 0.03323615342378616
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_body_trans]#command[0]#ever_mal[1]#result[count]#statcmd[2]#var[adj_wt_pan_body_trans]": {
+      "d": 858.0
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_head_ap]#command[0]#ever_mal[0]#result[column1]#statcmd[3]#var[adj_wt_pan_head_ap]": {
+      "d": 0.03386837616562843
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_head_ap]#command[0]#ever_mal[0]#result[column2]#statcmd[4]#var[adj_wt_pan_head_ap]": {
+      "d": 0.02844330482184887
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_head_ap]#command[0]#ever_mal[0]#result[column3]#statcmd[5]#var[adj_wt_pan_head_ap]": {
+      "d": 0.04225621372461319
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_head_ap]#command[0]#ever_mal[0]#result[count]#statcmd[2]#var[adj_wt_pan_head_ap]": {
+      "d": 715.0
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_head_ap]#command[0]#ever_mal[1]#result[column1]#statcmd[3]#var[adj_wt_pan_head_ap]": {
+      "d": 0.0432392880320549
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_head_ap]#command[0]#ever_mal[1]#result[column2]#statcmd[4]#var[adj_wt_pan_head_ap]": {
+      "d": 0.03498455137014389
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_head_ap]#command[0]#ever_mal[1]#result[column3]#statcmd[5]#var[adj_wt_pan_head_ap]": {
+      "d": 0.05305947922170162
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_head_ap]#command[0]#ever_mal[1]#result[count]#statcmd[2]#var[adj_wt_pan_head_ap]": {
+      "d": 832.0
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_head_trans]#command[0]#ever_mal[0]#result[column1]#statcmd[3]#var[adj_wt_pan_head_trans]": {
+      "d": 0.03360389545559883
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_head_trans]#command[0]#ever_mal[0]#result[column2]#statcmd[4]#var[adj_wt_pan_head_trans]": {
+      "d": 0.028248585760593414
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_head_trans]#command[0]#ever_mal[0]#result[column3]#statcmd[5]#var[adj_wt_pan_head_trans]": {
+      "d": 0.04002590849995613
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_head_trans]#command[0]#ever_mal[0]#result[count]#statcmd[2]#var[adj_wt_pan_head_trans]": {
+      "d": 635.0
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_head_trans]#command[0]#ever_mal[1]#result[column1]#statcmd[3]#var[adj_wt_pan_head_trans]": {
+      "d": 0.03728394955396652
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_head_trans]#command[0]#ever_mal[1]#result[column2]#statcmd[4]#var[adj_wt_pan_head_trans]": {
+      "d": 0.029999999329447746
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_head_trans]#command[0]#ever_mal[1]#result[column3]#statcmd[5]#var[adj_wt_pan_head_trans]": {
+      "d": 0.04608030617237091
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_head_trans]#command[0]#ever_mal[1]#result[count]#statcmd[2]#var[adj_wt_pan_head_trans]": {
+      "d": 759.0
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_tail_trans]#command[0]#ever_mal[0]#result[column1]#statcmd[3]#var[adj_wt_pan_tail_trans]": {
+      "d": 0.020362472161650658
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_tail_trans]#command[0]#ever_mal[0]#result[column2]#statcmd[4]#var[adj_wt_pan_tail_trans]": {
+      "d": 0.016282642260193825
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_tail_trans]#command[0]#ever_mal[0]#result[column3]#statcmd[5]#var[adj_wt_pan_tail_trans]": {
+      "d": 0.031512606889009476
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_tail_trans]#command[0]#ever_mal[0]#result[count]#statcmd[2]#var[adj_wt_pan_tail_trans]": {
+      "d": 509.0
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_tail_trans]#command[0]#ever_mal[1]#result[column1]#statcmd[3]#var[adj_wt_pan_tail_trans]": {
+      "d": 0.03217592462897301
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_tail_trans]#command[0]#ever_mal[1]#result[column2]#statcmd[4]#var[adj_wt_pan_tail_trans]": {
+      "d": 0.02382843568921089
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_tail_trans]#command[0]#ever_mal[1]#result[column3]#statcmd[5]#var[adj_wt_pan_tail_trans]": {
+      "d": 0.03977011516690254
+    },
+    "cmdset[1]#collection[c1]#colname[adj_wt_pan_tail_trans]#command[0]#ever_mal[1]#result[count]#statcmd[2]#var[adj_wt_pan_tail_trans]": {
+      "d": 687.0
+    },
+    "cmdset[1]#collection[c1]#command[0]#ever_mal[0]#result[frequency]#statcmd[1]#var[_hide]": {
+      "d": 1101.0
+    },
+    "cmdset[1]#collection[c1]#command[0]#ever_mal[1]#result[frequency]#statcmd[1]#var[_hide]": {
+      "d": 1021.0
+    },
+    "cmdset[1]#collection[c1]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
+      "d": 144.5214794325602
+    },
+    "cmdset[1]#collection[c1]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[_hide]": {
+      "d": 144.52148950376377
+    },
+    "cmdset[1]#collection[c1]#program_class[rclass]#result[DF]#result_type[scalar]#var[_hide]": {
+      "d": 1.0
+    },
+    "cmdset[1]#collection[c1]#program_class[rclass]#result[p]#result_type[scalar]#var[_hide]": {
+      "d": 2.7326158598455435e-33
+    },
+    "cmdset[1]#collection[c1]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[_hide]": {
+      "d": 2.7326020055763485e-33
+    },
+    "cmdset[2]#collection[c1]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
+      "d": 30.34028786967156
+    },
+    "cmdset[2]#collection[c1]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[_hide]": {
+      "d": 30.34029096096851
+    },
+    "cmdset[2]#collection[c1]#program_class[rclass]#result[DF]#result_type[scalar]#var[_hide]": {
+      "d": 1.0
+    },
+    "cmdset[2]#collection[c1]#program_class[rclass]#result[p]#result_type[scalar]#var[_hide]": {
+      "d": 3.625175452546299e-08
+    },
+    "cmdset[2]#collection[c1]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[_hide]": {
+      "d": 3.625169675168147e-08
+    },
+    "cmdset[3]#collection[c1]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
+      "d": 108.9881098874775
+    },
+    "cmdset[3]#collection[c1]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[_hide]": {
+      "d": 108.98812163541805
+    },
+    "cmdset[3]#collection[c1]#program_class[rclass]#result[DF]#result_type[scalar]#var[_hide]": {
+      "d": 1.0
+    },
+    "cmdset[3]#collection[c1]#program_class[rclass]#result[p]#result_type[scalar]#var[_hide]": {
+      "d": 1.6326228561912452e-25
+    },
+    "cmdset[3]#collection[c1]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[_hide]": {
+      "d": 1.632613179795973e-25
+    },
+    "cmdset[4]#collection[c1]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
+      "d": 131.4837344196612
+    },
+    "cmdset[4]#collection[c1]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[_hide]": {
+      "d": 131.4837431812663
+    },
+    "cmdset[4]#collection[c1]#program_class[rclass]#result[DF]#result_type[scalar]#var[_hide]": {
+      "d": 1.0
+    },
+    "cmdset[4]#collection[c1]#program_class[rclass]#result[p]#result_type[scalar]#var[_hide]": {
+      "d": 1.9405794377231666e-30
+    },
+    "cmdset[4]#collection[c1]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[_hide]": {
+      "d": 1.940570872738144e-30
+    },
+    "cmdset[5]#collection[c1]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
+      "d": 16.55545876887345
+    },
+    "cmdset[5]#collection[c1]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[_hide]": {
+      "d": 16.55545876887345
+    },
+    "cmdset[5]#collection[c1]#program_class[rclass]#result[DF]#result_type[scalar]#var[_hide]": {
+      "d": 1.0
+    },
+    "cmdset[5]#collection[c1]#program_class[rclass]#result[p]#result_type[scalar]#var[_hide]": {
+      "d": 4.724778169222984e-05
+    },
+    "cmdset[5]#collection[c1]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[_hide]": {
+      "d": 4.724778169222984e-05
+    },
+    "cmdset[6]#collection[c1]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
+      "d": 10.64230359047281
+    },
+    "cmdset[6]#collection[c1]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[_hide]": {
+      "d": 10.64230359047281
+    },
+    "cmdset[6]#collection[c1]#program_class[rclass]#result[DF]#result_type[scalar]#var[_hide]": {
+      "d": 1.0
+    },
+    "cmdset[6]#collection[c1]#program_class[rclass]#result[p]#result_type[scalar]#var[_hide]": {
+      "d": 0.0011052991345992464
+    },
+    "cmdset[6]#collection[c1]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[_hide]": {
+      "d": 0.0011052991345992464
+    },
+    "cmdset[7]#collection[c1]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
+      "d": 18.78620689655168
+    },
+    "cmdset[7]#collection[c1]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[_hide]": {
+      "d": 18.786216236236797
+    },
+    "cmdset[7]#collection[c1]#program_class[rclass]#result[DF]#result_type[scalar]#var[_hide]": {
+      "d": 1.0
+    },
+    "cmdset[7]#collection[c1]#program_class[rclass]#result[p]#result_type[scalar]#var[_hide]": {
+      "d": 1.4622079156875048e-05
+    },
+    "cmdset[7]#collection[c1]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[_hide]": {
+      "d": 1.4622007550995068e-05
+    },
+    "cmdset[8]#collection[c1]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
+      "d": 17.64294982698959
+    },
+    "cmdset[8]#collection[c1]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[_hide]": {
+      "d": 17.64295425848528
+    },
+    "cmdset[8]#collection[c1]#program_class[rclass]#result[DF]#result_type[scalar]#var[_hide]": {
+      "d": 1.0
+    },
+    "cmdset[8]#collection[c1]#program_class[rclass]#result[p]#result_type[scalar]#var[_hide]": {
+      "d": 2.6650132214898966e-05
+    },
+    "cmdset[8]#collection[c1]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[_hide]": {
+      "d": 2.6650070119930357e-05
+    },
+    "cmdset[9]#collection[c1]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
+      "d": 3.365724842425607
+    },
+    "cmdset[9]#collection[c1]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[_hide]": {
+      "d": 3.365724842425607
+    },
+    "cmdset[9]#collection[c1]#program_class[rclass]#result[DF]#result_type[scalar]#var[_hide]": {
+      "d": 1.0
+    },
+    "cmdset[9]#collection[c1]#program_class[rclass]#result[p]#result_type[scalar]#var[_hide]": {
+      "d": 0.0665662846998236
+    },
+    "cmdset[9]#collection[c1]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[_hide]": {
+      "d": 0.0665662846998236
+    },
+    "collection[c2]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[adj_wt_ct_pan_body_tail]": {
+      "d": 3.365724842425607
+    },
+    "collection[c2]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[adj_wt_ct_pan_body_trans]": {
+      "d": 18.78620689655168
+    },
+    "collection[c2]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[adj_wt_ct_pan_head_ap]": {
+      "d": 10.64230359047281
+    },
+    "collection[c2]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[adj_wt_ct_pan_head_trans]": {
+      "d": 16.55545876887345
+    },
+    "collection[c2]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[adj_wt_ct_pan_tail_trans]": {
+      "d": 17.64294982698959
+    },
+    "collection[c2]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[adj_wt_ct_pan_vol]": {
+      "d": 2.693096377306802
+    },
+    "collection[c2]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[adj_wt_pan_body_trans]": {
+      "d": 108.9881098874775
+    },
+    "collection[c2]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[adj_wt_pan_head_ap]": {
+      "d": 144.5214794325602
+    },
+    "collection[c2]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[adj_wt_pan_head_trans]": {
+      "d": 30.34028786967156
+    },
+    "collection[c2]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[adj_wt_pan_tail_trans]": {
+      "d": 131.4837344196612
+    },
+    "collection[c2]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[adj_wt_ct_pan_body_tail]": {
+      "d": 3.365724842425607
+    },
+    "collection[c2]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[adj_wt_ct_pan_body_trans]": {
+      "d": 18.786216236236797
+    },
+    "collection[c2]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[adj_wt_ct_pan_head_ap]": {
+      "d": 10.64230359047281
+    },
+    "collection[c2]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[adj_wt_ct_pan_head_trans]": {
+      "d": 16.55545876887345
+    },
+    "collection[c2]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[adj_wt_ct_pan_tail_trans]": {
+      "d": 17.64295425848528
+    },
+    "collection[c2]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[adj_wt_ct_pan_vol]": {
+      "d": 2.693096377306802
+    },
+    "collection[c2]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[adj_wt_pan_body_trans]": {
+      "d": 108.98812163541805
+    },
+    "collection[c2]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[adj_wt_pan_head_ap]": {
+      "d": 144.52148950376377
+    },
+    "collection[c2]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[adj_wt_pan_head_trans]": {
+      "d": 30.34029096096851
+    },
+    "collection[c2]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[adj_wt_pan_tail_trans]": {
+      "d": 131.4837431812663
+    },
+    "collection[c2]#program_class[rclass]#result[DF]#result_type[scalar]#var[adj_wt_ct_pan_body_tail]": {
+      "d": 1.0
+    },
+    "collection[c2]#program_class[rclass]#result[DF]#result_type[scalar]#var[adj_wt_ct_pan_body_trans]": {
+      "d": 1.0
+    },
+    "collection[c2]#program_class[rclass]#result[DF]#result_type[scalar]#var[adj_wt_ct_pan_head_ap]": {
+      "d": 1.0
+    },
+    "collection[c2]#program_class[rclass]#result[DF]#result_type[scalar]#var[adj_wt_ct_pan_head_trans]": {
+      "d": 1.0
+    },
+    "collection[c2]#program_class[rclass]#result[DF]#result_type[scalar]#var[adj_wt_ct_pan_tail_trans]": {
+      "d": 1.0
+    },
+    "collection[c2]#program_class[rclass]#result[DF]#result_type[scalar]#var[adj_wt_ct_pan_vol]": {
+      "d": 1.0
+    },
+    "collection[c2]#program_class[rclass]#result[DF]#result_type[scalar]#var[adj_wt_pan_body_trans]": {
+      "d": 1.0
+    },
+    "collection[c2]#program_class[rclass]#result[DF]#result_type[scalar]#var[adj_wt_pan_head_ap]": {
+      "d": 1.0
+    },
+    "collection[c2]#program_class[rclass]#result[DF]#result_type[scalar]#var[adj_wt_pan_head_trans]": {
+      "d": 1.0
+    },
+    "collection[c2]#program_class[rclass]#result[DF]#result_type[scalar]#var[adj_wt_pan_tail_trans]": {
+      "d": 1.0
+    },
+    "collection[c2]#program_class[rclass]#result[p]#result_type[scalar]#var[adj_wt_ct_pan_body_tail]": {
+      "d": 0.0665662846998236
+    },
+    "collection[c2]#program_class[rclass]#result[p]#result_type[scalar]#var[adj_wt_ct_pan_body_trans]": {
+      "d": 1.4622079156875048e-05
+    },
+    "collection[c2]#program_class[rclass]#result[p]#result_type[scalar]#var[adj_wt_ct_pan_head_ap]": {
+      "d": 0.0011052991345992464
+    },
+    "collection[c2]#program_class[rclass]#result[p]#result_type[scalar]#var[adj_wt_ct_pan_head_trans]": {
+      "d": 4.724778169222984e-05
+    },
+    "collection[c2]#program_class[rclass]#result[p]#result_type[scalar]#var[adj_wt_ct_pan_tail_trans]": {
+      "d": 2.6650132214898966e-05
+    },
+    "collection[c2]#program_class[rclass]#result[p]#result_type[scalar]#var[adj_wt_ct_pan_vol]": {
+      "d": 0.1007837939227315
+    },
+    "collection[c2]#program_class[rclass]#result[p]#result_type[scalar]#var[adj_wt_pan_body_trans]": {
+      "d": 1.6326228561912452e-25
+    },
+    "collection[c2]#program_class[rclass]#result[p]#result_type[scalar]#var[adj_wt_pan_head_ap]": {
+      "d": 2.7326158598455435e-33
+    },
+    "collection[c2]#program_class[rclass]#result[p]#result_type[scalar]#var[adj_wt_pan_head_trans]": {
+      "d": 3.625175452546299e-08
+    },
+    "collection[c2]#program_class[rclass]#result[p]#result_type[scalar]#var[adj_wt_pan_tail_trans]": {
+      "d": 1.9405794377231666e-30
+    },
+    "collection[c2]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[adj_wt_ct_pan_body_tail]": {
+      "d": 0.0665662846998236
+    },
+    "collection[c2]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[adj_wt_ct_pan_body_trans]": {
+      "d": 1.4622007550995068e-05
+    },
+    "collection[c2]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[adj_wt_ct_pan_head_ap]": {
+      "d": 0.0011052991345992464
+    },
+    "collection[c2]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[adj_wt_ct_pan_head_trans]": {
+      "d": 4.724778169222984e-05
+    },
+    "collection[c2]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[adj_wt_ct_pan_tail_trans]": {
+      "d": 2.6650070119930357e-05
+    },
+    "collection[c2]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[adj_wt_ct_pan_vol]": {
+      "d": 0.1007837939227315
+    },
+    "collection[c2]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[adj_wt_pan_body_trans]": {
+      "d": 1.632613179795973e-25
+    },
+    "collection[c2]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[adj_wt_pan_head_ap]": {
+      "d": 2.7326020055763485e-33
+    },
+    "collection[c2]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[adj_wt_pan_head_trans]": {
+      "d": 3.625169675168147e-08
+    },
+    "collection[c2]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[adj_wt_pan_tail_trans]": {
+      "d": 1.940570872738144e-30
+    }
+  },
+  "Labels": {
+    "Dimensions": {
+      "_dimensions": {
+        "border_block": "Table border block",
+        "cell_type": "Table cell type",
+        "cmdset": "Command results index",
+        "colname": "Covariate names and column names",
+        "command": "Command option index",
+        "ever_mal": "Ever experience malnutrition?",
+        "program_class": "Result program class",
+        "result": "Result",
+        "result_type": "Result type",
+        "statcmd": "Statistic/command option index",
+        "var": "Statistic option variable"
+      },
+      "command": {
+        "0": "Statistic"
+      },
+      "ever_mal": {
+        ".m": "Total",
+        "0": "NPM",
+        "1": "PM"
+      },
+      "result": {
+        "count": "Number of nonmissing values",
+        "frequency": "Frequency",
+        "p25": "25th percentile",
+        "p50": "50th percentile",
+        "p75": "75th percentile"
+      },
+      "result_type": {
+        "scalar": "Scalar"
+      }
+    }
+  },
+  "Layout": {
+    "columns": "ever_mal#result[count column1 column4] result[p]",
+    "rows": "var",
+    "tables": ""
+  },
+  "NumericDimNames": [
+    "ever_mal"
+  ],
+  "ScalarResults": [
+    "Chi2",
+    "Chi2_adj",
+    "DF",
+    "p",
+    "p_adj"
+  ],
+  "Styles": {
+    "CompositeMap": {
+      "column4": {
+        "elements": [
+          "column2",
+          "column3"
+        ]
+      }
+    },
+    "cell": {
+      "base": {
+        "ci-delimiter": "   ",
+        "cri-delimiter": "   ",
+        "nformat": "%9.0g"
+      },
+      "edits": [
+        [
+          "cell_type[item]",
+          {
+            "smcl": "result"
+          }
+        ],
+        [
+          "result[_r_b _r_se _r_lb _r_ub _r_ci _r_crlb _r_crub _r_cri]",
+          {
+            "nformat": "%9.0g"
+          }
+        ],
+        [
+          "result[_r_z _r_z_abs]",
+          {
+            "nformat": "%8.2f"
+          }
+        ],
+        [
+          "result[_r_p]",
+          {
+            "nformat": "%5.3f"
+          }
+        ],
+        [
+          "cell_type[item]",
+          {
+            "margin-left": {
+              "width": "10pt"
+            }
+          }
+        ],
+        [
+          "cell_type[corner]",
+          {
+            "halign": "center"
+          }
+        ],
+        [
+          "cell_type[column-header]",
+          {
+            "halign": "right"
+          }
+        ],
+        [
+          "cell_type[column-header]#result[_r_ci _r_cri]",
+          {
+            "halign": "center"
+          }
+        ],
+        [
+          "cell_type[item]",
+          {
+            "halign": "right"
+          }
+        ],
+        [
+          "cell_type[row-header]",
+          {
+            "halign": "left"
+          }
+        ],
+        [
+          "border_block[corner]",
+          {
+            "border-right": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[column-header]",
+          {
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[row-header]",
+          {
+            "border-bottom": {
+              "pattern": "single"
+            },
+            "border-right": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[item]",
+          {
+            "border-bottom": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "cell_type[item]",
+          {
+            "smcl": "result"
+          }
+        ],
+        [
+          "result[_r_b _r_se _r_lb _r_ub _r_ci _r_crlb _r_crub _r_cri]",
+          {
+            "nformat": "%9.0g"
+          }
+        ],
+        [
+          "result[_r_z _r_z_abs]",
+          {
+            "nformat": "%8.2f"
+          }
+        ],
+        [
+          "result[_r_p]",
+          {
+            "nformat": "%5.3f"
+          }
+        ],
+        [
+          "result[count frequency fvrawfrequency]",
+          {
+            "nformat": "%18.0fc"
+          }
+        ],
+        [
+          "result[fvpercent fvrawpercent percent rawpercent]",
+          {
+            "nformat": "%9.2f"
+          }
+        ],
+        [
+          "result[fvproportion fvrawproportion proportion rawproportion]",
+          {
+            "nformat": "%9.4g"
+          }
+        ],
+        [
+          "result[rawtotal sumw total fvfrequency]",
+          {
+            "nformat": "%18.6gc"
+          }
+        ],
+        [
+          "cell_type[item]",
+          {
+            "margin-left": {
+              "width": "10pt"
+            }
+          }
+        ],
+        [
+          "cell_type[corner]",
+          {
+            "halign": "center"
+          }
+        ],
+        [
+          "cell_type[column-header]",
+          {
+            "halign": "right"
+          }
+        ],
+        [
+          "cell_type[column-header]#result[_r_ci _r_cri]",
+          {
+            "halign": "center"
+          }
+        ],
+        [
+          "cell_type[item]",
+          {
+            "halign": "right"
+          }
+        ],
+        [
+          "cell_type[row-header]",
+          {
+            "halign": "left"
+          }
+        ],
+        [
+          "border_block[corner]",
+          {
+            "border-right": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[column-header]",
+          {
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[row-header]",
+          {
+            "border-bottom": {
+              "pattern": "single"
+            },
+            "border-right": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[item]",
+          {
+            "border-bottom": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "result[p]",
+          {
+            "nformat": "%5.3f"
+          }
+        ],
+        [
+          "result[p]",
+          {
+            "sformat": "p=%s"
+          }
+        ],
+        [
+          "",
+          {
+            "font-family": "Arial",
+            "font-size": "11pt"
+          }
+        ],
+        [
+          "border_block",
+          {
+            "border-right": {
+              "pattern": "nil"
+            }
+          }
+        ],
+        [
+          "result[column1]#var[adj_wt_pan_head_ap adj_wt_pan_head_trans adj_wt_pan_body_trans adj_wt_pan_tail_trans adj_wt_ct_pan_head_trans adj_wt_ct_pan_head_ap adj_wt_ct_pan_body_trans adj_wt_ct_pan_tail_trans adj_wt_ct_pan_body_tail adj_wt_ct_pan_vol]",
+          {
+            "nformat": "%5.3f"
+          }
+        ],
+        [
+          "result[column2]#var[adj_wt_pan_head_ap adj_wt_pan_head_trans adj_wt_pan_body_trans adj_wt_pan_tail_trans adj_wt_ct_pan_head_trans adj_wt_ct_pan_head_ap adj_wt_ct_pan_body_trans adj_wt_ct_pan_tail_trans adj_wt_ct_pan_body_tail adj_wt_ct_pan_vol]",
+          {
+            "nformat": "%5.3f",
+            "sformat": "(%s-"
+          }
+        ],
+        [
+          "result[column3]#var[adj_wt_pan_head_ap adj_wt_pan_head_trans adj_wt_pan_body_trans adj_wt_pan_tail_trans adj_wt_ct_pan_head_trans adj_wt_ct_pan_head_ap adj_wt_ct_pan_body_trans adj_wt_ct_pan_tail_trans adj_wt_ct_pan_body_tail adj_wt_ct_pan_vol]",
+          {
+            "nformat": "%5.3f",
+            "sformat": "%s)"
+          }
+        ],
+        [
+          "result[count]",
+          {
+            "nformat": "%4.0f"
+          }
+        ],
+        [
+          "result[count]",
+          {
+            "sformat": "[%s]"
+          }
+        ]
+      ]
+    },
+    "export": {
+      "tex": {
+        "begintable": "true",
+        "centering": "true"
+      }
+    },
+    "header": {
+      "auto-levels": {
+        "result": [
+          {
+            "stripe": "count",
+            "term-index": 1
+          },
+          {
+            "stripe": "frequency",
+            "term-index": 0
+          },
+          {
+            "stripe": "p25",
+            "term-index": 3
+          },
+          {
+            "stripe": "p50",
+            "term-index": 2
+          },
+          {
+            "stripe": "p75",
+            "term-index": 4
+          }
+        ]
+      },
+      "base": {
+        "level": "label",
+        "title": "hide"
+      },
+      "column": {
+        "dups": "center",
+        "extra-space": 1
+      },
+      "dimensions": {
+        "across": {
+          "title": "hide"
+        },
+        "coleq": {
+          "title": "hide"
+        },
+        "colname": {
+          "title": "hide"
+        },
+        "command": {
+          "title": "hide"
+        },
+        "ever_mal": {
+          "nformat": "%9.0g",
+          "title": "hide"
+        },
+        "result": {
+          "level": "hide",
+          "title": "hide"
+        },
+        "roweq": {
+          "title": "hide"
+        },
+        "rowname": {
+          "title": "hide"
+        },
+        "stars": {
+          "level": "hide",
+          "title": "hide"
+        },
+        "statcmd": {
+          "title": "hide"
+        },
+        "var": {
+          "title": "hide"
+        }
+      },
+      "row": {
+        "arrangement": "stack",
+        "nobinder": "true",
+        "spacer": "true"
+      }
+    },
+    "notes": [
+      "Values are [N] median (p25-p75).",
+      "1621 contributing any ultrasound measurement.",
+      "291 contributing any CT scan measurement."
+    ],
+    "notes-styles": {
+      "font-family": "Arial",
+      "font-size": "11pt"
+    },
+    "title": "Table . Radiology Measurements Adj by Weight",
+    "title-styles": {
+      "font-family": "Arial",
+      "font-size": "11pt",
+      "font-weight": "bold"
+    }
+  },
+  "Tags": {
+    "border_block": [
+      {
+        "stripe": "column-header",
+        "term-index": 0
+      },
+      {
+        "stripe": "corner",
+        "term-index": 0
+      },
+      {
+        "stripe": "item",
+        "term-index": 0
+      },
+      {
+        "stripe": "row-header",
+        "term-index": 0
+      }
+    ],
+    "cell_type": [
+      {
+        "stripe": "column-header",
+        "term-index": 0
+      },
+      {
+        "stripe": "corner",
+        "term-index": 0
+      },
+      {
+        "stripe": "item",
+        "term-index": 0
+      },
+      {
+        "stripe": "row-header",
+        "term-index": 0
+      }
+    ],
+    "cmdset": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      },
+      {
+        "stripe": "10",
+        "term-index": 9
+      },
+      {
+        "stripe": "2",
+        "term-index": 1
+      },
+      {
+        "stripe": "3",
+        "term-index": 2
+      },
+      {
+        "stripe": "4",
+        "term-index": 3
+      },
+      {
+        "stripe": "5",
+        "term-index": 4
+      },
+      {
+        "stripe": "6",
+        "term-index": 5
+      },
+      {
+        "stripe": "7",
+        "term-index": 6
+      },
+      {
+        "stripe": "8",
+        "term-index": 7
+      },
+      {
+        "stripe": "9",
+        "term-index": 8
+      },
+      {
+        "stripe": "adj_wt_ct_pan_body_tail",
+        "term-index": 8
+      },
+      {
+        "stripe": "adj_wt_ct_pan_body_trans",
+        "term-index": 6
+      },
+      {
+        "stripe": "adj_wt_ct_pan_head_ap",
+        "term-index": 5
+      },
+      {
+        "stripe": "adj_wt_ct_pan_head_trans",
+        "term-index": 4
+      },
+      {
+        "stripe": "adj_wt_ct_pan_tail_trans",
+        "term-index": 7
+      },
+      {
+        "stripe": "adj_wt_ct_pan_vol",
+        "term-index": 9
+      },
+      {
+        "stripe": "adj_wt_pan_body_trans",
+        "term-index": 2
+      },
+      {
+        "stripe": "adj_wt_pan_head_ap",
+        "term-index": 0
+      },
+      {
+        "stripe": "adj_wt_pan_head_trans",
+        "term-index": 1
+      },
+      {
+        "stripe": "adj_wt_pan_tail_trans",
+        "term-index": 3
+      }
+    ],
+    "collection": [
+      {
+        "stripe": "c1",
+        "term-index": 0
+      },
+      {
+        "stripe": "c2",
+        "term-index": 1
+      }
+    ],
+    "colname": [
+      {
+        "stripe": "adj_wt_ct_pan_body_tail",
+        "term-index": 9
+      },
+      {
+        "stripe": "adj_wt_ct_pan_body_trans",
+        "term-index": 7
+      },
+      {
+        "stripe": "adj_wt_ct_pan_head_ap",
+        "term-index": 6
+      },
+      {
+        "stripe": "adj_wt_ct_pan_head_trans",
+        "term-index": 5
+      },
+      {
+        "stripe": "adj_wt_ct_pan_tail_trans",
+        "term-index": 8
+      },
+      {
+        "stripe": "adj_wt_ct_pan_vol",
+        "term-index": 10
+      },
+      {
+        "stripe": "adj_wt_pan_body_trans",
+        "term-index": 3
+      },
+      {
+        "stripe": "adj_wt_pan_head_ap",
+        "term-index": 1
+      },
+      {
+        "stripe": "adj_wt_pan_head_trans",
+        "term-index": 2
+      },
+      {
+        "stripe": "adj_wt_pan_tail_trans",
+        "term-index": 4
+      }
+    ],
+    "command": [
+      {
+        "stripe": "0",
+        "term-index": 0
+      }
+    ],
+    "ever_mal": [
+      {
+        "stripe": "0",
+        "term-index": 0
+      },
+      {
+        "stripe": "1",
+        "term-index": 1
+      }
+    ],
+    "program_class": [
+      {
+        "stripe": "eclass",
+        "term-index": 0
+      },
+      {
+        "stripe": "rclass",
+        "term-index": 0
+      }
+    ],
+    "result": [
+      {
+        "stripe": "Chi2",
+        "term-index": 0
+      },
+      {
+        "stripe": "Chi2_adj",
+        "term-index": 0
+      },
+      {
+        "stripe": "DF",
+        "term-index": 0
+      },
+      {
+        "stripe": "column1",
+        "term-index": 0
+      },
+      {
+        "stripe": "column2",
+        "term-index": 0
+      },
+      {
+        "stripe": "column3",
+        "term-index": 0
+      },
+      {
+        "stripe": "column4",
+        "term-index": 0
+      },
+      {
+        "stripe": "count",
+        "term-index": 0
+      },
+      {
+        "stripe": "frequency",
+        "term-index": 0
+      },
+      {
+        "stripe": "p",
+        "term-index": 0
+      },
+      {
+        "stripe": "p25",
+        "term-index": 0
+      },
+      {
+        "stripe": "p50",
+        "term-index": 0
+      },
+      {
+        "stripe": "p75",
+        "term-index": 0
+      },
+      {
+        "stripe": "p_adj",
+        "term-index": 0
+      }
+    ],
+    "result_type": [
+      {
+        "stripe": "scalar",
+        "term-index": 0
+      }
+    ],
+    "statcmd": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      },
+      {
+        "stripe": "2",
+        "term-index": 0
+      },
+      {
+        "stripe": "3",
+        "term-index": 0
+      },
+      {
+        "stripe": "4",
+        "term-index": 0
+      },
+      {
+        "stripe": "5",
+        "term-index": 0
+      }
+    ],
+    "var": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      },
+      {
+        "stripe": "10",
+        "term-index": 9
+      },
+      {
+        "stripe": "2",
+        "term-index": 1
+      },
+      {
+        "stripe": "3",
+        "term-index": 2
+      },
+      {
+        "stripe": "4",
+        "term-index": 3
+      },
+      {
+        "stripe": "5",
+        "term-index": 4
+      },
+      {
+        "stripe": "6",
+        "term-index": 5
+      },
+      {
+        "stripe": "7",
+        "term-index": 6
+      },
+      {
+        "stripe": "8",
+        "term-index": 7
+      },
+      {
+        "stripe": "9",
+        "term-index": 8
+      },
+      {
+        "stripe": "_hide",
+        "term-index": 1
+      },
+      {
+        "stripe": "adj_wt_ct_pan_body_tail",
+        "term-index": 10
+      },
+      {
+        "stripe": "adj_wt_ct_pan_body_trans",
+        "term-index": 8
+      },
+      {
+        "stripe": "adj_wt_ct_pan_head_ap",
+        "term-index": 7
+      },
+      {
+        "stripe": "adj_wt_ct_pan_head_trans",
+        "term-index": 6
+      },
+      {
+        "stripe": "adj_wt_ct_pan_tail_trans",
+        "term-index": 9
+      },
+      {
+        "stripe": "adj_wt_ct_pan_vol",
+        "term-index": 11
+      },
+      {
+        "stripe": "adj_wt_pan_body_trans",
+        "term-index": 4
+      },
+      {
+        "stripe": "adj_wt_pan_head_ap",
+        "term-index": 2
+      },
+      {
+        "stripe": "adj_wt_pan_head_trans",
+        "term-index": 3
+      },
+      {
+        "stripe": "adj_wt_pan_tail_trans",
+        "term-index": 5
+      }
+    ]
+  },
+  "collection-name": "c3"
+}

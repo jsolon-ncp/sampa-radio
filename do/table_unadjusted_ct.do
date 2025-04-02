@@ -234,6 +234,13 @@ collect addtags vartype[CT 291 contributing any measurement], fortags(var[ct_pan
 collect layout (vartype#var[pan_head_ap pan_head_trans pan_body_trans pan_tail_trans ///
 				ct_pan_head_ap ct_pan_head_trans ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan_vol]) ///
 				(ever_mal#result[count column1 column4] result[p]) 
+
+* Table Styles
+	collect style cell, font(Arial, size(11))
+	collect style notes, font(Arial, size(11))
+
+* Table title styles
+	collect style title, font(Arial, size(11) bold)
 				
 collect notes, clear
 collect notes "Values are [N] median (p25-p75)."
@@ -242,6 +249,7 @@ collect title "Radiologic measurements in the whole cohort, by prior exposure"
 collect save ./tables/uss_ct, replace	
 * Export combined table
 collect export ./tables/uss_ct.html, as(html) replace
+
 collect export ./tables/uss_ct.docx, as(docx) replace
 collect export ./tables/uss_ct.xlsx, as(xlsx) replace
 

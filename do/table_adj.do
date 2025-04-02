@@ -10,9 +10,6 @@ di chi2tail(r(df),r(chi2))
 */
 
 
-capture log close
-log using ./log/an_uss_bivariate.txt, text replace
-
 cap prog drop mystats
 program mystats, rclass
 return scalar p_adj= chi2tail(r(df), r(chi2_adj))
@@ -25,7 +22,7 @@ end
 collect clear
 
 local col "ever_mal"
-local contmed "pan_head_ap pan_head_trans pan_body_trans pan_tail_trans"  /*continous variables; median (p25-p75)  will be reported*/
+local contmed "adj_wt_ct_pan_head_trans adj_wt_ct_pan_head_ap adj_wt_ct_pan_body_trans adj_wt_ct_pan_tail_trans adj_wt_ct_pan_body_tail adj_wt_ct_pan_vol adj_wt_pan_head_ap adj_wt_pan_head_trans adj_wt_pan_body_trans adj_wt_pan_tail_trans"  /*continous variables; median (p25-p75)  will be reported*/
 
 local colhead2 `"0 "NPM" 1 "PM""'
 		
@@ -35,14 +32,14 @@ local nfrmt_iqr "%5.3f"
 local sfrmt_p25 "(%s-"
 local sfrmt_p75 "%s)"
 
-local title "Table .Unadjusted Ultrasound Measurements"
+local title "Table . Radiology Measurements Adj by Weight"
 count if radio3 ==1
 local obs_uss = r(N)
 di `obs_uss'
 count if ct2 ==1
 local obs_ct = r(N)
 di `obs_ct'
-local notes1 "Values are [N] median (p25-p50)."
+local notes1 "Values are [N] median (p25-p75)."
 local notes2 "`obs_uss' contributing any ultrasound measurement."
 local notes3 "`obs_ct' contributing any CT scan measurement."
 
@@ -109,6 +106,15 @@ collect preview /* preview changes */
 
 collect preview /* preview changes */
 
+*** TABLE TEXT
+
+* Table Styles
+	collect style cell, font(Arial, size(11))
+	collect style notes, font(Arial, size(11))
+
+* Table title styles
+	collect style title, font(Arial, size(11) bold)
+
 * MODIFY ROW TEXT
 
 
@@ -159,11 +165,9 @@ collect style header `hiderows', title(hide)
 	
 * Add text
 	collect title `title'
-	/*collect notes `notes1'
+	collect notes `notes1'
 	collect notes `notes2'
 	collect notes `notes3'
-	collect notes `notes4'
-	*/
 	
 collect preview
 
@@ -178,13 +182,20 @@ foreach v in `contmed' {
     collect: mystats
 }
    
-   
+            
 
 * Remap cmdset to match var levels
-collect recode cmdset 1 = pan_head_ap
-collect recode cmdset 2 = pan_head_trans
-collect recode cmdset 3 = pan_body_trans
-collect recode cmdset 4 = pan_tail_trans
+collect recode cmdset 1 = adj_wt_ct_pan_head_trans
+collect recode cmdset 2 = adj_wt_ct_pan_head_ap
+collect recode cmdset 3 = adj_wt_ct_pan_body_trans
+collect recode cmdset 4 = adj_wt_ct_pan_tail_trans
+collect recode cmdset 5 = adj_wt_ct_pan_body_tail
+collect recode cmdset 6 = adj_wt_ct_pan_vol
+collect recode cmdset 7 = adj_wt_pan_head_ap
+collect recode cmdset 8 = adj_wt_pan_head_trans
+collect recode cmdset 9 = adj_wt_pan_body_trans
+collect recode cmdset 10 = adj_wt_pan_tail_trans
+
 collect remap cmdset = var
 
 * Combine collections
@@ -195,12 +206,12 @@ collect layout (var) (ever_mal#result[count column1 column4] result[p])
    
 
 
-collect save ./tables/uss1, replace	
+collect save ./tables/adjusted, replace	
 * Export combined table
-collect export ./tables/uss_unadjusted.html, as(html) replace
-html2docx ./tables/uss_unadjusted.html , saving(uss_unadjusted.docx) replace
-collect export ./tables/uss_unadjusted_ms.docx, as(docx) replace
-collect export ./tables/uss_unadjusted.xlsx, as(xlsx) replace
+collect export ./tables/adjusted.html, as(html) replace
+html2docx ./tables/adjusted.html , saving(adjusted.docx) replace
+collect export ./tables/adjusted.docx, as(docx) replace
+collect export ./tables/adjusted.xlsx, as(xlsx) replace
 
 
 

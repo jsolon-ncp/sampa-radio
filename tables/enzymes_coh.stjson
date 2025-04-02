@@ -3,230 +3,347 @@
     "var"
   ],
   "Items": {
-    "cmdset[1]#collection[c1]#colname[fecal_elastase]#command[0]#ever_mal[0]#result[column1]#statcmd[3]#var[fecal_elastase]": {
-      "d": 314.3061218261719
-    },
-    "cmdset[1]#collection[c1]#colname[fecal_elastase]#command[0]#ever_mal[0]#result[column2]#statcmd[4]#var[fecal_elastase]": {
-      "d": 135.03099822998047
-    },
-    "cmdset[1]#collection[c1]#colname[fecal_elastase]#command[0]#ever_mal[0]#result[column3]#statcmd[5]#var[fecal_elastase]": {
-      "d": 585.7384033203125
-    },
-    "cmdset[1]#collection[c1]#colname[fecal_elastase]#command[0]#ever_mal[0]#result[count]#statcmd[2]#var[fecal_elastase]": {
-      "d": 1008.0
-    },
-    "cmdset[1]#collection[c1]#colname[fecal_elastase]#command[0]#ever_mal[1]#result[column1]#statcmd[3]#var[fecal_elastase]": {
-      "d": 374.4290008544922
-    },
-    "cmdset[1]#collection[c1]#colname[fecal_elastase]#command[0]#ever_mal[1]#result[column2]#statcmd[4]#var[fecal_elastase]": {
-      "d": 145.96876525878906
-    },
-    "cmdset[1]#collection[c1]#colname[fecal_elastase]#command[0]#ever_mal[1]#result[column3]#statcmd[5]#var[fecal_elastase]": {
+    "cmdset[1]#cohort2[1]#collection[c1]#colname[fecal_elastase]#command[0]#result[column1]#statcmd[3]#var[fecal_elastase]": {
       "d": 600.0
     },
-    "cmdset[1]#collection[c1]#colname[fecal_elastase]#command[0]#ever_mal[1]#result[count]#statcmd[2]#var[fecal_elastase]": {
-      "d": 792.0
+    "cmdset[1]#cohort2[1]#collection[c1]#colname[fecal_elastase]#command[0]#result[column2]#statcmd[4]#var[fecal_elastase]": {
+      "d": 310.3299865722656
     },
-    "cmdset[1]#collection[c1]#colname[lipase]#command[0]#ever_mal[0]#result[column1]#statcmd[3]#var[lipase]": {
-      "d": 30.5
+    "cmdset[1]#cohort2[1]#collection[c1]#colname[fecal_elastase]#command[0]#result[column3]#statcmd[5]#var[fecal_elastase]": {
+      "d": 600.0
     },
-    "cmdset[1]#collection[c1]#colname[lipase]#command[0]#ever_mal[0]#result[column2]#statcmd[4]#var[lipase]": {
-      "d": 26.0
+    "cmdset[1]#cohort2[1]#collection[c1]#colname[fecal_elastase]#command[0]#result[count]#statcmd[2]#var[fecal_elastase]": {
+      "d": 118.0
     },
-    "cmdset[1]#collection[c1]#colname[lipase]#command[0]#ever_mal[0]#result[column3]#statcmd[5]#var[lipase]": {
-      "d": 36.0
-    },
-    "cmdset[1]#collection[c1]#colname[lipase]#command[0]#ever_mal[0]#result[count]#statcmd[2]#var[lipase]": {
-      "d": 54.0
-    },
-    "cmdset[1]#collection[c1]#colname[lipase]#command[0]#ever_mal[1]#result[column1]#statcmd[3]#var[lipase]": {
+    "cmdset[1]#cohort2[1]#collection[c1]#colname[lipase]#command[0]#result[column1]#statcmd[3]#var[lipase]": {
       "d": 30.0
     },
-    "cmdset[1]#collection[c1]#colname[lipase]#command[0]#ever_mal[1]#result[column2]#statcmd[4]#var[lipase]": {
+    "cmdset[1]#cohort2[1]#collection[c1]#colname[lipase]#command[0]#result[column2]#statcmd[4]#var[lipase]": {
       "d": 26.0
     },
-    "cmdset[1]#collection[c1]#colname[lipase]#command[0]#ever_mal[1]#result[column3]#statcmd[5]#var[lipase]": {
+    "cmdset[1]#cohort2[1]#collection[c1]#colname[lipase]#command[0]#result[column3]#statcmd[5]#var[lipase]": {
       "d": 35.0
     },
-    "cmdset[1]#collection[c1]#colname[lipase]#command[0]#ever_mal[1]#result[count]#statcmd[2]#var[lipase]": {
-      "d": 253.0
+    "cmdset[1]#cohort2[1]#collection[c1]#colname[lipase]#command[0]#result[count]#statcmd[2]#var[lipase]": {
+      "d": 307.0
     },
-    "cmdset[1]#collection[c1]#colname[ngml_trypsinogen]#command[0]#ever_mal[0]#result[column1]#statcmd[3]#var[ngml_trypsinogen]": {
-      "d": 24.2
+    "cmdset[1]#cohort2[1]#collection[c1]#colname[ngml_trypsinogen]#command[0]#result[count]#statcmd[2]#var[ngml_trypsinogen]": {
+      "d": 0.0
     },
-    "cmdset[1]#collection[c1]#colname[ngml_trypsinogen]#command[0]#ever_mal[0]#result[column2]#statcmd[4]#var[ngml_trypsinogen]": {
-      "d": 17.2
+    "cmdset[1]#cohort2[1]#collection[c1]#colname[ul_amylp]#command[0]#result[count]#statcmd[2]#var[ul_amylp]": {
+      "d": 0.0
     },
-    "cmdset[1]#collection[c1]#colname[ngml_trypsinogen]#command[0]#ever_mal[0]#result[column3]#statcmd[5]#var[ngml_trypsinogen]": {
-      "d": 32.5
+    "cmdset[1]#cohort2[1]#collection[c1]#command[0]#result[frequency]#statcmd[1]#var[_hide]": {
+      "d": 307.0
     },
-    "cmdset[1]#collection[c1]#colname[ngml_trypsinogen]#command[0]#ever_mal[0]#result[count]#statcmd[2]#var[ngml_trypsinogen]": {
-      "d": 135.0
+    "cmdset[1]#cohort2[2]#collection[c1]#colname[fecal_elastase]#command[0]#result[column1]#statcmd[3]#var[fecal_elastase]": {
+      "d": 124.21900177001953
     },
-    "cmdset[1]#collection[c1]#colname[ngml_trypsinogen]#command[0]#ever_mal[1]#result[column1]#statcmd[3]#var[ngml_trypsinogen]": {
-      "d": 25.3
+    "cmdset[1]#cohort2[2]#collection[c1]#colname[fecal_elastase]#command[0]#result[column2]#statcmd[4]#var[fecal_elastase]": {
+      "d": 55.80799865722656
     },
-    "cmdset[1]#collection[c1]#colname[ngml_trypsinogen]#command[0]#ever_mal[1]#result[column2]#statcmd[4]#var[ngml_trypsinogen]": {
-      "d": 17.6
+    "cmdset[1]#cohort2[2]#collection[c1]#colname[fecal_elastase]#command[0]#result[column3]#statcmd[5]#var[fecal_elastase]": {
+      "d": 271.4739990234375
     },
-    "cmdset[1]#collection[c1]#colname[ngml_trypsinogen]#command[0]#ever_mal[1]#result[column3]#statcmd[5]#var[ngml_trypsinogen]": {
-      "d": 36.1
+    "cmdset[1]#cohort2[2]#collection[c1]#colname[fecal_elastase]#command[0]#result[count]#statcmd[2]#var[fecal_elastase]": {
+      "d": 83.0
     },
-    "cmdset[1]#collection[c1]#colname[ngml_trypsinogen]#command[0]#ever_mal[1]#result[count]#statcmd[2]#var[ngml_trypsinogen]": {
-      "d": 141.0
+    "cmdset[1]#cohort2[2]#collection[c1]#colname[lipase]#command[0]#result[count]#statcmd[2]#var[lipase]": {
+      "d": 0.0
     },
-    "cmdset[1]#collection[c1]#colname[ul_amylp]#command[0]#ever_mal[0]#result[column1]#statcmd[3]#var[ul_amylp]": {
-      "d": 29.6
+    "cmdset[1]#cohort2[2]#collection[c1]#colname[ngml_trypsinogen]#command[0]#result[count]#statcmd[2]#var[ngml_trypsinogen]": {
+      "d": 0.0
     },
-    "cmdset[1]#collection[c1]#colname[ul_amylp]#command[0]#ever_mal[0]#result[column2]#statcmd[4]#var[ul_amylp]": {
-      "d": 23.5
-    },
-    "cmdset[1]#collection[c1]#colname[ul_amylp]#command[0]#ever_mal[0]#result[column3]#statcmd[5]#var[ul_amylp]": {
-      "d": 37.9
-    },
-    "cmdset[1]#collection[c1]#colname[ul_amylp]#command[0]#ever_mal[0]#result[count]#statcmd[2]#var[ul_amylp]": {
-      "d": 1025.0
-    },
-    "cmdset[1]#collection[c1]#colname[ul_amylp]#command[0]#ever_mal[1]#result[column1]#statcmd[3]#var[ul_amylp]": {
-      "d": 31.2
-    },
-    "cmdset[1]#collection[c1]#colname[ul_amylp]#command[0]#ever_mal[1]#result[column2]#statcmd[4]#var[ul_amylp]": {
+    "cmdset[1]#cohort2[2]#collection[c1]#colname[ul_amylp]#command[0]#result[column1]#statcmd[3]#var[ul_amylp]": {
       "d": 24.4
     },
-    "cmdset[1]#collection[c1]#colname[ul_amylp]#command[0]#ever_mal[1]#result[column3]#statcmd[5]#var[ul_amylp]": {
-      "d": 42.2
+    "cmdset[1]#cohort2[2]#collection[c1]#colname[ul_amylp]#command[0]#result[column2]#statcmd[4]#var[ul_amylp]": {
+      "d": 21.4
     },
-    "cmdset[1]#collection[c1]#colname[ul_amylp]#command[0]#ever_mal[1]#result[count]#statcmd[2]#var[ul_amylp]": {
-      "d": 759.0
+    "cmdset[1]#cohort2[2]#collection[c1]#colname[ul_amylp]#command[0]#result[column3]#statcmd[5]#var[ul_amylp]": {
+      "d": 30.75
     },
-    "cmdset[1]#collection[c1]#command[0]#ever_mal[0]#result[frequency]#statcmd[1]#var[_hide]": {
-      "d": 1101.0
+    "cmdset[1]#cohort2[2]#collection[c1]#colname[ul_amylp]#command[0]#result[count]#statcmd[2]#var[ul_amylp]": {
+      "d": 100.0
     },
-    "cmdset[1]#collection[c1]#command[0]#ever_mal[1]#result[frequency]#statcmd[1]#var[_hide]": {
-      "d": 1021.0
+    "cmdset[1]#cohort2[2]#collection[c1]#command[0]#result[frequency]#statcmd[1]#var[_hide]": {
+      "d": 103.0
+    },
+    "cmdset[1]#cohort2[3]#collection[c1]#colname[fecal_elastase]#command[0]#result[column1]#statcmd[3]#var[fecal_elastase]": {
+      "d": 589.0830078125
+    },
+    "cmdset[1]#cohort2[3]#collection[c1]#colname[fecal_elastase]#command[0]#result[column2]#statcmd[4]#var[fecal_elastase]": {
+      "d": 336.97662353515625
+    },
+    "cmdset[1]#cohort2[3]#collection[c1]#colname[fecal_elastase]#command[0]#result[column3]#statcmd[5]#var[fecal_elastase]": {
+      "d": 600.0
+    },
+    "cmdset[1]#cohort2[3]#collection[c1]#colname[fecal_elastase]#command[0]#result[count]#statcmd[2]#var[fecal_elastase]": {
+      "d": 291.0
+    },
+    "cmdset[1]#cohort2[3]#collection[c1]#colname[lipase]#command[0]#result[count]#statcmd[2]#var[lipase]": {
+      "d": 0.0
+    },
+    "cmdset[1]#cohort2[3]#collection[c1]#colname[ngml_trypsinogen]#command[0]#result[column1]#statcmd[3]#var[ngml_trypsinogen]": {
+      "d": 21.4
+    },
+    "cmdset[1]#cohort2[3]#collection[c1]#colname[ngml_trypsinogen]#command[0]#result[column2]#statcmd[4]#var[ngml_trypsinogen]": {
+      "d": 15.3
+    },
+    "cmdset[1]#cohort2[3]#collection[c1]#colname[ngml_trypsinogen]#command[0]#result[column3]#statcmd[5]#var[ngml_trypsinogen]": {
+      "d": 28.65
+    },
+    "cmdset[1]#cohort2[3]#collection[c1]#colname[ngml_trypsinogen]#command[0]#result[count]#statcmd[2]#var[ngml_trypsinogen]": {
+      "d": 100.0
+    },
+    "cmdset[1]#cohort2[3]#collection[c1]#colname[ul_amylp]#command[0]#result[column1]#statcmd[3]#var[ul_amylp]": {
+      "d": 28.1
+    },
+    "cmdset[1]#cohort2[3]#collection[c1]#colname[ul_amylp]#command[0]#result[column2]#statcmd[4]#var[ul_amylp]": {
+      "d": 23.6
+    },
+    "cmdset[1]#cohort2[3]#collection[c1]#colname[ul_amylp]#command[0]#result[column3]#statcmd[5]#var[ul_amylp]": {
+      "d": 33.9
+    },
+    "cmdset[1]#cohort2[3]#collection[c1]#colname[ul_amylp]#command[0]#result[count]#statcmd[2]#var[ul_amylp]": {
+      "d": 301.0
+    },
+    "cmdset[1]#cohort2[3]#collection[c1]#command[0]#result[frequency]#statcmd[1]#var[_hide]": {
+      "d": 302.0
+    },
+    "cmdset[1]#cohort2[4]#collection[c1]#colname[fecal_elastase]#command[0]#result[column1]#statcmd[3]#var[fecal_elastase]": {
+      "d": 231.7845001220703
+    },
+    "cmdset[1]#cohort2[4]#collection[c1]#colname[fecal_elastase]#command[0]#result[column2]#statcmd[4]#var[fecal_elastase]": {
+      "d": 100.58200073242188
+    },
+    "cmdset[1]#cohort2[4]#collection[c1]#colname[fecal_elastase]#command[0]#result[column3]#statcmd[5]#var[fecal_elastase]": {
+      "d": 487.0810089111328
+    },
+    "cmdset[1]#cohort2[4]#collection[c1]#colname[fecal_elastase]#command[0]#result[count]#statcmd[2]#var[fecal_elastase]": {
+      "d": 820.0
+    },
+    "cmdset[1]#cohort2[4]#collection[c1]#colname[lipase]#command[0]#result[count]#statcmd[2]#var[lipase]": {
+      "d": 0.0
+    },
+    "cmdset[1]#cohort2[4]#collection[c1]#colname[ngml_trypsinogen]#command[0]#result[column1]#statcmd[3]#var[ngml_trypsinogen]": {
+      "d": 23.4
+    },
+    "cmdset[1]#cohort2[4]#collection[c1]#colname[ngml_trypsinogen]#command[0]#result[column2]#statcmd[4]#var[ngml_trypsinogen]": {
+      "d": 20.3
+    },
+    "cmdset[1]#cohort2[4]#collection[c1]#colname[ngml_trypsinogen]#command[0]#result[column3]#statcmd[5]#var[ngml_trypsinogen]": {
+      "d": 32.2
+    },
+    "cmdset[1]#cohort2[4]#collection[c1]#colname[ngml_trypsinogen]#command[0]#result[count]#statcmd[2]#var[ngml_trypsinogen]": {
+      "d": 21.0
+    },
+    "cmdset[1]#cohort2[4]#collection[c1]#colname[ul_amylp]#command[0]#result[column1]#statcmd[3]#var[ul_amylp]": {
+      "d": 31.25
+    },
+    "cmdset[1]#cohort2[4]#collection[c1]#colname[ul_amylp]#command[0]#result[column2]#statcmd[4]#var[ul_amylp]": {
+      "d": 24.1
+    },
+    "cmdset[1]#cohort2[4]#collection[c1]#colname[ul_amylp]#command[0]#result[column3]#statcmd[5]#var[ul_amylp]": {
+      "d": 40.9
+    },
+    "cmdset[1]#cohort2[4]#collection[c1]#colname[ul_amylp]#command[0]#result[count]#statcmd[2]#var[ul_amylp]": {
+      "d": 844.0
+    },
+    "cmdset[1]#cohort2[4]#collection[c1]#command[0]#result[frequency]#statcmd[1]#var[_hide]": {
+      "d": 867.0
+    },
+    "cmdset[1]#cohort2[5]#collection[c1]#colname[fecal_elastase]#command[0]#result[column1]#statcmd[3]#var[fecal_elastase]": {
+      "d": 337.0419921875
+    },
+    "cmdset[1]#cohort2[5]#collection[c1]#colname[fecal_elastase]#command[0]#result[column2]#statcmd[4]#var[fecal_elastase]": {
+      "d": 139.23300170898438
+    },
+    "cmdset[1]#cohort2[5]#collection[c1]#colname[fecal_elastase]#command[0]#result[column3]#statcmd[5]#var[fecal_elastase]": {
+      "d": 559.8510131835938
+    },
+    "cmdset[1]#cohort2[5]#collection[c1]#colname[fecal_elastase]#command[0]#result[count]#statcmd[2]#var[fecal_elastase]": {
+      "d": 241.0
+    },
+    "cmdset[1]#cohort2[5]#collection[c1]#colname[lipase]#command[0]#result[count]#statcmd[2]#var[lipase]": {
+      "d": 0.0
+    },
+    "cmdset[1]#cohort2[5]#collection[c1]#colname[ngml_trypsinogen]#command[0]#result[column1]#statcmd[3]#var[ngml_trypsinogen]": {
+      "d": 33.8
+    },
+    "cmdset[1]#cohort2[5]#collection[c1]#colname[ngml_trypsinogen]#command[0]#result[column2]#statcmd[4]#var[ngml_trypsinogen]": {
+      "d": 25.3
+    },
+    "cmdset[1]#cohort2[5]#collection[c1]#colname[ngml_trypsinogen]#command[0]#result[column3]#statcmd[5]#var[ngml_trypsinogen]": {
+      "d": 47.0
+    },
+    "cmdset[1]#cohort2[5]#collection[c1]#colname[ngml_trypsinogen]#command[0]#result[count]#statcmd[2]#var[ngml_trypsinogen]": {
+      "d": 69.0
+    },
+    "cmdset[1]#cohort2[5]#collection[c1]#colname[ul_amylp]#command[0]#result[column1]#statcmd[3]#var[ul_amylp]": {
+      "d": 31.8
+    },
+    "cmdset[1]#cohort2[5]#collection[c1]#colname[ul_amylp]#command[0]#result[column2]#statcmd[4]#var[ul_amylp]": {
+      "d": 24.9
+    },
+    "cmdset[1]#cohort2[5]#collection[c1]#colname[ul_amylp]#command[0]#result[column3]#statcmd[5]#var[ul_amylp]": {
+      "d": 44.9
+    },
+    "cmdset[1]#cohort2[5]#collection[c1]#colname[ul_amylp]#command[0]#result[count]#statcmd[2]#var[ul_amylp]": {
+      "d": 281.0
+    },
+    "cmdset[1]#cohort2[5]#collection[c1]#command[0]#result[frequency]#statcmd[1]#var[_hide]": {
+      "d": 282.0
+    },
+    "cmdset[1]#cohort2[6]#collection[c1]#colname[fecal_elastase]#command[0]#result[column1]#statcmd[3]#var[fecal_elastase]": {
+      "d": 492.9759826660156
+    },
+    "cmdset[1]#cohort2[6]#collection[c1]#colname[fecal_elastase]#command[0]#result[column2]#statcmd[4]#var[fecal_elastase]": {
+      "d": 252.49832153320313
+    },
+    "cmdset[1]#cohort2[6]#collection[c1]#colname[fecal_elastase]#command[0]#result[column3]#statcmd[5]#var[fecal_elastase]": {
+      "d": 600.0
+    },
+    "cmdset[1]#cohort2[6]#collection[c1]#colname[fecal_elastase]#command[0]#result[count]#statcmd[2]#var[fecal_elastase]": {
+      "d": 247.0
+    },
+    "cmdset[1]#cohort2[6]#collection[c1]#colname[lipase]#command[0]#result[count]#statcmd[2]#var[lipase]": {
+      "d": 0.0
+    },
+    "cmdset[1]#cohort2[6]#collection[c1]#colname[ngml_trypsinogen]#command[0]#result[column1]#statcmd[3]#var[ngml_trypsinogen]": {
+      "d": 22.7
+    },
+    "cmdset[1]#cohort2[6]#collection[c1]#colname[ngml_trypsinogen]#command[0]#result[column2]#statcmd[4]#var[ngml_trypsinogen]": {
+      "d": 16.1
+    },
+    "cmdset[1]#cohort2[6]#collection[c1]#colname[ngml_trypsinogen]#command[0]#result[column3]#statcmd[5]#var[ngml_trypsinogen]": {
+      "d": 33.6
+    },
+    "cmdset[1]#cohort2[6]#collection[c1]#colname[ngml_trypsinogen]#command[0]#result[count]#statcmd[2]#var[ngml_trypsinogen]": {
+      "d": 86.0
+    },
+    "cmdset[1]#cohort2[6]#collection[c1]#colname[ul_amylp]#command[0]#result[column1]#statcmd[3]#var[ul_amylp]": {
+      "d": 32.3
+    },
+    "cmdset[1]#cohort2[6]#collection[c1]#colname[ul_amylp]#command[0]#result[column2]#statcmd[4]#var[ul_amylp]": {
+      "d": 25.5
+    },
+    "cmdset[1]#cohort2[6]#collection[c1]#colname[ul_amylp]#command[0]#result[column3]#statcmd[5]#var[ul_amylp]": {
+      "d": 41.6
+    },
+    "cmdset[1]#cohort2[6]#collection[c1]#colname[ul_amylp]#command[0]#result[count]#statcmd[2]#var[ul_amylp]": {
+      "d": 258.0
+    },
+    "cmdset[1]#cohort2[6]#collection[c1]#command[0]#result[frequency]#statcmd[1]#var[_hide]": {
+      "d": 261.0
     },
     "cmdset[1]#collection[c1]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
-      "d": 7.389665000925561
+      "d": 300.7899241162313
     },
     "cmdset[1]#collection[c1]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[_hide]": {
-      "d": 7.515096885282175
+      "d": 305.89552050966137
     },
     "cmdset[1]#collection[c1]#program_class[rclass]#result[DF]#result_type[scalar]#var[_hide]": {
-      "d": 1.0
+      "d": 5.0
     },
     "cmdset[1]#collection[c1]#program_class[rclass]#result[p]#result_type[scalar]#var[_hide]": {
-      "d": 0.0065599705384881
+      "d": 6.773855024010082e-63
     },
     "cmdset[1]#collection[c1]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[_hide]": {
-      "d": 0.0061183994331813
+      "d": 5.408320514695956e-64
     },
     "cmdset[2]#collection[c1]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
-      "d": 12.36215849568543
+      "d": 65.3034254060367
     },
     "cmdset[2]#collection[c1]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[_hide]": {
-      "d": 12.362306167795595
+      "d": 65.30420548781886
     },
     "cmdset[2]#collection[c1]#program_class[rclass]#result[DF]#result_type[scalar]#var[_hide]": {
-      "d": 1.0
+      "d": 4.0
     },
     "cmdset[2]#collection[c1]#program_class[rclass]#result[p]#result_type[scalar]#var[_hide]": {
-      "d": 0.0004381238647726968
+      "d": 2.2209998075529182e-13
     },
     "cmdset[2]#collection[c1]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[_hide]": {
-      "d": 0.00043808921220239917
+      "d": 2.2201594282361472e-13
     },
     "cmdset[3]#collection[c1]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
-      "d": 0.3124497652183891
+      "d": 37.47488620310776
     },
     "cmdset[3]#collection[c1]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[_hide]": {
-      "d": 0.3134619085312719
+      "d": 37.476212397179545
     },
     "cmdset[3]#collection[c1]#program_class[rclass]#result[DF]#result_type[scalar]#var[_hide]": {
-      "d": 1.0
+      "d": 3.0
     },
     "cmdset[3]#collection[c1]#program_class[rclass]#result[p]#result_type[scalar]#var[_hide]": {
-      "d": 0.5761807878073121
+      "d": 3.650893680515703e-08
     },
     "cmdset[3]#collection[c1]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[_hide]": {
-      "d": 0.5755635489939235
-    },
-    "cmdset[4]#collection[c1]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
-      "d": 1.053916182702778
-    },
-    "cmdset[4]#collection[c1]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[_hide]": {
-      "d": 1.053953479611062
-    },
-    "cmdset[4]#collection[c1]#program_class[rclass]#result[DF]#result_type[scalar]#var[_hide]": {
-      "d": 1.0
-    },
-    "cmdset[4]#collection[c1]#program_class[rclass]#result[p]#result_type[scalar]#var[_hide]": {
-      "d": 0.3046068757197195
-    },
-    "cmdset[4]#collection[c1]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[_hide]": {
-      "d": 0.3045983188094293
+      "d": 3.6485349461989757e-08
     },
     "coleq[/]#collection[c2]#colname[var(e.fecal_elastase)]#program_class[eclass]#result[_r_b]#result_type[matrix]#var[fecal_elastase]": {
-      "d": 74646.45081699887
+      "d": 74814.79951962586
     },
     "coleq[/]#collection[c2]#colname[var(e.fecal_elastase)]#program_class[eclass]#result[_r_df]#result_type[matrix]#var[fecal_elastase]": {
       "d": 1799.0
     },
     "coleq[/]#collection[c2]#colname[var(e.fecal_elastase)]#program_class[eclass]#result[_r_lb]#result_type[matrix]#var[fecal_elastase]": {
-      "d": 68833.93196856148
+      "d": 68988.05156696828
     },
     "coleq[/]#collection[c2]#colname[var(e.fecal_elastase)]#program_class[eclass]#result[_r_se]#result_type[matrix]#var[fecal_elastase]": {
-      "d": 3085.377977022437
+      "d": 3092.95578558493
     },
     "coleq[/]#collection[c2]#colname[var(e.fecal_elastase)]#program_class[eclass]#result[_r_ub]#result_type[matrix]#var[fecal_elastase]": {
-      "d": 80949.79409456914
+      "d": 81133.67605009726
     },
     "coleq[fecal_elastase]#collection[c2]#colname[_cons]#program_class[eclass]#result[_r_b]#result_type[matrix]#var[fecal_elastase]": {
-      "d": 368.29054814241715
+      "d": 460.30302361410537
     },
     "coleq[fecal_elastase]#collection[c2]#colname[_cons]#program_class[eclass]#result[_r_df]#result_type[matrix]#var[fecal_elastase]": {
       "d": 1799.0
     },
     "coleq[fecal_elastase]#collection[c2]#colname[_cons]#program_class[eclass]#result[_r_lb]#result_type[matrix]#var[fecal_elastase]": {
-      "d": 350.86519250762296
+      "d": 416.24663156498036
     },
     "coleq[fecal_elastase]#collection[c2]#colname[_cons]#program_class[eclass]#result[_r_p]#result_type[matrix]#var[fecal_elastase]": {
-      "d": 3.2734274220507427e-264
+      "d": 4.827000282394066e-84
     },
     "coleq[fecal_elastase]#collection[c2]#colname[_cons]#program_class[eclass]#result[_r_se]#result_type[matrix]#var[fecal_elastase]": {
-      "d": 8.884669387992252
+      "d": 22.46304098394772
     },
     "coleq[fecal_elastase]#collection[c2]#colname[_cons]#program_class[eclass]#result[_r_ub]#result_type[matrix]#var[fecal_elastase]": {
-      "d": 385.71590377721134
+      "d": 504.3594156632304
     },
     "coleq[fecal_elastase]#collection[c2]#colname[_cons]#program_class[eclass]#result[_r_z]#result_type[matrix]#var[fecal_elastase]": {
-      "d": 41.45236384824479
+      "d": 20.491572086924553
     },
     "coleq[fecal_elastase]#collection[c2]#colname[_cons]#program_class[eclass]#result[_r_z_abs]#result_type[matrix]#var[fecal_elastase]": {
-      "d": 41.45236384824479
+      "d": 20.491572086924553
     },
-    "coleq[fecal_elastase]#collection[c2]#colname[ever_mal]#program_class[eclass]#result[_r_b]#result_type[matrix]#var[fecal_elastase]": {
-      "d": 39.20985799396806
+    "coleq[fecal_elastase]#collection[c2]#colname[cohort2]#program_class[eclass]#result[_r_b]#result_type[matrix]#var[fecal_elastase]": {
+      "d": -18.79174388971365
     },
-    "coleq[fecal_elastase]#collection[c2]#colname[ever_mal]#program_class[eclass]#result[_r_df]#result_type[matrix]#var[fecal_elastase]": {
+    "coleq[fecal_elastase]#collection[c2]#colname[cohort2]#program_class[eclass]#result[_r_df]#result_type[matrix]#var[fecal_elastase]": {
       "d": 1799.0
     },
-    "coleq[fecal_elastase]#collection[c2]#colname[ever_mal]#program_class[eclass]#result[_r_lb]#result_type[matrix]#var[fecal_elastase]": {
-      "d": 12.950588218450559
+    "coleq[fecal_elastase]#collection[c2]#colname[cohort2]#program_class[eclass]#result[_r_lb]#result_type[matrix]#var[fecal_elastase]": {
+      "d": -29.296573143314063
     },
-    "coleq[fecal_elastase]#collection[c2]#colname[ever_mal]#program_class[eclass]#result[_r_p]#result_type[matrix]#var[fecal_elastase]": {
-      "d": 0.0034482746791044067
+    "coleq[fecal_elastase]#collection[c2]#colname[cohort2]#program_class[eclass]#result[_r_p]#result_type[matrix]#var[fecal_elastase]": {
+      "d": 0.00046176262452996773
     },
-    "coleq[fecal_elastase]#collection[c2]#colname[ever_mal]#program_class[eclass]#result[_r_se]#result_type[matrix]#var[fecal_elastase]": {
-      "d": 13.38881886919526
+    "coleq[fecal_elastase]#collection[c2]#colname[cohort2]#program_class[eclass]#result[_r_se]#result_type[matrix]#var[fecal_elastase]": {
+      "d": 5.356099287247138
     },
-    "coleq[fecal_elastase]#collection[c2]#colname[ever_mal]#program_class[eclass]#result[_r_ub]#result_type[matrix]#var[fecal_elastase]": {
-      "d": 65.46912776948555
+    "coleq[fecal_elastase]#collection[c2]#colname[cohort2]#program_class[eclass]#result[_r_ub]#result_type[matrix]#var[fecal_elastase]": {
+      "d": -8.286914636113238
     },
-    "coleq[fecal_elastase]#collection[c2]#colname[ever_mal]#program_class[eclass]#result[_r_z]#result_type[matrix]#var[fecal_elastase]": {
-      "d": 2.9285524269942402
+    "coleq[fecal_elastase]#collection[c2]#colname[cohort2]#program_class[eclass]#result[_r_z]#result_type[matrix]#var[fecal_elastase]": {
+      "d": -3.508475642797877
     },
-    "coleq[fecal_elastase]#collection[c2]#colname[ever_mal]#program_class[eclass]#result[_r_z_abs]#result_type[matrix]#var[fecal_elastase]": {
-      "d": 2.9285524269942402
+    "coleq[fecal_elastase]#collection[c2]#colname[cohort2]#program_class[eclass]#result[_r_z_abs]#result_type[matrix]#var[fecal_elastase]": {
+      "d": 3.508475642797877
     },
     "collection[c2]#program_class[eclass]#result[N]#result_type[scalar]#var[fecal_elastase]": {
       "d": 1800.0
@@ -241,7 +358,7 @@
       "d": 1340.0
     },
     "collection[c2]#program_class[eclass]#result[chi2]#result_type[scalar]#var[fecal_elastase]": {
-      "d": 8.57295962599892
+      "d": 12.37733522014969
     },
     "collection[c2]#program_class[eclass]#result[chi2type]#result_type[macro]#var[fecal_elastase]": {
       "s": "LR"
@@ -250,7 +367,7 @@
       "s": "tobit"
     },
     "collection[c2]#program_class[eclass]#result[cmdline]#result_type[macro]#var[fecal_elastase]": {
-      "s": "tobit fecal_elastase ever_mal, ul(600)"
+      "s": "tobit fecal_elastase cohort2, ul(600)"
     },
     "collection[c2]#program_class[eclass]#result[converged]#result_type[scalar]#var[fecal_elastase]": {
       "d": 1.0
@@ -286,7 +403,7 @@
       "d": 2.0
     },
     "collection[c2]#program_class[eclass]#result[ll]#result_type[scalar]#var[fecal_elastase]": {
-      "d": -9877.239706368
+      "d": -9875.337518570925
     },
     "collection[c2]#program_class[eclass]#result[ll_0]#result_type[scalar]#var[fecal_elastase]": {
       "d": -9881.526186181
@@ -304,7 +421,7 @@
       "s": "moptimize"
     },
     "collection[c2]#program_class[eclass]#result[p]#result_type[scalar]#var[fecal_elastase]": {
-      "d": 0.0034119208836491787
+      "d": 0.00043457693541656354
     },
     "collection[c2]#program_class[eclass]#result[predict]#result_type[macro]#var[fecal_elastase]": {
       "s": "tobit_p"
@@ -313,7 +430,7 @@
       "s": "b V"
     },
     "collection[c2]#program_class[eclass]#result[r2_p]#result_type[scalar]#var[fecal_elastase]": {
-      "d": 0.0004337872239810192
+      "d": 0.0006262866174183701
     },
     "collection[c2]#program_class[eclass]#result[rank]#result_type[scalar]#var[fecal_elastase]": {
       "d": 3.0
@@ -339,50 +456,35 @@
     "collection[c2]#program_class[eclass]#result[which]#result_type[macro]#var[fecal_elastase]": {
       "s": "max"
     },
-    "collection[c2]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[lipase]": {
-      "d": 0.3124497652183891
-    },
     "collection[c2]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[ngml_trypsinogen]": {
-      "d": 1.053916182702778
+      "d": 37.47488620310776
     },
     "collection[c2]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[ul_amylp]": {
-      "d": 12.36215849568543
-    },
-    "collection[c2]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[lipase]": {
-      "d": 0.3134619085312719
+      "d": 65.3034254060367
     },
     "collection[c2]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[ngml_trypsinogen]": {
-      "d": 1.053953479611062
+      "d": 37.476212397179545
     },
     "collection[c2]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[ul_amylp]": {
-      "d": 12.362306167795595
-    },
-    "collection[c2]#program_class[rclass]#result[DF]#result_type[scalar]#var[lipase]": {
-      "d": 1.0
+      "d": 65.30420548781886
     },
     "collection[c2]#program_class[rclass]#result[DF]#result_type[scalar]#var[ngml_trypsinogen]": {
-      "d": 1.0
+      "d": 3.0
     },
     "collection[c2]#program_class[rclass]#result[DF]#result_type[scalar]#var[ul_amylp]": {
-      "d": 1.0
-    },
-    "collection[c2]#program_class[rclass]#result[p]#result_type[scalar]#var[lipase]": {
-      "d": 0.5761807878073121
+      "d": 4.0
     },
     "collection[c2]#program_class[rclass]#result[p]#result_type[scalar]#var[ngml_trypsinogen]": {
-      "d": 0.3046068757197195
+      "d": 3.650893680515703e-08
     },
     "collection[c2]#program_class[rclass]#result[p]#result_type[scalar]#var[ul_amylp]": {
-      "d": 0.0004381238647726968
-    },
-    "collection[c2]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[lipase]": {
-      "d": 0.5755635489939235
+      "d": 2.2209998075529182e-13
     },
     "collection[c2]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[ngml_trypsinogen]": {
-      "d": 0.3045983188094293
+      "d": 3.6485349461989757e-08
     },
     "collection[c2]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[ul_amylp]": {
-      "d": 0.00043808921220239917
+      "d": 2.2201594282361472e-13
     }
   },
   "Labels": {
@@ -391,22 +493,31 @@
         "border_block": "Table border block",
         "cell_type": "Table cell type",
         "cmdset": "Command results index",
+        "cohort2": "RECODE of cohort (Cohort)",
         "coleq": "Depvars, parameters, and column equations",
         "colname": "Covariate names and column names",
         "command": "Command option index",
-        "ever_mal": "Ever experience malnutrition?",
         "program_class": "Result program class",
         "result": "Result",
         "result_type": "Result type",
         "statcmd": "Statistic/command option index",
         "var": "Statistic option variable"
       },
+      "cohort2": {
+        ".m": "Total",
+        "1": "DIVIDS (India)",
+        "2": "SAM (Zambia)",
+        "3": "CLHNS (Philippines)",
+        "4": "CICADA (Tanzania)",
+        "5": "NUSTART (Zambia)",
+        "6": "St-ATT (Philippines)"
+      },
       "coleq": {
         "fecal_elastase": "Fecal Elastase (ug/g)"
       },
       "colname": {
         "_cons": "Intercept",
-        "ever_mal": "Ever experience malnutrition?",
+        "cohort2": "RECODE of cohort (Cohort)",
         "fecal_elastase": "Fecal Elastase (ug/g)",
         "lipase": "Lipase (U/L)",
         "ngml_trypsinogen": "Trypsinogen (ng/ml)",
@@ -414,11 +525,6 @@
       },
       "command": {
         "0": "Statistic"
-      },
-      "ever_mal": {
-        ".m": "Total",
-        "0": "NPM",
-        "1": "PM"
       },
       "result": {
         "N": "Number of observations",
@@ -484,7 +590,7 @@
     }
   },
   "Layout": {
-    "columns": "ever_mal#result[count column1 column4] result[p]",
+    "columns": "cohort2#result[count column1 column4] result[p]",
     "rows": "var",
     "tables": ""
   },
@@ -509,7 +615,7 @@
     "which"
   ],
   "NumericDimNames": [
-    "ever_mal"
+    "cohort2"
   ],
   "ScalarResults": [
     "Chi2",
@@ -896,6 +1002,10 @@
         "across": {
           "title": "hide"
         },
+        "cohort2": {
+          "nformat": "%20.0g",
+          "title": "hide"
+        },
         "coleq": {
           "title": "hide"
         },
@@ -903,10 +1013,6 @@
           "title": "hide"
         },
         "command": {
-          "title": "hide"
-        },
-        "ever_mal": {
-          "nformat": "%9.0g",
           "title": "hide"
         },
         "result": {
@@ -1004,24 +1110,42 @@
         "term-index": 2
       },
       {
-        "stripe": "4",
-        "term-index": 3
-      },
-      {
         "stripe": "fecal_elastase",
         "term-index": 0
       },
       {
-        "stripe": "lipase",
-        "term-index": 2
-      },
-      {
         "stripe": "ngml_trypsinogen",
-        "term-index": 3
+        "term-index": 2
       },
       {
         "stripe": "ul_amylp",
         "term-index": 1
+      }
+    ],
+    "cohort2": [
+      {
+        "stripe": "1",
+        "term-index": 0
+      },
+      {
+        "stripe": "2",
+        "term-index": 1
+      },
+      {
+        "stripe": "3",
+        "term-index": 2
+      },
+      {
+        "stripe": "4",
+        "term-index": 3
+      },
+      {
+        "stripe": "5",
+        "term-index": 4
+      },
+      {
+        "stripe": "6",
+        "term-index": 5
       }
     ],
     "coleq": [
@@ -1050,7 +1174,7 @@
         "term-index": 18446744073709551588
       },
       {
-        "stripe": "ever_mal",
+        "stripe": "cohort2",
         "term-index": 1
       },
       {
@@ -1078,16 +1202,6 @@
       {
         "stripe": "0",
         "term-index": 0
-      }
-    ],
-    "ever_mal": [
-      {
-        "stripe": "0",
-        "term-index": 0
-      },
-      {
-        "stripe": "1",
-        "term-index": 1
       }
     ],
     "program_class": [
@@ -1386,10 +1500,6 @@
       {
         "stripe": "3",
         "term-index": 2
-      },
-      {
-        "stripe": "4",
-        "term-index": 3
       },
       {
         "stripe": "_hide",

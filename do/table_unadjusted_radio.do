@@ -1,4 +1,4 @@
-/* an_uss_bivariate.do 
+/* table_uss_unadjusted_bivariate.do 
 J Solon
 Sampa
 March19 
@@ -197,9 +197,10 @@ collect layout (var) (ever_mal#result[count column1 column4] result[p])
 
 collect save ./tables/uss1, replace	
 * Export combined table
-collect export ./tables/uss1.html, as(html) replace
-collect export ./tables/uss1.docx, as(docx) replace
-collect export ./tables/uss1.xlsx, as(xlsx) replace
+collect export ./tables/uss_unadjusted.html, as(html) replace
+html2docx ./tables/uss_unadjusted.html , saving(uss_unadjusted.docx) replace
+collect export ./tables/uss_unadjusted_ms.docx, as(docx) replace
+collect export ./tables/uss_unadjusted.xlsx, as(xlsx) replace
 
 
 

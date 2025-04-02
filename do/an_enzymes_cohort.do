@@ -6,6 +6,15 @@ kwallis p value
 di chi2tail(r(df),r(chi2))
 */
 
+recode cohort 3 = 4 4 = 5 5 = 6 6 = 3, gen(cohort2)
+
+	label define cohort2 1 "DIVIDS (India)" 2 "SAM (Zambia)" 4 "CICADA (Tanzania)" 5 "NUSTART (Zambia)" 6 "St-ATT (Philippines)" 3 "CLHNS (Philippines)"
+	label values cohort2 cohort2
+
+collect clear
+local pwd "~/Documents/GitHub/sampa-radio"
+
+cd `pwd'
 cap prog drop mystats
 program mystats, rclass
 return scalar p_adj= chi2tail(r(df), r(chi2_adj))
@@ -17,9 +26,10 @@ end
 
 collect clear
 
-local col "ever_mal"
+local col "cohort2"
 local contmed "fecal_elastase ul_amylp lipase  ngml_trypsinogen"  /*continous variables; median (p25-p75)  will be reported*/
 
+local contmed2 "fecal_elastase ul_amylp ngml_trypsinogen"  /*continous variables; median (p25-p75)  will be reported*/
 local colhead2 `"0 "NPM" 1 "PM""'
 		
 * format median of `contmed'
@@ -31,7 +41,7 @@ local sfrmt_p75 "%s)"
 local title "Table 3. Pancreatic Enzyme Assays"
 
 local notes1 "Values are [N] median (p25-p75)."
-local notes2 "Faecal elastase values have an upper limit of detection is 600."
+local notes2 "Faecal elastase values that reached the upper limit of detection of 600 (n=460) ."
 local notes3 "Lipase from DIVIDS cohort only. Trypsinogen from CT Scan subset only."
 local notes4 "Tobit regression was performed for faecal elastase and Kruskal-Wallis tests for the rest."
 
@@ -62,7 +72,7 @@ collect rename Table c1
 		collect composite define column4 = column2 column3, replace
 
 	* Calculate p-values from chi2 and df
-	foreach v in `contmed' {
+	foreach v in `contmed2' {
 		quietly kwallis `v', by(`col')
 		collect: mystats
 	}
@@ -71,7 +81,7 @@ collect rename Table c1
 
 * CREATE THE TABLE 1 Layout Super column - column 
 
-	collect layout (var) (ever_mal#result[count column1 column4])
+	collect layout (var) (`col'#result[count column1 column4])
 
 * Format p-values
 	collect style cell result[p], nformat("%5.3f")
@@ -79,7 +89,7 @@ collect rename Table c1
 
 * CHANGE HEADER TEXT
 	* column
-		collect label levels `col' `colhead2', modify
+		*collect label levels `col' , modify
 
 collect preview /* preview changes */
 
@@ -98,6 +108,16 @@ collect preview /* preview changes */
 		collect style header result, level(hide) /* this removes column 1 and column2 header names*/
 
 collect preview /* preview changes */
+
+*** TABLE TEXT
+
+* Table Styles
+	collect style cell, font(Arial, size(11))
+	collect style notes, font(Arial, size(11))
+
+* Table title styles
+	collect style title, font(Arial, size(11) bold)
+
 
 * MODIFY ROW TEXT
 
@@ -157,12 +177,15 @@ collect style header `hiderows', title(hide)
 collect preview
 
 * Save first collection with main stats
-collect layout (var) (ever_mal#result[count column1 column4])
+collect layout (var) (`col'#result[count column1 column4])
 collect save ./tables/enzymes1.json, replace
 
 * Create new collection for p-values
 collect create c2
-foreach v in `contmed' {
+
+collect _r_p : tobit fecal_elastase `col', ul(600)
+ 
+foreach v in ul_amylp ngml_trypsinogen {
     quietly kwallis `v', by(`col')
     collect: mystats
 }
@@ -170,22 +193,23 @@ foreach v in `contmed' {
 * Remap cmdset to match var levels
 collect recode cmdset 1 = fecal_elastase
 collect recode cmdset 2 = ul_amylp
-collect recode cmdset 3 = lipase
-collect recode cmdset 4 = ngml_trypsinogen
+collect recode cmdset 3 = ngml_trypsinogen
+
 collect remap cmdset = var
 
 * Combine collections
 collect combine c3 = c1 c2
 
 * Create layout for combined collection
-collect layout (var) (ever_mal#result[count column1 column4] result[p])
+collect layout (var) (`col'#result[count column1 column4] result[p])
 
-collect save ./tables/enzymes, replace	
+collect save ./tables/enzymes_coh, replace	
 * Export combined table
-collect export ./tables/enzymes.html, as(html) replace
-collect export ./tables/enzymes.docx, as(docx) replace
+collect export ./tables/enzymes_coh.html, as(html) replace
+html2docx ./tables/enzymes_coh.html , saving(./tables/enzymes_coh.docx) replace
+collect export ./tables/enzymes_coh_ms.docx, as(docx) replace
 
-collect export preview.xlsx, as(xlsx) replace
-
+drop cohort2
+label drop cohort2
 /* END END END END END END END END END END END END END END END END END END END END */
 	
