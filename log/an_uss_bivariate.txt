@@ -1226,3 +1226,16 @@ Number of observations =     272
 Test of H0: ngml_trypsinogen and mgl_crp are independent
                   Prob =  0.0106
 
+. scatter ngml mgl_cr
+
+. scatter ngml mgl_cr if ngml<40
+
+. scatter ngml mgl_cr
+
+. scatter ul_am mgl_cy
+
+. exit, celar
+option celar not allowed
+r(198);
+
+. exit, clear

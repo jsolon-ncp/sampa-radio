@@ -22,7 +22,7 @@ end
 collect clear
 
 local col "ever_mal"
-local contmed "adj_wt_ct_pan_head_trans adj_wt_ct_pan_head_ap adj_wt_ct_pan_body_trans adj_wt_ct_pan_tail_trans adj_wt_ct_pan_body_tail adj_wt_ct_pan_vol adj_wt_pan_head_ap adj_wt_pan_head_trans adj_wt_pan_body_trans adj_wt_pan_tail_trans"  /*continous variables; median (p25-p75)  will be reported*/
+local contmed "adj_wt_pan_head_ap adj_wt_pan_head_trans adj_wt_pan_body_trans adj_wt_pan_tail_trans adj_wt_ct_pan_head_trans adj_wt_ct_pan_head_ap adj_wt_ct_pan_body_trans adj_wt_ct_pan_tail_trans adj_wt_ct_pan_body_tail adj_wt_ct_pan_vol "  /*continous variables; median (p25-p75)  will be reported*/
 
 local colhead2 `"0 "NPM" 1 "PM""'
 		
@@ -185,16 +185,17 @@ foreach v in `contmed' {
             
 
 * Remap cmdset to match var levels
-collect recode cmdset 1 = adj_wt_ct_pan_head_trans
-collect recode cmdset 2 = adj_wt_ct_pan_head_ap
-collect recode cmdset 3 = adj_wt_ct_pan_body_trans
-collect recode cmdset 4 = adj_wt_ct_pan_tail_trans
-collect recode cmdset 5 = adj_wt_ct_pan_body_tail
-collect recode cmdset 6 = adj_wt_ct_pan_vol
-collect recode cmdset 7 = adj_wt_pan_head_ap
-collect recode cmdset 8 = adj_wt_pan_head_trans
-collect recode cmdset 9 = adj_wt_pan_body_trans
-collect recode cmdset 10 = adj_wt_pan_tail_trans
+collect recode cmdset 1 = adj_wt_pan_head_ap
+collect recode cmdset 2 = adj_wt_pan_head_trans
+collect recode cmdset 3 = adj_wt_pan_body_trans
+collect recode cmdset 4 = adj_wt_pan_tail_trans
+collect recode cmdset 5 = adj_wt_ct_pan_head_trans
+collect recode cmdset 6 = adj_wt_ct_pan_head_ap
+collect recode cmdset 7 = adj_wt_ct_pan_body_trans
+collect recode cmdset 8 = adj_wt_ct_pan_tail_trans
+collect recode cmdset 9 = adj_wt_ct_pan_body_tail
+collect recode cmdset 10 = adj_wt_ct_pan_vol
+
 
 collect remap cmdset = var
 

@@ -70,9 +70,9 @@ dtable () `filter', by(`col', test nototals) ///
 	
 ****ROWS
 
-	label list ct_pan_paren_fibrosis ct_pan_parenchyma ct_pan_paren_inflam ct_pan_paren_steatosis ct_pan_duct
+	label list epi_binary epi_ordinal tryp_high tryp_low amyl_low
 
-    collect label levels var _N "With CT Scans", modify
+    collect label levels var _N "XX", modify
     collect label levels ct_pan_shape 1 "Normal Shape" 2 "Small Pancreas" 3 "Enlarged Pancreas", modify
 	collect label levels ct_pan_parenchyma 2 "Abnormal Parenchyma" 3 "Not well visualized",  modify
 	collect label levels ct_pan_paren_inflam_new 1 "Edema or Inflammation",  modify
@@ -83,23 +83,24 @@ dtable () `filter', by(`col', test nototals) ///
     
 * REMOVE level name in rows to show only the  label names
    
-   local cat "2.ct_pan_shape 3.ct_pan_shape 2.ct_pan_parenchyma 3.ct_pan_parenchyma 1.ct_pan_paren_inflam_new 1.ct_pan_paren_fibrosis 1.ct_pan_paren_steatosis_new 2.ct_pan_duct  2.ct_pan_duct 1.ct_pan_calci"
+   local cat "1.epi_ordinal 2.epi_ordinal 3.epi_ordinal 1.ebi_binary 1.tryp_high 1.tryp_low 1.amyl_low "
+  
    
-   local cat2 " 1.ct_pan_paren_inflam_new 1.ct_pan_paren_fibrosis 1.ct_pan_paren_steatosis_new 2.ct_pan_duct  2.ct_pan_duct 1.ct_pan_calci"
-   
-   foreach x in "`cat2'" {
+   foreach x in "`cat'" {
 		collect style header var[`x'], title(hide)
 		}
+		
+	collect style header var[1.epi_binary], title(hide)
   
 * Save collection   
-	collect rename DTable ct_findings, replace
-	collect save ./tables/ ct_findings, replace
+	collect rename DTable enzymes_cat, replace
+	collect save ./tables/enzymes_cat, replace
 
 **# EXPORT
 
-	collect export ./tables/ct_findings.html, as(html) replace
-	html2docx ./tables/ct_findings.html , saving(ct_findings.docx) replace
-	collect export ./tables/ct_findings_ms.docx, as(docx) replace
+	collect export ./tables/enzymes_cat.html, as(html) replace
+	html2docx ./tables/enzymes_cat.html , saving(enzymes_cat.docx) replace
+	collect export ./tables/enzymes_cat_ms.docx, as(docx) replace
 
 ** Drop generated variables
 
