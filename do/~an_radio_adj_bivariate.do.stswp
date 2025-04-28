@@ -221,8 +221,8 @@ collect remap cmdset = var
 collect combine c3 = c1 c2
 
 * Add tags
-collect addtags vartype[USS Adjusted by weight], fortags(var[adj_wt_pan_head_ap adj_wt_pan_head_trans adj_wt_pan_body_trans adj_wt_pan_tail_trans adj_wt_pan_quant])
-collect addtags vartype[USS Square Root Transformed], fortags(var[adj_sqrt_pan_head_ap adj_sqrt_pan_head_trans adj_sqrt_pan_body_trans adj_sqrt_pan_tail_trans adj_sqrt_pan_quant])
+collect addtags vartype[USS Adjusted by weight], fortags(var[adj_wt_pan_head_ap adj_wt_pan_head_trans adj_wt_pan_body_trans adj_wt_pan_tail_trans])
+collect addtags vartype[USS Square Root Transformed], fortags(var[adj_sqrt_pan_head_ap adj_sqrt_pan_head_trans adj_sqrt_pan_body_trans adj_sqrt_pan_tail_trans])
 collect addtags vartype[CT Adjusted by weight ], fortags(var[adj_wt_ct_pan_head_ap adj_wt_ct_pan_head_trans adj_wt_ct_pan_body_trans adj_wt_ct_pan_tail_trans adj_wt_ct_pan_body_tail adj_wt_ct_pan_vol])
 collect addtags vartype[CT Square Root Transformed ], fortags(var[adj_sqrt_ct_pan_head_ap adj_sqrt_ct_pan_head_trans adj_sqrt_ct_pan_body_trans adj_sqrt_ct_pan_tail_trans adj_sqrt_ct_pan_body_tail adj_sqrt_ct_pan_vol])
 

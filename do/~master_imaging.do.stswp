@@ -99,6 +99,8 @@ note: Selected variables kept for this paper in cr_keep.do
 describe, simple
 notes 
 
+datasignature set
+
 save ./data-temp/subset_imaging.dta, replace
 
 /*

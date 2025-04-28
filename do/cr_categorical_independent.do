@@ -67,3 +67,10 @@ gen fec_cohort = 1 if cohort ==1
 
 label define ever_mal 0 "NPM" 1 "PM", modify
 label values ever_mal ever_mal
+
+egfr, formula(ckdepi_cyc) age(age) female(sex==2) generate(egfr) cystatinc(mgl_cystatin)
+replace egfr =. if mgl_cystatin==.
+
+egen egfr_cat = cut(egfr), at(0,15,60,90,300) icodes
+
+

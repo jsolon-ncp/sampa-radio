@@ -10,8 +10,8 @@ collect clear
 local pwd "~/Documents/GitHub/sampa-radio"
 
 cd `pwd'
-cap prog drop mystats
-program mystats, rclass
+cap prog drop kwstats
+program kwstats, rclass
 return scalar p_adj= chi2tail(r(df), r(chi2_adj))
 return scalar Chi2_adj =  r(chi2_adj)
 return scalar  DF =  r(df)
@@ -27,8 +27,8 @@ local contmed "fecal_elastase ul_amylp amyl_adj lipase ngml_trypsinogen"  /*cont
 local colhead2 `"1 "DIVIDS" 1 "PM""'
 		
 * format median of `contmed'
-local nfrmt_p50 "%5.0f"
-local nfrmt_iqr "%5.0f"
+local nfrmt_p50 "%5.1g"
+local nfrmt_iqr "%5.0g"
 local sfrmt_p25 "(%s-"
 local sfrmt_p75 "%s)"
 
@@ -70,8 +70,6 @@ collect rename Table c1
 		quietly kwallis `v', by(`col')
 		collect: mystats
 	}
-
-	
 
 * CREATE THE TABLE 1 Layout Super column - column 
 
@@ -208,6 +206,8 @@ collect export ./tables/enzymes_ms.docx, as(docx) replace
 /* END END END END END END END END END END END END END END END END END END END END */
 	
 	
+	/*
+	table (diab_hb_gl120) (), stat(mean amyl_adj)
 kwallis ul_amylp, by(ever_mal)
 kwallis amyl_adj, by(ever_mal)
 kwallis amyl_adj2, by(ever_mal)	

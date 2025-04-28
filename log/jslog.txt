@@ -6,8 +6,7 @@
 . * CHANGE DIRECTORY TO DROPBOX
 . 
 . cd "$sampadata"
-/Users/juansolon/Cox working group Dropbox/TB Nutrition working group/SAMPA/DATA monitoring/D
-> ata/SAMPA
+/Users/juansolon/Cox working group Dropbox/TB Nutrition working group/SAMPA/DATA monitoring/Data/SAMPA
 
 . 
 . use "All_combined_sampa_data.dta", clear
@@ -30,8 +29,7 @@ end of do-file
 /Users/juansolon/Documents/GitHub/sampa-radio
 
 . 
-. do ./do/cr_flag_elastase.do             // Flags the elastase samples that should not be an
-> alyzed based on ELISA standards ; n = 90
+. do ./do/cr_flag_elastase.do             // Flags the elastase samples that should not be analyzed based on ELISA standards ; n = 90
 
 . /*
 > cr_flag_elastase.do                     
@@ -50,7 +48,7 @@ end of do-file
 
 . 
 . save `1'
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_00730.000001 saved as .dta format
+file /var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//S_30695.000001 saved as .dta format
 
 . 
 . ***  IMPORT ZAMBIA ELISA DATA (PLATE DROPPED)
@@ -85,7 +83,7 @@ file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_00730.000001 saved as .
 
 . 
 . save `2'
-file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_00730.000002 saved as .dta format
+file /var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//S_30695.000002 saved as .dta format
 
 . 
 . frame change sampa
@@ -95,8 +93,8 @@ file /var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//S_00730.000002 saved as .
 
     Result                      Number of obs
     -----------------------------------------
-    Not matched                         2,186
-        from master                     2,186  (_merge==1)
+    Not matched                         2,185
+        from master                     2,185  (_merge==1)
         from using                          0  (_merge==2)
 
     Matched                                90  (_merge==3)
@@ -130,7 +128,7 @@ end of do-file
 . 
 . *HbA1c categories for diabetes
 . recode hba1c (0/5.6=0) (5.7/6.4=1) (6.5/15=2), gen (hba1c_cat)
-(2,245 differences between hba1c and hba1c_cat)
+(2,251 differences between hba1c and hba1c_cat)
 
 . label define hba1c_cat 0 "Normal" 1 "Prediabetes" 2 "Diabetes"
 
@@ -141,7 +139,7 @@ end of do-file
 . 
 . * Glucose 120 min categories for diabetes
 . recode mmol_glu120 (0/7.79=0) (7.8/11.09=1) (11.1/40.0=2), gen (glu120_cat)
-(2,265 differences between mmol_glu120 and glu120_cat)
+(2,270 differences between mmol_glu120 and glu120_cat)
 
 . label define glu120_cat 0 "Normal" 1 "Prediabetes" 2 "Diabetes"
 
@@ -152,13 +150,13 @@ end of do-file
 . 
 . * Either Hba1c or glu_120 categories for diabetes
 . gen diab_hb_gl120 = 2 if glu120_cat ==2 | hba1c_cat ==2
-(1,910 missing values generated)
+(1,909 missing values generated)
 
 . replace diab_hb_gl120 = 1 if glu120_cat ==1 & hba1c_cat ==1
 (125 real changes made)
 
 . replace diab_hb_gl120 = 0 if glu120_cat ==0 & hba1c_cat ==0
-(1,129 real changes made)
+(1,131 real changes made)
 
 . 
 . label define diab_hb_gl120  0 "Normal" 1 "Prediabetes" 2 "Diabetes"
@@ -177,8 +175,7 @@ end of do-file
 > // Determine if the person running the do-file is in the Dropbox Working Group
 > // or using an individual one
 > cap confirm file "~/Cox working group Dropbox/"
-> if _rc == 0 global dropbox = "~/Cox working group Dropbox/TB Nutrition working group/SAMPA/
-> Data Monitoring"
+> if _rc == 0 global dropbox = "~/Cox working group Dropbox/TB Nutrition working group/SAMPA/Data Monitoring"
 > else global dropbox = "~/Dropbox/Data Monitoring/"
 > 
 > cd "$dropbox/data"
@@ -230,12 +227,10 @@ end of do-file
 > bysort cohort: tab repeat_test_needed ogttr_confirm if diab_hb_gl120==2, m row col
 > 
 > // defined as diabetic but did not do a repeat OGTT
-> br cohort sampa_id orgid diab rec_diab hba1c glu0 mmol_glu0 repeat_test_needed if diab_hb_g
-> l120==2 & repeat_test_needed==0 
+> br cohort sampa_id orgid diab rec_diab hba1c glu0 mmol_glu0 repeat_test_needed if diab_hb_gl120==2 & repeat_test_needed==0 
 > 
 > // defined as diabetic but did not do a repeat OGTT
-> br cohort sampa_id orgid diab rec_diab hba1c glu0 mmol_glu0 repeat_test_needed if diab_hb_g
-> l120==2 & repeat_test_needed==1
+> br cohort sampa_id orgid diab rec_diab hba1c glu0 mmol_glu0 repeat_test_needed if diab_hb_gl120==2 & repeat_test_needed==1
 > tab rec_diab diab if diab_hb_gl120==2 & repeat_test_needed==1 & ogttr_confirm==., m
 > 
 > 
@@ -254,14 +249,11 @@ end of do-file
 
 . 
 .  
-. do ./do/cr_sample_binary.do             // Generates or recodes ultrasound ct scan and elis
-> a assays as binary with or without samples
+. do ./do/cr_sample_binary.do             // Generates or recodes ultrasound ct scan and elisa assays as binary with or without samples
 
 . /* 
-> cr_sample_binary.do                             // Generates or recodes ultrasound ct scan 
-> and elisa assays as binary with or without samples
->                                                                 // Include here the same fo
-> r presence or absence of functional enzyme assays 
+> cr_sample_binary.do                             // Generates or recodes ultrasound ct scan and elisa assays as binary with or without samples
+>                                                                 // Include here the same for presence or absence of functional enzyme assays 
 >                                                                 
 > Juan Solon
 > March 3 2025
@@ -283,17 +275,16 @@ end of do-file
 
 .         la var assay_fe "Fecal Elastase Assay"
 
-.         label define assay_fecal_elastase 1 "With Faecal Elastase" 0 "Without Faecal Elasta
-> se"
+.         label define assay_fecal_elastase 1 "With Faecal Elastase" 0 "Without Faecal Elastase"
 
 .         label values assay_fecal_elastase assay_fecal_elastase
 
 . 
 . gen assay_lipase = 1 if lipase !=. & lipase >0
-(1,954 missing values generated)
+(1,953 missing values generated)
 
 .         replace assay_lip = 0 if lipase ==.
-(1,954 real changes made)
+(1,953 real changes made)
 
 .         la var assay_lip "Lipase Assay"
 
@@ -308,10 +299,10 @@ end of do-file
 
 .         
 . gen assay_trypsinogen = 1 if ngml_trypsinogen !=. & ngml_trypsinogen >0
-(1,963 missing values generated)
+(1,962 missing values generated)
 
 .         replace assay_trypsinogen = 0 if ngml_trypsinogen ==.
-(1,963 real changes made)
+(1,962 real changes made)
 
 .         la var assay_trypsinogen "Trypsinogen Assay"
 
@@ -330,10 +321,10 @@ end of do-file
 
 . 
 . clonevar ct2 = ct_scan
-(1,625 missing values generated)
+(1,624 missing values generated)
 
 .         replace ct2 = 0 if ct_scan==.
-(1,625 real changes made)
+(1,624 real changes made)
 
 .         la var ct2 "CT Scan"
 
@@ -342,11 +333,9 @@ end of do-file
 
 . 
 . 
-. egen radio_mis_all = rowmiss(pan_size_qual pan_head_trans pan_head_ap pan_body_trans pan_ta
-> il_trans pan_shape pan_shape_problem pan_shape_prob_specify pan_contour pan_contour_problem
->  pan_contour_prob_specify pan_parenchyma pan_paren_inflam pan_paren_fibrosis pan_paren_stea
-> tosis pan_duct pan_duct_stones pan_duct_mass pan_calci pan_calci_place pan_cyst_yes pan_oth
-> _abnormal pan_oth_abn_specify)
+. egen radio_mis_all = rowmiss(pan_size_qual pan_head_trans pan_head_ap pan_body_trans pan_tail_trans pan_shape pan_shape_problem pan_shape_prob_specify pa
+> n_contour pan_contour_problem pan_contour_prob_specify pan_parenchyma pan_paren_inflam pan_paren_fibrosis pan_paren_steatosis pan_duct pan_duct_stones pa
+> n_duct_mass pan_calci pan_calci_place pan_cyst_yes pan_oth_abnormal pan_oth_abn_specify)
 
 . 
 . clonevar radio3 = radio2
@@ -361,7 +350,7 @@ end of do-file
 . gen subset = 0
 
 . replace subset = 1 if radio3==1 | assay_fecal_elastase ==1
-(2,122 real changes made)
+(2,121 real changes made)
 
 . la var subset "Analysis Subset (With Fe-1 or USS)"
 
@@ -369,7 +358,7 @@ end of do-file
 . gen subset2 = 0
 
 . replace subset2 = 1 if radio3==1 | assay_fecal_elastase ==1 | ct2==1
-(2,160 real changes made)
+(2,159 real changes made)
 
 . la var subset2 "Analysis Subset 2 (With Fe-1 or USS or CT Scan)"
 
@@ -377,118 +366,9 @@ end of do-file
 . 
 end of do-file
 
-.                                                                                 // Include 
-> here the same for presence or absence of functional enzyme assays 
-.                                                                                 // Revise o
-> nce amylase and trypsinogen 
-. 
-. 
-.  cd `pwd'
-/Users/juansolon/Documents/GitHub/sampa-radio
-
-. do ./do/cr_categorical_outcomes.do
-
-. /*
-> cr_categorical_outcomes.do              
-> Sampa
-> Imaging Elastase Paper
-> 
-> Recodes fecal_elastase to with or without EPI and levels of EPI
-> Include here any recoding of other functional enzymes
-> 
-> Reusable with
->         1.  Access to Dropbox
->         2.  Define globals and paths
->         3.  A working directory with 
->         01-data
->         02-data-temp
->         03-tables
->         04-do
->         05-figures
->         log 
-> */
-. 
-. egen epi_binary = cut(fecal_elastase), at(0,200,601) icodes
-(476 missing values generated)
-
-.         la var epi_binary "EPI"
-
-.         recode epi_binary 0 = 1 1 = 0
-(1,800 changes made to epi_binary)
-
-.         
-. 
-.         label define epi_binary 0 "Without EPI" 1 "With EPI"
-
-.         label values epi_binary epi_binary
-
-.         
-. 
-. egen epi_ordinal = cut(fecal_elastase), at(0,100,200, 601) icodes
-(476 missing values generated)
-
-.         la var epi_ordinal "EPI Levels"
-
-.         recode epi_ordinal 0 = 3 1 = 2 2 = 1 
-(1,800 changes made to epi_ordinal)
-
-. 
-.         label define epi_ordinal 1 "Without EPI" 2 "Mild-Moderate EPI" 3 "Severe EPI"
-
-.         label values epi_ordinal epi_ordinal
-
-.         
-.         
-. egen tryp_low = cut(ngml_trypsinogen), at(0,10,300) icodes
-(1,963 missing values generated)
-
-.         la var tryp_low "Low trypsinogen"
-
-.         recode tryp_low 0 = 1 1 = 0
-(313 changes made to tryp_low)
-
-.         
-. 
-.         label define tryp_low 0 "Normal to High Trypsinogen" 1 "Low Trypsinogen"
-
-.         label values tryp_low tryp_low
-
-.         
-. egen tryp_high = cut(ngml_trypsinogen), at(0,57,300) icodes
-(1,963 missing values generated)
-
-.         la var tryp_high "High trypsinogen"
-
-.         recode tryp_high 0 = 1 1 = 0
-(313 changes made to tryp_high)
-
-.         
-.         label define tryp_high 0 "Low to Normal Trypsinogen" 1 "High Trypsinogen"
-
-.         label values tryp_high tryp_high
-
-.         
-. egen amyl_low = cut(ul_amylp), at(0,57,182) icodes
-(375 missing values generated)
-
-. la var amyl_low "Low Serum Amylase"
-
-. recode amyl_low 0 = 1 1 = 0
-(1,901 changes made to amyl_low)
-
-. 
-.         label define amyl_low 0 "Normal to High Amylase" 1 "Low Amylase"
-
-.         label values amyl_low amyl_low
-
-. 
-end of do-file
-
-. 
-.                                                                                 // Recodes 
-> fecal_elastase to with or without EPI and levels of EPI
-.                                                                                 // Include 
-> here any recoding of other functional enzymes once that data is in and cut-offs are known
+.                                                                                 // Include here the same for presence or absence of functional enzyme ass
+> ays 
+.                                                                                 // Revise once amylase and trypsinogen 
 . 
 .  cd `pwd'
 /Users/juansolon/Documents/GitHub/sampa-radio
@@ -532,10 +412,10 @@ end of do-file
 . * Cohort subcategorizations these are for creating graphs 
 . 
 . generate child = 1 if cohort ==1 | cohort ==2
-(1,846 missing values generated)
+(1,845 missing values generated)
 
 .         replace child = 2 if cohort ==3 | cohort ==4 | cohort ==5 | cohort ==6
-(1,846 real changes made)
+(1,845 real changes made)
 
 .         la var child "Adult or Child Population"
 
@@ -562,10 +442,10 @@ end of do-file
 . 
 . 
 . generate exposuretime = 1 if cohort ==1 | cohort ==2 | cohort ==6
-(1,538 missing values generated)
+(1,537 missing values generated)
 
 .         replace exposuretime = 2 if cohort ==4 | cohort ==5 | cohort ==3
-(1,538 real changes made)
+(1,537 real changes made)
 
 .         
 .         label define exposuretime 1 "Exposure in Childhood" 2 "Exposure as Adults"
@@ -577,7 +457,7 @@ end of do-file
 
 .         
 . gen fec_cohort = 1 if cohort ==1
-(1,954 missing values generated)
+(1,953 missing values generated)
 
 .         replace fec_cohort = 2 if cohort == 5
 (275 real changes made)
@@ -592,13 +472,12 @@ end of do-file
 (974 real changes made)
 
 .         replace fec_cohort = 6 if cohort == 4
-(289 real changes made)
+(288 real changes made)
 
 . 
 .         la var fec_cohort "Cohort"
 
-.         label define fec_cohort 1 "DIVIDS" 2 "St-ATT" 3 "CLHNS" 4 "SAM" 5 "CICADA" 6 "NUSTA
-> RT"
+.         label define fec_cohort 1 "DIVIDS" 2 "St-ATT" 3 "CLHNS" 4 "SAM" 5 "CICADA" 6 "NUSTART"
 
 .         label values fec_cohort fec_cohort
 
@@ -608,17 +487,29 @@ end of do-file
 . label values ever_mal ever_mal
 
 . 
+. egfr, formula(ckdepi_cyc) age(age) female(sex==2) generate(egfr) cystatinc(mgl_cystatin)
+
+eGFR calculated for 2275 observations. Values range from 5 to 218 mL/min.
+
+. replace egfr =. if mgl_cystatin==.
+(373 real changes made, 373 to missing)
+
+. 
+. egen egfr_cat = cut(egfr), at(15,60,90,300) icodes
+(380 missing values generated)
+
+. 
+. 
+. 
 end of do-file
 
 . 
-.                                                                                 // Include 
-> here any derived variables for imaging that are categorical
+.                                                                                 // Include here any derived variables for imaging that are categorical
 . 
 .  cd `pwd'
 /Users/juansolon/Documents/GitHub/sampa-radio
 
-. do ./do/cr_continuous_independent.do            // Derived variables for imaging that are c
-> ontinuous ; include transformations / weights
+. do ./do/cr_continuous_independent.do            // Derived variables for imaging that are continuous ; include transformations / weights
 
 . /*
 > SAMPA
@@ -648,42 +539,39 @@ end of do-file
 . 
 . cap drop ct_pan_vol
 
-.         gen ct_pan_vol=((ct_pan_tail_trans+ct_pan_body_trans)/2)*ct_pan_body_tail*ct_pan_cc
-> _body+((ct_pan_head_ap/2)^2)*3.14*ct_pan_cc_head
-(2,034 missing values generated)
+.         gen ct_pan_vol=((ct_pan_tail_trans+ct_pan_body_trans)/2)*ct_pan_body_tail*ct_pan_cc_body+((ct_pan_head_ap/2)^2)*3.14*ct_pan_cc_head
+(2,033 missing values generated)
 
 .         cap label variable ct_pan_vol "Calculated Pancreatic Volume; Study"
 
 . 
 .         
 . 
-. foreach var of varlist ct_pan_head_trans ct_pan_head_ap ct_pan_body_trans ct_pan_tail_trans
->  ct_pan_body_tail ct_pan_cc_body ct_pan_cc_head ct_pan_vol {
+. foreach var of varlist ct_pan_head_trans ct_pan_head_ap ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan_cc_body ct_pan_cc_head ct_pan_vol {
   2.         gen adj_wt_`var' = `var'/weight
   3. }
-(1,952 missing values generated)
+(1,951 missing values generated)
+(1,948 missing values generated)
 (1,949 missing values generated)
 (1,950 missing values generated)
-(1,951 missing values generated)
-(2,025 missing values generated)
-(2,029 missing values generated)
-(2,031 missing values generated)
-(2,034 missing values generated)
+(2,024 missing values generated)
+(2,028 missing values generated)
+(2,030 missing values generated)
+(2,033 missing values generated)
 
 . 
 . 
-. foreach var of varlist ct_pan_head_trans ct_pan_head_ap ct_pan_body_trans ct_pan_tail_trans
->  ct_pan_body_tail ct_pan_cc_body ct_pan_cc_head ct_pan_vol {
+. foreach var of varlist ct_pan_head_trans ct_pan_head_ap ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan_cc_body ct_pan_cc_head ct_pan_vol {
   2.         gen adj_sqrt_`var' = sqrt(`var')
   3. }               
-(1,952 missing values generated)
+(1,951 missing values generated)
+(1,948 missing values generated)
 (1,949 missing values generated)
 (1,950 missing values generated)
-(1,951 missing values generated)
-(2,025 missing values generated)
-(2,029 missing values generated)
-(2,031 missing values generated)
-(2,034 missing values generated)
+(2,024 missing values generated)
+(2,028 missing values generated)
+(2,030 missing values generated)
+(2,033 missing values generated)
 
 .         
 . * Derived USS Variables 
@@ -712,6 +600,142 @@ end of do-file
 end of do-file
 
 . 
+. cd `pwd'
+/Users/juansolon/Documents/GitHub/sampa-radio
+
+. do ./do/cr_categorical_outcomes.do
+
+. /*
+> cr_categorical_outcomes.do              
+> Sampa
+> Imaging Elastase Paper
+> 
+> Recodes fecal_elastase to with or without EPI and levels of EPI
+> Include here any recoding of other functional enzymes
+> 
+> Reusable with
+>         1.  Access to Dropbox
+>         2.  Define globals and paths
+>         3.  A working directory with 
+>         01-data
+>         02-data-temp
+>         03-tables
+>         04-do
+>         05-figures
+>         log 
+>         
+>         Cut off values for P-Amylase:
+> 
+>  
+> 
+> 0-1 year: < 8 U/L
+> 1-10 year: < 31 U/L
+> 10-18 year: < 39 U/L
+> 18-125 year: 13-53 U/L
+> */
+. 
+. egen epi_binary = cut(fecal_elastase), at(0,200,601) icodes
+(476 missing values generated)
+
+.         la var epi_binary "EPI"
+
+.         recode epi_binary 0 = 1 1 = 0
+(1,799 changes made to epi_binary)
+
+.         
+. 
+.         label define epi_binary 0 "Without EPI" 1 "With EPI"
+
+.         label values epi_binary epi_binary
+
+.         
+. 
+. egen epi_ordinal = cut(fecal_elastase), at(0,100,200, 601) icodes
+(476 missing values generated)
+
+.         la var epi_ordinal "EPI Levels"
+
+.         recode epi_ordinal 0 = 3 1 = 2 2 = 1 
+(1,799 changes made to epi_ordinal)
+
+. 
+.         label define epi_ordinal 1 "Without EPI" 2 "Mild-Moderate EPI" 3 "Severe EPI"
+
+.         label values epi_ordinal epi_ordinal
+
+.         
+.         
+. egen tryp_low = cut(ngml_trypsinogen), at(0,10,300) icodes
+(1,962 missing values generated)
+
+.         la var tryp_low "Low trypsinogen"
+
+.         recode tryp_low 0 = 1 1 = 0
+(313 changes made to tryp_low)
+
+.         
+. 
+.         label define tryp_low 0 "Normal to High Trypsinogen" 1 "Low Trypsinogen"
+
+.         label values tryp_low tryp_low
+
+.         
+. egen tryp_high = cut(ngml_trypsinogen), at(0,57,300) icodes
+(1,962 missing values generated)
+
+.         la var tryp_high "High trypsinogen"
+
+.         recode tryp_high 0 = 1 1 = 0
+(313 changes made to tryp_high)
+
+.         
+.         label define tryp_high 0 "Low to Normal Trypsinogen" 1 "High Trypsinogen"
+
+.         label values tryp_high tryp_high
+
+. 
+. egen amyl_ref = cut(ul_amylp) , at(0,13,53,999) icodes // for adults
+(375 missing values generated)
+
+.         recode amyl_ref 1 = 2 if ul_amylp>=39 & cohort==2 // for SAM kids
+(6 changes made to amyl_ref)
+
+.         la var amyl_ref "Amylase Levels"
+
+.         label define amyl_ref 0 "Low Amylase" 1 "Normal Amylase" 2 "High Amylase"
+
+.         label values amyl_ref amyl_ref
+
+. 
+. egen amyl_low = cut(ul_amylp), at(0,57,182) icodes
+(375 missing values generated)
+
+. la var amyl_low "Low Serum Amylase"
+
+. recode amyl_low 0 = 1 1 = 0
+(1,900 changes made to amyl_low)
+
+. 
+.         label define amyl_low 0 "Normal to High Amylase" 1 "Low Amylase"
+
+.         label values amyl_low amyl_low
+
+. 
+. gen amyl_adj = ul_amylp/egfr
+(375 missing values generated)
+
+. la var amyl_adj "Amylase GFR Ratio"
+
+. 
+. 
+. 
+end of do-file
+
+. 
+.                                                                                 // Recodes fecal_elastase to with or without EPI and levels of EPI
+.                                                                                 // Include here any recoding of other functional enzymes once that data i
+> s in and cut-offs are known
+.                                                                                 
 .  cd `pwd'
 /Users/juansolon/Documents/GitHub/sampa-radio
 
@@ -745,84 +769,69 @@ end of do-file
 . local nutrition "bmi haz bmiz bmi_cat_child bmi_cat weight height muac waist hip"
 
 . 
-. local subj2 "indepth_sample indepth_exp ct_sample ct ivgtt_sample ivgtt uss_sample uss ever
-> _mal degree_mal"
+. local subj2 "indepth_sample indepth_exp ct_sample ct ivgtt_sample ivgtt uss_sample uss ever_mal degree_mal"
 
 . 
 . local ses "ses_tercile"
 
 . 
-. local uss "radio_exam pan_size_qual pan_head_trans pan_head_ap pan_body_trans pan_tail_tran
-> s pan_shape pan_shape_problem pan_shape_prob_specify pan_contour pan_contour_problem pan_co
-> ntour_prob_specify pan_parenchyma pan_paren_inflam pan_paren_fibrosis pan_paren_steatosis p
-> an_duct pan_duct_stones pan_duct_mass pan_calci pan_calci_place pan_cyst_yes pan_oth_abnorm
-> al pan_oth_abn_specify pancreatic"
+. local uss "radio_exam pan_size_qual pan_head_trans pan_head_ap pan_body_trans pan_tail_trans pan_shape pan_shape_problem pan_shape_prob_specify pan_conto
+> ur pan_contour_problem pan_contour_prob_specify pan_parenchyma pan_paren_inflam pan_paren_fibrosis pan_paren_steatosis pan_duct pan_duct_stones pan_duct_
+> mass pan_calci pan_calci_place pan_cyst_yes pan_oth_abnormal pan_oth_abn_specify pancreatic"
 
 . 
-. local ct "ct_pan_size_qual ct_pan_head_trans ct_pan_head_ap ct_pan_body_trans ct_pan_tail_t
-> rans ct_pan_body_tail ct_pan_cc_body ct_pan_cc_head ct_pan_shape ct_pan_shape_problem ct_pa
-> n_shape_prob_spec ct_pan_contour ct_pan_contour_problem ct_pan_contour_prob_spec ct_pan_par
-> enchyma ct_pan_paren_inflam ct_pan_paren_fibrosis ct_pan_paren_steatosis ct_pan_duct ct_pan
-> _duct_stones ct_pan_duct_mass ct_pan_calci ct_pan_calci_place ct_pan_oth_abnormal ct_pan_ot
-> h_abn_spec"
+. local ct "ct_pan_size_qual ct_pan_head_trans ct_pan_head_ap ct_pan_body_trans ct_pan_tail_trans ct_pan_body_tail ct_pan_cc_body ct_pan_cc_head ct_pan_sha
+> pe ct_pan_shape_problem ct_pan_shape_prob_spec ct_pan_contour ct_pan_contour_problem ct_pan_contour_prob_spec ct_pan_parenchyma ct_pan_paren_inflam ct_pa
+> n_paren_fibrosis ct_pan_paren_steatosis ct_pan_duct ct_pan_duct_stones ct_pan_duct_mass ct_pan_calci ct_pan_calci_place ct_pan_oth_abnormal ct_pan_oth_ab
+> n_spec"
 
 . 
 . local derived1 "ct_pan_vol"
 
 . 
-. local adjwt_uss "adj_wt_pan_head_ap adj_wt_pan_head_trans adj_wt_pan_body_trans adj_wt_pan_
-> tail_trans"  
+. local adjwt_uss "adj_wt_pan_head_ap adj_wt_pan_head_trans adj_wt_pan_body_trans adj_wt_pan_tail_trans"  
 
 . 
-. local adjsq_uss "adj_sqrt_pan_head_ap adj_sqrt_pan_head_trans adj_sqrt_pan_body_trans adj_s
-> qrt_pan_tail_trans"  
+. local adjsq_uss "adj_sqrt_pan_head_ap adj_sqrt_pan_head_trans adj_sqrt_pan_body_trans adj_sqrt_pan_tail_trans"  
 
 . 
-. local adjwt_ct "adj_wt_ct_pan_head_ap adj_wt_ct_pan_head_trans adj_wt_ct_pan_body_trans adj
-> _wt_ct_pan_tail_trans adj_wt_ct_pan_body_tail adj_wt_ct_pan_vol"  
+. local adjwt_ct "adj_wt_ct_pan_head_ap adj_wt_ct_pan_head_trans adj_wt_ct_pan_body_trans adj_wt_ct_pan_tail_trans adj_wt_ct_pan_body_tail adj_wt_ct_pan_vo
+> l"  
 
 . 
-. local adjsq_ct "adj_sqrt_ct_pan_head_ap adj_sqrt_ct_pan_head_trans adj_sqrt_ct_pan_body_tra
-> ns adj_sqrt_ct_pan_tail_trans adj_sqrt_ct_pan_body_tail adj_sqrt_ct_pan_vol"  
+. local adjsq_ct "adj_sqrt_ct_pan_head_ap adj_sqrt_ct_pan_head_trans adj_sqrt_ct_pan_body_trans adj_sqrt_ct_pan_tail_trans adj_sqrt_ct_pan_body_tail adj_sq
+> rt_ct_pan_vol"  
 
 . 
 . 
 . 
 . 
-. /*local derived2 "adj_wt_ct_pan_head_trans adj_wt_ct_pan_head_ap adj_wt_ct_pan_body_trans a
-> dj_wt_ct_pan_tail_trans adj_wt_ct_pan_body_tail adj_wt_ct_pan_cc_body adj_wt_ct_pan_cc_head
->  adj_sqrt_ct_pan_head_trans adj_sqrt_ct_pan_head_ap adj_sqrt_ct_pan_body_trans adj_sqrt_ct_
-> pan_tail_trans adj_sqrt_ct_pan_body_tail adj_sqrt_ct_pan_cc_body adj_sqrt_ct_pan_cc_head ad
-> j_wt_pan_head_ap adj_wt_pan_head_trans adj_wt_pan_body_trans adj_wt_pan_tail_trans adj_sqrt
-> _pan_head_ap adj_sqrt_pan_head_trans adj_sqrt_pan_body_trans adj_sqrt_pan_tail_trans"
+. /*local derived2 "adj_wt_ct_pan_head_trans adj_wt_ct_pan_head_ap adj_wt_ct_pan_body_trans adj_wt_ct_pan_tail_trans adj_wt_ct_pan_body_tail adj_wt_ct_pan_
+> cc_body adj_wt_ct_pan_cc_head adj_sqrt_ct_pan_head_trans adj_sqrt_ct_pan_head_ap adj_sqrt_ct_pan_body_trans adj_sqrt_ct_pan_tail_trans adj_sqrt_ct_pan_bo
+> dy_tail adj_sqrt_ct_pan_cc_body adj_sqrt_ct_pan_cc_head adj_wt_pan_head_ap adj_wt_pan_head_trans adj_wt_pan_body_trans adj_wt_pan_tail_trans adj_sqrt_pan
+> _head_ap adj_sqrt_pan_head_trans adj_sqrt_pan_body_trans adj_sqrt_pan_tail_trans"
 > */
 . 
 . 
-. local derived3 "flag_fecal_elastase recruited assay_fecal_elastase assay_lipase assay_tryps
-> inogen assay_amylase radio2 ct2 radio_mis_dims radio_mis_all radio3 subset subset2 epi_bina
-> ry epi_ordinal child africa exposuretime fec_cohort"
+. local derived3 "flag_fecal_elastase recruited assay_fecal_elastase assay_lipase assay_trypsinogen assay_amylase radio2 ct2 radio_mis_dims radio_mis_all r
+> adio3 subset subset2 epi_binary epi_ordinal child africa exposuretime fec_cohort"
 
 . 
-. local glucose "metformin insulin ogttr_confirm hba1c glu0 mmol_glu0 ogtt_time0 hba1c mmol_g
-> lu120 gluc_mean_mgdl insulin_mean_mul Matsuda_index insulinogenic_index rhba1c diab_hb_gl12
-> 0" 
+. local glucose "metformin insulin ogttr_confirm hba1c glu0 mmol_glu0 ogtt_time0 hba1c mmol_glu120 gluc_mean_mgdl insulin_mean_mul Matsuda_index insulinoge
+> nic_index rhba1c diab_hb_gl120" 
 
 . 
-. local enzymes "fecal_elastase lipase ngml_trypsinogen mgl_crp mgl_cystatin ul_amylp tryp_hi
-> gh tryp_low amyl_low "
+. local enzymes "fecal_elastase lipase ngml_trypsinogen mgl_crp mgl_cystatin ul_amylp tryp_high tryp_low amyl_low amyl_ref amyl_adj egfr"
 
 . 
-. local body "bia fm_kg fm_per ffm_kg ffm_per fmi ffmi impedance bia_prob bia_comment adp adp
-> fm_kg adpffm_kg adpfm_per adpffm_per adp_prob adp_comment"
+. local body "bia fm_kg fm_per ffm_kg ffm_per fmi ffmi impedance bia_prob bia_comment adp adpfm_kg adpffm_kg adpfm_per adpffm_per adp_prob adp_comment"
 
 . 
-. local organs "hepatomegaly splenomegaly cholelithiasis steatosis mass gynecologic atheroscl
-> erosis nephrolithiasis pancreatic"
+. local organs "hepatomegaly splenomegaly cholelithiasis steatosis mass gynecologic atherosclerosis nephrolithiasis pancreatic"
 
 . 
 . 
-. keep `subj1' `subj2' `nutrition' `ses' `uss' `ct' `derived1' `adjwt_uss' `adjsq_uss' `adjwt
-> _ct' `adjsq_ct' `derived3' `glucose' `enzymes' `body' `organs'
+. keep `subj1' `subj2' `nutrition' `ses' `uss' `ct' `derived1' `adjwt_uss' `adjsq_uss' `adjwt_ct' `adjsq_ct' `derived3' `glucose' `enzymes' `body' `organs'
 
 . 
 . keep if subset==1
@@ -837,54 +846,43 @@ end of do-file
 . notes drop _dta 
   (15 notes dropped)
 
-. note: Subset Created for Imaging Paper on `c(current_date)' at `c(current_time)' by `c(user
-> name)'
+. note: Subset Created for Imaging Paper on `c(current_date)' at `c(current_time)' by `c(username)'
 
 . note: Keeps only participants with Fecal Elastase or Visible Ultrasound Scans; N=`obs'
 
-. note: Data read from ~/Cox working group Dropbox/TB Nutrition working group/Sampa/DATA Moni
-> toring/data/sampa/All_combined_sampa_data.dta
+. note: Data read from ~/Cox working group Dropbox/TB Nutrition working group/Sampa/DATA Monitoring/data/sampa/All_combined_sampa_data.dta
 
 . note: Selected variables kept for this paper in cr_keep.do 
 
 . describe, simple
-record_id     ul_amylp      bia_comment   pan_calci     ct_pan_par~a  tryp_high
-cohort        ngml_tryps~n  adp           pan_calci_~e  ct_pan_par~m  amyl_low
-sampa_id      gluc_mean_~l  adpfm_kg      pan_cyst_yes  ct_pan~rosis  child
-orgid         insulin_me~l  adpffm_kg     pan_oth_ab~l  ct_pan~tosis  africa
-sex           Matsuda_in~x  adpfm_per     pan_oth_ab~y  ct_pan_duct   exposuretime
-dob           insulinoge~x  adpffm_per    hepatomegaly  ct_pan_du~es  fec_cohort
-age           ogttr_conf~m  adp_prob      splenomegaly  ct_pan_du~ss  ct_pan_vol
-indepth_sa~e  rhba1c        adp_comment   cholelithi~s  ct_pan_calci  adj_wt_ct_..
-indepth_exp   lipase        fecal_elas~e  steatosis     ct_pan_cal~e  adj_wt_ct_~p
-ct_sample     weight        radio_exam    mass          ct_pan_oth~l  adj_wt_ct_..
-ct            muac          pan_size_q~l  gynecologic   ct_pan_oth~c  adj_wt_ct_..
-ivgtt_sample  waist         pan_head_t~s  atheroscle~s  flag_fecal~e  adj_wt_ct~il
-ivgtt         hip           pan_head_ap   nephrolith~s  diab_hb_~120  adj_wt_ct~ol
-uss_sample    height        pan_body_t~s  pancreatic    recruited     adj_sqrt_c..
-uss           bmi           pan_tail_t~s  ct_pan_siz~l  assay_feca~e  adj_sqrt_c~p
-ever_mal      haz           pan_shape     ct_pan_hea~s  assay_lipase  adj_sqrt_c..
-degree_mal    bmiz          pan_shape_~m  ct_pan_hea~p  assay_amyl~e  adj_sqrt_c..
-ses_tercile   bmi_cat_ch~d  pan_shape_~y  ct_pan_bod~s  assay_tryp~n  adj_sqrt_~il
-hiv           bmi_cat       pan_contour   ct_pan_tai~s  radio2        adj_sqrt_~ol
-metformin     bia           pan_contou~m  ct_pan_bod~l  ct2           adj_wt_pan~p
-insulin       fm_kg         pan_contou~y  ct_pan_cc_~y  radio_mis_~s  adj_wt_pan..
-ogtt_time0    fm_per        pan_parenc~a  ct_pan_cc_~d  radio_mis_~l  adj_wt_pan..
-hba1c         ffm_kg        pan_paren_~m  ct_pan_shape  radio3        adj_wt_pan..
-glu0          ffm_per       pan_pa~rosis  ct_pan_sha~m  subset        adj_sqrt_p~p
-mmol_glu0     fmi           pan_pa~tosis  ct_pan_sha~c  subset2       adj_sqrt_p..
-mmol_glu120   ffmi          pan_duct      ct_pan_con~r  epi_binary    adj_sqrt_p..
-mgl_crp       impedance     pan_duct_s~s  ct_pan_con~m  epi_ordinal   adj_sqrt_p..
-mgl_cystatin  bia_prob      pan_duct_m~s  ct_pan_con~c  tryp_low
+record_id     degree_mal    Matsuda_in~x  fm_kg         fecal_elas~e  pan_pa~tosis  nephrolith~s  ct_pan_par~a  assay_amyl~e  adj_wt_ct_~p  adj_sqrt_p..
+cohort        ses_tercile   insulinoge~x  fm_per        radio_exam    pan_duct      pancreatic    ct_pan_par~m  assay_tryp~n  adj_wt_ct_..  adj_sqrt_p..
+sampa_id      hiv           ogttr_conf~m  ffm_kg        pan_size_q~l  pan_duct_s~s  ct_pan_siz~l  ct_pan~rosis  radio2        adj_wt_ct_..  adj_sqrt_p..
+orgid         metformin     rhba1c        ffm_per       pan_head_t~s  pan_duct_m~s  ct_pan_hea~s  ct_pan~tosis  ct2           adj_wt_ct~il  epi_binary
+sex           insulin       lipase        fmi           pan_head_ap   pan_calci     ct_pan_hea~p  ct_pan_duct   radio_mis_~s  adj_wt_ct~ol  epi_ordinal
+dob           ogtt_time0    weight        ffmi          pan_body_t~s  pan_calci_~e  ct_pan_bod~s  ct_pan_du~es  radio_mis_~l  adj_sqrt_c..  tryp_low
+age           hba1c         muac          impedance     pan_tail_t~s  pan_cyst_yes  ct_pan_tai~s  ct_pan_du~ss  radio3        adj_sqrt_c~p  tryp_high
+indepth_sa~e  glu0          waist         bia_prob      pan_shape     pan_oth_ab~l  ct_pan_bod~l  ct_pan_calci  subset        adj_sqrt_c..  amyl_ref
+indepth_exp   mmol_glu0     hip           bia_comment   pan_shape_~m  pan_oth_ab~y  ct_pan_cc_~y  ct_pan_cal~e  subset2       adj_sqrt_c..  amyl_low
+ct_sample     mmol_glu120   height        adp           pan_shape_~y  hepatomegaly  ct_pan_cc_~d  ct_pan_oth~l  child         adj_sqrt_~il  amyl_adj
+ct            mgl_crp       bmi           adpfm_kg      pan_contour   splenomegaly  ct_pan_shape  ct_pan_oth~c  africa        adj_sqrt_~ol
+ivgtt_sample  mgl_cystatin  haz           adpffm_kg     pan_contou~m  cholelithi~s  ct_pan_sha~m  flag_fecal~e  exposuretime  adj_wt_pan~p
+ivgtt         ul_amylp      bmiz          adpfm_per     pan_contou~y  steatosis     ct_pan_sha~c  diab_hb_~120  fec_cohort    adj_wt_pan..
+uss_sample    ngml_tryps~n  bmi_cat_ch~d  adpffm_per    pan_parenc~a  mass          ct_pan_con~r  recruited     egfr          adj_wt_pan..
+uss           gluc_mean_~l  bmi_cat       adp_prob      pan_paren_~m  gynecologic   ct_pan_con~m  assay_feca~e  ct_pan_vol    adj_wt_pan..
+ever_mal      insulin_me~l  bia           adp_comment   pan_pa~rosis  atheroscle~s  ct_pan_con~c  assay_lipase  adj_wt_ct_..  adj_sqrt_p~p
 
 . notes 
 
 _dta:
-  1.  Subset Created for Imaging Paper on 2 Apr 2025 at 15:04:19 by juansolon
-  2.  Keeps only participants with Fecal Elastase or Visible Ultrasound Scans; N=2122
-  3.  Data read from ~/Cox working group Dropbox/TB Nutrition working group/Sampa/DATA
-      Monitoring/data/sampa/All_combined_sampa_data.dta
+  1.  Subset Created for Imaging Paper on 24 Apr 2025 at 23:56:20 by juansolon
+  2.  Keeps only participants with Fecal Elastase or Visible Ultrasound Scans; N=2121
+  3.  Data read from ~/Cox working group Dropbox/TB Nutrition working group/Sampa/DATA Monitoring/data/sampa/All_combined_sampa_data.dta
   4.  Selected variables kept for this paper in cr_keep.do
+
+. 
+. datasignature set
+  2121:170(74229):2001186495:915811765       (data signature set)
 
 . 
 . save ./data-temp/subset_imaging.dta, replace
@@ -893,2989 +891,192 @@ file ./data-temp/subset_imaging.dta saved
 . 
 end of do-file
 
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+. help collect style
+
+. do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD30695.000000"
+
+. table (cohort) (ever_mal), ///
+> stat(frequency) /// 
+> stat(mean fecal_elastase ul_amylp lipase ngml_trypsinogen) ///
+> stat(p25 fecal_elastase ul_amylp lipase ngml_trypsinogen) ///
+> stat(p50 fecal_elastase ul_amylp lipase ngml_trypsinogen) ///
+> stat(p75 fecal_elastase ul_amylp lipase ngml_trypsinogen) ///
+> stat(iqr fecal_elastase ul_amylp lipase ngml_trypsinogen)
+
+----------------------------------------------------------------
+                            |    Ever experience malnutrition?  
+                            |        NPM          PM       Total
+----------------------------+-----------------------------------
+Cohort                      |                                   
+  DIVIDS                    |                                   
+    Frequency               |         54         253         307
+    Mean                    |                                   
+      Fecal Elastase (ug/g) |   498.9645    475.4073    479.5997
+      Amylase (U/L)         |          .           .           .
+      Lipase (U/L)          |   31.46296    31.24111    31.28013
+      Trypsinogen (ng/ml)   |          .           .           .
+    25th percentile         |                                   
+      Fecal Elastase (ug/g) |     497.75      310.33      310.33
+      Lipase (U/L)          |         26          26          26
+    50th percentile         |                                   
+      Fecal Elastase (ug/g) |        600         600         600
+      Lipase (U/L)          |       30.5          30          30
+    75th percentile         |                                   
+      Fecal Elastase (ug/g) |        600         600         600
+      Lipase (U/L)          |         36          35          35
+    Interquartile range     |                                   
+      Fecal Elastase (ug/g) |     102.25      289.67      289.67
+      Lipase (U/L)          |         10           9           9
+  SAM                       |                                   
+    Frequency               |         45          58         103
+    Mean                    |                                   
+      Fecal Elastase (ug/g) |   181.6162    181.4052    181.5018
+      Amylase (U/L)         |   26.87907        26.5      26.663
+      Lipase (U/L)          |          .           .           .
+      Trypsinogen (ng/ml)   |          .           .           .
+    25th percentile         |                                   
+      Fecal Elastase (ug/g) |     36.918      60.525      55.808
+      Amylase (U/L)         |       21.4        21.8        21.4
+    50th percentile         |                                   
+      Fecal Elastase (ug/g) |    123.061     135.167     124.219
+      Amylase (U/L)         |       24.1        24.4        24.4
+    75th percentile         |                                   
+      Fecal Elastase (ug/g) |    290.045     215.219     271.474
+      Amylase (U/L)         |       31.3        30.6       30.75
+    Interquartile range     |                                   
+      Fecal Elastase (ug/g) |    253.127     154.694     215.666
+      Amylase (U/L)         |        9.9         8.8        9.35
+  CICADA                    |                                   
+    Frequency               |        569         298         867
+    Mean                    |                                   
+      Fecal Elastase (ug/g) |   274.4203    300.4426    283.2108
+      Amylase (U/L)         |   33.12785    36.52509    34.29917
+      Lipase (U/L)          |          .           .           .
+      Trypsinogen (ng/ml)   |     32.025    32.28462    32.18571
+    25th percentile         |                                   
+      Fecal Elastase (ug/g) |     91.456     112.998     100.582
+      Amylase (U/L)         |       23.2        25.2        24.1
+      Trypsinogen (ng/ml)   |       22.2        19.6        20.3
+    50th percentile         |                                   
+      Fecal Elastase (ug/g) |    225.603      250.23    231.7845
+      Amylase (U/L)         |       30.4        32.3       31.25
+      Trypsinogen (ng/ml)   |       27.1        22.6        23.4
+    75th percentile         |                                   
+      Fecal Elastase (ug/g) |    467.149     535.381     487.081
+      Amylase (U/L)         |       39.6          43        40.9
+      Trypsinogen (ng/ml)   |       43.6        30.4        32.2
+    Interquartile range     |                                   
+      Fecal Elastase (ug/g) |    375.693     422.383     386.499
+      Amylase (U/L)         |       16.4        17.8        16.8
+      Trypsinogen (ng/ml)   |       21.4        10.8        11.9
+  NUSTART                   |                                   
+    Frequency               |         87         194         281
+    Mean                    |                                   
+      Fecal Elastase (ug/g) |   356.4222    322.0395    332.7841
+      Amylase (U/L)         |   33.86207    38.85803    37.30571
+      Lipase (U/L)          |          .           .           .
+      Trypsinogen (ng/ml)   |   33.42857    51.16341    43.96667
+    25th percentile         |                                   
+      Fecal Elastase (ug/g) |    202.247     115.416    137.4005
+      Amylase (U/L)         |       23.2        25.3        24.8
+      Trypsinogen (ng/ml)   |       22.6        29.9        25.3
+    50th percentile         |                                   
+      Fecal Elastase (ug/g) |    365.023     306.725     330.987
+      Amylase (U/L)         |       30.1        33.6       31.85
+      Trypsinogen (ng/ml)   |       29.5        39.8        33.8
+    75th percentile         |                                   
+      Fecal Elastase (ug/g) |    564.352     549.549    557.5325
+      Amylase (U/L)         |       38.7        47.1        45.1
+      Trypsinogen (ng/ml)   |      38.45        48.9          47
+    Interquartile range     |                                   
+      Fecal Elastase (ug/g) |    362.105     434.133     420.132
+      Amylase (U/L)         |       15.5        21.8        20.3
+      Trypsinogen (ng/ml)   |      15.85          19        21.7
+  STATT                     |                                   
+    Frequency               |        150         111         261
+    Mean                    |                                   
+      Fecal Elastase (ug/g) |    389.301    452.6094    415.9572
+      Amylase (U/L)         |   34.23333    38.60901    36.11589
+      Lipase (U/L)          |          .           .           .
+      Trypsinogen (ng/ml)   |   24.81102    28.73351     26.4986
+    25th percentile         |                                   
+      Fecal Elastase (ug/g) |   203.1748      341.57    252.4983
+      Amylase (U/L)         |         25          26        25.5
+      Trypsinogen (ng/ml)   |       15.9        18.8        16.1
+    50th percentile         |                                   
+      Fecal Elastase (ug/g) |   425.5755    546.2489     492.976
+      Amylase (U/L)         |       30.8        34.1        32.3
+      Trypsinogen (ng/ml)   |       21.6        24.1        22.7
+    75th percentile         |                                   
+      Fecal Elastase (ug/g) |        600         600         600
+      Amylase (U/L)         |       39.5        47.5        41.6
+      Trypsinogen (ng/ml)   |       32.5        34.6        33.6
+    Interquartile range     |                                   
+      Fecal Elastase (ug/g) |   396.8252      258.43    347.5017
+      Amylase (U/L)         |       14.5        21.5        16.1
+      Trypsinogen (ng/ml)   |       16.6        15.8        17.5
+  CLHNS                     |                                   
+    Frequency               |        196         106         302
+    Mean                    |                                   
+      Fecal Elastase (ug/g) |   465.2001    460.1329    463.4066
+      Amylase (U/L)         |    29.4841    29.51604    29.49535
+      Lipase (U/L)          |          .           .           .
+      Trypsinogen (ng/ml)   |     23.864        21.2      22.532
+    25th percentile         |                                   
+      Fecal Elastase (ug/g) |   337.2273    324.6808    336.9766
+      Amylase (U/L)         |       23.7        23.4        23.6
+      Trypsinogen (ng/ml)   |       17.3        12.7        15.3
+    50th percentile         |                                   
+      Fecal Elastase (ug/g) |   578.6525    593.6557     589.083
+      Amylase (U/L)         |       28.4        27.5        28.1
+      Trypsinogen (ng/ml)   |      24.05       18.35        21.4
+    75th percentile         |                                   
+      Fecal Elastase (ug/g) |        600         600         600
+      Amylase (U/L)         |       34.1        33.3        33.9
+      Trypsinogen (ng/ml)   |       28.5        28.8       28.65
+    Interquartile range     |                                   
+      Fecal Elastase (ug/g) |   262.7727    275.3192    263.0234
+      Amylase (U/L)         |       10.4         9.9        10.3
+      Trypsinogen (ng/ml)   |       11.2        16.1       13.35
+  Total                     |                                   
+    Frequency               |      1,101       1,020       2,121
+    Mean                    |                                   
+      Fecal Elastase (ug/g) |   333.5806    360.4323     345.387
+      Amylase (U/L)         |   32.39337    35.69024    33.79495
+      Lipase (U/L)          |   31.46296    31.24111    31.28013
+      Trypsinogen (ng/ml)   |   26.67511    32.91163    29.86116
+    25th percentile         |                                   
+      Fecal Elastase (ug/g) |    135.031     145.721     140.535
+      Amylase (U/L)         |       23.5        24.4        23.9
+      Lipase (U/L)          |         26          26          26
+      Trypsinogen (ng/ml)   |       17.2        17.6       17.25
+    50th percentile         |                                   
+      Fecal Elastase (ug/g) |   314.3061     374.034     341.512
+      Amylase (U/L)         |       29.6        31.2        30.4
+      Lipase (U/L)          |       30.5          30          30
+      Trypsinogen (ng/ml)   |       24.2        25.3        24.6
+    75th percentile         |                                   
+      Fecal Elastase (ug/g) |   585.7384         600         600
+      Amylase (U/L)         |       37.9        42.2        39.4
+      Lipase (U/L)          |         36          35          35
+      Trypsinogen (ng/ml)   |       32.5        36.1        34.5
+    Interquartile range     |                                   
+      Fecal Elastase (ug/g) |   450.7074     454.279     459.465
+      Amylase (U/L)         |       14.4        17.8        15.5
+      Lipase (U/L)          |         10           9           9
+      Trypsinogen (ng/ml)   |       15.3        18.5       17.25
+----------------------------------------------------------------
 
 . 
-. version 18.5
+end of do-file
 
-. 
+. do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD30695.000000"
+
 . collect clear
 
 . 
-. 
-. **# CREATE TABLE USING DTABLE
-. 
-. **#  TABLE CONFIGURATION 
-. 
-. * CREATE LOCAL MACROS FOR VARIABLES IN TABLE - USE COMPLETE VARIABLE NAME)
-. 
-.         local col "ever_mal"
-
-.         local cat "epi_ordinal" /* categorical with multiple levels n(%) */
-
-.         local ind1 "1.epi_bin" 
-
-.         local ind2 "1.tryp_low" 
-
-.         local ind3 "1.amyl_low" 
-
-.         local ind4 "1.tryp_high" 
-
-.         
-. 
-. 
-. **# TABLE CODE
-. 
-. local filter "if subset==1"
-
-. dtable () `filter', by(`col', test nototals) ///
->     factor(`cat', statistics(fvfrequency fvpercent) test(pearson)) ///
->         factor(`ind1' `ind2' `ind3' `ind4', statistics(fvfrequency fvpercent) test(pearson)
-> ) ///
->     title("`title'") ///
->     note(`notes1') ///
->         note(`notes2') 
-note: using test pearson across levels of ever_mal for epi_ordinal, epi_binary, tryp_low,
-      amyl_low, and tryp_high.
-
-------------------------------------------------------
-                       Ever experience malnutrition?  
-                         NPM            PM       Test 
-------------------------------------------------------
-N                   1,101 (51.9%) 1,021 (48.1%)       
-EPI Levels                                            
-  Without EPI         662 (65.7%)   540 (68.2%)  0.154
-  Mild-Moderate EPI   149 (14.8%)   125 (15.8%)       
-  Severe EPI          197 (19.5%)   127 (16.0%)       
-EPI                                                   
-  With EPI            346 (34.3%)   252 (31.8%)  0.262
-Low trypsinogen                                       
-  Low Trypsinogen        7 (5.2%)      3 (2.1%)  0.174
-Low Serum Amylase                                     
-  Low Amylase         972 (94.8%)   681 (89.7%) <0.001
-High trypsinogen                                      
-  High Trypsinogen    131 (97.0%)   132 (93.6%)  0.180
-------------------------------------------------------
-
-. 
 end of do-file
 
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
+. do "/var/folders/kc/czh6lr110kj_15njdnljmx8w0000gn/T//SD30695.000000"
 
-.     collect style row stack, nobinder nospacer // * Stack levels of each variable , places/
-> removes space between variables ; 
-
-. 
-.     collect style cell border_block, border(right, pattern(nil)) // Remove vertical line af
-> ter variables
-
-.         
-. *** TABLE SPACES / WIDTH
-.         collect style cell, margin(all, width(1.5)) //  space b/w text and cell margins def
-> ault is 1.5 points 
-
-. 
-.         collect style column, width(equal) // Revise column width (equal or asis)
-
-.     
-. *** TABLE TEXT
-. 
-. * Table Styles
-.         collect style cell, font(Arial, size(11))
-
-.         collect style notes, font(Arial, size(11))
-
-. 
-. * Table title styles
-.         collect style title, font(Arial, size(11) bold)
-
-. 
-. * MODIFY TEXT
-. 
-. * Modify Header Text
-.     collect label levels ever_mal 0 "NPM" 1 "PM", modify
-
-.     collect style header ever_mal#result,title(hide)
-
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
-
-.         label list epi_binary epi_ordinal tryp_high tryp_low amyl_low
-epi_binary:
-           0 Without EPI
-           1 With EPI
-epi_ordinal:
-           1 Without EPI
-           2 Mild-Moderate EPI
-           3 Severe EPI
-tryp_high:
-           0 Low to Normal Trypsinogen
-           1 High Trypsinogen
-tryp_low:
-           0 Normal to High Trypsinogen
-           1 Low Trypsinogen
-amyl_low:
-           0 Normal to High Amylase
-           1 Low Amylase
-
-. 
-end of do-file
-
-. collect layout
-
-Collection: DTable
-      Rows: var
-   Columns: ever_mal#result
-   Table 1: 13 x 3
-
--------------------------------------------------------------
-                         NPM            PM           Test    
--------------------------------------------------------------
-N                   1,101 (51.9%) 1,021 (48.1%)              
-EPI Levels                                                   
-  Without EPI         662 (65.7%)   540 (68.2%)         0.154
-  Mild-Moderate EPI   149 (14.8%)   125 (15.8%)              
-  Severe EPI          197 (19.5%)   127 (16.0%)              
-EPI                                                          
-  With EPI            346 (34.3%)   252 (31.8%)         0.262
-Low trypsinogen                                              
-  Low Trypsinogen        7 (5.2%)      3 (2.1%)         0.174
-Low Serum Amylase                                            
-  Low Amylase         972 (94.8%)   681 (89.7%)        <0.001
-High trypsinogen                                             
-  High Trypsinogen    131 (97.0%)   132 (93.6%)         0.180
--------------------------------------------------------------
-
-. collect dims
-
-Collection dimensions
-Collection: DTable
------------------------------------------
-                   Dimension   No. levels
------------------------------------------
-Layout, style, header, label
-                      across   2         
-                    amyl_low   1         
-                      cmdset   6         
-                     colname   7         
-           colname_remainder   1         
-                     command   1         
-                  epi_binary   1         
-                 epi_ordinal   3         
-                    ever_mal   3         
-               program_class   1         
-                      result   11        
-                 result_type   1         
-                     statcmd   4         
-                   tryp_high   1         
-                    tryp_low   1         
-                         var   9         
-
-Style only
-                border_block   4         
-                   cell_type   4         
------------------------------------------
-
-. collect levelsof var
-
-Collection: DTable
- Dimension: var
-    Levels: _N _hide 1.epi_ordinal 2.epi_ordinal 3.epi_ordinal 1.epi_binary 1.tryp_low
-            1.amyl_low 1.tryp_high
-
-. collect preview
-
--------------------------------------------------------------
-                         NPM            PM           Test    
--------------------------------------------------------------
-N                   1,101 (51.9%) 1,021 (48.1%)              
-EPI Levels                                                   
-  Without EPI         662 (65.7%)   540 (68.2%)         0.154
-  Mild-Moderate EPI   149 (14.8%)   125 (15.8%)              
-  Severe EPI          197 (19.5%)   127 (16.0%)              
-EPI                                                          
-  With EPI            346 (34.3%)   252 (31.8%)         0.262
-Low trypsinogen                                              
-  Low Trypsinogen        7 (5.2%)      3 (2.1%)         0.174
-Low Serum Amylase                                            
-  Low Amylase         972 (94.8%)   681 (89.7%)        <0.001
-High trypsinogen                                             
-  High Trypsinogen    131 (97.0%)   132 (93.6%)         0.180
--------------------------------------------------------------
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
-
-.    local cat2 "`cat' `ind1' `ind2' `ind3' `ind4'"
-
-.    
-.    foreach x in "`cat2'" {
-  2.                 collect style header var[`x'], title(hide)
-  3.                 }
-
-. 
-end of do-file
-
-. collect preview
-
--------------------------------------------------------------
-                         NPM            PM           Test    
--------------------------------------------------------------
-N                   1,101 (51.9%) 1,021 (48.1%)              
-EPI Levels                                                   
-  Without EPI         662 (65.7%)   540 (68.2%)         0.154
-  Mild-Moderate EPI   149 (14.8%)   125 (15.8%)              
-  Severe EPI          197 (19.5%)   127 (16.0%)              
-EPI                                                          
-  With EPI            346 (34.3%)   252 (31.8%)         0.262
-Low trypsinogen                                              
-  Low Trypsinogen        7 (5.2%)      3 (2.1%)         0.174
-Low Serum Amylase                                            
-  Low Amylase         972 (94.8%)   681 (89.7%)        <0.001
-High trypsinogen                                             
-  High Trypsinogen    131 (97.0%)   132 (93.6%)         0.180
--------------------------------------------------------------
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
-
-.    local cat2 `cat' `ind1' `ind2' `ind3' `ind4'
-
-.    
-.    foreach x in "`cat2'" {
-  2.                 collect style header var[`x'], title(hide)
-  3.                 }
-
-. 
-end of do-file
-
-. collect preview
-
--------------------------------------------------------------
-                         NPM            PM           Test    
--------------------------------------------------------------
-N                   1,101 (51.9%) 1,021 (48.1%)              
-EPI Levels                                                   
-  Without EPI         662 (65.7%)   540 (68.2%)         0.154
-  Mild-Moderate EPI   149 (14.8%)   125 (15.8%)              
-  Severe EPI          197 (19.5%)   127 (16.0%)              
-EPI                                                          
-  With EPI            346 (34.3%)   252 (31.8%)         0.262
-Low trypsinogen                                              
-  Low Trypsinogen        7 (5.2%)      3 (2.1%)         0.174
-Low Serum Amylase                                            
-  Low Amylase         972 (94.8%)   681 (89.7%)        <0.001
-High trypsinogen                                             
-  High Trypsinogen    131 (97.0%)   132 (93.6%)         0.180
--------------------------------------------------------------
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
-
-.    local cat "1.epi_ordinal 2.epi_ordinal 3.epi_ordinal 1.ebi_bin 1.tryp_high 1.tryp_low 1.
-> amyl_low "
-
-.   
-.    
-.    foreach x in "`cat'" {
-  2.                 collect style header var[`x'], title(hide)
-  3.                 }
-(dimension ebi_bin not found)
-(level 1.ebi_bin of dimension var not found)
-
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
-
-.    local cat "1.epi_ordinal 2.epi_ordinal 3.epi_ordinal 1.ebi_binary 1.tryp_high 1.tryp_low
->  1.amyl_low "
-
-.   
-.    
-.    foreach x in "`cat'" {
-  2.                 collect style header var[`x'], title(hide)
-  3.                 }
-(dimension ebi_binary not found)
-(level 1.ebi_binary of dimension var not found)
-
-. 
-end of do-file
-
-. collect levelsof var
-
-Collection: DTable
- Dimension: var
-    Levels: _N _hide 1.epi_ordinal 2.epi_ordinal 3.epi_ordinal 1.epi_binary 1.tryp_low
-            1.amyl_low 1.tryp_high 1.ebi_bin 1.ebi_binary
-
-. collect preview
-
------------------------------------------------------------
-                       NPM            PM           Test    
------------------------------------------------------------
-N                 1,101 (51.9%) 1,021 (48.1%)              
-Without EPI         662 (65.7%)   540 (68.2%)         0.154
-Mild-Moderate EPI   149 (14.8%)   125 (15.8%)              
-Severe EPI          197 (19.5%)   127 (16.0%)              
-EPI                                                        
-  With EPI          346 (34.3%)   252 (31.8%)         0.262
-Low Trypsinogen        7 (5.2%)      3 (2.1%)         0.174
-Low Amylase         972 (94.8%)   681 (89.7%)        <0.001
-High Trypsinogen    131 (97.0%)   132 (93.6%)         0.180
------------------------------------------------------------
-
-. collect label list epi_bin
-
-Collection: DTable
- Dimension: epi_bin
-
-. collect label list epi_binary
-
-  Collection: DTable
-   Dimension: epi_binary
-       Label: EPI
-Level labels:
-           1  With EPI
-
-. collect label list epi_ordinal
-
-  Collection: DTable
-   Dimension: epi_ordinal
-       Label: EPI Levels
-Level labels:
-           1  Without EPI
-           2  Mild-Moderate EPI
-           3  Severe EPI
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
-
-.         collect style header var[1.epi_binary], title(hide)
-
-. 
-end of do-file
-
-. collect preview
-
------------------------------------------------------------
-                       NPM            PM           Test    
------------------------------------------------------------
-N                 1,101 (51.9%) 1,021 (48.1%)              
-Without EPI         662 (65.7%)   540 (68.2%)         0.154
-Mild-Moderate EPI   149 (14.8%)   125 (15.8%)              
-Severe EPI          197 (19.5%)   127 (16.0%)              
-With EPI            346 (34.3%)   252 (31.8%)         0.262
-Low Trypsinogen        7 (5.2%)      3 (2.1%)         0.174
-Low Amylase         972 (94.8%)   681 (89.7%)        <0.001
-High Trypsinogen    131 (97.0%)   132 (93.6%)         0.180
------------------------------------------------------------
-
-. pwd
-/Users/juansolon/Documents/GitHub/sampa-radio
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
-
-.         collect rename DTable enzymes_cat, replace
-(current collection is enzymes_cat)
-
-.         collect save ./tables/enzymes_cat, replace
-(collection enzymes_cat saved to file ./tables/enzymes_cat.stjson)
-
-. 
-. **# EXPORT
-. 
-.         collect export ./tables/enzymes_cat.html, as(html) replace
-(collection enzymes_cat exported to file ./tables/enzymes_cat.html)
-
-.         html2docx ./tables/enzymes_cat.html , saving(enzymes_cat.docx) replace
-successfully converted "/Users/juansolon/Documents/GitHub/sampa-radio/enzymes_cat.docx"
-
-.         collect export ./tables/enzymes_cat_ms.docx, as(docx) replace
-(collection enzymes_cat exported to file ./tables/enzymes_cat_ms.docx)
-
-. 
-end of do-file
-
-. tab assay_t assay_amyl assay_f
-too many variables specified
-r(103);
-
-. tab assay_t
-
-Trypsinogen |
-      Assay |      Freq.     Percent        Cum.
-------------+-----------------------------------
-          0 |      1,846       86.99       86.99
-          1 |        276       13.01      100.00
-------------+-----------------------------------
-      Total |      2,122      100.00
-
-. tab assay_f
-
-   Fecal Elastase Assay |      Freq.     Percent        Cum.
-------------------------+-----------------------------------
-Without Faecal Elastase |        322       15.17       15.17
-   With Faecal Elastase |      1,800       84.83      100.00
-------------------------+-----------------------------------
-                  Total |      2,122      100.00
-
-. tab assay_am
-
-    Amylase |
-      Assay |      Freq.     Percent        Cum.
-------------+-----------------------------------
-          0 |        338       15.93       15.93
-          1 |      1,784       84.07      100.00
-------------+-----------------------------------
-      Total |      2,122      100.00
-
-. tab tryp_low assay_t
-
-                      | Trypsinoge
-                      |  n Assay
-      Low trypsinogen |         1 |     Total
-----------------------+-----------+----------
-Normal to High Trypsi |       266 |       266 
-      Low Trypsinogen |        10 |        10 
-----------------------+-----------+----------
-                Total |       276 |       276 
-
-. tab tryp_low ever_mal, col
-
-+-------------------+
-| Key               |
-|-------------------|
-|     frequency     |
-| column percentage |
-+-------------------+
-
-                      |    Ever experience
-                      |     malnutrition?
-      Low trypsinogen |       NPM         PM |     Total
-----------------------+----------------------+----------
-Normal to High Trypsi |       128        138 |       266 
-                      |     94.81      97.87 |     96.38 
-----------------------+----------------------+----------
-      Low Trypsinogen |         7          3 |        10 
-                      |      5.19       2.13 |      3.62 
-----------------------+----------------------+----------
-                Total |       135        141 |       276 
-                      |    100.00     100.00 |    100.00 
-
-. tab amyl_low ever_mal, col
-
-+-------------------+
-| Key               |
-|-------------------|
-|     frequency     |
-| column percentage |
-+-------------------+
-
-                      |    Ever experience
-                      |     malnutrition?
-    Low Serum Amylase |       NPM         PM |     Total
-----------------------+----------------------+----------
-Normal to High Amylas |        53         78 |       131 
-                      |      5.17      10.28 |      7.34 
-----------------------+----------------------+----------
-          Low Amylase |       972        681 |     1,653 
-                      |     94.83      89.72 |     92.66 
-----------------------+----------------------+----------
-                Total |     1,025        759 |     1,784 
-                      |    100.00     100.00 |    100.00 
-
-. tab epi_bin ever_mal, col
-
-+-------------------+
-| Key               |
-|-------------------|
-|     frequency     |
-| column percentage |
-+-------------------+
-
-            |    Ever experience
-            |     malnutrition?
-        EPI |       NPM         PM |     Total
-------------+----------------------+----------
-Without EPI |       662        540 |     1,202 
-            |     65.67      68.18 |     66.78 
-------------+----------------------+----------
-   With EPI |       346        252 |       598 
-            |     34.33      31.82 |     33.22 
-------------+----------------------+----------
-      Total |     1,008        792 |     1,800 
-            |    100.00     100.00 |    100.00 
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
-
-. /* table_uss_unadjusted_bivariate.do 
-> J Solon
-> Sampa
-> March19 
-> 
-> Creates n median iqr and p values of var
-> kwallis p value
-> di chi2tail(r(df),r(chi2))
-> 
-> */
-. 
-. 
-. cap prog drop mystats
-
-. program mystats, rclass
-  1. return scalar p_adj= chi2tail(r(df), r(chi2_adj))
-  2. return scalar Chi2_adj =  r(chi2_adj)
-  3. return scalar  DF =  r(df)
-  4. return scalar p= chi2tail(r(df), r(chi2))
-  5. return scalar  Chi2 =   r(chi2)
-  6. end
-
-. 
-. collect clear
-
-. 
-. local col "ever_mal"
-
-. local contmed "adj_wt_ct_pan_head_trans adj_wt_ct_pan_head_ap adj_wt_ct_pan_body_trans adj_
-> wt_ct_pan_tail_trans adj_wt_ct_pan_body_tail adj_wt_ct_pan_vol adj_wt_pan_head_ap adj_wt_pa
-> n_head_trans adj_wt_pan_body_trans adj_wt_pan_tail_trans"  /*continous variables; median (p
-> 25-p75)  will be reported*/
-
-. 
-. local colhead2 `"0 "NPM" 1 "PM""'
-
-.                 
-. * format median of `contmed'
-. local nfrmt_p50 "%5.3f"
-
-. local nfrmt_iqr "%5.3f"
-
-. local sfrmt_p25 "(%s-"
-
-. local sfrmt_p75 "%s)"
-
-. 
-. local title "Table .Unadjusted Ultrasound Measurements"
-
-. count if radio3 ==1
-  1,621
-
-. local obs_uss = r(N)
-
-. di `obs_uss'
-1621
-
-. count if ct2 ==1
-  291
-
-. local obs_ct = r(N)
-
-. di `obs_ct'
-291
-
-. local notes1 "Values are [N] median (p25-p50)."
-
-. local notes2 "`obs_uss' contributing any ultrasound measurement."
-
-. local notes3 "`obs_ct' contributing any CT scan measurement."
-
-. 
-. 
-. * STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  S
-> TOP !  STOP !  STOP !  
-. * THERE IS NOTHING TO MODIFY BEYOND THIS LINE UNLESS CHANGING CODE. 
-. 
-. * GENERATE TABLE STATS 
-. 
-.         table (var)(`col')  , ///
->                 stat(frequency) ///
->                 stat(count `contmed') ///
->                 stat(p50 `contmed') ///
->                 stat(p25 `contmed') ///
->                 stat(p75 `contmed') ///
->                 nototal
-
-----------------------------------------------------------------
-                              |   Ever experience malnutrition? 
-                              |             NPM               PM
-------------------------------+---------------------------------
-Frequency                     |           1,101            1,021
-adj_wt_ct_pan_head_trans      |                                 
-  Number of nonmissing values |             148              139
-  50th percentile             |        .0415808         .0478182
-  25th percentile             |        .0358704         .0380494
-  75th percentile             |        .0487101         .0594378
-adj_wt_ct_pan_head_ap         |                                 
-  Number of nonmissing values |             149              141
-  50th percentile             |        .0409165         .0434638
-  25th percentile             |        .0341772         .0383475
-  75th percentile             |        .0480384          .053286
-adj_wt_ct_pan_body_trans      |                                 
-  Number of nonmissing values |             148              141
-  50th percentile             |        .0322719         .0365724
-  25th percentile             |        .0264048          .030678
-  75th percentile             |        .0378128         .0459502
-adj_wt_ct_pan_tail_trans      |                                 
-  Number of nonmissing values |             149              139
-  50th percentile             |         .027248         .0317568
-  25th percentile             |        .0225776         .0260188
-  75th percentile             |        .0337152         .0408397
-adj_wt_ct_pan_body_tail       |                                 
-  Number of nonmissing values |             102              112
-  50th percentile             |        .1677179         .1743133
-  25th percentile             |        .1441358         .1479615
-  75th percentile             |        .1913732         .1990182
-adj_wt_ct_pan_vol             |                                 
-  Number of nonmissing values |             101              108
-  50th percentile             |        1.035782          1.07195
-  25th percentile             |        .8579786         .8487658
-  75th percentile             |        1.212234         1.438702
-adj_wt_pan_head_ap            |                                 
-  Number of nonmissing values |             715              832
-  50th percentile             |        .0338684         .0432393
-  25th percentile             |        .0284433         .0349846
-  75th percentile             |        .0422562         .0530595
-adj_wt_pan_head_trans         |                                 
-  Number of nonmissing values |             635              759
-  50th percentile             |        .0336039         .0372839
-  25th percentile             |        .0282486              .03
-  75th percentile             |        .0400259         .0460803
-adj_wt_pan_body_trans         |                                 
-  Number of nonmissing values |             745              858
-  50th percentile             |        .0201342         .0254555
-  25th percentile             |        .0168242         .0198113
-  75th percentile             |        .0260823         .0332362
-adj_wt_pan_tail_trans         |                                 
-  Number of nonmissing values |             509              687
-  50th percentile             |        .0203625         .0321759
-  25th percentile             |        .0162826         .0238284
-  75th percentile             |        .0315126         .0397701
-----------------------------------------------------------------
-
-.                 
-. collect rename Table c1
-(current collection is c1)
-
-.                 
-. *REFORMAT RESULTS TO DESIRED COLUMNS
-.                 
-.         * recodes median and iqr
-.                 collect recode result p50 = column1
-(20 items recoded in collection c1)
-
-.                 collect recode result p25 = column2
-(20 items recoded in collection c1)
-
-.                 collect recode result p75 = column3
-(20 items recoded in collection c1)
-
-.                 
-.         * Create composite result : this is needed because 75 is in column3 and we want it 
-> in the same column as column 2 .  Use for medians and probably CIs
-.                 collect composite define column4 = column2 column3, replace
-
-. 
-.         * Calculate p-values from chi2 and df
-.         foreach v in `contmed' {
-  2.                 quietly kwallis `v', by(`col')
-  3.                 collect: mystats
-  4.         }
-
-. 
-.         
-. * CREATE THE TABLE 1 Layout Super column - column 
-. 
-.         collect layout (var) (ever_mal#result[count column1 column4])
-
-Collection: c1
-      Rows: var
-   Columns: ever_mal#result[count column1 column4]
-   Table 1: 10 x 6
-
------------------------------------------------------------------------------------------------------------------------------------------------------
-                         |                                                Ever experience malnutrition?                                              
-                         |                              NPM                                                            PM                            
-                         |  Number of nonmissing values    column1      column2 column3   Number of nonmissing values    column1      column2 column3
--------------------------+---------------------------------------------------------------------------------------------------------------------------
-adj_wt_ct_pan_head_trans |                          148   .0415808   .0358704  .0487101                           139   .0478182   .0380494  .0594378
-adj_wt_ct_pan_head_ap    |                          149   .0409165   .0341772  .0480384                           141   .0434638   .0383475   .053286
-adj_wt_ct_pan_body_trans |                          148   .0322719   .0264048  .0378128                           141   .0365724    .030678  .0459502
-adj_wt_ct_pan_tail_trans |                          149    .027248   .0225776  .0337152                           139   .0317568   .0260188  .0408397
-adj_wt_ct_pan_body_tail  |                          102   .1677179   .1441358  .1913732                           112   .1743133   .1479615  .1990182
-adj_wt_ct_pan_vol        |                          101   1.035782   .8579786  1.212234                           108    1.07195   .8487658  1.438702
-adj_wt_pan_head_ap       |                          715   .0338684   .0284433  .0422562                           832   .0432393   .0349846  .0530595
-adj_wt_pan_head_trans    |                          635   .0336039   .0282486  .0400259                           759   .0372839        .03  .0460803
-adj_wt_pan_body_trans    |                          745   .0201342   .0168242  .0260823                           858   .0254555   .0198113  .0332362
-adj_wt_pan_tail_trans    |                          509   .0203625   .0162826  .0315126                           687   .0321759   .0238284  .0397701
------------------------------------------------------------------------------------------------------------------------------------------------------
-
-. 
-. * Format p-values
-.         collect style cell result[p], nformat("%5.3f")
-
-.         collect style cell result[p], sformat("p=%s")
-
-. 
-. * CHANGE HEADER TEXT
-.         * column
-.                 collect label levels `col' `colhead2', modify
-
-. 
-. collect preview /* preview changes */
-
------------------------------------------------------------------------------------------------------------------------------------------------------
-                         |                                                Ever experience malnutrition?                                              
-                         |                              NPM                                                            PM                            
-                         |  Number of nonmissing values    column1      column2 column3   Number of nonmissing values    column1      column2 column3
--------------------------+---------------------------------------------------------------------------------------------------------------------------
-adj_wt_ct_pan_head_trans |                          148   .0415808   .0358704  .0487101                           139   .0478182   .0380494  .0594378
-adj_wt_ct_pan_head_ap    |                          149   .0409165   .0341772  .0480384                           141   .0434638   .0383475   .053286
-adj_wt_ct_pan_body_trans |                          148   .0322719   .0264048  .0378128                           141   .0365724    .030678  .0459502
-adj_wt_ct_pan_tail_trans |                          149    .027248   .0225776  .0337152                           139   .0317568   .0260188  .0408397
-adj_wt_ct_pan_body_tail  |                          102   .1677179   .1441358  .1913732                           112   .1743133   .1479615  .1990182
-adj_wt_ct_pan_vol        |                          101   1.035782   .8579786  1.212234                           108    1.07195   .8487658  1.438702
-adj_wt_pan_head_ap       |                          715   .0338684   .0284433  .0422562                           832   .0432393   .0349846  .0530595
-adj_wt_pan_head_trans    |                          635   .0336039   .0282486  .0400259                           759   .0372839        .03  .0460803
-adj_wt_pan_body_trans    |                          745   .0201342   .0168242  .0260823                           858   .0254555   .0198113  .0332362
-adj_wt_pan_tail_trans    |                          509   .0203625   .0162826  .0315126                           687   .0321759   .0238284  .0397701
------------------------------------------------------------------------------------------------------------------------------------------------------
-
-. 
-. * HIDE COLUMN HEADERS
-. 
-.         * Hide supercolumn variable name because it is self-descriptive
-.                 
-.         *       collect style header `scol', title(hide) /* this removes the column variabl
-> e name or label by hiding it */
-. 
-.         * Hide the column variable name 
-.                 
-.                 collect style header `col', title(hide) /* this removes the column variable
->  name or label by hiding it */
-
-. 
-.         * Hide the words column 1 and column 2 for the results 
-. 
-.                 collect style header result, level(hide) /* this removes column 1 and colum
-> n2 header names*/
-
-. 
-. collect preview /* preview changes */
-
------------------------------------------------------------------------------------------------------
-                         |                  NPM                                    PM                
--------------------------+---------------------------------------------------------------------------
-adj_wt_ct_pan_head_trans |  148   .0415808   .0358704  .0487101   139   .0478182   .0380494  .0594378
-adj_wt_ct_pan_head_ap    |  149   .0409165   .0341772  .0480384   141   .0434638   .0383475   .053286
-adj_wt_ct_pan_body_trans |  148   .0322719   .0264048  .0378128   141   .0365724    .030678  .0459502
-adj_wt_ct_pan_tail_trans |  149    .027248   .0225776  .0337152   139   .0317568   .0260188  .0408397
-adj_wt_ct_pan_body_tail  |  102   .1677179   .1441358  .1913732   112   .1743133   .1479615  .1990182
-adj_wt_ct_pan_vol        |  101   1.035782   .8579786  1.212234   108    1.07195   .8487658  1.438702
-adj_wt_pan_head_ap       |  715   .0338684   .0284433  .0422562   832   .0432393   .0349846  .0530595
-adj_wt_pan_head_trans    |  635   .0336039   .0282486  .0400259   759   .0372839        .03  .0460803
-adj_wt_pan_body_trans    |  745   .0201342   .0168242  .0260823   858   .0254555   .0198113  .0332362
-adj_wt_pan_tail_trans    |  509   .0203625   .0162826  .0315126   687   .0321759   .0238284  .0397701
------------------------------------------------------------------------------------------------------
-
-. 
-. * MODIFY ROW TEXT
-. 
-. 
-. * REVISE ROW STYLES
-. 
-. * Stack levels of each variable , place a space between variables (spacer) ; 
-. 
-.         collect style row stack, nobinder spacer
-
-. 
-. * Remove vertical line after variables
-. 
-.         collect style cell border_block, border(right, pattern(nil))
-
-. 
-. * HIDE ROW Text
-. 
-. * Hide the variable names 
-. collect style header `hiderows', title(hide)
-
-. 
-. 
-. * FORMAT NUMBERS
-. 
-. * Format median
-. 
-.         collect style cell result[column1]#var[`contmed'], nformat(`nfrmt_p50')
-
-. 
-. * Add IQR formatting to p25 and p75 separately:
-.         collect style cell result[column2]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`s
-> frmt_p25'") /* formats iqr as (p25 - p75)*/
-
-.         collect style cell result[column3]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`s
-> frmt_p75'") 
-
-. 
-. * Format count column
-.         collect style cell result[count], nformat("%4.0f") /* Format count as whole number 
-> */
-
-.         collect style cell result[count], sformat("[%s]") /* Format count as whole number *
-> /
-
-.         
-. /* format factor variables (categorical) column 1 and column 2
-> 
->         collect style cell var[`frmt_catvar1']#result[column1], nformat(`nfrmt_freq')
-> 
->         collect style cell var[`frmt_catvar1']#result[column2], nformat(`nfrmt_perc') sform
-> at("(`sfrmt_perc')") /* Adds (%) to percent */
-> 
-> * format means variable column 1 and column 2
-> 
->         collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats c
-> ontinuous variable to one decimal*/
-> 
->         collect style cell var[`contn']#result[column2], nformat(`nfrmt_sd') sformat(`sfrmt
-> _sd') /* Formats continuous variable to one decimal*/
-> */
-. * Change font of results
-.         *collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats 
-> continuous variable to one decimal*/
-.         
-. * Add text
-.         collect title `title'
-
-.         /*collect notes `notes1'
->         collect notes `notes2'
->         collect notes `notes3'
->         collect notes `notes4'
->         */
-.         
-. collect preview
-
-Table .Unadjusted Ultrasound Measurements
------------------------------------------------------------------------------------------
-                                        NPM                              PM              
------------------------------------------------------------------------------------------
-adj_wt_ct_pan_head_trans  [148]   0.042   (0.036- 0.049)   [139]   0.048   (0.038- 0.059)
-adj_wt_ct_pan_head_ap     [149]   0.041   (0.034- 0.048)   [141]   0.043   (0.038- 0.053)
-adj_wt_ct_pan_body_trans  [148]   0.032   (0.026- 0.038)   [141]   0.037   (0.031- 0.046)
-adj_wt_ct_pan_tail_trans  [149]   0.027   (0.023- 0.034)   [139]   0.032   (0.026- 0.041)
-adj_wt_ct_pan_body_tail   [102]   0.168   (0.144- 0.191)   [112]   0.174   (0.148- 0.199)
-adj_wt_ct_pan_vol         [101]   1.036   (0.858- 1.212)   [108]   1.072   (0.849- 1.439)
-adj_wt_pan_head_ap        [715]   0.034   (0.028- 0.042)   [832]   0.043   (0.035- 0.053)
-adj_wt_pan_head_trans     [635]   0.034   (0.028- 0.040)   [759]   0.037   (0.030- 0.046)
-adj_wt_pan_body_trans     [745]   0.020   (0.017- 0.026)   [858]   0.025   (0.020- 0.033)
-adj_wt_pan_tail_trans     [509]   0.020   (0.016- 0.032)   [687]   0.032   (0.024- 0.040)
------------------------------------------------------------------------------------------
-
-. 
-. * Save first collection with main stats
-. collect layout (var) (ever_mal#result[count column1 column4])
-
-Collection: c1
-      Rows: var
-   Columns: ever_mal#result[count column1 column4]
-   Table 1: 10 x 6
-
-Table .Unadjusted Ultrasound Measurements
------------------------------------------------------------------------------------------
-                                        NPM                              PM              
------------------------------------------------------------------------------------------
-adj_wt_ct_pan_head_trans  [148]   0.042   (0.036- 0.049)   [139]   0.048   (0.038- 0.059)
-adj_wt_ct_pan_head_ap     [149]   0.041   (0.034- 0.048)   [141]   0.043   (0.038- 0.053)
-adj_wt_ct_pan_body_trans  [148]   0.032   (0.026- 0.038)   [141]   0.037   (0.031- 0.046)
-adj_wt_ct_pan_tail_trans  [149]   0.027   (0.023- 0.034)   [139]   0.032   (0.026- 0.041)
-adj_wt_ct_pan_body_tail   [102]   0.168   (0.144- 0.191)   [112]   0.174   (0.148- 0.199)
-adj_wt_ct_pan_vol         [101]   1.036   (0.858- 1.212)   [108]   1.072   (0.849- 1.439)
-adj_wt_pan_head_ap        [715]   0.034   (0.028- 0.042)   [832]   0.043   (0.035- 0.053)
-adj_wt_pan_head_trans     [635]   0.034   (0.028- 0.040)   [759]   0.037   (0.030- 0.046)
-adj_wt_pan_body_trans     [745]   0.020   (0.017- 0.026)   [858]   0.025   (0.020- 0.033)
-adj_wt_pan_tail_trans     [509]   0.020   (0.016- 0.032)   [687]   0.032   (0.024- 0.040)
------------------------------------------------------------------------------------------
-
-. collect save ./tables/uss1.json, replace
-file ./tables/uss1.json could not be opened
-r(603);
-
-end of do-file
-
-r(603);
-
-. pwd
-/Users/juansolon/Documents/GitHub/sampa-radio/do
-
-. cd ..
-/Users/juansolon/Documents/GitHub/sampa-radio
-
-. collect levelsof cmdset
-
-Collection: c1
- Dimension: cmdset
-    Levels: 1 10 2 3 4 5 6 7 8 9
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
-
-. /* table_uss_unadjusted_bivariate.do 
-> J Solon
-> Sampa
-> March19 
-> 
-> Creates n median iqr and p values of var
-> kwallis p value
-> di chi2tail(r(df),r(chi2))
-> 
-> */
-. 
-. 
-. cap prog drop mystats
-
-. program mystats, rclass
-  1. return scalar p_adj= chi2tail(r(df), r(chi2_adj))
-  2. return scalar Chi2_adj =  r(chi2_adj)
-  3. return scalar  DF =  r(df)
-  4. return scalar p= chi2tail(r(df), r(chi2))
-  5. return scalar  Chi2 =   r(chi2)
-  6. end
-
-. 
-. collect clear
-
-. 
-. local col "ever_mal"
-
-. local contmed "adj_wt_ct_pan_head_trans adj_wt_ct_pan_head_ap adj_wt_ct_pan_body_trans adj_
-> wt_ct_pan_tail_trans adj_wt_ct_pan_body_tail adj_wt_ct_pan_vol adj_wt_pan_head_ap adj_wt_pa
-> n_head_trans adj_wt_pan_body_trans adj_wt_pan_tail_trans"  /*continous variables; median (p
-> 25-p75)  will be reported*/
-
-. 
-. local colhead2 `"0 "NPM" 1 "PM""'
-
-.                 
-. * format median of `contmed'
-. local nfrmt_p50 "%5.3f"
-
-. local nfrmt_iqr "%5.3f"
-
-. local sfrmt_p25 "(%s-"
-
-. local sfrmt_p75 "%s)"
-
-. 
-. local title "Table .Unadjusted Ultrasound Measurements"
-
-. count if radio3 ==1
-  1,621
-
-. local obs_uss = r(N)
-
-. di `obs_uss'
-1621
-
-. count if ct2 ==1
-  291
-
-. local obs_ct = r(N)
-
-. di `obs_ct'
-291
-
-. local notes1 "Values are [N] median (p25-p50)."
-
-. local notes2 "`obs_uss' contributing any ultrasound measurement."
-
-. local notes3 "`obs_ct' contributing any CT scan measurement."
-
-. 
-. 
-. * STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  S
-> TOP !  STOP !  STOP !  
-. * THERE IS NOTHING TO MODIFY BEYOND THIS LINE UNLESS CHANGING CODE. 
-. 
-. * GENERATE TABLE STATS 
-. 
-.         table (var)(`col')  , ///
->                 stat(frequency) ///
->                 stat(count `contmed') ///
->                 stat(p50 `contmed') ///
->                 stat(p25 `contmed') ///
->                 stat(p75 `contmed') ///
->                 nototal
-
-----------------------------------------------------------------
-                              |   Ever experience malnutrition? 
-                              |             NPM               PM
-------------------------------+---------------------------------
-Frequency                     |           1,101            1,021
-adj_wt_ct_pan_head_trans      |                                 
-  Number of nonmissing values |             148              139
-  50th percentile             |        .0415808         .0478182
-  25th percentile             |        .0358704         .0380494
-  75th percentile             |        .0487101         .0594378
-adj_wt_ct_pan_head_ap         |                                 
-  Number of nonmissing values |             149              141
-  50th percentile             |        .0409165         .0434638
-  25th percentile             |        .0341772         .0383475
-  75th percentile             |        .0480384          .053286
-adj_wt_ct_pan_body_trans      |                                 
-  Number of nonmissing values |             148              141
-  50th percentile             |        .0322719         .0365724
-  25th percentile             |        .0264048          .030678
-  75th percentile             |        .0378128         .0459502
-adj_wt_ct_pan_tail_trans      |                                 
-  Number of nonmissing values |             149              139
-  50th percentile             |         .027248         .0317568
-  25th percentile             |        .0225776         .0260188
-  75th percentile             |        .0337152         .0408397
-adj_wt_ct_pan_body_tail       |                                 
-  Number of nonmissing values |             102              112
-  50th percentile             |        .1677179         .1743133
-  25th percentile             |        .1441358         .1479615
-  75th percentile             |        .1913732         .1990182
-adj_wt_ct_pan_vol             |                                 
-  Number of nonmissing values |             101              108
-  50th percentile             |        1.035782          1.07195
-  25th percentile             |        .8579786         .8487658
-  75th percentile             |        1.212234         1.438702
-adj_wt_pan_head_ap            |                                 
-  Number of nonmissing values |             715              832
-  50th percentile             |        .0338684         .0432393
-  25th percentile             |        .0284433         .0349846
-  75th percentile             |        .0422562         .0530595
-adj_wt_pan_head_trans         |                                 
-  Number of nonmissing values |             635              759
-  50th percentile             |        .0336039         .0372839
-  25th percentile             |        .0282486              .03
-  75th percentile             |        .0400259         .0460803
-adj_wt_pan_body_trans         |                                 
-  Number of nonmissing values |             745              858
-  50th percentile             |        .0201342         .0254555
-  25th percentile             |        .0168242         .0198113
-  75th percentile             |        .0260823         .0332362
-adj_wt_pan_tail_trans         |                                 
-  Number of nonmissing values |             509              687
-  50th percentile             |        .0203625         .0321759
-  25th percentile             |        .0162826         .0238284
-  75th percentile             |        .0315126         .0397701
-----------------------------------------------------------------
-
-.                 
-. collect rename Table c1
-(current collection is c1)
-
-.                 
-. *REFORMAT RESULTS TO DESIRED COLUMNS
-.                 
-.         * recodes median and iqr
-.                 collect recode result p50 = column1
-(20 items recoded in collection c1)
-
-.                 collect recode result p25 = column2
-(20 items recoded in collection c1)
-
-.                 collect recode result p75 = column3
-(20 items recoded in collection c1)
-
-.                 
-.         * Create composite result : this is needed because 75 is in column3 and we want it 
-> in the same column as column 2 .  Use for medians and probably CIs
-.                 collect composite define column4 = column2 column3, replace
-
-. 
-.         * Calculate p-values from chi2 and df
-.         foreach v in `contmed' {
-  2.                 quietly kwallis `v', by(`col')
-  3.                 collect: mystats
-  4.         }
-
-. 
-.         
-. * CREATE THE TABLE 1 Layout Super column - column 
-. 
-.         collect layout (var) (ever_mal#result[count column1 column4])
-
-Collection: c1
-      Rows: var
-   Columns: ever_mal#result[count column1 column4]
-   Table 1: 10 x 6
-
------------------------------------------------------------------------------------------------------------------------------------------------------
-                         |                                                Ever experience malnutrition?                                              
-                         |                              NPM                                                            PM                            
-                         |  Number of nonmissing values    column1      column2 column3   Number of nonmissing values    column1      column2 column3
--------------------------+---------------------------------------------------------------------------------------------------------------------------
-adj_wt_ct_pan_head_trans |                          148   .0415808   .0358704  .0487101                           139   .0478182   .0380494  .0594378
-adj_wt_ct_pan_head_ap    |                          149   .0409165   .0341772  .0480384                           141   .0434638   .0383475   .053286
-adj_wt_ct_pan_body_trans |                          148   .0322719   .0264048  .0378128                           141   .0365724    .030678  .0459502
-adj_wt_ct_pan_tail_trans |                          149    .027248   .0225776  .0337152                           139   .0317568   .0260188  .0408397
-adj_wt_ct_pan_body_tail  |                          102   .1677179   .1441358  .1913732                           112   .1743133   .1479615  .1990182
-adj_wt_ct_pan_vol        |                          101   1.035782   .8579786  1.212234                           108    1.07195   .8487658  1.438702
-adj_wt_pan_head_ap       |                          715   .0338684   .0284433  .0422562                           832   .0432393   .0349846  .0530595
-adj_wt_pan_head_trans    |                          635   .0336039   .0282486  .0400259                           759   .0372839        .03  .0460803
-adj_wt_pan_body_trans    |                          745   .0201342   .0168242  .0260823                           858   .0254555   .0198113  .0332362
-adj_wt_pan_tail_trans    |                          509   .0203625   .0162826  .0315126                           687   .0321759   .0238284  .0397701
------------------------------------------------------------------------------------------------------------------------------------------------------
-
-. 
-. * Format p-values
-.         collect style cell result[p], nformat("%5.3f")
-
-.         collect style cell result[p], sformat("p=%s")
-
-. 
-. * CHANGE HEADER TEXT
-.         * column
-.                 collect label levels `col' `colhead2', modify
-
-. 
-. collect preview /* preview changes */
-
------------------------------------------------------------------------------------------------------------------------------------------------------
-                         |                                                Ever experience malnutrition?                                              
-                         |                              NPM                                                            PM                            
-                         |  Number of nonmissing values    column1      column2 column3   Number of nonmissing values    column1      column2 column3
--------------------------+---------------------------------------------------------------------------------------------------------------------------
-adj_wt_ct_pan_head_trans |                          148   .0415808   .0358704  .0487101                           139   .0478182   .0380494  .0594378
-adj_wt_ct_pan_head_ap    |                          149   .0409165   .0341772  .0480384                           141   .0434638   .0383475   .053286
-adj_wt_ct_pan_body_trans |                          148   .0322719   .0264048  .0378128                           141   .0365724    .030678  .0459502
-adj_wt_ct_pan_tail_trans |                          149    .027248   .0225776  .0337152                           139   .0317568   .0260188  .0408397
-adj_wt_ct_pan_body_tail  |                          102   .1677179   .1441358  .1913732                           112   .1743133   .1479615  .1990182
-adj_wt_ct_pan_vol        |                          101   1.035782   .8579786  1.212234                           108    1.07195   .8487658  1.438702
-adj_wt_pan_head_ap       |                          715   .0338684   .0284433  .0422562                           832   .0432393   .0349846  .0530595
-adj_wt_pan_head_trans    |                          635   .0336039   .0282486  .0400259                           759   .0372839        .03  .0460803
-adj_wt_pan_body_trans    |                          745   .0201342   .0168242  .0260823                           858   .0254555   .0198113  .0332362
-adj_wt_pan_tail_trans    |                          509   .0203625   .0162826  .0315126                           687   .0321759   .0238284  .0397701
------------------------------------------------------------------------------------------------------------------------------------------------------
-
-. 
-. * HIDE COLUMN HEADERS
-. 
-.         * Hide supercolumn variable name because it is self-descriptive
-.                 
-.         *       collect style header `scol', title(hide) /* this removes the column variabl
-> e name or label by hiding it */
-. 
-.         * Hide the column variable name 
-.                 
-.                 collect style header `col', title(hide) /* this removes the column variable
->  name or label by hiding it */
-
-. 
-.         * Hide the words column 1 and column 2 for the results 
-. 
-.                 collect style header result, level(hide) /* this removes column 1 and colum
-> n2 header names*/
-
-. 
-. collect preview /* preview changes */
-
------------------------------------------------------------------------------------------------------
-                         |                  NPM                                    PM                
--------------------------+---------------------------------------------------------------------------
-adj_wt_ct_pan_head_trans |  148   .0415808   .0358704  .0487101   139   .0478182   .0380494  .0594378
-adj_wt_ct_pan_head_ap    |  149   .0409165   .0341772  .0480384   141   .0434638   .0383475   .053286
-adj_wt_ct_pan_body_trans |  148   .0322719   .0264048  .0378128   141   .0365724    .030678  .0459502
-adj_wt_ct_pan_tail_trans |  149    .027248   .0225776  .0337152   139   .0317568   .0260188  .0408397
-adj_wt_ct_pan_body_tail  |  102   .1677179   .1441358  .1913732   112   .1743133   .1479615  .1990182
-adj_wt_ct_pan_vol        |  101   1.035782   .8579786  1.212234   108    1.07195   .8487658  1.438702
-adj_wt_pan_head_ap       |  715   .0338684   .0284433  .0422562   832   .0432393   .0349846  .0530595
-adj_wt_pan_head_trans    |  635   .0336039   .0282486  .0400259   759   .0372839        .03  .0460803
-adj_wt_pan_body_trans    |  745   .0201342   .0168242  .0260823   858   .0254555   .0198113  .0332362
-adj_wt_pan_tail_trans    |  509   .0203625   .0162826  .0315126   687   .0321759   .0238284  .0397701
------------------------------------------------------------------------------------------------------
-
-. 
-. * MODIFY ROW TEXT
-. 
-. 
-. * REVISE ROW STYLES
-. 
-. * Stack levels of each variable , place a space between variables (spacer) ; 
-. 
-.         collect style row stack, nobinder spacer
-
-. 
-. * Remove vertical line after variables
-. 
-.         collect style cell border_block, border(right, pattern(nil))
-
-. 
-. * HIDE ROW Text
-. 
-. * Hide the variable names 
-. collect style header `hiderows', title(hide)
-
-. 
-. 
-. * FORMAT NUMBERS
-. 
-. * Format median
-. 
-.         collect style cell result[column1]#var[`contmed'], nformat(`nfrmt_p50')
-
-. 
-. * Add IQR formatting to p25 and p75 separately:
-.         collect style cell result[column2]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`s
-> frmt_p25'") /* formats iqr as (p25 - p75)*/
-
-.         collect style cell result[column3]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`s
-> frmt_p75'") 
-
-. 
-. * Format count column
-.         collect style cell result[count], nformat("%4.0f") /* Format count as whole number 
-> */
-
-.         collect style cell result[count], sformat("[%s]") /* Format count as whole number *
-> /
-
-.         
-. /* format factor variables (categorical) column 1 and column 2
-> 
->         collect style cell var[`frmt_catvar1']#result[column1], nformat(`nfrmt_freq')
-> 
->         collect style cell var[`frmt_catvar1']#result[column2], nformat(`nfrmt_perc') sform
-> at("(`sfrmt_perc')") /* Adds (%) to percent */
-> 
-> * format means variable column 1 and column 2
-> 
->         collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats c
-> ontinuous variable to one decimal*/
-> 
->         collect style cell var[`contn']#result[column2], nformat(`nfrmt_sd') sformat(`sfrmt
-> _sd') /* Formats continuous variable to one decimal*/
-> */
-. * Change font of results
-.         *collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats 
-> continuous variable to one decimal*/
-.         
-. * Add text
-.         collect title `title'
-
-.         /*collect notes `notes1'
->         collect notes `notes2'
->         collect notes `notes3'
->         collect notes `notes4'
->         */
-.         
-. collect preview
-
-Table .Unadjusted Ultrasound Measurements
------------------------------------------------------------------------------------------
-                                        NPM                              PM              
------------------------------------------------------------------------------------------
-adj_wt_ct_pan_head_trans  [148]   0.042   (0.036- 0.049)   [139]   0.048   (0.038- 0.059)
-adj_wt_ct_pan_head_ap     [149]   0.041   (0.034- 0.048)   [141]   0.043   (0.038- 0.053)
-adj_wt_ct_pan_body_trans  [148]   0.032   (0.026- 0.038)   [141]   0.037   (0.031- 0.046)
-adj_wt_ct_pan_tail_trans  [149]   0.027   (0.023- 0.034)   [139]   0.032   (0.026- 0.041)
-adj_wt_ct_pan_body_tail   [102]   0.168   (0.144- 0.191)   [112]   0.174   (0.148- 0.199)
-adj_wt_ct_pan_vol         [101]   1.036   (0.858- 1.212)   [108]   1.072   (0.849- 1.439)
-adj_wt_pan_head_ap        [715]   0.034   (0.028- 0.042)   [832]   0.043   (0.035- 0.053)
-adj_wt_pan_head_trans     [635]   0.034   (0.028- 0.040)   [759]   0.037   (0.030- 0.046)
-adj_wt_pan_body_trans     [745]   0.020   (0.017- 0.026)   [858]   0.025   (0.020- 0.033)
-adj_wt_pan_tail_trans     [509]   0.020   (0.016- 0.032)   [687]   0.032   (0.024- 0.040)
------------------------------------------------------------------------------------------
-
-. 
-. * Save first collection with main stats
-. collect layout (var) (ever_mal#result[count column1 column4])
-
-Collection: c1
-      Rows: var
-   Columns: ever_mal#result[count column1 column4]
-   Table 1: 10 x 6
-
-Table .Unadjusted Ultrasound Measurements
------------------------------------------------------------------------------------------
-                                        NPM                              PM              
------------------------------------------------------------------------------------------
-adj_wt_ct_pan_head_trans  [148]   0.042   (0.036- 0.049)   [139]   0.048   (0.038- 0.059)
-adj_wt_ct_pan_head_ap     [149]   0.041   (0.034- 0.048)   [141]   0.043   (0.038- 0.053)
-adj_wt_ct_pan_body_trans  [148]   0.032   (0.026- 0.038)   [141]   0.037   (0.031- 0.046)
-adj_wt_ct_pan_tail_trans  [149]   0.027   (0.023- 0.034)   [139]   0.032   (0.026- 0.041)
-adj_wt_ct_pan_body_tail   [102]   0.168   (0.144- 0.191)   [112]   0.174   (0.148- 0.199)
-adj_wt_ct_pan_vol         [101]   1.036   (0.858- 1.212)   [108]   1.072   (0.849- 1.439)
-adj_wt_pan_head_ap        [715]   0.034   (0.028- 0.042)   [832]   0.043   (0.035- 0.053)
-adj_wt_pan_head_trans     [635]   0.034   (0.028- 0.040)   [759]   0.037   (0.030- 0.046)
-adj_wt_pan_body_trans     [745]   0.020   (0.017- 0.026)   [858]   0.025   (0.020- 0.033)
-adj_wt_pan_tail_trans     [509]   0.020   (0.016- 0.032)   [687]   0.032   (0.024- 0.040)
------------------------------------------------------------------------------------------
-
-. collect save ./tables/uss1.json, replace
-(collection c1 saved to file ./tables/uss1.json)
-
-. 
-. * Create new collection for p-values
-. collect create c2
-(current collection is c2)
-
-. foreach v in `contmed' {
-  2.     quietly kwallis `v', by(`col')
-  3.     collect: mystats
-  4. }
-
-.    
-.             
-. 
-. * Remap cmdset to match var levels
-. collect recode cmdset 1 = adj_wt_ct_pan_head_trans
-(5 items recoded in collection c2)
-
-. collect recode cmdset 2 = adj_wt_ct_pan_head_ap
-(5 items recoded in collection c2)
-
-. collect recode cmdset 3 = adj_wt_ct_pan_body_trans
-(5 items recoded in collection c2)
-
-. collect recode cmdset 4 = adj_wt_ct_pan_tail_trans
-(5 items recoded in collection c2)
-
-. collect recode cmdset 5 = adj_wt_ct_pan_body_tail
-(5 items recoded in collection c2)
-
-. collect recode cmdset 6 = adj_wt_ct_pan_vol
-(5 items recoded in collection c2)
-
-. collect recode cmdset 7 = adj_wt_pan_head_ap
-(5 items recoded in collection c2)
-
-. collect recode cmdset 8 = adj_wt_pan_head_trans
-(5 items recoded in collection c2)
-
-. collect recode cmdset 9 = adj_wt_pan_body_trans
-(5 items recoded in collection c2)
-
-. collect recode cmdset 10 = adj_wt_pan_tail_trans
-(5 items recoded in collection c2)
-
-. 
-. collect remap cmdset = var
-(50 items remapped in collection c2)
-
-. 
-. * Combine collections
-. collect combine c3 = c1 c2
-(current collection is c3)
-
-. 
-. * Create layout for combined collection
-. collect layout (var) (ever_mal#result[count column1 column4] result[p])   
-
-Collection: c3
-      Rows: var
-   Columns: ever_mal#result[count column1 column4] result[p]
-   Table 1: 10 x 7
-
-Table .Unadjusted Ultrasound Measurements
----------------------------------------------------------------------------------------------------
-                                        NPM                              PM                        
----------------------------------------------------------------------------------------------------
-adj_wt_ct_pan_head_trans  [148]   0.042   (0.036- 0.049)   [139]   0.048   (0.038- 0.059)   p=0.000
-adj_wt_ct_pan_head_ap     [149]   0.041   (0.034- 0.048)   [141]   0.043   (0.038- 0.053)   p=0.001
-adj_wt_ct_pan_body_trans  [148]   0.032   (0.026- 0.038)   [141]   0.037   (0.031- 0.046)   p=0.000
-adj_wt_ct_pan_tail_trans  [149]   0.027   (0.023- 0.034)   [139]   0.032   (0.026- 0.041)   p=0.000
-adj_wt_ct_pan_body_tail   [102]   0.168   (0.144- 0.191)   [112]   0.174   (0.148- 0.199)   p=0.067
-adj_wt_ct_pan_vol         [101]   1.036   (0.858- 1.212)   [108]   1.072   (0.849- 1.439)   p=0.101
-adj_wt_pan_head_ap        [715]   0.034   (0.028- 0.042)   [832]   0.043   (0.035- 0.053)   p=0.000
-adj_wt_pan_head_trans     [635]   0.034   (0.028- 0.040)   [759]   0.037   (0.030- 0.046)   p=0.000
-adj_wt_pan_body_trans     [745]   0.020   (0.017- 0.026)   [858]   0.025   (0.020- 0.033)   p=0.000
-adj_wt_pan_tail_trans     [509]   0.020   (0.016- 0.032)   [687]   0.032   (0.024- 0.040)   p=0.000
----------------------------------------------------------------------------------------------------
-
-.    
-. 
-. 
-. collect save ./tables/adjusted, replace 
-(collection c3 saved to file ./tables/adjusted.stjson)
-
-. * Export combined table
-. collect export ./tables/adjusted.html, as(html) replace
-(collection c3 exported to file ./tables/adjusted.html)
-
-. html2docx ./tables/adjusted.html , saving(adjusted.docx) replace
-successfully converted "/Users/juansolon/Documents/GitHub/sampa-radio/adjusted.docx"
-
-. collect export ./tables/adjusted.docx, as(docx) replace
-(collection c3 exported to file ./tables/adjusted.docx)
-
-. collect export ./tables/adjusted.xlsx, as(xlsx) replace
-(collection c3 exported to file ./tables/adjusted.xlsx)
-
-. 
-. 
-. 
-. 
-. /* END END END END END END END END END END END END END END END END END END END END */
-.         
-. 
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
-
-. /* table_uss_unadjusted_bivariate.do 
-> J Solon
-> Sampa
-> March19 
-> 
-> Creates n median iqr and p values of var
-> kwallis p value
-> di chi2tail(r(df),r(chi2))
-> 
-> */
-. 
-. 
-. cap prog drop mystats
-
-. program mystats, rclass
-  1. return scalar p_adj= chi2tail(r(df), r(chi2_adj))
-  2. return scalar Chi2_adj =  r(chi2_adj)
-  3. return scalar  DF =  r(df)
-  4. return scalar p= chi2tail(r(df), r(chi2))
-  5. return scalar  Chi2 =   r(chi2)
-  6. end
-
-. 
-. collect clear
-
-. 
-. local col "ever_mal"
-
-. local contmed "adj_wt_ct_pan_head_trans adj_wt_ct_pan_head_ap adj_wt_ct_pan_body_trans adj_
-> wt_ct_pan_tail_trans adj_wt_ct_pan_body_tail adj_wt_ct_pan_vol adj_wt_pan_head_ap adj_wt_pa
-> n_head_trans adj_wt_pan_body_trans adj_wt_pan_tail_trans"  /*continous variables; median (p
-> 25-p75)  will be reported*/
-
-. 
-. local colhead2 `"0 "NPM" 1 "PM""'
-
-.                 
-. * format median of `contmed'
-. local nfrmt_p50 "%5.3f"
-
-. local nfrmt_iqr "%5.3f"
-
-. local sfrmt_p25 "(%s-"
-
-. local sfrmt_p75 "%s)"
-
-. 
-. local title "Table . Radiology Measurements Adj by Weight"
-
-. count if radio3 ==1
-  1,621
-
-. local obs_uss = r(N)
-
-. di `obs_uss'
-1621
-
-. count if ct2 ==1
-  291
-
-. local obs_ct = r(N)
-
-. di `obs_ct'
-291
-
-. local notes1 "Values are [N] median (p25-p50)."
-
-. local notes2 "`obs_uss' contributing any ultrasound measurement."
-
-. local notes3 "`obs_ct' contributing any CT scan measurement."
-
-. 
-. 
-. * STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  S
-> TOP !  STOP !  STOP !  
-. * THERE IS NOTHING TO MODIFY BEYOND THIS LINE UNLESS CHANGING CODE. 
-. 
-. * GENERATE TABLE STATS 
-. 
-.         table (var)(`col')  , ///
->                 stat(frequency) ///
->                 stat(count `contmed') ///
->                 stat(p50 `contmed') ///
->                 stat(p25 `contmed') ///
->                 stat(p75 `contmed') ///
->                 nototal
-
-----------------------------------------------------------------
-                              |   Ever experience malnutrition? 
-                              |             NPM               PM
-------------------------------+---------------------------------
-Frequency                     |           1,101            1,021
-adj_wt_ct_pan_head_trans      |                                 
-  Number of nonmissing values |             148              139
-  50th percentile             |        .0415808         .0478182
-  25th percentile             |        .0358704         .0380494
-  75th percentile             |        .0487101         .0594378
-adj_wt_ct_pan_head_ap         |                                 
-  Number of nonmissing values |             149              141
-  50th percentile             |        .0409165         .0434638
-  25th percentile             |        .0341772         .0383475
-  75th percentile             |        .0480384          .053286
-adj_wt_ct_pan_body_trans      |                                 
-  Number of nonmissing values |             148              141
-  50th percentile             |        .0322719         .0365724
-  25th percentile             |        .0264048          .030678
-  75th percentile             |        .0378128         .0459502
-adj_wt_ct_pan_tail_trans      |                                 
-  Number of nonmissing values |             149              139
-  50th percentile             |         .027248         .0317568
-  25th percentile             |        .0225776         .0260188
-  75th percentile             |        .0337152         .0408397
-adj_wt_ct_pan_body_tail       |                                 
-  Number of nonmissing values |             102              112
-  50th percentile             |        .1677179         .1743133
-  25th percentile             |        .1441358         .1479615
-  75th percentile             |        .1913732         .1990182
-adj_wt_ct_pan_vol             |                                 
-  Number of nonmissing values |             101              108
-  50th percentile             |        1.035782          1.07195
-  25th percentile             |        .8579786         .8487658
-  75th percentile             |        1.212234         1.438702
-adj_wt_pan_head_ap            |                                 
-  Number of nonmissing values |             715              832
-  50th percentile             |        .0338684         .0432393
-  25th percentile             |        .0284433         .0349846
-  75th percentile             |        .0422562         .0530595
-adj_wt_pan_head_trans         |                                 
-  Number of nonmissing values |             635              759
-  50th percentile             |        .0336039         .0372839
-  25th percentile             |        .0282486              .03
-  75th percentile             |        .0400259         .0460803
-adj_wt_pan_body_trans         |                                 
-  Number of nonmissing values |             745              858
-  50th percentile             |        .0201342         .0254555
-  25th percentile             |        .0168242         .0198113
-  75th percentile             |        .0260823         .0332362
-adj_wt_pan_tail_trans         |                                 
-  Number of nonmissing values |             509              687
-  50th percentile             |        .0203625         .0321759
-  25th percentile             |        .0162826         .0238284
-  75th percentile             |        .0315126         .0397701
-----------------------------------------------------------------
-
-.                 
-. collect rename Table c1
-(current collection is c1)
-
-.                 
-. *REFORMAT RESULTS TO DESIRED COLUMNS
-.                 
-.         * recodes median and iqr
-.                 collect recode result p50 = column1
-(20 items recoded in collection c1)
-
-.                 collect recode result p25 = column2
-(20 items recoded in collection c1)
-
-.                 collect recode result p75 = column3
-(20 items recoded in collection c1)
-
-.                 
-.         * Create composite result : this is needed because 75 is in column3 and we want it 
-> in the same column as column 2 .  Use for medians and probably CIs
-.                 collect composite define column4 = column2 column3, replace
-
-. 
-.         * Calculate p-values from chi2 and df
-.         foreach v in `contmed' {
-  2.                 quietly kwallis `v', by(`col')
-  3.                 collect: mystats
-  4.         }
-
-. 
-.         
-. * CREATE THE TABLE 1 Layout Super column - column 
-. 
-.         collect layout (var) (ever_mal#result[count column1 column4])
-
-Collection: c1
-      Rows: var
-   Columns: ever_mal#result[count column1 column4]
-   Table 1: 10 x 6
-
------------------------------------------------------------------------------------------------------------------------------------------------------
-                         |                                                Ever experience malnutrition?                                              
-                         |                              NPM                                                            PM                            
-                         |  Number of nonmissing values    column1      column2 column3   Number of nonmissing values    column1      column2 column3
--------------------------+---------------------------------------------------------------------------------------------------------------------------
-adj_wt_ct_pan_head_trans |                          148   .0415808   .0358704  .0487101                           139   .0478182   .0380494  .0594378
-adj_wt_ct_pan_head_ap    |                          149   .0409165   .0341772  .0480384                           141   .0434638   .0383475   .053286
-adj_wt_ct_pan_body_trans |                          148   .0322719   .0264048  .0378128                           141   .0365724    .030678  .0459502
-adj_wt_ct_pan_tail_trans |                          149    .027248   .0225776  .0337152                           139   .0317568   .0260188  .0408397
-adj_wt_ct_pan_body_tail  |                          102   .1677179   .1441358  .1913732                           112   .1743133   .1479615  .1990182
-adj_wt_ct_pan_vol        |                          101   1.035782   .8579786  1.212234                           108    1.07195   .8487658  1.438702
-adj_wt_pan_head_ap       |                          715   .0338684   .0284433  .0422562                           832   .0432393   .0349846  .0530595
-adj_wt_pan_head_trans    |                          635   .0336039   .0282486  .0400259                           759   .0372839        .03  .0460803
-adj_wt_pan_body_trans    |                          745   .0201342   .0168242  .0260823                           858   .0254555   .0198113  .0332362
-adj_wt_pan_tail_trans    |                          509   .0203625   .0162826  .0315126                           687   .0321759   .0238284  .0397701
------------------------------------------------------------------------------------------------------------------------------------------------------
-
-. 
-. * Format p-values
-.         collect style cell result[p], nformat("%5.3f")
-
-.         collect style cell result[p], sformat("p=%s")
-
-. 
-. * CHANGE HEADER TEXT
-.         * column
-.                 collect label levels `col' `colhead2', modify
-
-. 
-. collect preview /* preview changes */
-
------------------------------------------------------------------------------------------------------------------------------------------------------
-                         |                                                Ever experience malnutrition?                                              
-                         |                              NPM                                                            PM                            
-                         |  Number of nonmissing values    column1      column2 column3   Number of nonmissing values    column1      column2 column3
--------------------------+---------------------------------------------------------------------------------------------------------------------------
-adj_wt_ct_pan_head_trans |                          148   .0415808   .0358704  .0487101                           139   .0478182   .0380494  .0594378
-adj_wt_ct_pan_head_ap    |                          149   .0409165   .0341772  .0480384                           141   .0434638   .0383475   .053286
-adj_wt_ct_pan_body_trans |                          148   .0322719   .0264048  .0378128                           141   .0365724    .030678  .0459502
-adj_wt_ct_pan_tail_trans |                          149    .027248   .0225776  .0337152                           139   .0317568   .0260188  .0408397
-adj_wt_ct_pan_body_tail  |                          102   .1677179   .1441358  .1913732                           112   .1743133   .1479615  .1990182
-adj_wt_ct_pan_vol        |                          101   1.035782   .8579786  1.212234                           108    1.07195   .8487658  1.438702
-adj_wt_pan_head_ap       |                          715   .0338684   .0284433  .0422562                           832   .0432393   .0349846  .0530595
-adj_wt_pan_head_trans    |                          635   .0336039   .0282486  .0400259                           759   .0372839        .03  .0460803
-adj_wt_pan_body_trans    |                          745   .0201342   .0168242  .0260823                           858   .0254555   .0198113  .0332362
-adj_wt_pan_tail_trans    |                          509   .0203625   .0162826  .0315126                           687   .0321759   .0238284  .0397701
------------------------------------------------------------------------------------------------------------------------------------------------------
-
-. 
-. * HIDE COLUMN HEADERS
-. 
-.         * Hide supercolumn variable name because it is self-descriptive
-.                 
-.         *       collect style header `scol', title(hide) /* this removes the column variabl
-> e name or label by hiding it */
-. 
-.         * Hide the column variable name 
-.                 
-.                 collect style header `col', title(hide) /* this removes the column variable
->  name or label by hiding it */
-
-. 
-.         * Hide the words column 1 and column 2 for the results 
-. 
-.                 collect style header result, level(hide) /* this removes column 1 and colum
-> n2 header names*/
-
-. 
-. collect preview /* preview changes */
-
------------------------------------------------------------------------------------------------------
-                         |                  NPM                                    PM                
--------------------------+---------------------------------------------------------------------------
-adj_wt_ct_pan_head_trans |  148   .0415808   .0358704  .0487101   139   .0478182   .0380494  .0594378
-adj_wt_ct_pan_head_ap    |  149   .0409165   .0341772  .0480384   141   .0434638   .0383475   .053286
-adj_wt_ct_pan_body_trans |  148   .0322719   .0264048  .0378128   141   .0365724    .030678  .0459502
-adj_wt_ct_pan_tail_trans |  149    .027248   .0225776  .0337152   139   .0317568   .0260188  .0408397
-adj_wt_ct_pan_body_tail  |  102   .1677179   .1441358  .1913732   112   .1743133   .1479615  .1990182
-adj_wt_ct_pan_vol        |  101   1.035782   .8579786  1.212234   108    1.07195   .8487658  1.438702
-adj_wt_pan_head_ap       |  715   .0338684   .0284433  .0422562   832   .0432393   .0349846  .0530595
-adj_wt_pan_head_trans    |  635   .0336039   .0282486  .0400259   759   .0372839        .03  .0460803
-adj_wt_pan_body_trans    |  745   .0201342   .0168242  .0260823   858   .0254555   .0198113  .0332362
-adj_wt_pan_tail_trans    |  509   .0203625   .0162826  .0315126   687   .0321759   .0238284  .0397701
------------------------------------------------------------------------------------------------------
-
-. 
-. * MODIFY ROW TEXT
-. 
-. 
-. * REVISE ROW STYLES
-. 
-. * Stack levels of each variable , place a space between variables (spacer) ; 
-. 
-.         collect style row stack, nobinder spacer
-
-. 
-. * Remove vertical line after variables
-. 
-.         collect style cell border_block, border(right, pattern(nil))
-
-. 
-. * HIDE ROW Text
-. 
-. * Hide the variable names 
-. collect style header `hiderows', title(hide)
-
-. 
-. 
-. * FORMAT NUMBERS
-. 
-. * Format median
-. 
-.         collect style cell result[column1]#var[`contmed'], nformat(`nfrmt_p50')
-
-. 
-. * Add IQR formatting to p25 and p75 separately:
-.         collect style cell result[column2]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`s
-> frmt_p25'") /* formats iqr as (p25 - p75)*/
-
-.         collect style cell result[column3]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`s
-> frmt_p75'") 
-
-. 
-. * Format count column
-.         collect style cell result[count], nformat("%4.0f") /* Format count as whole number 
-> */
-
-.         collect style cell result[count], sformat("[%s]") /* Format count as whole number *
-> /
-
-.         
-. /* format factor variables (categorical) column 1 and column 2
-> 
->         collect style cell var[`frmt_catvar1']#result[column1], nformat(`nfrmt_freq')
-> 
->         collect style cell var[`frmt_catvar1']#result[column2], nformat(`nfrmt_perc') sform
-> at("(`sfrmt_perc')") /* Adds (%) to percent */
-> 
-> * format means variable column 1 and column 2
-> 
->         collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats c
-> ontinuous variable to one decimal*/
-> 
->         collect style cell var[`contn']#result[column2], nformat(`nfrmt_sd') sformat(`sfrmt
-> _sd') /* Formats continuous variable to one decimal*/
-> */
-. * Change font of results
-.         *collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats 
-> continuous variable to one decimal*/
-.         
-. * Add text
-.         collect title `title'
-
-.         collect notes `notes1'
-
-.         collect notes `notes2'
-
-.         collect notes `notes3'
-
-.         
-. collect preview
-
-Table . Radiology Measurements Adj by Weight
------------------------------------------------------------------------------------------
-                                        NPM                              PM              
------------------------------------------------------------------------------------------
-adj_wt_ct_pan_head_trans  [148]   0.042   (0.036- 0.049)   [139]   0.048   (0.038- 0.059)
-adj_wt_ct_pan_head_ap     [149]   0.041   (0.034- 0.048)   [141]   0.043   (0.038- 0.053)
-adj_wt_ct_pan_body_trans  [148]   0.032   (0.026- 0.038)   [141]   0.037   (0.031- 0.046)
-adj_wt_ct_pan_tail_trans  [149]   0.027   (0.023- 0.034)   [139]   0.032   (0.026- 0.041)
-adj_wt_ct_pan_body_tail   [102]   0.168   (0.144- 0.191)   [112]   0.174   (0.148- 0.199)
-adj_wt_ct_pan_vol         [101]   1.036   (0.858- 1.212)   [108]   1.072   (0.849- 1.439)
-adj_wt_pan_head_ap        [715]   0.034   (0.028- 0.042)   [832]   0.043   (0.035- 0.053)
-adj_wt_pan_head_trans     [635]   0.034   (0.028- 0.040)   [759]   0.037   (0.030- 0.046)
-adj_wt_pan_body_trans     [745]   0.020   (0.017- 0.026)   [858]   0.025   (0.020- 0.033)
-adj_wt_pan_tail_trans     [509]   0.020   (0.016- 0.032)   [687]   0.032   (0.024- 0.040)
------------------------------------------------------------------------------------------
-Values are [N] median (p25-p50).
-1621 contributing any ultrasound measurement.
-291 contributing any CT scan measurement.
-
-. 
-. * Save first collection with main stats
-. collect layout (var) (ever_mal#result[count column1 column4])
-
-Collection: c1
-      Rows: var
-   Columns: ever_mal#result[count column1 column4]
-   Table 1: 10 x 6
-
-Table . Radiology Measurements Adj by Weight
------------------------------------------------------------------------------------------
-                                        NPM                              PM              
------------------------------------------------------------------------------------------
-adj_wt_ct_pan_head_trans  [148]   0.042   (0.036- 0.049)   [139]   0.048   (0.038- 0.059)
-adj_wt_ct_pan_head_ap     [149]   0.041   (0.034- 0.048)   [141]   0.043   (0.038- 0.053)
-adj_wt_ct_pan_body_trans  [148]   0.032   (0.026- 0.038)   [141]   0.037   (0.031- 0.046)
-adj_wt_ct_pan_tail_trans  [149]   0.027   (0.023- 0.034)   [139]   0.032   (0.026- 0.041)
-adj_wt_ct_pan_body_tail   [102]   0.168   (0.144- 0.191)   [112]   0.174   (0.148- 0.199)
-adj_wt_ct_pan_vol         [101]   1.036   (0.858- 1.212)   [108]   1.072   (0.849- 1.439)
-adj_wt_pan_head_ap        [715]   0.034   (0.028- 0.042)   [832]   0.043   (0.035- 0.053)
-adj_wt_pan_head_trans     [635]   0.034   (0.028- 0.040)   [759]   0.037   (0.030- 0.046)
-adj_wt_pan_body_trans     [745]   0.020   (0.017- 0.026)   [858]   0.025   (0.020- 0.033)
-adj_wt_pan_tail_trans     [509]   0.020   (0.016- 0.032)   [687]   0.032   (0.024- 0.040)
------------------------------------------------------------------------------------------
-Values are [N] median (p25-p50).
-1621 contributing any ultrasound measurement.
-291 contributing any CT scan measurement.
-
-. collect save ./tables/uss1.json, replace
-(collection c1 saved to file ./tables/uss1.json)
-
-. 
-. * Create new collection for p-values
-. collect create c2
-(current collection is c2)
-
-. foreach v in `contmed' {
-  2.     quietly kwallis `v', by(`col')
-  3.     collect: mystats
-  4. }
-
-.    
-.             
-. 
-. * Remap cmdset to match var levels
-. collect recode cmdset 1 = adj_wt_ct_pan_head_trans
-(5 items recoded in collection c2)
-
-. collect recode cmdset 2 = adj_wt_ct_pan_head_ap
-(5 items recoded in collection c2)
-
-. collect recode cmdset 3 = adj_wt_ct_pan_body_trans
-(5 items recoded in collection c2)
-
-. collect recode cmdset 4 = adj_wt_ct_pan_tail_trans
-(5 items recoded in collection c2)
-
-. collect recode cmdset 5 = adj_wt_ct_pan_body_tail
-(5 items recoded in collection c2)
-
-. collect recode cmdset 6 = adj_wt_ct_pan_vol
-(5 items recoded in collection c2)
-
-. collect recode cmdset 7 = adj_wt_pan_head_ap
-(5 items recoded in collection c2)
-
-. collect recode cmdset 8 = adj_wt_pan_head_trans
-(5 items recoded in collection c2)
-
-. collect recode cmdset 9 = adj_wt_pan_body_trans
-(5 items recoded in collection c2)
-
-. collect recode cmdset 10 = adj_wt_pan_tail_trans
-(5 items recoded in collection c2)
-
-. 
-. collect remap cmdset = var
-(50 items remapped in collection c2)
-
-. 
-. * Combine collections
-. collect combine c3 = c1 c2
-(current collection is c3)
-
-. 
-. * Create layout for combined collection
-. collect layout (var) (ever_mal#result[count column1 column4] result[p])   
-
-Collection: c3
-      Rows: var
-   Columns: ever_mal#result[count column1 column4] result[p]
-   Table 1: 10 x 7
-
-Table . Radiology Measurements Adj by Weight
----------------------------------------------------------------------------------------------------
-                                        NPM                              PM                        
----------------------------------------------------------------------------------------------------
-adj_wt_ct_pan_head_trans  [148]   0.042   (0.036- 0.049)   [139]   0.048   (0.038- 0.059)   p=0.000
-adj_wt_ct_pan_head_ap     [149]   0.041   (0.034- 0.048)   [141]   0.043   (0.038- 0.053)   p=0.001
-adj_wt_ct_pan_body_trans  [148]   0.032   (0.026- 0.038)   [141]   0.037   (0.031- 0.046)   p=0.000
-adj_wt_ct_pan_tail_trans  [149]   0.027   (0.023- 0.034)   [139]   0.032   (0.026- 0.041)   p=0.000
-adj_wt_ct_pan_body_tail   [102]   0.168   (0.144- 0.191)   [112]   0.174   (0.148- 0.199)   p=0.067
-adj_wt_ct_pan_vol         [101]   1.036   (0.858- 1.212)   [108]   1.072   (0.849- 1.439)   p=0.101
-adj_wt_pan_head_ap        [715]   0.034   (0.028- 0.042)   [832]   0.043   (0.035- 0.053)   p=0.000
-adj_wt_pan_head_trans     [635]   0.034   (0.028- 0.040)   [759]   0.037   (0.030- 0.046)   p=0.000
-adj_wt_pan_body_trans     [745]   0.020   (0.017- 0.026)   [858]   0.025   (0.020- 0.033)   p=0.000
-adj_wt_pan_tail_trans     [509]   0.020   (0.016- 0.032)   [687]   0.032   (0.024- 0.040)   p=0.000
----------------------------------------------------------------------------------------------------
-Values are [N] median (p25-p50).
-1621 contributing any ultrasound measurement.
-291 contributing any CT scan measurement.
-
-.    
-. 
-. 
-. collect save ./tables/adjusted, replace 
-(collection c3 saved to file ./tables/adjusted.stjson)
-
-. * Export combined table
-. collect export ./tables/adjusted.html, as(html) replace
-(collection c3 exported to file ./tables/adjusted.html)
-
-. html2docx ./tables/adjusted.html , saving(adjusted.docx) replace
-successfully converted "/Users/juansolon/Documents/GitHub/sampa-radio/adjusted.docx"
-
-. collect export ./tables/adjusted.docx, as(docx) replace
-(collection c3 exported to file ./tables/adjusted.docx)
-
-. collect export ./tables/adjusted.xlsx, as(xlsx) replace
-(collection c3 exported to file ./tables/adjusted.xlsx)
-
-. 
-. 
-. 
-. 
-. /* END END END END END END END END END END END END END END END END END END END END */
-.         
-. 
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
-
-. /* table_uss_unadjusted_bivariate.do 
-> J Solon
-> Sampa
-> March19 
-> 
-> Creates n median iqr and p values of var
-> kwallis p value
-> di chi2tail(r(df),r(chi2))
-> 
-> */
-. 
-. 
-. cap prog drop mystats
-
-. program mystats, rclass
-  1. return scalar p_adj= chi2tail(r(df), r(chi2_adj))
-  2. return scalar Chi2_adj =  r(chi2_adj)
-  3. return scalar  DF =  r(df)
-  4. return scalar p= chi2tail(r(df), r(chi2))
-  5. return scalar  Chi2 =   r(chi2)
-  6. end
-
-. 
-. collect clear
-
-. 
-. local col "ever_mal"
-
-. local contmed "adj_wt_ct_pan_head_trans adj_wt_ct_pan_head_ap adj_wt_ct_pan_body_trans adj_
-> wt_ct_pan_tail_trans adj_wt_ct_pan_body_tail adj_wt_ct_pan_vol adj_wt_pan_head_ap adj_wt_pa
-> n_head_trans adj_wt_pan_body_trans adj_wt_pan_tail_trans"  /*continous variables; median (p
-> 25-p75)  will be reported*/
-
-. 
-. local colhead2 `"0 "NPM" 1 "PM""'
-
-.                 
-. * format median of `contmed'
-. local nfrmt_p50 "%5.3f"
-
-. local nfrmt_iqr "%5.3f"
-
-. local sfrmt_p25 "(%s-"
-
-. local sfrmt_p75 "%s)"
-
-. 
-. local title "Table . Radiology Measurements Adj by Weight"
-
-. count if radio3 ==1
-  1,621
-
-. local obs_uss = r(N)
-
-. di `obs_uss'
-1621
-
-. count if ct2 ==1
-  291
-
-. local obs_ct = r(N)
-
-. di `obs_ct'
-291
-
-. local notes1 "Values are [N] median (p25-p75)."
-
-. local notes2 "`obs_uss' contributing any ultrasound measurement."
-
-. local notes3 "`obs_ct' contributing any CT scan measurement."
-
-. 
-. 
-. * STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  S
-> TOP !  STOP !  STOP !  
-. * THERE IS NOTHING TO MODIFY BEYOND THIS LINE UNLESS CHANGING CODE. 
-. 
-. * GENERATE TABLE STATS 
-. 
-.         table (var)(`col')  , ///
->                 stat(frequency) ///
->                 stat(count `contmed') ///
->                 stat(p50 `contmed') ///
->                 stat(p25 `contmed') ///
->                 stat(p75 `contmed') ///
->                 nototal
-
-----------------------------------------------------------------
-                              |   Ever experience malnutrition? 
-                              |             NPM               PM
-------------------------------+---------------------------------
-Frequency                     |           1,101            1,021
-adj_wt_ct_pan_head_trans      |                                 
-  Number of nonmissing values |             148              139
-  50th percentile             |        .0415808         .0478182
-  25th percentile             |        .0358704         .0380494
-  75th percentile             |        .0487101         .0594378
-adj_wt_ct_pan_head_ap         |                                 
-  Number of nonmissing values |             149              141
-  50th percentile             |        .0409165         .0434638
-  25th percentile             |        .0341772         .0383475
-  75th percentile             |        .0480384          .053286
-adj_wt_ct_pan_body_trans      |                                 
-  Number of nonmissing values |             148              141
-  50th percentile             |        .0322719         .0365724
-  25th percentile             |        .0264048          .030678
-  75th percentile             |        .0378128         .0459502
-adj_wt_ct_pan_tail_trans      |                                 
-  Number of nonmissing values |             149              139
-  50th percentile             |         .027248         .0317568
-  25th percentile             |        .0225776         .0260188
-  75th percentile             |        .0337152         .0408397
-adj_wt_ct_pan_body_tail       |                                 
-  Number of nonmissing values |             102              112
-  50th percentile             |        .1677179         .1743133
-  25th percentile             |        .1441358         .1479615
-  75th percentile             |        .1913732         .1990182
-adj_wt_ct_pan_vol             |                                 
-  Number of nonmissing values |             101              108
-  50th percentile             |        1.035782          1.07195
-  25th percentile             |        .8579786         .8487658
-  75th percentile             |        1.212234         1.438702
-adj_wt_pan_head_ap            |                                 
-  Number of nonmissing values |             715              832
-  50th percentile             |        .0338684         .0432393
-  25th percentile             |        .0284433         .0349846
-  75th percentile             |        .0422562         .0530595
-adj_wt_pan_head_trans         |                                 
-  Number of nonmissing values |             635              759
-  50th percentile             |        .0336039         .0372839
-  25th percentile             |        .0282486              .03
-  75th percentile             |        .0400259         .0460803
-adj_wt_pan_body_trans         |                                 
-  Number of nonmissing values |             745              858
-  50th percentile             |        .0201342         .0254555
-  25th percentile             |        .0168242         .0198113
-  75th percentile             |        .0260823         .0332362
-adj_wt_pan_tail_trans         |                                 
-  Number of nonmissing values |             509              687
-  50th percentile             |        .0203625         .0321759
-  25th percentile             |        .0162826         .0238284
-  75th percentile             |        .0315126         .0397701
-----------------------------------------------------------------
-
-.                 
-. collect rename Table c1
-(current collection is c1)
-
-.                 
-. *REFORMAT RESULTS TO DESIRED COLUMNS
-.                 
-.         * recodes median and iqr
-.                 collect recode result p50 = column1
-(20 items recoded in collection c1)
-
-.                 collect recode result p25 = column2
-(20 items recoded in collection c1)
-
-.                 collect recode result p75 = column3
-(20 items recoded in collection c1)
-
-.                 
-.         * Create composite result : this is needed because 75 is in column3 and we want it 
-> in the same column as column 2 .  Use for medians and probably CIs
-.                 collect composite define column4 = column2 column3, replace
-
-. 
-.         * Calculate p-values from chi2 and df
-.         foreach v in `contmed' {
-  2.                 quietly kwallis `v', by(`col')
-  3.                 collect: mystats
-  4.         }
-
-. 
-.         
-. * CREATE THE TABLE 1 Layout Super column - column 
-. 
-.         collect layout (var) (ever_mal#result[count column1 column4])
-
-Collection: c1
-      Rows: var
-   Columns: ever_mal#result[count column1 column4]
-   Table 1: 10 x 6
-
------------------------------------------------------------------------------------------------------------------------------------------------------
-                         |                                                Ever experience malnutrition?                                              
-                         |                              NPM                                                            PM                            
-                         |  Number of nonmissing values    column1      column2 column3   Number of nonmissing values    column1      column2 column3
--------------------------+---------------------------------------------------------------------------------------------------------------------------
-adj_wt_ct_pan_head_trans |                          148   .0415808   .0358704  .0487101                           139   .0478182   .0380494  .0594378
-adj_wt_ct_pan_head_ap    |                          149   .0409165   .0341772  .0480384                           141   .0434638   .0383475   .053286
-adj_wt_ct_pan_body_trans |                          148   .0322719   .0264048  .0378128                           141   .0365724    .030678  .0459502
-adj_wt_ct_pan_tail_trans |                          149    .027248   .0225776  .0337152                           139   .0317568   .0260188  .0408397
-adj_wt_ct_pan_body_tail  |                          102   .1677179   .1441358  .1913732                           112   .1743133   .1479615  .1990182
-adj_wt_ct_pan_vol        |                          101   1.035782   .8579786  1.212234                           108    1.07195   .8487658  1.438702
-adj_wt_pan_head_ap       |                          715   .0338684   .0284433  .0422562                           832   .0432393   .0349846  .0530595
-adj_wt_pan_head_trans    |                          635   .0336039   .0282486  .0400259                           759   .0372839        .03  .0460803
-adj_wt_pan_body_trans    |                          745   .0201342   .0168242  .0260823                           858   .0254555   .0198113  .0332362
-adj_wt_pan_tail_trans    |                          509   .0203625   .0162826  .0315126                           687   .0321759   .0238284  .0397701
------------------------------------------------------------------------------------------------------------------------------------------------------
-
-. 
-. * Format p-values
-.         collect style cell result[p], nformat("%5.3f")
-
-.         collect style cell result[p], sformat("p=%s")
-
-. 
-. * CHANGE HEADER TEXT
-.         * column
-.                 collect label levels `col' `colhead2', modify
-
-. 
-. collect preview /* preview changes */
-
------------------------------------------------------------------------------------------------------------------------------------------------------
-                         |                                                Ever experience malnutrition?                                              
-                         |                              NPM                                                            PM                            
-                         |  Number of nonmissing values    column1      column2 column3   Number of nonmissing values    column1      column2 column3
--------------------------+---------------------------------------------------------------------------------------------------------------------------
-adj_wt_ct_pan_head_trans |                          148   .0415808   .0358704  .0487101                           139   .0478182   .0380494  .0594378
-adj_wt_ct_pan_head_ap    |                          149   .0409165   .0341772  .0480384                           141   .0434638   .0383475   .053286
-adj_wt_ct_pan_body_trans |                          148   .0322719   .0264048  .0378128                           141   .0365724    .030678  .0459502
-adj_wt_ct_pan_tail_trans |                          149    .027248   .0225776  .0337152                           139   .0317568   .0260188  .0408397
-adj_wt_ct_pan_body_tail  |                          102   .1677179   .1441358  .1913732                           112   .1743133   .1479615  .1990182
-adj_wt_ct_pan_vol        |                          101   1.035782   .8579786  1.212234                           108    1.07195   .8487658  1.438702
-adj_wt_pan_head_ap       |                          715   .0338684   .0284433  .0422562                           832   .0432393   .0349846  .0530595
-adj_wt_pan_head_trans    |                          635   .0336039   .0282486  .0400259                           759   .0372839        .03  .0460803
-adj_wt_pan_body_trans    |                          745   .0201342   .0168242  .0260823                           858   .0254555   .0198113  .0332362
-adj_wt_pan_tail_trans    |                          509   .0203625   .0162826  .0315126                           687   .0321759   .0238284  .0397701
------------------------------------------------------------------------------------------------------------------------------------------------------
-
-. 
-. * HIDE COLUMN HEADERS
-. 
-.         * Hide supercolumn variable name because it is self-descriptive
-.                 
-.         *       collect style header `scol', title(hide) /* this removes the column variabl
-> e name or label by hiding it */
-. 
-.         * Hide the column variable name 
-.                 
-.                 collect style header `col', title(hide) /* this removes the column variable
->  name or label by hiding it */
-
-. 
-.         * Hide the words column 1 and column 2 for the results 
-. 
-.                 collect style header result, level(hide) /* this removes column 1 and colum
-> n2 header names*/
-
-. 
-. collect preview /* preview changes */
-
------------------------------------------------------------------------------------------------------
-                         |                  NPM                                    PM                
--------------------------+---------------------------------------------------------------------------
-adj_wt_ct_pan_head_trans |  148   .0415808   .0358704  .0487101   139   .0478182   .0380494  .0594378
-adj_wt_ct_pan_head_ap    |  149   .0409165   .0341772  .0480384   141   .0434638   .0383475   .053286
-adj_wt_ct_pan_body_trans |  148   .0322719   .0264048  .0378128   141   .0365724    .030678  .0459502
-adj_wt_ct_pan_tail_trans |  149    .027248   .0225776  .0337152   139   .0317568   .0260188  .0408397
-adj_wt_ct_pan_body_tail  |  102   .1677179   .1441358  .1913732   112   .1743133   .1479615  .1990182
-adj_wt_ct_pan_vol        |  101   1.035782   .8579786  1.212234   108    1.07195   .8487658  1.438702
-adj_wt_pan_head_ap       |  715   .0338684   .0284433  .0422562   832   .0432393   .0349846  .0530595
-adj_wt_pan_head_trans    |  635   .0336039   .0282486  .0400259   759   .0372839        .03  .0460803
-adj_wt_pan_body_trans    |  745   .0201342   .0168242  .0260823   858   .0254555   .0198113  .0332362
-adj_wt_pan_tail_trans    |  509   .0203625   .0162826  .0315126   687   .0321759   .0238284  .0397701
------------------------------------------------------------------------------------------------------
-
-. 
-. * MODIFY ROW TEXT
-. 
-. 
-. * REVISE ROW STYLES
-. 
-. * Stack levels of each variable , place a space between variables (spacer) ; 
-. 
-.         collect style row stack, nobinder spacer
-
-. 
-. * Remove vertical line after variables
-. 
-.         collect style cell border_block, border(right, pattern(nil))
-
-. 
-. * HIDE ROW Text
-. 
-. * Hide the variable names 
-. collect style header `hiderows', title(hide)
-
-. 
-. 
-. * FORMAT NUMBERS
-. 
-. * Format median
-. 
-.         collect style cell result[column1]#var[`contmed'], nformat(`nfrmt_p50')
-
-. 
-. * Add IQR formatting to p25 and p75 separately:
-.         collect style cell result[column2]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`s
-> frmt_p25'") /* formats iqr as (p25 - p75)*/
-
-.         collect style cell result[column3]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`s
-> frmt_p75'") 
-
-. 
-. * Format count column
-.         collect style cell result[count], nformat("%4.0f") /* Format count as whole number 
-> */
-
-.         collect style cell result[count], sformat("[%s]") /* Format count as whole number *
-> /
-
-.         
-. /* format factor variables (categorical) column 1 and column 2
-> 
->         collect style cell var[`frmt_catvar1']#result[column1], nformat(`nfrmt_freq')
-> 
->         collect style cell var[`frmt_catvar1']#result[column2], nformat(`nfrmt_perc') sform
-> at("(`sfrmt_perc')") /* Adds (%) to percent */
-> 
-> * format means variable column 1 and column 2
-> 
->         collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats c
-> ontinuous variable to one decimal*/
-> 
->         collect style cell var[`contn']#result[column2], nformat(`nfrmt_sd') sformat(`sfrmt
-> _sd') /* Formats continuous variable to one decimal*/
-> */
-. * Change font of results
-.         *collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats 
-> continuous variable to one decimal*/
-.         
-. * Add text
-.         collect title `title'
-
-.         collect notes `notes1'
-
-.         collect notes `notes2'
-
-.         collect notes `notes3'
-
-.         
-. collect preview
-
-Table . Radiology Measurements Adj by Weight
------------------------------------------------------------------------------------------
-                                        NPM                              PM              
------------------------------------------------------------------------------------------
-adj_wt_ct_pan_head_trans  [148]   0.042   (0.036- 0.049)   [139]   0.048   (0.038- 0.059)
-adj_wt_ct_pan_head_ap     [149]   0.041   (0.034- 0.048)   [141]   0.043   (0.038- 0.053)
-adj_wt_ct_pan_body_trans  [148]   0.032   (0.026- 0.038)   [141]   0.037   (0.031- 0.046)
-adj_wt_ct_pan_tail_trans  [149]   0.027   (0.023- 0.034)   [139]   0.032   (0.026- 0.041)
-adj_wt_ct_pan_body_tail   [102]   0.168   (0.144- 0.191)   [112]   0.174   (0.148- 0.199)
-adj_wt_ct_pan_vol         [101]   1.036   (0.858- 1.212)   [108]   1.072   (0.849- 1.439)
-adj_wt_pan_head_ap        [715]   0.034   (0.028- 0.042)   [832]   0.043   (0.035- 0.053)
-adj_wt_pan_head_trans     [635]   0.034   (0.028- 0.040)   [759]   0.037   (0.030- 0.046)
-adj_wt_pan_body_trans     [745]   0.020   (0.017- 0.026)   [858]   0.025   (0.020- 0.033)
-adj_wt_pan_tail_trans     [509]   0.020   (0.016- 0.032)   [687]   0.032   (0.024- 0.040)
------------------------------------------------------------------------------------------
-Values are [N] median (p25-p75).
-1621 contributing any ultrasound measurement.
-291 contributing any CT scan measurement.
-
-. 
-. * Save first collection with main stats
-. collect layout (var) (ever_mal#result[count column1 column4])
-
-Collection: c1
-      Rows: var
-   Columns: ever_mal#result[count column1 column4]
-   Table 1: 10 x 6
-
-Table . Radiology Measurements Adj by Weight
------------------------------------------------------------------------------------------
-                                        NPM                              PM              
------------------------------------------------------------------------------------------
-adj_wt_ct_pan_head_trans  [148]   0.042   (0.036- 0.049)   [139]   0.048   (0.038- 0.059)
-adj_wt_ct_pan_head_ap     [149]   0.041   (0.034- 0.048)   [141]   0.043   (0.038- 0.053)
-adj_wt_ct_pan_body_trans  [148]   0.032   (0.026- 0.038)   [141]   0.037   (0.031- 0.046)
-adj_wt_ct_pan_tail_trans  [149]   0.027   (0.023- 0.034)   [139]   0.032   (0.026- 0.041)
-adj_wt_ct_pan_body_tail   [102]   0.168   (0.144- 0.191)   [112]   0.174   (0.148- 0.199)
-adj_wt_ct_pan_vol         [101]   1.036   (0.858- 1.212)   [108]   1.072   (0.849- 1.439)
-adj_wt_pan_head_ap        [715]   0.034   (0.028- 0.042)   [832]   0.043   (0.035- 0.053)
-adj_wt_pan_head_trans     [635]   0.034   (0.028- 0.040)   [759]   0.037   (0.030- 0.046)
-adj_wt_pan_body_trans     [745]   0.020   (0.017- 0.026)   [858]   0.025   (0.020- 0.033)
-adj_wt_pan_tail_trans     [509]   0.020   (0.016- 0.032)   [687]   0.032   (0.024- 0.040)
------------------------------------------------------------------------------------------
-Values are [N] median (p25-p75).
-1621 contributing any ultrasound measurement.
-291 contributing any CT scan measurement.
-
-. collect save ./tables/uss1.json, replace
-(collection c1 saved to file ./tables/uss1.json)
-
-. 
-. * Create new collection for p-values
-. collect create c2
-(current collection is c2)
-
-. foreach v in `contmed' {
-  2.     quietly kwallis `v', by(`col')
-  3.     collect: mystats
-  4. }
-
-.    
-.             
-. 
-. * Remap cmdset to match var levels
-. collect recode cmdset 1 = adj_wt_ct_pan_head_trans
-(5 items recoded in collection c2)
-
-. collect recode cmdset 2 = adj_wt_ct_pan_head_ap
-(5 items recoded in collection c2)
-
-. collect recode cmdset 3 = adj_wt_ct_pan_body_trans
-(5 items recoded in collection c2)
-
-. collect recode cmdset 4 = adj_wt_ct_pan_tail_trans
-(5 items recoded in collection c2)
-
-. collect recode cmdset 5 = adj_wt_ct_pan_body_tail
-(5 items recoded in collection c2)
-
-. collect recode cmdset 6 = adj_wt_ct_pan_vol
-(5 items recoded in collection c2)
-
-. collect recode cmdset 7 = adj_wt_pan_head_ap
-(5 items recoded in collection c2)
-
-. collect recode cmdset 8 = adj_wt_pan_head_trans
-(5 items recoded in collection c2)
-
-. collect recode cmdset 9 = adj_wt_pan_body_trans
-(5 items recoded in collection c2)
-
-. collect recode cmdset 10 = adj_wt_pan_tail_trans
-(5 items recoded in collection c2)
-
-. 
-. collect remap cmdset = var
-(50 items remapped in collection c2)
-
-. 
-. * Combine collections
-. collect combine c3 = c1 c2
-(current collection is c3)
-
-. 
-. * Create layout for combined collection
-. collect layout (var) (ever_mal#result[count column1 column4] result[p])   
-
-Collection: c3
-      Rows: var
-   Columns: ever_mal#result[count column1 column4] result[p]
-   Table 1: 10 x 7
-
-Table . Radiology Measurements Adj by Weight
----------------------------------------------------------------------------------------------------
-                                        NPM                              PM                        
----------------------------------------------------------------------------------------------------
-adj_wt_ct_pan_head_trans  [148]   0.042   (0.036- 0.049)   [139]   0.048   (0.038- 0.059)   p=0.000
-adj_wt_ct_pan_head_ap     [149]   0.041   (0.034- 0.048)   [141]   0.043   (0.038- 0.053)   p=0.001
-adj_wt_ct_pan_body_trans  [148]   0.032   (0.026- 0.038)   [141]   0.037   (0.031- 0.046)   p=0.000
-adj_wt_ct_pan_tail_trans  [149]   0.027   (0.023- 0.034)   [139]   0.032   (0.026- 0.041)   p=0.000
-adj_wt_ct_pan_body_tail   [102]   0.168   (0.144- 0.191)   [112]   0.174   (0.148- 0.199)   p=0.067
-adj_wt_ct_pan_vol         [101]   1.036   (0.858- 1.212)   [108]   1.072   (0.849- 1.439)   p=0.101
-adj_wt_pan_head_ap        [715]   0.034   (0.028- 0.042)   [832]   0.043   (0.035- 0.053)   p=0.000
-adj_wt_pan_head_trans     [635]   0.034   (0.028- 0.040)   [759]   0.037   (0.030- 0.046)   p=0.000
-adj_wt_pan_body_trans     [745]   0.020   (0.017- 0.026)   [858]   0.025   (0.020- 0.033)   p=0.000
-adj_wt_pan_tail_trans     [509]   0.020   (0.016- 0.032)   [687]   0.032   (0.024- 0.040)   p=0.000
----------------------------------------------------------------------------------------------------
-Values are [N] median (p25-p75).
-1621 contributing any ultrasound measurement.
-291 contributing any CT scan measurement.
-
-.    
-. 
-. 
-. collect save ./tables/adjusted, replace 
-(collection c3 saved to file ./tables/adjusted.stjson)
-
-. * Export combined table
-. collect export ./tables/adjusted.html, as(html) replace
-(collection c3 exported to file ./tables/adjusted.html)
-
-. html2docx ./tables/adjusted.html , saving(adjusted.docx) replace
-successfully converted "/Users/juansolon/Documents/GitHub/sampa-radio/adjusted.docx"
-
-. collect export ./tables/adjusted.docx, as(docx) replace
-(collection c3 exported to file ./tables/adjusted.docx)
-
-. collect export ./tables/adjusted.xlsx, as(xlsx) replace
-(collection c3 exported to file ./tables/adjusted.xlsx)
-
-. 
-. 
-. 
-. 
-. /* END END END END END END END END END END END END END END END END END END END END */
-.         
-. 
-. 
-end of do-file
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
-
-. /* table_uss_unadjusted_bivariate.do 
-> J Solon
-> Sampa
-> March19 
-> 
-> Creates n median iqr and p values of var
-> kwallis p value
-> di chi2tail(r(df),r(chi2))
-> 
-> */
-. 
-. 
-. cap prog drop mystats
-
-. program mystats, rclass
-  1. return scalar p_adj= chi2tail(r(df), r(chi2_adj))
-  2. return scalar Chi2_adj =  r(chi2_adj)
-  3. return scalar  DF =  r(df)
-  4. return scalar p= chi2tail(r(df), r(chi2))
-  5. return scalar  Chi2 =   r(chi2)
-  6. end
-
-. 
-. collect clear
-
-. 
-. local col "ever_mal"
-
-. local contmed "adj_wt_ct_pan_head_trans adj_wt_ct_pan_head_ap adj_wt_ct_pan_body_trans adj_
-> wt_ct_pan_tail_trans adj_wt_ct_pan_body_tail adj_wt_ct_pan_vol adj_wt_pan_head_ap adj_wt_pa
-> n_head_trans adj_wt_pan_body_trans adj_wt_pan_tail_trans"  /*continous variables; median (p
-> 25-p75)  will be reported*/
-
-. 
-. local colhead2 `"0 "NPM" 1 "PM""'
-
-.                 
-. * format median of `contmed'
-. local nfrmt_p50 "%5.3f"
-
-. local nfrmt_iqr "%5.3f"
-
-. local sfrmt_p25 "(%s-"
-
-. local sfrmt_p75 "%s)"
-
-. 
-. local title "Table . Radiology Measurements Adj by Weight"
-
-. count if radio3 ==1
-  1,621
-
-. local obs_uss = r(N)
-
-. di `obs_uss'
-1621
-
-. count if ct2 ==1
-  291
-
-. local obs_ct = r(N)
-
-. di `obs_ct'
-291
-
-. local notes1 "Values are [N] median (p25-p75)."
-
-. local notes2 "`obs_uss' contributing any ultrasound measurement."
-
-. local notes3 "`obs_ct' contributing any CT scan measurement."
-
-. 
-. 
-. * STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  STOP !  S
-> TOP !  STOP !  STOP !  
-. * THERE IS NOTHING TO MODIFY BEYOND THIS LINE UNLESS CHANGING CODE. 
-. 
-. * GENERATE TABLE STATS 
-. 
-.         table (var)(`col')  , ///
->                 stat(frequency) ///
->                 stat(count `contmed') ///
->                 stat(p50 `contmed') ///
->                 stat(p25 `contmed') ///
->                 stat(p75 `contmed') ///
->                 nototal
-
-----------------------------------------------------------------
-                              |   Ever experience malnutrition? 
-                              |             NPM               PM
-------------------------------+---------------------------------
-Frequency                     |           1,101            1,021
-adj_wt_ct_pan_head_trans      |                                 
-  Number of nonmissing values |             148              139
-  50th percentile             |        .0415808         .0478182
-  25th percentile             |        .0358704         .0380494
-  75th percentile             |        .0487101         .0594378
-adj_wt_ct_pan_head_ap         |                                 
-  Number of nonmissing values |             149              141
-  50th percentile             |        .0409165         .0434638
-  25th percentile             |        .0341772         .0383475
-  75th percentile             |        .0480384          .053286
-adj_wt_ct_pan_body_trans      |                                 
-  Number of nonmissing values |             148              141
-  50th percentile             |        .0322719         .0365724
-  25th percentile             |        .0264048          .030678
-  75th percentile             |        .0378128         .0459502
-adj_wt_ct_pan_tail_trans      |                                 
-  Number of nonmissing values |             149              139
-  50th percentile             |         .027248         .0317568
-  25th percentile             |        .0225776         .0260188
-  75th percentile             |        .0337152         .0408397
-adj_wt_ct_pan_body_tail       |                                 
-  Number of nonmissing values |             102              112
-  50th percentile             |        .1677179         .1743133
-  25th percentile             |        .1441358         .1479615
-  75th percentile             |        .1913732         .1990182
-adj_wt_ct_pan_vol             |                                 
-  Number of nonmissing values |             101              108
-  50th percentile             |        1.035782          1.07195
-  25th percentile             |        .8579786         .8487658
-  75th percentile             |        1.212234         1.438702
-adj_wt_pan_head_ap            |                                 
-  Number of nonmissing values |             715              832
-  50th percentile             |        .0338684         .0432393
-  25th percentile             |        .0284433         .0349846
-  75th percentile             |        .0422562         .0530595
-adj_wt_pan_head_trans         |                                 
-  Number of nonmissing values |             635              759
-  50th percentile             |        .0336039         .0372839
-  25th percentile             |        .0282486              .03
-  75th percentile             |        .0400259         .0460803
-adj_wt_pan_body_trans         |                                 
-  Number of nonmissing values |             745              858
-  50th percentile             |        .0201342         .0254555
-  25th percentile             |        .0168242         .0198113
-  75th percentile             |        .0260823         .0332362
-adj_wt_pan_tail_trans         |                                 
-  Number of nonmissing values |             509              687
-  50th percentile             |        .0203625         .0321759
-  25th percentile             |        .0162826         .0238284
-  75th percentile             |        .0315126         .0397701
-----------------------------------------------------------------
-
-.                 
-. collect rename Table c1
-(current collection is c1)
-
-.                 
-. *REFORMAT RESULTS TO DESIRED COLUMNS
-.                 
-.         * recodes median and iqr
-.                 collect recode result p50 = column1
-(20 items recoded in collection c1)
-
-.                 collect recode result p25 = column2
-(20 items recoded in collection c1)
-
-.                 collect recode result p75 = column3
-(20 items recoded in collection c1)
-
-.                 
-.         * Create composite result : this is needed because 75 is in column3 and we want it 
-> in the same column as column 2 .  Use for medians and probably CIs
-.                 collect composite define column4 = column2 column3, replace
-
-. 
-.         * Calculate p-values from chi2 and df
-.         foreach v in `contmed' {
-  2.                 quietly kwallis `v', by(`col')
-  3.                 collect: mystats
-  4.         }
-
-. 
-.         
-. * CREATE THE TABLE 1 Layout Super column - column 
-. 
-.         collect layout (var) (ever_mal#result[count column1 column4])
-
-Collection: c1
-      Rows: var
-   Columns: ever_mal#result[count column1 column4]
-   Table 1: 10 x 6
-
------------------------------------------------------------------------------------------------------------------------------------------------------
-                         |                                                Ever experience malnutrition?                                              
-                         |                              NPM                                                            PM                            
-                         |  Number of nonmissing values    column1      column2 column3   Number of nonmissing values    column1      column2 column3
--------------------------+---------------------------------------------------------------------------------------------------------------------------
-adj_wt_ct_pan_head_trans |                          148   .0415808   .0358704  .0487101                           139   .0478182   .0380494  .0594378
-adj_wt_ct_pan_head_ap    |                          149   .0409165   .0341772  .0480384                           141   .0434638   .0383475   .053286
-adj_wt_ct_pan_body_trans |                          148   .0322719   .0264048  .0378128                           141   .0365724    .030678  .0459502
-adj_wt_ct_pan_tail_trans |                          149    .027248   .0225776  .0337152                           139   .0317568   .0260188  .0408397
-adj_wt_ct_pan_body_tail  |                          102   .1677179   .1441358  .1913732                           112   .1743133   .1479615  .1990182
-adj_wt_ct_pan_vol        |                          101   1.035782   .8579786  1.212234                           108    1.07195   .8487658  1.438702
-adj_wt_pan_head_ap       |                          715   .0338684   .0284433  .0422562                           832   .0432393   .0349846  .0530595
-adj_wt_pan_head_trans    |                          635   .0336039   .0282486  .0400259                           759   .0372839        .03  .0460803
-adj_wt_pan_body_trans    |                          745   .0201342   .0168242  .0260823                           858   .0254555   .0198113  .0332362
-adj_wt_pan_tail_trans    |                          509   .0203625   .0162826  .0315126                           687   .0321759   .0238284  .0397701
------------------------------------------------------------------------------------------------------------------------------------------------------
-
-. 
-. * Format p-values
-.         collect style cell result[p], nformat("%5.3f")
-
-.         collect style cell result[p], sformat("p=%s")
-
-. 
-. * CHANGE HEADER TEXT
-.         * column
-.                 collect label levels `col' `colhead2', modify
-
-. 
-. collect preview /* preview changes */
-
------------------------------------------------------------------------------------------------------------------------------------------------------
-                         |                                                Ever experience malnutrition?                                              
-                         |                              NPM                                                            PM                            
-                         |  Number of nonmissing values    column1      column2 column3   Number of nonmissing values    column1      column2 column3
--------------------------+---------------------------------------------------------------------------------------------------------------------------
-adj_wt_ct_pan_head_trans |                          148   .0415808   .0358704  .0487101                           139   .0478182   .0380494  .0594378
-adj_wt_ct_pan_head_ap    |                          149   .0409165   .0341772  .0480384                           141   .0434638   .0383475   .053286
-adj_wt_ct_pan_body_trans |                          148   .0322719   .0264048  .0378128                           141   .0365724    .030678  .0459502
-adj_wt_ct_pan_tail_trans |                          149    .027248   .0225776  .0337152                           139   .0317568   .0260188  .0408397
-adj_wt_ct_pan_body_tail  |                          102   .1677179   .1441358  .1913732                           112   .1743133   .1479615  .1990182
-adj_wt_ct_pan_vol        |                          101   1.035782   .8579786  1.212234                           108    1.07195   .8487658  1.438702
-adj_wt_pan_head_ap       |                          715   .0338684   .0284433  .0422562                           832   .0432393   .0349846  .0530595
-adj_wt_pan_head_trans    |                          635   .0336039   .0282486  .0400259                           759   .0372839        .03  .0460803
-adj_wt_pan_body_trans    |                          745   .0201342   .0168242  .0260823                           858   .0254555   .0198113  .0332362
-adj_wt_pan_tail_trans    |                          509   .0203625   .0162826  .0315126                           687   .0321759   .0238284  .0397701
------------------------------------------------------------------------------------------------------------------------------------------------------
-
-. 
-. * HIDE COLUMN HEADERS
-. 
-.         * Hide supercolumn variable name because it is self-descriptive
-.                 
-.         *       collect style header `scol', title(hide) /* this removes the column variabl
-> e name or label by hiding it */
-. 
-.         * Hide the column variable name 
-.                 
-.                 collect style header `col', title(hide) /* this removes the column variable
->  name or label by hiding it */
-
-. 
-.         * Hide the words column 1 and column 2 for the results 
-. 
-.                 collect style header result, level(hide) /* this removes column 1 and colum
-> n2 header names*/
-
-. 
-. collect preview /* preview changes */
-
------------------------------------------------------------------------------------------------------
-                         |                  NPM                                    PM                
--------------------------+---------------------------------------------------------------------------
-adj_wt_ct_pan_head_trans |  148   .0415808   .0358704  .0487101   139   .0478182   .0380494  .0594378
-adj_wt_ct_pan_head_ap    |  149   .0409165   .0341772  .0480384   141   .0434638   .0383475   .053286
-adj_wt_ct_pan_body_trans |  148   .0322719   .0264048  .0378128   141   .0365724    .030678  .0459502
-adj_wt_ct_pan_tail_trans |  149    .027248   .0225776  .0337152   139   .0317568   .0260188  .0408397
-adj_wt_ct_pan_body_tail  |  102   .1677179   .1441358  .1913732   112   .1743133   .1479615  .1990182
-adj_wt_ct_pan_vol        |  101   1.035782   .8579786  1.212234   108    1.07195   .8487658  1.438702
-adj_wt_pan_head_ap       |  715   .0338684   .0284433  .0422562   832   .0432393   .0349846  .0530595
-adj_wt_pan_head_trans    |  635   .0336039   .0282486  .0400259   759   .0372839        .03  .0460803
-adj_wt_pan_body_trans    |  745   .0201342   .0168242  .0260823   858   .0254555   .0198113  .0332362
-adj_wt_pan_tail_trans    |  509   .0203625   .0162826  .0315126   687   .0321759   .0238284  .0397701
------------------------------------------------------------------------------------------------------
-
-. 
-. *** TABLE TEXT
-. 
-. * Table Styles
-.         collect style cell, font(Arial, size(11))
-
-.         collect style notes, font(Arial, size(11))
-
-. 
-. * Table title styles
-.         collect style title, font(Arial, size(11) bold)
-
-. 
-. * MODIFY ROW TEXT
-. 
-. 
-. * REVISE ROW STYLES
-. 
-. * Stack levels of each variable , place a space between variables (spacer) ; 
-. 
-.         collect style row stack, nobinder spacer
-
-. 
-. * Remove vertical line after variables
-. 
-.         collect style cell border_block, border(right, pattern(nil))
-
-. 
-. * HIDE ROW Text
-. 
-. * Hide the variable names 
-. collect style header `hiderows', title(hide)
-
-. 
-. 
-. * FORMAT NUMBERS
-. 
-. * Format median
-. 
-.         collect style cell result[column1]#var[`contmed'], nformat(`nfrmt_p50')
-
-. 
-. * Add IQR formatting to p25 and p75 separately:
-.         collect style cell result[column2]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`s
-> frmt_p25'") /* formats iqr as (p25 - p75)*/
-
-.         collect style cell result[column3]#var[`contmed'], nformat(`nfrmt_iqr') sformat("`s
-> frmt_p75'") 
-
-. 
-. * Format count column
-.         collect style cell result[count], nformat("%4.0f") /* Format count as whole number 
-> */
-
-.         collect style cell result[count], sformat("[%s]") /* Format count as whole number *
-> /
-
-.         
-. /* format factor variables (categorical) column 1 and column 2
-> 
->         collect style cell var[`frmt_catvar1']#result[column1], nformat(`nfrmt_freq')
-> 
->         collect style cell var[`frmt_catvar1']#result[column2], nformat(`nfrmt_perc') sform
-> at("(`sfrmt_perc')") /* Adds (%) to percent */
-> 
-> * format means variable column 1 and column 2
-> 
->         collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats c
-> ontinuous variable to one decimal*/
-> 
->         collect style cell var[`contn']#result[column2], nformat(`nfrmt_sd') sformat(`sfrmt
-> _sd') /* Formats continuous variable to one decimal*/
-> */
-. * Change font of results
-.         *collect style cell var[`contn']#result[column1], nformat(`nfrmt_mean') /* Formats 
-> continuous variable to one decimal*/
-.         
-. * Add text
-.         collect title `title'
-
-.         collect notes `notes1'
-
-.         collect notes `notes2'
-
-.         collect notes `notes3'
-
-.         
-. collect preview
-
-Table . Radiology Measurements Adj by Weight
------------------------------------------------------------------------------------------
-                                        NPM                              PM              
------------------------------------------------------------------------------------------
-adj_wt_ct_pan_head_trans  [148]   0.042   (0.036- 0.049)   [139]   0.048   (0.038- 0.059)
-adj_wt_ct_pan_head_ap     [149]   0.041   (0.034- 0.048)   [141]   0.043   (0.038- 0.053)
-adj_wt_ct_pan_body_trans  [148]   0.032   (0.026- 0.038)   [141]   0.037   (0.031- 0.046)
-adj_wt_ct_pan_tail_trans  [149]   0.027   (0.023- 0.034)   [139]   0.032   (0.026- 0.041)
-adj_wt_ct_pan_body_tail   [102]   0.168   (0.144- 0.191)   [112]   0.174   (0.148- 0.199)
-adj_wt_ct_pan_vol         [101]   1.036   (0.858- 1.212)   [108]   1.072   (0.849- 1.439)
-adj_wt_pan_head_ap        [715]   0.034   (0.028- 0.042)   [832]   0.043   (0.035- 0.053)
-adj_wt_pan_head_trans     [635]   0.034   (0.028- 0.040)   [759]   0.037   (0.030- 0.046)
-adj_wt_pan_body_trans     [745]   0.020   (0.017- 0.026)   [858]   0.025   (0.020- 0.033)
-adj_wt_pan_tail_trans     [509]   0.020   (0.016- 0.032)   [687]   0.032   (0.024- 0.040)
------------------------------------------------------------------------------------------
-Values are [N] median (p25-p75).
-1621 contributing any ultrasound measurement.
-291 contributing any CT scan measurement.
-
-. 
-. * Save first collection with main stats
-. collect layout (var) (ever_mal#result[count column1 column4])
-
-Collection: c1
-      Rows: var
-   Columns: ever_mal#result[count column1 column4]
-   Table 1: 10 x 6
-
-Table . Radiology Measurements Adj by Weight
------------------------------------------------------------------------------------------
-                                        NPM                              PM              
------------------------------------------------------------------------------------------
-adj_wt_ct_pan_head_trans  [148]   0.042   (0.036- 0.049)   [139]   0.048   (0.038- 0.059)
-adj_wt_ct_pan_head_ap     [149]   0.041   (0.034- 0.048)   [141]   0.043   (0.038- 0.053)
-adj_wt_ct_pan_body_trans  [148]   0.032   (0.026- 0.038)   [141]   0.037   (0.031- 0.046)
-adj_wt_ct_pan_tail_trans  [149]   0.027   (0.023- 0.034)   [139]   0.032   (0.026- 0.041)
-adj_wt_ct_pan_body_tail   [102]   0.168   (0.144- 0.191)   [112]   0.174   (0.148- 0.199)
-adj_wt_ct_pan_vol         [101]   1.036   (0.858- 1.212)   [108]   1.072   (0.849- 1.439)
-adj_wt_pan_head_ap        [715]   0.034   (0.028- 0.042)   [832]   0.043   (0.035- 0.053)
-adj_wt_pan_head_trans     [635]   0.034   (0.028- 0.040)   [759]   0.037   (0.030- 0.046)
-adj_wt_pan_body_trans     [745]   0.020   (0.017- 0.026)   [858]   0.025   (0.020- 0.033)
-adj_wt_pan_tail_trans     [509]   0.020   (0.016- 0.032)   [687]   0.032   (0.024- 0.040)
------------------------------------------------------------------------------------------
-Values are [N] median (p25-p75).
-1621 contributing any ultrasound measurement.
-291 contributing any CT scan measurement.
-
-. collect save ./tables/uss1.json, replace
-(collection c1 saved to file ./tables/uss1.json)
-
-. 
-. * Create new collection for p-values
-. collect create c2
-(current collection is c2)
-
-. foreach v in `contmed' {
-  2.     quietly kwallis `v', by(`col')
-  3.     collect: mystats
-  4. }
-
-.    
-.             
-. 
-. * Remap cmdset to match var levels
-. collect recode cmdset 1 = adj_wt_ct_pan_head_trans
-(5 items recoded in collection c2)
-
-. collect recode cmdset 2 = adj_wt_ct_pan_head_ap
-(5 items recoded in collection c2)
-
-. collect recode cmdset 3 = adj_wt_ct_pan_body_trans
-(5 items recoded in collection c2)
-
-. collect recode cmdset 4 = adj_wt_ct_pan_tail_trans
-(5 items recoded in collection c2)
-
-. collect recode cmdset 5 = adj_wt_ct_pan_body_tail
-(5 items recoded in collection c2)
-
-. collect recode cmdset 6 = adj_wt_ct_pan_vol
-(5 items recoded in collection c2)
-
-. collect recode cmdset 7 = adj_wt_pan_head_ap
-(5 items recoded in collection c2)
-
-. collect recode cmdset 8 = adj_wt_pan_head_trans
-(5 items recoded in collection c2)
-
-. collect recode cmdset 9 = adj_wt_pan_body_trans
-(5 items recoded in collection c2)
-
-. collect recode cmdset 10 = adj_wt_pan_tail_trans
-(5 items recoded in collection c2)
-
-. 
-. collect remap cmdset = var
-(50 items remapped in collection c2)
-
-. 
-. * Combine collections
-. collect combine c3 = c1 c2
-(current collection is c3)
-
-. 
-. * Create layout for combined collection
-. collect layout (var) (ever_mal#result[count column1 column4] result[p])   
-
-Collection: c3
-      Rows: var
-   Columns: ever_mal#result[count column1 column4] result[p]
-   Table 1: 10 x 7
-
-Table . Radiology Measurements Adj by Weight
----------------------------------------------------------------------------------------------------
-                                        NPM                              PM                        
----------------------------------------------------------------------------------------------------
-adj_wt_ct_pan_head_trans  [148]   0.042   (0.036- 0.049)   [139]   0.048   (0.038- 0.059)   p=0.000
-adj_wt_ct_pan_head_ap     [149]   0.041   (0.034- 0.048)   [141]   0.043   (0.038- 0.053)   p=0.001
-adj_wt_ct_pan_body_trans  [148]   0.032   (0.026- 0.038)   [141]   0.037   (0.031- 0.046)   p=0.000
-adj_wt_ct_pan_tail_trans  [149]   0.027   (0.023- 0.034)   [139]   0.032   (0.026- 0.041)   p=0.000
-adj_wt_ct_pan_body_tail   [102]   0.168   (0.144- 0.191)   [112]   0.174   (0.148- 0.199)   p=0.067
-adj_wt_ct_pan_vol         [101]   1.036   (0.858- 1.212)   [108]   1.072   (0.849- 1.439)   p=0.101
-adj_wt_pan_head_ap        [715]   0.034   (0.028- 0.042)   [832]   0.043   (0.035- 0.053)   p=0.000
-adj_wt_pan_head_trans     [635]   0.034   (0.028- 0.040)   [759]   0.037   (0.030- 0.046)   p=0.000
-adj_wt_pan_body_trans     [745]   0.020   (0.017- 0.026)   [858]   0.025   (0.020- 0.033)   p=0.000
-adj_wt_pan_tail_trans     [509]   0.020   (0.016- 0.032)   [687]   0.032   (0.024- 0.040)   p=0.000
----------------------------------------------------------------------------------------------------
-Values are [N] median (p25-p75).
-1621 contributing any ultrasound measurement.
-291 contributing any CT scan measurement.
-
-.    
-. 
-. 
-. collect save ./tables/adjusted, replace 
-(collection c3 saved to file ./tables/adjusted.stjson)
-
-. * Export combined table
-. collect export ./tables/adjusted.html, as(html) replace
-(collection c3 exported to file ./tables/adjusted.html)
-
-. html2docx ./tables/adjusted.html , saving(adjusted.docx) replace
-successfully converted "/Users/juansolon/Documents/GitHub/sampa-radio/adjusted.docx"
-
-. collect export ./tables/adjusted.docx, as(docx) replace
-(collection c3 exported to file ./tables/adjusted.docx)
-
-. collect export ./tables/adjusted.xlsx, as(xlsx) replace
-(collection c3 exported to file ./tables/adjusted.xlsx)
-
-. 
-. 
-. 
-. 
-. /* END END END END END END END END END END END END END END END END END END END END */
-.         
-. 
-. 
-end of do-file
-
-. d pan_head_ap adj_wt*
-
-Variable      Storage   Display    Value
-    name         type    format    label      Variable label
----------------------------------------------------------------------------------------------
-pan_head_ap     float   %9.0g                 Head, AP
-adj_wt_ct_pan.. float   %9.0g                 
-adj_wt_ct_pan~p float   %9.0g                 
-adj_wt_ct_pan.. float   %9.0g                 
-adj_wt_ct_pan.. float   %9.0g                 
-adj_wt_ct_pa~il float   %9.0g                 
-adj_wt_ct_pa~ol float   %9.0g                 
-adj_wt_pan_he~p float   %9.0g                 
-adj_wt_pan_he~s float   %9.0g                 
-adj_wt_pan_bo~s float   %9.0g                 
-adj_wt_pan_ta~s float   %9.0g                 
-
-. do "/var/folders/lh/z7glx7t90sxdbn12r3xcjr7h0000gq/T//SD00730.000000"
-
-. /* table_uss_unadjusted_bivariate.do 
-> J Solon
-> Sampa
-> March19 
-> 
-> Creates n median iqr and p values of var
-> kwallis p value
-> di chi2tail(r(df),r(chi2))
-> 
-> */
-. 
-. 
 . capture log close

@@ -27,14 +27,14 @@ end
 collect clear
 
 local col "cohort2"
-local contmed "fecal_elastase ul_amylp lipase  ngml_trypsinogen"  /*continous variables; median (p25-p75)  will be reported*/
+local contmed "fecal_elastase ul_amylp amyl_adj lipase  ngml_trypsinogen"  /*continous variables; median (p25-p75)  will be reported*/
 
 local contmed2 "fecal_elastase ul_amylp ngml_trypsinogen"  /*continous variables; median (p25-p75)  will be reported*/
 local colhead2 `"0 "NPM" 1 "PM""'
 		
 * format median of `contmed'
-local nfrmt_p50 "%5.0f"
-local nfrmt_iqr "%5.0f"
+local nfrmt_p50 "%5.0g"
+local nfrmt_iqr "%5.0g"
 local sfrmt_p25 "(%s-"
 local sfrmt_p75 "%s)"
 
@@ -185,7 +185,7 @@ collect create c2
 
 collect _r_p : tobit fecal_elastase `col', ul(600)
  
-foreach v in ul_amylp ngml_trypsinogen {
+foreach v in ul_amylp amyl_adj ngml_trypsinogen {
     quietly kwallis `v', by(`col')
     collect: mystats
 }
@@ -193,7 +193,8 @@ foreach v in ul_amylp ngml_trypsinogen {
 * Remap cmdset to match var levels
 collect recode cmdset 1 = fecal_elastase
 collect recode cmdset 2 = ul_amylp
-collect recode cmdset 3 = ngml_trypsinogen
+collect recode cmdset 3 = amyl_adj
+collect recode cmdset 4 = ngml_trypsinogen
 
 collect remap cmdset = var
 

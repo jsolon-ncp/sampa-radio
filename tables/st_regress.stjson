@@ -1,0 +1,360 @@
+{
+  "Layout": {
+    "columns": "result[_r_b _r_ci _r_p]",
+    "rows": "colname",
+    "tables": ""
+  },
+  "Styles": {
+    "ItemStyles": {
+      "base": "hide"
+    },
+    "cell": {
+      "base": {
+        "ci-delimiter": " ",
+        "cri-delimiter": " ",
+        "nformat": "%9.0g"
+      },
+      "edits": [
+        [
+          "cell_type[item]",
+          {
+            "smcl": "result"
+          }
+        ],
+        [
+          "result[_r_b _r_se _r_lb _r_ub _r_ci _r_crlb _r_crub _r_cri]",
+          {
+            "nformat": "%9.0g"
+          }
+        ],
+        [
+          "result[_r_z _r_z_abs]",
+          {
+            "nformat": "%8.2f"
+          }
+        ],
+        [
+          "result[_r_p]",
+          {
+            "nformat": "%5.3f"
+          }
+        ],
+        [
+          "cell_type[item]",
+          {
+            "margin-left": {
+              "width": "10pt"
+            }
+          }
+        ],
+        [
+          "cell_type[corner]",
+          {
+            "halign": "center"
+          }
+        ],
+        [
+          "cell_type[column-header]",
+          {
+            "halign": "right"
+          }
+        ],
+        [
+          "cell_type[column-header]#result[_r_ci _r_cri]",
+          {
+            "halign": "center"
+          }
+        ],
+        [
+          "cell_type[item]",
+          {
+            "halign": "right"
+          }
+        ],
+        [
+          "cell_type[row-header]",
+          {
+            "halign": "left"
+          }
+        ],
+        [
+          "border_block[corner]",
+          {
+            "border-right": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[column-header]",
+          {
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[row-header]",
+          {
+            "border-bottom": {
+              "pattern": "single"
+            },
+            "border-right": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[item]",
+          {
+            "border-bottom": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block",
+          {
+            "border-right": {
+              "pattern": "nil"
+            }
+          }
+        ],
+        [
+          "cell_type[item]",
+          {
+            "smcl": "result"
+          }
+        ],
+        [
+          "result[_r_b _r_se _r_lb _r_ub _r_ci _r_crlb _r_crub _r_cri]",
+          {
+            "nformat": "%9.0g"
+          }
+        ],
+        [
+          "result[_r_z _r_z_abs]",
+          {
+            "nformat": "%8.2f"
+          }
+        ],
+        [
+          "result[_r_p]",
+          {
+            "nformat": "%5.3f"
+          }
+        ],
+        [
+          "cell_type[item]",
+          {
+            "margin-left": {
+              "width": "10pt"
+            }
+          }
+        ],
+        [
+          "cell_type[corner]",
+          {
+            "halign": "center"
+          }
+        ],
+        [
+          "cell_type[column-header]",
+          {
+            "halign": "right"
+          }
+        ],
+        [
+          "cell_type[column-header]#result[_r_ci _r_cri]",
+          {
+            "halign": "center"
+          }
+        ],
+        [
+          "cell_type[item]",
+          {
+            "halign": "right"
+          }
+        ],
+        [
+          "cell_type[row-header]",
+          {
+            "halign": "left"
+          }
+        ],
+        [
+          "border_block[corner]",
+          {
+            "border-right": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[column-header]",
+          {
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[row-header]",
+          {
+            "border-bottom": {
+              "pattern": "single"
+            },
+            "border-right": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block[item]",
+          {
+            "border-bottom": {
+              "pattern": "single"
+            },
+            "border-top": {
+              "pattern": "single"
+            }
+          }
+        ],
+        [
+          "border_block",
+          {
+            "border-right": {
+              "pattern": "nil"
+            }
+          }
+        ],
+        [
+          "result",
+          {
+            "nformat": "%5.2f"
+          }
+        ],
+        [
+          "border_block",
+          {
+            "border-right": {
+              "pattern": "nil"
+            }
+          }
+        ],
+        [
+          "result",
+          {
+            "nformat": "%5.2f"
+          }
+        ],
+        [
+          "result[AIC BIC]",
+          {
+            "nformat": "%8.0f"
+          }
+        ],
+        [
+          "result[_r_se]",
+          {
+            "sformat": "(%s)"
+          }
+        ],
+        [
+          "result[_r_ci]",
+          {
+            "sformat": "(%s)"
+          }
+        ]
+      ]
+    },
+    "export": {
+      "tex": {
+        "begintable": "true",
+        "centering": "true"
+      }
+    },
+    "header": {
+      "auto-levels": {
+        "result": [
+          {
+            "stripe": "_r_b",
+            "term-index": 0
+          },
+          {
+            "stripe": "_r_ci",
+            "term-index": 1
+          },
+          {
+            "stripe": "_r_p",
+            "term-index": 2
+          }
+        ]
+      },
+      "base": {
+        "level": "label",
+        "title": "hide"
+      },
+      "dimensions": {
+        "ever_mal": {
+          "title": "label"
+        },
+        "row": {
+          "title": "hide"
+        },
+        "stars": {
+          "level": "hide",
+          "title": "hide"
+        }
+      },
+      "levels": [
+        [
+          [
+            "result",
+            {
+              "stripe": "AIC",
+              "term-index": 0
+            }
+          ],
+          {
+            "level": "label"
+          }
+        ],
+        [
+          [
+            "result",
+            {
+              "stripe": "BIC",
+              "term-index": 0
+            }
+          ],
+          {
+            "level": "label"
+          }
+        ]
+      ],
+      "row": {
+        "arrangement": "stack",
+        "delimiter": " x ",
+        "nobinder": "true",
+        "nodelimiter": "false",
+        "spacer": "true"
+      }
+    }
+  }
+}

@@ -16,6 +16,15 @@ Reusable with
 	04-do
 	05-figures
 	log 
+	
+	Cut off values for P-Amylase:
+
+ 
+
+0-1 year: < 8 U/L
+1-10 year: < 31 U/L
+10-18 year: < 39 U/L
+18-125 year: 13-53 U/L
 */
 
 egen epi_binary = cut(fecal_elastase), at(0,200,601) icodes
@@ -49,10 +58,21 @@ egen tryp_high = cut(ngml_trypsinogen), at(0,57,300) icodes
 	
 	label define tryp_high 0 "Low to Normal Trypsinogen" 1 "High Trypsinogen"
 	label values tryp_high tryp_high
-	
+
+egen amyl_ref = cut(ul_amylp) , at(0,13,53,999) icodes // for adults
+	recode amyl_ref 1 = 2 if ul_amylp>=39 & cohort==2 // for SAM kids
+	la var amyl_ref "Amylase Levels"
+	label define amyl_ref 0 "Low Amylase" 1 "Normal Amylase" 2 "High Amylase"
+	label values amyl_ref amyl_ref
+
 egen amyl_low = cut(ul_amylp), at(0,57,182) icodes
 la var amyl_low "Low Serum Amylase"
 recode amyl_low 0 = 1 1 = 0
 
 	label define amyl_low 0 "Normal to High Amylase" 1 "Low Amylase"
 	label values amyl_low amyl_low
+
+gen amyl_adj = ul_amylp/egfr
+la var amyl_adj "Amylase GFR Ratio"
+
+

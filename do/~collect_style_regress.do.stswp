@@ -1,0 +1,29 @@
+/*
+collect_style_regress.do
+Style for regression table
+Sampa
+J Solon
+April 25 2025
+From : https://blog.stata.com/2021/09/02/customizable-tables-in-stata-17-part-6-tables-for-multiple-regression-models/
+*/
+
+
+// TURN OFF BASE LEVELS FOR FACTOR VARIABLES
+collect style showbase off
+// CHANGE THE INTERACTION DELIMITER
+collect style row stack, nobinder spacer delimiter(" x ")
+// REMOVE THE VERTICAL LINE
+collect style cell border_block, border(right, pattern(nil))
+// FORMAT THE NUMBERS
+collect style cell result, nformat(%5.2f)
+
+collect style cell result[AIC BIC], nformat(%8.0f)
+// PUT PARENTHESES AROUND THE STANDARD ERRORS
+collect style cell result[_r_se], sformat("(%s)")
+
+// PUT PARENTHESES AROUND THE CONFIDENCE INTERVALS
+collect style cell result[_r_ci], sformat("(%s)")
+// LABEL AIC AND BIC
+collect style header result[AIC BIC], level(label)
+
+collect style save ./tables/st_regress, replace

@@ -50,4 +50,7 @@ foreach var of varlist pan_head_ap pan_head_trans pan_body_trans pan_tail_trans 
 	gen adj_sqrt_`var' = sqrt(`var')
 }		
 	
+gen pan_quant = pan_head_ap*pan_head_trans
 
+gen adj_wt_pan_quant = pan_quant/weight
+gen adj_sqrt_pan_quant = sqrt(pan_quant)

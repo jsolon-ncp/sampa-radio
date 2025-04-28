@@ -3,6 +3,9 @@
     "var"
   ],
   "Items": {
+    "cmdset[1]#cohort2[1]#colname[amyl_adj]#command[0]#result[count]#statcmd[2]#var[amyl_adj]": {
+      "d": 0.0
+    },
     "cmdset[1]#cohort2[1]#colname[fecal_elastase]#command[0]#result[column1]#statcmd[3]#var[fecal_elastase]": {
       "d": 600.0
     },
@@ -36,6 +39,18 @@
     "cmdset[1]#cohort2[1]#command[0]#result[frequency]#statcmd[1]#var[_hide]": {
       "d": 307.0
     },
+    "cmdset[1]#cohort2[2]#colname[amyl_adj]#command[0]#result[column1]#statcmd[3]#var[amyl_adj]": {
+      "d": 0.21267719566822052
+    },
+    "cmdset[1]#cohort2[2]#colname[amyl_adj]#command[0]#result[column2]#statcmd[4]#var[amyl_adj]": {
+      "d": 0.17609616369009018
+    },
+    "cmdset[1]#cohort2[2]#colname[amyl_adj]#command[0]#result[column3]#statcmd[5]#var[amyl_adj]": {
+      "d": 0.273945614695549
+    },
+    "cmdset[1]#cohort2[2]#colname[amyl_adj]#command[0]#result[count]#statcmd[2]#var[amyl_adj]": {
+      "d": 100.0
+    },
     "cmdset[1]#cohort2[2]#colname[fecal_elastase]#command[0]#result[column1]#statcmd[3]#var[fecal_elastase]": {
       "d": 124.21900177001953
     },
@@ -68,6 +83,18 @@
     },
     "cmdset[1]#cohort2[2]#command[0]#result[frequency]#statcmd[1]#var[_hide]": {
       "d": 103.0
+    },
+    "cmdset[1]#cohort2[3]#colname[amyl_adj]#command[0]#result[column1]#statcmd[3]#var[amyl_adj]": {
+      "d": 0.2888845205307007
+    },
+    "cmdset[1]#cohort2[3]#colname[amyl_adj]#command[0]#result[column2]#statcmd[4]#var[amyl_adj]": {
+      "d": 0.22728124260902405
+    },
+    "cmdset[1]#cohort2[3]#colname[amyl_adj]#command[0]#result[column3]#statcmd[5]#var[amyl_adj]": {
+      "d": 0.36799266934394836
+    },
+    "cmdset[1]#cohort2[3]#colname[amyl_adj]#command[0]#result[count]#statcmd[2]#var[amyl_adj]": {
+      "d": 301.0
     },
     "cmdset[1]#cohort2[3]#colname[fecal_elastase]#command[0]#result[column1]#statcmd[3]#var[fecal_elastase]": {
       "d": 589.0830078125
@@ -111,6 +138,18 @@
     "cmdset[1]#cohort2[3]#command[0]#result[frequency]#statcmd[1]#var[_hide]": {
       "d": 302.0
     },
+    "cmdset[1]#cohort2[4]#colname[amyl_adj]#command[0]#result[column1]#statcmd[3]#var[amyl_adj]": {
+      "d": 0.32850222289562225
+    },
+    "cmdset[1]#cohort2[4]#colname[amyl_adj]#command[0]#result[column2]#statcmd[4]#var[amyl_adj]": {
+      "d": 0.2455272525548935
+    },
+    "cmdset[1]#cohort2[4]#colname[amyl_adj]#command[0]#result[column3]#statcmd[5]#var[amyl_adj]": {
+      "d": 0.4710577428340912
+    },
+    "cmdset[1]#cohort2[4]#colname[amyl_adj]#command[0]#result[count]#statcmd[2]#var[amyl_adj]": {
+      "d": 844.0
+    },
     "cmdset[1]#cohort2[4]#colname[fecal_elastase]#command[0]#result[column1]#statcmd[3]#var[fecal_elastase]": {
       "d": 231.7845001220703
     },
@@ -153,17 +192,29 @@
     "cmdset[1]#cohort2[4]#command[0]#result[frequency]#statcmd[1]#var[_hide]": {
       "d": 867.0
     },
+    "cmdset[1]#cohort2[5]#colname[amyl_adj]#command[0]#result[column1]#statcmd[3]#var[amyl_adj]": {
+      "d": 0.351208433508873
+    },
+    "cmdset[1]#cohort2[5]#colname[amyl_adj]#command[0]#result[column2]#statcmd[4]#var[amyl_adj]": {
+      "d": 0.24494928866624832
+    },
+    "cmdset[1]#cohort2[5]#colname[amyl_adj]#command[0]#result[column3]#statcmd[5]#var[amyl_adj]": {
+      "d": 0.511119931936264
+    },
+    "cmdset[1]#cohort2[5]#colname[amyl_adj]#command[0]#result[count]#statcmd[2]#var[amyl_adj]": {
+      "d": 280.0
+    },
     "cmdset[1]#cohort2[5]#colname[fecal_elastase]#command[0]#result[column1]#statcmd[3]#var[fecal_elastase]": {
-      "d": 337.0419921875
+      "d": 330.98699951171875
     },
     "cmdset[1]#cohort2[5]#colname[fecal_elastase]#command[0]#result[column2]#statcmd[4]#var[fecal_elastase]": {
-      "d": 139.23300170898438
+      "d": 137.40049743652344
     },
     "cmdset[1]#cohort2[5]#colname[fecal_elastase]#command[0]#result[column3]#statcmd[5]#var[fecal_elastase]": {
-      "d": 559.8510131835938
+      "d": 557.5325012207031
     },
     "cmdset[1]#cohort2[5]#colname[fecal_elastase]#command[0]#result[count]#statcmd[2]#var[fecal_elastase]": {
-      "d": 241.0
+      "d": 240.0
     },
     "cmdset[1]#cohort2[5]#colname[lipase]#command[0]#result[count]#statcmd[2]#var[lipase]": {
       "d": 0.0
@@ -181,19 +232,31 @@
       "d": 69.0
     },
     "cmdset[1]#cohort2[5]#colname[ul_amylp]#command[0]#result[column1]#statcmd[3]#var[ul_amylp]": {
-      "d": 31.8
+      "d": 31.85
     },
     "cmdset[1]#cohort2[5]#colname[ul_amylp]#command[0]#result[column2]#statcmd[4]#var[ul_amylp]": {
-      "d": 24.9
+      "d": 24.799999999999997
     },
     "cmdset[1]#cohort2[5]#colname[ul_amylp]#command[0]#result[column3]#statcmd[5]#var[ul_amylp]": {
-      "d": 44.9
+      "d": 45.099999999999994
     },
     "cmdset[1]#cohort2[5]#colname[ul_amylp]#command[0]#result[count]#statcmd[2]#var[ul_amylp]": {
-      "d": 281.0
+      "d": 280.0
     },
     "cmdset[1]#cohort2[5]#command[0]#result[frequency]#statcmd[1]#var[_hide]": {
-      "d": 282.0
+      "d": 281.0
+    },
+    "cmdset[1]#cohort2[6]#colname[amyl_adj]#command[0]#result[column1]#statcmd[3]#var[amyl_adj]": {
+      "d": 0.38065481185913086
+    },
+    "cmdset[1]#cohort2[6]#colname[amyl_adj]#command[0]#result[column2]#statcmd[4]#var[amyl_adj]": {
+      "d": 0.2762937843799591
+    },
+    "cmdset[1]#cohort2[6]#colname[amyl_adj]#command[0]#result[column3]#statcmd[5]#var[amyl_adj]": {
+      "d": 0.6015887260437012
+    },
+    "cmdset[1]#cohort2[6]#colname[amyl_adj]#command[0]#result[count]#statcmd[2]#var[amyl_adj]": {
+      "d": 258.0
     },
     "cmdset[1]#cohort2[6]#colname[fecal_elastase]#command[0]#result[column1]#statcmd[3]#var[fecal_elastase]": {
       "d": 492.9759826660156
@@ -238,34 +301,34 @@
       "d": 261.0
     },
     "cmdset[1]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
-      "d": 300.7899241162313
+      "d": 301.1541523068372
     },
     "cmdset[1]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[_hide]": {
-      "d": 305.89552050966137
+      "d": 306.2407220943722
     },
     "cmdset[1]#program_class[rclass]#result[DF]#result_type[scalar]#var[_hide]": {
       "d": 5.0
     },
     "cmdset[1]#program_class[rclass]#result[p]#result_type[scalar]#var[_hide]": {
-      "d": 6.773855024010082e-63
+      "d": 5.656240757073134e-63
     },
     "cmdset[1]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[_hide]": {
-      "d": 5.408320514695956e-64
+      "d": 4.5586137771417203e-64
     },
     "cmdset[2]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
-      "d": 65.3034254060367
+      "d": 65.26071592946846
     },
     "cmdset[2]#program_class[rclass]#result[Chi2_adj]#result_type[scalar]#var[_hide]": {
-      "d": 65.30420548781886
+      "d": 65.2614943265691
     },
     "cmdset[2]#program_class[rclass]#result[DF]#result_type[scalar]#var[_hide]": {
       "d": 4.0
     },
     "cmdset[2]#program_class[rclass]#result[p]#result_type[scalar]#var[_hide]": {
-      "d": 2.2209998075529182e-13
+      "d": 2.267498891386213e-13
     },
     "cmdset[2]#program_class[rclass]#result[p_adj]#result_type[scalar]#var[_hide]": {
-      "d": 2.2201594282361472e-13
+      "d": 2.2666427869949818e-13
     },
     "cmdset[3]#program_class[rclass]#result[Chi2]#result_type[scalar]#var[_hide]": {
       "d": 37.47488620310776
@@ -308,6 +371,7 @@
         "6": "St-ATT (Philippines)"
       },
       "colname": {
+        "amyl_adj": "Amylase GFR Ratio",
         "fecal_elastase": "Fecal Elastase (ug/g)",
         "lipase": "Lipase (U/L)",
         "ngml_trypsinogen": "Trypsinogen (ng/ml)",
@@ -327,6 +391,7 @@
         "scalar": "Scalar"
       },
       "var": {
+        "amyl_adj": "Amylase GFR Ratio",
         "fecal_elastase": "Fecal Elastase (ug/g)",
         "lipase": "Lipase (U/L)",
         "ngml_trypsinogen": "Trypsinogen (ng/ml)",
@@ -523,22 +588,22 @@
           }
         ],
         [
-          "result[column1]#var[fecal_elastase ul_amylp lipase ngml_trypsinogen]",
+          "result[column1]#var[fecal_elastase ul_amylp amyl_adj lipase ngml_trypsinogen]",
           {
-            "nformat": "%5.0f"
+            "nformat": "%5.0g"
           }
         ],
         [
-          "result[column2]#var[fecal_elastase ul_amylp lipase ngml_trypsinogen]",
+          "result[column2]#var[fecal_elastase ul_amylp amyl_adj lipase ngml_trypsinogen]",
           {
-            "nformat": "%5.0f",
+            "nformat": "%5.0g",
             "sformat": "(%s-"
           }
         ],
         [
-          "result[column3]#var[fecal_elastase ul_amylp lipase ngml_trypsinogen]",
+          "result[column3]#var[fecal_elastase ul_amylp amyl_adj lipase ngml_trypsinogen]",
           {
-            "nformat": "%5.0f",
+            "nformat": "%5.0g",
             "sformat": "%s)"
           }
         ],
@@ -735,16 +800,20 @@
     ],
     "colname": [
       {
+        "stripe": "amyl_adj",
+        "term-index": 3
+      },
+      {
         "stripe": "fecal_elastase",
         "term-index": 1
       },
       {
         "stripe": "lipase",
-        "term-index": 3
+        "term-index": 4
       },
       {
         "stripe": "ngml_trypsinogen",
-        "term-index": 4
+        "term-index": 5
       },
       {
         "stripe": "ul_amylp",
@@ -855,16 +924,20 @@
         "term-index": 1
       },
       {
+        "stripe": "amyl_adj",
+        "term-index": 4
+      },
+      {
         "stripe": "fecal_elastase",
         "term-index": 2
       },
       {
         "stripe": "lipase",
-        "term-index": 4
+        "term-index": 5
       },
       {
         "stripe": "ngml_trypsinogen",
-        "term-index": 5
+        "term-index": 6
       },
       {
         "stripe": "ul_amylp",

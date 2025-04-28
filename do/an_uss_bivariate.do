@@ -25,7 +25,7 @@ end
 collect clear
 
 local col "ever_mal"
-local contmed "pan_head_ap pan_head_trans pan_body_trans pan_tail_trans"  /*continous variables; median (p25-p75)  will be reported*/
+local contmed "pan_head_ap pan_head_trans pan_body_trans pan_tail_trans pan_quant"  /*continous variables; median (p25-p75)  will be reported*/
 
 local colhead2 `"0 "NPM" 1 "PM""'
 		
